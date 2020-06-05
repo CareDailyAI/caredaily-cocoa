@@ -1,0 +1,9 @@
+{
+  "status": "ACK",
+  "fileRef": 12345,
+  "filesAction": 1,
+  "thumbnail": true,
+  "totalFilesSpace": 10000000,
+  "usedFilesSpace": 1000000,
+  "fragments": 3
+}

@@ -1,0 +1,85 @@
+{
+  "resultCode": 0,
+  "stories": [
+    {
+      "id": "Entry_Sensor.Add.en",
+      "models": [
+        {
+          "id": "Entry_GPD",
+          "brand": "default"
+        },
+        {
+          "id": "Entry_Default",
+          "brand": "presence"
+        }
+      ],
+      "storyType": 1,
+      "sortId": 1,
+      "hash": "1234567890",
+      "lang": "en",
+      "title": "Entry sensor installation",
+      "search": "add,entry,door",
+      "pages": [
+        {
+          "index": 0,
+          "hidden": false,
+          "dismissible": true,
+          "subtitle": "Add new entry sensor",
+          "desc": "How to add entry sensor to your account",
+          "style": "info",
+          "content": "The setup process is ...",
+          "actionType": 1,
+          "actionStyle": 1,
+          "actionStoryId": "Entry_Sensor.Reinstall.en",
+          "actionDesc": "Next",
+          "media": [
+            {
+              "id": "EntrySensorFront",
+              "mediaType": 1,
+              "url": "http://peoplepowerco.com/img/image.png",
+              "contentType": "image/png",
+              "desc": {
+                  "en": "Page image description"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "FAQ",
+      "brands": [
+        "default",
+        "presence"
+      ],
+      "storyType": 30,
+      "sortId": 2,
+      "hash": "2345678901",
+      "lang": "en",
+      "title": "FAQ",
+      "search": "FAQ",
+      "pages": [
+        {
+          "index": 0,
+          "hidden": false,
+          "dismissible": true,
+          "subtitle": "Question 1",
+          "desc": "What does this app do?",
+          "style": "info",
+          "content": "This app does ...",
+          "media": [
+            {
+              "id": "Question",
+              "mediaType": 1,
+              "url": "http://peoplepowerco.com/img/question.png",
+              "contentType": "image/png",
+              "desc": {
+                  "en": "General question icon"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

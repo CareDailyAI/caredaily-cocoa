@@ -1,0 +1,198 @@
+{
+  "resultCode": 0,
+  "user": {
+    "id": 123,
+    "userName": "john.smith@gmail.com",
+    "altUsername": "1234567890",
+    "firstName": "John",
+    "lastName": "Smith",
+    "communityName": "John",
+    "email": {
+      "email": "john.smith@gmail.com",
+      "verified": true,
+      "status": 0
+    },
+    "permission": [
+      0,
+      1
+    ],
+    "role": {
+      "id": 2,
+      "name": "SUPER ADMINISTRATOR",
+      "description": "Super administrator can do many things"
+    },
+    "anonymous": true,
+    "phone": "1234567890",
+    "phoneType": 1,
+    "smsStatus": 1,
+    "language": "en",
+    "authClients": [
+      {
+        "appId": "MyUtility",
+        "appName": "My utility company",
+        "expiry": "2020-01-01T00:00:00Z",
+        "autoRefresh": false
+      }
+    ],
+    "tags": [
+      {
+        "tag": "hvac",
+        "organizationId": 123,
+        "organizationName": "PPC"
+      },
+      {
+        "tag": "efficient",
+        "appId": 45,
+        "appName": "HVac monitor"
+      }
+    ]
+  },
+  "locations": [
+    {
+      "id": 456,
+      "name": "My house",
+      "locationAccess": 30,
+      "accessEndDate": "2019-01-29T02:45:30Z",
+      "accessEndDateMs": 1548747995000,
+      "userCategory": 1,
+      "smsPhone": "1234567890",
+      "timezone": {
+        "id": "US/Eastern",
+        "offset": -300,
+        "dst": true,
+        "name": "Eastern Time"
+      },
+      "fileUploadPolicy": 0,
+      "type": 1,
+      "state": {
+        "id": 5,
+        "name": "California"
+      },
+      "country": {
+        "id": 1,
+        "name": "United States",
+        "countryCode": "US",
+        "currencyCode": "USD",
+        "currencySymbol": "$",
+        "zipFormat": "^\\d{5}$",
+        "stateName": "State",
+        "zipName": "Zip Code"
+      },
+      "zip": "12345",
+      "latitude": "10.12345",
+      "longitude": "10.12345",
+      "salesTaxRate": "0.0721",
+      "event": "HOME",
+      "size": {
+        "unit": "ft2",
+        "value": 14000
+      },
+      "storiesNumber": 2,
+      "roomsNumber": 5,
+      "bathroomsNumber": 2,
+      "occupantsNumber": 3,
+      "occupantsRanges": [
+        {
+          "start": 0,
+          "end": 6,
+          "number": 1
+        },
+        {
+          "start": 7,
+          "end": 13,
+          "number": 1
+        },
+        {
+          "start": 14,
+          "end": 20,
+          "number": 1
+        },
+        {
+          "start": 21,
+          "end": 120,
+          "number": 2
+        }
+      ],
+      "usagePeriod": 3,
+      "heatingType": 2,
+      "coolingType": 1,
+      "waterHeaterType": 2,
+      "thermostatType": 1,
+      "startDate": "2011-05-31T23:00:00-07:00",
+      "startDateMs": 1306908000000,
+      "auths": [
+        {
+          "appId": 2,
+          "appName": "Ann name",
+          "userName": "john",
+          "active": true,
+          "expiry": "2020-01-01T00:00:00Z",
+          "autoRefresh": false
+        }
+      ],
+      "services": [
+        {
+          "name": "ProVideo",
+          "desc": "Pro Video services",
+          "amount": 1,
+          "resourceType": 1,
+          "startDate": "2014-05-01T12:00:00Z",
+          "startDateMs": 1398945600000,
+          "endDate": "2014-06-01T12:00:00Z",
+          "endDateMs": 1401624000000
+        },
+        {
+          "name": "DeviceFileDays",
+          "desc": "Files storage days",
+          "amount": 7,
+          "resourceType": 3,
+          "resourceId": "abc123",
+          "startDate": "2014-05-01T12:00:00Z",
+          "startDateMs": 1398945600000,
+          "endDate": "2014-06-01T12:00:00Z",
+          "endDateMs": 1401624000000
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "name": "SMS",
+      "desc": "SMS service",
+      "amount": 1,
+      "resourceType": 0,
+      "startDate": "2014-05-01T12:00:00Z",
+      "startDateMs": 1398945600000,
+      "endDate": "2014-06-01T12:00:00Z",
+      "endDateMs": 1401624000000
+    }
+  ],
+  "badges": [
+    {
+      "type": 0,
+      "count": 2
+    },
+    {
+      "type": 1,
+      "count": 3
+    },
+    {
+      "type": 2,
+      "count": 0
+    }
+  ],
+  "organizations": [
+    {
+      "id": 1,
+      "name": "People Power",
+      "domainName": "ppc",
+      "status": 1,
+      "approveDate": "2014-09-09T17:36:20Z",
+      "approveDateMs": 1410284180000,
+      "groupId": 12,
+      "groupName": "Developers",
+      "notes": "text",
+      "termOfService": "PPC.2016"
+    }
+  ]
+}

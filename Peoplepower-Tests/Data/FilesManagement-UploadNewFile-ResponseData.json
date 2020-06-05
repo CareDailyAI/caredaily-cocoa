@@ -1,0 +1,14 @@
+{
+  "status": "ACK",
+  "fileRef": 12345,
+  "filesAction": 1,
+  "thumbnail": true,
+  "totalFilesSpace": 10000000,
+  "usedFilesSpace": 1000000,
+  "fragments": 3,
+  "contentUrl": "https://s3.amazonaws.com/cbacket/fileId?X-Amz-Algorithm=AWS4-HMAC-SHA256...",
+  "thumbnailUrl": "https://s3.amazonaws.com/tbacket/fileId?X-Amz-Algorithm=AWS4-HMAC-SHA256...",
+  "uploadHeaders": {
+    "x-amz-server-side-encryption": "AES256"
+  }
+}

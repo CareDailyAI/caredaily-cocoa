@@ -1,0 +1,73 @@
+{
+  "resultCode": 0,
+  "posts": [
+    {
+      "circleId": 123,
+      "postId": 456,
+      "text": "That was fun",
+      "authorId": 789,
+      "creationDate": "2013-06-05T16:43:59-07:00",
+      "creationDateMs": 1370475839000,
+      "updateDate": "2013-06-05T16:43:59-07:00",
+      "updateDateMs": 1370475839000,
+      "deleted": false,
+      "file": {
+        "id": 1234,
+        "type": 1,
+        "description": "Vacation",
+        "thumbnail": true,
+        "creationDate": "2013-06-05T16:43:59-07:00",
+        "creationDateMs": 1370475839000,
+        "size": 347900,
+        "ext": "mp4",
+        "duration": 60,
+        "rotate": 180,
+        "width": 1280,
+        "height": 720
+      },
+      "reactions": [
+        {
+          "userId": 234,
+          "type": 1
+        },
+        {
+          "userId": 235,
+          "type": 2
+        }
+      ]
+    },
+    {
+      "postId": 124,
+      "originalPostId": 123,
+      "text": "Nice jump!",
+      "authorId": 124,
+      "creationDate": "2013-06-05T16:43:59-07:00",
+      "creationDateMs": 1370475839000,
+      "updateDate": "2013-06-05T16:43:59-07:00",
+      "updateDateMs": 1370475839000,
+      "deleted": false,
+      "displayAt": 87653,
+      "displayDuration": 50000,
+      "file": {
+        "id": 125,
+        "type": 1,
+        "description": "My jump",
+        "thumbnail": true,
+        "creationDate": "2013-06-05T16:43:59-07:00",
+        "creationDateMs": 1370475839000,
+        "size": 347900,
+        "ext": "mp4",
+        "duration": 60,
+        "rotate": 180,
+        "width": 1280,
+        "height": 720
+      },
+      "reactions": [
+        {
+          "userId": 123,
+          "type": 3
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "resultCode": 0,
+  "questions": [
+    {
+      "id": 50234,
+      "answerStatus": 4,
+      "answer": "true",
+      "answerDate": "2016-03-04T12:12:12-07:00",
+      "answerDateMs": 1446539712000,
+      "answerModified": false
+    },
+    {
+      "id": 56234,
+      "answerStatus": 3,
+      "answerDate": "2016-03-04T12:12:12-07:00",
+      "answerDateMs": 1446539712000,
+      "answerModified": true
+    },
+    {
+      "id": 56237,
+      "answerStatus": 4,
+      "answer": "default answer",
+      "answerDate": "2016-03-04T12:12:12-07:00",
+      "answerDateMs": 1446539712000,
+      "answerModified": false
+    }
+  ]
+}

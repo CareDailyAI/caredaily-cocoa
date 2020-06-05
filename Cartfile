@@ -1,0 +1,5 @@
+github "facebook/SocketRocket" == 0.4.2
+github "kishikawakatsumi/UICKeyChainStore"
+github "AFNetworking/AFNetworking" ~> 4.0
+github "robbiehanson/KissXML"
+github "AliSoftware/OHHTTPStubs"

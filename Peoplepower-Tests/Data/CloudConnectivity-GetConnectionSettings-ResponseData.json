@@ -1,0 +1,66 @@
+{
+  "resultCode": 0,
+  "clouds": [
+    {
+      "name": "Production",
+      "version": "1.7",
+      "currentTime": "2015-09-16T18:59:15-04:00",
+      "currentTimeMs": 1442444355000,
+      "defaultTimezone": {
+        "id": "US/Eastern",
+        "offset": -300,
+        "dst": true,
+        "name": "Eastern Time"
+      },
+      "servers": [
+        {
+          "type": "appapi",
+          "host": "app.presencepro.com",
+          "port": 443,
+          "ssl": true,
+          "altPort": 80,
+          "altSsl": false
+        },
+        {
+          "type": "deviceio",
+          "host": "esp.peoplepowerco.com",
+          "port": 8443,
+          "ssl": true,
+          "altPort": 8080,
+          "altSsl": false
+        },
+        {
+          "type": "streaming",
+          "host": "esp.peoplepowerco.com",
+          "port": 8443,
+          "ssl": true,
+          "altPort": 8080,
+          "altSsl": false
+        },
+        {
+          "type": "webapp",
+          "host": "app.presencepro.com",
+          "port": 443,
+          "ssl": true,
+          "altPort": 80,
+          "altSsl": false,
+          "brand": "presence",
+          "version": 4
+        }
+      ]
+    },
+    {
+      "name": "sbox",
+      "servers": [
+        {
+          "type": "appapi",
+          "host": "sbox.presencepro.com",
+          "port": 443,
+          "ssl": true,
+          "altPort": 80,
+          "altSsl": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "resultCode": 0,
+  "products": [
+    {
+      "id": 1,
+      "thumbnail": "http://peoplepowerco.com/presence/market/market-galileo@2x-4eb5ae07.png",
+      "name": "Galileo robotic stand",
+      "description": "Galileo is a robotic iPhone mount that lets you remotely control what Presence sees",
+      "productLink": "http://shop.presencepro.com/Galileo-robotic-iPhone-Stand-White-MOTRR-001-WHITE.htm",
+      "cellImage": "http://peoplepowerco.com/presence/market/3-store-galileo-d538cff4.png",
+      "cellImageHeight": 250
+    },
+    {
+      "id": 8,
+      "thumbnail": "http://peoplepowerco.com/presence/market/monster@2x-0fa763ce.png",
+      "name": "Monster Central",
+      "description": "Upgrade to Presence 1.2 and control your lights and appliances remotely!",
+      "productLink": "http://shop.presencepro.com/Monster-Central-Power-Control-100MC-Kit-121759.htm",
+      "cellImage": "http://peoplepowerco.com/presence/market/monster-ef7933bd.png",
+      "cellImageHeight": 250
+    },
+    {
+      "id": 2,
+      "thumbnail": "http://peoplepowerco.com/presence/market/market-kubi@2x-5055a404.png",
+      "name": "KUBI robotic tablet",
+      "description": "KUBI is a robotic iPad mount that lets you remotely control what Presence sees",
+      "productLink": "http://shop.presencepro.com/KUBI-robotic-iPad-Stand-REVOLVE-001-WHITE.htm",
+      "cellImage": "http://peoplepowerco.com/presence/market/2-store-kubi-f72f2884.png",
+      "cellImageHeight": 250
+    },
+    {
+      "id": 9,
+      "thumbnail": "http://peoplepowerco.com/presence/market/blueline_thumbnail-7514f37b.png",
+      "name": "PowerCost Monitor",
+      "description": "Monitor your home or business energy consumption in real time!",
+      "productLink": "http://shop.presencepro.com/Blue-Line-PowerCost-Wi-Fi-Bridge-and-Sensor-BL-32000.htm",
+      "cellImage": "http://peoplepowerco.com/presence/market/blueline-6ac0a0b6.png",
+      "cellImageHeight": 250
+    },
+    {
+      "id": 10,
+      "thumbnail": "http://peoplepowerco.com/presence/market/ted_thumbnail-4576f73f.png",
+      "name": "The Energy Detective",
+      "description": "Monitor your home or business energy consumption in real time!",
+      "productLink": "http://shop.presencepro.com/TED-Pro-Home-System-TED-PRO-HOME.htm",
+      "cellImage": "http://peoplepowerco.com/presence/market/ted-f090260f.png",
+      "cellImageHeight": 250
+    },
+    {
+      "id": 3,
+      "thumbnail": "http://peoplepowerco.com/presence/market/market-iphone@2x-ac43a230.png",
+      "name": "iPhone Stands",
+      "description": "All the iPhone stands we recommend",
+      "productLink": "http://shop.presencepro.com/iPhone-Stands_c3.htm",
+      "cellImage": "http://peoplepowerco.com/presence/market/4-store-iphone-1f779f63.png",
+      "cellImageHeight": 250
+    },
+    {
+      "id": 4,
+      "thumbnail": "http://peoplepowerco.com/presence/market/market-ipad@2x-ec1d7346.png",
+      "name": "iPad Stands",
+      "description": "All the iPad stands we recommend",
+      "productLink": "http://shop.presencepro.com/iPad-Stands_c2.htm",
+      "cellImage": "http://peoplepowerco.com/presence/market/5-store-ipad-cce7694a.png",
+      "cellImageHeight": 250
+    },
+    {
+      "id": 6,
+      "thumbnail": "http://peoplepowerco.com/presence/market/market-cables@2x-e0ccffbf.png",
+      "name": "Cables",
+      "description": "Ever need to get power to those hard-to-reach places?",
+      "productLink": "http://shop.presencepro.com/Cables_c4.htm",
+      "cellImage": "http://peoplepowerco.com/presence/market/7-store-cables-f9a37c1f.png",
+      "cellImageHeight": 250
+    },
+    {
+      "id": 11,
+      "thumbnail": "http://peoplepowerco.com/presence/market/market-cool-stuff@2x-4b359c00.png",
+      "name": "Energy Efficiency",
+      "description": "Energy efficiency accessories for your Presence cams.",
+      "productLink": "http://shop.presencepro.com/Energy-Efficiency_c5.htm",
+      "cellImage": "http://peoplepowerco.com/presence/market/8-store-energy-f828c322.png",
+      "cellImageHeight": 250
+    }
+  ],
+  "affiliateCode": ""
+}

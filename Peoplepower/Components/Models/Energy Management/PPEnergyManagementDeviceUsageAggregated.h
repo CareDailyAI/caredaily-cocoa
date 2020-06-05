@@ -1,0 +1,24 @@
+//
+//  PPEnergyManagementDeviceUsageAggregated.h
+//  PPiOSCore
+//
+//  Created by Destry Teeter on 3/13/18.
+//  Copyright © 2020 People Power Company. All rights reserved.
+//
+
+#import "PPBaseModel.h"
+#import "PPEnergyManagementDeviceUsageAggregatedEnergy.h"
+#import "PPEnergyManagementDeviceUsageAggregatedCost.h"
+
+@interface PPEnergyManagementDeviceUsageAggregated : NSObject
+
+@property (nonatomic, strong) NSDate *startDate;
+@property (nonatomic, strong) NSDate *endDate;
+@property (nonatomic, strong) NSArray *energy;
+@property (nonatomic, strong) NSArray *cost;
+
+- (id)initWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate energy:(NSArray *)energy cost:(NSArray *)cost;
+
++ (PPEnergyManagementDeviceUsageAggregated *)initWithDictionary:(NSDictionary *)aggregatedDict;
+
+@end

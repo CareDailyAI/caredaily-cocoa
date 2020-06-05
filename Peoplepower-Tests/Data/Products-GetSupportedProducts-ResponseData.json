@@ -1,0 +1,69 @@
+{
+  "resultCode": 0,
+  "deviceTypes": [
+    {
+      "id": 10012,
+      "name": "Unit Test Product",
+      "editable": true,
+      "createdBy": {
+        "id": 123,
+        "userName": "john",
+        "firstName": "John",
+        "lastName": "Smith",
+        "email": {
+          "email": "john@smith.com",
+          "verified": true,
+          "status": 0
+        }
+      },
+      "creationDate": "2015-02-27T15:30:21Z",
+      "creationDateMs": 1425051021000,
+      "attributes": [
+        {
+          "name": "acceptsCommands",
+          "value": "0"
+        },
+        {
+          "name": "category",
+          "value": "1"
+        },
+        {
+          "name": "desc",
+          "value": "description"
+        }
+      ]
+    },
+    {
+      "id": 10013,
+      "name": "Unit Test Product 2",
+      "editable": true,
+      "createdBy": {
+        "id": 123,
+        "userName": "john",
+        "firstName": "John",
+        "lastName": "Smith",
+        "email": {
+          "email": "john@smith.com",
+          "verified": true,
+          "status": 0
+        }
+      },
+      "creationDate": "2015-02-27T15:30:21Z",
+      "creationDateMs": 1425051021000,
+      "attributes": [
+        {
+          "name": "acceptsCommands",
+          "value": "1"
+        },
+        {
+          "name": "category",
+          "value": "14000"
+        },
+        {
+          "name": "desc",
+          "value": "description"
+        }
+      ]
+    }
+  ]
+}

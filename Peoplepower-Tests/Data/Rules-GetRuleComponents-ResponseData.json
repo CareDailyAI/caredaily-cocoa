@@ -1,0 +1,318 @@
+{
+  "resultCode": 0,
+  "triggers": [
+    {
+      "id": 5,
+      "name": "schedule",
+      "type": 11,
+      "display": 11,
+      "timezone": true,
+      "desc": "$schedule",
+      "past": "$schedule",
+      "functionGroup": "schedule",
+      "parameters": [
+        {
+          "name": "schedule",
+          "category": 2,
+          "optional": false,
+          "desc": "What time?"
+        },
+        {
+          "name": "timeZone",
+          "category": 3,
+          "optional": false,
+          "desc": "Is this timezone OK?"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Device offline",
+      "type": 11,
+      "display": 13,
+      "timezone": true,
+      "desc": "goes offline",
+      "past": "went offline",
+      "parameters": [
+        {
+          "name": "deviceId",
+          "category": 5,
+          "optional": false,
+          "desc": "device",
+          "values": [
+            {
+              "id": "470FF274-8700-44AB-A273-A70691A3C140::4",
+              "name": "moss mobile 6"
+            },
+            {
+              "id": "ea5101a8005f-10031-470",
+              "name": "Gateway"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Smart plug turned off trigger",
+      "type": 14,
+      "display": 14,
+      "timezone": false,
+      "desc": "switches off",
+      "past": "switched off",
+      "parameters": [
+        {
+          "name": "deviceId",
+          "category": 5,
+          "optional": false,
+          "desc": "smart plug",
+          "values": [
+            {
+              "id": "470FF274-8700-44AB-A273-A70691A3C140::4",
+              "name": "moss mobile 6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "name": "Door open timer",
+      "type": 15,
+      "display": 13,
+      "timezone": false,
+      "desc": "is opened for $minutes minutes",
+      "past": "was opened for $minutes minutes",
+      "parameters": [
+        {
+          "name": "deviceId",
+          "category": 5,
+          "optional": false,
+          "desc": "entry sensor",
+          "values": [
+            {
+              "id": "12345ABCDEF",
+              "name": "Front Door"
+            }
+          ]
+        },
+        {
+          "name": "minutes",
+          "category": 1,
+          "optional": false,
+          "desc": "How long in minutes?",
+          "value": "5",
+          "valueType": 1,
+          "unit": "minute",
+          "minValue": "1",
+          "maxValue": "120"
+        }
+      ]
+    }
+  ],
+  "states": [
+    {
+      "id": 9,
+      "name": "Location state",
+      "type": 21,
+      "display": 22,
+      "timezone": false,
+      "desc": "am",
+      "past": "was",
+      "parameters": [
+        {
+          "name": "locationId",
+          "category": 4,
+          "optional": false,
+          "desc": "my location",
+          "values": [
+            {
+              "id": "5",
+              "name": "David Moss"
+            }
+          ]
+        },
+        {
+          "name": "event",
+          "category": 13,
+          "optional": false,
+          "desc": "state",
+          "values": [
+            {
+              "id": "HOME",
+              "name": "Home"
+            },
+            {
+              "id": "AWAY",
+              "name": "Away"
+            },
+            {
+              "id": "VACATION",
+              "name": "Vacation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Device online",
+      "type": 21,
+      "display": 23,
+      "timezone": true,
+      "desc": "is online",
+      "past": "was online",
+      "functionGroup": "online",
+      "parameters": [
+        {
+          "name": "deviceId",
+          "category": 5,
+          "optional": false,
+          "desc": "device",
+          "values": [
+            {
+              "id": "470FF274-8700-44AB-A273-A70691A3C140::4",
+              "name": "moss mobile 6"
+            },
+            {
+              "id": "ea5101a8005f-10031-470",
+              "name": "Gateway"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Device offline",
+      "type": 21,
+      "display": 23,
+      "timezone": true,
+      "desc": "is offline",
+      "past": "was offline"
+    },
+    {
+      "id": 23,
+      "name": "Smart plug is on state",
+      "type": 21,
+      "display": 23,
+      "timezone": false,
+      "desc": "is switched on",
+      "past": "was switched on",
+      "parameters": [
+        {
+          "name": "deviceId",
+          "category": 5,
+          "optional": false,
+          "desc": "smart plug",
+          "values": [
+            {
+              "id": "470FF274-8700-44AB-A273-A70691A3C140::4",
+              "name": "moss mobile 6"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": 4,
+      "name": "GP notification to phone",
+      "type": 31,
+      "display": 31,
+      "timezone": false,
+      "desc": "send a notification to my phone",
+      "past": "sent a notification to my phone",
+      "parameters": [
+        {
+          "name": "text",
+          "category": 10,
+          "optional": false,
+          "desc": "notification text"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "name": "Presence camera alert me with a picture",
+      "type": 33,
+      "display": 33,
+      "timezone": false,
+      "desc": "alert me with a picture",
+      "parameters": [
+        {
+          "name": "deviceId",
+          "category": 5,
+          "optional": false,
+          "desc": "Presence Camera",
+          "values": [
+            {
+              "id": "470FF274-8700-44AB-A273-A70691A3C140::4",
+              "name": "moss mobile 6"
+            },
+            {
+              "id": "ea5101a8005f-10031-470",
+              "name": "Gateway"
+            },
+            {
+              "id": "virtualpsm-6-4e7",
+              "name": "Light"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "name": "Presence camera point to vantage point action",
+      "type": 33,
+      "display": 33,
+      "timezone": false,
+      "desc": "point to my '$point' vantage point",
+      "parameters": [
+        {
+          "name": "deviceId",
+          "category": 5,
+          "values": [
+            {
+              "id": "CAMERA_ID_1",
+              "name": "Living Room Camera"
+            },
+            {
+              "id": "CAMERA_ID_2",
+              "name": "Bedroom Camera"
+            }
+          ]
+        },
+        {
+          "name": "point",
+          "category": 15,
+          "selectorName": "deviceId",
+          "values": [
+            {
+              "id": "0",
+              "name": "Front Door",
+              "selectorValue": "CAMERA_ID_1"
+            },
+            {
+              "id": "1",
+              "name": "Front Window",
+              "selectorValue": "CAMERA_ID_1"
+            },
+            {
+              "id": "0",
+              "name": "Bedroom Door",
+              "selectorValue": "CAMERA_ID_2"
+            },
+            {
+              "id": "1",
+              "name": "Bedroom Window",
+              "selectorValue": "CAMERA_ID_2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

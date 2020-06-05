@@ -1,0 +1,36 @@
+{
+  "resultCode": 0,
+  "users": [
+    {
+      "id": 123,
+      "userName": "john.smith@gmail.com",
+      "altUsername": "1234567890",
+      "firstName": "John",
+      "lastName": "Smith",
+      "nickname": "Johnny",
+      "email": {
+        "email": "john.smith@gmail.com",
+        "verified": true,
+        "status": 0
+      },
+      "phone": "1234567890",
+      "phoneType": 1,
+      "smsStatus": 1,
+      "locationAccess": 10,
+      "temporary": true,
+      "accessEndDate": "2019-01-29T02:45:30Z",
+      "accessEndDateMs": 1548747995000,
+      "category": 1,
+      "smsPhone": "1234567890",
+      "language": "en",
+      "avatarFileId": 123,
+      "schedules": [
+        {
+          "daysOfWeek": 127,
+          "startTime": 10800,
+          "endTime": 20800
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "resultCode": 0,
+  "deviceActivationKey": "3:20Q9mYSH14s0M4v5o",
+  "deviceActivationUrl": "http://esp.peoplepowerco.com/espapi/rest/activateted",
+  "message": "<p>Here are the steps to activate your TED device:</p><br><ol><blockquote><li>Ensure your TED gateway has the latest firmware version.If not download and install it from: http://www.theenergydetective.com/firmwareupgrade</li></blockquote><blockquote><li>Go to TED footprints from your local browser.Example: http://192.168.1.129/Footprints.html (Use your own network IP address.)</li></blockquote><blockquote><li>Select edit> activate energy posting</li></blockquote><blockquote><li>Copy the following values and paste them in their respective fields in footprints.Do NOT click on this URL:<br>ActivationURL=http://esp.peoplepowerco.com/espapi/rest/activateted<br>ActivationKey=123:20Q9mYSd14s0MWv5b</li></blockquote><blockquote><li>Click \"activate energy posting.\"</li></blockquote><blockquote><li>The \"activation successful\" message confirms your activation is complete.</li></blockquote></ol>",
+  "host": "esp.peoplepowerco.com",
+  "port": "80",
+  "uri": "/espapi/rest/activateted",
+  "ssl": "0"
+}

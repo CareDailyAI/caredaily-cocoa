@@ -1,0 +1,14 @@
+{
+  "resultCode": 0,
+  "states": [
+    {
+      "name": "stateName",
+      "stateDate": "2018-10-01T03:05:07",
+      "stateDateMs": 1537692964000,
+      "value": {
+        "field0": 123,
+        "field1": "AAA"
+      }
+    }
+  ]
+}

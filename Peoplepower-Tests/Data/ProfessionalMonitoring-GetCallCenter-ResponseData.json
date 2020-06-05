@@ -1,0 +1,30 @@
+{
+  "resultCode": 0,
+  "callCenter": {
+    "status": 1,
+    "code": "A12345",
+    "userId": 123,
+    "missingFields": [
+      "user.firstName",
+      "user.phone",
+      "location.addrStreet1"
+    ],
+    "contacts": [
+      {
+        "userId": 123,
+        "firstName": "Laura",
+        "lastName": "Secord",
+        "phone": "1232686353",
+        "phoneType": 1
+      }
+    ],
+    "codeword": "pass phrase",
+    "notDispatch": false,
+    "permit": "1234567890",
+    "alertStatus": 3,
+    "alertDate": "2015-09-01T18:00:00Z",
+    "alertDateMs": 1441130400000,
+    "alertStatusDate": "2015-09-01T18:00:30Z",
+    "alertStatusDateMs": 1441130430000
+  }
+}

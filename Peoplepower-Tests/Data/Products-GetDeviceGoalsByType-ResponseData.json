@@ -1,0 +1,19 @@
+{
+  "resultCode": 0,
+  "goals": [
+    {
+      "id": 123,
+      "name": "Door security",
+      "desc": "If you want to secure your house...",
+      "categories": "S,C",
+      "deviceUsage": 10000
+    },
+    {
+      "id": 124,
+      "name": "Refrigerator door",
+      "desc": "Keep your fridge door closed.",
+      "categories": "E,H",
+      "deviceUsage": 5000
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "resultCode": 0,
+  "commands": [
+    {
+      "id": 123,
+      "deviceId": "ABC123"
+    }
+  ]
+}

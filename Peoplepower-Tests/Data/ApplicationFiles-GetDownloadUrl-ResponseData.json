@@ -1,0 +1,4 @@
+{
+  "resultCode": 0,
+  "contentUrl": "https://s3.amazonaws.com/bucket1/object1?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20180704T220443Z&X-Amz-SignedHeaders=host&X-Amz-Expires=10&X-Amz-Credential=AKIAJPAZD&X-Amz-Signature=af7329c26"
+}

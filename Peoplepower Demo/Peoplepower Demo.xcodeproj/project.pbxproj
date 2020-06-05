@@ -1,0 +1,671 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		631A7AB7248B376500D86CFF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 631A7AB6248B376500D86CFF /* AppDelegate.m */; };
+		631A7ABA248B376500D86CFF /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 631A7AB9248B376500D86CFF /* SceneDelegate.m */; };
+		631A7ABD248B376500D86CFF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631A7ABC248B376500D86CFF /* ViewController.m */; };
+		631A7AC0248B376500D86CFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631A7ABE248B376500D86CFF /* Main.storyboard */; };
+		631A7AC2248B376600D86CFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 631A7AC1248B376600D86CFF /* Assets.xcassets */; };
+		631A7AC5248B376600D86CFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631A7AC3248B376600D86CFF /* LaunchScreen.storyboard */; };
+		631A7AC8248B376600D86CFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 631A7AC7248B376600D86CFF /* main.m */; };
+		631A7AD2248B376600D86CFF /* Peoplepower_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631A7AD1248B376600D86CFF /* Peoplepower_DemoTests.m */; };
+		631A7ADD248B376600D86CFF /* Peoplepower_DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631A7ADC248B376600D86CFF /* Peoplepower_DemoUITests.m */; };
+		631A7AEB248B377D00D86CFF /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 631A7AEA248B377D00D86CFF /* Cartfile */; };
+		631A7AFC248B3AB900D86CFF /* Peoplepower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631A7AF2248B3AB800D86CFF /* Peoplepower.framework */; };
+		631A7B05248B3E5E00D86CFF /* AFNetworking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 631A7AF1248B3AB800D86CFF /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		631A7B06248B3E5E00D86CFF /* KissXML.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 631A7AEE248B3AB800D86CFF /* KissXML.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		631A7B07248B3E5E00D86CFF /* OHHTTPStubs.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 631A7AF0248B3AB800D86CFF /* OHHTTPStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		631A7B09248B3E5E00D86CFF /* SocketRocket.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 631A7AEF248B3AB800D86CFF /* SocketRocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		631A7B0A248B3E5E00D86CFF /* UICKeyChainStore.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 631A7AF3248B3AB800D86CFF /* UICKeyChainStore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		631A7ACE248B376600D86CFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 631A7AAA248B376500D86CFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 631A7AB1248B376500D86CFF;
+			remoteInfo = "Peoplepower Demo";
+		};
+		631A7AD9248B376600D86CFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 631A7AAA248B376500D86CFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 631A7AB1248B376500D86CFF;
+			remoteInfo = "Peoplepower Demo";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		631A7B04248B3E4E00D86CFF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				631A7B05248B3E5E00D86CFF /* AFNetworking.framework in CopyFiles */,
+				631A7B06248B3E5E00D86CFF /* KissXML.framework in CopyFiles */,
+				631A7B07248B3E5E00D86CFF /* OHHTTPStubs.framework in CopyFiles */,
+				631A7B09248B3E5E00D86CFF /* SocketRocket.framework in CopyFiles */,
+				631A7B0A248B3E5E00D86CFF /* UICKeyChainStore.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		631A7AB2248B376500D86CFF /* Peoplepower Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Peoplepower Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		631A7AB5248B376500D86CFF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		631A7AB6248B376500D86CFF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		631A7AB8248B376500D86CFF /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		631A7AB9248B376500D86CFF /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		631A7ABB248B376500D86CFF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		631A7ABC248B376500D86CFF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		631A7ABF248B376500D86CFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		631A7AC1248B376600D86CFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		631A7AC4248B376600D86CFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		631A7AC6248B376600D86CFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		631A7AC7248B376600D86CFF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		631A7ACD248B376600D86CFF /* Peoplepower DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Peoplepower DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		631A7AD1248B376600D86CFF /* Peoplepower_DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Peoplepower_DemoTests.m; sourceTree = "<group>"; };
+		631A7AD3248B376600D86CFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		631A7AD8248B376600D86CFF /* Peoplepower DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Peoplepower DemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		631A7ADC248B376600D86CFF /* Peoplepower_DemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Peoplepower_DemoUITests.m; sourceTree = "<group>"; };
+		631A7ADE248B376600D86CFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		631A7AEA248B377D00D86CFF /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		631A7AEE248B3AB800D86CFF /* KissXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KissXML.framework; path = Carthage/Build/iOS/KissXML.framework; sourceTree = "<group>"; };
+		631A7AEF248B3AB800D86CFF /* SocketRocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SocketRocket.framework; path = Carthage/Build/iOS/SocketRocket.framework; sourceTree = "<group>"; };
+		631A7AF0248B3AB800D86CFF /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
+		631A7AF1248B3AB800D86CFF /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
+		631A7AF2248B3AB800D86CFF /* Peoplepower.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Peoplepower.framework; path = Carthage/Build/iOS/Peoplepower.framework; sourceTree = "<group>"; };
+		631A7AF3248B3AB800D86CFF /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICKeyChainStore.framework; path = Carthage/Build/iOS/UICKeyChainStore.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		631A7AAF248B376500D86CFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				631A7AFC248B3AB900D86CFF /* Peoplepower.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		631A7ACA248B376600D86CFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		631A7AD5248B376600D86CFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		631A7AA9248B376500D86CFF = {
+			isa = PBXGroup;
+			children = (
+				631A7AEA248B377D00D86CFF /* Cartfile */,
+				631A7AB4248B376500D86CFF /* Peoplepower Demo */,
+				631A7AD0248B376600D86CFF /* Peoplepower DemoTests */,
+				631A7ADB248B376600D86CFF /* Peoplepower DemoUITests */,
+				631A7AB3248B376500D86CFF /* Products */,
+				631A7AED248B3AB800D86CFF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		631A7AB3248B376500D86CFF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				631A7AB2248B376500D86CFF /* Peoplepower Demo.app */,
+				631A7ACD248B376600D86CFF /* Peoplepower DemoTests.xctest */,
+				631A7AD8248B376600D86CFF /* Peoplepower DemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		631A7AB4248B376500D86CFF /* Peoplepower Demo */ = {
+			isa = PBXGroup;
+			children = (
+				631A7AB5248B376500D86CFF /* AppDelegate.h */,
+				631A7AB6248B376500D86CFF /* AppDelegate.m */,
+				631A7AB8248B376500D86CFF /* SceneDelegate.h */,
+				631A7AB9248B376500D86CFF /* SceneDelegate.m */,
+				631A7ABB248B376500D86CFF /* ViewController.h */,
+				631A7ABC248B376500D86CFF /* ViewController.m */,
+				631A7ABE248B376500D86CFF /* Main.storyboard */,
+				631A7AC1248B376600D86CFF /* Assets.xcassets */,
+				631A7AC3248B376600D86CFF /* LaunchScreen.storyboard */,
+				631A7AC6248B376600D86CFF /* Info.plist */,
+				631A7AC7248B376600D86CFF /* main.m */,
+			);
+			path = "Peoplepower Demo";
+			sourceTree = "<group>";
+		};
+		631A7AD0248B376600D86CFF /* Peoplepower DemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				631A7AD1248B376600D86CFF /* Peoplepower_DemoTests.m */,
+				631A7AD3248B376600D86CFF /* Info.plist */,
+			);
+			path = "Peoplepower DemoTests";
+			sourceTree = "<group>";
+		};
+		631A7ADB248B376600D86CFF /* Peoplepower DemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				631A7ADC248B376600D86CFF /* Peoplepower_DemoUITests.m */,
+				631A7ADE248B376600D86CFF /* Info.plist */,
+			);
+			path = "Peoplepower DemoUITests";
+			sourceTree = "<group>";
+		};
+		631A7AED248B3AB800D86CFF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				631A7AF1248B3AB800D86CFF /* AFNetworking.framework */,
+				631A7AEE248B3AB800D86CFF /* KissXML.framework */,
+				631A7AF0248B3AB800D86CFF /* OHHTTPStubs.framework */,
+				631A7AF2248B3AB800D86CFF /* Peoplepower.framework */,
+				631A7AEF248B3AB800D86CFF /* SocketRocket.framework */,
+				631A7AF3248B3AB800D86CFF /* UICKeyChainStore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		631A7AB1248B376500D86CFF /* Peoplepower Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 631A7AE1248B376600D86CFF /* Build configuration list for PBXNativeTarget "Peoplepower Demo" */;
+			buildPhases = (
+				631A7AAE248B376500D86CFF /* Sources */,
+				631A7AAF248B376500D86CFF /* Frameworks */,
+				631A7AB0248B376500D86CFF /* Resources */,
+				631A7AEC248B39EE00D86CFF /* Carthage */,
+				631A7B04248B3E4E00D86CFF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Peoplepower Demo";
+			productName = "Peoplepower Demo";
+			productReference = 631A7AB2248B376500D86CFF /* Peoplepower Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		631A7ACC248B376600D86CFF /* Peoplepower DemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 631A7AE4248B376600D86CFF /* Build configuration list for PBXNativeTarget "Peoplepower DemoTests" */;
+			buildPhases = (
+				631A7AC9248B376600D86CFF /* Sources */,
+				631A7ACA248B376600D86CFF /* Frameworks */,
+				631A7ACB248B376600D86CFF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				631A7ACF248B376600D86CFF /* PBXTargetDependency */,
+			);
+			name = "Peoplepower DemoTests";
+			productName = "Peoplepower DemoTests";
+			productReference = 631A7ACD248B376600D86CFF /* Peoplepower DemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		631A7AD7248B376600D86CFF /* Peoplepower DemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 631A7AE7248B376600D86CFF /* Build configuration list for PBXNativeTarget "Peoplepower DemoUITests" */;
+			buildPhases = (
+				631A7AD4248B376600D86CFF /* Sources */,
+				631A7AD5248B376600D86CFF /* Frameworks */,
+				631A7AD6248B376600D86CFF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				631A7ADA248B376600D86CFF /* PBXTargetDependency */,
+			);
+			name = "Peoplepower DemoUITests";
+			productName = "Peoplepower DemoUITests";
+			productReference = 631A7AD8248B376600D86CFF /* Peoplepower DemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		631A7AAA248B376500D86CFF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = peoplepowerco;
+				TargetAttributes = {
+					631A7AB1248B376500D86CFF = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					631A7ACC248B376600D86CFF = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 631A7AB1248B376500D86CFF;
+					};
+					631A7AD7248B376600D86CFF = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 631A7AB1248B376500D86CFF;
+					};
+				};
+			};
+			buildConfigurationList = 631A7AAD248B376500D86CFF /* Build configuration list for PBXProject "Peoplepower Demo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 631A7AA9248B376500D86CFF;
+			productRefGroup = 631A7AB3248B376500D86CFF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				631A7AB1248B376500D86CFF /* Peoplepower Demo */,
+				631A7ACC248B376600D86CFF /* Peoplepower DemoTests */,
+				631A7AD7248B376600D86CFF /* Peoplepower DemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		631A7AB0248B376500D86CFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				631A7AC5248B376600D86CFF /* LaunchScreen.storyboard in Resources */,
+				631A7AC2248B376600D86CFF /* Assets.xcassets in Resources */,
+				631A7AEB248B377D00D86CFF /* Cartfile in Resources */,
+				631A7AC0248B376500D86CFF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		631A7ACB248B376600D86CFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		631A7AD6248B376600D86CFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		631A7AEC248B39EE00D86CFF /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/input.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = Carthage;
+			outputFileListPaths = (
+				"$(SRCROOT)/output.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		631A7AAE248B376500D86CFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				631A7ABD248B376500D86CFF /* ViewController.m in Sources */,
+				631A7AB7248B376500D86CFF /* AppDelegate.m in Sources */,
+				631A7AC8248B376600D86CFF /* main.m in Sources */,
+				631A7ABA248B376500D86CFF /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		631A7AC9248B376600D86CFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				631A7AD2248B376600D86CFF /* Peoplepower_DemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		631A7AD4248B376600D86CFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				631A7ADD248B376600D86CFF /* Peoplepower_DemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		631A7ACF248B376600D86CFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 631A7AB1248B376500D86CFF /* Peoplepower Demo */;
+			targetProxy = 631A7ACE248B376600D86CFF /* PBXContainerItemProxy */;
+		};
+		631A7ADA248B376600D86CFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 631A7AB1248B376500D86CFF /* Peoplepower Demo */;
+			targetProxy = 631A7AD9248B376600D86CFF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		631A7ABE248B376500D86CFF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				631A7ABF248B376500D86CFF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		631A7AC3248B376600D86CFF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				631A7AC4248B376600D86CFF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		631A7ADF248B376600D86CFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		631A7AE0248B376600D86CFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		631A7AE2248B376600D86CFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EAWY6XBUH2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "Peoplepower Demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.peoplepowerco.lib.Peoplepower-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		631A7AE3248B376600D86CFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EAWY6XBUH2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "Peoplepower Demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.peoplepowerco.lib.Peoplepower-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		631A7AE5248B376600D86CFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EAWY6XBUH2;
+				INFOPLIST_FILE = "Peoplepower DemoTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.peoplepowerco.lib.Peoplepower-DemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Peoplepower Demo.app/Peoplepower Demo";
+			};
+			name = Debug;
+		};
+		631A7AE6248B376600D86CFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EAWY6XBUH2;
+				INFOPLIST_FILE = "Peoplepower DemoTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.peoplepowerco.lib.Peoplepower-DemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Peoplepower Demo.app/Peoplepower Demo";
+			};
+			name = Release;
+		};
+		631A7AE8248B376600D86CFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EAWY6XBUH2;
+				INFOPLIST_FILE = "Peoplepower DemoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.peoplepowerco.lib.Peoplepower-DemoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Peoplepower Demo";
+			};
+			name = Debug;
+		};
+		631A7AE9248B376600D86CFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EAWY6XBUH2;
+				INFOPLIST_FILE = "Peoplepower DemoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.peoplepowerco.lib.Peoplepower-DemoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Peoplepower Demo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		631A7AAD248B376500D86CFF /* Build configuration list for PBXProject "Peoplepower Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				631A7ADF248B376600D86CFF /* Debug */,
+				631A7AE0248B376600D86CFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		631A7AE1248B376600D86CFF /* Build configuration list for PBXNativeTarget "Peoplepower Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				631A7AE2248B376600D86CFF /* Debug */,
+				631A7AE3248B376600D86CFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		631A7AE4248B376600D86CFF /* Build configuration list for PBXNativeTarget "Peoplepower DemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				631A7AE5248B376600D86CFF /* Debug */,
+				631A7AE6248B376600D86CFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		631A7AE7248B376600D86CFF /* Build configuration list for PBXNativeTarget "Peoplepower DemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				631A7AE8248B376600D86CFF /* Debug */,
+				631A7AE9248B376600D86CFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 631A7AAA248B376500D86CFF /* Project object */;
+}

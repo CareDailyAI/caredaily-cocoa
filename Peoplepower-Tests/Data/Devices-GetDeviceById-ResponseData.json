@@ -1,0 +1,72 @@
+{
+  "resultCode": 0,
+  "device": {
+    "id": "021DE57B-55F0-4FC0-B0AC-9FCB9AF8A001::71",
+    "type": 24,
+    "goalId": 123,
+    "typeCategory": 6,
+    "locationId": 70,
+    "desc": "My camera",
+    "lastDataReceivedDate": "2015-04-25T02:29:20-04:00",
+    "lastDataReceivedDateMs": 1429943360000,
+    "lastMeasureDate": "2015-04-25T02:29:20-04:00",
+    "lastMeasureDateMs": 1429943360000,
+    "lastConnectedDate": "2015-04-25T02:29:20-04:00",
+    "lastConnectedDateMs": 1429943360000,
+    "connected": true,
+    "newDevice": false,
+    "typeAttributes": [
+      {
+        "name": "deviceListIcon",
+        "value": "camera"
+      },
+      {
+        "name": "deviceListParameterUnits",
+        "value": "int,int,int,int"
+      },
+      {
+        "name": "deviceListParameters",
+        "value": "motionStatus,accessCameraSettings,ppc.robotConnected,ppc.alarm"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "accessCameraSettings",
+        "value": "1",
+        "lastUpdateTime": "2015-02-08T15:41:46-05:00",
+        "lastUpdateTimeMs": 1423428106000
+      },
+      {
+        "name": "motionStatus",
+        "value": "0",
+        "lastUpdateTime": "2015-02-08T15:41:46-05:00",
+        "lastUpdateTimeMs": 1423428106000
+      },
+      {
+        "name": "ppc.robotConnected",
+        "value": "0",
+        "lastUpdateTime": "2015-02-08T15:41:46-05:00",
+        "lastUpdateTimeMs": 1423428106000
+      }
+    ]
+  },
+  "location": {
+    "id": 70,
+    "name": "My location",
+    "startDate": "2013-03-22T17:27:28-04:00",
+    "startDateMs": 1363987648000,
+    "event": "HOME"
+  },
+  "tags": [
+    {
+      "tag": "hvac",
+      "organizationId": 123,
+      "organizationName": "PPC"
+    },
+    {
+      "tag": "efficient",
+      "appId": 45,
+      "appName": "HVac monitor"
+    }
+  ]
+}

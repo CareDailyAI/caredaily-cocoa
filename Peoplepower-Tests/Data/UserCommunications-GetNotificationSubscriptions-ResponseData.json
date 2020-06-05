@@ -1,0 +1,45 @@
+{
+  "resultCode": 0,
+  "subscriptions": [
+    {
+      "type": 0,
+      "locationId": 0,
+      "email": true,
+      "push": true,
+      "sms": false,
+      "name": "All",
+      "emailPeriod": 0,
+      "pushPeriod": 0
+    },
+    {
+      "type": 6,
+      "locationId": 0,
+      "email": false,
+      "push": false,
+      "sms": false,
+      "name": "Registration follow up",
+      "emailPeriod": 0,
+      "pushPeriod": 0
+    },
+    {
+      "type": 7,
+      "locationId": 123,
+      "email": true,
+      "push": true,
+      "sms": false,
+      "name": "Device alerts",
+      "emailPeriod": 0,
+      "pushPeriod": 0
+    },
+    {
+      "type": 8,
+      "locationId": 123,
+      "email": true,
+      "push": true,
+      "sms": false,
+      "name": "Analytics and external",
+      "emailPeriod": 0,
+      "pushPeriod": 0
+    }
+  ]
+}

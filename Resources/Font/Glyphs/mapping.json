@@ -1,0 +1,405 @@
+{
+  "fa-version": "5.7.2",
+  "mapping": [
+    {
+      "old": "wifi",
+      "new": "wifi",
+      "iconfont": "fas"
+    },
+    {
+      "old": "volume",
+      "new": "volume-up",
+      "iconfont": "far"
+    },
+    {
+      "old": "video",
+      "new": "film",
+      "iconfont": "far"
+    },
+    {
+      "old": "video-allow",
+      "new": "video",
+      "iconfont": "far"
+    },
+    {
+      "old": "valid",
+      "new": "check-circle",
+      "iconfont": "far"
+    },
+    {
+      "old": "timer",
+      "new": "stopwatch",
+      "iconfont": "far"
+    },
+    {
+      "old": "time",
+      "new": "hourglass",
+      "iconfont": "far"
+    },
+    {
+      "old": "terms",
+      "new": "file-alt",
+      "iconfont": "far"
+    },
+    {
+      "old": "store",
+      "new": "shopping-cart",
+      "iconfont": "far"
+    },
+    {
+      "old": "star",
+      "new": "star",
+      "iconfont": "far"
+    },
+    {
+      "old": "share-alerts",
+      "new": "share-alt",
+      "iconfont": "far"
+    },
+    {
+      "old": "siren",
+      "new": "bullhorn",
+      "iconfont": "far"
+    },
+    {
+      "old": "settings",
+      "new": "cog",
+      "iconfont": "far"
+    },
+    {
+      "old": "search",
+      "new": "search",
+      "iconfont": "far"
+    },
+    {
+      "old": "right-arrow",
+      "new": "angle-right",
+      "iconfont": "far"
+    },
+    {
+      "old": "replay",
+      "new": "repeat",
+      "iconfont": "far"
+    },
+    {
+      "old": "recover",
+      "new": "undo",
+      "iconfont": "far"
+    },
+    {
+      "old": "qr-code",
+      "new": "qrcode",
+      "iconfont": "far"
+    },
+    {
+      "old": "picture",
+      "new": "image",
+      "iconfont": "far"
+    },
+    {
+      "old": "password",
+      "new": "key",
+      "iconfont": "far"
+    },
+    {
+      "old": "notification-settings",
+      "new": "exclamation-circle",
+      "iconfont": "far"
+    },
+    {
+      "old": "mic",
+      "new": "microphone",
+      "iconfont": "far"
+    },
+    {
+      "old": "messages",
+      "new": "envelope",
+      "iconfont": "far"
+    },
+    {
+      "old": "lock",
+      "new": "lock",
+      "iconfont": "far"
+    },
+    {
+      "old": "help",
+      "new": "question-circle",
+      "iconfont": "far"
+    },
+    {
+      "old": "groups",
+      "new": "users",
+      "iconfont": "far"
+    },
+    {
+      "old": "flashlight",
+      "new": "bolt",
+      "iconfont": "far"
+    },
+    {
+      "old": "feedback-bug",
+      "new": "bug",
+      "iconfont": "far"
+    },
+    {
+      "old": "device-history",
+      "new": "history",
+      "iconfont": "far"
+    },
+    {
+      "old": "delete",
+      "new": "trash-alt",
+      "iconfont": "far"
+    },
+    {
+      "old": "contacts",
+      "new": "address-book",
+      "iconfont": "far"
+    },
+    {
+      "old": "circle-nofill",
+      "new": "circle",
+      "iconfont": "far"
+    },
+    {
+      "old": "circle-filled",
+      "new": "circle",
+      "iconfont": "fas"
+    },
+    {
+      "old": "checkbox",
+      "new": "square",
+      "iconfont": "far"
+    },
+    {
+      "old": "checkbox-active",
+      "new": "check-square",
+      "iconfont": "far"
+    },
+    {
+      "old": "camera-name",
+      "new": "tag",
+      "iconfont": "far"
+    },
+    {
+      "old": "challenges",
+      "new": "trophy",
+      "iconfont": "far"
+    },
+    {
+      "old": "calendar",
+      "new": "calendar-alt",
+      "iconfont": "far"
+    },
+    {
+      "old": "bullet",
+      "new": "circle",
+      "iconfont": "far"
+    },
+    {
+      "old": "bullet-active",
+      "new": "dot-circle",
+      "iconfont": "far"
+    },
+    {
+      "old": "blocked",
+      "new": "ban",
+      "iconfont": "far"
+    },
+    {
+      "old": "battery",
+      "new": "battery-full",
+      "iconfont": "far"
+    },
+    {
+      "old": "back",
+      "new": "angle-left",
+      "iconfont": "far"
+    },
+    {
+      "old": "automate",
+      "new": "sliders-h",
+      "iconfont": "far"
+    },
+    {
+      "old": "arrow-up",
+      "new": "chevron-double-up",
+      "iconfont": "far"
+    },
+    {
+      "old": "arrow-down",
+      "new": "chevron-double-down",
+      "iconfont": "far"
+    },
+    {
+      "old": "arrow-left",
+      "new": "chevron-double-left",
+      "iconfont": "far"
+    },
+    {
+      "old": "arrow-right",
+      "new": "chevron-double-right",
+      "iconfont": "far"
+    },
+    {
+      "old": "anonymous",
+      "new": "user-secret",
+      "iconfont": "far"
+    },
+    {
+      "old": "alarm",
+      "new": "alarm-clock",
+      "iconfont": "far"
+    },
+    {
+      "old": "admin",
+      "new": "user-md",
+      "iconfont": "far"
+    },
+    {
+      "old": "admin-super",
+      "new": "user-md",
+      "iconfont": "far"
+    },
+    {
+      "old": "admin-system",
+      "new": "user-md",
+      "iconfont": "far"
+    },
+    {
+      "old": "account-info",
+      "new": "address-card",
+      "iconfont": "far"
+    },
+    {
+      "old": "5gb-storage",
+      "new": "cloud-upload",
+      "iconfont": "far"
+    },
+    {
+      "old": "5mb-storage",
+      "new": "cloud",
+      "iconfont": "far"
+    },
+    {
+      "old": "bulb",
+      "new": "lightbulb",
+      "iconfont": "far"
+    },
+    {
+      "old": "camera-generic",
+      "new": "camera",
+      "iconfont": "far"
+    },
+    {
+      "old": "emergency",
+      "new": "ambulance",
+      "iconfont": "far"
+    },
+    {
+      "old": "feedback",
+      "new": "comment-alt",
+      "iconfont": "far"
+    },
+    {
+      "old": "globe",
+      "new": "globe",
+      "iconfont": "far"
+    },
+    {
+      "old": "info",
+      "new": "info-circle",
+      "iconfont": "far"
+    },
+    {
+      "old": "invalid",
+      "new": "times-circle",
+      "iconfont": "far"
+    },
+    {
+      "old": "meter",
+      "new": "tachometer-alt",
+      "iconfont": "far"
+    },
+    {
+      "old": "mode",
+      "new": "map-marker",
+      "iconfont": "far"
+    },
+    {
+      "old": "user",
+      "new": "user-circle",
+      "iconfont": "far"
+    },
+    {
+      "old": "phone",
+      "new": "phone",
+      "iconfont": "far"
+    },
+    {
+      "old": "home",
+      "new": "home",
+      "iconfont": "far"
+    },
+    {
+      "old": "away",
+      "new": "lock-alt",
+      "iconforn": "far"
+    },
+    {
+      "old": "stay",
+      "new": "sleep",
+      "iconfont": "iotr"
+    },
+    {
+      "old": "test",
+      "new": "cogs",
+      "iconfont": "far"
+    },
+    {
+      "old": "call-center",
+      "new": "headset",
+      "iconfont": "far"
+    },
+    {
+      "old": "facebook",
+      "new": "facebook",
+      "iconfont": "far"
+    },
+    {
+      "old": "fingerprint-circle",
+      "new": "fingerprint",
+      "iconfont": "far"
+    },
+    {
+      "old": "leaf",
+      "new": "seedling",
+      "iconfont": "far"
+    },
+    {
+      "old": "sign-out",
+      "new": "sign-out-alt",
+      "iconfont": "far"
+    },
+    {
+      "old": "twitter",
+      "new": "twitter",
+      "iconfont": "far"
+    },
+    {
+      "old": "weather",
+      "new": "wind",
+      "iconfornt": "far"
+    },
+    {
+      "old": "youtube",
+      "new": "youtube",
+      "iconfont": "far"
+    },
+    {
+      "old": "temperature",
+      "new": "thermometer-half",
+      "iconfont": "far"
+    }
+  ]
+}

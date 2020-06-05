@@ -1,0 +1,67 @@
+{
+  "messages": [
+    {
+      "id": 123,
+      "originalMessageId": 100,
+      "creationDate": "2014-07-02T02:11:45-04:00",
+      "creationDateMs": 1404281505000,
+      "sendDate": "2014-07-02T02:11:45-04:00",
+      "sendDateMs": 1404281505000,
+      "read": false,
+      "notReply": false,
+      "email": false,
+      "push": false,
+      "from": {
+        "userId": "1234",
+        "email": "john@mail.com",
+        "firstName": "John",
+        "lastName": "Smith"
+      },
+      "subject": "Subject",
+      "type": 1,
+      "text": "Subject",
+      "challengeId": 123,
+      "challengeParticipantStatus": 7,
+      "recipients": [
+        {
+          "organizationId": 3,
+          "organizationName": "People Power"
+        },
+        {
+          "organizationId": 4,
+          "organizationName": "People Power",
+          "groupId": 1,
+          "groupName": "Developers"
+        },
+        {
+          "userId": "1234",
+          "email": "john@mail.com",
+          "firstName": "John",
+          "lastName": "Smith"
+        },
+        {
+          "organizationId": 5,
+          "organizationName": "Gem Power",
+          "userTag": "mother"
+        },
+        {
+          "organizationId": 6,
+          "organizationName": "Red Sea",
+          "groupId": 2,
+          "groupName": "Divers",
+          "userTag": "female"
+        },
+        {
+          "organizationId": 7,
+          "organizationName": "Night Eaters",
+          "deviceTag": "refrigerator"
+        }
+      ],
+      "parameters": {
+        "key0": "value0",
+        "key1": "value1",
+        "key2": "value2"
+      }
+    }
+  ]
+}

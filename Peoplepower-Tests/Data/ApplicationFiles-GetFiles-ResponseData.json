@@ -1,0 +1,31 @@
+{
+  "resultCode": 0,
+  "tempKey": "UugJtGEXxMfnVyql4N4crIAfqOUlJ",
+  "tempKeyExpire": "2013-07-01T14:54:54-04:00",
+  "files": [
+    {
+      "id": 123,
+      "type": 1,
+      "name": "AVATAR",
+      "size": 34790,
+      "userId": 123,
+      "publicAccess": true
+    },
+    {
+      "id": 124,
+      "type": 2,
+      "name": "MAP",
+      "size": 39190,
+      "locationId": 123,
+      "publicAccess": false
+    },
+    {
+      "id": 125,
+      "type": 3,
+      "name": "INSTALLATION",
+      "size": 39190,
+      "deviceId": "ABC123",
+      "publicAccess": false
+    }
+  ]
+}

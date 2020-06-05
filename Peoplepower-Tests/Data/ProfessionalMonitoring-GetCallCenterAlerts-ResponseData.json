@@ -1,0 +1,20 @@
+{
+  "resultCode": 0,
+  "callCenterAlerts": [
+    {
+      "alertDate": "2015-09-01T18:00:00Z",
+      "alertDateMs": 1441130400000,
+      "alertStatus": 3,
+      "signalType": "E130",
+      "signalMessage": "Motion detected",
+      "alertSourceType": 1,
+      "device": {
+        "id": "021DE57B-55F0-4FC0-B0AC-9FCB9AF8A001::71",
+        "type": 24,
+        "goalId": 123,
+        "typeCategory": 6,
+        "desc": "My camera"
+      }
+    }
+  ]
+}

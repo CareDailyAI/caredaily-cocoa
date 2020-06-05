@@ -1,0 +1,11 @@
+{
+  "resultCode": 0,
+  "deviceId": "globally-unique-device-id",
+  "authToken": "generated device authentication token",
+  "deviceType": 123,
+  "locationId": 456,
+  "exist": false,
+  "host": "esp.peoplepowerco.com",
+  "port": 8443,
+  "useSSL": true
+}

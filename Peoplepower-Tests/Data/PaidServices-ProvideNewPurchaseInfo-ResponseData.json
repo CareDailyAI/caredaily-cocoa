@@ -1,0 +1,29 @@
+{
+    "resultCode": 0,
+    "subscription":
+    {
+        "userPlanId": 12344,
+        "plan": {
+            "id": 3,
+            "name": "Presence Family",
+            "desc": "Presence Family"
+        },
+        "locationId": 123,
+        "userId": 456,
+        "type": 3,
+        "paymentType": 4,
+        "status": 0,
+        "issueDate": "2020-02-20T00:00:00-05:00",
+        "issueDateMs": 1386910800000,
+        "startDate": "2020-02-2000:00:00-05:00",
+        "startDateMs": 1386910800000,
+        "endDate": "2020-03-20T00:00:00-05:00",
+        "endDateMs": 1893474000000,
+        "free": false,
+        "gatewayId": "123456:78934@ppc",
+        "priceId": 10,
+        "subscriptionId": "34578943",
+        "sandbox": false,
+        "appName": "presencefamily"
+    }
+}

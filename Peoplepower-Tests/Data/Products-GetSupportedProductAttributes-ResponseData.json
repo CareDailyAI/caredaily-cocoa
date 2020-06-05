@@ -1,0 +1,428 @@
+{
+  "resultCode": 0,
+  "deviceTypeAttributes": [
+    {
+      "name": "defaultDescription",
+      "desc": "What would you like the default name of this device to be when a user adds it?",
+      "extended": false
+    },
+    {
+      "name": "vendorName",
+      "desc": "Who makes it? This is for informational purposes only.",
+      "extended": false
+    },
+    {
+      "name": "category",
+      "desc": "What category does this thing belong in? This helps organize the product in an app.",
+      "defaultValue": "",
+      "extended": false,
+      "options": [
+        {
+          "id": "",
+          "value": "No category"
+        },
+        {
+          "id": "1",
+          "value": "Whole House Energy Meters"
+        },
+        {
+          "id": "2",
+          "value": "Smart Plug"
+        },
+        {
+          "id": "3",
+          "value": "Energy Generation Meters"
+        },
+        {
+          "id": "4",
+          "value": "Thermostats"
+        },
+        {
+          "id": "1000",
+          "value": "Admin tools"
+        },
+        {
+          "id": "2000",
+          "value": "Alarms"
+        },
+        {
+          "id": "3000",
+          "value": "Analytics"
+        },
+        {
+          "id": "4000",
+          "value": "Appliances"
+        },
+        {
+          "id": "5000",
+          "value": "Audio"
+        },
+        {
+          "id": "6000",
+          "value": "Cameras"
+        },
+        {
+          "id": "7000",
+          "value": "Climate Control"
+        },
+        {
+          "id": "8000",
+          "value": "Displays"
+        },
+        {
+          "id": "9000",
+          "value": "Environmental"
+        },
+        {
+          "id": "10000",
+          "value": "Health"
+        },
+        {
+          "id": "11000",
+          "value": "Lighting"
+        },
+        {
+          "id": "12000",
+          "value": "Locks"
+        },
+        {
+          "id": "13000",
+          "value": "Media"
+        },
+        {
+          "id": "14000",
+          "value": "Energy Meters"
+        },
+        {
+          "id": "15000",
+          "value": "Perimeter Monitoring"
+        },
+        {
+          "id": "16000",
+          "value": "Remote Controls"
+        },
+        {
+          "id": "17000",
+          "value": "Robotics"
+        },
+        {
+          "id": "18000",
+          "value": "Routers & Gateways"
+        },
+        {
+          "id": "19000",
+          "value": "Security"
+        },
+        {
+          "id": "20000",
+          "value": "Sensors"
+        },
+        {
+          "id": "21000",
+          "value": "Shades"
+        },
+        {
+          "id": "22000",
+          "value": "Social"
+        },
+        {
+          "id": "23000",
+          "value": "Switches"
+        },
+        {
+          "id": "24000",
+          "value": "Toys"
+        },
+        {
+          "id": "25000",
+          "value": "Transportation"
+        },
+        {
+          "id": "26000",
+          "value": "Videos"
+        },
+        {
+          "id": "27000",
+          "value": "Water"
+        }
+      ]
+    },
+    {
+      "name": "deviceIoProtocol",
+      "desc": "Will this thing connect directly to Presto server over the Internet? This helps us optimize Presto.",
+      "defaultValue": "",
+      "extended": false,
+      "options": [
+        {
+          "id": "",
+          "value": "No"
+        },
+        {
+          "id": "1",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "name": "offlineTimeOut",
+      "desc": "How long, in seconds, should we wait for a measurement before declaring the thing offline? This helps us know when the device is disconnected.",
+      "extended": false
+    },
+    {
+      "name": "paramUpdateInterval",
+      "desc": "What's the fastest interval, in seconds, that this thing is expected to upload periodic measurements? This helps us optimize Presto.",
+      "extended": false
+    },
+    {
+      "name": "persistentConnection",
+      "desc": "Will this thing connect to Presto using a persistent GET connection, to receive near-instantaneous commands? If not, we'll optimize by turning it off.",
+      "defaultValue": "",
+      "extended": false,
+      "options": [
+        {
+          "id": "",
+          "value": "No"
+        },
+        {
+          "id": "1",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "name": "commandChannel",
+      "desc": "Will this thing accept commands through persistent connection? This helps Presto know when it's OK to send commands.",
+      "defaultValue": "",
+      "extended": false,
+      "options": [
+        {
+          "id": "",
+          "value": "No"
+        },
+        {
+          "id": "1",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "name": "commandResponse",
+      "desc": "If it accepts commands, can we send commands back to this thing in a response to a measurement? This helps Presto know when it's OK to send commands.",
+      "defaultValue": "",
+      "extended": false,
+      "options": [
+        {
+          "id": "",
+          "value": "No"
+        },
+        {
+          "id": "1",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "name": "commandStatus",
+      "desc": "If this thing accepts commands, can we expect that it will properly return the status of those executed commands to Presto? If not, Presto won't keep retrying to deliver commands.",
+      "defaultValue": "",
+      "extended": false,
+      "options": [
+        {
+          "id": "",
+          "value": "No"
+        },
+        {
+          "id": "1",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "name": "codePrefix",
+      "desc": "If your product is QR-code friendly and you'd like to use a unique prefix at the front of your device ID's to map them to this device type in Presto, declare your unique prefix here. For example, if your unique prefix is 'HEY1-' then your device ID's should take on the format 'HEY1-<mac_address_here>'. You can map multiple prefixes to this device type with a comma, for example: 'PF0-,PF1-,PF2-'. See the document 'QR-code ready Device IDs' for more details.",
+      "extended": false
+    },
+    {
+      "name": "contTimeout",
+      "desc": "How long, in seconds, should we wait for a measurement before replying the CONT status, if did not receive measures? This helps to control data upload timeout.",
+      "extended": true
+    },
+    {
+      "name": "maxCommandsPerResponse",
+      "desc": "If this thing accepts commands, is there a limit to the maximum number of commands this device can receive at once? If so, type in the maximum number of commands here. This is useful for memory-constrained devices, and will prevent Presto from sending too many commands at once.",
+      "extended": true
+    },
+    {
+      "name": "commandTimeout",
+      "desc": "If this thing accepts commands and we can't deliver a command because it's offline or not responding, how many seconds should Presto keep retrying?",
+      "extended": true
+    },
+    {
+      "name": "commandGetStrategy",
+      "desc": "Any preference on what order we should deliver commands to this thing? If you have no idea, just leave it at the default behavior.",
+      "defaultValue": "",
+      "extended": true,
+      "options": [
+        {
+          "id": "",
+          "value": "Give me the default behavior"
+        },
+        {
+          "id": "1",
+          "value": "Give me the oldest command"
+        },
+        {
+          "id": "2",
+          "value": "Wait for the next command after the newest command received"
+        },
+        {
+          "id": "3",
+          "value": "Give me the newest command"
+        }
+      ]
+    },
+    {
+      "name": "indexes",
+      "desc": "If this thing uses index numbers/letters for measurement parameters (like an array), please provide a comma-separated list of the index numbers/letters you plan to use. For example, a 4-socket power strip might use these index numbers to identify each socket's parameters: 0,1,2,3",
+      "extended": true
+    },
+    {
+      "name": "controlIndexes",
+      "desc": "If this thing uses index numbers/letters for command parameters (like an array), please provide a comma-separated list of the index numbers/letters you plan to use. For example, a 4-socket power strip might use these index numbers to control individual sockets: 0,1,2,3",
+      "extended": true
+    },
+    {
+      "name": "streamingConnection",
+      "desc": "Does this thing need a websocket connection to Presto, to support streaming? If not, we'll optimize by leaving it off.",
+      "defaultValue": "",
+      "extended": true,
+      "options": [
+        {
+          "id": "",
+          "value": "No"
+        },
+        {
+          "id": "1",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "name": "energyAdjustment",
+      "desc": "If this is a power/energy meter, do we need to apply an energy adjustment? (Leave this blank if you don't know)",
+      "defaultValue": "",
+      "extended": true,
+      "options": [
+        {
+          "id": "",
+          "value": "No adjustment"
+        },
+        {
+          "id": "1",
+          "value": "Positive adjustment"
+        },
+        {
+          "id": "2",
+          "value": "Double adjustment"
+        },
+        {
+          "id": "3",
+          "value": "Negative adjustment"
+        }
+      ]
+    },
+    {
+      "name": "generateEnergy",
+      "desc": "Does this thing need to calculate energy usage values from power?",
+      "defaultValue": "",
+      "extended": true,
+      "options": [
+        {
+          "id": "",
+          "value": "No"
+        },
+        {
+          "id": "1",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "name": "generateEnergyTimeout",
+      "desc": "If this thing requires to generate energy from power, when should we stop doing it in seconds should after the device becomes offline?",
+      "extended": true
+    },
+    {
+      "name": "generatePower",
+      "desc": "Does this thing need to calculate average power values from energy usage?",
+      "defaultValue": "",
+      "extended": true,
+      "options": [
+        {
+          "id": "",
+          "value": "No"
+        },
+        {
+          "id": "1",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "name": "billing",
+      "desc": "If this is a power/energy meter, can we use any of its energy measurements to calculate or break down the total electricity bill?",
+      "defaultValue": "",
+      "extended": true,
+      "options": [
+        {
+          "id": "",
+          "value": "No"
+        },
+        {
+          "id": "1",
+          "value": "Only unindexed energy can be used"
+        },
+        {
+          "id": "2",
+          "value": "Only indexed energy can be used"
+        },
+        {
+          "id": "3",
+          "value": "All energy values can be used"
+        }
+      ]
+    },
+    {
+      "name": "deferredMeter",
+      "desc": "If this is a power/energy meter, does the data from this meter comes with a significant delay? If so, we'll also delay tools such as bill generation and other energy analytics.",
+      "defaultValue": "",
+      "extended": true,
+      "options": [
+        {
+          "id": "",
+          "value": "No"
+        },
+        {
+          "id": "1",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "name": "calculateCharges",
+      "desc": "If this is a power/energy meter, should we calculate charges for energy usage in accordance with the user's utility bill pricing model?",
+      "defaultValue": "",
+      "extended": true,
+      "options": [
+        {
+          "id": "",
+          "value": "No"
+        },
+        {
+          "id": "1",
+          "value": "Yes"
+        }
+      ]
+    }
+  ]
+}

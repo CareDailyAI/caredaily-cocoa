@@ -1,0 +1,57 @@
+{
+  "resultCode": 0,
+  "usages": [
+    {
+      "startDate": "2014-10-20T10:00:00-07:00",
+      "startDateMs": 1413824400000,
+      "endDate": "2014-10-20T11:00:00-07:00",
+      "endDateMs": 1413828000000,
+      "energy": [
+        {
+          "index": "A",
+          "value": "0.300"
+        },
+        {
+          "index": "B",
+          "value": "0.500"
+        }
+      ],
+      "cost": [
+        {
+          "index": "A",
+          "value": "0.4000"
+        },
+        {
+          "index": "B",
+          "value": "0.6000"
+        }
+      ]
+    },
+    {
+      "startDate": "2014-10-20T14:00:00-07:00",
+      "startDateMs": 1413838800000,
+      "endDate": "2014-10-20T15:00:00-07:00",
+      "endDateMs": 1413842400000,
+      "energy": [
+        {
+          "index": "B",
+          "value": "0.063"
+        },
+        {
+          "index": "A",
+          "value": "0.037"
+        }
+      ],
+      "cost": [
+        {
+          "index": "B",
+          "value": "0.0750"
+        },
+        {
+          "index": "A",
+          "value": "0.0500"
+        }
+      ]
+    }
+  ]
+}

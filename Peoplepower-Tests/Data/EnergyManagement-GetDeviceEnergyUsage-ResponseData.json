@@ -1,0 +1,18 @@
+{
+  "resultCode": 0,
+  "power": {
+    "amountPerHour": "0.8260",
+    "watts": "8260",
+    "currentRate": "0.1000",
+    "lastUpdateDate": "2014-06-21T22:48:35-07:00",
+    "lastUpdateDateMs": 1403416115000
+  },
+  "energy": {
+    "amount": "211.60",
+    "kwh": "2116.000",
+    "amountYTD": "1643.20",
+    "kwhYTD": "16644.000",
+    "amountDTD": "0.00",
+    "kwhDTD": "0.000"
+  }
+}

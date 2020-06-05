@@ -1,0 +1,31 @@
+{
+  "resultCode": 0,
+  "devices": [
+    {
+      "id": "ea5101a8005f-10031-470",
+      "lastDataReceivedDate": "2014-06-20T12:47:11-07:00",
+      "lastDataReceivedDateMs": 1403293631000,
+      "lastMeasureDate": "2014-06-20T12:47:11-07:00",
+      "lastMeasureDateMs": 1403293631000,
+      "parameters": [
+        {
+          "name": "firmware",
+          "value": "0.5.4",
+          "lastUpdateTime": "2014-06-20T12:47:11-07:00",
+          "lastUpdateTimeMs": 1403293631000
+        },
+        {
+          "name": "progress",
+          "value": "100",
+          "lastUpdateTime": "2014-06-20T12:47:11-07:00",
+          "lastUpdateTimeMs": 1403293631000
+        },
+        {
+          "name": "status",
+          "lastUpdateTime": "2014-06-20T12:47:11-07:00",
+          "lastUpdateTimeMs": 1403293631000
+        }
+      ]
+    }
+  ]
+}

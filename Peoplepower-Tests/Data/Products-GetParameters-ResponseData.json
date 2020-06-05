@@ -1,0 +1,50 @@
+{
+  "resultCode": 0,
+  "deviceParams": [
+    {
+      "name": "humidity",
+      "editable": true,
+      "configured": true,
+      "systemUnit": "g/kg",
+      "scale": 3,
+      "adjustment": false,
+      "description": "Absolute humidity is an amount of water vapor, usually discu",
+      "profiled": true,
+      "numeric": false,
+      "displayInfo": {
+        "name": "value"
+      }
+    },
+    {
+      "name": "apiVersion",
+      "editable": true,
+      "configured": false,
+      "systemUnit": "version",
+      "adjustment": false,
+      "profiled": true,
+      "numeric": false
+    },
+    {
+      "name": "power",
+      "editable": true,
+      "configured": false,
+      "systemMultiplier": "1",
+      "systemUnit": "VA",
+      "scale": 3,
+      "adjustment": false,
+      "profiled": true,
+      "numeric": true
+    },
+    {
+      "name": "batteryLevel",
+      "editable": true,
+      "configured": false,
+      "systemMultiplier": "%",
+      "systemUnit": "int",
+      "scale": 0,
+      "adjustment": false,
+      "profiled": true,
+      "numeric": true
+    }
+  ]
+}

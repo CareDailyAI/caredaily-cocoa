@@ -1,0 +1,23 @@
+{
+  "resultCode": 0,
+  "feedbacks": [
+    {
+      "id": 123,
+      "appName": "Presence",
+      "appVersion": "2.0.1",
+      "type": 1,
+      "subject": "Nice feature",
+      "email": "john@mail.com",
+      "deviceId": "ABC123",
+      "deviceModel": "iPhone",
+      "deviceOs": "7.0.4",
+      "productId": 123,
+      "productCategory": 2200,
+      "viewer": "Android Samsung S3",
+      "description": "It would be best if the presence app will be able to ..",
+      "votingCount": 10,
+      "rank": 1,
+      "enabled": true
+    }
+  ]
+}

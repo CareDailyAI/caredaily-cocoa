@@ -1,0 +1,23 @@
+{
+  "resultCode": 0,
+  "properties": [
+    {
+      "name": "color",
+      "value": "white"
+    },
+    {
+      "name": "texture",
+      "value": "smooth"
+    },
+    {
+      "name": "appliance",
+      "index": "0",
+      "value": "TV"
+    },
+    {
+      "name": "appliance",
+      "index": "1",
+      "value": "DVR"
+    }
+  ]
+}

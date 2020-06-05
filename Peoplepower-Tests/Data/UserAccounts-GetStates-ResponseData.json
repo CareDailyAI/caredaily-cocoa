@@ -1,0 +1,13 @@
+{
+  "resultCode": 0,
+  "states": [
+    {
+      "name": "stateName",
+      "value": {
+        "field0": 123,
+        "field1": "AAA"
+      }
+    }
+  ]
+}
+

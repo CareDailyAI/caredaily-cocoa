@@ -1,0 +1,21 @@
+{
+  "resultCode": 0,
+  "notifications": [
+    {
+      "sendDate": "2018-06-12T12:24:48Z",
+      "sendDateMs": 1419137929000,
+      "deliveryType": 1,
+      "notificationType": 7,
+      "locationId": 123,
+      "brand": "presence",
+      "templateName": "alert/motion_detected.vm",
+      "language": "en",
+      "sound": "default",
+      "badge": 1,
+      "sentCount": 3,
+      "sourceType": 6,
+      "sourceId": 1234,
+      "messageText": "Motion detected on your camera"
+    }
+  ]
+}

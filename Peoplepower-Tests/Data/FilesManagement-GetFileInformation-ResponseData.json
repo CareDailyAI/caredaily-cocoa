@@ -1,0 +1,45 @@
+{
+  "resultCode": 0,
+  "tempKey": "UugJtGEXxMfnVyql4N4crIAfqOUlJ",
+  "tempKeyExpire": "2013-07-01T14:54:54-04:00",
+  "tempKeyExpireMs": 1372704894000,
+  "file": {
+    "id": 123,
+    "type": 1,
+    "name": "123.mp4",
+    "thumbnail": false,
+    "viewed": true,
+    "favourite": false,
+    "viewCount": 1,
+    "publicAccess": false,
+    "creationDate": "2013-06-05T16:43:59-07:00",
+    "creationDateMs": 1370475839000,
+    "size": 3479190,
+    "duration": 60,
+    "rotate": 180,
+    "incomplete": false,
+    "device": {
+      "id": "ABC123",
+      "type": 21,
+      "desc": "Living room camera"
+    },
+    "user": {
+      "id": 12345,
+      "firstName": "John",
+      "lastName": "Smith",
+      "email": {
+        "email": "john.smith@gmail.com"
+      }
+    },
+    "tags": [
+      {
+        "tag": "Charlie"
+      },
+      {
+        "tag": "dog",
+        "appId": 45,
+        "appName": "Pets monitor"
+      }
+    ]
+  }
+}

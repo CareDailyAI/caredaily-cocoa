@@ -1,0 +1,57 @@
+{
+  "resultCode": 0,
+  "tempKey": "UugJtGEXxMfnVyql4N4crIAfqOUlJ",
+  "tempKeyExpire": "2013-07-01T14:54:54-04:00",
+  "totalFilesSpace": 10485760,
+  "usedFilesSpace": 1043858,
+  "filesCount": 10,
+  "startDate": "2014-02-01T00:00:00-08:00",
+  "startDateMs": 1391241600000,
+  "endDate": "2014-02-03T00:00:00-08:00",
+  "endDateMs": 1391414400000,
+  "files": [
+    {
+      "id": 123,
+      "type": 1,
+      "name": "123.mp4",
+      "thumbnail": false,
+      "viewed": true,
+      "favourite": false,
+      "viewCount": 1,
+      "publicAccess": false,
+      "creationDate": "2013-06-05T16:43:59-07:00",
+      "creationTime": 1370475839000,
+      "size": 3479190,
+      "duration": 60,
+      "shared": 0,
+      "rotate": 180,
+      "incomplete": false,
+      "device": {
+        "id": "ABC123",
+        "type": 21,
+        "desc": "Living room camera"
+      }
+    },
+    {
+      "id": 124,
+      "type": 2,
+      "name": "124.jpg",
+      "thumbnail": true,
+      "viewed": false,
+      "favourite": false,
+      "viewCount": 2,
+      "publicAccess": false,
+      "creationDate": "2013-06-05T16:43:59-07:00",
+      "creationTime": 1370475839000,
+      "size": 347919,
+      "shared": 0,
+      "rotate": 0,
+      "incomplete": true,
+      "device": {
+        "id": "ABC124",
+        "type": 21,
+        "desc": "Door camera"
+      }
+    }
+  ]
+}

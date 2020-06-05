@@ -1,0 +1,96 @@
+{
+    "resultCode": 0,
+    "keyExpire": "2030-01-01T05:00:00Z",
+    "keyExpireMs": 1893474000000,
+    "keyType": 0,
+    "users": [
+        {
+            "id": 3792,
+            "userName": "test@peoplepowerco.com",
+            "firstName": "test",
+            "lastName": "testnm",
+            "email": {
+                "email": "test@peoplepowerco.com",
+                "verified": false,
+                "status": 1
+            },
+            "phoneType": 1,
+            "smsStatus": 0
+        },
+        {
+            "id": 591929,
+            "userName": "snoooferz2015@gmail.com",
+            "firstName": "Ethan",
+            "lastName": "Will",
+            "email": {
+                "email": "snoooferz2015@gmail.com",
+                "verified": false,
+                "status": 0
+            },
+            "phone": "15555555555",
+            "phoneType": 1,
+            "smsStatus": 0
+        },
+        {
+            "id": 884935,
+            "userName": "apple_myplace@peoplepowerco.com",
+            "firstName": "John",
+            "lastName": "Smith",
+            "email": {
+                "email": "apple_myplace@peoplepowerco.com",
+                "verified": false,
+                "status": 1
+            },
+            "phone": "15555555555",
+            "phoneType": 1,
+            "smsStatus": 0
+        },
+        {
+            "id": 911626,
+            "userName": "alexa_self@peoplepowerco.com",
+            "firstName": "John",
+            "lastName": "Smith",
+            "email": {
+                "email": "alexa_self@peoplepowerco.com",
+                "verified": false,
+                "status": 1
+            },
+            "phone": "15555555555",
+            "phoneType": 1,
+            "smsStatus": 0
+        },
+        {
+            "id": 911627,
+            "userName": "alexa_pro@peoplepowerco.com",
+            "firstName": "John",
+            "lastName": "Smith",
+            "email": {
+                "email": "alexa_pro@peoplepowerco.com",
+                "verified": false,
+                "status": 1
+            },
+            "phone": "15555555555",
+            "phoneType": 1,
+            "smsStatus": 0
+        },
+        {
+            "id": 1049646,
+            "userName": "hhjffg@jhhh.jj",
+            "email": {
+                "email": "hhjffg@jhhh.jj",
+                "verified": false,
+                "status": 1
+            },
+            "phone": "15555555555",
+            "phoneType": 0,
+            "smsStatus": 0
+        },
+        {
+            "id": 1208029,
+            "userName": "15555555555",
+            "phone": "15555555555",
+            "phoneType": 1,
+            "smsStatus": 0
+        }
+    ]
+}

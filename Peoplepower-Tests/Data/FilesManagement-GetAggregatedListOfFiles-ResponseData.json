@@ -1,0 +1,42 @@
+{
+  "resultCode": 0,
+  "totalFilesSpace": 10485760,
+  "usedFilesSpace": 1043858,
+  "filesCount": 36,
+  "startDate": "2014-02-01T00:00:00-08:00",
+  "startDateMs": 1391241600000,
+  "endDate": "2014-02-03T00:00:00-08:00",
+  "endDateMs": 1391414400000,
+  "summaries": [
+    {
+      "date": "2014-02-03T00:00:00-08:00",
+      "dateMs": 1391414400000,
+      "total": 14,
+      "deleted": 0,
+      "size": 7000000,
+      "duration": 70,
+      "viewed": 7,
+      "favourite": 0
+    },
+    {
+      "date": "2014-02-02T00:00:00-08:00",
+      "dateMs": 1391328000000,
+      "total": 12,
+      "deleted": 3,
+      "size": 6000000,
+      "duration": 60,
+      "viewed": 6,
+      "favourite": 2
+    },
+    {
+      "date": "2014-02-01T00:00:00-08:00",
+      "dateMs": 1391241600000,
+      "total": 10,
+      "deleted": 1,
+      "size": 5000000,
+      "duration": 50,
+      "viewed": 5,
+      "favourite": 4
+    }
+  ]
+}

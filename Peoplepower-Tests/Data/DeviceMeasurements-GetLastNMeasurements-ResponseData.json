@@ -1,0 +1,20 @@
+{
+  "resultCode": 0,
+  "readings": [
+    {
+      "deviceId": "ea5101a8005f-10031-470",
+      "timeStamp": "2014-08-01T13:00:00-08:00",
+      "timeStampMs": 1419137929000,
+      "params": [
+        {
+          "name": "status",
+          "value": "Accepting new devices"
+        },
+        {
+          "name": "progress",
+          "value": "100"
+        }
+      ]
+    }
+  ]
+}

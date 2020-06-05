@@ -1,0 +1,19 @@
+{
+  "resultCode": 0,
+  "files": [
+    {
+      "fileId": 12345,
+      "type": 1,
+      "contentType": "video/mp4",
+      "ext": "mp4",
+      "duration": 600,
+      "rotate": 90,
+      "size": 4567890,
+      "thumbnail": true,
+      "m3u8": true,
+      "contentUrl": "https://s3.amazonaws.com/c_bucket/object1?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20180704T220443Z&X-Amz-SignedHeaders=host&X-Amz-Expires=10&X-Amz-Credential=AKIAJPAZD&X-Amz-Signature=af7329c26",
+      "thumbnailUrl": "https://s3.amazonaws.com/t_bucket/object1?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20180704T220443Z&X-Amz-SignedHeaders=host&X-Amz-Expires=10&X-Amz-Credential=AKIAJPAZD&X-Amz-Signature=af7329c26",
+      "m3u8Url": "https://s3.amazonaws.com/m_bucket/object1?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20180704T220443Z&X-Amz-SignedHeaders=host&X-Amz-Expires=10&X-Amz-Credential=AKIAJPAZD&X-Amz-Signature=af7329c26"
+    }
+  ]
+}

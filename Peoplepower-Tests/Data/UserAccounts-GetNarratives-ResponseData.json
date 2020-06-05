@@ -1,0 +1,40 @@
+{
+  "resultCode": 0,
+  "nextMarker": "16611d93630-306b",
+  "narratives": [
+    {
+      "id": 20,
+      "locationId": 1,
+      "narrativeDate": "2018-10-01T03:05:07",
+      "narrativeDateMs": 1537692964000,
+      "creationDate": "2018-10-01T03:05:07",
+      "creationDateMs": 1537692964000,
+      "priority": 3,
+      "status": 0,
+      "icon": "alert.gif",
+      "title": "Water Leak",
+      "description": "Water leak in the bathroom",
+      "target": {
+        "field": "value"
+      },
+      "appInstanceId": 520
+    },
+    {
+      "id": 19,
+      "locationId": 1,
+      "narrativeDate": "2018-10-01T03:05:07",
+      "narrativeDateMs": 1537692964000,
+      "creationDate": "2018-10-01T03:05:07",
+      "creationDateMs": 1537692964000,
+      "priority": 1,
+      "status": 2,
+      "icon": "icon4",
+      "title": "Left the house",
+      "description": "Left the house",
+      "target": {
+        "field": "value"
+      },
+      "appInstanceId": 520
+    }
+  ]
+}

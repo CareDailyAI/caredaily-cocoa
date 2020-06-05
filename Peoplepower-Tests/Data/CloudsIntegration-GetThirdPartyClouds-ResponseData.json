@@ -1,0 +1,17 @@
+{
+  "resultCode": 0,
+  "applications": [
+    {
+      "id": 2,
+      "name": "App name",
+      "microService": false,
+      "icon": "images/app_icon.png"
+    },
+    {
+      "id": 3,
+      "name": "Thermostat data provider",
+      "microService": true,
+      "icon": "images/gb_icon.png"
+    }
+  ]
+}

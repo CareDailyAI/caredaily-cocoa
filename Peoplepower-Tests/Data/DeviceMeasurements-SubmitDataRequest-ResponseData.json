@@ -1,0 +1,8 @@
+{
+  "resultCode": 0,
+  "latency": {
+    "avg": 60000,
+    "min": 30000,
+    "max": 90000
+  }
+}

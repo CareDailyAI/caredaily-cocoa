@@ -1,0 +1,95 @@
+{
+  "resultCode": 0,
+  "countries": [
+    {
+      "id": 1,
+      "name": "United States",
+      "countryCode": "US",
+      "currencyCode": "USD",
+      "currencySymbol": "$",
+      "zipFormat": "^\\d{5}$",
+      "stateName": "State",
+      "zipName": "Zip Code",
+      "preferred": true,
+      "timezones": [
+        {
+          "id": "US/Eastern",
+          "offset": -300,
+          "dst": true,
+          "name": "Eastern Time"
+        },
+        {
+          "id": "US/Central",
+          "offset": -360,
+          "dst": true,
+          "name": "Central Time"
+        },
+        {
+          "id": "US/Alaska",
+          "offset": -540,
+          "dst": true,
+          "name": "Alaska Time"
+        }
+      ],
+      "states": [
+        {
+          "id": 1,
+          "name": "Alabama",
+          "timezoneId": "US/Central",
+          "preferred": false,
+          "abbr": "AL",
+          "code": "01"
+        },
+        {
+          "id": 2,
+          "name": "Alaska",
+          "timezoneId": "US/Alaska",
+          "preferred": true,
+          "abbr": "AK",
+          "code": "02"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Canada",
+      "countryCode": "CA",
+      "currencyCode": "CAD",
+      "currencySymbol": "$",
+      "zipFormat": "^[ABCEGHJKLMNPRSTVXY]{1}\\d{1}[ABCEGHJKLMNPRS-Z]{1}\\d{1}[ABCEGHJKLMNPRS-Z]{1}\\d{1}$",
+      "stateName": "Province",
+      "zipName": "Postal Code",
+      "preferred": false,
+      "timezones": [
+        {
+          "id": "Canada/Mountain",
+          "offset": -420,
+          "dst": true,
+          "name": "Mountain Time"
+        },
+        {
+          "id": "Canada/Pacific",
+          "offset": -480,
+          "dst": true,
+          "name": "Pacific Time"
+        }
+      ],
+      "states": [
+        {
+          "id": 60,
+          "name": "Alberta",
+          "timezoneId": "Canada/Mountain",
+          "preferred": false,
+          "abbr": "AB"
+        },
+        {
+          "id": 57,
+          "name": "British Columbia",
+          "timezoneId": "Canada/Pacific",
+          "preferred": false,
+          "abbr": "BC"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "resultCode": 0,
+  "readings": [
+    {
+      "deviceId": "MON9648",
+      "timeStamp": "2014-12-21T00:58:49-04:00",
+      "timeStampMs": 1419137929000,
+      "params": [
+        {
+          "name": "power",
+          "value": "865"
+        },
+        {
+          "name": "energy",
+          "value": "0.003"
+        }
+      ]
+    },
+    {
+      "deviceId": "MON9648",
+      "timeStamp": "2014-12-21T00:58:49-04:00",
+      "timeStampMs": 1419137929000,
+      "params": [
+        {
+          "name": "energy",
+          "value": "0.004"
+        }
+      ]
+    }
+  ]
+}

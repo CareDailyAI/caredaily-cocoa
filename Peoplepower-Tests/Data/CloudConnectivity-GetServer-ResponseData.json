@@ -1,0 +1,11 @@
+{
+  "resultCode": 0,
+  "server": {
+    "type": "deviceio",
+    "host": "esp.peoplepowerco.com",
+    "port": 8443,
+    "ssl": true,
+    "altPort": 8080,
+    "altSsl": false
+  }
+}

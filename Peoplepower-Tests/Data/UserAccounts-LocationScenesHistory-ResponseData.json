@@ -1,0 +1,26 @@
+{
+  "resultCode": 0,
+  "events": [
+    {
+      "event": "HOME",
+      "eventDate": "2015-10-01T18:00:00Z",
+      "eventDateMs": 1443722400000,
+      "sourceType": 0,
+      "sourceAgent": "Presence/4.0.19 (iPhone; iOS 10.3.3; Scale/2.00)"
+    },
+    {
+      "event": "AWAY",
+      "eventDate": "2015-09-15T18:00:00Z",
+      "eventDateMs": 1442340000000,
+      "sourceType": 1,
+      "comment": "Did not detect motions for one hour"
+    },
+    {
+      "event": "HOME",
+      "eventDate": "2015-09-01T18:00:00Z",
+      "eventDateMs": 1441130400000,
+      "sourceType": 2,
+      "comment": "Recognized a tenant"
+    }
+  ]
+}

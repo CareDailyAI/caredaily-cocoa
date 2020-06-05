@@ -1,0 +1,19 @@
+{
+  "resultCode": 0,
+  "results": [
+    {
+      "type": 1,
+      "key": "Front door history",
+      "url": "https://s3.amazonaws.com/bucket/fileId?X-Amz-Algorithm=AWS4-HMAC-SHA256",
+      "completionDate": "2019-04-08T12:13:14Z",
+      "completionDateMs": 1456537883000,
+      "expiryDate": "2019-04-09T12:13:14Z",
+      "expiryDateMs": 1456557883000,
+      "deviceId": "ABC123",
+      "startDate": "2010-01-01T00:00:00Z",
+      "startDateMs": 1446537883000,
+      "endDate": "2020-01-01T00:00:00Z",
+      "endDateMs": 1646537883000
+    }
+  ]
+}

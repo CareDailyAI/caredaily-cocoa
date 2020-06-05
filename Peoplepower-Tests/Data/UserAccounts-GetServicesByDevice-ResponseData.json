@@ -1,0 +1,21 @@
+{
+  "resultCode": 0,
+  "services": [
+    {
+      "name": "Presence Pro",
+      "amount": 1,
+      "startDate": "2014-05-01T12:00:00Z",
+      "startDateMs": 1398945600000,
+      "endDate": "2014-06-01T12:00:00Z",
+      "endDateMs": 1401624000000
+    },
+    {
+      "name": "DeviceFileSpace",
+      "amount": 2147483648,
+      "startDate": "2014-05-01T12:00:00Z",
+      "startDateMs": 1398945600000,
+      "endDate": "2014-06-01T12:00:00Z",
+      "endDateMs": 1401624000000
+    }
+  ]
+}

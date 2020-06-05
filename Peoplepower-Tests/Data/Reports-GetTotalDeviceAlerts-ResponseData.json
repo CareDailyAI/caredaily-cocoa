@@ -1,0 +1,17 @@
+{
+  "resultCode": 0,
+  "alerts": [
+    {
+      "alertType": "motion",
+      "count": 15000000
+    },
+    {
+      "alertType": "audio",
+      "count": 200000
+    },
+    {
+      "alertType": "reset",
+      "count": 1000
+    }
+  ]
+}

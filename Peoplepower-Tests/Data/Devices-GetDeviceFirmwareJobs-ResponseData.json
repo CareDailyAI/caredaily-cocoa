@@ -1,0 +1,27 @@
+{
+  "resultCode": 0,
+  "jobs": [
+    {
+      "id": 123,
+      "index": "BLE",
+      "firmware": "1.4.5",
+      "currentFirmware": "1.2.3",
+      "status": 2,
+      "forced": false,
+      "url": "https://fw.peoplepowerco.com/update_1_0_10.apk",
+      "checkSum": "391bd1de48e2539ea2a9795365a313046238e2b8c88fd6b8d4fbb113dbf93085",
+      "notificationDate": "2014-06-20T12:47:11-07:00",
+      "notificationDateMs": 1403293631000,
+      "startDate": "2014-06-20T12:47:11-07:00",
+      "startDateMs": 1403293631000,
+      "device": {
+        "id": "GATEWAY_ID",
+        "type": 31,
+        "typeCategory": 18000,
+        "desc": "People Power Gateway",
+        "lastDataReceivedDate": "2014-12-26T02:31:09-05:00",
+        "lastDataReceivedDateMs": 1419579069000
+      }
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "resultCode": 0,
+  "subscriptions": [
+    {
+      "userPlanId": 12344,
+      "plan": {
+        "id": 3,
+        "name": "Pro Video",
+        "desc": "Pro Video service and 2 GB disk space"
+      },
+      "updatePlan": {
+        "id": 4,
+        "name": "Super Pro Video",
+        "desc": "Pro Video service and 20 GB disk space"
+      },
+      "locationId": 123,
+      "userId": 456,
+      "type": 3,
+      "paymentType": 1,
+      "status": 0,
+      "issueDate": "2013-09-13T00:00:00-05:00",
+      "issueDateMs": 1386910800000,
+      "startDate": "2013-12-13T00:00:00-05:00",
+      "startDateMs": 1386910800000,
+      "endDate": "2014-01-03T00:00:00-05:00",
+      "endDateMs": 1893474000000,
+      "free": false,
+      "gatewayId": "com.peoplepowerco.presencepro_1m",
+      "priceId": 10,
+      "subscriptionId": "abc123",
+      "transactionId": "1234567",
+      "sandbox": false,
+      "appName": "presence",
+      "cardMaskedNumber": "1234********5678",
+      "cardExpirationDate": "2017-07-08",
+      "services": [
+        {
+          "name": "DeviceFileSpace",
+          "amount": 7,
+          "resourceType": 1
+        }
+      ],
+      "upgradableTo": [
+        5
+      ]
+    },
+    {
+      "userPlanId": 12345,
+      "plan": {
+        "id": 4,
+        "name": "Pro Security",
+        "desc": "Pro Home Security services"
+      },
+      "locationId": 123,
+      "userId": 456,
+      "type": 1,
+      "paymentType": 0,
+      "status": 1,
+      "issueDate": "2013-12-13T00:00:00-05:00",
+      "issueDateMs": 1386910800000,
+      "startDate": "2013-12-13T00:00:00-05:00",
+      "startDateMs": 1386910800000,
+      "endDate": "2016-12-13T00:00:00-05:00",
+      "endDateMs": 1893474000000,
+      "organizationId": 123,
+      "duration": 1000,
+      "cancelled": true,
+      "cancelTransactionId": "tr12345",
+      "cancelDate": "2014-01-03T00:00:00-05:00",
+      "cancelDateMs": 1893474000000,
+      "services": [
+        {
+          "name": "LocationSMS",
+          "amount": 1,
+          "resourceType": 1
+        }
+      ]
+    }
+  ]
+}

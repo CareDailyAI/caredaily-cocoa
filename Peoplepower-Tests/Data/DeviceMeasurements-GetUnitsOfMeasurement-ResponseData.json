@@ -1,0 +1,513 @@
+{
+  "resultCode": 0,
+  "units": [
+    {
+      "unit": "A",
+      "description": "Current Ampere"
+    },
+    {
+      "unit": "A/A",
+      "description": "Ratio of amperages, A/A"
+    },
+    {
+      "unit": "A/m",
+      "description": "Magnetic field strength (A/m)"
+    },
+    {
+      "unit": "A^2",
+      "description": "Amps squared (A?)"
+    },
+    {
+      "unit": "A^2h",
+      "description": "Ampere-squared hour (A^2h)"
+    },
+    {
+      "unit": "A^2s",
+      "description": "Ampere-squared second (A^2s)"
+    },
+    {
+      "unit": "Ah",
+      "description": "Ampere-hours"
+    },
+    {
+      "unit": "As",
+      "description": "Amp seconds"
+    },
+    {
+      "unit": "B",
+      "description": "Sound pressure level, Bel. Combine with multiplier prefix 'd' to form decibels of Sound Pressure Level 'dB'"
+    },
+    {
+      "unit": "Bm",
+      "description": "Signal Strength, Bel-mW, normalized to 1mW. To form 'dBm', combine 'Bm' with multiplier 'd'."
+    },
+    {
+      "unit": "Bq",
+      "description": "Radioactivity (l/s)"
+    },
+    {
+      "unit": "C",
+      "description": "Electric charge (AS)"
+    },
+    {
+      "unit": "F",
+      "description": "Electric capacitance (C/V)"
+    },
+    {
+      "unit": "Gy",
+      "description": "Absorbed dose (J/kg)"
+    },
+    {
+      "unit": "H",
+      "description": "Electric inductance (Wb/A)"
+    },
+    {
+      "unit": "Hz",
+      "description": "Frequency hertz (1/s)"
+    },
+    {
+      "unit": "Hz/Hz",
+      "description": "Rate of change of frequency"
+    },
+    {
+      "unit": "Hz/s",
+      "description": "Rate of change of frequency"
+    },
+    {
+      "unit": "J",
+      "description": "Energy joule (N m)"
+    },
+    {
+      "unit": "J/K",
+      "description": "Heat capacity"
+    },
+    {
+      "unit": "J/kg",
+      "description": "Joules per kilogram"
+    },
+    {
+      "unit": "J/m^2",
+      "description": "Solar radiation"
+    },
+    {
+      "unit": "K",
+      "description": "Absolute Temperature"
+    },
+    {
+      "unit": "L",
+      "description": "Litre"
+    },
+    {
+      "unit": "L/L",
+      "description": "Concentration, The ratio of the volume of a solute divided by the volume of the solution., L/L"
+    },
+    {
+      "unit": "L/h",
+      "description": "Litres per hour"
+    },
+    {
+      "unit": "L/s",
+      "description": "Volumetric flow rate, Volumetric flow rate, L/s"
+    },
+    {
+      "unit": "Lm",
+      "description": "Luminous flux (cd sr)"
+    },
+    {
+      "unit": "N",
+      "description": "Force newton (kg m/s^2)"
+    },
+    {
+      "unit": "Pa",
+      "description": "Pressure (N/m?)"
+    },
+    {
+      "unit": "PaA",
+      "description": "Pressure, Pascal, absolute pressure, PaA"
+    },
+    {
+      "unit": "PaG",
+      "description": "Pressure, Pascal, gauge pressure, PaG"
+    },
+    {
+      "unit": "Q",
+      "description": "Quantity power"
+    },
+    {
+      "unit": "Qh",
+      "description": "Quantity energy"
+    },
+    {
+      "unit": "Siemens",
+      "description": "Electric conductance (A/V)"
+    },
+    {
+      "unit": "Sv",
+      "description": "Dose equivalent (J/kg)"
+    },
+    {
+      "unit": "T",
+      "description": "Magnetic flux density (Wb/m^2)"
+    },
+    {
+      "unit": "V",
+      "description": "Electric potential (W/A)"
+    },
+    {
+      "unit": "V/Hz",
+      "description": "Magnetic flux"
+    },
+    {
+      "unit": "V/V",
+      "description": "Voltage, Ratio of voltages (e.g. mV/V), V/V"
+    },
+    {
+      "unit": "VA",
+      "description": "Apparant power (VA)"
+    },
+    {
+      "unit": "VAh",
+      "description": "Apparant energy"
+    },
+    {
+      "unit": "VAh/rev",
+      "description": "Kh-Vah, apparent energy metering constant, VAh/rev"
+    },
+    {
+      "unit": "VAr",
+      "description": "Reactive power (Volt Ampere reactive (VI Sin Theta))"
+    },
+    {
+      "unit": "VArh",
+      "description": "Reactive energy"
+    },
+    {
+      "unit": "VArh/rev",
+      "description": "Kh-VArh, reactive energy metering constant, VArh/rev"
+    },
+    {
+      "unit": "V^2",
+      "description": "Volts squared (W^2/A?^2"
+    },
+    {
+      "unit": "V^2h",
+      "description": "Volt-squared hour (V^2h)"
+    },
+    {
+      "unit": "Vs",
+      "description": "Volt seconds (Ws/A)"
+    },
+    {
+      "unit": "W",
+      "description": "Real power (I^2R)"
+    },
+    {
+      "unit": "W/W",
+      "description": "Signal Strength, Ratio of power, W/W"
+    },
+    {
+      "unit": "W/m K",
+      "description": "Thermal conductivity"
+    },
+    {
+      "unit": "W/s",
+      "description": "Watts per second"
+    },
+    {
+      "unit": "Wb",
+      "description": "Magnetic flux (V s)"
+    },
+    {
+      "unit": "Wh",
+      "description": "Real energy"
+    },
+    {
+      "unit": "Wh/m^3",
+      "description": "Energy per volume (Wh/m^3)"
+    },
+    {
+      "unit": "Wh/rev",
+      "description": "Kh-Wh, active energy metering constant, Wh/rev"
+    },
+    {
+      "unit": "boolean",
+      "description": "Boolean (0 or 1)"
+    },
+    {
+      "unit": "btu",
+      "description": "British Thermal Units"
+    },
+    {
+      "unit": "btu/h",
+      "description": "British Thermal Units per hour"
+    },
+    {
+      "unit": "cd",
+      "description": "Luminous intensity"
+    },
+    {
+      "unit": "char",
+      "description": "Number of characters"
+    },
+    {
+      "unit": "char/s",
+      "description": "Data rate"
+    },
+    {
+      "unit": "count",
+      "description": "Counter Value (0, 1, 2, 3, 4, ...)"
+    },
+    {
+      "unit": "deg",
+      "description": "Plane angle"
+    },
+    {
+      "unit": "degrees C",
+      "description": "Relative Temperature in Celsius"
+    },
+    {
+      "unit": "degrees F",
+      "description": "Relative Temperature in Fahrenheit"
+    },
+    {
+      "unit": "degrees Theta",
+      "description": "Phase angle"
+    },
+    {
+      "unit": "ft^3",
+      "description": "Volume, cubic feet"
+    },
+    {
+      "unit": "ft^3/h",
+      "description": "Cubic feet per hour"
+    },
+    {
+      "unit": "g",
+      "description": "Mass"
+    },
+    {
+      "unit": "g/kg",
+      "description": "Ratio of mass"
+    },
+    {
+      "unit": "gM2",
+      "description": "Turbine inertia, gram*meter2 (Combine with multiplier prefix 'k' to form kg*m2.)"
+    },
+    {
+      "unit": "gPerG",
+      "description": "Concentration, The ratio of the mass of a solute divided by the mass of the solution., g/g"
+    },
+    {
+      "unit": "gif",
+      "description": "GIF image"
+    },
+    {
+      "unit": "hour",
+      "description": "Hour"
+    },
+    {
+      "unit": "imperialGal",
+      "description": "Volume, imperial gallons, ImperialGal"
+    },
+    {
+      "unit": "imperialGalPerH",
+      "description": "Volumetric flow rate, Imperial gallons per hour, ImperialGal/h"
+    },
+    {
+      "unit": "int",
+      "description": "Generic Int"
+    },
+    {
+      "unit": "jpg",
+      "description": "JPEG Image"
+    },
+    {
+      "unit": "json",
+      "description": "JSON object"
+    },
+    {
+      "unit": "kat",
+      "description": "Catalytic activity, katal = mol / s, kat"
+    },
+    {
+      "unit": "kg/m^3",
+      "description": "Density"
+    },
+    {
+      "unit": "kgM",
+      "description": "Moment of mass, kilogram meter (kg*m), M"
+    },
+    {
+      "unit": "lx",
+      "description": "Illuminance lux (lm/m^2)"
+    },
+    {
+      "unit": "m",
+      "description": "Length"
+    },
+    {
+      "unit": "m/m",
+      "description": "Length, Ratio of length, m/m"
+    },
+    {
+      "unit": "m/m^3",
+      "description": "Fuel efficiency (m/m^3)"
+    },
+    {
+      "unit": "m/s",
+      "description": "Velocity"
+    },
+    {
+      "unit": "m/s^2",
+      "description": "Acceleration"
+    },
+    {
+      "unit": "m^2",
+      "description": "Area"
+    },
+    {
+      "unit": "m^2/s",
+      "description": "Viscosity"
+    },
+    {
+      "unit": "m^3",
+      "description": "Volume"
+    },
+    {
+      "unit": "m^3/h",
+      "description": "Volumetric flow rate (m^3/s)"
+    },
+    {
+      "unit": "m^3/s",
+      "description": "Volumetric flow rate (m^3/s)"
+    },
+    {
+      "unit": "minute",
+      "description": "Minute"
+    },
+    {
+      "unit": "mol",
+      "description": "Amount of Substance"
+    },
+    {
+      "unit": "mol/kg",
+      "description": "Concentration, Molality, the amount of solute in moles and the amount of solvent in kilograms., mol/kg"
+    },
+    {
+      "unit": "mol/m^3",
+      "description": "Concentration, The amount of substance concentration, (c), the amount of solvent in moles divided by the volume of solution in m^3, mol/m^3"
+    },
+    {
+      "unit": "mol/mol",
+      "description": "Concentration, Molar fraction, the ratio of the molar amount of a solute divided by the molar amount of the solution.,mol/mol"
+    },
+    {
+      "unit": "money",
+      "description": "Money"
+    },
+    {
+      "unit": "ohm",
+      "description": "Electric resistance (VA)"
+    },
+    {
+      "unit": "pf",
+      "description": "Power factor (dimensionless, Cos Phi)"
+    },
+    {
+      "unit": "ppm",
+      "description": "Concentration"
+    },
+    {
+      "unit": "psiA",
+      "description": "Pressure, Pounds per square inch, absolute, psiA"
+    },
+    {
+      "unit": "psiG",
+      "description": "Pressure, Pounds per square inch, gauge, psiG"
+    },
+    {
+      "unit": "q45",
+      "description": "Quantity power, Q measured at 45º, Q45"
+    },
+    {
+      "unit": "q45h",
+      "description": "Quantity energy, Q measured at 45º, Q45h"
+    },
+    {
+      "unit": "q60",
+      "description": "Quantity power, Q measured at 60º, Q60"
+    },
+    {
+      "unit": "q60h",
+      "description": "Quantity energy, Qh measured at 60º, Q60h"
+    },
+    {
+      "unit": "rad",
+      "description": "Plane angle"
+    },
+    {
+      "unit": "rad/s",
+      "description": "Angular velocity"
+    },
+    {
+      "unit": "relativeHumidity",
+      "description": "Relative humidity, the ratio of partial pressure of water vapor in the air-water mixture to the saturated vapor pressure of water at those conditions"
+    },
+    {
+      "unit": "rev",
+      "description": "Amount of rotation, Revolutions, rev"
+    },
+    {
+      "unit": "rev/s",
+      "description": "Rotational Speed"
+    },
+    {
+      "unit": "rho",
+      "description": "Resistivity (rho) (Ohm)"
+    },
+    {
+      "unit": "s",
+      "description": "Time (seconds)"
+    },
+    {
+      "unit": "s/s",
+      "description": "Time, Ratio of time (can be combined with an multiplier prefix to show rates such as a clock drift rate, e.g. '�s/s'), s/s"
+    },
+    {
+      "unit": "specificHumidity",
+      "description": "Specific humidity is expressed as a ratio of mass of water vapor per unit mass of dry air"
+    },
+    {
+      "unit": "sr",
+      "description": "Solid angle"
+    },
+    {
+      "unit": "string",
+      "description": "Generic text string"
+    },
+    {
+      "unit": "therm",
+      "description": "Energy, Therm, therm"
+    },
+    {
+      "unit": "timestamp",
+      "description": "Timestamp (ISO 8601)"
+    },
+    {
+      "unit": "usGal",
+      "description": "Volume, US gallons, Gal"
+    },
+    {
+      "unit": "usGal/h",
+      "description": "Volumetric flow rate, US gallons per hour, USGal/h"
+    },
+    {
+      "unit": "version",
+      "description": "Generic version number"
+    },
+    {
+      "unit": "zipCode",
+      "description": "Zip / Territory / Postal Code"
+    }
+  ]
+}

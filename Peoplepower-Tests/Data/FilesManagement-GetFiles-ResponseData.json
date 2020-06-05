@@ -1,0 +1,77 @@
+{
+  "resultCode": 0,
+  "totalFilesSpace": 10485760,
+  "usedFilesSpace": 1043858,
+  "tempKey": "UugJtGEXxMfnVyql4N4crIAfqOUlJ",
+  "tempKeyExpire": "2013-07-01T14:54:54-04:00",
+  "files": [
+    {
+      "id": 123,
+      "type": 1,
+      "name": "123.mp4",
+      "thumbnail": false,
+      "viewed": true,
+      "favourite": false,
+      "viewCount": 1,
+      "publicAccess": false,
+      "creationDate": "2013-06-05T16:43:59-07:00",
+      "creationTime": 1370475839000,
+      "size": 3479190,
+      "duration": 60,
+      "shared": 0,
+      "rotate": 180,
+      "incomplete": false,
+      "device": {
+        "id": "ABC123",
+        "type": 21,
+        "desc": "Living room camera"
+      },
+      "tags": [
+        {
+          "tag": "Charlie"
+        },
+        {
+          "tag": "dog",
+          "appId": 45,
+          "appName": "Pets monitor"
+        }
+      ]
+    },
+    {
+      "id": 124,
+      "type": 2,
+      "name": "124.jpg",
+      "thumbnail": true,
+      "viewed": false,
+      "favourite": false,
+      "viewCount": 2,
+      "publicAccess": false,
+      "creationDate": "2013-06-05T16:43:59-07:00",
+      "creationTime": 1370475839000,
+      "size": 347919,
+      "shared": 1,
+      "rotate": 0,
+      "incomplete": true,
+      "device": {
+        "id": "ABC124",
+        "type": 21,
+        "desc": "Door camera"
+      },
+      "user": {
+        "id": 12345,
+        "firstName": "John",
+        "lastName": "Smith",
+        "email": {
+          "email": "john.smith@gmail.com"
+        }
+      },
+      "tags": [
+        {
+          "tag": "stranger",
+          "appId": 12,
+          "appName": "Security monitor"
+        }
+      ]
+    }
+  ]
+}

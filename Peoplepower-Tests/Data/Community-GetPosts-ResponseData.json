@@ -1,0 +1,131 @@
+{
+  "resultCode": 0,
+  "posts": [
+    {
+      "postId": 123,
+      "postType": 3,
+      "status": 1,
+      "user": {
+        "id": 234,
+        "firstName": "Jane",
+        "lastName": "Smith",
+        "communityName": "Jane",
+        "avatarFileId": 345
+      },
+      "byModerator": true,
+      "location": {
+        "id": 456,
+        "name": "Jane home",
+        "timezone": {
+          "id": "US/Eastern",
+          "offset": -300,
+          "dst": true,
+          "name": "Eastern Time"
+        },
+        "latitude": "10.12",
+        "longitude": "-80.12"
+      },
+      "communityId": 45,
+      "creationDate": "2019-11-25T12:00:00Z",
+      "creationDateMs": 1537692964000,
+      "title": "Post title",
+      "topic": "Care",
+      "driveUrl": "https://map.domain.com/place",
+      "postText": "Some long text here",
+      "eventDate": "2019-12-25T12:00:00Z",
+      "eventDateMs": 1537693964000,
+      "allDay": true,
+      "duration": 3600,
+      "repeat": "0 0 13 ? * *",
+      "repeatEndDate": "2020-12-25T12:00:00Z",
+      "repeatEndDateMs": 1537898964000,
+      "nextEventDate": "2020-03-25T13:00:00Z",
+      "nextEventDateMs": 1537698964000,
+      "address": {
+        "addrStreet1": "123 Prospect St, Apt. 456",
+        "addrStreet2": "",
+        "addrCity": "Palo Alto",
+        "zip": "12345",
+        "state": {
+          "id": 5,
+          "name": "California"
+        },
+        "country": {
+          "id": 1,
+          "name": "United States",
+          "countryCode": "US",
+          "currencyCode": "USD",
+          "currencySymbol": "$",
+          "zipFormat": "^\\d{5}$",
+          "stateName": "State",
+          "zipName": "Zip Code"
+        }
+      },
+      "latitude": 37.4403572,
+      "longitude": -122.1424709,
+      "reminders": [
+        {
+          "notificationDate": "2019-12-24T12:00:00Z",
+          "notificationText": "We'll meet up tomorrow."
+        },
+        {
+          "notificationInterval": 7200,
+          "notificationText": "We'll meet up at the zoo later in 2 hours!"
+        }
+      ],
+      "files": [
+        {
+          "id": 12345,
+          "type": 1,
+          "contentType": "video/mp4",
+          "ext": "mp4",
+          "duration": 600,
+          "rotate": 90,
+          "size": 4567890,
+          "thumbnail": true,
+          "m3u8": true
+        }
+      ],
+      "reactions": [
+        {
+          "reaction": 1,
+          "user": {
+            "id": 235,
+            "firstName": "John",
+            "lastName": "Smith",
+            "communityName": "John",
+            "avatarFileId": 346
+          }
+        }
+      ],
+      "comments": [
+        {
+          "commentId": 987,
+          "replyCommentId": 977,
+          "commentDate": "2019-11-25T12:00:00Z",
+          "commentDateMs": 1537692964000,
+          "commentText": "Post comment text 1",
+          "user": {
+            "id": 235,
+            "firstName": "John",
+            "lastName": "Smith",
+            "communityName": "John",
+            "avatarFileId": 346
+          },
+          "reactions": [
+            {
+              "reaction": 1,
+              "user": {
+                "id": 235,
+                "firstName": "John",
+                "lastName": "Smith",
+                "communityName": "John",
+                "avatarFileId": 346
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

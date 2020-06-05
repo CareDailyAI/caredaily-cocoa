@@ -1,0 +1,17 @@
+{
+  "resultCode": 0,
+  "devices": [
+    {
+      "id": "CAMERA_ID_0",
+      "desc": "Front door"
+    },
+    {
+      "id": "CAMERA_ID_1",
+      "desc": "Kitchen"
+    },
+    {
+      "id": "CAMERA_ID_2",
+      "desc": "Back door"
+    }
+  ]
+}

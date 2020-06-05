@@ -1,0 +1,162 @@
+{
+  "resultCode": 0,
+  "servicePlans": [
+    {
+      "id": 3,
+      "name": "Pro Video",
+      "desc": "Pro Video service and 5 GB disk space",
+      "deleted": false,
+      "available": false,
+      "upgradableTo": [
+        4
+      ],
+      "services": [
+        {
+          "name": "ProVideo",
+          "amount": 1,
+          "resourceType": 1
+        },
+        {
+          "name": "DeviceFileSpace",
+          "amount": 5368709120,
+          "resourceType": 1
+        }
+      ],
+      "bots": [
+        {
+          "bundle": "com.ppc.security",
+          "resourceType": 1
+        }
+      ],
+      "prices": [
+        {
+          "id": 1,
+          "type": 1,
+          "paymentType": 0,
+          "free": true,
+          "duration": 30
+        },
+        {
+          "id": 2,
+          "type": 1,
+          "paymentType": 1,
+          "gatewayId": "com.peoplepowerco.presencepro_1w",
+          "duration": 7,
+          "currencySymbol": "$",
+          "currencyCode": "USD",
+          "totalAmount": "19.99",
+          "totalTax": "0.7",
+          "amounts": [
+            {
+              "value": "9.99",
+              "desc": "basic service",
+              "taxable": false
+            },
+            {
+              "value": "10",
+              "desc": "pro service",
+              "taxable": true,
+              "tax": "0.7"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "type": 3,
+          "paymentType": 2,
+          "gatewayId": "P-1234567",
+          "currencySymbol": "$",
+          "currencyCode": "USD",
+          "totalAmount": "19.99",
+          "totalTax": "0.7",
+          "amounts": [
+            {
+              "value": "9.99",
+              "desc": "basic service",
+              "taxable": false
+            },
+            {
+              "value": "10",
+              "desc": "pro service",
+              "taxable": true,
+              "tax": "0.7"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "type": 4,
+          "paymentType": 1,
+          "gatewayId": "com.peoplepowerco.presencepro_1year"
+        }
+      ],
+      "subscriptions": [
+        {
+          "userPlanId": 12344,
+          "startDate": "2013-12-13T00:00:00-05:00",
+          "startDateMs": 1386910800000,
+          "endDate": "2030-01-01T00:00:00-05:00",
+          "endDateMs": 1893474000000,
+          "free": false,
+          "type": 1,
+          "paymentType": 0,
+          "organizationId": 123
+        },
+        {
+          "userPlanId": 12345,
+          "startDate": "2013-12-13T00:00:00-05:00",
+          "startDateMs": 1386910800000,
+          "endDate": "2030-01-01T00:00:00-05:00",
+          "endDateMs": 1893474000000,
+          "type": 3,
+          "paymentType": 1,
+          "gatewayId": "com.peoplepowerco.presencepro_1m",
+          "priceId": 1,
+          "subscriptionId": "abc123",
+          "transactionId": "1234567"
+        },
+        {
+          "userPlanId": 12346,
+          "startDate": "2013-12-13T00:00:00-05:00",
+          "startDateMs": 1386910800000,
+          "endDate": "2030-01-01T00:00:00-05:00",
+          "endDateMs": 1893474000000,
+          "type": 1,
+          "paymentType": 3,
+          "gatewayId": "BTPlanID",
+          "priceId": 2,
+          "duration": 7,
+          "subscriptionId": "abc124",
+          "transactionId": "78906543"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Pro Video disk space",
+      "desc": "Extra 5 GB disk space for Pro Video users",
+      "available": true,
+      "services": [
+        {
+          "name": "DeviceFileSpace",
+          "amount": 5368709120,
+          "resourceType": 1
+        }
+      ],
+      "prices": [
+        {
+          "id": 11,
+          "type": 3,
+          "paymentType": 1,
+          "gatewayId": "com.peoplepowerco.presencedisk_1m"
+        },
+        {
+          "id": 12,
+          "type": 4,
+          "paymentType": 1,
+          "gatewayId": "com.peoplepowerco.presencedisk_1year"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "circles": [
+    {
+      "id": 12345,
+      "name": "Casa Wang",
+      "admin": true,
+      "status": 1,
+      "memberStatus": 1,
+      "memberCircleUserId": "ABC123def456",
+      "creationDate": "2016-10-05T22:32:15Z",
+      "creationDateMs": 1446537712000,
+      "monthlyDataIn": 12700000,
+      "monthlyDataMax": 50000000,
+      "members": [
+        {
+          "circleUserId": "ABC123def456",
+          "userId": 123,
+          "firstName": "John",
+          "lastName": "Smith",
+          "nickname": "Johnny",
+          "admin": false,
+          "status": 1,
+          "avatarFileId": 12345,
+          "email": {
+            "email": "john.smith@gmail.com",
+            "verified": true,
+            "status": 0
+          },
+          "phone": "1234567890",
+          "phoneStatus": 2
+        },
+        {
+          "nickname": "Mary",
+          "email": {
+            "email": "mary.smith@gmail.com",
+            "verified": false,
+            "status": 0
+          },
+          "phone": "1234567891",
+          "phoneStatus": 2
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "resultCode": 0,
+  "questions": [
+    {
+      "id": 50234,
+      "appInstanceId": 67,
+      "creationDate": "2016-03-04T12:12:12-07:00",
+      "creationDateMs": 1446537712000,
+      "key": "Question key",
+      "editable": true,
+      "question": "What do you think of this question?",
+      "placeholder": "Some hint",
+      "collection": {
+        "name": "Urgent questions",
+        "description": "Some description",
+        "icon": "Icon name",
+        "media": "Reference to media",
+        "mediaContentType": "image/jpeg",
+        "weight": 10
+      },
+      "deviceId": "optional_device_id",
+      "icon": "optional_icon_name",
+      "displayType": 0,
+      "defaultAnswer": "1000",
+      "answerFormat": "^\\d{4}$",
+      "slider": {
+        "min": 0,
+        "max": 100,
+        "inc": 5,
+        "minDesc": "min value description",
+        "maxDesc": "max value description",
+        "unitsDesc": "UOM description"
+      },
+      "sectionTitle": "Main questions",
+      "sectionId": 2,
+      "questionWeight": 3,
+      "responseType": 4,
+      "responseOptions": [
+        {
+          "id": 0,
+          "text": "Red"
+        },
+        {
+          "id": 1,
+          "text": "Yellow"
+        }
+      ],
+      "answerStatus": 4,
+      "answer": "This is some text input",
+      "answerDate": "2016-03-04T12:12:12-07:00",
+      "answerDateMs": 1446539712000,
+      "answerModified": false
+    }
+  ]
+}

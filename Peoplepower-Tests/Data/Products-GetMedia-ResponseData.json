@@ -1,0 +1,14 @@
+{
+  "resultCode": 0,
+  "media": [
+    {
+      "id": "EntrySensorFront",
+      "mediaType": 1,
+      "url": "http://peoplepowerco.com/img/entry_front.png",
+      "contentType": "image/png",
+      "desc": {
+        "en": "Entry Sensor front view"
+      }
+    }
+  ]
+}

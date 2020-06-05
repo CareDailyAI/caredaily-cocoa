@@ -1,0 +1,13 @@
+{
+  "resultCode": 0,
+  "properties": [
+    {
+      "name": "question.roommates",
+      "value": "1"
+    },
+    {
+      "name": "question.xbox",
+      "value": "false"
+    }
+  ]
+}

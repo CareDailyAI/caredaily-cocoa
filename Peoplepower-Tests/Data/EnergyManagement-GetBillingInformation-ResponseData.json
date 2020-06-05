@@ -1,0 +1,63 @@
+{
+  "resultCode": 0,
+  "budgets": [
+    {
+      "month": 1,
+      "budget": "125.1"
+    },
+    {
+      "month": 2,
+      "budget": "108.32"
+    },
+    {
+      "month": 3,
+      "budget": "100.75"
+    },
+    {
+      "month": 4,
+      "budget": "82.99"
+    },
+    {
+      "month": 5,
+      "budget": "90.54"
+    },
+    {
+      "month": 6,
+      "budget": "121.54"
+    },
+    {
+      "month": 7,
+      "budget": "149.02"
+    },
+    {
+      "month": 8,
+      "budget": "148.71"
+    },
+    {
+      "month": 9,
+      "budget": "119.91"
+    },
+    {
+      "month": 10,
+      "budget": "92.13"
+    },
+    {
+      "month": 11,
+      "budget": "87.18"
+    },
+    {
+      "month": 12,
+      "budget": "107.89"
+    }
+  ],
+  "utility": {
+    "id": 123,
+    "name": "Utility Name Here"
+  },
+  "billingRate": {
+    "id": 396,
+    "type": -2,
+    "typical": false,
+    "value": "0.1255"
+  }
+}

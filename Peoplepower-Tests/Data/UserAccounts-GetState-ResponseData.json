@@ -1,0 +1,13 @@
+{
+  "resultCode": 0,
+  "value": {
+    "field0": 123,
+    "field1": {
+      "ids": [
+        1234,
+        2366
+      ],
+      "key": "value"
+    }
+  }
+}

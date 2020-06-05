@@ -1,0 +1,109 @@
+{
+  "resultCode": 0,
+  "devices": [
+    {
+      "id": "470FF274-8700-44AB-A273-A70691A3C140::4",
+      "type": 24,
+      "typeCategory": 6,
+      "goalId": 123,
+      "locationId": 5,
+      "desc": "iPhone 6",
+      "connected": true,
+      "newDevice": false,
+      "shared": true,
+      "icon": "camera",
+      "typeAttributes": [
+        {
+          "name": "deviceListParameterUnits",
+          "value": "int,int"
+        },
+        {
+          "name": "deviceListParameters",
+          "value": "motionStatus,accessCameraSettings"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "accessCameraSettings",
+          "value": "1",
+          "lastUpdateTime": "2014-12-26T02:31:09-05:00",
+          "lastUpdateTimeMs": 1419579069000
+        },
+        {
+          "name": "motionStatus",
+          "value": "1",
+          "lastUpdateTime": "2015-01-28T16:46:26-05:00",
+          "lastUpdateTimeMs": 1422481586000
+        }
+      ],
+      "spaces": [
+        {
+          "id": 123,
+          "type": 1,
+          "name": "Living room"
+        }
+      ]
+    },
+    {
+      "id": "ea5101a8005f-10031-470",
+      "type": 10031,
+      "typeCategory": 18000,
+      "goalId": 124,
+      "locationId": 5,
+      "desc": "Gateway",
+      "modelId": "PeoplePowerGateway",
+      "lastDataReceivedDate": "2014-06-20T12:47:11-07:00",
+      "lastDataReceivedDateMs": 1403293631000,
+      "lastMeasureDate": "2014-06-20T12:47:11-07:00",
+      "lastMeasureDateMs": 1403293631000,
+      "lastConnectedDate": "2014-06-20T12:47:11-07:00",
+      "lastConnectedDateMs": 1403293631000,
+      "connected": false,
+      "newDevice": false,
+      "shared": false,
+      "icon": "gateway"
+    },
+    {
+      "id": "virtualpsm-6-4e7",
+      "type": 6,
+      "typeCategory": 11000,
+      "locationId": 5,
+      "desc": "Light",
+      "lastDataReceivedDate": "2014-05-08T02:22:02-07:00",
+      "lastDataReceivedDateMs": 1399540922000,
+      "lastMeasureDate": "2014-05-08T02:22:02-07:00",
+      "lastMeasureDateMs": 1399540922000,
+      "lastConnectedDate": "2014-04-20T12:47:11-07:00",
+      "lastConnectedDateMs": 1383293631000,
+      "connected": false,
+      "proxyId": "virtualhub-4-4D4",
+      "newDevice": true,
+      "shared": false,
+      "typeAttributes": [
+        {
+          "name": "deviceListParameterUnits",
+          "value": "W,string"
+        },
+        {
+          "name": "deviceListParameters",
+          "value": "power,outletStatus"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "outletStatus",
+          "value": "1",
+          "lastUpdateTime": "2015-01-12T07:41:54-05:00",
+          "lastUpdateTimeMs": 1421066514000
+        },
+        {
+          "name": "power",
+          "index": "A",
+          "value": "10",
+          "lastUpdateTime": "2013-11-20T21:13:09-05:00",
+          "lastUpdateTimeMs": 1384999989000
+        }
+      ]
+    }
+  ]
+}

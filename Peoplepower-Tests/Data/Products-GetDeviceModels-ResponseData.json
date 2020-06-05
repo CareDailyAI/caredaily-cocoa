@@ -1,0 +1,80 @@
+{
+  "resultCode": 0,
+  "categories": [
+    {
+      "id": "Sensors",
+      "icon": "sensor",
+      "hidden": false,
+      "sortId": 1,
+      "hash": "1234567890",
+      "name": {
+        "en": "Sensors"
+      }
+    },
+    {
+      "id": "EntrySensors",
+      "parentId": "Sensors",
+      "icon": "entry",
+      "search": "entry,door,window",
+      "hidden": false,
+      "sortId": 2,
+      "hash": "2345678901",
+      "name": {
+        "en": "Entry Sensor"
+      },
+      "models": [
+        {
+          "id": "Entry_GPD",
+          "manufacturer": {
+            "en": "GreenPeak"
+          },
+          "pairingType": 2,
+          "oauthAppId": 3,
+          "dependencyDeviceTypes": [
+            31,
+            10031
+          ],
+          "hidden": false,
+          "sortId": 1,
+          "hash": "3456789012",
+          "name": {
+            "en": "Entry Sensor 1"
+          },
+          "desc": {
+            "en": "Model description"
+          },
+          "template": "Sensor.123",
+          "media": [
+            {
+              "id": "EntrySensorFront",
+              "mediaType": 1,
+              "url": "http://peoplepowerco.com/img/image.png",
+              "contentType": "image/png",
+              "desc": {
+                "en": "Model image"
+              }
+            }
+          ],
+          "lookupParams": [
+            {
+              "deviceType": 10014,
+              "params": [
+                {
+                  "name": "manufacturer",
+                  "value": "GP"
+                },
+                {
+                  "name": "model",
+                  "value": "Entry"
+                }
+              ]
+            }
+          ],
+          "displayInfo": {
+            "field0": "value"
+          }
+        }
+      ]
+    }
+  ]
+}

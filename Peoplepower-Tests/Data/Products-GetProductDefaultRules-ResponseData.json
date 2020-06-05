@@ -1,0 +1,65 @@
+{
+  "resultCode": 0,
+  "rules": [
+    {
+      "id": 2367670,
+      "name": "If my door opens, and I am away then notify me on my phone",
+      "status": 1,
+      "hidden": false,
+      "default": true,
+      "trigger": {
+        "id": 35,
+        "name": "trigger door/window opens",
+        "type": 14,
+        "display": 14,
+        "timezone": false,
+        "desc": "opens",
+        "past": "opened",
+        "parameters": [
+          {
+            "name": "deviceId",
+            "category": 5,
+            "value": "ABC123"
+          }
+        ]
+      },
+      "states": {
+        "state": [
+          {
+            "id": 5,
+            "name": "Away state",
+            "type": 21,
+            "display": 22,
+            "timezone": false,
+            "desc": "am away",
+            "past": "were away",
+            "parameters": [
+              {
+                "name": "locationId",
+                "category": 4,
+                "value": "3"
+              }
+            ]
+          }
+        ]
+      },
+      "actions": [
+        {
+          "id": 14,
+          "name": "notification to phone action",
+          "type": 31,
+          "display": 31,
+          "timezone": false,
+          "desc": "notify me by phone",
+          "parameters": [
+            {
+              "name": "text",
+              "category": 10,
+              "value": "Your door opened while you were away!"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

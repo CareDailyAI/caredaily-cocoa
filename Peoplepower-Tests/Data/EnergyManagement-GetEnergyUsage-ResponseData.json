@@ -1,0 +1,113 @@
+{
+  "resultCode": 0,
+  "usages": [
+    {
+      "startDate": "2015-01-01T00:00:00-07:00",
+      "startDateMs": 1420095600000,
+      "endDate": "2015-01-02T00:00:00-07:00",
+      "endDateMs": 1420182000000,
+      "energy": "143.905",
+      "cost": "4.4712",
+      "external": false
+    },
+    {
+      "startDate": "2015-01-02T00:00:00-07:00",
+      "startDateMs": 1420182000000,
+      "endDate": "2015-01-03T00:00:00-07:00",
+      "endDateMs": 1420268400000,
+      "energy": "112.361",
+      "cost": "134.8332",
+      "external": false
+    },
+    {
+      "startDate": "2015-01-03T00:00:00-07:00",
+      "startDateMs": 1420268400000,
+      "endDate": "2015-01-04T00:00:00-07:00",
+      "endDateMs": 1420354800000,
+      "energy": "116.712",
+      "cost": "48.3527",
+      "external": false
+    },
+    {
+      "startDate": "2015-01-04T00:00:00-07:00",
+      "startDateMs": 1420354800000,
+      "endDate": "2015-01-05T00:00:00-07:00",
+      "endDateMs": 1420441200000,
+      "energy": "86.345",
+      "cost": "9.6033",
+      "external": false
+    },
+    {
+      "startDate": "2015-01-05T00:00:00-07:00",
+      "startDateMs": 1420441200000,
+      "endDate": "2015-01-06T00:00:00-07:00",
+      "endDateMs": 1420527600000,
+      "energy": "45.984",
+      "cost": "5.0584",
+      "external": false
+    },
+    {
+      "startDate": "2015-01-06T00:00:00-07:00",
+      "startDateMs": 1420527600000,
+      "endDate": "2015-01-07T00:00:00-07:00",
+      "endDateMs": 1420614000000,
+      "energy": "36.062",
+      "cost": "3.9670",
+      "external": false
+    },
+    {
+      "startDate": "2015-01-07T00:00:00-07:00",
+      "startDateMs": 1420614000000,
+      "endDate": "2015-01-08T00:00:00-07:00",
+      "endDateMs": 1420700400000,
+      "energy": "12.075",
+      "cost": "1.3284",
+      "external": false
+    },
+    {
+      "startDate": "2015-01-08T00:00:00-07:00",
+      "startDateMs": 1420700400000,
+      "endDate": "2015-01-09T00:00:00-07:00",
+      "endDateMs": 1420786800000,
+      "energy": "11.961",
+      "cost": "1.3156",
+      "external": false
+    },
+    {
+      "startDate": "2015-01-09T00:00:00-07:00",
+      "startDateMs": 1420786800000,
+      "endDate": "2015-01-10T00:00:00-07:00",
+      "endDateMs": 1420873200000,
+      "energy": "118.652",
+      "cost": "13.0520",
+      "external": false
+    },
+    {
+      "startDate": "2015-01-10T00:00:00-07:00",
+      "startDateMs": 1420873200000,
+      "endDate": "2015-01-11T00:00:00-07:00",
+      "endDateMs": 1420959600000,
+      "energy": "98.043",
+      "cost": "10.7848",
+      "external": false
+    },
+    {
+      "startDate": "2015-01-11T00:00:00-07:00",
+      "startDateMs": 1420959600000,
+      "endDate": "2015-01-12T00:00:00-07:00",
+      "endDateMs": 1421046000000,
+      "energy": "135.291",
+      "cost": "14.8821",
+      "external": false
+    },
+    {
+      "startDate": "2015-01-12T00:00:00-07:00",
+      "startDateMs": 1421046000000,
+      "endDate": "2015-01-13T00:00:00-07:00",
+      "endDateMs": 1421132400000,
+      "energy": "10.603",
+      "cost": "1.1663",
+      "external": false
+    }
+  ]
+}
