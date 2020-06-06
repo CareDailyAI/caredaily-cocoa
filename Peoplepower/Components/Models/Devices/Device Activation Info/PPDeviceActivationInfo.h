@@ -18,7 +18,7 @@ typedef NS_OPTIONS(NSInteger, PPDeviceActivationInfoSSL) {
     PPDeviceActivationInfoSSLTrue
 };
 
-@interface PPDeviceActivationInfo : NSObject
+@interface PPDeviceActivationInfo : RLMObject
 
 @property (nonatomic, strong) NSString *deviceActivationKey;
 @property (nonatomic, strong) NSString *deviceActivationUrl;
@@ -33,3 +33,5 @@ typedef NS_OPTIONS(NSInteger, PPDeviceActivationInfoSSL) {
 + (PPDeviceActivationInfo *)initWithDictionary:(NSDictionary *)activationInfoDict;
 
 @end
+
+RLM_ARRAY_TYPE(PPDeviceActivationInfo)

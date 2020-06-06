@@ -10,7 +10,11 @@
 
 @implementation PPDeviceTypeMedia
 
-- (id)initWithId:(NSString *)mediaId mediaType:(PPDeviceTypeMediaType)mediaType url:(NSString *)url contentType:(NSString *)contentType desc:(NSDictionary *)desc {
++ (NSString *)primaryKey {
+    return @"mediaId";
+}
+
+- (id)initWithId:(NSString *)mediaId mediaType:(PPDeviceTypeMediaType)mediaType url:(NSString *)url contentType:(NSString *)contentType desc:(PPDeviceTypeMediaDesc *)desc {
     self = [super init];
     if(self) {
         self.mediaId = mediaId;
@@ -30,7 +34,7 @@
     }
     NSString *url = [mediaDict objectForKey:@"url"];
     NSString *contentType = [mediaDict objectForKey:@"contentType"];
-    NSDictionary *desc = [mediaDict objectForKey:@"desc"];
+    PPDeviceTypeMediaDesc *desc = [PPDeviceTypeMediaDesc initWithDictionary:[mediaDict objectForKey:@"desc"]];
     
     PPDeviceTypeMedia *media = [[PPDeviceTypeMedia alloc] initWithId:mediaId mediaType:mediaType url:url contentType:contentType desc:desc];
     return media;
@@ -79,9 +83,8 @@
         if(appendComma) {
             [JSONString appendString:@","];
         }
-        NSError * err;
-        NSData * jsonData = [NSJSONSerialization dataWithJSONObject:media.desc options:0 error:&err];
-        [JSONString appendFormat:@"\"desc\": %@", [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+        
+        [JSONString appendFormat:@"\"desc\": {%@}", [PPDeviceTypeMediaDesc stringify:media.desc]];
         appendComma = YES;
     }
     
@@ -120,6 +123,15 @@
     if(media.desc) {
         _desc = media.desc;
     }
+}
+
+@end
+
+@implementation PPDeviceTypeMediaDesc
+
++ (PPDeviceTypeMediaDesc *)initWithDictionary:(NSDictionary *)dict {
+    PPRLMDictionary *RLMDictionary = [super initWithDictionary:dict];
+    return [[PPDeviceTypeMediaDesc alloc] initWithKeys:RLMDictionary.keys value:RLMDictionary.values];
 }
 
 @end

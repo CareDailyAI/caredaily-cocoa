@@ -8,7 +8,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PPAddress : NSObject
+@interface PPAddress : RLMObject
 
 @property (nonatomic, strong) NSString * _Nullable street1;
 @property (nonatomic, strong) NSString * _Nullable street2;

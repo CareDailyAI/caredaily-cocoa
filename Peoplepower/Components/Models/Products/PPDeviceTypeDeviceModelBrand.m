@@ -9,7 +9,7 @@
 #import "PPDeviceTypeDeviceModelBrand.h"
 
 @implementation PPDeviceTypeDeviceModelBrand
-- (id)initWithBrand:(NSString *)brand hidden:(PPDeviceTypeDeviceModelBrandHidden)hidden parentId:(NSString *)parentId sortId:(PPDeviceTypeDeviceModelBrandSortId)sortId name:(NSDictionary *)name desc:(NSDictionary *)desc {
+- (id)initWithBrand:(NSString *)brand hidden:(PPDeviceTypeDeviceModelBrandHidden)hidden parentId:(NSString *)parentId sortId:(PPDeviceTypeDeviceModelBrandSortId)sortId name:(PPDeviceTypeDeviceModelBrandName *)name desc:(PPDeviceTypeDeviceModelBrandDesc *)desc {
     self = [super init];
     if(self) {
         self.brand = brand;
@@ -30,7 +30,6 @@
     if([brandDict objectForKey:@"hidden"]) {
         hidden = (PPDeviceTypeDeviceModelBrandHidden)((NSString *)[brandDict objectForKey:@"hidden"]).integerValue;
     }
-    
     NSString *parentId = [brandDict objectForKey:@"parentId"];
     
     PPDeviceTypeDeviceModelBrandSortId sortId = PPDeviceTypeDeviceModelBrandSortIdNone;
@@ -38,8 +37,8 @@
         sortId = (PPDeviceTypeDeviceModelBrandSortId)((NSString *)[brandDict objectForKey:@"sortId"]).integerValue;
     }
     
-    NSDictionary *name = [brandDict objectForKey:@"name"];
-    NSDictionary *desc = [brandDict objectForKey:@"desc"];
+    PPDeviceTypeDeviceModelBrandName *name = [PPDeviceTypeDeviceModelBrandName initWithDictionary:[brandDict objectForKey:@"name"]];
+    PPDeviceTypeDeviceModelBrandDesc *desc = [PPDeviceTypeDeviceModelBrandDesc initWithDictionary:[brandDict objectForKey:@"desc"]];
     
     PPDeviceTypeDeviceModelBrand *brand = [[PPDeviceTypeDeviceModelBrand alloc] initWithBrand:brandName hidden:hidden parentId:parentId sortId:sortId name:name desc:desc];
     return brand;
@@ -91,9 +90,7 @@
         if(appendComma) {
             [JSONString appendString:@","];
         }
-        NSError * err;
-        NSData * jsonData = [NSJSONSerialization dataWithJSONObject:brand.name options:0 error:&err];
-        [JSONString appendFormat:@"\"name\": %@", [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+        [JSONString appendFormat:@"\"name\": {%@}", [PPDeviceTypeDeviceModelBrandName stringify:brand.name]];
         appendComma = YES;
     }
     
@@ -101,14 +98,30 @@
         if(appendComma) {
             [JSONString appendString:@","];
         }
-        NSError * err;
-        NSData * jsonData = [NSJSONSerialization dataWithJSONObject:brand.desc options:0 error:&err];
-        [JSONString appendFormat:@"\"desc\": %@", [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+        [JSONString appendFormat:@"\"desc\": {%@}", [PPDeviceTypeDeviceModelBrandDesc stringify:brand.desc]];
         appendComma = YES;
     }
     
     [JSONString appendString:@"}"];
     return JSONString;
+}
+
+@end
+
+@implementation PPDeviceTypeDeviceModelBrandName
+
++ (PPDeviceTypeDeviceModelBrandName *)initWithDictionary:(NSDictionary *)dict {
+    PPRLMDictionary *RLMDictionary = [super initWithDictionary:dict];
+    return [[PPDeviceTypeDeviceModelBrandName alloc] initWithKeys:RLMDictionary.keys value:RLMDictionary.values];
+}
+
+@end
+
+@implementation PPDeviceTypeDeviceModelBrandDesc
+
++ (PPDeviceTypeDeviceModelBrandDesc *)initWithDictionary:(NSDictionary *)dict {
+    PPRLMDictionary *RLMDictionary = [super initWithDictionary:dict];
+    return [[PPDeviceTypeDeviceModelBrandDesc alloc] initWithKeys:RLMDictionary.keys value:RLMDictionary.values];
 }
 
 @end

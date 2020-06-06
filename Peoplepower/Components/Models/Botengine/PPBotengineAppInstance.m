@@ -11,6 +11,10 @@
 
 @implementation PPBotengineAppInstance
 
++ (NSString *)primaryKey {
+    return @"instanceId";
+}
+
 + (PPBotengineAppInstance *)appInstanceFromAppInstanceDict:(NSDictionary *)appInstanceDict {
     PPBotengineApp *composerApp = [PPBotengineApp appFromAppDict:appInstanceDict];
     
@@ -160,7 +164,7 @@
             return;
         }
         
-        self.communications = communicationsArray;
+        self.communications = (RLMArray<PPBotengineAppCommunications *><PPBotengineAppCommunications> *)communicationsArray;
         callback(nil);
     }];
 }

@@ -16,7 +16,6 @@
 
 #pragma mark Users
 
-__strong static NSMutableArray*_sharedUsers = nil;
 __strong static PPUser *_currentUser = nil;
 
 /**
@@ -28,10 +27,15 @@ __strong static PPUser *_currentUser = nil;
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    if(!_sharedUsers) {
+    RLMResults<PPUser *> *sharedUsers = [PPUser allObjects];
+    if([sharedUsers count] == 0) {
         [PPUserAccounts initializeSharedUsers];
     }
-    return _sharedUsers;
+    NSMutableArray *sharedUserArray = [[NSMutableArray alloc] initWithCapacity:[sharedUsers count]];
+    for(PPUser *user in sharedUsers) {
+        [sharedUserArray addObject:user];
+    }
+    return sharedUserArray;
 }
 
 /**
@@ -43,28 +47,19 @@ __strong static PPUser *_currentUser = nil;
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    if(!_sharedUsers) {
+    RLMResults<PPUser *> *sharedUsers = [PPUser allObjects];
+    if([sharedUsers count] == 0) {
         [PPUserAccounts initializeSharedUsers];
     }
     if(_currentUser == nil) {
         _currentUser = [PPUserAccounts initUserWithCachedUser];
     }
-    if(_currentUser) {
-        BOOL found = NO;
-        for(PPUser *user in _sharedUsers) {
-            if([user isEqualToUser:_currentUser]) {
-                [_currentUser sync:user];
-                [user sync:_currentUser];
-                found = YES;
-            }
-        }
-        if(!found) {
-            [_sharedUsers addObject:_currentUser];
-        }
+    if([_currentUser isInvalidated]) {
+        return nil;
     }
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s currentUser=%@ username=%@", __PRETTY_FUNCTION__, _currentUser, _currentUser.username);
+    NSLog(@"< %s currentUser=%li username=%@", __PRETTY_FUNCTION__, (long)_currentUser.userId, _currentUser.username);
 #endif
 #endif
     return _currentUser;
@@ -76,43 +71,28 @@ __strong static PPUser *_currentUser = nil;
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    _sharedUsers = [[NSMutableArray alloc] initWithCapacity:0];
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSData *storedUserData = [defaults objectForKey:@"user.sharedUsers"];
-    if(storedUserData) {
-        _sharedUsers = (NSMutableArray *)[NSKeyedUnarchiver unarchiveObjectWithData:storedUserData];
-    }
+    RLMResults<PPUser *> *existingUsers = [PPUser allObjectsInRealm:[PPRealm defaultRealm]];
     if(_currentUser == nil) {
         _currentUser = [PPUserAccounts initUserWithCachedUser];
     }
-    for(PPUser *user in _sharedUsers) {
-        if([user isEqualToUser:_currentUser]) {
-            [user sync:_currentUser];
-            _currentUser = user;
-        }
-        else {
-            NSString *sessionKey = [UICKeyChainStore keyChainStore][[NSString stringWithFormat:@"user.sessionKey:%@", user.username]];
-            if(sessionKey && ![sessionKey isEqualToString:@""]) {
-                user.sessionKey = sessionKey;
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPUser *user in existingUsers) {
+            if([user isEqualToUser:_currentUser]) {
+                [PPUser sync:user withUser:_currentUser];
+                _currentUser = user;
+            }
+            else {
+                NSString *sessionKey = [UICKeyChainStore keyChainStore][[NSString stringWithFormat:@"user.sessionKey:%@", user.username]];
+                if(sessionKey && ![sessionKey isEqualToString:@""]) {
+                    user.sessionKey = sessionKey;
+                }
             }
         }
-    }
+    }];
     
-    
-    NSMutableDictionary *userDict = [[NSMutableDictionary alloc] initWithCapacity:0];
-    for(PPUser *user in _sharedUsers) {
-        [userDict setObject:@{
-                              @"username": (user.username) ? user.username : @"",
-                              @"description": user.description,
-                              @"sessionKey": (user.sessionKey) ? user.sessionKey : @"",
-                              @"id": @(user.userId)}
-                     forKey:(_currentUser == user) ? @"current"
-                           : [NSString stringWithFormat:@"alt_%li", (long)[_sharedUsers indexOfObject:user]]];
-    }
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s sharedUsers=%@", __PRETTY_FUNCTION__, userDict);
+     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }
@@ -139,6 +119,10 @@ __strong static PPUser *_currentUser = nil;
         }
         
         [PPCloudEngine setUser:_currentUser];
+    
+        [[PPRealm defaultRealm] beginWriteTransaction];
+        [PPUser createOrUpdateInDefaultRealmWithValue:_currentUser];
+        [[PPRealm defaultRealm] commitWriteTransaction];
     }
     
 #ifdef DEBUG
@@ -161,7 +145,8 @@ __strong static PPUser *_currentUser = nil;
     NSLog(@"> %s user=%@ username=%@", __PRETTY_FUNCTION__, user, user.username);
 #endif
 #endif
-    if(_sharedUsers == nil) {
+    RLMResults<PPUser *> *sharedUsers = [PPUser allObjects];
+    if([sharedUsers count] == 0) {
         [PPUserAccounts initializeSharedUsers];
     }
     
@@ -174,47 +159,60 @@ __strong static PPUser *_currentUser = nil;
         return;
     }
     
-    if([_currentUser isEqualToUser:user]) {
-        [_currentUser sync:user];
+    if(![_currentUser isInvalidated] && [_currentUser isEqualToUser:user]) {
+        if(_currentUser.userId == PPUserIdNone && _currentUser.userId != user.userId) {
+            
+            user.sessionKey = _currentUser.sessionKey;
+            user.sessionKeyExpiry = _currentUser.sessionKeyExpiry;
+            
+            // Remove our currently managed user if needed
+            PPUser *managedUser = [PPUser objectForPrimaryKey:@(_currentUser.userId)];
+            if (managedUser) {
+                [[PPRealm defaultRealm] transactionWithBlock:^{
+                    [[PPRealm defaultRealm] deleteObject:managedUser];
+                }];
+            }
+            
+            _currentUser = user;
+        }
+        else {
+            [[PPRealm defaultRealm] transactionWithBlock:^{
+                [PPUser sync:_currentUser withUser:user];
+            }];
+        }
     }
     else {
+//        _currentUser = user;
+//#warning Realm RLMArray objects are non-null objects, causing unwanted replacement of existing properties
+//        /*
         BOOL found = NO;
-        for(PPUser *sharedUser in _sharedUsers) {
+        for(PPUser *sharedUser in sharedUsers) {
             if([sharedUser isEqualToUser:user]) {
                 found = YES;
-                [sharedUser sync:user];
                 _currentUser = sharedUser;
+                [[PPRealm defaultRealm] transactionWithBlock:^{
+                    [PPUser sync:sharedUser withUser:user];
+                }];
                 break;
             }
         }
         if(!found) {
             _currentUser = user;
         }
+//         */
     }
     
-    NSInteger index = -1;
-    for(PPUser *user in _sharedUsers) {
-        if([user isEqualToUser:_currentUser]) {
-            index = [_sharedUsers indexOfObject:user];
-            break;
-        }
-    }
-    if(index < 0) {
-        [_sharedUsers addObject:_currentUser];
-    }
-    else {
-        [_sharedUsers replaceObjectAtIndex:index withObject:_currentUser];
-    }
+    [[PPRealm defaultRealm] beginWriteTransaction];
+    [PPUser createOrUpdateInDefaultRealmWithValue:_currentUser];
+    [[PPRealm defaultRealm] commitWriteTransaction];
+    
+    _currentUser = [PPUser objectForPrimaryKey:@(_currentUser.userId)];
+    
     [UICKeyChainStore keyChainStore][[NSString stringWithFormat:@"user.sessionKey:%@", _currentUser.username]] = _currentUser.sessionKey;
     [UICKeyChainStore keyChainStore][@"user.username"] = _currentUser.username;
     
     [PPCloudEngine setUser:_currentUser];
-    
-    NSData *sharedUserData = [NSKeyedArchiver archivedDataWithRootObject:_sharedUsers];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:sharedUserData forKey:@"user.sharedUsers"];
-    [defaults synchronize];
-    
+        
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"< %s", __PRETTY_FUNCTION__);
@@ -244,43 +242,30 @@ __strong static PPUser *_currentUser = nil;
     if(found) {
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"%s Sign out of all users and remove sessionKey", __PRETTY_FUNCTION__);
+        NSLog(@"%s Sign out of all users and remove sessionKey", __PRETTY_FUNCTION__);
 #endif
 #endif
-        
-        [_sharedUsers removeAllObjects];
         [UICKeyChainStore keyChainStore][[NSString stringWithFormat:@"user.sessionKey:%@", _currentUser.username]] = nil;
         [UICKeyChainStore keyChainStore][@"user.username"] = nil;
-        [UICKeyChainStore keyChainStore][@"user.locationId"] = nil;
+        [UICKeyChainStore keyChainStore][@"user.locationId"] = nil;;
         _currentUser = nil;
         [PPCloudEngine setUser:nil];
         [PPDeviceProxy setProxy:nil];
+        
+        [[PPRealm defaultRealm] beginWriteTransaction];
+        [[PPRealm defaultRealm] deleteObjects:[PPUser allObjects]];
+        [[PPRealm defaultRealm] commitWriteTransaction];
     }
     else {
-        NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
-        for(PPUser *user in users) {
-            for(PPUser *sharedUser in _sharedUsers) {
-                if([sharedUser isEqualToUser:user]) {
-                    
-                    [UICKeyChainStore keyChainStore][[NSString stringWithFormat:@"user.sessionKey:%@", sharedUser.username]] = nil;
-                    
-                    [indexSet addIndex:[_sharedUsers indexOfObject:sharedUser]];
-                    break;
-                }
+        [[PPRealm defaultRealm] transactionWithBlock:^{
+            for(PPUser *user in users) {
+                [[PPRealm defaultRealm] deleteObject:[PPUser objectForPrimaryKey:@(user.userId)]];
             }
-        }
-
-        [_sharedUsers removeObjectsAtIndexes:indexSet];
+        }];
     }
-    
-    NSData *sharedUserData = [NSKeyedArchiver archivedDataWithRootObject:_sharedUsers];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:sharedUserData forKey:@"user.sharedUsers"];
-    [defaults synchronize];
-    
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s users=%@", __PRETTY_FUNCTION__, _sharedUsers);
+    NSLog(@"< %s users=%@", __PRETTY_FUNCTION__, [PPUser allObjects]);
 #endif
 #endif
 }
@@ -300,7 +285,13 @@ __strong static PPUser *_currentUser = nil;
 #endif
 #endif
     
-    NSArray *sharedEvents = @[];
+    RLMResults<PPLocationSceneEvent *> *sharedEvents;
+    if(locationId) {
+        sharedEvents = [PPDevice objectsWhere:@"locationId == %li", (long)locationId];
+    }
+    else {
+        sharedEvents = [PPLocationSceneEvent allObjects];
+    }
     NSMutableArray *sharedEventsArray = [[NSMutableArray alloc] initWithCapacity:[sharedEvents count]];
     NSMutableArray *eventsArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
     for(PPLocationSceneEvent *event in sharedEvents) {
@@ -321,11 +312,17 @@ __strong static PPUser *_currentUser = nil;
  * Add location scene history to local reference.
  *
  * @param locationSceneHistory NSArray Array of location scene history to add.
+ * @param userId Required PPUserId User Id to associate these objects with
  **/
 + (void)addLocationSceneHistory:(NSArray *)locationSceneHistory userId:(PPUserId)userId {
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s locationSceneHistory=%@", __PRETTY_FUNCTION__, locationSceneHistory);
+    [[PPRealm defaultRealm] beginWriteTransaction];
+    for(PPLocationSceneEvent *scene in locationSceneHistory) {
+        [PPLocationSceneEvent createOrUpdateInDefaultRealmWithValue:scene];
+    }
+    [[PPRealm defaultRealm] commitWriteTransaction];
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
@@ -336,11 +333,21 @@ __strong static PPUser *_currentUser = nil;
  * Remove location scene history from local reference.
  *
  * @param locationSceneHistory scene history NSArray Array of location scene history to remove.
+ * @param userId Required PPUserId User Id to associate these objects with
  **/
 + (void)removeLocationSceneHistory:(NSArray *)locationSceneHistory userId:(PPUserId)userId{
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s locationSceneHistory=%@", __PRETTY_FUNCTION__, locationSceneHistory);
+#endif
+#endif
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPLocationSceneEvent *scene in locationSceneHistory) {
+            [[PPRealm defaultRealm] deleteObject:[PPLocationSceneEvent objectForPrimaryKey:scene.eventId]];
+        }
+    }];
+#ifdef DEBUG
+#ifdef DEBUG_MODELS
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
@@ -359,45 +366,38 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    if(!_sharedCountries) {
-        [PPUserAccounts initializeSharedCountries];
+    RLMResults<PPCountry *> *sharedCountries = [PPCountry allObjects];
+    PPCountriesStatesAndTimezones *countries = [[PPCountriesStatesAndTimezones alloc] initWithCountries:(RLMArray *)sharedCountries];
+    NSMutableArray *countriesArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
+    for(PPCountry *country in sharedCountries) {
+        [countriesArrayDebug addObject:@{@"id": @(country.countryId)}];
     }
-    PPCountriesStatesAndTimezones *sharedCountries;
-    NSMutableArray *countriesArray = [[NSMutableArray alloc] initWithCapacity:0];
-    for(NSString *userIdKey in _sharedCountries.allKeys) {
-        PPCountriesStatesAndTimezones *countries = [_sharedCountries objectForKey:userIdKey];
-        for(PPCountry *country in countries.countries) {
-            NSMutableDictionary *countryIdentifiers = [[NSMutableDictionary alloc] initWithCapacity:2];
-            [countryIdentifiers setValue:[NSString stringWithFormat:@"%li", (long)country.countryId] forKey:@"ID"];
-            [countryIdentifiers setValue:[NSString stringWithFormat:@"%@", country.name] forKey:@"name"];
-            [countriesArray addObject:countryIdentifiers];
-        }
-        
-        if([userIdKey isEqualToString:[NSString stringWithFormat:@"%li", (long)userId]]) {
-            sharedCountries = countries;
-        }
-    }
-    
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s sharedCountries=%@", __PRETTY_FUNCTION__, countriesArray);
+    NSLog(@"< %s sharedCountries=%@", __PRETTY_FUNCTION__, countriesArrayDebug);
 #endif
 #endif
-    return sharedCountries;
+    return countries;
 }
 
-+ (void)initializeSharedCountries {
+/**
+ * Add countries.
+ * Add countries from local reference.
+ *
+ * @param countries NSArray Array of countries to remove.
+ * @param userId Required PPUserId User Id to associate these objects with
+ **/
++ (void)addCountries:(PPCountriesStatesAndTimezones *)countries userId:(PPUserId)userId {
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"> %s", __PRETTY_FUNCTION__);
+    NSLog(@"> %s countries=%@", __PRETTY_FUNCTION__, countries);
 #endif
 #endif
-    _sharedCountries = [[NSMutableDictionary alloc] initWithCapacity:0];
-    //    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    //    NSData *storedCountriesData = [defaults objectForKey:@"user.crowdCountries"];
-    //    if(storedCountriesData) {
-    //        _sharedCountries = (NSMutableDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:storedCountriesData];
-    //    }
+    [[PPRealm defaultRealm] beginWriteTransaction];
+    for(PPCountry *country in countries.countries) {
+        [[PPRealm defaultRealm] addObject:country];
+    }
+    [[PPRealm defaultRealm] commitWriteTransaction];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"< %s", __PRETTY_FUNCTION__);
@@ -406,62 +406,23 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
 }
 
 /**
- * Add countries.
- * Add countries from local reference.
- *
- * @param countries PPCountriesStatesAndTimezones Array of countries to remove.
- * @param userId Required PPUserId User Id to associate these countries with
- **/
-+ (void)addCountries:(PPCountriesStatesAndTimezones *)countries userId:(PPUserId)userId {
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"> %s countries=%@", __PRETTY_FUNCTION__, countries);
-#endif
-#endif
-    if(!_sharedCountries) {
-        [PPUserAccounts initializeSharedCountries];
-    }
-    
-    [_sharedCountries setObject:countries forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    
-    //    NSData *sharedFeedbackData = [NSKeyedArchiver archivedDataWithRootObject:_sharedCountries];
-    //    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    //    [defaults setObject:sharedFeedbackData forKey:@"user.crowdCountries"];
-    //    [defaults synchronize];
-    
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"< %s countries=%@", __PRETTY_FUNCTION__, [countries description]);
-#endif
-#endif
-}
-
-/**
  * Remove countries.
  * Remove countries from local reference.
  *
- * @param userId Required PPUserId User Id to associate these countries with
+ * @param countries NSArray Countries object to remove.
+ * @param userId Required PPUserId User Id to associate these objects with
  **/
-+ (void)removeCountriesForUserId:(PPUserId)userId {
++ (void)removeCountries:(NSArray *)countries userId:(PPUserId)userId {
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    
-    if(!_sharedCountries) {
-        [PPUserAccounts initializeSharedCountries];
-    }
-    
-    if([_sharedCountries objectForKey:[NSString stringWithFormat:@"%li", (long)userId]]) {
-        [_sharedCountries removeObjectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    }
-    
-    //    NSData *sharedFeedbackData = [NSKeyedArchiver archivedDataWithRootObject:_sharedCountries];
-    //    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    //    [defaults setObject:sharedFeedbackData forKey:@"user.notificationCountries"];
-    //    [defaults synchronize];
-    
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPCountry *country in countries) {
+            [[PPRealm defaultRealm] deleteObject:[PPCountry objectForPrimaryKey:@(country.countryId)]];
+        }
+    }];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"< %s", __PRETTY_FUNCTION__);
@@ -1129,7 +1090,8 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     }
     components.queryItems = queryItems;
     
-    PPLocation *location = [[PPLocation alloc] initWithLocationId:0 name:name locationAccess:PPLocationAccessNone userCategory:PPLocationCategoryNone event:nil type:type owner:PPLocationOwnerNone utilityAccountNo:utilityAccountNo timezone:timezone addrStreet1:addrStreet1 addrStreet2:addrStreet2 addrCity:addrCity state:state country:country zip:zip latitude:latitude longitude:longitude size:size storiesNumber:storiesNumber roomsNumber:roomsNumber bathroomsNumber:bathroomsNumber occupantsNumber:occupantsNumber occupantsRanges:occupantsRanges usagePeriod:usagePeriod heatingType:heatingType coolingType:coolingType waterHeaterType:waterHeaterType thermostatType:thermostatType fileUploadPolicy:fileUploadPolicy auths:nil clients:nil services:nil temporary:PPLocationTemporaryNone accessEndDate:nil smsPhone:nil creationDate:nil appName:nil organizationId:PPOrganizationIdNone organization:nil test:test codeType:PPLocationCodeTypeNone];
+    PPLocation *location = [[PPLocation alloc] initWithLocationId:0 name:name locationAccess:PPLocationAccessNone userCategory:PPLocationCategoryNone event:nil type:type owner:PPLocationOwnerNone utilityAccountNo:utilityAccountNo timezone:timezone addrStreet1:addrStreet1 addrStreet2:addrStreet2 addrCity:addrCity state:state country:country zip:zip latitude:latitude longitude:longitude size:size storiesNumber:storiesNumber roomsNumber:roomsNumber bathroomsNumber:bathroomsNumber occupantsNumber:occupantsNumber occupantsRanges:(RLMArray *)occupantsRanges usagePeriod:usagePeriod heatingType:heatingType coolingType:coolingType waterHeaterType:waterHeaterType thermostatType:thermostatType fileUploadPolicy:fileUploadPolicy auths:nil clients:nil services:nil temporary:PPLocationTemporaryNone accessEndDate:nil smsPhone:nil creationDate:nil appName:nil organizationId:PPOrganizationIdNone organization:nil test:test codeType:PPLocationCodeTypeNone];
+    
     NSDictionary *data = @{@"location": [PPLocation JSONData:location appName:appName]};
 
     NSError *dataError;
@@ -1233,7 +1195,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     
     NSURLComponents *components = [NSURLComponents componentsWithString:[NSString stringWithFormat:@"location/%@", @(locationId)]];
     
-    PPLocation *location = [[PPLocation alloc] initWithLocationId:0 name:name locationAccess:PPLocationAccessNone userCategory:PPLocationCategoryNone event:nil type:type owner:PPLocationOwnerNone utilityAccountNo:utilityAccountNo timezone:timezone addrStreet1:addrStreet1 addrStreet2:addrStreet2 addrCity:addrCity state:state country:country zip:zip latitude:latitude longitude:longitude size:size storiesNumber:storiesNumber roomsNumber:roomsNumber bathroomsNumber:bathroomsNumber occupantsNumber:occupantsNumber occupantsRanges:occupantsRanges usagePeriod:usagePeriod heatingType:heatingType coolingType:coolingType waterHeaterType:waterHeaterType thermostatType:thermostatType fileUploadPolicy:fileUploadPolicy auths:nil clients:nil services:nil temporary:PPLocationTemporaryNone accessEndDate:nil smsPhone:nil creationDate:nil appName:nil organizationId:PPOrganizationIdNone organization:nil test:test codeType:PPLocationCodeTypeNone];
+    PPLocation *location = [[PPLocation alloc] initWithLocationId:0 name:name locationAccess:PPLocationAccessNone userCategory:PPLocationCategoryNone event:nil type:type owner:PPLocationOwnerNone utilityAccountNo:utilityAccountNo timezone:timezone addrStreet1:addrStreet1 addrStreet2:addrStreet2 addrCity:addrCity state:state country:country zip:zip latitude:latitude longitude:longitude size:size storiesNumber:storiesNumber roomsNumber:roomsNumber bathroomsNumber:bathroomsNumber occupantsNumber:occupantsNumber occupantsRanges:(RLMArray *)occupantsRanges usagePeriod:usagePeriod heatingType:heatingType coolingType:coolingType waterHeaterType:waterHeaterType thermostatType:thermostatType fileUploadPolicy:fileUploadPolicy auths:nil clients:nil services:nil temporary:PPLocationTemporaryNone accessEndDate:nil smsPhone:nil creationDate:nil appName:nil organizationId:PPOrganizationIdNone organization:nil test:test codeType:PPLocationCodeTypeNone];
     
     NSDictionary *data = @{@"location": [PPLocation JSONData:location appName:nil]};
     

@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPLocationOccupantsRange : NSObject <NSCopying>
+@interface PPLocationOccupantsRange : RLMObject <NSCopying>
 
 @property (nonatomic) NSInteger start;
 @property (nonatomic) NSInteger end;
@@ -19,3 +19,5 @@
 + (PPLocationOccupantsRange *)initWithDictionary:(NSDictionary *)occupantsRangeDict;
 
 @end
+
+RLM_ARRAY_TYPE(PPLocationOccupantsRange);

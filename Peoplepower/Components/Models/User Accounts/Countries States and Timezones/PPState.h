@@ -9,7 +9,7 @@
 #import "PPBaseModel.h"
 #import "PPCountriesStatesAndTimezones.h"
 
-@interface PPState : NSObject <NSCopying>
+@interface PPState : RLMObject <NSCopying>
 
 /* State ID to reference this state in other API calls */
 @property (nonatomic) PPStateId stateId;
@@ -34,3 +34,5 @@
 + (PPState *)initWithDictionary:(NSDictionary *)stateDict;
 
 @end
+
+RLM_ARRAY_TYPE(PPState);

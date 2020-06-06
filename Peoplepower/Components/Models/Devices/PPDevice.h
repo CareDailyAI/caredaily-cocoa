@@ -54,7 +54,7 @@ typedef NS_OPTIONS(NSInteger, PPDeviceRestricted) {
     PPDeviceRestrictedTrue = 1
 };
 
-@interface PPDevice : NSObject
+@interface PPDevice : RLMObject
 
 @property (nonatomic, strong) NSString *deviceId;
 @property (nonatomic, strong) NSString *proxyId;
@@ -66,21 +66,21 @@ typedef NS_OPTIONS(NSInteger, PPDeviceRestricted) {
 @property (nonatomic) PPDeviceTypeGoalId goalId;
 @property (nonatomic) PPDeviceTypeId typeId;
 @property (nonatomic) PPDeviceTypeCategory category;
-@property (nonatomic, strong) NSMutableArray *typeAttributes;
+@property (nonatomic, strong) RLMArray<PPDeviceTypeAttribute *><PPDeviceTypeAttribute> *typeAttributes;
 @property (nonatomic) PPLocationId locationId;
 @property (nonatomic, strong) NSDate *startDate;
 @property (nonatomic, strong) NSDate *lastDataReceivedDate;
 @property (nonatomic, strong) NSDate *lastMeasureDate;
 @property (nonatomic, strong) NSDate *lastConnectedDate;
-@property (nonatomic, strong) NSMutableArray *parameters;
-@property (nonatomic, strong) NSMutableArray *properties;
+@property (nonatomic, strong) RLMArray<PPDeviceParameter *><PPDeviceParameter> *parameters;
+@property (nonatomic, strong) RLMArray<PPDeviceProperty *><PPDeviceProperty> *properties;
 @property (nonatomic, strong) NSString *icon;
-@property (nonatomic, strong) NSMutableArray *spaces;
+@property (nonatomic, strong) RLMArray<PPLocationSpace *><PPLocationSpace> *spaces;
 @property (nonatomic, strong) NSString *modelId;
 
 @property (nonatomic) PPLocation *location;
 
-- (id)initWithDeviceId:(NSString *)deviceId proxyId:(NSString *)proxyId name:(NSString *)name connected:(PPDeviceConnected)connected restricted:(PPDeviceRestricted)restricted shared:(PPDeviceShared)shared newDevice:(PPDeviceNewDevice)newDevice goalId:(PPDeviceTypeGoalId)goalId typeId:(PPDeviceTypeId)typeId category:(PPDeviceTypeCategory)category typeAttributes:(NSMutableArray *)typeAttributes locationId:(PPLocationId)locationId startDate:(NSDate *)startDate lastDataReceivedDate:(NSDate *)lastDataReceivedDate lastMeasureDate:(NSDate *)lastMeasureDate lastConnectedDate:(NSDate *)lastConnectedDate parameters:(NSMutableArray *)parameters properties:(NSMutableArray *)properties icon:(NSString *)icon spaces:(NSMutableArray *)spaces modelId:(NSString *)modelId;
+- (id)initWithDeviceId:(NSString *)deviceId proxyId:(NSString *)proxyId name:(NSString *)name connected:(PPDeviceConnected)connected restricted:(PPDeviceRestricted)restricted shared:(PPDeviceShared)shared newDevice:(PPDeviceNewDevice)newDevice goalId:(PPDeviceTypeGoalId)goalId typeId:(PPDeviceTypeId)typeId category:(PPDeviceTypeCategory)category typeAttributes:(RLMArray *)typeAttributes locationId:(PPLocationId)locationId startDate:(NSDate *)startDate lastDataReceivedDate:(NSDate *)lastDataReceivedDate lastMeasureDate:(NSDate *)lastMeasureDate lastConnectedDate:(NSDate *)lastConnectedDate parameters:(RLMArray *)parameters properties:(RLMArray *)properties icon:(NSString *)icon spaces:(RLMArray *)spaces modelId:(NSString *)modelId;
 
 + (PPDevice *)initWithDictionary:(NSDictionary *)deviceDict;
 
@@ -95,3 +95,5 @@ typedef NS_OPTIONS(NSInteger, PPDeviceRestricted) {
 - (void)sync:(PPDevice *)device;
 
 @end
+
+RLM_ARRAY_TYPE(PPDevice);

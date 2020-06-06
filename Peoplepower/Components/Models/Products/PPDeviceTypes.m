@@ -18,8 +18,6 @@
 
 #pragma mark Device types
 
-__strong static NSMutableDictionary *_sharedDeviceTypes = nil;
-
 /**
  * Shared deviceTypes across the entire application
  */
@@ -29,51 +27,21 @@ __strong static NSMutableDictionary *_sharedDeviceTypes = nil;
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    if(!_sharedDeviceTypes) {
-        [PPDeviceTypes initializeSharedDeviceTypes];
+    RLMResults<PPDeviceType *> *sharedDeviceTypes = [PPDeviceType allObjects];
+    
+    NSMutableArray *sharedDeviceTypesArray = [[NSMutableArray alloc] initWithCapacity:[sharedDeviceTypes count]];
+    NSMutableArray *deviceTypesArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
+    for(PPDeviceType *deviceType in sharedDeviceTypes) {
+        [sharedDeviceTypesArray addObject:deviceType];
+        
+        [deviceTypesArrayDebug addObject:@{@"typeId": @(deviceType.typeId)}];
     }
-    NSMutableArray *sharedDeviceTypes = [[NSMutableArray alloc] initWithCapacity:0];
-    NSMutableArray *deviceTypesArray = [[NSMutableArray alloc] initWithCapacity:0];
-    for(NSString *userIdKey in _sharedDeviceTypes.allKeys) {
-        for(PPDeviceType *deviceType in [_sharedDeviceTypes objectForKey:userIdKey]) {
-            NSMutableDictionary *deviceTypeIdentifiers = [[NSMutableDictionary alloc] initWithCapacity:2];
-            [deviceTypeIdentifiers setValue:@(deviceType.typeId) forKey:@"typeId"];
-            if(deviceType.name) {
-                [deviceTypeIdentifiers setValue:deviceType.name forKey:@"name"];
-            }
-            [deviceTypesArray addObject:deviceTypeIdentifiers];
-            
-            if([userIdKey isEqualToString:[NSString stringWithFormat:@"%li", (long)userId]]) {
-                [sharedDeviceTypes addObject:deviceType];
-            }
-        }
-    }
-
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s sharedDeviceTypes=%@", __PRETTY_FUNCTION__, deviceTypesArray);
+    NSLog(@"< %s sharedDeviceTypes=%@", __PRETTY_FUNCTION__, deviceTypesArrayDebug);
 #endif
 #endif
-    return sharedDeviceTypes;
-}
-
-+ (void)initializeSharedDeviceTypes {
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"> %s", __PRETTY_FUNCTION__);
-#endif
-#endif
-    _sharedDeviceTypes = [[NSMutableDictionary alloc] initWithCapacity:0];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    NSData *storedDeviceTypesData = [defaults objectForKey:@"user.notificationDeviceTypes"];
-//    if(storedDeviceTypesData) {
-//        _sharedDeviceTypes = (NSMutableDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:storedDeviceTypesData];
-//    }
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"< %s", __PRETTY_FUNCTION__);
-#endif
-#endif
+    return sharedDeviceTypesArray;
 }
 
 /**
@@ -89,39 +57,11 @@ __strong static NSMutableDictionary *_sharedDeviceTypes = nil;
     NSLog(@"> %s deviceTypes=%@", __PRETTY_FUNCTION__, deviceTypes);
 #endif
 #endif
-    if(!_sharedDeviceTypes) {
-        [PPDeviceTypes initializeSharedDeviceTypes];
-    }
-
-    NSMutableArray *deviceTypesArray = [_sharedDeviceTypes objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!deviceTypesArray) {
-        deviceTypesArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
+    [[PPRealm defaultRealm] beginWriteTransaction];
     for(PPDeviceType *deviceType in deviceTypes) {
-
-        BOOL found = NO;
-        for(PPDeviceType *sharedDeviceType in deviceTypesArray) {
-            if([sharedDeviceType isEqualToDeviceType:deviceType]) {
-                [sharedDeviceType sync:deviceType];
-                found = YES;
-                break;
-            }
-        }
-        if(!found) {
-            [indexSet addIndex:[deviceTypes indexOfObject:deviceType]];
-        }
+        [PPDeviceType createOrUpdateInDefaultRealmWithValue:deviceType];
     }
-
-    [deviceTypesArray addObjectsFromArray:[deviceTypes objectsAtIndexes:indexSet]];
-    [_sharedDeviceTypes setObject:deviceTypesArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-
-//    NSData *sharedDeviceTypeData = [NSKeyedArchiver archivedDataWithRootObject:_sharedDeviceTypes];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedDeviceTypeData forKey:@"user.notificationDeviceTypes"];
-//    [defaults synchronize];
-
+    [[PPRealm defaultRealm] commitWriteTransaction];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"< %s", __PRETTY_FUNCTION__);
@@ -142,39 +82,11 @@ __strong static NSMutableDictionary *_sharedDeviceTypes = nil;
     NSLog(@"> %s deviceTypes=%@", __PRETTY_FUNCTION__, deviceTypes);
 #endif
 #endif
-    if(!_sharedDeviceTypes) {
-        [PPDeviceTypes initializeSharedDeviceTypes];
-    }
-
-    NSMutableArray *deviceTypesArray = [_sharedDeviceTypes objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!deviceTypesArray) {
-        deviceTypesArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
-    for(PPDeviceType *deviceType in deviceTypes) {
-
-        BOOL found = NO;
-        for(PPDeviceType *sharedDeviceType in deviceTypesArray) {
-            if([sharedDeviceType isEqualToDeviceType:deviceType]) {
-                [sharedDeviceType sync:deviceType];
-                found = YES;
-                break;
-            }
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPDeviceType *deviceType in deviceTypes) {
+            [[PPRealm defaultRealm] deleteObject:[PPDeviceType objectForPrimaryKey:@(deviceType.typeId)]];
         }
-        if(!found) {
-            [indexSet addIndex:[deviceTypes indexOfObject:deviceType]];
-        }
-    }
-
-    [deviceTypesArray addObjectsFromArray:[deviceTypes objectsAtIndexes:indexSet]];
-    [_sharedDeviceTypes setObject:deviceTypesArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-
-//    NSData *sharedDeviceTypeData = [NSKeyedArchiver archivedDataWithRootObject:_sharedDeviceTypes];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedDeviceTypeData forKey:@"user.notificationDeviceTypes"];
-//    [defaults synchronize];
-
+    }];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"< %s", __PRETTY_FUNCTION__);
@@ -184,45 +96,33 @@ __strong static NSMutableDictionary *_sharedDeviceTypes = nil;
 
 #pragma mark Device type Attributes
 
-__strong static NSMutableDictionary*_sharedDeviceTypeAttributes = nil;
-
 /**
  * Shared device type attribtues across the entire application
+ * @param userId Required PPUserId User Id to associate these device type attributes with
  */
 + (NSArray *)sharedDeviceTypeAttributesForUser:(PPUserId)userId {
-    if(!_sharedDeviceTypeAttributes) {
-        [PPDeviceTypes initializeSharedDeviceTypeAttributes];
-    }
-    NSMutableArray *sharedDeviceTypeAttributes = [[NSMutableArray alloc] initWithCapacity:0];
-    NSMutableArray *deviceTypeAttributesArray = [[NSMutableArray alloc] initWithCapacity:0];
-    for(NSString *userIdKey in _sharedDeviceTypeAttributes.allKeys) {
-        for(PPDeviceTypeAttribute *deviceTypeAttribute in [_sharedDeviceTypeAttributes objectForKey:userIdKey]) {
-            NSMutableDictionary *deviceTypeAttributeIdentifiers = [[NSMutableDictionary alloc] initWithCapacity:2];
-            [deviceTypeAttributeIdentifiers setValue:deviceTypeAttribute.name forKey:@"name"];
-            [deviceTypeAttributesArray addObject:deviceTypeAttributeIdentifiers];
-            
-            if([userIdKey isEqualToString:[NSString stringWithFormat:@"%li", (long)userId]]) {
-                [sharedDeviceTypeAttributes addObject:deviceTypeAttribute];
-            }
-        }
+#ifdef DEBUG
+#ifdef DEBUG_MODELS
+    NSLog(@"> %s", __PRETTY_FUNCTION__);
+#endif
+#endif
+    
+    RLMResults<PPDeviceTypeAttribute *> *sharedDeviceTypeAttributes = [PPDeviceTypeAttribute allObjects];
+    
+    NSMutableArray *sharedDeviceTypeAttributesArray = [[NSMutableArray alloc] initWithCapacity:[sharedDeviceTypeAttributes count]];
+    NSMutableArray *deviceTypeAttributesArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
+    for(PPDeviceTypeAttribute *deviceTypeAttribute in sharedDeviceTypeAttributes) {
+        [sharedDeviceTypeAttributesArray addObject:deviceTypeAttribute];
+        
+        [deviceTypeAttributesArrayDebug addObject:@{@"name": deviceTypeAttribute.name}];
     }
 
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"%s sharedDeviceTypeAttributes=%@", __PRETTY_FUNCTION__, deviceTypeAttributesArray);
+    NSLog(@"%s sharedDeviceTypeAttributes=%@", __PRETTY_FUNCTION__, deviceTypeAttributesArrayDebug);
 #endif
 #endif
-    return sharedDeviceTypeAttributes;
-}
-
-
-+ (void)initializeSharedDeviceTypeAttributes {
-    _sharedDeviceTypeAttributes = [[NSMutableDictionary alloc] initWithCapacity:0];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    NSData *storedDeviceTypeAttributesData = [defaults objectForKey:@"user.notificationDeviceTypeAttributes"];
-//    if(storedDeviceTypeAttributesData) {
-//        _sharedDeviceTypeAttributes = (NSMutableDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:storedDeviceTypeAttributesData];
-//    }
+    return sharedDeviceTypeAttributesArray;
 }
 
 /**
@@ -230,41 +130,16 @@ __strong static NSMutableDictionary*_sharedDeviceTypeAttributes = nil;
  * Add deviceTypeAttributes to local reference.
  *
  * @param deviceTypeAttributes NSArray Array of deviceTypeAttributes to add.
- * @param userId Required PPUserId User Id to associate these device types with
+ * @param userId Required PPUserId User Id to associate these device type attributes with
  **/
 + (void)addDeviceTypeAttributes:(NSArray *)deviceTypeAttributes userId:(PPUserId)userId {
-    if(!_sharedDeviceTypeAttributes) {
-        [PPDeviceTypes initializeSharedDeviceTypeAttributes];
+    NSLog(@"> %s deviceTypeAttributes=%@", __PRETTY_FUNCTION__, deviceTypeAttributes);
+    [[PPRealm defaultRealm] beginWriteTransaction];
+    for(PPDeviceTypeAttribute *attribute in deviceTypeAttributes) {
+        [[PPRealm defaultRealm] addObject:attribute];
     }
-
-    NSMutableArray *deviceTypeAttributesArray = [_sharedDeviceTypeAttributes objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!deviceTypeAttributesArray) {
-        deviceTypeAttributesArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
-    for(PPDeviceTypeAttribute *deviceTypeAttribute in deviceTypeAttributes) {
-
-        BOOL found = NO;
-        for(PPDeviceTypeAttribute *sharedDeviceTypeAttribute in deviceTypeAttributesArray) {
-            if([sharedDeviceTypeAttribute isEqualToAttribute:deviceTypeAttribute]) {
-                [sharedDeviceTypeAttribute sync:deviceTypeAttribute];
-                found = YES;
-                break;
-            }
-        }
-        if(!found) {
-            [indexSet addIndex:[deviceTypeAttributes indexOfObject:deviceTypeAttribute]];
-        }
-    }
-
-    [deviceTypeAttributesArray addObjectsFromArray:[deviceTypeAttributes objectsAtIndexes:indexSet]];
-    [_sharedDeviceTypeAttributes setObject:deviceTypeAttributesArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-
-//    NSData *sharedDeviceTypeAttributeData = [NSKeyedArchiver archivedDataWithRootObject:_sharedDeviceTypeAttributes];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedDeviceTypeAttributeData forKey:@"user.notificationDeviceTypeAttributes"];
-//    [defaults synchronize];
+    [[PPRealm defaultRealm] commitWriteTransaction];
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 }
 
 /**
@@ -272,43 +147,21 @@ __strong static NSMutableDictionary*_sharedDeviceTypeAttributes = nil;
  * Remove deviceTypeAttributes from local reference.
  *
  * @param deviceTypeAttributes NSArray Array of deviceTypeAttributes to remove.
- * @param userId Required PPUserId User Id to associate these device types with
+ * @param userId Required PPUserId User Id to associate these device type attributes with
  **/
 + (void)removeDeviceTypeAttributes:(NSArray *)deviceTypeAttributes userId:(PPUserId)userId {
-    if(!_sharedDeviceTypeAttributes) {
-        [PPDeviceTypes initializeSharedDeviceTypeAttributes];
-    }
-
-    NSMutableArray *deviceTypeAttributesArray = [_sharedDeviceTypeAttributes objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!deviceTypeAttributesArray) {
-        deviceTypeAttributesArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
-    for(PPDeviceTypeAttribute *deviceTypeAttribute in deviceTypeAttributes) {
-        for(PPDeviceTypeAttribute *sharedDeviceTypeAttribute in deviceTypeAttributesArray) {
-            if([sharedDeviceTypeAttribute isEqualToAttribute:deviceTypeAttribute]) {
-                [indexSet addIndex:[deviceTypeAttributesArray indexOfObject:sharedDeviceTypeAttribute]];
-                break;
-            }
-        }
-    }
-
-    [deviceTypeAttributesArray removeObjectsAtIndexes:indexSet];
-    [_sharedDeviceTypeAttributes setObject:deviceTypeAttributesArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-
-//    NSData *sharedDeviceTypeAttributeData = [NSKeyedArchiver archivedDataWithRootObject:_sharedDeviceTypeAttributes];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedDeviceTypeAttributeData forKey:@"user.notificationDeviceTypeAttributes"];
-//    [defaults synchronize];
+    NSLog(@"> %s deviceTypeAttributes=%@", __PRETTY_FUNCTION__, deviceTypeAttributes);
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        [[PPRealm defaultRealm] deleteObjects:deviceTypeAttributes];
+    }];
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 }
 
 #pragma mark Device type Parameters
 
-__strong static NSMutableDictionary*_sharedDeviceTypeParameters = nil;
-
 /**
  * Shared deviceTypeParameters across the entire application
+ * @param userId Required PPUserId User Id to associate these device type attributes with
  */
 + (NSArray *)sharedDeviceTypeParametersForUser:(PPUserId)userId {
 #ifdef DEBUG
@@ -316,57 +169,28 @@ __strong static NSMutableDictionary*_sharedDeviceTypeParameters = nil;
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    if(!_sharedDeviceTypeParameters) {
-        [PPDeviceTypes initializeSharedDeviceTypeParameters];
+    RLMResults<PPDeviceTypeParameter *> *sharedDeviceTypeParameters = [PPDeviceTypeParameter allObjects];
+    
+    NSMutableArray *sharedDeviceTypeParametersArray = [[NSMutableArray alloc] initWithCapacity:[sharedDeviceTypeParameters count]];
+    NSMutableArray *deviceTypeParametersArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
+    for(PPDeviceTypeParameter *deviceTypeParameter in sharedDeviceTypeParameters) {
+        [sharedDeviceTypeParametersArray addObject:deviceTypeParameter];
+        
+        [deviceTypeParametersArrayDebug addObject:@{@"name": deviceTypeParameter.name}];
     }
-    NSMutableArray *sharedDeviceTypeParameters = [[NSMutableArray alloc] initWithCapacity:0];
-    NSMutableArray *deviceTypeParametersArray = [[NSMutableArray alloc] initWithCapacity:0];
-    for(NSString *userIdKey in _sharedDeviceTypeParameters.allKeys) {
-        for(PPDeviceTypeParameter *deviceTypeParameter in [_sharedDeviceTypeParameters objectForKey:userIdKey]) {
-            NSMutableDictionary *deviceTypeParameterIdentifiers = [[NSMutableDictionary alloc] initWithCapacity:2];
-            [deviceTypeParameterIdentifiers setValue:deviceTypeParameter.name forKey:@"name"];
-            [deviceTypeParametersArray addObject:deviceTypeParameterIdentifiers];
-            
-            if([userIdKey isEqualToString:[NSString stringWithFormat:@"%li", (long)userId]]) {
-                [sharedDeviceTypeParameters addObject:deviceTypeParameter];
-            }
-        }
-    }
-
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s sharedDeviceTypeParameters=%@", __PRETTY_FUNCTION__, deviceTypeParametersArray);
+    NSLog(@"< %s sharedDeviceTypeParameters=%@", __PRETTY_FUNCTION__, deviceTypeParametersArrayDebug);
 #endif
 #endif
-    return sharedDeviceTypeParameters;
+    return sharedDeviceTypeParametersArray;
 }
-
-+ (void)initializeSharedDeviceTypeParameters {
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"> %s", __PRETTY_FUNCTION__);
-#endif
-#endif
-    _sharedDeviceTypeParameters = [[NSMutableDictionary alloc] initWithCapacity:0];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    NSData *storedDeviceTypeParametersData = [defaults objectForKey:@"user.notificationDeviceTypeParameters"];
-//    if(storedDeviceTypeParametersData) {
-//        _sharedDeviceTypeParameters = (NSMutableDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:storedDeviceTypeParametersData];
-//    }
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"< %s", __PRETTY_FUNCTION__);
-#endif
-#endif
-}
-
-
 /**
  * Add deviceTypeParameters.
  * Add deviceTypeParameters to local reference.
  *
  * @param deviceTypeParameters NSArray Array of deviceTypeParameters to add.
- * @param userId Required PPUserId User Id to associate these device type parameters with
+ * @param userId Required PPUserId User Id to associate these device type attributes with
  **/
 + (void)addDeviceTypeParameters:(NSArray *)deviceTypeParameters userId:(PPUserId)userId {
 #ifdef DEBUG
@@ -374,42 +198,14 @@ __strong static NSMutableDictionary*_sharedDeviceTypeParameters = nil;
     NSLog(@"> %s deviceTypeParameters=%@", __PRETTY_FUNCTION__, deviceTypeParameters);
 #endif
 #endif
-    if(!_sharedDeviceTypeParameters) {
-        [PPDeviceTypes initializeSharedDeviceTypeParameters];
-    }
-
-    NSMutableArray *deviceTypeParametersArray = [_sharedDeviceTypeParameters objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!deviceTypeParametersArray) {
-        deviceTypeParametersArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
+    [[PPRealm defaultRealm] beginWriteTransaction];
     for(PPDeviceTypeParameter *deviceTypeParameter in deviceTypeParameters) {
-
-        BOOL found = NO;
-        for(PPDeviceTypeParameter *sharedDeviceTypeParameter in deviceTypeParametersArray) {
-            if([sharedDeviceTypeParameter isEqualToParameter:deviceTypeParameter]) {
-                [sharedDeviceTypeParameter sync:deviceTypeParameter];
-                found = YES;
-                break;
-            }
-        }
-        if(!found) {
-            [indexSet addIndex:[deviceTypeParameters indexOfObject:deviceTypeParameter]];
-        }
+        [PPDeviceTypeParameter createOrUpdateInDefaultRealmWithValue:deviceTypeParameter];
     }
-
-    [deviceTypeParametersArray addObjectsFromArray:[deviceTypeParameters objectsAtIndexes:indexSet]];
-    [_sharedDeviceTypeParameters setObject:deviceTypeParametersArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-
-//    NSData *sharedDeviceTypeParameterData = [NSKeyedArchiver archivedDataWithRootObject:_sharedDeviceTypeParameters];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedDeviceTypeParameterData forKey:@"user.notificationDeviceTypeParameters"];
-//    [defaults synchronize];
-
+    [[PPRealm defaultRealm] commitWriteTransaction];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s deviceTypeParametersArray=%@", __PRETTY_FUNCTION__, deviceTypeParametersArray);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }
@@ -420,7 +216,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeParameters = nil;
  * Remove deviceTypeParameters from local reference.
  *
  * @param deviceTypeParameters NSArray Array of deviceTypeParameters to remove.
- * @param userId Required PPUserId User Id to associate these device type parameters with
+ * @param userId Required PPUserId User Id to associate these device type attributes with
  **/
 + (void)removeDeviceTypeParameters:(NSArray *)deviceTypeParameters userId:(PPUserId)userId {
 #ifdef DEBUG
@@ -428,44 +224,19 @@ __strong static NSMutableDictionary*_sharedDeviceTypeParameters = nil;
     NSLog(@"> %s deviceTypeParameters=%@", __PRETTY_FUNCTION__, deviceTypeParameters);
 #endif
 #endif
-
-    if(!_sharedDeviceTypeParameters) {
-        [PPDeviceTypes initializeSharedDeviceTypeParameters];
-    }
-
-    NSMutableArray *deviceTypeParametersArray = [_sharedDeviceTypeParameters objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!deviceTypeParametersArray) {
-        deviceTypeParametersArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
-    for(PPDeviceTypeParameter *deviceTypeParameter in deviceTypeParameters) {
-        for(PPDeviceTypeParameter *sharedDeviceTypeParameter in deviceTypeParametersArray) {
-            if([sharedDeviceTypeParameter isEqualToParameter:deviceTypeParameter]) {
-                [indexSet addIndex:[deviceTypeParametersArray indexOfObject:sharedDeviceTypeParameter]];
-                break;
-            }
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPDeviceTypeParameter *deviceTypeParameter in deviceTypeParameters) {
+            [[PPRealm defaultRealm] deleteObject:[PPDeviceTypeParameter objectForPrimaryKey:deviceTypeParameter.name]];
         }
-    }
-
-    [deviceTypeParametersArray removeObjectsAtIndexes:indexSet];
-    [_sharedDeviceTypeParameters setObject:deviceTypeParametersArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-
-//    NSData *sharedDeviceTypeParameterData = [NSKeyedArchiver archivedDataWithRootObject:_sharedDeviceTypeParameters];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedDeviceTypeParameterData forKey:@"user.notificationDeviceTypeParameters"];
-//    [defaults synchronize];
-
+    }];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s deviceTypeParametersArray=%@", __PRETTY_FUNCTION__, deviceTypeParametersArray);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }
 
 #pragma mark Device type Rule Component Templates
-
-__strong static NSMutableDictionary*_sharedDeviceTypeRuleComponentTemplates = nil;
 
 /**
  * Shared deviceTypeRuleComponentTemplates across the entire application
@@ -477,7 +248,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeRuleComponentTemplates = ni
 #endif
 #endif
     
-    NSArray *sharedDeviceTypeRuleComponentTemplates = @[];
+    RLMResults<PPDeviceTypeRuleComponentTemplate *> *sharedDeviceTypeRuleComponentTemplates = [PPDeviceTypeRuleComponentTemplate allObjects];
     
     NSMutableArray *sharedDeviceTypeRuleComponentTemplatesArray = [[NSMutableArray alloc] initWithCapacity:[sharedDeviceTypeRuleComponentTemplates count]];
     NSMutableArray *deviceTypeRuleComponentTemplatesArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
@@ -505,6 +276,11 @@ __strong static NSMutableDictionary*_sharedDeviceTypeRuleComponentTemplates = ni
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s deviceTypeRuleComponentTemplates=%@", __PRETTY_FUNCTION__, deviceTypeRuleComponentTemplates);
+    [[PPRealm defaultRealm] beginWriteTransaction];
+    for(PPDeviceTypeRuleComponentTemplate *deviceTypeRuleComponentTemplate in deviceTypeRuleComponentTemplates) {
+        [PPDeviceTypeRuleComponentTemplate createOrUpdateInDefaultRealmWithValue:deviceTypeRuleComponentTemplate];
+    }
+    [[PPRealm defaultRealm] commitWriteTransaction];
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
@@ -521,6 +297,11 @@ __strong static NSMutableDictionary*_sharedDeviceTypeRuleComponentTemplates = ni
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s deviceTypeRuleComponentTemplates=%@", __PRETTY_FUNCTION__, deviceTypeRuleComponentTemplates);
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPDeviceTypeRuleComponentTemplate *deviceTypeRuleComponentTemplate in deviceTypeRuleComponentTemplates) {
+            [[PPRealm defaultRealm] deleteObject:[PPDeviceTypeRuleComponentTemplate objectForPrimaryKey:@(deviceTypeRuleComponentTemplate.templateId)]];
+        }
+    }];
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
@@ -528,62 +309,30 @@ __strong static NSMutableDictionary*_sharedDeviceTypeRuleComponentTemplates = ni
 
 #pragma mark Device type Goals
 
-__strong static NSMutableDictionary*_sharedDeviceTypeGoals = nil;
-
 /**
  * Shared deviceTypeGoals across the entire application
  */
-+ (NSArray *)sharedDeviceTypeGoalsForUser:(PPUserId)userId {
++ (RLMResults *)sharedDeviceTypeGoalsForUser:(PPUserId)userId {
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    if(!_sharedDeviceTypeGoals) {
-        [PPDeviceTypes initializeSharedDeviceTypeGoals];
+    RLMResults<PPDeviceTypeGoal *> *sharedDeviceTypeGoals = [PPDeviceTypeGoal allObjects];
+    
+    NSMutableArray *sharedDeviceTypeGoalsArray = [[NSMutableArray alloc] initWithCapacity:[sharedDeviceTypeGoals count]];
+    NSMutableArray *deviceTypeGoalsArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
+    for(PPDeviceTypeGoal *deviceTypeGoal in sharedDeviceTypeGoals) {
+        [sharedDeviceTypeGoalsArray addObject:deviceTypeGoal];
+        
+        [deviceTypeGoalsArrayDebug addObject:@{@"goalId": @(deviceTypeGoal.goalId)}];
     }
-    NSMutableArray *sharedDeviceTypeGoals = [[NSMutableArray alloc] initWithCapacity:0];
-    NSMutableArray *deviceTypeGoalsArray = [[NSMutableArray alloc] initWithCapacity:0];
-    for(NSString *userIdKey in _sharedDeviceTypeGoals.allKeys) {
-        for(PPDeviceTypeGoal *deviceTypeGoal in [_sharedDeviceTypeGoals objectForKey:userIdKey]) {
-            NSMutableDictionary *deviceTypeGoalIdentifiers = [[NSMutableDictionary alloc] initWithCapacity:2];
-            [deviceTypeGoalIdentifiers setValue:@(deviceTypeGoal.goalId) forKey:@"ID"];
-            if(deviceTypeGoal.name) {
-                [deviceTypeGoalIdentifiers setValue:deviceTypeGoal.name forKey:@"name"];
-            }
-            [deviceTypeGoalsArray addObject:deviceTypeGoalIdentifiers];
-            
-            if([userIdKey isEqualToString:[NSString stringWithFormat:@"%li", (long)userId]]) {
-                [sharedDeviceTypeGoals addObject:deviceTypeGoal];
-            }
-        }
-    }
-
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"< %s sharedDeviceTypeGoals=%@", __PRETTY_FUNCTION__, deviceTypeGoalsArray);
-#endif
-#endif
-    return sharedDeviceTypeGoals;
-}
-
-+ (void)initializeSharedDeviceTypeGoals {
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"> %s", __PRETTY_FUNCTION__);
-#endif
-#endif
-    _sharedDeviceTypeGoals = [[NSMutableDictionary alloc] initWithCapacity:0];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    NSData *storedDeviceTypeGoalsData = [defaults objectForKey:@"user.notificationDeviceTypeGoals"];
-//    if(storedDeviceTypeGoalsData) {
-//        _sharedDeviceTypeGoals = (NSMutableDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:storedDeviceTypeGoalsData];
-//    }
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
+    return sharedDeviceTypeGoals;
 }
 
 /**
@@ -599,42 +348,14 @@ __strong static NSMutableDictionary*_sharedDeviceTypeGoals = nil;
     NSLog(@"> %s deviceTypeGoals=%@", __PRETTY_FUNCTION__, deviceTypeGoals);
 #endif
 #endif
-    if(!_sharedDeviceTypeGoals) {
-        [PPDeviceTypes initializeSharedDeviceTypeGoals];
-    }
-
-    NSMutableArray *deviceTypeGoalsArray = [_sharedDeviceTypeGoals objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!deviceTypeGoalsArray) {
-        deviceTypeGoalsArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
+    [[PPRealm defaultRealm] beginWriteTransaction];
     for(PPDeviceTypeGoal *deviceTypeGoal in deviceTypeGoals) {
-
-        BOOL found = NO;
-        for(PPDeviceTypeGoal *sharedDeviceTypeGoal in deviceTypeGoalsArray) {
-            if([sharedDeviceTypeGoal isEqualToGoal:deviceTypeGoal]) {
-                [sharedDeviceTypeGoal sync:deviceTypeGoal];
-                found = YES;
-                break;
-            }
-        }
-        if(!found) {
-            [indexSet addIndex:[deviceTypeGoals indexOfObject:deviceTypeGoal]];
-        }
+        [PPDeviceTypeGoal createOrUpdateInDefaultRealmWithValue:deviceTypeGoal];
     }
-
-    [deviceTypeGoalsArray addObjectsFromArray:[deviceTypeGoals objectsAtIndexes:indexSet]];
-    [_sharedDeviceTypeGoals setObject:deviceTypeGoalsArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-
-//    NSData *sharedDeviceTypeGoalData = [NSKeyedArchiver archivedDataWithRootObject:_sharedDeviceTypeGoals];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedDeviceTypeGoalData forKey:@"user.notificationDeviceTypeGoals"];
-//    [defaults synchronize];
-
+    [[PPRealm defaultRealm] commitWriteTransaction];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s deviceTypeGoalsArray=%@", __PRETTY_FUNCTION__, deviceTypeGoalsArray);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }
@@ -652,44 +373,19 @@ __strong static NSMutableDictionary*_sharedDeviceTypeGoals = nil;
     NSLog(@"> %s deviceTypeGoals=%@", __PRETTY_FUNCTION__, deviceTypeGoals);
 #endif
 #endif
-
-    if(!_sharedDeviceTypeGoals) {
-        [PPDeviceTypes initializeSharedDeviceTypeGoals];
-    }
-
-    NSMutableArray *deviceTypeGoalsArray = [_sharedDeviceTypeGoals objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!deviceTypeGoalsArray) {
-        deviceTypeGoalsArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
-    for(PPDeviceTypeGoal *deviceTypeGoal in deviceTypeGoals) {
-        for(PPDeviceTypeGoal *sharedDeviceTypeGoal in deviceTypeGoalsArray) {
-            if([sharedDeviceTypeGoal isEqualToGoal:deviceTypeGoal]) {
-                [indexSet addIndex:[deviceTypeGoalsArray indexOfObject:sharedDeviceTypeGoal]];
-                break;
-            }
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPDeviceTypeGoal *deviceTypeGoal in deviceTypeGoals) {
+            [[PPRealm defaultRealm] deleteObject:[PPDeviceTypeGoal objectForPrimaryKey:@(deviceTypeGoal.goalId)]];
         }
-    }
-
-    [deviceTypeGoalsArray removeObjectsAtIndexes:indexSet];
-    [_sharedDeviceTypeGoals setObject:deviceTypeGoalsArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-
-//    NSData *sharedDeviceTypeGoalData = [NSKeyedArchiver archivedDataWithRootObject:_sharedDeviceTypeGoals];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedDeviceTypeGoalData forKey:@"user.notificationDeviceTypeGoals"];
-//    [defaults synchronize];
-
+    }];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s deviceTypeGoalsArray=%@", __PRETTY_FUNCTION__, deviceTypeGoalsArray);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }
 
 #pragma mark Device type installation instructions
-
-__strong static NSMutableDictionary*_sharedDeviceTypeGoalInstallations = nil;
 
 /**
  * Shared deviceTypeInstallationInstructions across the entire application
@@ -701,7 +397,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeGoalInstallations = nil;
 #endif
 #endif
     
-    NSArray *sharedDeviceTypeInstallationInstructions = @[];
+    RLMResults<PPDeviceTypeInstallationInstructions *> *sharedDeviceTypeInstallationInstructions = [PPDeviceTypeInstallationInstructions allObjects];
     
     NSMutableArray *sharedDeviceTypeInstallationInstructionsArray = [[NSMutableArray alloc] initWithCapacity:[sharedDeviceTypeInstallationInstructions count]];
     NSMutableArray *deviceTypeInstallationInstructionsArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
@@ -729,6 +425,11 @@ __strong static NSMutableDictionary*_sharedDeviceTypeGoalInstallations = nil;
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s deviceTypeInstallationInstructions=%@", __PRETTY_FUNCTION__, deviceTypeInstallationInstructions);
+    [[PPRealm defaultRealm] beginWriteTransaction];
+    for(PPDeviceTypeInstallationInstructions *deviceTypeInstallationInstruction in deviceTypeInstallationInstructions) {
+        [PPDeviceTypeInstallationInstructions createOrUpdateInDefaultRealmWithValue:deviceTypeInstallationInstruction];
+    }
+    [[PPRealm defaultRealm] commitWriteTransaction];
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
@@ -745,14 +446,17 @@ __strong static NSMutableDictionary*_sharedDeviceTypeGoalInstallations = nil;
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s deviceTypeInstallationInstructions=%@", __PRETTY_FUNCTION__, deviceTypeInstallationInstructions);
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPDeviceTypeInstallationInstructions *deviceTypeInstallationInstruction in deviceTypeInstallationInstructions) {
+            [[PPRealm defaultRealm] deleteObject:[PPDeviceTypeInstallationInstructions objectForPrimaryKey:@(deviceTypeInstallationInstruction.goalId)]];
+        }
+    }];
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }
 
 #pragma mark Device type Media
-
-__strong static NSMutableDictionary*_sharedDeviceTypeMedia = nil;
 
 /**
  * Shared device type media across the entire application
@@ -763,52 +467,21 @@ __strong static NSMutableDictionary*_sharedDeviceTypeMedia = nil;
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    if(!_sharedDeviceTypeMedia) {
-        [PPDeviceTypes initializeSharedDeviceTypeMedia];
+    RLMResults<PPDeviceTypeMedia *> *sharedDeviceTypeMedias = [PPDeviceTypeMedia allObjects];
+    
+    NSMutableArray *sharedDeviceTypeMediasArray = [[NSMutableArray alloc] initWithCapacity:[sharedDeviceTypeMedias count]];
+    NSMutableArray *deviceTypeMediasArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
+    for(PPDeviceTypeMedia *deviceTypeMedia in sharedDeviceTypeMedias) {
+        [sharedDeviceTypeMediasArray addObject:deviceTypeMedia];
+        
+        [deviceTypeMediasArrayDebug addObject:@{@"appId": deviceTypeMedia.mediaId}];
     }
-    NSMutableArray *sharedDeviceTypeMedia = [[NSMutableArray alloc] initWithCapacity:0];
-    NSMutableArray *deviceTypeMediaArray = [[NSMutableArray alloc] initWithCapacity:0];
-    for(NSString *userIdKey in _sharedDeviceTypeMedia.allKeys) {
-        for(PPDeviceTypeMedia *deviceTypeMediaFile in [_sharedDeviceTypeMedia objectForKey:userIdKey]) {
-            NSMutableDictionary *deviceTypeMediaIdentifiers = [[NSMutableDictionary alloc] initWithCapacity:2];
-            [deviceTypeMediaIdentifiers setValue:deviceTypeMediaFile.mediaId forKey:@"ID"];
-            if(deviceTypeMediaFile.desc) {
-                [deviceTypeMediaIdentifiers setValue:deviceTypeMediaFile.desc forKey:@"desc"];
-            }
-            [deviceTypeMediaArray addObject:deviceTypeMediaIdentifiers];
-            
-            if([userIdKey isEqualToString:[NSString stringWithFormat:@"%li", (long)userId]]) {
-                [sharedDeviceTypeMedia addObject:deviceTypeMediaFile];
-            }
-        }
-    }
-
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s sharedDeviceTypeMedia=%@", __PRETTY_FUNCTION__, deviceTypeMediaArray);
+    NSLog(@"< %s sharedDeviceTypeMedia=%@", __PRETTY_FUNCTION__, deviceTypeMediasArrayDebug);
 #endif
 #endif
-    return sharedDeviceTypeMedia;
-}
-
-
-+ (void)initializeSharedDeviceTypeMedia {
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"> %s", __PRETTY_FUNCTION__);
-#endif
-#endif
-    _sharedDeviceTypeMedia = [[NSMutableDictionary alloc] initWithCapacity:0];
-    //    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    //    NSData *storedDeviceTypesData = [defaults objectForKey:@"user.notificationDeviceTypes"];
-    //    if(storedDeviceTypesData) {
-    //        _sharedDeviceTypes = (NSMutableDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:storedDeviceTypesData];
-    //    }
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"< %s", __PRETTY_FUNCTION__);
-#endif
-#endif
+    return sharedDeviceTypeMediasArray;
 }
 
 /**
@@ -816,7 +489,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeMedia = nil;
  * Add device type media to local reference.
  *
  * @param deviceTypeMedia NSArray Array of deviceTypeMedia to add.
- * @param userId Required PPUserId User Id to associate these device typeMedia with
+ * @param userId Required PPUserId User Id to associate these device typeGoals with
  **/
 + (void)addDeviceTypeMedia:(NSArray *)deviceTypeMedia userId:(PPUserId)userId {
 #ifdef DEBUG
@@ -824,42 +497,14 @@ __strong static NSMutableDictionary*_sharedDeviceTypeMedia = nil;
     NSLog(@"> %s deviceTypeMedia=%@", __PRETTY_FUNCTION__, deviceTypeMedia);
 #endif
 #endif
-    if(!_sharedDeviceTypeMedia) {
-        [PPDeviceTypes initializeSharedDeviceTypeMedia];
+    [[PPRealm defaultRealm] beginWriteTransaction];
+    for(PPDeviceTypeMedia *media in deviceTypeMedia) {
+        [PPDeviceTypeMedia createOrUpdateInDefaultRealmWithValue:media];
     }
-
-    NSMutableArray *deviceTypeMediaArray = [_sharedDeviceTypeMedia objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!deviceTypeMediaArray) {
-        deviceTypeMediaArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
-    for(NSInteger i = 0; i < [deviceTypeMedia count]; i++) {
-        PPDeviceTypeMedia *deviceTypeMediaFile = [deviceTypeMedia objectAtIndex:i];
-        BOOL found = NO;
-        for(PPDeviceTypeMedia *sharedDeviceTypeMediaFile in deviceTypeMediaArray) {
-            if([sharedDeviceTypeMediaFile isEqualToMedia:deviceTypeMediaFile]) {
-                [sharedDeviceTypeMediaFile sync:deviceTypeMediaFile];
-                found = YES;
-                break;
-            }
-        }
-        if(!found) {
-            [indexSet addIndex:i];
-        }
-    }
-
-    [deviceTypeMediaArray addObjectsFromArray:[deviceTypeMedia objectsAtIndexes:indexSet]];
-    [_sharedDeviceTypeMedia setObject:deviceTypeMediaArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-
-    //    NSData *sharedDeviceTypeGoalData = [NSKeyedArchiver archivedDataWithRootObject:_sharedDeviceTypeMedia];
-    //    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    //    [defaults setObject:sharedDeviceTypeGoalData forKey:@"user.notificationDeviceTypeMedia"];
-    //    [defaults synchronize];
-
+    [[PPRealm defaultRealm] commitWriteTransaction];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s deviceTypeMediaArray=%@", __PRETTY_FUNCTION__, deviceTypeMediaArray);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }
@@ -869,7 +514,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeMedia = nil;
  * Remove device type media from local reference.
  *
  * @param deviceTypeMedia NSArray Array of deviceTypeMedia to remove.
- * @param userId Required PPUserId User Id to associate these device typeMedia with
+ * @param userId Required PPUserId User Id to associate these device typeGoals with
  **/
 + (void)removeDeviceTypeMedia:(NSArray *)deviceTypeMedia userId:(PPUserId)userId {
 #ifdef DEBUG
@@ -877,44 +522,19 @@ __strong static NSMutableDictionary*_sharedDeviceTypeMedia = nil;
     NSLog(@"> %s deviceTypeMedia=%@", __PRETTY_FUNCTION__, deviceTypeMedia);
 #endif
 #endif
-
-    if(!_sharedDeviceTypeMedia) {
-        [PPDeviceTypes initializeSharedDeviceTypeMedia];
-    }
-
-    NSMutableArray *deviceTypeMediaArray = [_sharedDeviceTypeMedia objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!deviceTypeMediaArray) {
-        deviceTypeMediaArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
-    for(PPDeviceTypeMedia *deviceTypeMediaFile in deviceTypeMedia) {
-        for(PPDeviceTypeMedia *sharedDeviceTypeMediaFile in deviceTypeMediaArray) {
-            if([sharedDeviceTypeMediaFile isEqualToMedia:deviceTypeMediaFile]) {
-                [indexSet addIndex:[deviceTypeMediaArray indexOfObject:sharedDeviceTypeMediaFile]];
-                break;
-            }
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPDeviceTypeMedia *media in deviceTypeMedia) {
+            [[PPRealm defaultRealm] deleteObject:[PPDeviceTypeMedia objectForPrimaryKey:media.mediaId]];
         }
-    }
-
-    [deviceTypeMediaArray removeObjectsAtIndexes:indexSet];
-    [_sharedDeviceTypeMedia setObject:deviceTypeMediaArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-
-    //    NSData *sharedDeviceTypeGoalData = [NSKeyedArchiver archivedDataWithRootObject:_sharedDeviceTypeMedia];
-    //    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    //    [defaults setObject:sharedDeviceTypeGoalData forKey:@"user.notificationDeviceTypeMedia"];
-    //    [defaults synchronize];
-
+    }];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s deviceTypeMediaArray=%@", __PRETTY_FUNCTION__, deviceTypeMediaArray);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }
 
 #pragma mark Device type model categories
-
-__strong static NSMutableDictionary*_sharedDeviceTypeModelCategories = nil;
 
 /**
  * Shared device type model categories across the entire application
@@ -925,46 +545,41 @@ __strong static NSMutableDictionary*_sharedDeviceTypeModelCategories = nil;
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    if(!_sharedDeviceTypeModelCategories) {
-        [PPDeviceTypes initializeSharedDeviceTypeModelCategories];
+    RLMResults<PPDeviceTypeDeviceModelCategory *> *sharedDeviceTypeModelCategories = [PPDeviceTypeDeviceModelCategory allObjects];
+    
+    NSMutableArray *sharedDeviceTypeModelCategoriesArray = [[NSMutableArray alloc] initWithCapacity:[sharedDeviceTypeModelCategories count]];
+    NSMutableArray *deviceTypeModelCategoriesArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
+    for(PPDeviceTypeDeviceModelCategory *deviceTypeModelCategory in sharedDeviceTypeModelCategories) {
+        [sharedDeviceTypeModelCategoriesArray addObject:deviceTypeModelCategory];
+        
+        [deviceTypeModelCategoriesArrayDebug addObject:@{@"categoryId": deviceTypeModelCategory.categoryId}];
     }
-    NSMutableArray *sharedDeviceTypeModelCategories = [[NSMutableArray alloc] initWithCapacity:0];
-    NSMutableArray *deviceTypeModelCategoriesArray = [[NSMutableArray alloc] initWithCapacity:0];
-    for(NSString *userIdKey in _sharedDeviceTypeModelCategories.allKeys) {
-        for(PPDeviceTypeDeviceModelCategory *deviceTypeModelCategory in [_sharedDeviceTypeModelCategories objectForKey:userIdKey]) {
-            NSMutableDictionary *deviceTypeModelIdentifiers = [[NSMutableDictionary alloc] initWithCapacity:2];
-            [deviceTypeModelIdentifiers setValue:deviceTypeModelCategory.categoryId forKey:@"ID"];
-            if(deviceTypeModelCategory.name) {
-                [deviceTypeModelIdentifiers setValue:deviceTypeModelCategory.name forKey:@"name"];
-            }
-            [deviceTypeModelCategoriesArray addObject:deviceTypeModelIdentifiers];
-            
-            if([userIdKey isEqualToString:[NSString stringWithFormat:@"%li", (long)userId]]) {
-                [sharedDeviceTypeModelCategories addObject:deviceTypeModelCategory];
-            }
-        }
-    }
-
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s sharedDeviceTypeModelCategories=%@", __PRETTY_FUNCTION__, deviceTypeModelCategoriesArray);
+    NSLog(@"< %s sharedDeviceTypeModelCategories=%@", __PRETTY_FUNCTION__, deviceTypeModelCategoriesArrayDebug);
 #endif
 #endif
-    return sharedDeviceTypeModelCategories;
+    return sharedDeviceTypeModelCategoriesArray;
 }
 
-+ (void)initializeSharedDeviceTypeModelCategories {
+/**
+ * Add device type model categories.
+ * Add device type model categories to local reference.
+ *
+ * @param deviceTypeModelCategories NSArray Array of deviceTypeModelCategories to add.
+ * @param userId Required PPUserId User Id to associate these deviceTypeModelCategories with.
+ **/
++ (void)addDeviceTypeModelCategories:(NSArray *)deviceTypeModelCategories userId:(PPUserId)userId {
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"> %s", __PRETTY_FUNCTION__);
+    NSLog(@"> %s deviceTypeModelCategories=%@", __PRETTY_FUNCTION__, deviceTypeModelCategories);
 #endif
 #endif
-    _sharedDeviceTypeModelCategories = [[NSMutableDictionary alloc] initWithCapacity:0];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    NSData *storedDeviceTypeModelCategoriesData = [defaults objectForKey:@"user.notificationDeviceTypeModelCategories"];
-//    if(storedDeviceTypeModelCategoriesData) {
-//        _sharedDeviceTypeModelCategories = (NSMutableDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:storedDeviceTypeModelCategoriesData];
-//    }
+    [[PPRealm defaultRealm] beginWriteTransaction];
+    for(PPDeviceTypeDeviceModelCategory *deviceTypeModelCategory in deviceTypeModelCategories) {
+        [PPDeviceTypeDeviceModelCategory createOrUpdateInDefaultRealmWithValue:deviceTypeModelCategory];
+    }
+    [[PPRealm defaultRealm] commitWriteTransaction];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"< %s", __PRETTY_FUNCTION__);
@@ -973,109 +588,31 @@ __strong static NSMutableDictionary*_sharedDeviceTypeModelCategories = nil;
 }
 
 /**
- * Add device type model categories.
- * Add device type model categories to local reference.
- *
- * @param deviceTypeModels NSArray Array of deviceTypeModels to add.
- * @param userId Required PPUserId User Id to associate these device type models with
- **/
-+ (void)addDeviceTypeModelCategories:(NSArray *)deviceTypeModels userId:(PPUserId)userId {
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"> %s deviceTypeModels=%@", __PRETTY_FUNCTION__, deviceTypeModels);
-#endif
-#endif
-    if(!_sharedDeviceTypeModelCategories) {
-        [PPDeviceTypes initializeSharedDeviceTypeModelCategories];
-    }
-
-    NSMutableArray *deviceTypeModelCategoriesArray = [_sharedDeviceTypeModelCategories objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!deviceTypeModelCategoriesArray) {
-        deviceTypeModelCategoriesArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
-    for(PPDeviceTypeDeviceModelCategory *deviceTypeModel in deviceTypeModels) {
-
-        BOOL found = NO;
-        for(PPDeviceTypeDeviceModelCategory *sharedDeviceTypeModel in deviceTypeModelCategoriesArray) {
-            if([sharedDeviceTypeModel isEqualToCategory:deviceTypeModel]) {
-                [sharedDeviceTypeModel sync:deviceTypeModel];
-                found = YES;
-                break;
-            }
-        }
-        if(!found) {
-            [indexSet addIndex:[deviceTypeModels indexOfObject:deviceTypeModel]];
-        }
-    }
-
-    [deviceTypeModelCategoriesArray addObjectsFromArray:[deviceTypeModels objectsAtIndexes:indexSet]];
-    [_sharedDeviceTypeModelCategories setObject:deviceTypeModelCategoriesArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-
-//    NSData *sharedDeviceTypeModelData = [NSKeyedArchiver archivedDataWithRootObject:_sharedDeviceTypeModelCategories];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedDeviceTypeModelData forKey:@"user.notificationDeviceTypeModelCategories"];
-//    [defaults synchronize];
-
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"< %s deviceTypeModelCategoriesArray=%@", __PRETTY_FUNCTION__, deviceTypeModelCategoriesArray);
-#endif
-#endif
-}
-
-/**
  * Remove device type model categories.
  * Remove device type model categories from local reference.
  *
- * @param deviceTypeModels NSArray Array of deviceTypeModels to remove.
- * @param userId Required PPUserId User Id to associate these device type models with
+ * @param deviceTypeModelCategories NSArray Array of deviceTypeModelCategories to remove.
+ * @param userId Required PPUserId User Id to associate these deviceTypeModelCategories with.
  **/
-+ (void)removeDeviceTypeModelCategories:(NSArray *)deviceTypeModels userId:(PPUserId)userId {
++ (void)removeDeviceTypeModelCategories:(NSArray *)deviceTypeModelCategories userId:(PPUserId)userId {
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"> %s deviceTypeModels=%@", __PRETTY_FUNCTION__, deviceTypeModels);
+    NSLog(@"> %s deviceTypeModelCategories=%@", __PRETTY_FUNCTION__, deviceTypeModelCategories);
 #endif
 #endif
-
-    if(!_sharedDeviceTypeModelCategories) {
-        [PPDeviceTypes initializeSharedDeviceTypeModelCategories];
-    }
-
-    NSMutableArray *deviceTypeModelCategoriesArray = [_sharedDeviceTypeModelCategories objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!deviceTypeModelCategoriesArray) {
-        deviceTypeModelCategoriesArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
-    for(PPDeviceTypeDeviceModelCategory *deviceTypeModelCategory in deviceTypeModels) {
-        for(PPDeviceTypeDeviceModelCategory *sharedDeviceTypeModelCategory in deviceTypeModelCategoriesArray) {
-            if([sharedDeviceTypeModelCategory isEqualToCategory:deviceTypeModelCategory]) {
-                [indexSet addIndex:[deviceTypeModelCategoriesArray indexOfObject:sharedDeviceTypeModelCategory]];
-                break;
-            }
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPDeviceTypeDeviceModelCategory *deviceTypeModelCategory in deviceTypeModelCategories) {
+            [[PPRealm defaultRealm] deleteObject:[PPDeviceTypeDeviceModelCategory objectForPrimaryKey:deviceTypeModelCategory.categoryId]];
         }
-    }
-
-    [deviceTypeModelCategoriesArray removeObjectsAtIndexes:indexSet];
-    [_sharedDeviceTypeModelCategories setObject:deviceTypeModelCategoriesArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-
-//    NSData *sharedDeviceTypeModelData = [NSKeyedArchiver archivedDataWithRootObject:_sharedDeviceTypeModelCategories];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedDeviceTypeModelData forKey:@"user.notificationDeviceTypeModelCategories"];
-//    [defaults synchronize];
-
+    }];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s deviceTypeModelCategoriesArray=%@", __PRETTY_FUNCTION__, deviceTypeModelCategoriesArray);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }
 
 #pragma mark Device type Stories
-
-__strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
 
 /**
  * Shared deviceTypeStories across the entire application
@@ -1086,49 +623,21 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    if(!_sharedDeviceTypeStories) {
-        [PPDeviceTypes initializeSharedDeviceTypeStories];
+    RLMResults<PPDeviceTypeStory *> *sharedDeviceTypeStorys = [PPDeviceTypeStory allObjects];
+    
+    NSMutableArray *sharedDeviceTypeStorysArray = [[NSMutableArray alloc] initWithCapacity:[sharedDeviceTypeStorys count]];
+    NSMutableArray *deviceTypeStoriesArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
+    for(PPDeviceTypeStory *deviceTypeStory in sharedDeviceTypeStorys) {
+        [sharedDeviceTypeStorysArray addObject:deviceTypeStory];
+        
+        [deviceTypeStoriesArrayDebug addObject:@{@"storyId": deviceTypeStory.storyId}];
     }
-    NSMutableArray *sharedDeviceTypeStories = [[NSMutableArray alloc] initWithCapacity:0];
-    NSMutableArray *deviceTypeStoriesArray = [[NSMutableArray alloc] initWithCapacity:0];
-    for(NSString *userIdKey in _sharedDeviceTypeStories.allKeys) {
-        for(PPDeviceTypeStory *deviceTypeStory in [_sharedDeviceTypeStories objectForKey:userIdKey]) {
-            NSMutableDictionary *deviceTypeStoriesIdentifiers = [[NSMutableDictionary alloc] initWithCapacity:2];
-            [deviceTypeStoriesIdentifiers setValue:deviceTypeStory.storyId forKey:@"ID"];
-            [deviceTypeStoriesIdentifiers setValue:@(deviceTypeStory.storyType) forKey:@"type"];
-            [deviceTypeStoriesArray addObject:deviceTypeStoriesIdentifiers];
-            
-            if([userIdKey isEqualToString:[NSString stringWithFormat:@"%li", (long)userId]]) {
-                [sharedDeviceTypeStories addObject:deviceTypeStory];
-            }
-        }
-    }
-
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s sharedDeviceTypeStories=%@", __PRETTY_FUNCTION__, deviceTypeStoriesArray);
+    NSLog(@"< %s sharedDeviceTypeStories=%@", __PRETTY_FUNCTION__, deviceTypeStoriesArrayDebug);
 #endif
 #endif
-    return sharedDeviceTypeStories;
-}
-
-+ (void)initializeSharedDeviceTypeStories {
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"> %s", __PRETTY_FUNCTION__);
-#endif
-#endif
-    _sharedDeviceTypeStories = [[NSMutableDictionary alloc] initWithCapacity:0];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    NSData *storedDeviceTypeStoriesData = [defaults objectForKey:@"user.notificationDeviceTypeStories"];
-//    if(storedDeviceTypeStoriesData) {
-//        _sharedDeviceTypeStories = (NSMutableDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:storedDeviceTypeStoriesData];
-//    }
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"< %s", __PRETTY_FUNCTION__);
-#endif
-#endif
+    return sharedDeviceTypeStorysArray;
 }
 
 /**
@@ -1136,7 +645,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
  * Add deviceType Stories to local reference.
  *
  * @param deviceTypeStories NSArray Array of deviceTypeStories to add.
- * @param userId Required PPUserId User Id to associate these device type Stories with
+ * @param userId Required PPUserId User Id to associate these deviceTypeStories with.
  **/
 + (void)addDeviceTypeStories:(NSArray *)deviceTypeStories userId:(PPUserId)userId {
 #ifdef DEBUG
@@ -1144,42 +653,14 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
     NSLog(@"> %s deviceTypeStories=%@", __PRETTY_FUNCTION__, deviceTypeStories);
 #endif
 #endif
-    if(!_sharedDeviceTypeStories) {
-        [PPDeviceTypes initializeSharedDeviceTypeStories];
+    [[PPRealm defaultRealm] beginWriteTransaction];
+    for(PPDeviceTypeStory *deviceTypeStory in deviceTypeStories) {
+        [PPDeviceTypeStory createOrUpdateInDefaultRealmWithValue:deviceTypeStory];
     }
-
-    NSMutableArray *deviceTypeStoriesArray = [_sharedDeviceTypeStories objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!deviceTypeStoriesArray) {
-        deviceTypeStoriesArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
-    for(NSInteger i = 0; i < [deviceTypeStories count]; i++) {
-        PPDeviceTypeStory *deviceTypeStory = [deviceTypeStories objectAtIndex:i];
-        BOOL found = NO;
-        for(PPDeviceTypeStory *sharedDeviceTypeStory in deviceTypeStoriesArray) {
-            if([sharedDeviceTypeStory isEqualToStory:deviceTypeStory]) {
-                [sharedDeviceTypeStory sync:deviceTypeStory];
-                found = YES;
-                break;
-            }
-        }
-        if(!found) {
-            [indexSet addIndex:i];
-        }
-    }
-
-    [deviceTypeStoriesArray addObjectsFromArray:[deviceTypeStories objectsAtIndexes:indexSet]];
-    [_sharedDeviceTypeStories setObject:deviceTypeStoriesArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-
-//    NSData *sharedDeviceTypeStoriesData = [NSKeyedArchiver archivedDataWithRootObject:_sharedDeviceTypeStories];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedDeviceTypeStoriesData forKey:@"user.notificationDeviceTypeStories"];
-//    [defaults synchronize];
-
+    [[PPRealm defaultRealm] commitWriteTransaction];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s deviceTypeStoriesArray=%@", __PRETTY_FUNCTION__, deviceTypeStoriesArray);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }
@@ -1189,7 +670,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
  * Remove deviceType Stories from local reference.
  *
  * @param deviceTypeStories NSArray Array of deviceTypeStories to remove.
- * @param userId Required PPUserId User Id to associate these device type Stories with
+ * @param userId Required PPUserId User Id to associate these deviceTypeStories with.
  **/
 + (void)removeDeviceTypeStories:(NSArray *)deviceTypeStories userId:(PPUserId)userId {
 #ifdef DEBUG
@@ -1197,37 +678,14 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
     NSLog(@"> %s deviceTypeStories=%@", __PRETTY_FUNCTION__, deviceTypeStories);
 #endif
 #endif
-
-    if(!_sharedDeviceTypeStories) {
-        [PPDeviceTypes initializeSharedDeviceTypeStories];
-    }
-
-    NSMutableArray *deviceTypeStoriesArray = [_sharedDeviceTypeStories objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!deviceTypeStoriesArray) {
-        deviceTypeStoriesArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
-    for(PPDeviceTypeStory *deviceTypeStory in deviceTypeStories) {
-        for(PPDeviceTypeStory *sharedDeviceTypeStory in deviceTypeStoriesArray) {
-            if([sharedDeviceTypeStory isEqualToStory:deviceTypeStory]) {
-                [indexSet addIndex:[deviceTypeStoriesArray indexOfObject:sharedDeviceTypeStory]];
-                break;
-            }
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPDeviceTypeStory *deviceTypeStory in deviceTypeStories) {
+            [[PPRealm defaultRealm] deleteObject:[PPDeviceTypeStory objectForPrimaryKey:deviceTypeStory.storyId]];
         }
-    }
-
-    [deviceTypeStoriesArray removeObjectsAtIndexes:indexSet];
-    [_sharedDeviceTypeStories setObject:deviceTypeStoriesArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-
-//    NSData *sharedDeviceTypeStoriesData = [NSKeyedArchiver archivedDataWithRootObject:_sharedDeviceTypeStories];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedDeviceTypeStoriesData forKey:@"user.notificationDeviceTypeStories"];
-//    [defaults synchronize];
-
+    }];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s deviceTypeStoriesArray=%@", __PRETTY_FUNCTION__, deviceTypeStoriesArray);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }

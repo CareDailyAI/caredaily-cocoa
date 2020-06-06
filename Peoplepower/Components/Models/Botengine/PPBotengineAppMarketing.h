@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPBotengineAppMarketing : NSObject
+@interface PPBotengineAppMarketing : RLMObject
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *author;
@@ -18,12 +18,14 @@
 @property (nonatomic, strong) NSString *supportUrl;
 @property (nonatomic, strong) NSString *videoUrl;
 @property (nonatomic, strong) NSString *privacyUrl;
-@property (nonatomic, strong) NSArray *keywords;
+@property (nonatomic, strong) RLMArray<RLMString> *keywords;
 
 + (PPBotengineAppMarketing *)marketingWithName:(NSString *)name author:(NSString *)author desc:(NSString *)desc;
 
 + (PPBotengineAppMarketing *)marketingWithName:(NSString *)name author:(NSString *)author copyright:(NSString *)copyright desc:(NSString *)desc marketingUrl:(NSString *)marketingUrl supportUrl:(NSString *)supportUrl videoUrl:(NSString *)videoUrl privacyUrl:(NSString *)privacyUrl;
 
-- (id)initWithName:(NSString *)name author:(NSString *)author copyright:(NSString *)copyright desc:(NSString *)desc marketingUrl:(NSString *)marketingUrl supportUrl:(NSString *)supportUrl videoUrl:(NSString *)videoUrl privacyUrl:(NSString *)privacyUrl keywords:(NSArray *)keywords;
+- (id)initWithName:(NSString *)name author:(NSString *)author copyright:(NSString *)copyright desc:(NSString *)desc marketingUrl:(NSString *)marketingUrl supportUrl:(NSString *)supportUrl videoUrl:(NSString *)videoUrl privacyUrl:(NSString *)privacyUrl keywords:(RLMArray *)keywords;
 
 @end
+
+RLM_ARRAY_TYPE(PPBotengineAppMarketing);

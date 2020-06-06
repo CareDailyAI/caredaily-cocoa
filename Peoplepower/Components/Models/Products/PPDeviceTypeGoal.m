@@ -17,7 +17,11 @@ NSString *DEVICE_TYPE_GOAL_CATEGORY_WELLNESS = @"W";
 
 @implementation PPDeviceTypeGoal
 
-- (id)initWithId:(PPDeviceTypeGoalId)goalId name:(NSString *)name desc:(NSString *)desc categories:(PPDeviceTypeGoalCategories)categories deviceUsage:(PPDeviceTypeGoalDeviceUsage)deviceUsage suggestions:(NSArray *)suggestions {
++ (NSString *)primaryKey {
+    return @"goalId";
+}
+
+- (id)initWithId:(PPDeviceTypeGoalId)goalId name:(NSString *)name desc:(NSString *)desc categories:(PPDeviceTypeGoalCategories)categories deviceUsage:(PPDeviceTypeGoalDeviceUsage)deviceUsage suggestions:(RLMArray *)suggestions {
     self = [super init];
     if(self) {
         self.goalId = goalId;
@@ -53,7 +57,7 @@ NSString *DEVICE_TYPE_GOAL_CATEGORY_WELLNESS = @"W";
         }
     }
     
-    PPDeviceTypeGoal *goal = [[PPDeviceTypeGoal alloc] initWithId:goalId name:name desc:desc categories:categories deviceUsage:deviceUsage suggestions:suggestions];
+    PPDeviceTypeGoal *goal = [[PPDeviceTypeGoal alloc] initWithId:goalId name:name desc:desc categories:categories deviceUsage:deviceUsage suggestions:(RLMArray *)suggestions];
     return goal;
 }
 

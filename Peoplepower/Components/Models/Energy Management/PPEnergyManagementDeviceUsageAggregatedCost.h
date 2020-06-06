@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPEnergyManagementDeviceUsageAggregatedCost : NSObject
+@interface PPEnergyManagementDeviceUsageAggregatedCost : RLMObject
 
 @property (nonatomic, strong) NSString *index;
 @property (nonatomic, strong) NSString *value;
@@ -18,3 +18,5 @@
 + (PPEnergyManagementDeviceUsageAggregatedCost *)initWithDictionary:(NSDictionary *)aggregatedCostDict;
 
 @end
+
+RLM_ARRAY_TYPE(PPEnergyManagementDeviceUsageAggregatedCost);

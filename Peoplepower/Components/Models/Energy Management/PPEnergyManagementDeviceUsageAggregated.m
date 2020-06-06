@@ -15,8 +15,8 @@
     if(self) {
         self.startDate = startDate;
         self.endDate = endDate;
-        self.energy = energy;
-        self.cost = cost;
+        self.energy = (RLMArray<PPEnergyManagementDeviceUsageAggregatedEnergy *><PPEnergyManagementDeviceUsageAggregatedEnergy> *)energy;
+        self.cost = (RLMArray<PPEnergyManagementDeviceUsageAggregatedCost *><PPEnergyManagementDeviceUsageAggregatedCost> *)cost;
     }
     return self;
 }
@@ -60,7 +60,7 @@
         }
     }
     
-    PPEnergyManagementDeviceUsageAggregated *aggregatedUsage = [[PPEnergyManagementDeviceUsageAggregated alloc] initWithStartDate:startDate endDate:endDate energy:energyArray cost:costArray];
+    PPEnergyManagementDeviceUsageAggregated *aggregatedUsage = [[PPEnergyManagementDeviceUsageAggregated alloc] initWithStartDate:startDate endDate:endDate energy:(RLMArray<PPEnergyManagementDeviceUsageAggregatedEnergy *><PPEnergyManagementDeviceUsageAggregatedEnergy> *)energyArray cost:(RLMArray<PPEnergyManagementDeviceUsageAggregatedCost *><PPEnergyManagementDeviceUsageAggregatedCost> *)costArray];
     return aggregatedUsage;
 }
 @end

@@ -7,19 +7,29 @@
 //
 
 #import "PPBaseModel.h"
+#import "PPRLMDictionary.h"
 
-@interface PPNotificationMessage : NSObject
+@class PPNotificationMessageModel;
+RLM_ARRAY_TYPE(PPNotificationMessageModel);
+
+@interface PPNotificationMessage : RLMObject
 
 @property (nonatomic, strong) NSString *notificationTemplate;
 @property (nonatomic, strong) NSString *content;
-@property (nonatomic, strong) NSDictionary *model;
+@property (nonatomic, strong) PPNotificationMessageModel *model;
 
-- (id)initWithTemplate:(NSString *)notificationTemplate content:(NSString *)content model:(NSDictionary *)model;
+- (id)initWithTemplate:(NSString *)notificationTemplate content:(NSString *)content model:(PPNotificationMessageModel *)model;
 
 + (PPNotificationMessage *)initWithDictionary:(NSDictionary *)messageDict;
 
 + (NSString *)stringify:(PPNotificationMessage *)message;
 + (NSDictionary *)data:(PPNotificationMessage *)message;
 
+@end
+
+RLM_ARRAY_TYPE(PPNotificationMessage)
+
+@interface PPNotificationMessageModel : PPRLMDictionary
++ (PPNotificationMessageModel *)initWithDictionary:(NSDictionary *)dict;
 @end
 

@@ -15,15 +15,15 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeAttributeExtended) {
     PPDeviceTypeAttributeExtendedTrue = 1
 };
 
-@interface PPDeviceTypeAttribute : NSObject
+@interface PPDeviceTypeAttribute : RLMObject
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *value;
 @property (nonatomic) PPDeviceTypeAttributeExtended extended;
 @property (nonatomic, strong) NSString *defaultValue;
-@property (nonatomic, strong) NSArray *options;
+@property (nonatomic, strong) RLMArray<PPDeviceTypeAttributeOption *><PPDeviceTypeAttributeOption> *options;
 
-- (id)initWithName:(NSString *)name value:(NSString *)value extended:(PPDeviceTypeAttributeExtended)extended defaultValue:(NSString *)defaultValue options:(NSArray *)options;
+- (id)initWithName:(NSString *)name value:(NSString *)value extended:(PPDeviceTypeAttributeExtended)extended defaultValue:(NSString *)defaultValue options:(RLMArray *)options;
 
 + (PPDeviceTypeAttribute *)initWithDictionary:(NSDictionary *)attributeDict;
 
@@ -36,3 +36,5 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeAttributeExtended) {
 - (void)sync:(PPDeviceTypeAttribute *)attribute;
 
 @end
+
+RLM_ARRAY_TYPE(PPDeviceTypeAttribute);

@@ -16,7 +16,7 @@ NSString *RULE_COMPONENT_STATE_SCHEDULE_COMPONENT_PAMAMETER_NAME_2 = @"time2";
 
 @implementation PPRuleComponentState
 
-- (id)initWithId:(PPRuleComponentId)componentId name:(NSString *)name stateType:(PPRuleComponentStateType)stateType displayType:(PPRuleComponentDisplayType)displayType desc:(NSString *)desc past:(NSString *)past timezone:(PPRuleComponentTimezone)timezone functionGroup:(NSString *)functionGroup parameters:(NSArray *)parameters serviceName:(NSString *)serviceName {
+- (id)initWithId:(PPRuleComponentId)componentId name:(NSString *)name stateType:(PPRuleComponentStateType)stateType displayType:(PPRuleComponentDisplayType)displayType desc:(NSString *)desc past:(NSString *)past timezone:(PPRuleComponentTimezone)timezone functionGroup:(NSString *)functionGroup parameters:(RLMArray *)parameters serviceName:(NSString *)serviceName {
     self = [super initWithId:componentId name:name displayType:displayType desc:desc past:past timezone:timezone functionGroup:functionGroup parameters:parameters serviceName:serviceName];
     if(self) {
         _stateType = stateType;
@@ -29,7 +29,7 @@ NSString *RULE_COMPONENT_STATE_SCHEDULE_COMPONENT_PAMAMETER_NAME_2 = @"time2";
     
     PPRuleComponentParameter *param2 = [[PPRuleComponentParameter alloc] initWithName:RULE_COMPONENT_STATE_SCHEDULE_COMPONENT_PAMAMETER_NAME_2 category:PPRuleComponentParameterCategoryCronExpression optional:PPRuleComponentParameterOptionalFalse desc:NSLocalizedString(@"What time should it end each day?", @"Label - What time should it end each day?") values:nil selectorName:nil value:nil minValue:PPRuleComponentParameterMinValueNone maxValue:PPRuleComponentParameterMaxValueNone valueType:PPRuleComponentParameterInputTypeNone unit:nil];
     
-    PPRuleComponentState *state = [[PPRuleComponentState alloc] initWithId:PPRuleComponentIdNone name:RULE_COMPONENT_STATE_SCHEDULE_COMPONENT_NAME stateType:stateType displayType:PPRuleComponentDisplayTypeStateGeneralCondition desc:NSLocalizedString(@"$time1 and $time2", @"Label - $time1 and $time2") past:NSLocalizedString(@"between $time1 and $time2", @"Label - between $time1 and $time2") timezone:PPRuleComponentTimezoneTrue functionGroup:nil parameters:@[param1, param2] serviceName:nil];
+    PPRuleComponentState *state = [[PPRuleComponentState alloc] initWithId:PPRuleComponentIdNone name:RULE_COMPONENT_STATE_SCHEDULE_COMPONENT_NAME stateType:stateType displayType:PPRuleComponentDisplayTypeStateGeneralCondition desc:NSLocalizedString(@"$time1 and $time2", @"Label - $time1 and $time2") past:NSLocalizedString(@"between $time1 and $time2", @"Label - between $time1 and $time2") timezone:PPRuleComponentTimezoneTrue functionGroup:nil parameters:(RLMArray *)@[param1, param2] serviceName:nil];
     return state;
 }
 

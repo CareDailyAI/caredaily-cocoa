@@ -9,12 +9,17 @@
 #import "PPCommunityComment.h"
 
 @implementation PPCommunityComment
+
++ (NSString *)primaryKey {
+    return @"commentId";
+}
+
 - (id)initWithId:(PPCommunityCommentId)commentId
   replyCommentId:(PPCommunityCommentId)replyCommentId
      commentText:(NSString *)commentText
             user:(PPCommunityUser *)user
     commentDate:(nonnull NSDate *)commentDate
-       reactions:(NSArray *)reactions {
+       reactions:(RLMArray *)reactions {
     self = [super init];
     if (self) {
         self.commentId = commentId;
@@ -22,7 +27,7 @@
         self.commentText = commentText;
         self.user = user;
         self.commentDate = commentDate;
-        self.reactions = reactions;
+        self.reactions = (RLMArray<PPCommunityReaction *><PPCommunityReaction> *)reactions;
     }
     return self;
 }
@@ -62,7 +67,12 @@
         }
     }
     
-    PPCommunityComment *comment = [[PPCommunityComment alloc] initWithId:commentId replyCommentId:replyCommentId commentText:commentText user:user commentDate:commentDate reactions:reactions];
+    PPCommunityComment *comment = [[PPCommunityComment alloc] initWithId:commentId
+                                                          replyCommentId:replyCommentId
+                                                             commentText:commentText
+                                                                    user:user
+                                                             commentDate:commentDate
+                                                               reactions:(RLMArray *)reactions];
     return comment;
 }
 

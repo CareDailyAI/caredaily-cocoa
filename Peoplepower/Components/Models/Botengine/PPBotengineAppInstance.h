@@ -46,3 +46,5 @@ typedef NS_OPTIONS(NSInteger, PPBotengineAppInstanceDataStreamBitmask) {
 - (void)postDataStreamWithBitmask:(PPBotengineAppInstanceDataStreamBitmask)dataStreamType address:(NSString *)address feed:(NSDictionary *)feed callback:(PPErrorBlock)callback;
 
 @end
+
+RLM_ARRAY_TYPE(PPBotengineAppInstance);

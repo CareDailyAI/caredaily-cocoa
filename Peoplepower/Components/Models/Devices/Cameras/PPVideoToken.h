@@ -27,7 +27,7 @@ extern NSString *PLIST_KEY_CONFIG_VIDEO_TOKEN_PROVIDER_ID;
 extern NSString *PLIST_KEY_CONFIG_VIDEO_TOKEN_APP_ID;
 extern NSString *PLIST_KEY_CONFIG_VIDEO_TOKEN_APP_NAME;
 
-@interface PPVideoToken : NSObject
+@interface PPVideoToken : RLMObject
 
 @property (nonatomic, strong) NSString *token;
 @property (nonatomic, strong) NSDate *expiration;
@@ -43,3 +43,5 @@ extern NSString *PLIST_KEY_CONFIG_VIDEO_TOKEN_APP_NAME;
 + (void)setDefaultProvider:(PPVideoTokenProvider)provider;
 
 @end
+
+RLM_ARRAY_TYPE(PPVideoToken)

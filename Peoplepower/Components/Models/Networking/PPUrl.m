@@ -27,15 +27,13 @@
 #ifdef DEBUG
     NSLog(@"%s cloud=%@", __PRETTY_FUNCTION__, cloud);
 #endif
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if(cloud) {
-            NSData *cloudData = [NSKeyedArchiver archivedDataWithRootObject:cloud];
-        [defaults setObject:cloudData forKey:@"cloud"];
-    }
-    else {
-        [defaults removeObjectForKey:@"cloud"];
-    }
-    [defaults synchronize];
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        RLMResults<PPCloudConnectivityCloud *> *existingClouds = [PPCloudConnectivityCloud objectsWhere:@"name != %@", cloud.name];
+        if(existingClouds) {
+            [[PPRealm defaultRealm] deleteObjects:existingClouds];
+        }
+        [PPCloudConnectivityCloud createOrUpdateInRealm:[PPRealm defaultRealm] withValue:cloud];
+    }];
 }
 
 /**
@@ -60,12 +58,17 @@
         }
     }
     
+    NSMutableArray *servers = [[NSMutableArray alloc] initWithArray:[PPRLMArray arrayFromArray:cloud.servers]];
     if(replacementIndex != NSNotFound) {
-        NSMutableArray *servers = [[NSMutableArray alloc] initWithArray:cloud.servers];
         [servers replaceObjectAtIndex:replacementIndex withObject:server];
-        cloud.servers = servers;
-        [PPUrl setCustomCloud:cloud];
     }
+    else {
+        [servers addObject:server];
+    }
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        cloud.servers = (RLMArray<PPCloudConnectivityServer *><PPCloudConnectivityServer> *)servers;
+    }];
+    [PPUrl setCustomCloud:cloud];
 }
 
 /**
@@ -74,10 +77,9 @@
 + (PPCloudConnectivityCloud *)getCustomCloud {
     PPCloudConnectivityCloud *cloud = [self defaultCloud];
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSData *cloudData = [defaults objectForKey:@"cloud"];
-    if(cloudData) {
-        cloud = (PPCloudConnectivityCloud *)[NSKeyedUnarchiver unarchiveObjectWithData:cloudData];
+    RLMResults *existingClouds = [PPCloudConnectivityCloud allObjects];
+    if([existingClouds count]) {
+        cloud = [existingClouds firstObject];
     }
     
     return cloud;

@@ -11,12 +11,12 @@
 
 @implementation PPDeviceMeasurementsReading
 
-- (id)initWithDeviceId:(NSString *)deviceId timeStamp:(NSDate *)timeStamp params:(NSArray *)params {
+- (id)initWithDeviceId:(NSString *)deviceId timeStamp:(NSDate *)timeStamp params:(RLMArray *)params {
     self = [super init];
     if(self) {
         self.deviceId = deviceId;
         self.timeStamp = timeStamp;
-        self.params = params;
+        self.params = (RLMArray<PPDeviceParameter *><PPDeviceParameter> *)params;
     }
     return self;
 }
@@ -45,7 +45,7 @@
         }
     }
     
-    PPDeviceMeasurementsReading *reading = [[PPDeviceMeasurementsReading alloc] initWithDeviceId:deviceId timeStamp:timeStamp params:params];
+    PPDeviceMeasurementsReading *reading = [[PPDeviceMeasurementsReading alloc] initWithDeviceId:deviceId timeStamp:timeStamp params:(RLMArray *)params];
     return reading;
 }
 

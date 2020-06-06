@@ -10,14 +10,18 @@
 
 @implementation PPDynamicUIScreenSection
 
-- (id)initSectionId:(NSString *)sectionId name:(NSString *)name order:(PPDynamicUIScreenSectionOrder)order organization:(PPOrganization *)organization sectionItems:(NSArray *)sectionItems {
++ (NSString *)primaryKey {
+    return @"sectionId";
+}
+
+- (id)initSectionId:(NSString *)sectionId name:(NSString *)name order:(PPDynamicUIScreenSectionOrder)order organization:(PPOrganization *)organization sectionItems:(RLMArray *)sectionItems {
     self = [super init];
     if(self) {
         self.sectionId = sectionId;
         self.name = name;
         self.order = order;
         self.organization = organization;
-        self.sectionItems = sectionItems;
+        self.sectionItems = (RLMArray<PPDynamicUIScreenSectionItem *><PPDynamicUIScreenSectionItem> *)sectionItems;
     }
     return self;
 }
@@ -41,7 +45,7 @@
         }
     }
     
-    PPDynamicUIScreenSection *section = [[PPDynamicUIScreenSection alloc] initSectionId:sectionId name:name order:order organization:organization sectionItems:sectionItems];
+    PPDynamicUIScreenSection *section = [[PPDynamicUIScreenSection alloc] initSectionId:sectionId name:name order:order organization:organization sectionItems:(RLMArray *)sectionItems];
     return section;
 }
 @end

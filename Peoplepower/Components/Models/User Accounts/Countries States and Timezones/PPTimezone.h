@@ -9,7 +9,7 @@
 #import "PPBaseModel.h"
 #import "PPCountriesStatesAndTimezones.h"
 
-@interface PPTimezone : NSObject <NSCopying>
+@interface PPTimezone : RLMObject <NSCopying>
 
 @property (nonatomic, strong) NSString *timezoneId;
 @property (nonatomic) PPTimezoneOffset offset;
@@ -27,3 +27,5 @@
 - (void)sync:(PPTimezone *)timezone;
 
 @end
+
+RLM_ARRAY_TYPE(PPTimezone);

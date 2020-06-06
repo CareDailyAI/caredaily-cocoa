@@ -10,13 +10,13 @@
 
 @implementation PPLocationUser
 
-- (id)initWithUserId:(PPUserId)userId locationId:(PPLocationId)locationId email:(PPUserEmail *)email username:(NSString *)username altUsername:(NSString *)altUsername firstName:(NSString *)firstName lastName:(NSString *)lastName phone:(NSString *)phone phoneType:(PPUserPhoneType)phoneType smsStatus:(PPUserSMSStatus)smsStatus locationAccess:(PPLocationAccess)locationAccess category:(PPLocationCategory)category schedules:(NSArray *)schedules avatarFileId:(PPUserAvatarFileId)avatarFileId temporary:(PPLocationTemporary)temporary accessEndDate:(NSDate *)accessEndDate {
+- (id)initWithUserId:(PPUserId)userId locationId:(PPLocationId)locationId email:(PPUserEmail *)email username:(NSString *)username altUsername:(NSString *)altUsername firstName:(NSString *)firstName lastName:(NSString *)lastName phone:(NSString *)phone phoneType:(PPUserPhoneType)phoneType smsStatus:(PPUserSMSStatus)smsStatus locationAccess:(PPLocationAccess)locationAccess category:(PPLocationCategory)category schedules:(RLMArray *)schedules avatarFileId:(PPUserAvatarFileId)avatarFileId temporary:(PPLocationTemporary)temporary accessEndDate:(NSDate *)accessEndDate {
     self = [super initWithUserId:userId email:email username:username altUsername:altUsername firstName:firstName lastName:lastName communityName:nil language:nil phone:phone phoneType:phoneType smsStatus:smsStatus anonymous:PPUserAnonymousTypeNone userPermissions:nil tags:nil locations:nil badges:nil organizations:nil avatarFileId:avatarFileId creationDate:nil authClients:nil userCommunities:nil locationCommunities:nil];
     if(self) {
         self.locationId = locationId;
         self.locationAccess = locationAccess;
         self.category = category;
-        self.schedules = schedules;
+        self.schedules = (RLMArray<PPLocationUserSchedule *><PPLocationUserSchedule> *)schedules;
         self.temporary = temporary;
         self.accessEndDate = accessEndDate;
     }
@@ -57,7 +57,7 @@
         }
     }
     
-    PPLocationUser *locationUser = [[PPLocationUser alloc] initWithUserId:user.userId locationId:PPLocationIdNone email:user.email username:user.username altUsername:user.altUsername firstName:user.firstName lastName:user.lastName phone:user.phone phoneType:user.phoneType smsStatus:user.smsStatus locationAccess:locationAccess category:userCategory schedules:schedules avatarFileId:user.avatarFileId temporary:temporary accessEndDate:accessEndDate];
+    PPLocationUser *locationUser = [[PPLocationUser alloc] initWithUserId:user.userId locationId:PPLocationIdNone email:user.email username:user.username altUsername:user.altUsername firstName:user.firstName lastName:user.lastName phone:user.phone phoneType:user.phoneType smsStatus:user.smsStatus locationAccess:locationAccess category:userCategory schedules:(RLMArray *)schedules avatarFileId:user.avatarFileId temporary:temporary accessEndDate:accessEndDate];
     return locationUser;
 }
 

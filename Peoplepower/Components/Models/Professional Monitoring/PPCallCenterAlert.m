@@ -10,6 +10,10 @@
 
 @implementation PPCallCenterAlert
 
++ (NSString *)primaryKey {
+    return @"alertDateMS";
+}
+
 - (id)initWithAlertDate:(NSDate *)alertDate alertDateMS:(NSInteger)alertDateMS alertStatus:(PPCallCenterAlertStatus)alertStatus signalType:(NSString *)signalType signalMessage:(NSString *)signalMessage alertSourceType:(PPCallCenterAlertSourceType)alertSourceType device:(PPDevice *)device {
     self = [super init];
     if(self) {

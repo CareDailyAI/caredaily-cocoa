@@ -10,6 +10,10 @@
 
 @implementation PPCloudsIntegrationClient
 
++ (NSString *)primaryKey {
+    return @"appId";
+}
+
 - (id)initWithAuth:(NSString *)appName appId:(PPCloudsIntegrationClientApplicationId)appId active:(PPCloudsIntegrationClientActive)active autoRefresh:(PPCloudsIntegrationClientAutoRefresh)autoRefresh expiry:(NSDate *)expiry username:(NSString *)username {
     self = [super init];
     if(self) {
@@ -85,6 +89,19 @@
 }
 
 #pragma mark - Encoding
+
+- (id)copyWithZone:(NSZone *)zone {
+    PPCloudsIntegrationClient *client = [[[self class] allocWithZone:zone] init];
+    
+    client.appName = [self.appName copyWithZone:zone];
+    client.appId = self.appId;
+    client.active = self.active;
+    client.autoRefresh = self.autoRefresh;
+    client.expiry = [self.expiry copyWithZone:zone];
+    client.username = [self.username copyWithZone:zone];
+    
+    return client;
+}
 
 - (id)initWithCoder:(NSCoder *)decoder {
     self = [super init];

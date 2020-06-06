@@ -10,11 +10,15 @@
 
 @implementation PPCloudConnectivityCloud
 
++ (NSString *)primaryKey {
+    return @"name";
+}
+
 - (id)initWithCloud:(NSString *)cloud
                name:(NSString *)name
         currentTime:(NSDate *)currentTime
            timezone:(PPTimezone *)timezone
-            servers:(NSArray *)servers
+            servers:(RLMArray *)servers
             version:(NSString *)version {
     self = [super init];
     if(self) {
@@ -22,7 +26,7 @@
         self.name = name;
         self.currentTime = currentTime;
         self.timezone = timezone;
-        self.servers = servers;
+        self.servers = (RLMArray<PPCloudConnectivityServer *><PPCloudConnectivityServer> *)servers;
         self.version = version;
     }
     return self;
@@ -59,7 +63,7 @@
                                                                                  name:name
                                                                           currentTime:currentTime
                                                                              timezone:timezone
-                                                                              servers:servers
+                                                                              servers:(RLMArray *)servers
                                                                               version:version];
     return cloud;
 }

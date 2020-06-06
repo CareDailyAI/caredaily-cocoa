@@ -10,6 +10,10 @@
 
 @implementation PPNotificationSubscription
 
++ (NSString *)primaryKey {
+    return @"type";
+}
+
 - (id)initWithType:(PPNotificationSubscriptionType)type name:(NSString *)name email:(PPNotificationSubscriptionEmailEnabled)email push:(PPNotificationSubscriptionPushEnabled)push sms:(PPNotificationSubscriptionSMSEnabled)sms emailPeriod:(PPNotificationSubscriptionEmailPeriod)emailPeriod pushPeriod:(PPNotificationSubscriptionPushPeriod)pushPeriod smsPeriod:(PPNotificationSubscriptionSMSPeriod)smsPeriod {
     self = [super init];
     if(self) {

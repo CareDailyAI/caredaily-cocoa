@@ -10,6 +10,10 @@
 
 @implementation PPCrowdFeedbackTicket
 
++ (NSString *)primaryKey {
+    return @"ticketId";
+}
+
 - (id)initWithFeedbackId:(PPCrowdFeedbackId)feedbackId brand:(NSString *)brand ticketId:(PPCrowdFeedbackTicketId)ticketId {
     self = [super init];
     if(self) {

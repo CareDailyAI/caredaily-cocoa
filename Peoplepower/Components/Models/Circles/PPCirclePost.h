@@ -28,7 +28,7 @@ typedef NS_OPTIONS(NSInteger, PPCirclePostDisplayTime) {
     PPCirclePostDisplayTimeNone = 0
 };
 
-@interface PPCirclePost : NSObject
+@interface PPCirclePost : RLMObject
 
 @property (nonatomic) PPCircleId circleId;
 @property (nonatomic) PPCirclePostId postId;
@@ -41,13 +41,15 @@ typedef NS_OPTIONS(NSInteger, PPCirclePostDisplayTime) {
 @property (nonatomic, strong) PPCircleFile *file;
 @property (nonatomic) PPCirclePostDisplayTime displayAt;
 @property (nonatomic) PPCirclePostDisplayTime displayDuration;
-@property (nonatomic, strong) NSArray *reactions;
+@property (nonatomic, strong) RLMArray<PPCircleReaction *><PPCircleReaction> *reactions;
 @property (nonatomic) PPCircle *circle;
 
-- (id)initWithId:(PPCirclePostId)postId originalPostId:(PPCirclePostId)originalPostId circleId:(PPCircleId)circleId text:(NSString *)text authorId:(PPUserId)authorId creationDate:(NSDate *)creationDate updateDate:(NSDate *)updateDate deleted:(PPCirclePostDeleted)deleted file:(PPCircleFile *)file displayAt:(PPCirclePostDisplayTime)displayAt displayDuration:(PPCirclePostDisplayTime)displayDuration reactions:(NSArray *)reactions;
+- (id)initWithId:(PPCirclePostId)postId originalPostId:(PPCirclePostId)originalPostId circleId:(PPCircleId)circleId text:(NSString *)text authorId:(PPUserId)authorId creationDate:(NSDate *)creationDate updateDate:(NSDate *)updateDate deleted:(PPCirclePostDeleted)deleted file:(PPCircleFile *)file displayAt:(PPCirclePostDisplayTime)displayAt displayDuration:(PPCirclePostDisplayTime)displayDuration reactions:(RLMArray *)reactions;
 
 + (PPCirclePost *)initWithDictionary:(NSDictionary *)postDict;
 
 + (NSString *)stringify:(PPCirclePost *)post;
 
 @end
+
+RLM_ARRAY_TYPE(PPCirclePost);

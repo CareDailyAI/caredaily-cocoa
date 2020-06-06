@@ -12,7 +12,7 @@ typedef NS_OPTIONS(NSInteger, PPDeviceAlertCount) {
     PPDeviceAlertCountNone = -1,
 };
 
-@interface PPDeviceAlert : NSObject
+@interface PPDeviceAlert : RLMObject
 
 @property (nonatomic, strong) NSString *alertType;
 @property (nonatomic) PPDeviceAlertCount count;
@@ -22,3 +22,5 @@ typedef NS_OPTIONS(NSInteger, PPDeviceAlertCount) {
 + (PPDeviceAlert *)initWithDictionary:(NSDictionary *)alertDict;
 
 @end
+
+RLM_ARRAY_TYPE(PPDeviceAlert);

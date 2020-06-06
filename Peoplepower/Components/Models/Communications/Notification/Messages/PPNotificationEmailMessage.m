@@ -10,12 +10,12 @@
 
 @implementation PPNotificationEmailMessage
 
-- (id)initWithTemplate:(NSString *)notificationTemplate content:(NSString *)content model:(NSDictionary *)model subject:(NSString *)subject html:(PPNotificationEmailMessageHTML)html attachments:(NSArray *)attachments {
+- (id)initWithTemplate:(NSString *)notificationTemplate content:(NSString *)content model:(PPNotificationMessageModel *)model subject:(NSString *)subject html:(PPNotificationEmailMessageHTML)html attachments:(NSArray *)attachments {
     self = [super initWithTemplate:notificationTemplate content:content model:model];
     if(self) {
         self.subject = subject;
         self.html = html;
-        self.attachments = attachments;
+        self.attachments = (RLMArray<PPNotificationEmailMessageAttachment *><PPNotificationEmailMessageAttachment> *)attachments;
     }
     return self;
 }
@@ -41,7 +41,7 @@
         }
     }
     
-    PPNotificationEmailMessage *emailMessage = [[PPNotificationEmailMessage alloc] initWithTemplate:message.notificationTemplate content:message.content model:message.model subject:subject html:html attachments:attachments];
+    PPNotificationEmailMessage *emailMessage = [[PPNotificationEmailMessage alloc] initWithTemplate:message.notificationTemplate content:message.content model:message.model subject:subject html:html attachments:(RLMArray *)attachments];
     return emailMessage;
 }
 

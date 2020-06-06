@@ -30,7 +30,7 @@ typedef NS_OPTIONS(NSInteger, PPLocationSpaceType) {
     PPLocationSpaceTypeChair        = 15,
 };
 
-@interface PPLocationSpace : NSObject
+@interface PPLocationSpace : RLMObject
 
 @property (nonatomic) PPLocationSpaceId spaceId;
 @property (nonatomic) PPLocationSpaceType type;
@@ -46,3 +46,5 @@ typedef NS_OPTIONS(NSInteger, PPLocationSpaceType) {
 + (NSString *)localizedNameForSpaceType:(PPLocationSpaceType)spaceType;
 
 @end
+
+RLM_ARRAY_TYPE(PPLocationSpace);

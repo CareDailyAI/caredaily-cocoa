@@ -11,7 +11,7 @@
 #import "PPOrganization.h"
 #import "PPOrganizationGroup.h"
 
-@interface PPInAppMessageRecipient : NSObject
+@interface PPInAppMessageRecipient : RLMObject
 
 @property (nonatomic, strong) PPOrganization *organization;
 @property (nonatomic, strong) PPUser *user;
@@ -26,3 +26,5 @@
 + (NSDictionary *)data:(PPInAppMessageRecipient *)recipient;
 
 @end
+
+RLM_ARRAY_TYPE(PPInAppMessageRecipient);

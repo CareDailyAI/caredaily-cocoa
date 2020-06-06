@@ -8,10 +8,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PPCommunityPostReminder : NSObject
+@interface PPCommunityPostReminder : RLMObject
 
 @property (nonatomic, strong) NSDate * _Nullable notificationDate;
-@property (nonatomic, strong) NSNumber * _Nullable notificationInterval;
+@property (nonatomic, strong) NSNumber<RLMInt> * _Nullable notificationInterval;
 @property (nonatomic, strong) NSString * _Nonnull notificationText;
 
 - (id)initWithNotificationDate:(NSDate * _Nullable )notificationDate
@@ -23,5 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSDictionary *)dataFromPostReminder:(PPCommunityPostReminder *)postReminder;
 
 @end
+
+RLM_ARRAY_TYPE(PPCommunityPostReminder);
 
 NS_ASSUME_NONNULL_END

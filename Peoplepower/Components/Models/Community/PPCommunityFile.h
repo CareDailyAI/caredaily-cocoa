@@ -8,7 +8,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PPCommunityFile : NSObject
+@interface PPCommunityFile : RLMObject
 
 /* The File ID to reference this file later */
 @property (nonatomic) PPFileId fileId;
@@ -92,5 +92,7 @@ thumbnailUrlExpiration:(NSDate * _Nullable)thumbnailUrlExpiration
 + (PPCommunityFile *)initWithDictionary:(NSDictionary *)fileDict;
 
 @end
+
+RLM_ARRAY_TYPE(PPCommunityFile);
 
 NS_ASSUME_NONNULL_END

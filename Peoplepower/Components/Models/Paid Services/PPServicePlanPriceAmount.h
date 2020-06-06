@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPServicePlanPriceAmount : NSObject
+@interface PPServicePlanPriceAmount : RLMObject
 
 @property (nonatomic, strong) NSString *currencySymbol;
 @property (nonatomic, strong) NSString *currencyCode;
@@ -19,3 +19,5 @@
 + (PPServicePlanPriceAmount *)initWithDictionary:(NSDictionary *)amountDict;
 
 @end
+
+RLM_ARRAY_TYPE(PPServicePlanPriceAmount);

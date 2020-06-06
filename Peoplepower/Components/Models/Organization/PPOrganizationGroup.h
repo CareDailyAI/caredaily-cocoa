@@ -26,7 +26,7 @@ typedef NS_OPTIONS(NSInteger, PPOrganizationGroupType) {
     PPOrganizationGroupTypeBusiness = 1,
 };
 
-@interface PPOrganizationGroup : NSObject
+@interface PPOrganizationGroup : RLMObject
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *domainName;
@@ -39,3 +39,5 @@ typedef NS_OPTIONS(NSInteger, PPOrganizationGroupType) {
 + (PPOrganizationGroup *)initWithDictionary:(NSDictionary *)groupDict;
 
 @end
+
+RLM_ARRAY_TYPE(PPOrganizationGroup);

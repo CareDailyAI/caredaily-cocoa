@@ -23,39 +23,21 @@ __strong static NSMutableDictionary*_sharedRules = nil;
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    if(!_sharedRules) {
-        [PPRules initializeSharedRules];
-    }
-    NSMutableArray *sharedRules = [[NSMutableArray alloc] initWithCapacity:0];
-    NSMutableArray *ruleArray = [[NSMutableArray alloc] initWithCapacity:0];
-    for(NSString *userIdKey in _sharedRules.allKeys) {
-        for(PPRule *rule in [_sharedRules objectForKey:userIdKey]) {
-            [ruleArray addObject:@{@"ruleId": @(rule.ruleId), @"status": @(rule.status)}];
-            if([userIdKey isEqualToString:[NSString stringWithFormat:@"%li", (long)userId]]) {
-                [sharedRules addObject:rule];
-            }
-        }
+    RLMResults<PPRule *> *sharedRules = [PPRule allObjects];
+    
+    NSMutableArray *sharedRulesArray = [[NSMutableArray alloc] initWithCapacity:[sharedRules count]];
+    NSMutableArray *rulesArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
+    for(PPRule *rule in sharedRules) {
+        [sharedRulesArray addObject:rule];
+        
+        [rulesArrayDebug addObject:@{@"ruleId": @(rule.ruleId)}];
     }
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s sharedRules=%@", __PRETTY_FUNCTION__, ruleArray);
+    NSLog(@"< %s sharedRules=%@", __PRETTY_FUNCTION__, rulesArrayDebug);
 #endif
 #endif
-    return sharedRules;
-}
-
-+ (void)initializeSharedRules {
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"> %s", __PRETTY_FUNCTION__);
-#endif
-#endif
-    _sharedRules = [[NSMutableDictionary alloc] initWithCapacity:0];
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"< %s", __PRETTY_FUNCTION__);
-#endif
-#endif
+    return sharedRulesArray;
 }
 
 /**
@@ -71,42 +53,14 @@ __strong static NSMutableDictionary*_sharedRules = nil;
     NSLog(@"> %s rules=%@", __PRETTY_FUNCTION__, rules);
 #endif
 #endif
-    if(!_sharedRules) {
-        [PPRules initializeSharedRules];
-    }
-    
-    NSMutableArray *rulesArray = [_sharedRules objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!rulesArray) {
-        rulesArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-    
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
+    [[PPRealm defaultRealm] beginWriteTransaction];
     for(PPRule *rule in rules) {
-        
-        BOOL found = NO;
-        for(PPRule *sharedRule in rulesArray) {
-            if([sharedRule isEqualToRule:rule]) {
-                [sharedRule sync:rule];
-                found = YES;
-                break;
-            }
-        }
-        if(!found) {
-            [indexSet addIndex:[rules indexOfObject:rule]];
-        }
+        [PPRule createOrUpdateInDefaultRealmWithValue:rule];
     }
-    
-    [rulesArray addObjectsFromArray:[rules objectsAtIndexes:indexSet]];
-    [_sharedRules setObject:rulesArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    
-//    NSData *sharedServicePlanData = [NSKeyedArchiver archivedDataWithRootObject:_sharedRules];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedServicePlanData forKey:@"user.rules"];
-//    [defaults synchronize];
-    
+    [[PPRealm defaultRealm] commitWriteTransaction];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s indexSet=%@", __PRETTY_FUNCTION__, indexSet);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }
@@ -124,37 +78,14 @@ __strong static NSMutableDictionary*_sharedRules = nil;
     NSLog(@"> %s rules=%@", __PRETTY_FUNCTION__, rules);
 #endif
 #endif
-    
-    if(!_sharedRules) {
-        [PPRules initializeSharedRules];
-    }
-    
-    NSMutableArray *rulesArray = [_sharedRules objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!rulesArray) {
-        rulesArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-    
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
-    for(PPRule *rule in rules) {
-        for(PPRule *sharedRule in rulesArray) {
-            if([sharedRule isEqualToRule:rule]) {
-                [indexSet addIndex:[rulesArray indexOfObject:sharedRule]];
-                break;
-            }
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPRule *rule in rules) {
+            [[PPRealm defaultRealm] deleteObject:[PPRule objectForPrimaryKey:@(rule.ruleId)]];
         }
-    }
-    
-    [rulesArray removeObjectsAtIndexes:indexSet];
-    [_sharedRules setObject:rulesArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    
-//    NSData *sharedServicePlanData = [NSKeyedArchiver archivedDataWithRootObject:_sharedRules];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedServicePlanData forKey:@"user.rules"];
-//    [defaults synchronize];
-    
+    }];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s indexSet=%@", __PRETTY_FUNCTION__, indexSet);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }
@@ -171,7 +102,7 @@ __strong static NSMutableDictionary*_sharedRules = nil;
 #endif
 #endif
     
-    NSArray *sharedRuleComponents = @[];
+    RLMResults<PPRuleComponent *> *sharedRuleComponents = [PPRuleComponent allObjects];
     
     NSMutableArray *sharedRuleComponentsArray = [[NSMutableArray alloc] initWithCapacity:[sharedRuleComponents count]];
     NSMutableArray *componentsArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
@@ -193,12 +124,21 @@ __strong static NSMutableDictionary*_sharedRules = nil;
  * add rule components to local reference.
  *
  * @param ruleComponents NSArray Array of rule components to add.
- * @param userId Required PPUserId User Id to associate these rules with
+ * @param userId Required PPUserId User Id to associate these rule components with.
  **/
 + (void)addRuleComponents:(NSArray *)ruleComponents userId:(PPUserId)userId {
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s components=%@", __PRETTY_FUNCTION__, ruleComponents);
+#endif
+#endif
+    [[PPRealm defaultRealm] beginWriteTransaction];
+    for(PPRuleComponent *component in ruleComponents) {
+        [PPRuleComponent createOrUpdateInDefaultRealmWithValue:component];
+    }
+    [[PPRealm defaultRealm] commitWriteTransaction];
+#ifdef DEBUG
+#ifdef DEBUG_MODELS
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
@@ -209,12 +149,21 @@ __strong static NSMutableDictionary*_sharedRules = nil;
  * Remove rule components from local reference.
  *
  * @param ruleComponents NSArray Array of rule components to remove.
- * @param userId Required PPUserId User Id to associate these rules with
+ * @param userId Required PPUserId User Id to associate these rule components with.
  **/
 + (void)removeRuleComponents:(NSArray *)ruleComponents userId:(PPUserId)userId {
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s components=%@", __PRETTY_FUNCTION__, ruleComponents);
+#endif
+#endif
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPRuleComponent *component in ruleComponents) {
+            [[PPRealm defaultRealm] deleteObject:[PPRuleComponent objectForPrimaryKey:@(component.componentId)]];
+        }
+    }];
+#ifdef DEBUG
+#ifdef DEBUG_MODELS
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif

@@ -86,8 +86,6 @@ NSString *SYSTEM_PROPERTY_COMMUNITY_POST_FILE_CONTENT_LIMIT = @"ppc.communityPos
 
 /**
  * Shared properties across the entire application
- *
- * @param userId Required PPUserId User Id to associate these objects with
  */
 + (NSArray *)sharedPropertiesForUser:(PPUserId)userId {
 #ifdef DEBUG
@@ -96,7 +94,7 @@ NSString *SYSTEM_PROPERTY_COMMUNITY_POST_FILE_CONTENT_LIMIT = @"ppc.communityPos
 #endif
 #endif
     
-    NSArray *sharedProperties = @[];
+    RLMResults<PPProperty *> *sharedProperties = [PPProperty allObjects];
     
     NSMutableArray *sharedPropertiesArray = [[NSMutableArray alloc] initWithCapacity:[sharedProperties count]];
     NSMutableArray *propertiesArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
@@ -124,6 +122,11 @@ NSString *SYSTEM_PROPERTY_COMMUNITY_POST_FILE_CONTENT_LIMIT = @"ppc.communityPos
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s properties=%@", __PRETTY_FUNCTION__, properties);
+    [[PPRealm defaultRealm] beginWriteTransaction];
+    for(PPProperty *property in properties) {
+        [PPProperty createOrUpdateInDefaultRealmWithValue:property];
+    }
+    [[PPRealm defaultRealm] commitWriteTransaction];
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
@@ -140,6 +143,11 @@ NSString *SYSTEM_PROPERTY_COMMUNITY_POST_FILE_CONTENT_LIMIT = @"ppc.communityPos
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s properties=%@", __PRETTY_FUNCTION__, properties);
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPProperty *property in properties) {
+            [[PPRealm defaultRealm] deleteObject:[PPProperty objectForPrimaryKey:property.name]];
+        }
+    }];
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif

@@ -10,11 +10,11 @@
 
 @implementation PPEnergyManagementBillingInfo
 
-- (id)initWithBillingDay:(PPEnergyManagementBillingInfoBillingDay)billingDay budgets:(NSArray *)budgets utility:(PPEnergyManagementBillingInfoUtility *)utility billingRate:(PPEnergyManagementBillingInfoBillingRate *)billingRate {
+- (id)initWithBillingDay:(PPEnergyManagementBillingInfoBillingDay)billingDay budgets:(RLMArray *)budgets utility:(PPEnergyManagementBillingInfoUtility *)utility billingRate:(PPEnergyManagementBillingInfoBillingRate *)billingRate {
     self = [super init];
     if(self) {
         self.billingDay = billingDay;
-        self.budgets = budgets;
+        self.budgets = (RLMArray<PPEnergyManagementBillingInfoBudget *><PPEnergyManagementBillingInfoBudget> *)budgets;
         self.utility = utility;
         self.billingRate = billingRate;
     }
@@ -54,7 +54,7 @@
     }
     PPEnergyManagementBillingInfoBillingRate *billingRate = [PPEnergyManagementBillingInfoBillingRate initWithDictionary:[infoDict objectForKey:@"billingRate"]];
     
-    PPEnergyManagementBillingInfo *info = [[PPEnergyManagementBillingInfo alloc] initWithBillingDay:billingDay budgets:budgets utility:utility billingRate:billingRate];
+    PPEnergyManagementBillingInfo *info = [[PPEnergyManagementBillingInfo alloc] initWithBillingDay:billingDay budgets:(RLMArray *)budgets utility:utility billingRate:billingRate];
     return info;
 }
 

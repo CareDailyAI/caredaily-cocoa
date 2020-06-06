@@ -10,6 +10,10 @@
 
 @implementation PPFriendshipFriend
 
++ (NSString *)primaryKey {
+    return @"friendId";
+}
+
 - (id)initWithId:(PPUserId)friendId firstName:(NSString *)firstName lastName:(NSString *)lastName email:(PPUserEmail *)email {
     self = [super init];
     if(self) {

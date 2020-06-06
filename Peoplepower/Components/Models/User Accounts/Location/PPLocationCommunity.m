@@ -21,7 +21,6 @@
 }
 
 + (PPLocationCommunity *)initWithDictionary:(NSDictionary *)communityDict {
-    
     PPCommunityId communityId = PPCommunityIdNone;
     if([communityDict objectForKey:@"communityId"]) {
         communityId = (PPCommunityId)((NSString *)[communityDict objectForKey:@"communityId"]).integerValue;
@@ -31,7 +30,7 @@
     if([communityDict objectForKey:@"locationId"]) {
         locationId = (PPLocationId)((NSString *)[communityDict objectForKey:@"locationId"]).integerValue;
     }
-    
+
     PPLocationCommunity *locationCommunity = [[PPLocationCommunity alloc] initWithCommunityId:communityId communityName:communityName locationId:locationId];
     return locationCommunity;
 }

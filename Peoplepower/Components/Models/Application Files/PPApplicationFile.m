@@ -11,6 +11,10 @@
 
 @implementation PPApplicationFile
 
++ (NSString *)primaryKey {
+    return @"fileId";
+}
+
 - (id)initWithFile:(PPApplicationFileId)fileId type:(PPApplicationFileFileType)type name:(NSString *)name size:(PPApplicationFileSize)size userId:(PPUserId)userId locationId:(PPLocationId)locationId deviceId:(NSString *)deviceId publicAccess:(PPApplicationFilePublicAccess)publicAccess data:(NSData *)data {
     self = [super init];
     if(self) {

@@ -18,6 +18,10 @@ NSString *COMPOSER_APP_CATEGORY_WELLNESS = @"W";
 
 @implementation PPBotengineApp
 
++(NSString *)primaryKey {
+    return @"bundle";
+}
+
 + (PPBotengineApp *)appFromAppDict:(NSDictionary *)app {
     NSString *bundle = [app objectForKey:@"bundle"];
     
@@ -125,7 +129,7 @@ NSString *COMPOSER_APP_CATEGORY_WELLNESS = @"W";
         [communications addObject:appCommunications];
     }
     
-    PPBotengineApp* composerApp = [[PPBotengineApp alloc] initWithBundle:bundle category:appCategory marketing:marketing rating:rating compatible:YES instanceSummary:instancesSummary versions:versions trigger:trigger schedule:schedule events:events deviceTypes:deviceTypes access:access communications:communications];
+    PPBotengineApp* composerApp = [[PPBotengineApp alloc] initWithBundle:bundle category:appCategory marketing:marketing rating:rating compatible:YES instanceSummary:instancesSummary versions:(RLMArray *)versions trigger:trigger schedule:schedule events:(RLMArray *)events deviceTypes:(RLMArray *)deviceTypes access:(RLMArray *)access communications:(RLMArray *)communications];
     composerApp.compatible = compatible;
     
     return composerApp;
@@ -158,7 +162,7 @@ NSString *COMPOSER_APP_CATEGORY_WELLNESS = @"W";
     return [[PPBotengineApp alloc] initWithBundle:bundle category:category marketing:marketing rating:rating compatible:compatible instanceSummary:nil versions:nil trigger:PPBotengineAppExecutionTriggerNone schedule:nil events:nil deviceTypes:nil access:nil communications:nil];
 }
 
-- (id)initWithBundle:(NSString *)bundle category:(PPBotengineAppCategory)category marketing:(PPBotengineAppMarketing *)marketing rating:(PPBotengineAppRating *)rating compatible:(BOOL)compatible instanceSummary:(NSString *)instanceSummary versions:(NSArray *)versions trigger:(NSInteger)trigger schedule:(NSString *)schedule events:(NSArray *)events deviceTypes:(NSArray *)deviceTypes access:(NSArray *)access communications:(NSArray *)communications {
+- (id)initWithBundle:(NSString *)bundle category:(PPBotengineAppCategory)category marketing:(PPBotengineAppMarketing *)marketing rating:(PPBotengineAppRating *)rating compatible:(BOOL)compatible instanceSummary:(NSString *)instanceSummary versions:(RLMArray *)versions trigger:(NSInteger)trigger schedule:(NSString *)schedule events:(RLMArray *)events deviceTypes:(RLMArray *)deviceTypes access:(RLMArray *)access communications:(RLMArray *)communications {
     self = [super init];
     if(self) {
         self.bundle = bundle;
@@ -167,13 +171,13 @@ NSString *COMPOSER_APP_CATEGORY_WELLNESS = @"W";
         self.rating = rating;
         self.compatible = compatible;
         self.instanceSummary = instanceSummary;
-        self.versions = versions;
+        self.versions = (RLMArray<PPBotengineAppVersion *><PPBotengineAppVersion> *)versions;
         self.trigger = trigger;
         self.schedule = schedule;
-        self.events = events;
-        self.deviceTypes = deviceTypes;
-        self.access = access;
-        self.communications = communications;
+        self.events = (RLMArray<RLMString> *)events;
+        self.deviceTypes = (RLMArray<PPBotengineAppDeviceType *><PPBotengineAppDeviceType> *)deviceTypes;
+        self.access = (RLMArray<PPBotengineAppAccess *><PPBotengineAppAccess> *)access;
+        self.communications = (RLMArray<PPBotengineAppCommunications *><PPBotengineAppCommunications> *)communications;
     }
     
     return self;

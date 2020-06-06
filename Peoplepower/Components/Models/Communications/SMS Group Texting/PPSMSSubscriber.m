@@ -10,11 +10,15 @@
 
 @implementation PPSMSSubscriber
 
-- (id)initWithPhone:(NSString *)phone categories:(NSArray *)categories status:(PPSMSSubscriberStatus)status firstName:(NSString *)firstName lastName:(NSString *)lastName initials:(NSString *)initials {
++ (NSString *)primaryKey {
+    return @"phone";
+}
+
+- (id)initWithPhone:(NSString *)phone categories:(RLMArray *)categories status:(PPSMSSubscriberStatus)status firstName:(NSString *)firstName lastName:(NSString *)lastName initials:(NSString *)initials {
     self = [super init];
     if(self) {
         self.phone = phone;
-        self.categories = categories;
+        self.categories = (RLMArray<RLMInt> *)categories;
         self.status = status;
         self.firstName = firstName;
         self.lastName = lastName;
@@ -40,7 +44,7 @@
     NSString *lastName = [subscriberDict objectForKey:@"lastName"];
     NSString *initials = [subscriberDict objectForKey:@"initials"];
     
-    PPSMSSubscriber *subscriber = [[PPSMSSubscriber alloc] initWithPhone:phone categories:categories status:status firstName:firstName lastName:lastName initials:initials];
+    PPSMSSubscriber *subscriber = [[PPSMSSubscriber alloc] initWithPhone:phone categories:(RLMArray *)categories status:status firstName:firstName lastName:lastName initials:initials];
     return subscriber;
 }
 
@@ -62,7 +66,7 @@
         if(appendComma) {
             [JSONString appendString:@","];
         }
-        [JSONString appendFormat:@"\"categories\":[%@]", [subscriber.categories componentsJoinedByString:@","]];
+        [JSONString appendFormat:@"\"categories\":[%@]", [PPRLMArray stringArray:subscriber.categories componentsJoinedByString:@","]];
         appendComma = YES;
     }
     

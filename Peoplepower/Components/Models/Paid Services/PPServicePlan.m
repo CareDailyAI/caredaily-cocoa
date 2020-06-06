@@ -12,16 +12,20 @@
 
 @implementation PPServicePlan
 
-- (id)initWithId:(PPServicePlanId)planId name:(NSString *)name desc:(NSString *)desc available:(PPServicePlanAvailable)available upgradableTo:(NSArray *)upgradableTo prices:(NSArray *)prices subscriptions:(NSArray *)subscriptions {
++ (NSString *)primaryKey {
+    return @"planId";
+}
+
+- (id)initWithId:(PPServicePlanId)planId name:(NSString *)name desc:(NSString *)desc available:(PPServicePlanAvailable)available upgradableTo:(RLMArray *)upgradableTo prices:(RLMArray *)prices subscriptions:(RLMArray *)subscriptions {
     self = [super init];
     if(self) {
         self.planId = planId;
         self.name = name;
         self.desc = desc;
         self.available = available;
-        self.upgradableTo = upgradableTo;
-        self.prices = prices;
-        self.subscriptions = subscriptions;
+        self.upgradableTo = (RLMArray<RLMInt> *)upgradableTo;
+        self.prices = (RLMArray<PPServicePlanPrice *><PPServicePlanPrice> *)prices;
+        self.subscriptions =(RLMArray<PPServicePlanSoftwareSubscription *><PPServicePlanSoftwareSubscription> *) subscriptions;
     }
     return self;
 }
@@ -57,7 +61,7 @@
         }
     }
     
-    PPServicePlan *servicePlan = [[PPServicePlan alloc] initWithId:planId name:name desc:desc available:available upgradableTo:upgradableTo prices:prices subscriptions:subscriptions];
+    PPServicePlan *servicePlan = [[PPServicePlan alloc] initWithId:planId name:name desc:desc available:available upgradableTo:(RLMArray<RLMInt> *)upgradableTo prices:(RLMArray<PPServicePlanPrice *><PPServicePlanPrice> *)prices subscriptions:(RLMArray<PPServicePlanSoftwareSubscription *><PPServicePlanSoftwareSubscription> *)subscriptions];
     return servicePlan;
 }
 
@@ -104,6 +108,14 @@
 #pragma mark - PPServicePlanSoftwareSubscription
 
 @implementation PPServicePlanSoftwareSubscription
+
++ (NSString *)primaryKey {
+    return @"userPlanId";
+}
+
+- (PPServicePlanTransaction *)transaction {
+    return [PPServicePlanTransaction objectForPrimaryKey:_transactionId];
+}
 
 - (id)initWithId:(PPServicePlanSoftwareSubscriptionUserPlanId)userPlanId type:(PPServicePlanSoftwareSubscriptionType)type paymentType:(PPServicePlanSoftwareSubscriptionPaymentType)paymentType startDate:(NSDate *)startDate endDate:(NSDate *)endDate gatewayId:(NSString *)gatewayId sandbox:(PPServicePlanSoftwareSubscriptionSandbox)sandbox duration:(PPServicePlanSoftwareSubscriptionDuration)duration free:(PPServicePlanSoftwareSubscriptionFree)free organizationId:(PPOrganizationId)organizationId subscriptionId:(NSString *)subscriptionId transactionId:(NSString *)transactionId plan:(PPServicePlan *)plan {
     self = [super init];
@@ -189,6 +201,10 @@
 #pragma mark - PPServicePlanPrice
 
 @implementation PPServicePlanPrice
+
++ (NSString *)primaryKey {
+    return @"priceId";
+}
 
 - (id)initWithId:(PPServicePlanPriceId)priceId type:(PPServicePlanSoftwareSubscriptionType)type paymentType:(PPServicePlanSoftwareSubscriptionPaymentType)paymentType free:(PPServicePlanSoftwareSubscriptionFree)free duration:(PPServicePlanSoftwareSubscriptionDuration)duration gatewayId:(NSString *)gatewayId appleStoreId:(NSString *)appleStoreId gatewaySandboxId:(NSString *)gatewaySandboxId amount:(PPServicePlanPriceAmount *)amount {
     self = [super init];

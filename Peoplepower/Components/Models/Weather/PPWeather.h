@@ -11,14 +11,16 @@
 #import "PPWeatherForecast.h"
 #import "PPWeatherObservation.h"
 
-@interface PPWeather : NSObject
+@interface PPWeather : RLMObject
 
 @property (nonatomic, strong) PPWeatherMetadata *metadata;
-@property (nonatomic, strong) NSArray *forecasts;
+@property (nonatomic, strong) RLMArray<PPWeatherForecast *><PPWeatherForecast> *forecasts;
 @property (nonatomic, strong) PPWeatherObservation *observation;
 
-- (id)initWithMetaDate:(PPWeatherMetadata *)metaData forecasts:(NSArray *)forecasts observation:(PPWeatherObservation *)observation;
+- (id)initWithMetaDate:(PPWeatherMetadata *)metaData forecasts:(RLMArray *)forecasts observation:(PPWeatherObservation *)observation;
 
 + (PPWeather *)initWithDictionary:(NSDictionary *)weatherDict;
 
 @end
+
+RLM_ARRAY_TYPE(PPWeather);

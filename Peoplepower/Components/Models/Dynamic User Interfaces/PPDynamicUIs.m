@@ -13,8 +13,6 @@
 
 #pragma mark - Session Management
 
-__strong static NSMutableDictionary*_sharedScreens = nil;
-
 /**
  * Shared screens across the entire application
  */
@@ -24,51 +22,22 @@ __strong static NSMutableDictionary*_sharedScreens = nil;
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    if(!_sharedScreens) {
-        [PPDynamicUIs initializeSharedScreens];
-    }
-    NSMutableArray *sharedScreens = [[NSMutableArray alloc] initWithCapacity:0];
-    NSMutableArray *screensArray = [[NSMutableArray alloc] initWithCapacity:0];
-    for(NSString *userIdKey in _sharedScreens.allKeys) {
-        for(PPDynamicUIScreen *screen in [_sharedScreens objectForKey:userIdKey]) {
-            NSMutableDictionary *screenIdentifiers = [[NSMutableDictionary alloc] initWithCapacity:2];
-            [screenIdentifiers setValue:screen.screenId forKey:@"screenId"];
-            if(screen.order != PPDynamicUIScreenSectionOrderNone) {
-                [screenIdentifiers setValue:@(screen.order) forKey:@"order"];
-            }
-            [screensArray addObject:screenIdentifiers];
-            
-            if([userIdKey isEqualToString:[NSString stringWithFormat:@"%li", (long)userId]]) {
-                [sharedScreens addObject:screen];
-            }
-        }
-    }
+    RLMResults<PPDynamicUIScreen *> *sharedScreens = [PPDynamicUIScreen allObjects];
     
+    NSMutableArray *sharedScreensArray = [[NSMutableArray alloc] initWithCapacity:0];
+    NSMutableArray *screensArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
+    for(PPDynamicUIScreen *screen in sharedScreens) {
+        [sharedScreensArray addObject:screen];
+        NSMutableDictionary *screenIdentifiers = [[NSMutableDictionary alloc] initWithCapacity:2];
+        [screenIdentifiers setValue:screen.screenId forKey:@"id"];
+        [screensArrayDebug addObject:screenIdentifiers];
+    }
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s sharedScreens=%@", __PRETTY_FUNCTION__, screensArray);
+    NSLog(@"< %s sharedScreens=%@", __PRETTY_FUNCTION__, screensArrayDebug);
 #endif
 #endif
-    return sharedScreens;
-}
-
-+ (void)initializeSharedScreens {
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"> %s", __PRETTY_FUNCTION__);
-#endif
-#endif
-    _sharedScreens = [[NSMutableDictionary alloc] initWithCapacity:0];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    NSData *storedScreensData = [defaults objectForKey:@"user.dynamicUIs"];
-//    if(storedScreensData) {
-//        _sharedScreens = (NSMutableDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:storedScreensData];
-//    }
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"< %s", __PRETTY_FUNCTION__);
-#endif
-#endif
+    return sharedScreensArray;
 }
 
 /**
@@ -76,7 +45,7 @@ __strong static NSMutableDictionary*_sharedScreens = nil;
  * Add screens from local reference.
  *
  * @param screens NSArray Array of screens to remove.
- * @param userId Required PPUserId User Id to associate these screens with
+ * @param userId Required PPUserId User Id to associate these dynamicUIs with
  **/
 + (void)addScreens:(NSArray *)screens userId:(PPUserId)userId {
 #ifdef DEBUG
@@ -84,42 +53,14 @@ __strong static NSMutableDictionary*_sharedScreens = nil;
     NSLog(@"> %s screens=%@", __PRETTY_FUNCTION__, screens);
 #endif
 #endif
-    if(!_sharedScreens) {
-        [PPDynamicUIs initializeSharedScreens];
-    }
-    
-    NSMutableArray *screensArray = [_sharedScreens objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!screensArray) {
-        screensArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-    
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
+    [[PPRealm defaultRealm] beginWriteTransaction];
     for(PPDynamicUIScreen *screen in screens) {
-        
-        BOOL found = NO;
-        for(PPDynamicUIScreen *sharedScreen in screensArray) {
-            if([sharedScreen isEqualToScreen:screen]) {
-                [sharedScreen sync:screen];
-                found = YES;
-                break;
-            }
-        }
-        if(!found) {
-            [indexSet addIndex:[screens indexOfObject:screen]];
-        }
+        [PPDynamicUIScreen createOrUpdateInDefaultRealmWithValue:screen];
     }
-    
-    [screensArray addObjectsFromArray:[screens objectsAtIndexes:indexSet]];
-    [_sharedScreens setObject:screensArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    
-//    NSData *sharedScreenData = [NSKeyedArchiver archivedDataWithRootObject:_sharedScreens];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedScreenData forKey:@"user.dynamicUIs"];
-//    [defaults synchronize];
-    
+    [[PPRealm defaultRealm] commitWriteTransaction];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s screensArray=%@", __PRETTY_FUNCTION__, screensArray);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }
@@ -129,7 +70,7 @@ __strong static NSMutableDictionary*_sharedScreens = nil;
  * Remove screens from local reference.
  *
  * @param screens NSArray Array of screens to remove.
- * @param userId Required PPUserId User Id to associate these screens with
+ * @param userId Required PPUserId User Id to associate these dynamicUIs with
  **/
 + (void)removeScreens:(NSArray *)screens userId:(PPUserId)userId {
 #ifdef DEBUG
@@ -137,37 +78,14 @@ __strong static NSMutableDictionary*_sharedScreens = nil;
     NSLog(@"> %s screens=%@", __PRETTY_FUNCTION__, screens);
 #endif
 #endif
-    
-    if(!_sharedScreens) {
-        [PPDynamicUIs initializeSharedScreens];
-    }
-    
-    NSMutableArray *screensArray = [_sharedScreens objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!screensArray) {
-        screensArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-    
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
-    for(PPDynamicUIScreen *screen in screens) {
-        for(PPDynamicUIScreen *sharedScreen in screensArray) {
-            if([sharedScreen isEqualToScreen:screen]) {
-                [indexSet addIndex:[screensArray indexOfObject:sharedScreen]];
-                break;
-            }
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPDynamicUIScreen *screen in screens) {
+            [[PPRealm defaultRealm] deleteObject:[PPDynamicUIScreen objectForPrimaryKey:screen.screenId]];
         }
-    }
-    
-    [screensArray removeObjectsAtIndexes:indexSet];
-    [_sharedScreens setObject:screensArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    
-//    NSData *sharedScreenData = [NSKeyedArchiver archivedDataWithRootObject:_sharedScreens];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedScreenData forKey:@"user.dynamicUIs"];
-//    [defaults synchronize];
-    
+    }];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s screensArray=%@", __PRETTY_FUNCTION__, screensArray);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }

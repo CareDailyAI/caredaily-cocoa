@@ -10,6 +10,10 @@
 
 @implementation PPState
 
+//+ (NSString *)primaryKey {
+//    return @"stateId";
+//}
+
 - (id)initWithStateId:(PPStateId)stateId name:(NSString *)name timezoneId:(NSString *)timezoneId abbr:(NSString *)abbr code:(NSString *)code preferred:(PPPreferredState)preferred {
     self = [super init];
     if(self) {

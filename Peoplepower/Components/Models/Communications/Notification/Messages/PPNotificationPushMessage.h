@@ -8,6 +8,9 @@
 
 #import "PPNotificationMessage.h"
 
+@class PPNotificationPushMessageInfo;
+RLM_ARRAY_TYPE(PPNotificationPushMessageInfo);
+
 typedef NS_OPTIONS(NSInteger, PPNotificationPushMessageType) {
     PPNotificationPushMessageTypeNone = -1,
     PPNotificationPushMessageTypeDefault = 0
@@ -17,13 +20,19 @@ typedef NS_OPTIONS(NSInteger, PPNotificationPushMessageType) {
 
 @property (nonatomic) PPNotificationPushMessageType type;
 @property (nonatomic, strong) NSString *sound;
-@property (nonatomic, strong) NSDictionary *info;
+@property (nonatomic, strong) PPNotificationPushMessageInfo *info;
 
-- (id)initWithTemplate:(NSString *)notificationTemplate content:(NSString *)content model:(NSDictionary *)model type:(PPNotificationPushMessageType)type sound:(NSString *)sound info:(NSDictionary *)info;
+- (id)initWithTemplate:(NSString *)notificationTemplate content:(NSString *)content model:(PPNotificationMessageModel *)model type:(PPNotificationPushMessageType)type sound:(NSString *)sound info:(PPNotificationPushMessageInfo *)info;
 
 + (PPNotificationPushMessage *)initWithDictionary:(NSDictionary *)messageDict;
 
 + (NSString *)stringify:(PPNotificationPushMessage *)message;
 + (NSDictionary *)data:(PPNotificationPushMessage *)message;
 
+@end
+
+RLM_ARRAY_TYPE(PPNotificationPushMessage);
+
+@interface PPNotificationPushMessageInfo : PPRLMDictionary
++ (PPNotificationPushMessageInfo *)initWithDictionary:(NSDictionary *)dict;
 @end

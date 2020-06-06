@@ -10,6 +10,10 @@
 
 @implementation PPProperty
 
++ (NSString *)primaryKey {
+    return @"name";
+}
+
 - (id)initWithName:(NSString *)name value:(NSString *)value {
     self = [super init];
     if(self) {

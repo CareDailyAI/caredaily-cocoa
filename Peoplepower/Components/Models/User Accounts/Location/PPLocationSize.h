@@ -12,7 +12,7 @@ typedef NS_OPTIONS(NSInteger, PPLocationSizeContent) {
     PPLocationSizeContentNone = -1
 };
 
-@interface PPLocationSize : NSObject <NSCopying>
+@interface PPLocationSize : RLMObject <NSCopying>
 
 @property (nonatomic, strong) NSString *unit;
 @property (nonatomic) PPLocationSizeContent content;
@@ -22,3 +22,5 @@ typedef NS_OPTIONS(NSInteger, PPLocationSizeContent) {
 + (PPLocationSize *)initWithDictionary:(NSDictionary *)sizeDict;
 
 @end
+
+RLM_ARRAY_TYPE(PPLocationSize);

@@ -10,15 +10,19 @@
 
 @implementation PPFriendship
 
-- (id)initWithFriendshipId:(PPFriendshipId)friendshipId friendshipFriend:(PPFriendshipFriend *)friendshipFriend email:(NSString *)email blocked:(PPFriendshipBlocked)blocked ownDevices:(NSArray *)ownDevices friendDevices:(NSArray *)friendDevices {
++ (NSString *)primaryKey {
+    return @"friendshipId";
+}
+
+- (id)initWithFriendshipId:(PPFriendshipId)friendshipId friendshipFriend:(PPFriendshipFriend *)friendshipFriend email:(NSString *)email blocked:(PPFriendshipBlocked)blocked ownDevices:(RLMArray *)ownDevices friendDevices:(RLMArray *)friendDevices {
     self = [super init];
     if(self) {
         self.friendshipId = friendshipId;
         self.friendshipFriend = friendshipFriend;
         self.email = email;
         self.blocked = blocked;
-        self.ownDevices = ownDevices;
-        self.friendDevices = friendDevices;
+        self.ownDevices = (RLMArray<PPFriendshipDevice *><PPFriendshipDevice> *)ownDevices;
+        self.friendDevices = (RLMArray<PPFriendshipDevice *><PPFriendshipDevice> *)friendDevices;
     }
     return self;
 }
@@ -76,7 +80,7 @@
         }];
     }
     
-    PPFriendship *friendship = [[PPFriendship alloc] initWithFriendshipId:friendshipId friendshipFriend:friendshipFriend email:email blocked:blocked ownDevices:sortedOwnDevices friendDevices:sortedFriendDevices];
+    PPFriendship *friendship = [[PPFriendship alloc] initWithFriendshipId:friendshipId friendshipFriend:friendshipFriend email:email blocked:blocked ownDevices:(RLMArray *)sortedOwnDevices friendDevices:(RLMArray *)sortedFriendDevices];
     return friendship;
 }
 

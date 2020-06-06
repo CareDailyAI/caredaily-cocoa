@@ -14,10 +14,6 @@
 
 #pragma mark - Session Management
 
-#pragma mark - Notification Files
-
-__strong static NSMutableDictionary*_sharedFiles = nil;
-
 /**
  * Shared files across the entire application
  */
@@ -27,51 +23,21 @@ __strong static NSMutableDictionary*_sharedFiles = nil;
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    if(!_sharedFiles) {
-        [PPFileManagement initializeSharedFiles];
-    }
-    NSMutableArray *sharedFiles = [[NSMutableArray alloc] initWithCapacity:0];
-    NSMutableArray *filesArray = [[NSMutableArray alloc] initWithCapacity:0];
-    for(NSString *userIdKey in _sharedFiles.allKeys) {
-        for(PPFile *file in [_sharedFiles objectForKey:userIdKey]) {
-            NSMutableDictionary *fileIdentifiers = [[NSMutableDictionary alloc] initWithCapacity:2];
-            [fileIdentifiers setValue:@(file.fileId) forKey:@"ID"];
-            if(file.name) {
-                [fileIdentifiers setValue:file.name forKey:@"name"];
-            }
-            [filesArray addObject:fileIdentifiers];
-            
-            if([userIdKey isEqualToString:[NSString stringWithFormat:@"%li", (long)userId]]) {
-                [sharedFiles addObject:file];
-            }
-        }
-    }
+    RLMResults<PPFile *> *sharedFiles = [PPFile allObjects];
     
+    NSMutableArray *sharedFilesArray = [[NSMutableArray alloc] initWithCapacity:[sharedFiles count]];
+    NSMutableArray *filesArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
+    for(PPFile *file in sharedFiles) {
+        [sharedFilesArray addObject:file];
+        
+        [filesArrayDebug addObject:@{@"fileId": @(file.fileId)}];
+    }
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s sharedFiles=%@", __PRETTY_FUNCTION__, filesArray);
+    NSLog(@"< %s sharedFiles=%@", __PRETTY_FUNCTION__, filesArrayDebug);
 #endif
 #endif
-    return sharedFiles;
-}
-
-+ (void)initializeSharedFiles {
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"> %s", __PRETTY_FUNCTION__);
-#endif
-#endif
-    _sharedFiles = [[NSMutableDictionary alloc] initWithCapacity:0];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    NSData *storedFilesData = [defaults objectForKey:@"user.notificationFiles"];
-//    if(storedFilesData) {
-//        _sharedFiles = (NSMutableDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:storedFilesData];
-//    }
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"< %s", __PRETTY_FUNCTION__);
-#endif
-#endif
+    return sharedFilesArray;
 }
 
 /**
@@ -87,42 +53,14 @@ __strong static NSMutableDictionary*_sharedFiles = nil;
     NSLog(@"> %s files=%@", __PRETTY_FUNCTION__, files);
 #endif
 #endif
-    if(!_sharedFiles) {
-        [PPFileManagement initializeSharedFiles];
-    }
-    
-    NSMutableArray *filesArray = [_sharedFiles objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!filesArray) {
-        filesArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-    
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
+    [[PPRealm defaultRealm] beginWriteTransaction];
     for(PPFile *file in files) {
-        
-        BOOL found = NO;
-        for(PPFile *sharedFile in filesArray) {
-            if([sharedFile isEqualToFile:file]) {
-                [sharedFile sync:file];
-                found = YES;
-                break;
-            }
-        }
-        if(!found) {
-            [indexSet addIndex:[files indexOfObject:file]];
-        }
+        [PPFile createOrUpdateInDefaultRealmWithValue:file];
     }
-    
-    [filesArray addObjectsFromArray:[files objectsAtIndexes:indexSet]];
-    [_sharedFiles setObject:filesArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    
-//    NSData *sharedFileData = [NSKeyedArchiver archivedDataWithRootObject:_sharedFiles];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedFileData forKey:@"user.notificationFiles"];
-//    [defaults synchronize];
-    
+    [[PPRealm defaultRealm] commitWriteTransaction];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s filesArray=%@", __PRETTY_FUNCTION__, filesArray);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }
@@ -140,36 +78,22 @@ __strong static NSMutableDictionary*_sharedFiles = nil;
     NSLog(@"> %s files=%@", __PRETTY_FUNCTION__, files);
 #endif
 #endif
-    
-    if(!_sharedFiles) {
-        [PPFileManagement initializeSharedFiles];
-    }
-    
-    NSMutableArray *filesArray = [_sharedFiles objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!filesArray) {
-        filesArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-    
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
-    for(PPFile *file in files) {
-        for(PPFile *sharedFile in filesArray) {
-            if([sharedFile isEqualToFile:file]) {
-                [indexSet addIndex:[filesArray indexOfObject:sharedFile]];
-                break;
-            }
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPFile *file in files) {
+            [[PPRealm defaultRealm] deleteObject:[PPFile objectForPrimaryKey:@(file.fileId)]];
         }
-    }
-    
-    [filesArray removeObjectsAtIndexes:indexSet];
-    [_sharedFiles setObject:filesArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
+    }];
+#ifdef DEBUG
+#ifdef DEBUG_MODELS
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
+#endif
+#endif
 }
 
 #pragma mark Summaries
 
 /**
  * Shared file summaries across the entire application
- *
- * @param userId Required PPUserId User Id to associate these objects with
  */
 + (NSArray *)sharedFileSummariesForUser:(PPUserId)userId {
 #ifdef DEBUG
@@ -178,7 +102,7 @@ __strong static NSMutableDictionary*_sharedFiles = nil;
 #endif
 #endif
     
-    NSArray *sharedFileSummaries = @[];
+    RLMResults<PPFileSummary *> *sharedFileSummaries = [PPFileSummary allObjects];
     
     NSMutableArray *sharedFileSummariesArray = [[NSMutableArray alloc] initWithCapacity:[sharedFileSummaries count]];
     NSMutableArray *fileSummariesArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
@@ -200,12 +124,17 @@ __strong static NSMutableDictionary*_sharedFiles = nil;
  * Add file summaries to local reference.
  *
  * @param fileSummaries NSArray Array of file summaries to add.
- * @param userId Required PPUserId User Id to associate these objects with
+ * @param userId Required PPUserId User Id to associate these files with
  **/
 + (void)addFileSummaries:(NSArray *)fileSummaries userId:(PPUserId)userId {
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s fileSummaries=%@", __PRETTY_FUNCTION__, fileSummaries);
+    [[PPRealm defaultRealm] beginWriteTransaction];
+    for(PPFileSummary *summary in fileSummaries) {
+        [[PPRealm defaultRealm] addObject:summary];
+    }
+    [[PPRealm defaultRealm] commitWriteTransaction];
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
@@ -216,12 +145,15 @@ __strong static NSMutableDictionary*_sharedFiles = nil;
  * Remove file summaries from local reference.
  *
  * @param fileSummaries NSArray Array of file summaries to remove.
- * @param userId Required PPUserId User Id to associate these objects with
+ * @param userId Required PPUserId User Id to associate these files with
  **/
 + (void)removeFilesSummaries:(NSArray *)fileSummaries userId:(PPUserId)userId {
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s fileSummaries=%@", __PRETTY_FUNCTION__, fileSummaries);
+    [[PPRealm defaultRealm] beginWriteTransaction];
+    [[PPRealm defaultRealm] deleteObjects:fileSummaries];
+    [[PPRealm defaultRealm] commitWriteTransaction];
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif

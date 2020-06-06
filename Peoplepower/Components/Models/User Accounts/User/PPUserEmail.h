@@ -23,7 +23,7 @@ typedef NS_OPTIONS(NSInteger, PPUserEmailVerified) {
     PPUserEmailVerifiedTrue = 1
 };
 
-@interface PPUserEmail : NSObject <NSCopying>
+@interface PPUserEmail : RLMObject <NSCopying>
 
 /* An email address is required when registering a new user. */
 @property (nonatomic, strong) NSString *email;
@@ -45,3 +45,5 @@ typedef NS_OPTIONS(NSInteger, PPUserEmailVerified) {
 - (void)sync:(PPUserEmail *)userEmail;
 
 @end
+
+RLM_ARRAY_TYPE(PPUserEmail)

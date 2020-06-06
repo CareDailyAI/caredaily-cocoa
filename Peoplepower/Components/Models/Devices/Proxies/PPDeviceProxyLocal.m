@@ -57,7 +57,12 @@ NSInteger DEVICE_CAMERA_LOCAL_RESTART_INTERVAL = 86400;
     return [PPDevices localDeviceForLocation:[[PPUserAccounts currentUser] currentLocation] userId:[PPUserAccounts currentUser].userId];
 }
 
-#pragma mark - Public
+- (void)setDevice:(PPDevice *)device {
+    NSLog(@"%s device=%@", __PRETTY_FUNCTION__, device);
+    if(!device) {
+        NSLog(@"!!!");
+    }
+}
 
 #pragma mark Local Device device ID helpers
 

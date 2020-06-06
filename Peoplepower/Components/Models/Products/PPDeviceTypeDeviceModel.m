@@ -10,22 +10,26 @@
 
 @implementation PPDeviceTypeDeviceModel
 
-- (id)initWithModelId:(NSString *)modelId brands:(NSArray *)brands manufacturer:(NSDictionary *)manufacturer pairingType:(PPDeviceTypeDeviceModelPairingType)pairingType OAuthAppId:(PPCloudsIntegrationClientApplicationId)OAuthAppId dependencyDeviceTypes:(NSArray *)dependencyDeviceTypes hidden:(PPDeviceTypeDeviceModelHidden)hidden sortId:(PPDeviceTypeDeviceModelSortId)sortId name:(NSDictionary *)name desc:(NSDictionary *)desc lookupParams:(NSArray *)lookupParams modelTemplate:(NSString *)modelTemplate media:(NSArray *)media displayInfo:(PPDeviceTypeParameterDisplayInfo *)displayInfo {
++ (NSString *)primaryKey {
+    return @"modelId";
+}
+
+- (id)initWithModelId:(NSString *)modelId brands:(RLMArray *)brands manufacturer:(PPDeviceTypeDeviceModelManufacture *)manufacturer pairingType:(PPDeviceTypeDeviceModelPairingType)pairingType OAuthAppId:(PPCloudsIntegrationClientApplicationId)OAuthAppId dependencyDeviceTypes:(RLMArray *)dependencyDeviceTypes hidden:(PPDeviceTypeDeviceModelHidden)hidden sortId:(PPDeviceTypeDeviceModelSortId)sortId name:(PPDeviceTypeDeviceModelName *)name desc:(PPDeviceTypeDeviceModelDesc *)desc lookupParams:(RLMArray *)lookupParams modelTemplate:(NSString *)modelTemplate media:(RLMArray *)media displayInfo:(PPDeviceTypeParameterDisplayInfo *)displayInfo {
     self = [super init];
     if(self) {
         self.modelId = modelId;
-        self.brands = brands;
+        self.brands = (RLMArray<PPDeviceTypeDeviceModelBrand *><PPDeviceTypeDeviceModelBrand> *)brands;
         self.manufacturer = manufacturer;
         self.pairingType = pairingType;
         self.OAuthAppId = OAuthAppId;
-        self.dependencyDeviceTypes = dependencyDeviceTypes;
+        self.dependencyDeviceTypes = (RLMArray<RLMInt> *)dependencyDeviceTypes;
         self.hidden = hidden;
         self.sortId = sortId;
         self.name = name;
         self.desc = desc;
-        self.lookupParams = lookupParams;
+        self.lookupParams = (RLMArray<PPDeviceTypeDeviceModelLookupParam *><PPDeviceTypeDeviceModelLookupParam> *)lookupParams;
         self.modelTemplate = modelTemplate;
-        self.media = media;
+        self.media = (RLMArray<PPDeviceTypeMedia *><PPDeviceTypeMedia> *)media;
         self.displayInfo = displayInfo;
     }
     return self;
@@ -44,7 +48,7 @@
         }
     }
     
-    NSDictionary *manufacturer = [modelDict objectForKey:@"manufacturer"];
+    PPDeviceTypeDeviceModelManufacture *manufacturer = [PPDeviceTypeDeviceModelManufacture initWithDictionary:[modelDict objectForKey:@"manufacturer"]];
     PPDeviceTypeDeviceModelPairingType pairingType = PPDeviceTypeDeviceModelPairingTypeNone;
     if([modelDict objectForKey:@"pairingType"]) {
         pairingType = (PPDeviceTypeDeviceModelPairingType)((NSString *)[modelDict objectForKey:@"pairingType"]).integerValue;
@@ -70,8 +74,8 @@
     if([modelDict objectForKey:@"sortId"]) {
         sortId = (PPDeviceTypeDeviceModelSortId)((NSString *)[modelDict objectForKey:@"sortId"]).integerValue;
     }
-    NSDictionary *name = [modelDict objectForKey:@"name"];
-    NSDictionary *desc = [modelDict objectForKey:@"desc"];
+    PPDeviceTypeDeviceModelName *name = [PPDeviceTypeDeviceModelName initWithDictionary:[modelDict objectForKey:@"name"]];
+    PPDeviceTypeDeviceModelDesc *desc = [PPDeviceTypeDeviceModelDesc initWithDictionary:[modelDict objectForKey:@"desc"]];
     
     NSMutableArray *lookupParams;
     if([modelDict objectForKey:@"lookupParams"]) {
@@ -98,7 +102,7 @@
         displayInfo = [PPDeviceTypeParameterDisplayInfo initWithDictionary:[modelDict objectForKey:@"displayInfo"]];
     }
     
-    PPDeviceTypeDeviceModel *model = [[PPDeviceTypeDeviceModel alloc] initWithModelId:modelId brands:brands manufacturer:manufacturer pairingType:pairingType OAuthAppId:OAuthAppId dependencyDeviceTypes:dependencyDeviceTypes hidden:hidden sortId:sortId name:name desc:desc lookupParams:lookupParams modelTemplate:modelTemplate media:medias displayInfo:displayInfo];
+    PPDeviceTypeDeviceModel *model = [[PPDeviceTypeDeviceModel alloc] initWithModelId:modelId brands:(RLMArray<PPDeviceTypeDeviceModelBrand *><PPDeviceTypeDeviceModelBrand> *)brands manufacturer:manufacturer pairingType:pairingType OAuthAppId:OAuthAppId dependencyDeviceTypes:(RLMArray<RLMInt> *)dependencyDeviceTypes hidden:hidden sortId:sortId name:name desc:desc lookupParams:(RLMArray<PPDeviceTypeDeviceModelLookupParam *><PPDeviceTypeDeviceModelLookupParam> *)lookupParams modelTemplate:modelTemplate media:(RLMArray<PPDeviceTypeMedia *><PPDeviceTypeMedia> *)medias displayInfo:displayInfo];
     return model;
 }
 
@@ -140,9 +144,7 @@
         if(appendComma) {
             [JSONString appendString:@","];
         }
-        NSError * err;
-        NSData * jsonData = [NSJSONSerialization dataWithJSONObject:model.manufacturer options:0 error:&err];
-        [JSONString appendFormat:@"\"manufacturer\": %@", [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+        [JSONString appendFormat:@"\"manufacturer\": {%@}", [PPDeviceTypeDeviceModelManufacture stringify:model.manufacturer]];
         appendComma = YES;
     }
     
@@ -200,9 +202,7 @@
         if(appendComma) {
             [JSONString appendString:@","];
         }
-        NSError * err;
-        NSData * jsonData = [NSJSONSerialization dataWithJSONObject:model.name options:0 error:&err];
-        [JSONString appendFormat:@"\"name\": %@", [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+        [JSONString appendFormat:@"\"name\": {%@}", [PPDeviceTypeDeviceModelName stringify:model.name]];
         appendComma = YES;
     }
     
@@ -210,9 +210,7 @@
         if(appendComma) {
             [JSONString appendString:@","];
         }
-        NSError * err;
-        NSData * jsonData = [NSJSONSerialization dataWithJSONObject:model.desc options:0 error:&err];
-        [JSONString appendFormat:@"\"desc\": %@", [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+        [JSONString appendFormat:@"\"desc\": {%@}", [PPDeviceTypeDeviceModelDesc stringify:model.desc]];
         appendComma = YES;
     }
     
@@ -246,6 +244,34 @@
     
     [JSONString appendString:@"}"];
     return JSONString;
+}
+
+
+@end
+
+@implementation PPDeviceTypeDeviceModelManufacture
+
++ (PPDeviceTypeDeviceModelManufacture *)initWithDictionary:(NSDictionary *)dict {
+    PPRLMDictionary *RLMDictionary = [super initWithDictionary:dict];
+    return [[PPDeviceTypeDeviceModelManufacture alloc] initWithKeys:RLMDictionary.keys value:RLMDictionary.values];
+}
+
+@end
+
+@implementation PPDeviceTypeDeviceModelName
+
++ (PPDeviceTypeDeviceModelName *)initWithDictionary:(NSDictionary *)dict {
+    PPRLMDictionary *RLMDictionary = [super initWithDictionary:dict];
+    return [[PPDeviceTypeDeviceModelName alloc] initWithKeys:RLMDictionary.keys value:RLMDictionary.values];
+}
+
+@end
+
+@implementation PPDeviceTypeDeviceModelDesc
+
++ (PPDeviceTypeDeviceModelDesc *)initWithDictionary:(NSDictionary *)dict {
+    PPRLMDictionary *RLMDictionary = [super initWithDictionary:dict];
+    return [[PPDeviceTypeDeviceModelDesc alloc] initWithKeys:RLMDictionary.keys value:RLMDictionary.values];
 }
 
 @end

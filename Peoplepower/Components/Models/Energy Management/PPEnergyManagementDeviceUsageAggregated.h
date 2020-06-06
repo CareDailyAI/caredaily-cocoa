@@ -10,15 +10,17 @@
 #import "PPEnergyManagementDeviceUsageAggregatedEnergy.h"
 #import "PPEnergyManagementDeviceUsageAggregatedCost.h"
 
-@interface PPEnergyManagementDeviceUsageAggregated : NSObject
+@interface PPEnergyManagementDeviceUsageAggregated : RLMObject
 
 @property (nonatomic, strong) NSDate *startDate;
 @property (nonatomic, strong) NSDate *endDate;
-@property (nonatomic, strong) NSArray *energy;
-@property (nonatomic, strong) NSArray *cost;
+@property (nonatomic, strong) RLMArray<PPEnergyManagementDeviceUsageAggregatedEnergy *><PPEnergyManagementDeviceUsageAggregatedEnergy> *energy;
+@property (nonatomic, strong) RLMArray<PPEnergyManagementDeviceUsageAggregatedCost *><PPEnergyManagementDeviceUsageAggregatedCost> *cost;
 
-- (id)initWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate energy:(NSArray *)energy cost:(NSArray *)cost;
+- (id)initWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate energy:(RLMArray *)energy cost:(RLMArray *)cost;
 
 + (PPEnergyManagementDeviceUsageAggregated *)initWithDictionary:(NSDictionary *)aggregatedDict;
 
 @end
+
+RLM_ARRAY_TYPE(PPEnergyManagementDeviceUsageAggregated);

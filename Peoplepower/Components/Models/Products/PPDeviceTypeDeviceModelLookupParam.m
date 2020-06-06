@@ -10,11 +10,11 @@
 
 @implementation PPDeviceTypeDeviceModelLookupParam
 
-- (id)initWithDeviceType:(PPDeviceTypeId)deviceType params:(NSArray *)params {
+- (id)initWithDeviceType:(PPDeviceTypeId)deviceType params:(RLMArray *)params {
     self = [super init];
     if(self) {
         self.deviceType = deviceType;
-        self.params = params;
+        self.params = (RLMArray<PPDeviceParameter *><PPDeviceParameter> *)params;
     }
     return self;
 }
@@ -35,7 +35,7 @@
         }
     }
     
-    PPDeviceTypeDeviceModelLookupParam *lookupParam = [[PPDeviceTypeDeviceModelLookupParam alloc] initWithDeviceType:deviceType params:params];
+    PPDeviceTypeDeviceModelLookupParam *lookupParam = [[PPDeviceTypeDeviceModelLookupParam alloc] initWithDeviceType:deviceType params:(RLMArray *)params];
     return lookupParam;
 }
 

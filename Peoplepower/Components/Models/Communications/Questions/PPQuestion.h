@@ -70,7 +70,7 @@ typedef NS_OPTIONS(NSInteger, PPQuestionPoints) {
     PPQuestionPointsNone = -1
 };
 
-@interface PPQuestion : NSObject
+@interface PPQuestion : RLMObject
 
 /* Question ID assigned by the system */
 @property (nonatomic) PPQuestionId questionId;
@@ -109,7 +109,7 @@ typedef NS_OPTIONS(NSInteger, PPQuestionPoints) {
 @property (nonatomic) PPQuestionResponseOptionType responseType;
 
 /* Response options */
-@property (nonatomic, strong) NSArray *responseOptions;
+@property (nonatomic, strong) RLMArray<PPQuestionResponseOption *><PPQuestionResponseOption> *responseOptions;
 
 /* Application-layer display type for each type of question (for example, yes/no vs. on/off switch, or a slider that shows integers vs. a slider that shows minutes:seconds) */
 @property (nonatomic) PPQuestionDisplayType displayType;
@@ -162,7 +162,7 @@ aggregatePublicly:(PPQuestionAggregatePublicly)aggregatePublicly
         editable:(PPQuestionEditable)editable
   totalResponses:(PPQuestionTotalResponses)totalResponses
     responseType:(PPQuestionResponseOptionType)responseType
- responseOptions:(NSArray *)responseOptions
+ responseOptions:(RLMArray *)responseOptions
      displayType:(PPQuestionDisplayType)displayType
         deviceId:(NSString *)deviceId
             icon:(NSString *)icon
@@ -189,3 +189,5 @@ aggregatePublicly:(PPQuestionAggregatePublicly)aggregatePublicly
 - (void)sync:(PPQuestion *)question;
 
 @end
+
+RLM_ARRAY_TYPE(PPQuestion);

@@ -22,7 +22,7 @@
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    NSArray *sharedSubscribers = @[];
+    RLMResults<PPSMSSubscriber *> *sharedSubscribers = [PPSMSSubscriber allObjects];
     
     NSMutableArray *sharedSubscribersArray = [[NSMutableArray alloc] initWithCapacity:[sharedSubscribers count]];
     NSMutableArray *subscribersArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
@@ -56,6 +56,11 @@
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s subscribers=%@", __PRETTY_FUNCTION__, subscribers);
+    [[PPRealm defaultRealm] beginWriteTransaction];
+    for(PPSMSSubscriber *subscriber in subscribers) {
+        [PPSMSSubscriber createOrUpdateInDefaultRealmWithValue:subscriber];
+    }
+    [[PPRealm defaultRealm] commitWriteTransaction];
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
@@ -72,6 +77,11 @@
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s subscribers=%@", __PRETTY_FUNCTION__, subscribers);
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPSMSSubscriber *subscriber in subscribers) {
+            [[PPRealm defaultRealm] deleteObject:[PPSMSSubscriber objectForPrimaryKey:subscriber.phone]];
+        }
+    }];
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif

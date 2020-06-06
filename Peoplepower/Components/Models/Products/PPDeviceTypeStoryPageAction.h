@@ -31,7 +31,7 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeStoryPageActionStyle) {
     PPDeviceTypeStoryPageActionStyleLink = 2,
 };
 
-@interface PPDeviceTypeStoryPageAction : PPBaseModel
+@interface PPDeviceTypeStoryPageAction : RLMObject
 
 @property (nonatomic) PPDeviceTypeStoryPageActionIndex index;
 @property (nonatomic) PPDeviceTypeStoryPageActionType type;
@@ -49,3 +49,5 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeStoryPageActionStyle) {
 @end
 
 NS_ASSUME_NONNULL_END
+
+RLM_ARRAY_TYPE(PPDeviceTypeStoryPageAction);

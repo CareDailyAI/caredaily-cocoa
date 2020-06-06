@@ -10,7 +10,11 @@
 
 @implementation PPRule
 
-- (id)initWithId:(PPRuleId)ruleId name:(NSString *)name status:(PPRuleStatus)status timezone:(PPTimezone *)timezone hidden:(PPRuleHidden)hidden defaultRule:(PPRuleDefault)defaultRule goalId:(PPDeviceTypeGoalId)goalId trigger:(PPRuleComponentTrigger *)trigger states:(NSArray *)states actions:(NSArray *)actions calendars:(NSArray *)calendars {
++ (NSString *)primaryKey {
+    return @"ruleId";
+}
+
+- (id)initWithId:(PPRuleId)ruleId name:(NSString *)name status:(PPRuleStatus)status timezone:(PPTimezone *)timezone hidden:(PPRuleHidden)hidden defaultRule:(PPRuleDefault)defaultRule goalId:(PPDeviceTypeGoalId)goalId trigger:(PPRuleComponentTrigger *)trigger states:(RLMArray *)states actions:(RLMArray *)actions calendars:(RLMArray *)calendars {
     self = [super init];
     if(self) {
         self.ruleId = ruleId;
@@ -21,9 +25,9 @@
         self.defaultRule = defaultRule;
         self.goalId = goalId;
         self.trigger = trigger;
-        self.states = states;
-        self.actions = actions;
-        self.calendars = calendars;
+        self.states = (RLMArray<PPRuleComponentState *><PPRuleComponentState> *)states;
+        self.actions = (RLMArray<PPRuleComponentAction *><PPRuleComponentAction> *)actions;
+        self.calendars = (RLMArray<PPRuleCalendar *><PPRuleCalendar> *)calendars;
     }
     return self;
 }
@@ -114,7 +118,7 @@
         }
     }
     
-    PPRule *rule = [[PPRule alloc] initWithId:ruleId name:name status:status timezone:timezone hidden:hidden defaultRule:defaultRule goalId:goalId trigger:trigger states:states actions:actions calendars:calendars];
+    PPRule *rule = [[PPRule alloc] initWithId:ruleId name:name status:status timezone:timezone hidden:hidden defaultRule:defaultRule goalId:goalId trigger:trigger states:(RLMArray *)states actions:(RLMArray *)actions calendars:(RLMArray *)calendars];
     return rule;
 }
 
@@ -433,9 +437,21 @@
     rule.defaultRule = self.defaultRule;
     rule.goalId = self.goalId;
     rule.trigger = [self.trigger copyWithZone:zone];
-    rule.states = [self.states copyWithZone:zone];
-    rule.actions = [self.actions copyWithZone:zone];
-    rule.calendars = [self.calendars copyWithZone:zone];
+    NSMutableArray *states = [[NSMutableArray alloc] initWithCapacity:self.states.count];
+    for (PPRuleComponentState *state in self.states) {
+        [states addObject:[state copyWithZone:zone]];
+    }
+    rule.states = states;
+    NSMutableArray *actions = [[NSMutableArray alloc] initWithCapacity:self.actions.count];
+    for (PPRuleComponentAction *action in self.actions) {
+        [actions addObject:[action copyWithZone:zone]];
+    }
+    rule.actions = actions;
+    NSMutableArray *calendars = [[NSMutableArray alloc] initWithCapacity:self.calendars.count];
+    for (PPRuleCalendar *calendar in self.calendars) {
+        [calendars addObject:[calendar copyWithZone:zone]];
+    }
+    rule.calendars = calendars;
     
     return rule;
 }

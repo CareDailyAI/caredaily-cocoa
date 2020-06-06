@@ -23,6 +23,8 @@
 		631A7B07248B3E5E00D86CFF /* OHHTTPStubs.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 631A7AF0248B3AB800D86CFF /* OHHTTPStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		631A7B09248B3E5E00D86CFF /* SocketRocket.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 631A7AEF248B3AB800D86CFF /* SocketRocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		631A7B0A248B3E5E00D86CFF /* UICKeyChainStore.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 631A7AF3248B3AB800D86CFF /* UICKeyChainStore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6355673D248C3EFD00BFA310 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6355673C248C3EFD00BFA310 /* Realm.framework */; };
+		6355673E248C3EFD00BFA310 /* Realm.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6355673C248C3EFD00BFA310 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				6355673E248C3EFD00BFA310 /* Realm.framework in CopyFiles */,
 				631A7B05248B3E5E00D86CFF /* AFNetworking.framework in CopyFiles */,
 				631A7B06248B3E5E00D86CFF /* KissXML.framework in CopyFiles */,
 				631A7B07248B3E5E00D86CFF /* OHHTTPStubs.framework in CopyFiles */,
@@ -85,6 +88,7 @@
 		631A7AF1248B3AB800D86CFF /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
 		631A7AF2248B3AB800D86CFF /* Peoplepower.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Peoplepower.framework; path = Carthage/Build/iOS/Peoplepower.framework; sourceTree = "<group>"; };
 		631A7AF3248B3AB800D86CFF /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICKeyChainStore.framework; path = Carthage/Build/iOS/UICKeyChainStore.framework; sourceTree = "<group>"; };
+		6355673C248C3EFD00BFA310 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6355673D248C3EFD00BFA310 /* Realm.framework in Frameworks */,
 				631A7AFC248B3AB900D86CFF /* Peoplepower.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,6 +179,7 @@
 		631A7AED248B3AB800D86CFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6355673C248C3EFD00BFA310 /* Realm.framework */,
 				631A7AF1248B3AB800D86CFF /* AFNetworking.framework */,
 				631A7AEE248B3AB800D86CFF /* KissXML.framework */,
 				631A7AF0248B3AB800D86CFF /* OHHTTPStubs.framework */,

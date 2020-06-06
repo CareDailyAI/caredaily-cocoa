@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPDeviceTypeStoryModel : NSObject
+@interface PPDeviceTypeStoryModel : RLMObject
 
 @property (nonatomic, strong) NSString *modelId;
 @property (nonatomic, strong) NSString *brand;
@@ -20,3 +20,5 @@
 + (NSString *)stringify:(PPDeviceTypeStoryModel *)model;
 
 @end
+
+RLM_ARRAY_TYPE(PPDeviceTypeStoryModel);

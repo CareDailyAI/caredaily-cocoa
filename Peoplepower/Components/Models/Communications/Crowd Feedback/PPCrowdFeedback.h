@@ -43,7 +43,7 @@ typedef NS_OPTIONS(NSInteger, PPCrowdFeedbackEnabled) {
     PPCrowdFeedbackEnabledTrue = 1
 };
 
-@interface PPCrowdFeedback : NSObject
+@interface PPCrowdFeedback : RLMObject
 
 @property (nonatomic) PPCrowdFeedbackId feedbackId;
 @property (nonatomic, strong) NSString *appName;
@@ -76,3 +76,5 @@ typedef NS_OPTIONS(NSInteger, PPCrowdFeedbackEnabled) {
 - (void)sync:(PPCrowdFeedback *)feedback;
 
 @end
+
+RLM_ARRAY_TYPE(PPCrowdFeedback);

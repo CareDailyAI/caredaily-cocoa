@@ -10,6 +10,10 @@
 
 @implementation PPCommunityPost
 
++ (NSString *)primaryKey {
+    return @"postId";
+}
+
 - (id)initWithPostType:(PPCommunityPostType)postType
                 postId:(PPCommunityPostId)postId
                 status:(PPCommunityPostStatus)status
@@ -31,10 +35,10 @@
               latitude:(NSNumber *)latitude
              longitude:(NSNumber *)longitude
                address:(PPAddress *)address
-                 files:(NSArray *)files
-             reactions:(NSArray *)reactions
-              comments:(NSArray *)comments
-             reminders:(NSArray *)reminders {
+                 files:(RLMArray *)files
+             reactions:(RLMArray *)reactions
+              comments:(RLMArray *)comments
+             reminders:(RLMArray *)reminders {
     self = [super init];
     if (self) {
         self.postType = postType;
@@ -47,7 +51,7 @@
         self.creationDate = creationDate;
         self.title = title;
         self.topic = topic;
-        self.driveUrl = driveUrl;
+        self.driveUrl = driveUrl.absoluteString;
         self.postText = postText;
         self.allDay = allDay;
         self.eventDate = eventDate;
@@ -58,10 +62,10 @@
         self.latitude = latitude;
         self.longitude = longitude;
         self.address = address;
-        self.files = files;
-        self.reactions = reactions;
-        self.comments = comments;
-        self.reminders = reminders;
+        self.files = (RLMArray<PPCommunityFile *><PPCommunityFile> *)files;
+        self.reactions = (RLMArray<PPCommunityReaction *><PPCommunityReaction> *)reactions;
+        self.comments = (RLMArray<PPCommunityComment *><PPCommunityComment> *)comments;
+        self.reminders = (RLMArray<PPCommunityPostReminder *><PPCommunityPostReminder> *)reminders;
     }
     return self;
 }
@@ -212,10 +216,10 @@
                                                              latitude:latitude
                                                             longitude:longitude
                                                               address:address
-                                                                files:files
-                                                            reactions:reactions
-                                                             comments:comments
-                                                            reminders:reminders];
+                                                                files:(RLMArray *)files
+                                                            reactions:(RLMArray *)reactions
+                                                             comments:(RLMArray *)comments
+                                                            reminders:(RLMArray *)reminders];
     return post;
 }
 
@@ -238,7 +242,7 @@
         [data setValue:post.topic forKey:@"topic"];
     }
     if (post.driveUrl) {
-        [data setValue:post.driveUrl.absoluteString forKey:@"driveUrl"];
+        [data setValue:post.driveUrl forKey:@"driveUrl"];
     }
     if (post.postText) {
         [data setValue:post.postText forKey:@"postText"];

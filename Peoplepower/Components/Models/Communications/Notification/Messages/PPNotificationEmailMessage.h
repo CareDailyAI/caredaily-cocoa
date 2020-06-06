@@ -19,9 +19,9 @@ typedef NS_OPTIONS(NSInteger, PPNotificationEmailMessageHTML) {
 
 @property (nonatomic, strong) NSString *subject;
 @property (nonatomic) PPNotificationEmailMessageHTML html;
-@property (nonatomic, strong) NSArray *attachments;
+@property (nonatomic, strong) RLMArray<PPNotificationEmailMessageAttachment *><PPNotificationEmailMessageAttachment> *attachments;
 
-- (id)initWithTemplate:(NSString *)notificationTemplate content:(NSString *)content model:(NSDictionary *)model subject:(NSString *)subject html:(PPNotificationEmailMessageHTML)html attachments:(NSArray *)attachments;
+- (id)initWithTemplate:(NSString *)notificationTemplate content:(NSString *)content model:(PPNotificationMessageModel *)model subject:(NSString *)subject html:(PPNotificationEmailMessageHTML)html attachments:(RLMArray *)attachments;
 
 + (PPNotificationEmailMessage *)initWithDictionary:(NSDictionary *)messageDict;
 
@@ -29,3 +29,5 @@ typedef NS_OPTIONS(NSInteger, PPNotificationEmailMessageHTML) {
 + (NSDictionary *)data:(PPNotificationEmailMessage *)emailMessage;
 
 @end
+
+RLM_ARRAY_TYPE(PPNotificationEmailMessage);

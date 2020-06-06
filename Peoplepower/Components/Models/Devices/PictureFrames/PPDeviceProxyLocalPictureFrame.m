@@ -20,7 +20,6 @@
 @end
 
 @implementation PPDeviceProxyLocalPictureFrame
-@dynamic device;
 @dynamic delegate;
 @dynamic webSocket;
 

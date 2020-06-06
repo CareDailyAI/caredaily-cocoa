@@ -10,11 +10,11 @@
 
 @implementation PPInAppMessageParameters
 
-- (id)initWithKeys:(NSArray *)keys value:(NSArray *)values {
+- (id)initWithKeys:(RLMArray *)keys value:(RLMArray *)values {
     self = [super init];
     if(self) {
-        self.keys = keys;
-        self.values = values;
+        self.keys = (RLMArray<RLMString> *)keys;
+        self.values = (RLMArray<RLMString> *)values;
     }
     return self;
 }
@@ -25,7 +25,7 @@
     NSArray *keys = paramsDict.allKeys;
     NSArray *values = paramsDict.allValues;
     
-    PPInAppMessageParameters *parameters = [[PPInAppMessageParameters alloc] initWithKeys:keys value:values];
+    PPInAppMessageParameters *parameters = [[PPInAppMessageParameters alloc] initWithKeys:(RLMArray *)keys value:(RLMArray *)values];
     return parameters;
 }
 

@@ -54,7 +54,7 @@ typedef NS_OPTIONS(NSInteger, PPInAppMessageMessagesRead) {
     PPInAppMessageMessagesReadTrue = 1
 };
 
-@interface PPInAppMessage : NSObject
+@interface PPInAppMessage : RLMObject
 
 /* Subject line of the message */
 @property (nonatomic, strong) NSString *subject;
@@ -78,7 +78,7 @@ typedef NS_OPTIONS(NSInteger, PPInAppMessageMessagesRead) {
 @property (nonatomic) PPInAppMessageNotReply notReply;
 
 /* Recipients of this message */
-@property (nonatomic, strong) NSArray *recipients;
+@property (nonatomic, strong) RLMArray<PPInAppMessageRecipient *><PPInAppMessageRecipient> *recipients;
 
 /* Send a message to participants of this challenge */
 @property (nonatomic) PPInAppMessageChallengeId challengeId;
@@ -118,3 +118,5 @@ typedef NS_OPTIONS(NSInteger, PPInAppMessageMessagesRead) {
 - (void)sync:(PPInAppMessage *)message;
 
 @end
+
+RLM_ARRAY_TYPE(PPInAppMessage)

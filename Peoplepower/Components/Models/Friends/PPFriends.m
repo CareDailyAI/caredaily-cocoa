@@ -14,10 +14,6 @@
 
 #pragma mark - Session Management
 
-#pragma mark - Notification Friendships
-
-__strong static NSMutableDictionary *_sharedFriendships = nil;
-
 /**
  * Shared friendships across the entire application
  */
@@ -27,51 +23,21 @@ __strong static NSMutableDictionary *_sharedFriendships = nil;
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    if(!_sharedFriendships) {
-        [PPFriends initializeSharedFriendships];
-    }
-    NSMutableArray *sharedFriendships = [[NSMutableArray alloc] initWithCapacity:0];
-    NSMutableArray *friendshipsArray = [[NSMutableArray alloc] initWithCapacity:0];
-    for(NSString *userIdKey in _sharedFriendships.allKeys) {
-        for(PPFriendship *friendship in [_sharedFriendships objectForKey:userIdKey]) {
-            NSMutableDictionary *friendshipIdentifiers = [[NSMutableDictionary alloc] initWithCapacity:2];
-            [friendshipIdentifiers setValue:@(friendship.friendshipId) forKey:@"ID"];
-            if(friendship.email) {
-                [friendshipIdentifiers setValue:friendship.email forKey:@"email"];
-            }
-            [friendshipsArray addObject:friendshipIdentifiers];
-            
-            if([userIdKey isEqualToString:[NSString stringWithFormat:@"%li", (long)userId]]) {
-                [sharedFriendships addObject:friendship];
-            }
-        }
-    }
-    
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"< %s sharedFriendships=%@", __PRETTY_FUNCTION__, friendshipsArray);
-#endif
-#endif
-    return sharedFriendships;
-}
+    RLMResults<PPFriendship *> *sharedFriends = [PPFriendship allObjects];
 
-+ (void)initializeSharedFriendships {
+    NSMutableArray *sharedFriendsArray = [[NSMutableArray alloc] initWithCapacity:[sharedFriends count]];
+    NSMutableArray *friendsArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
+    for(PPFriendship *friend in sharedFriends) {
+        [sharedFriendsArray addObject:friend];
+        
+        [friendsArrayDebug addObject:@{@"friendshipId": @(friend.friendshipId)}];
+    }
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"> %s", __PRETTY_FUNCTION__);
+    NSLog(@"< %s sharedFriendships=%@", __PRETTY_FUNCTION__, friendsArrayDebug);
 #endif
 #endif
-    _sharedFriendships = [[NSMutableDictionary alloc] initWithCapacity:0];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    NSData *storedFriendshipsData = [defaults objectForKey:@"user.notificationFriendships"];
-//    if(storedFriendshipsData) {
-//        _sharedFriendships = (NSMutableDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:storedFriendshipsData];
-//    }
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"< %s", __PRETTY_FUNCTION__);
-#endif
-#endif
+    return sharedFriendsArray;
 }
 
 /**
@@ -87,42 +53,14 @@ __strong static NSMutableDictionary *_sharedFriendships = nil;
     NSLog(@"> %s friendships=%@", __PRETTY_FUNCTION__, friendships);
 #endif
 #endif
-    if(!_sharedFriendships) {
-        [PPFriends initializeSharedFriendships];
+    [[PPRealm defaultRealm] beginWriteTransaction];
+    for(PPFriendship *friend in friendships) {
+        [PPFriendship createOrUpdateInDefaultRealmWithValue:friend];
     }
-    
-    NSMutableArray *friendshipsArray = [_sharedFriendships objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!friendshipsArray) {
-        friendshipsArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-    
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
-    for(PPFriendship *friendship in friendships) {
-        
-        BOOL found = NO;
-        for(PPFriendship *sharedFriendship in friendshipsArray) {
-            if([sharedFriendship isEqualToFriendship:friendship]) {
-                [sharedFriendship sync:friendship];
-                found = YES;
-                break;
-            }
-        }
-        if(!found) {
-            [indexSet addIndex:[friendships indexOfObject:friendship]];
-        }
-    }
-    
-    [friendshipsArray addObjectsFromArray:[friendships objectsAtIndexes:indexSet]];
-    [_sharedFriendships setObject:friendshipsArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    
-//    NSData *sharedFriendshipData = [NSKeyedArchiver archivedDataWithRootObject:_sharedFriendships];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedFriendshipData forKey:@"user.notificationFriendships"];
-//    [defaults synchronize];
-    
+    [[PPRealm defaultRealm] commitWriteTransaction];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s friendshipsArray=%@", __PRETTY_FUNCTION__, friendshipsArray);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }
@@ -140,37 +78,14 @@ __strong static NSMutableDictionary *_sharedFriendships = nil;
     NSLog(@"> %s friendships=%@", __PRETTY_FUNCTION__, friendships);
 #endif
 #endif
-    
-    if(!_sharedFriendships) {
-        [PPFriends initializeSharedFriendships];
-    }
-    
-    NSMutableArray *friendshipsArray = [_sharedFriendships objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!friendshipsArray) {
-        friendshipsArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-    
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
-    for(PPFriendship *friendship in friendships) {
-        for(PPFriendship *sharedFriendship in friendshipsArray) {
-            if([sharedFriendship isEqualToFriendship:friendship]) {
-                [indexSet addIndex:[friendshipsArray indexOfObject:sharedFriendship]];
-                break;
-            }
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPFriendship *friend in friendships) {
+            [[PPRealm defaultRealm] deleteObject:[PPFriendship objectForPrimaryKey:@(friend.friendshipId)]];
         }
-    }
-    
-    [friendshipsArray removeObjectsAtIndexes:indexSet];
-    [_sharedFriendships setObject:friendshipsArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    
-//    NSData *sharedFriendshipData = [NSKeyedArchiver archivedDataWithRootObject:_sharedFriendships];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedFriendshipData forKey:@"user.notificationFriendships"];
-//    [defaults synchronize];
-    
+    }];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s friendshipsArray=%@", __PRETTY_FUNCTION__, friendshipsArray);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }
@@ -335,7 +250,7 @@ __strong static NSMutableDictionary *_sharedFriendships = nil;
     
     NSMutableString *JSONString = [[NSMutableString alloc] init];
     [JSONString appendString:@"{"];
-    PPFriendship *friendship = [[PPFriendship alloc] initWithFriendshipId:friendshipId friendshipFriend:nil email:nil blocked:block ownDevices:ownDevices friendDevices:friendDevices];
+    PPFriendship *friendship = [[PPFriendship alloc] initWithFriendshipId:friendshipId friendshipFriend:nil email:nil blocked:block ownDevices:(RLMArray *)ownDevices friendDevices:(RLMArray *)friendDevices];
     
     [JSONString appendFormat:@"\"friend\": %@", [PPFriendship JSONStringForFriendship:friendship]];
     [JSONString appendString:@"}"];

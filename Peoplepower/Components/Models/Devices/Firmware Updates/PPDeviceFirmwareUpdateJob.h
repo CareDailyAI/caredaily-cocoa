@@ -25,7 +25,7 @@ typedef NS_OPTIONS(NSInteger, PPDeviceFirmwareUpdateJobId) {
     PPDeviceFirmwareUpdateJobIdNone = -1
 };
 
-@interface PPDeviceFirmwareUpdateJob : NSObject
+@interface PPDeviceFirmwareUpdateJob : RLMObject
 
 @property (nonatomic) PPDeviceFirmwareUpdateJobId jobId;
 @property (nonatomic, strong) NSString *index;
@@ -46,3 +46,5 @@ typedef NS_OPTIONS(NSInteger, PPDeviceFirmwareUpdateJobId) {
 - (BOOL)isHostOTAUCompatible;
 
 @end
+
+RLM_ARRAY_TYPE(PPDeviceFirmwareUpdateJob);

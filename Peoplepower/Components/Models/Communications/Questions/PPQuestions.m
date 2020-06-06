@@ -15,8 +15,6 @@
 
 #pragma mark Collections
 
-__strong static NSMutableDictionary*_sharedCollections = nil;
-
 /**
  * Shared questions across the entire application
  */
@@ -26,48 +24,22 @@ __strong static NSMutableDictionary*_sharedCollections = nil;
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    if(!_sharedCollections) {
-        [PPQuestions initializeSharedCollections];
-    }
-    NSMutableArray *sharedCollections = [[NSMutableArray alloc] initWithCapacity:0];
-    NSMutableArray *collectionsArray = [[NSMutableArray alloc] initWithCapacity:0];
-    for(NSString *userIdKey in _sharedCollections.allKeys) {
-        for(PPQuestionCollection *collection in [_sharedCollections objectForKey:userIdKey]) {
-            NSMutableDictionary *collectionIdentifiers = [[NSMutableDictionary alloc] initWithCapacity:2];
-            [collectionIdentifiers setValue:collection.name forKey:@"ID"];
-            [collectionsArray addObject:collectionIdentifiers];
-            
-            if([userIdKey isEqualToString:[NSString stringWithFormat:@"%li", (long)userId]]) {
-                [sharedCollections addObject:collection];
-            }
-        }
-    }
+    RLMResults<PPQuestionCollection *> *sharedCollections = [PPQuestionCollection allObjects];
     
+    NSMutableArray *sharedCollectionsArray = [[NSMutableArray alloc] initWithCapacity:0];
+    NSMutableArray *collectionsArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
+    for(PPQuestionCollection *collection in sharedCollections) {
+        [sharedCollectionsArray addObject:collection];
+        NSMutableDictionary *collectionIdentifiers = [[NSMutableDictionary alloc] initWithCapacity:2];
+        [collectionIdentifiers setValue:collection.name forKey:@"ID"];
+        [collectionsArrayDebug addObject:collectionIdentifiers];
+    }
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s sharedCollections=%@", __PRETTY_FUNCTION__, collectionsArray);
+    NSLog(@"< %s sharedCollections=%@", __PRETTY_FUNCTION__, collectionsArrayDebug);
 #endif
 #endif
-    return sharedCollections;
-}
-
-+ (void)initializeSharedCollections {
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"> %s", __PRETTY_FUNCTION__);
-#endif
-#endif
-    _sharedCollections = [[NSMutableDictionary alloc] initWithCapacity:0];
-    //    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    //    NSData *storedCollectionsData = [defaults objectForKey:@"user.notificationCollections"];
-    //    if(storedCollectionsData) {
-    //        _sharedCollections = (NSMutableDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:storedCollectionsData];
-    //    }
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"< %s", __PRETTY_FUNCTION__);
-#endif
-#endif
+    return sharedCollectionsArray;
 }
 
 /**
@@ -83,42 +55,14 @@ __strong static NSMutableDictionary*_sharedCollections = nil;
     NSLog(@"> %s collections=%@", __PRETTY_FUNCTION__, collections);
 #endif
 #endif
-    if(!_sharedCollections) {
-        [PPQuestions initializeSharedCollections];
-    }
-    
-    NSMutableArray *collectionsArray = [_sharedCollections objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!collectionsArray) {
-        collectionsArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-    
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
+    [[PPRealm defaultRealm] beginWriteTransaction];
     for(PPQuestionCollection *collection in collections) {
-        
-        BOOL found = NO;
-        for(PPQuestionCollection *sharedCollection in collectionsArray) {
-            if([sharedCollection isEqualToCollection:collection]) {
-                [sharedCollection sync:collection];
-                found = YES;
-                break;
-            }
-        }
-        if(!found) {
-            [indexSet addIndex:[collections indexOfObject:collection]];
-        }
+        [PPQuestionCollection createOrUpdateInDefaultRealmWithValue:collection];
     }
-    
-    [collectionsArray addObjectsFromArray:[collections objectsAtIndexes:indexSet]];
-    [_sharedCollections setObject:collectionsArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    
-    //    NSData *sharedCollectionData = [NSKeyedArchiver archivedDataWithRootObject:_sharedCollections];
-    //    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    //    [defaults setObject:sharedCollectionData forKey:@"user.notificationCollections"];
-    //    [defaults synchronize];
-    
+    [[PPRealm defaultRealm] commitWriteTransaction];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s collectionsArray=%@", __PRETTY_FUNCTION__, collectionsArray);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }
@@ -136,44 +80,19 @@ __strong static NSMutableDictionary*_sharedCollections = nil;
     NSLog(@"> %s collections=%@", __PRETTY_FUNCTION__, collections);
 #endif
 #endif
-    
-    if(!_sharedCollections) {
-        [PPQuestions initializeSharedCollections];
-    }
-    
-    NSMutableArray *collectionsArray = [_sharedCollections objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!collectionsArray) {
-        collectionsArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-    
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
-    for(PPQuestionCollection *collection in collections) {
-        for(PPQuestionCollection *sharedCollection in collectionsArray) {
-            if([sharedCollection isEqualToCollection:collection]) {
-                [indexSet addIndex:[collectionsArray indexOfObject:sharedCollection]];
-                break;
-            }
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPQuestionCollection *collection in collections) {
+            [[PPRealm defaultRealm] deleteObject:[PPQuestionCollection objectForPrimaryKey:collection.name]];
         }
-    }
-    
-    [collectionsArray removeObjectsAtIndexes:indexSet];
-    [_sharedCollections setObject:collectionsArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    
-    //    NSData *sharedCollectionData = [NSKeyedArchiver archivedDataWithRootObject:_sharedCollections];
-    //    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    //    [defaults setObject:sharedCollectionData forKey:@"user.notificationCollections"];
-    //    [defaults synchronize];
-    
+    }];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s collectionsArray=%@", __PRETTY_FUNCTION__, collectionsArray);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }
 
 #pragma mark Questions
-
-__strong static NSMutableDictionary*_sharedQuestions = nil;
 
 /**
  * Shared questions across the entire application
@@ -184,48 +103,22 @@ __strong static NSMutableDictionary*_sharedQuestions = nil;
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    if(!_sharedQuestions) {
-        [PPQuestions initializeSharedQuestions];
-    }
-    NSMutableArray *sharedQuestions = [[NSMutableArray alloc] initWithCapacity:0];
-    NSMutableArray *questionsArray = [[NSMutableArray alloc] initWithCapacity:0];
-    for(NSString *userIdKey in _sharedQuestions.allKeys) {
-        for(PPQuestion *question in [_sharedQuestions objectForKey:userIdKey]) {
-            NSMutableDictionary *questionIdentifiers = [[NSMutableDictionary alloc] initWithCapacity:2];
-            [questionIdentifiers setValue:@(question.questionId) forKey:@"ID"];
-            [questionsArray addObject:questionIdentifiers];
-            
-            if([userIdKey isEqualToString:[NSString stringWithFormat:@"%li", (long)userId]]) {
-                [sharedQuestions addObject:question];
-            }
-        }
-    }
+    RLMResults<PPQuestion *> *sharedQuestions = [PPQuestion allObjects];
     
+    NSMutableArray *sharedQuestionsArray = [[NSMutableArray alloc] initWithCapacity:0];
+    NSMutableArray *questionsArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
+    for(PPQuestion *question in sharedQuestions) {
+        [sharedQuestionsArray addObject:question];
+        NSMutableDictionary *questionIdentifiers = [[NSMutableDictionary alloc] initWithCapacity:2];
+        [questionIdentifiers setValue:@(question.questionId) forKey:@"ID"];
+        [questionsArrayDebug addObject:questionIdentifiers];
+    }
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s sharedQuestions=%@", __PRETTY_FUNCTION__, questionsArray);
+    NSLog(@"< %s sharedQuestions=%@", __PRETTY_FUNCTION__, questionsArrayDebug);
 #endif
 #endif
-    return sharedQuestions;
-}
-
-+ (void)initializeSharedQuestions {
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"> %s", __PRETTY_FUNCTION__);
-#endif
-#endif
-    _sharedQuestions = [[NSMutableDictionary alloc] initWithCapacity:0];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    NSData *storedQuestionsData = [defaults objectForKey:@"user.notificationQuestions"];
-//    if(storedQuestionsData) {
-//        _sharedQuestions = (NSMutableDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:storedQuestionsData];
-//    }
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"< %s", __PRETTY_FUNCTION__);
-#endif
-#endif
+    return sharedQuestionsArray;
 }
 
 /**
@@ -241,42 +134,15 @@ __strong static NSMutableDictionary*_sharedQuestions = nil;
     NSLog(@"> %s questions=%@", __PRETTY_FUNCTION__, questions);
 #endif
 #endif
-    if(!_sharedQuestions) {
-        [PPQuestions initializeSharedQuestions];
-    }
-    
-    NSMutableArray *questionsArray = [_sharedQuestions objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!questionsArray) {
-        questionsArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-    
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
+    [[PPRealm defaultRealm] beginWriteTransaction];
     for(PPQuestion *question in questions) {
-        
-        BOOL found = NO;
-        for(PPQuestion *sharedQuestion in questionsArray) {
-            if([sharedQuestion isEqualToQuestion:question]) {
-                [sharedQuestion sync:question];
-                found = YES;
-                break;
-            }
-        }
-        if(!found) {
-            [indexSet addIndex:[questions indexOfObject:question]];
-        }
+        [PPQuestion createOrUpdateInDefaultRealmWithValue:question];
     }
-    
-    [questionsArray addObjectsFromArray:[questions objectsAtIndexes:indexSet]];
-    [_sharedQuestions setObject:questionsArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    
-//    NSData *sharedQuestionData = [NSKeyedArchiver archivedDataWithRootObject:_sharedQuestions];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedQuestionData forKey:@"user.notificationQuestions"];
-//    [defaults synchronize];
+    [[PPRealm defaultRealm] commitWriteTransaction];
     
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s questionsArray=%@", __PRETTY_FUNCTION__, questionsArray);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }
@@ -294,37 +160,14 @@ __strong static NSMutableDictionary*_sharedQuestions = nil;
     NSLog(@"> %s questions=%@", __PRETTY_FUNCTION__, questions);
 #endif
 #endif
-    
-    if(!_sharedQuestions) {
-        [PPQuestions initializeSharedQuestions];
-    }
-    
-    NSMutableArray *questionsArray = [_sharedQuestions objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!questionsArray) {
-        questionsArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-    
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
-    for(PPQuestion *question in questions) {
-        for(PPQuestion *sharedQuestion in questionsArray) {
-            if([sharedQuestion isEqualToQuestion:question]) {
-                [indexSet addIndex:[questionsArray indexOfObject:sharedQuestion]];
-                break;
-            }
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPQuestion *question in questions) {
+            [[PPRealm defaultRealm] deleteObject:[PPQuestion objectForPrimaryKey:@(question.questionId)]];
         }
-    }
-    
-    [questionsArray removeObjectsAtIndexes:indexSet];
-    [_sharedQuestions setObject:questionsArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    
-//    NSData *sharedQuestionData = [NSKeyedArchiver archivedDataWithRootObject:_sharedQuestions];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedQuestionData forKey:@"user.notificationQuestions"];
-//    [defaults synchronize];
-    
+    }];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s questionsArray=%@", __PRETTY_FUNCTION__, questionsArray);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }

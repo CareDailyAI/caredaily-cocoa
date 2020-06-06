@@ -10,6 +10,10 @@
 
 @implementation PPInAppMessage
 
++ (NSString *)primaryKey {
+    return @"messageId";
+}
+
 - (id)initWithSubject:(NSString *)subject type:(PPInAppMessageType)type sendDate:(NSDate *)sendDate text:(NSString *)text email:(PPInAppMessageEmail)email push:(PPInAppMessagePush)push notReply:(PPInAppMessageNotReply)notReply recipients:(NSArray *)recipients challengeId:(PPInAppMessageChallengeId)challengeId challengeParticipantStatus:(PPInAppMessageChallengeParticipanStatus)challengeParticipantStatus messageId:(PPInAppMessageId)messageId originalMessageId:(PPInAppMessageId)originalMessageId creationDate:(NSDate *)creationDate read:(PPInAppMessageMessagesRead)read from:(PPUser *)from parameters:(PPInAppMessageParameters *)parameters {
     self = [super init];
     if(self) {
@@ -20,7 +24,7 @@
         self.email = email;
         self.push = push;
         self.notReply = notReply;
-        self.recipients = recipients;
+        self.recipients = (RLMArray<PPInAppMessageRecipient *><PPInAppMessageRecipient> *)recipients;
         self.challengeId = challengeId;
         self.challengeParticipantStatus = challengeParticipantStatus;
         self.messageId = messageId;

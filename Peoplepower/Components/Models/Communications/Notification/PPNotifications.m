@@ -14,9 +14,7 @@
 
 #pragma mark - Session Management
 
-#pragma mark - Notification Subscriptions
-
-__strong static NSMutableDictionary*_sharedSubscriptions = nil;
+#pragma mark Notification Subscriptions
 
 /**
  * Shared subscriptions across the entire application
@@ -27,24 +25,18 @@ __strong static NSMutableDictionary*_sharedSubscriptions = nil;
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    if(!_sharedSubscriptions) {
-        [PPNotifications initializeSharedSubscriptions];
-    }
-    NSMutableArray *sharedSubscriptions = [[NSMutableArray alloc] initWithCapacity:0];
+    RLMResults<PPNotificationSubscription *> *sharedSubscriptions = [PPNotificationSubscription allObjects];
+    
+    NSMutableArray *sharedSubscriptionsArray = [[NSMutableArray alloc] initWithCapacity:0];
     NSMutableArray *subscriptionsArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
-    for(NSString *userIdKey in _sharedSubscriptions.allKeys) {
-        for(PPNotificationSubscription *subscription in [_sharedSubscriptions objectForKey:userIdKey]) {
-            NSMutableDictionary *subscriptionIdentifiers = [[NSMutableDictionary alloc] initWithCapacity:2];
-            [subscriptionIdentifiers setValue:@(subscription.type) forKey:@"type"];
-            if(subscription.name) {
-                [subscriptionIdentifiers setValue:subscription.name forKey:@"name"];
-            }
-            [subscriptionsArrayDebug addObject:subscriptionIdentifiers];
-            
-            if([userIdKey isEqualToString:[NSString stringWithFormat:@"%li", (long)userId]]) {
-                [sharedSubscriptions addObject:subscription];
-            }
+    for(PPNotificationSubscription *subscription in sharedSubscriptions) {
+        [sharedSubscriptionsArray addObject:subscription];
+        NSMutableDictionary *subscriptionIdentifiers = [[NSMutableDictionary alloc] initWithCapacity:2];
+        [subscriptionIdentifiers setValue:@(subscription.type) forKey:@"type"];
+        if(subscription.name) {
+            [subscriptionIdentifiers setValue:subscription.name forKey:@"name"];
         }
+        [subscriptionsArrayDebug addObject:subscriptionIdentifiers];
     }
     
 #ifdef DEBUG
@@ -52,26 +44,7 @@ __strong static NSMutableDictionary*_sharedSubscriptions = nil;
     NSLog(@"< %s sharedSubscriptions=%@", __PRETTY_FUNCTION__, subscriptionsArrayDebug);
 #endif
 #endif
-    return sharedSubscriptions;
-}
-
-+ (void)initializeSharedSubscriptions {
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"> %s", __PRETTY_FUNCTION__);
-#endif
-#endif
-    _sharedSubscriptions = [[NSMutableDictionary alloc] initWithCapacity:0];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSData *storedSubscriptionsData = [defaults objectForKey:@"user.notificationSubscriptions"];
-    if(storedSubscriptionsData) {
-        _sharedSubscriptions = (NSMutableDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:storedSubscriptionsData];
-    }
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"< %s", __PRETTY_FUNCTION__);
-#endif
-#endif
+    return sharedSubscriptionsArray;
 }
 
 /**
@@ -79,7 +52,6 @@ __strong static NSMutableDictionary*_sharedSubscriptions = nil;
  * Add subscriptions from local reference.
  *
  * @param subscriptions NSArray Array of subscriptions to remove.
- * @param userId Required PPUserId User Id to associate these subscriptions with
  **/
 + (void)addSubscriptions:(NSArray *)subscriptions userId:(PPUserId)userId {
 #ifdef DEBUG
@@ -87,42 +59,14 @@ __strong static NSMutableDictionary*_sharedSubscriptions = nil;
     NSLog(@"> %s subscriptions=%@", __PRETTY_FUNCTION__, subscriptions);
 #endif
 #endif
-    if(!_sharedSubscriptions) {
-        [PPNotifications initializeSharedSubscriptions];
-    }
-    
-    NSMutableArray *subscriptionsArray = [_sharedSubscriptions objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!subscriptionsArray) {
-        subscriptionsArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-    
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
+    [[PPRealm defaultRealm] beginWriteTransaction];
     for(PPNotificationSubscription *subscription in subscriptions) {
-        
-        BOOL found = NO;
-        for(PPNotificationSubscription *sharedSubscription in subscriptionsArray) {
-            if([sharedSubscription isEqualToSubscription:subscription]) {
-                [sharedSubscription sync:subscription];
-                found = YES;
-                break;
-            }
-        }
-        if(!found) {
-            [indexSet addIndex:[subscriptions indexOfObject:subscription]];
-        }
+        [PPNotificationSubscription createOrUpdateInDefaultRealmWithValue:subscription];
     }
-    
-    [subscriptionsArray addObjectsFromArray:[subscriptions objectsAtIndexes:indexSet]];
-    [_sharedSubscriptions setObject:subscriptionsArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    
-    NSData *sharedSubscriptionData = [NSKeyedArchiver archivedDataWithRootObject:_sharedSubscriptions];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:sharedSubscriptionData forKey:@"user.notificationSubscriptions"];
-    [defaults synchronize];
-    
+    [[PPRealm defaultRealm] commitWriteTransaction];    
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s subscriptionsArray=%@", __PRETTY_FUNCTION__, subscriptionsArray);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }
@@ -132,7 +76,6 @@ __strong static NSMutableDictionary*_sharedSubscriptions = nil;
  * Remove subscriptions from local reference.
  *
  * @param subscriptions NSArray Array of subscriptions to remove.
- * @param userId Required PPUserId User Id to associate these subscriptions with
  **/
 + (void)removeSubscriptions:(NSArray *)subscriptions userId:(PPUserId)userId {
 #ifdef DEBUG
@@ -140,37 +83,14 @@ __strong static NSMutableDictionary*_sharedSubscriptions = nil;
     NSLog(@"> %s subscriptions=%@", __PRETTY_FUNCTION__, subscriptions);
 #endif
 #endif
-    
-    if(!_sharedSubscriptions) {
-        [PPNotifications initializeSharedSubscriptions];
-    }
-    
-    NSMutableArray *subscriptionsArray = [_sharedSubscriptions objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!subscriptionsArray) {
-        subscriptionsArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-    
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
-    for(PPNotificationSubscription *subscription in subscriptions) {
-        for(PPNotificationSubscription *sharedSubscription in subscriptionsArray) {
-            if([sharedSubscription isEqualToSubscription:subscription]) {
-                [indexSet addIndex:[subscriptionsArray indexOfObject:sharedSubscription]];
-                break;
-            }
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPNotificationSubscription *subscription in subscriptions) {
+            [[PPRealm defaultRealm] deleteObject:[PPNotificationSubscription objectForPrimaryKey:@(subscription.type)]];
         }
-    }
-    
-    [subscriptionsArray removeObjectsAtIndexes:indexSet];
-    [_sharedSubscriptions setObject:subscriptionsArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    
-    NSData *sharedSubscriptionData = [NSKeyedArchiver archivedDataWithRootObject:_sharedSubscriptions];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:sharedSubscriptionData forKey:@"user.notificationSubscriptions"];
-    [defaults synchronize];
-    
+    }];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s subscriptionsArray=%@", __PRETTY_FUNCTION__, subscriptionsArray);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }
@@ -188,45 +108,20 @@ __strong static NSMutableDictionary*_sharedTokens = nil;
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    if(!_sharedTokens) {
-        [PPNotifications initializeSharedTokens];
-    }
-    PPNotificationToken *sharedToken;
-    NSMutableArray *tokensArray = [[NSMutableArray alloc] initWithCapacity:0];
-    for(NSString *userIdKey in _sharedTokens.allKeys) {
-        PPNotificationToken *token = [_sharedTokens objectForKey:userIdKey];
-        [tokensArray addObject:@{@"token": token.token}];
-        
-        if([userIdKey isEqualToString:[NSString stringWithFormat:@"%li", (long)userId]]) {
-            sharedToken = token;
-        }
+    RLMResults<PPNotificationToken *> *sharedTokens = [PPNotificationToken allObjects];
+    
+    PPNotificationToken *sharedToken = [sharedTokens firstObject];
+    NSMutableArray *tokensArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
+    for(PPNotificationToken *token in sharedTokens) {
+        [tokensArrayDebug addObject:@{@"token": token.token}];
     }
     
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s sharedTokens=%@", __PRETTY_FUNCTION__, tokensArray);
+    NSLog(@"< %s sharedTokens=%@", __PRETTY_FUNCTION__, tokensArrayDebug);
 #endif
 #endif
     return sharedToken;
-}
-
-+ (void)initializeSharedTokens {
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"> %s", __PRETTY_FUNCTION__);
-#endif
-#endif
-    _sharedTokens = [[NSMutableDictionary alloc] initWithCapacity:0];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSData *storedTokensData = [defaults objectForKey:@"user.notificationTokens"];
-    if(storedTokensData) {
-        _sharedTokens = (NSMutableDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:storedTokensData];
-    }
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"< %s", __PRETTY_FUNCTION__);
-#endif
-#endif
 }
 
 /**
@@ -234,7 +129,6 @@ __strong static NSMutableDictionary*_sharedTokens = nil;
  * Add APNs to non-volatile reference.
  *
  * @param notificationToken PPNotificationToken Notification token
- * @param userId Required PPUserId User Id to associate this token with
  **/
 + (void)addNotificationToken:(PPNotificationToken *)notificationToken userId:(PPUserId)userId {
 #ifdef DEBUG
@@ -242,24 +136,9 @@ __strong static NSMutableDictionary*_sharedTokens = nil;
     NSLog(@"> %s notificationToken=%@", __PRETTY_FUNCTION__, notificationToken);
 #endif
 #endif
-    if(!_sharedTokens) {
-        [PPNotifications initializeSharedTokens];
-    }
-    
-    PPNotificationToken *token = (PPNotificationToken *)[_sharedTokens objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(token) {
-        if(![token isEqualToToken:notificationToken]) {
-            token = notificationToken;
-        }
-    }
-    
-    [_sharedTokens setObject:notificationToken forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    
-    NSData *sharedTokenData = [NSKeyedArchiver archivedDataWithRootObject:_sharedTokens];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:sharedTokenData forKey:@"user.notificationTokens"];
-    [defaults synchronize];
-    
+    [[PPRealm defaultRealm] beginWriteTransaction];
+    [PPNotificationToken createOrUpdateInDefaultRealmWithValue:notificationToken];
+    [[PPRealm defaultRealm] commitWriteTransaction];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"< %s token=%@", __PRETTY_FUNCTION__, notificationToken.token);
@@ -272,7 +151,6 @@ __strong static NSMutableDictionary*_sharedTokens = nil;
  * Remove APNs to non-volatile reference.
  *
  * @param notificationToken PPNotificationToken Notification token
- * @param userId Required PPUserId User Id to disassociate this token with
  **/
 + (void)removeNotificaitonToken:(PPNotificationToken *)notificationToken userId:(PPUserId)userId {
 #ifdef DEBUG
@@ -280,36 +158,27 @@ __strong static NSMutableDictionary*_sharedTokens = nil;
     NSLog(@"> %s notificationToken=%@", __PRETTY_FUNCTION__, notificationToken);
 #endif
 #endif
-    if(!_sharedTokens) {
-        [PPNotifications initializeSharedTokens];
-    }
-    PPNotificationToken *token = (PPNotificationToken *)[_sharedTokens objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(token) {
-        if([token isEqualToToken:notificationToken]) {
-            token = nil;
-        }
-    }
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        [[PPRealm defaultRealm] deleteObject:[PPNotificationToken objectForPrimaryKey:notificationToken.token]];
+    }];
     
-    if(token) {
-        [_sharedTokens setObject:token forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    }
-    else {
-        [_sharedTokens removeObjectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    }
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 }
 
 #pragma mark Notifications
 
 /**
  * Shared notifications across the entire application
+ *
+ * @param userId Required PPUserId User Id to associate these notification with
  */
-+ (NSArray *)sharedNotifications {
++ (NSArray *)sharedNotificationsForUser:(PPUserId)userId {
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    NSArray *sharedNotifications = @[];
+    RLMResults<PPNotification *> *sharedNotifications = [PPNotification allObjects];
     
     NSMutableArray *sharedNotificationsArray = [[NSMutableArray alloc] initWithCapacity:0];
     NSMutableArray *notificationsArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
@@ -337,10 +206,19 @@ __strong static NSMutableDictionary*_sharedTokens = nil;
  *
  * @param notifications NSArray Notifications to add
  **/
-+ (void)addNotifications:(NSArray *)notifications {
++ (void)addNotifications:(NSArray *)notifications userId:(PPUserId)userId {
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s notifications=%@", __PRETTY_FUNCTION__, notifications);
+#endif
+#endif
+    [[PPRealm defaultRealm] beginWriteTransaction];
+    for(PPNotification *notification in notifications) {
+        [PPNotification createOrUpdateInDefaultRealmWithValue:notification];
+    }
+    [[PPRealm defaultRealm] commitWriteTransaction];
+#ifdef DEBUG
+#ifdef DEBUG_MODELS
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
@@ -351,11 +229,21 @@ __strong static NSMutableDictionary*_sharedTokens = nil;
  * Remove notifications to non-volatile reference.
  *
  * @param notifications NSArray Notifications
+ * @param userId Required PPUserId User Id to associate these notification with
  **/
-+ (void)removeNotificaitons:(NSArray *)notifications {
++ (void)removeNotificaitons:(NSArray *)notifications userId:(PPUserId)userId {
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s notifications=%@", __PRETTY_FUNCTION__, notifications);
+#endif
+#endif
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPNotification *notification in notifications) {
+            [[PPRealm defaultRealm] deleteObject:[PPNotification objectForPrimaryKey:@(notification.sendDateMS)]];
+        }
+    }];
+#ifdef DEBUG
+#ifdef DEBUG_MODELS
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif

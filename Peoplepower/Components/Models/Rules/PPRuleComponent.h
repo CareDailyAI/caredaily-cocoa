@@ -40,7 +40,7 @@ typedef NS_OPTIONS(NSInteger, PPRuleComponentTimezone) {
     PPRuleComponentTimezoneTrue = 1,
 };
 
-@interface PPRuleComponent : NSObject <NSCopying, NSCoding>
+@interface PPRuleComponent : RLMObject <NSCopying, NSCoding>
 
 /* Id of this component */
 @property (nonatomic) PPRuleComponentId componentId;
@@ -67,12 +67,12 @@ typedef NS_OPTIONS(NSInteger, PPRuleComponentTimezone) {
 @property (nonatomic, strong) NSString *functionGroup;
 
 /* A parameter to complete the rule phrase */
-@property (nonatomic, strong) NSMutableArray *parameters;
+@property (nonatomic, strong) RLMArray<PPRuleComponentParameter *><PPRuleComponentParameter> *parameters;
 
 /* Paid service name, if this rule phrase is available only for users with this service. */
 @property (nonatomic, strong) NSString *serviceName;
 
-- (id)initWithId:(PPRuleComponentId)componentId name:(NSString *)name displayType:(PPRuleComponentDisplayType)displayType desc:(NSString *)desc past:(NSString *)past timezone:(PPRuleComponentTimezone)timezone functionGroup:(NSString *)functionGroup parameters:(NSArray *)parameters serviceName:(NSString *)serviceName;
+- (id)initWithId:(PPRuleComponentId)componentId name:(NSString *)name displayType:(PPRuleComponentDisplayType)displayType desc:(NSString *)desc past:(NSString *)past timezone:(PPRuleComponentTimezone)timezone functionGroup:(NSString *)functionGroup parameters:(RLMArray *)parameters serviceName:(NSString *)serviceName;
 
 + (NSObject *)initWithDictionary:(NSDictionary *)componentDict subclass:(NSString *)subclass;
 
@@ -86,3 +86,5 @@ typedef NS_OPTIONS(NSInteger, PPRuleComponentTimezone) {
 - (void)sync:(PPRuleComponent *)ruleComponent;
 
 @end
+
+RLM_ARRAY_TYPE(PPRuleComponent);

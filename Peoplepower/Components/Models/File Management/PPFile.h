@@ -144,7 +144,7 @@ typedef NS_OPTIONS(NSInteger, PPFileURLExpiration) {
     PPFileURLExpirationTrue = 1
 };
 
-@interface PPFile : NSObject
+@interface PPFile : RLMObject
 
 /* Server-to-Hardware Status Code (i.e. ACK) as described in the Device API doc */
 @property (nonatomic, strong) NSString *status;
@@ -212,12 +212,12 @@ typedef NS_OPTIONS(NSInteger, PPFileURLExpiration) {
 @property (nonatomic) PPFileFavourite favourite;
 
 /* File tags */
-@property (nonatomic, strong) NSArray *tags;
+@property (nonatomic, strong) RLMArray<PPFileTag *><PPFileTag> *tags;
 
 /* File data */
 @property (nonatomic, strong) NSData *data;
 
-- (id)initWithStatus:(NSString *)status fileId:(PPFileId)fileId filesAction:(PPFileFilesAction)filesAction thumbnail:(PPFileThumbnail)thumbnail fragments:(PPFileFragments)fragments name:(NSString *)name type:(PPFileFileType)type publicAccess:(PPFilePublicAccess)publicAccess creationDate:(NSDate *)creationDate size:(PPFileSize)size duration:(PPFileDuration)duration shared:(PPFileShared)shared rotate:(PPFileRotate)rotate device:(PPDevice *)device user:(PPUser *)user viewCount:(PPFileViewCount)viewCount viewed:(PPFileViewed)viewed favourite:(PPFileFavourite)favourite tags:(NSArray *)tags data:(NSData *)data;
+- (id)initWithStatus:(NSString *)status fileId:(PPFileId)fileId filesAction:(PPFileFilesAction)filesAction thumbnail:(PPFileThumbnail)thumbnail fragments:(PPFileFragments)fragments name:(NSString *)name type:(PPFileFileType)type publicAccess:(PPFilePublicAccess)publicAccess creationDate:(NSDate *)creationDate size:(PPFileSize)size duration:(PPFileDuration)duration shared:(PPFileShared)shared rotate:(PPFileRotate)rotate device:(PPDevice *)device user:(PPUser *)user viewCount:(PPFileViewCount)viewCount viewed:(PPFileViewed)viewed favourite:(PPFileFavourite)favourite tags:(RLMArray *)tags data:(NSData *)data;
 
 + (PPFile *)initWithDictionary:(NSDictionary *)fileDict;
 
@@ -230,3 +230,5 @@ typedef NS_OPTIONS(NSInteger, PPFileURLExpiration) {
 - (void)sync:(PPFile *)file;
 
 @end
+
+RLM_ARRAY_TYPE(PPFile);

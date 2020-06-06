@@ -10,12 +10,16 @@
 
 @implementation PPDynamicUIScreen
 
-- (id)initWithScreenId:(NSString *)screenId order:(PPDynamicUIScreenOrder)order sections:(NSArray *)sections {
++ (NSString *)primaryKey {
+    return @"screenId";
+}
+
+- (id)initWithScreenId:(NSString *)screenId order:(PPDynamicUIScreenOrder)order sections:(RLMArray *)sections {
     self = [super init];
     if(self) {
         self.screenId = screenId;
         self.order = order;
-        self.sections = sections;
+        self.sections = (RLMArray<PPDynamicUIScreenSection *><PPDynamicUIScreenSection> *)sections;
     }
     return self;
 }
@@ -36,7 +40,7 @@
         }
     }
     
-    PPDynamicUIScreen *screen = [[PPDynamicUIScreen alloc] initWithScreenId:screenId order:order sections:sections];
+    PPDynamicUIScreen *screen = [[PPDynamicUIScreen alloc] initWithScreenId:screenId order:order sections:(RLMArray *)sections];
     return screen;
 }
 

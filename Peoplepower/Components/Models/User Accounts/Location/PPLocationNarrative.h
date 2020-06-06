@@ -9,7 +9,11 @@
 //Friends and family who can switch into and view your location should be able to see your narrative. Administrators should also be able to access your narrative in Maestro for debugging / understanding / explanation of "why did that happen in my home?" purposes.
 
 #import <Foundation/Foundation.h>
+#import "PPRLMDictionary.h"
 #import "PPBotengineAppInstance.h"
+
+@class PPLocationNarrativeTarget;
+RLM_ARRAY_TYPE(PPLocationNarrativeTarget);
 
 typedef NS_OPTIONS(NSInteger, PPLocationNarrativeId) {
     PPLocationNarrativeIdNone = -1
@@ -33,7 +37,7 @@ typedef NS_OPTIONS(NSInteger, PPLocationNarrativeRowCount) {
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PPLocationNarrative : NSObject
+@interface PPLocationNarrative : RLMObject
 
 @property (nonatomic) PPLocationNarrativeId narrativeId;
 @property (nonatomic) PPLocationId locationId;
@@ -42,17 +46,23 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *icon;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *desc;
-@property (nonatomic, strong) NSDictionary *target;
+@property (nonatomic, strong) PPLocationNarrativeTarget *target;
 @property (nonatomic, strong) NSDate *creationDate;
 @property (nonatomic) PPBotengineAppInstanceId appInstanceId;
 
-- (id)initWithId:(PPLocationNarrativeId)narrativeId locationId:(PPLocationId)locationId narrativeDate:(NSDate *)narrativeDate priority:(PPLocationNarrativePriority)priority icon:(NSString *)icon title:(NSString *)title description:(NSString *)desc target:(NSDictionary *)target creationDate:(NSDate *)creationDate appInstanceId:(PPBotengineAppInstanceId)appInstanceId;
+- (id)initWithId:(PPLocationNarrativeId)narrativeId locationId:(PPLocationId)locationId narrativeDate:(NSDate *)narrativeDate priority:(PPLocationNarrativePriority)priority icon:(NSString *)icon title:(NSString *)title description:(NSString *)desc target:(PPLocationNarrativeTarget *)target creationDate:(NSDate *)creationDate appInstanceId:(PPBotengineAppInstanceId)appInstanceId;
 
 + (PPLocationNarrative *)initWithDictionary:(NSDictionary *)narrativeDict;
 
 + (NSString *)stringify:(PPLocationNarrative *)narrative;
 + (NSDictionary *)data:(PPLocationNarrative *)narrative;
 
+@end
+
+RLM_ARRAY_TYPE(PPLocationNarrative);
+
+@interface PPLocationNarrativeTarget : PPRLMDictionary
++ (PPLocationNarrativeTarget *)initWithDictionary:(NSDictionary *)dict;
 @end
 
 NS_ASSUME_NONNULL_END

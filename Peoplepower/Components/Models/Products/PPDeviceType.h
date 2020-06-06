@@ -157,16 +157,16 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeEditable) {
     PPDeviceTypeEditableTrue = 1,
 };
 
-@interface PPDeviceType : NSObject
+@interface PPDeviceType : RLMObject
 
 @property (nonatomic) PPDeviceTypeId typeId;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic) PPDeviceTypeEditable editable;
 @property (nonatomic, strong) PPUser *createdBy;
 @property (nonatomic, strong) NSDate *creationDate;
-@property (nonatomic, strong) NSArray *attributes;
+@property (nonatomic, strong) RLMArray<PPDeviceTypeAttribute *><PPDeviceTypeAttribute> *attributes;
 
-- (id)initWithTypeId:(PPDeviceTypeId)typeId name:(NSString *)name editable:(PPDeviceTypeEditable)editable createdBy:(PPUser *)createdBy creationDate:(NSDate *)creationDate attributes:(NSArray *)attributes;
+- (id)initWithTypeId:(PPDeviceTypeId)typeId name:(NSString *)name editable:(PPDeviceTypeEditable)editable createdBy:(PPUser *)createdBy creationDate:(NSDate *)creationDate attributes:(RLMArray *)attributes;
 
 + (PPDeviceType *)initWithDictionary:(NSDictionary *)typeDict;
 
@@ -179,3 +179,5 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeEditable) {
 - (void)sync:(PPDeviceType *)deviceType;
 
 @end
+
+RLM_ARRAY_TYPE(PPDeviceType);

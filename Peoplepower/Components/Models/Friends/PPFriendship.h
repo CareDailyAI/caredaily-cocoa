@@ -21,7 +21,7 @@ typedef NS_OPTIONS(NSInteger, PPFriendshipBlocked) {
     PPFriendshipBlockedTrue = 1
 };
 
-@interface PPFriendship : NSObject
+@interface PPFriendship : RLMObject
 
 /* An ID of the friendship record */
 @property (nonatomic) PPFriendshipId friendshipId;
@@ -36,12 +36,12 @@ typedef NS_OPTIONS(NSInteger, PPFriendshipBlocked) {
 @property (nonatomic) PPFriendshipBlocked blocked;
 
 /* A list of your own devices shared with the friend */
-@property (nonatomic, strong) NSArray *ownDevices;
+@property (nonatomic, strong) RLMArray<PPFriendshipDevice *><PPFriendshipDevice> *ownDevices;
 
 /* A list of your own devices shared with the calling user */
-@property (nonatomic, strong) NSArray *friendDevices;
+@property (nonatomic, strong) RLMArray<PPFriendshipDevice *><PPFriendshipDevice> *friendDevices;
 
-- (id) initWithFriendshipId:(PPFriendshipId)friendshipId friendshipFriend:(PPFriendshipFriend *)friendshipFriend email:(NSString *)email blocked:(PPFriendshipBlocked)blocked ownDevices:(NSArray *)ownDevices friendDevices:(NSArray *)friendDevices;
+- (id) initWithFriendshipId:(PPFriendshipId)friendshipId friendshipFriend:(PPFriendshipFriend *)friendshipFriend email:(NSString *)email blocked:(PPFriendshipBlocked)blocked ownDevices:(RLMArray *)ownDevices friendDevices:(RLMArray *)friendDevices;
 
 + (PPFriendship *)initWithDictionary:(NSDictionary *)friendshipDict;
 
@@ -54,3 +54,5 @@ typedef NS_OPTIONS(NSInteger, PPFriendshipBlocked) {
 - (void)sync:(PPFriendship *)friendship;
 
 @end
+
+RLM_ARRAY_TYPE(PPFriendship);

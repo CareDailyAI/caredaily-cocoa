@@ -10,7 +10,17 @@
 
 @implementation PPCircle
 
-- (id)initWithId:(PPCircleId)circleId name:(NSString *)name admin:(PPCircleAdmin)admin status:(PPCircleStatus)status memberStatus:(PPCircleMemberStatus)memberStatus creationDate:(NSDate *)creationDate monthlyDataIn:(PPCircleData)monthlyDataIn monthlyDataMax:(PPCircleData)monthlyDataMax members:(NSArray *)members {
++ (NSString *)primaryKey {
+    return @"circleId";
+}
+
++ (NSDictionary<NSString *,RLMPropertyDescriptor *> *)linkingObjectsProperties {
+    return @{
+      @"posts": [RLMPropertyDescriptor descriptorWithClass:PPCirclePost.class propertyName:@"circle"]
+      };
+}
+
+- (id)initWithId:(PPCircleId)circleId name:(NSString *)name admin:(PPCircleAdmin)admin status:(PPCircleStatus)status memberStatus:(PPCircleMemberStatus)memberStatus creationDate:(NSDate *)creationDate monthlyDataIn:(PPCircleData)monthlyDataIn monthlyDataMax:(PPCircleData)monthlyDataMax members:(RLMArray *)members {
     self = [super init];
     if(self) {
         self.circleId = circleId;
@@ -21,7 +31,7 @@
         self.creationDate = creationDate;
         self.monthlyDataIn = monthlyDataIn;
         self.monthlyDataMax = monthlyDataMax;
-        self.members = members;
+        self.members = (RLMArray<PPCircleMember *><PPCircleMember> *)members;
     }
     return self;
 }
@@ -72,7 +82,7 @@
         }
     }
     
-    PPCircle *circle = [[PPCircle alloc] initWithId:circleId name:name admin:admin status:status memberStatus:memberStatus creationDate:creationDate monthlyDataIn:monthlyDataIn monthlyDataMax:monthlyDataMax members:members];
+    PPCircle *circle = [[PPCircle alloc] initWithId:circleId name:name admin:admin status:status memberStatus:memberStatus creationDate:creationDate monthlyDataIn:monthlyDataIn monthlyDataMax:monthlyDataMax members:(RLMArray *)members];
     return circle;
 }
 @end

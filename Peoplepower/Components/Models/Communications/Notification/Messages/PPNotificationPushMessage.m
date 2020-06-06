@@ -10,7 +10,7 @@
 
 @implementation PPNotificationPushMessage
 
-- (id)initWithTemplate:(NSString *)notificationTemplate content:(NSString *)content model:(NSDictionary *)model type:(PPNotificationPushMessageType)type sound:(NSString *)sound info:(NSDictionary *)info {
+- (id)initWithTemplate:(NSString *)notificationTemplate content:(NSString *)content model:(PPNotificationMessageModel *)model type:(PPNotificationPushMessageType)type sound:(NSString *)sound info:(PPNotificationPushMessageInfo *)info {
     self = [super initWithTemplate:notificationTemplate content:content model:model];
     if(self) {
         self.type = type;
@@ -27,7 +27,7 @@
         type = (PPNotificationPushMessageType)((NSString *)[messageDict objectForKey:@"type"]).integerValue;
     }
     NSString *sound = [messageDict objectForKey:@"sound"];
-    NSDictionary *info = [messageDict objectForKey:@"info"];
+    PPNotificationPushMessageInfo *info = [PPNotificationPushMessageInfo initWithDictionary:[messageDict objectForKey:@"info"]];
     PPNotificationPushMessage *pushMessage = [[PPNotificationPushMessage alloc] initWithTemplate:message.notificationTemplate content:message.content model:message.model type:type sound:sound info:info];
     
     return pushMessage;
@@ -59,9 +59,8 @@
         if(appendComma) {
             [JSONString appendString:@","];
         }
-        NSError * err;
-        NSData * jsonData = [NSJSONSerialization dataWithJSONObject:message.info options:0 error:&err];
-        [JSONString appendFormat:@"\"info\": %@", [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+        
+        [JSONString appendFormat:@"\"info\": {%@}", [PPNotificationPushMessageInfo stringify:message.info]];
     }
     
     [JSONString appendString:@"}"];
@@ -79,9 +78,18 @@
         data[@"sound"] = message.sound;
     }
     if(message.info) {
-        data[@"info"] = message.info;
+        data[@"info"] = [PPRLMDictionary data:message.info];
     }
     return data;
+}
+
+@end
+
+@implementation PPNotificationPushMessageInfo
+
++ (PPNotificationPushMessageInfo *)initWithDictionary:(NSDictionary *)dict {
+    PPRLMDictionary *RLMDictionary = [super initWithDictionary:dict];
+    return [[PPNotificationPushMessageInfo alloc] initWithKeys:RLMDictionary.keys value:RLMDictionary.values];
 }
 
 @end

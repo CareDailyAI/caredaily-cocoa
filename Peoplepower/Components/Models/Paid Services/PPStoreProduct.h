@@ -16,7 +16,7 @@ typedef NS_OPTIONS(NSInteger, PPStoreProductImageHeight) {
     PPStoreProductImageHeightNone = -1,
 };
 
-@interface PPStoreProduct : NSObject
+@interface PPStoreProduct : RLMObject
 
 @property (nonatomic) PPStoreProductId productId;
 @property (nonatomic, strong) NSString *thumbnail;
@@ -37,3 +37,5 @@ typedef NS_OPTIONS(NSInteger, PPStoreProductImageHeight) {
 - (void)sync:(PPStoreProduct *)product;
 
 @end
+
+RLM_ARRAY_TYPE(PPStoreProduct);

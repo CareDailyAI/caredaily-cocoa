@@ -28,12 +28,12 @@ typedef NS_OPTIONS(NSInteger, PPCallCenterAlertStatus) {
     PPCallCenterAlertStatusReported = 3, // The alert reported to the call center
 };
 
-@interface PPCallCenter : NSObject
+@interface PPCallCenter : RLMObject
 
 @property (nonatomic) PPCallCenterStatus status;
 @property (nonatomic) PPUserId userId;
-@property (nonatomic, strong) NSArray *missingFields;
-@property (nonatomic, strong) NSArray *contacts;
+@property (nonatomic, strong) RLMArray<RLMString> *missingFields;
+@property (nonatomic, strong) RLMArray<PPCallCenterContact *><PPCallCenterContact> *contacts;
 @property (nonatomic, strong) NSString *codeword;
 @property (nonatomic, strong) NSString *permit;
 @property (nonatomic) PPCallCenterAlertStatus alertStatus;
@@ -42,10 +42,12 @@ typedef NS_OPTIONS(NSInteger, PPCallCenterAlertStatus) {
 
 @property (nonatomic, strong) NSString *identifier;
 
-- (id)initWithStatus:(PPCallCenterStatus)status userId:(PPUserId)userId missingFields:(NSArray *)missingFields contacts:(NSArray *)contacts codeword:(NSString *)codeword permit:(NSString *)permit alertStatus:(PPCallCenterAlertStatus)alertStatus alertDate:(NSDate *)alertDate alertStatusDate:(NSDate *)alertStatusDate;
+- (id)initWithStatus:(PPCallCenterStatus)status userId:(PPUserId)userId missingFields:(RLMArray *)missingFields contacts:(RLMArray *)contacts codeword:(NSString *)codeword permit:(NSString *)permit alertStatus:(PPCallCenterAlertStatus)alertStatus alertDate:(NSDate *)alertDate alertStatusDate:(NSDate *)alertStatusDate;
 
 + (PPCallCenter *)initWithDictionary:(NSDictionary *)callCenterDict;
 
 + (NSString *)stringify:(PPCallCenter *)callCenter;
 
 @end
+
+RLM_ARRAY_TYPE(PPCallCenter);

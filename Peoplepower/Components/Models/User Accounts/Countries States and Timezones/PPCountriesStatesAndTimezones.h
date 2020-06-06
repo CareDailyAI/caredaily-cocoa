@@ -43,11 +43,11 @@ typedef NS_OPTIONS(NSInteger, PPTimezoneOffset) {
 
 @interface PPCountriesStatesAndTimezones : PPBaseModel
 
-- (id)initWithCountries:(NSArray *)countries;
+- (id)initWithCountries:(RLMArray *)countries;
 
 - (NSArray *)statesForCountry:(PPCountryId)countryId;
 - (PPCountry *)countryForState:(PPStateId)stateId;
 
-@property (nonatomic, strong) NSArray *countries;
+@property (nonatomic, strong) RLMArray<PPCountry *> *countries;
 
 @end

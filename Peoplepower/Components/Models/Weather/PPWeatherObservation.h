@@ -9,23 +9,23 @@
 #import "PPBaseModel.h"
 #import "PPWeatherObservationMetric.h"
 
-@interface PPWeatherObservation : NSObject
+@interface PPWeatherObservation : RLMObject
 
 @property (nonatomic, strong) NSString *observationClass;
-@property (nonatomic, strong) NSNumber *expireTimeGMT;
-@property (nonatomic, strong) NSNumber *OBSTime;
+@property (nonatomic, strong) NSNumber<RLMInt> *expireTimeGMT;
+@property (nonatomic, strong) NSNumber<RLMInt> *OBSTime;
 @property (nonatomic, strong) NSDate *OBSTimeLocal;
-@property (nonatomic, strong) NSNumber *wDir;
-@property (nonatomic, strong) NSNumber *iconCode;
-@property (nonatomic, strong) NSNumber *iconExtd;
+@property (nonatomic, strong) NSNumber<RLMInt> *wDir;
+@property (nonatomic, strong) NSNumber<RLMInt> *iconCode;
+@property (nonatomic, strong) NSNumber<RLMInt> *iconExtd;
 @property (nonatomic, strong) NSDate *sunrise;
 @property (nonatomic, strong) NSDate *sunset;
 @property (nonatomic, strong) NSString *dayInd;
-@property (nonatomic, strong) NSNumber *UVIndex;
-@property (nonatomic, strong) NSNumber *UVWarning;
+@property (nonatomic, strong) NSNumber<RLMInt> *UVIndex;
+@property (nonatomic, strong) NSNumber<RLMInt> *UVWarning;
 @property (nonatomic, strong) NSString *WXMan;
-@property (nonatomic, strong) NSNumber *OBSQualifierCode;
-@property (nonatomic, strong) NSNumber *PTendCode;
+@property (nonatomic, strong) NSNumber<RLMInt> *OBSQualifierCode;
+@property (nonatomic, strong) NSNumber<RLMInt> *PTendCode;
 @property (nonatomic, strong) NSString *DOW;
 @property (nonatomic, strong) NSString *wdirCardinal;
 @property (nonatomic, strong) NSString *UVDesc;
@@ -35,7 +35,7 @@
 @property (nonatomic, strong) NSString *PTendDesc;
 @property (nonatomic, strong) NSString *skyCover;
 @property (nonatomic, strong) NSString *clds;
-@property (nonatomic, strong) NSNumber *OBSQualifierSeverity;
+@property (nonatomic, strong) NSNumber<RLMInt> *OBSQualifierSeverity;
 @property (nonatomic, strong) NSString *vocalKey;
 @property (nonatomic, strong) PPWeatherObservationMetric *metric;
 
@@ -44,3 +44,5 @@
 + (PPWeatherObservation *)initWithDictionary:(NSDictionary *)observationDict;
 
 @end
+
+RLM_ARRAY_TYPE(PPWeatherObservation);

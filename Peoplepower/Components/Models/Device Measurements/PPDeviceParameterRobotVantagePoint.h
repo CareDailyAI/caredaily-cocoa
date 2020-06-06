@@ -6,7 +6,7 @@
 //  Copyright © 2020 People Power Company. All rights reserved.
 //
 
-@interface PPDeviceParameterRobotVantagePoint : NSObject
+@interface PPDeviceParameterRobotVantagePoint : RLMObject
 
 @property (nonatomic, strong) NSString *zoomLevel;
 @property (nonatomic, strong) NSString *horizontalRotation;
@@ -15,3 +15,5 @@
 - (id)initWithZoomLevel:(NSString *)zoomeLevel horizontalRotation:(NSString *)horizontalRotation verticalRotation:(NSString *)verticalRotation;
 
 @end
+
+RLM_ARRAY_TYPE(PPDeviceParameterRobotVantagePoint);

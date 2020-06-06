@@ -13,8 +13,6 @@
 
 #pragma mark - Session Management
 
-__strong static NSMutableDictionary*_sharedFeedbacks = nil;
-
 /**
  * Shared feedbacks across the entire application
  */
@@ -24,48 +22,23 @@ __strong static NSMutableDictionary*_sharedFeedbacks = nil;
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    if(!_sharedFeedbacks) {
-        [PPCrowdFeedbacks initializeSharedFeedbacks];
-    }
-    NSMutableArray *sharedFeedbacks = [[NSMutableArray alloc] initWithCapacity:0];
-    NSMutableArray *feedbacksArray = [[NSMutableArray alloc] initWithCapacity:0];
-    for(NSString *userIdKey in _sharedFeedbacks.allKeys) {
-        for(PPCrowdFeedback *feedback in [_sharedFeedbacks objectForKey:userIdKey]) {
-            NSMutableDictionary *feedbackIdentifiers = [[NSMutableDictionary alloc] initWithCapacity:2];
-            [feedbackIdentifiers setValue:@(feedback.feedbackId) forKey:@"ID"];
-            [feedbacksArray addObject:feedbackIdentifiers];
-            
-            if([userIdKey isEqualToString:[NSString stringWithFormat:@"%li", (long)userId]]) {
-                [sharedFeedbacks addObject:feedback];
-            }
-        }
+    RLMResults<PPCrowdFeedback *> *sharedFeedbacks = [PPCrowdFeedback allObjects];
+    NSMutableArray *sharedFeedbacksArray = [[NSMutableArray alloc] initWithCapacity:0];
+    NSMutableArray *feedbacksArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
+    for(PPCrowdFeedback *feedback in sharedFeedbacks) {
+        [sharedFeedbacksArray addObject:feedback];
+        
+        NSMutableDictionary *feedbackIdentifiers = [[NSMutableDictionary alloc] initWithCapacity:2];
+        [feedbackIdentifiers setValue:@(feedback.feedbackId) forKey:@"ID"];
+        [feedbacksArrayDebug addObject:feedbackIdentifiers];
     }
     
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s sharedFeedbacks=%@", __PRETTY_FUNCTION__, feedbacksArray);
+    NSLog(@"< %s sharedFeedbacks=%@", __PRETTY_FUNCTION__, feedbacksArrayDebug);
 #endif
 #endif
-    return sharedFeedbacks;
-}
-
-+ (void)initializeSharedFeedbacks {
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"> %s", __PRETTY_FUNCTION__);
-#endif
-#endif
-    _sharedFeedbacks = [[NSMutableDictionary alloc] initWithCapacity:0];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    NSData *storedFeedbacksData = [defaults objectForKey:@"user.crowdFeedbacks"];
-//    if(storedFeedbacksData) {
-//        _sharedFeedbacks = (NSMutableDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:storedFeedbacksData];
-//    }
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"< %s", __PRETTY_FUNCTION__);
-#endif
-#endif
+    return sharedFeedbacksArray;
 }
 
 /**
@@ -81,42 +54,15 @@ __strong static NSMutableDictionary*_sharedFeedbacks = nil;
     NSLog(@"> %s feedbacks=%@", __PRETTY_FUNCTION__, feedbacks);
 #endif
 #endif
-    if(!_sharedFeedbacks) {
-        [PPCrowdFeedbacks initializeSharedFeedbacks];
-    }
-    
-    NSMutableArray *feedbacksArray = [_sharedFeedbacks objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!feedbacksArray) {
-        feedbacksArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-    
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
+    [[PPRealm defaultRealm] beginWriteTransaction];
     for(PPCrowdFeedback *feedback in feedbacks) {
-        
-        BOOL found = NO;
-        for(PPCrowdFeedback *sharedFeedback in feedbacksArray) {
-            if([sharedFeedback isEqualToFeedback:feedback]) {
-                [sharedFeedback sync:feedback];
-                found = YES;
-                break;
-            }
-        }
-        if(!found) {
-            [indexSet addIndex:[feedbacks indexOfObject:feedback]];
-        }
+        [PPCrowdFeedback createOrUpdateInDefaultRealmWithValue:feedback];
     }
-    
-    [feedbacksArray addObjectsFromArray:[feedbacks objectsAtIndexes:indexSet]];
-    [_sharedFeedbacks setObject:feedbacksArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    
-//    NSData *sharedFeedbackData = [NSKeyedArchiver archivedDataWithRootObject:_sharedFeedbacks];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedFeedbackData forKey:@"user.crowdFeedbacks"];
-//    [defaults synchronize];
+    [[PPRealm defaultRealm] commitWriteTransaction];
     
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s feedbacksArray=%@", __PRETTY_FUNCTION__, feedbacksArray);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }
@@ -134,37 +80,14 @@ __strong static NSMutableDictionary*_sharedFeedbacks = nil;
     NSLog(@"> %s feedbacks=%@", __PRETTY_FUNCTION__, feedbacks);
 #endif
 #endif
-    
-    if(!_sharedFeedbacks) {
-        [PPCrowdFeedbacks initializeSharedFeedbacks];
-    }
-    
-    NSMutableArray *feedbacksArray = [_sharedFeedbacks objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!feedbacksArray) {
-        feedbacksArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-    
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
-    for(PPCrowdFeedback *feedback in feedbacks) {
-        for(PPCrowdFeedback *sharedFeedback in feedbacksArray) {
-            if([sharedFeedback isEqualToFeedback:feedback]) {
-                [indexSet addIndex:[feedbacksArray indexOfObject:sharedFeedback]];
-                break;
-            }
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPCrowdFeedback *feedback in feedbacks) {
+            [[PPRealm defaultRealm] deleteObject:[PPCrowdFeedback objectForPrimaryKey:@(feedback.feedbackId)]];
         }
-    }
-    
-    [feedbacksArray removeObjectsAtIndexes:indexSet];
-    [_sharedFeedbacks setObject:feedbacksArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    
-//    NSData *sharedFeedbackData = [NSKeyedArchiver archivedDataWithRootObject:_sharedFeedbacks];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedFeedbackData forKey:@"user.notificationFeedbacks"];
-//    [defaults synchronize];
-    
+    }];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s feedbacksArray=%@", __PRETTY_FUNCTION__, feedbacksArray);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }

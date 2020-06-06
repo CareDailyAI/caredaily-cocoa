@@ -6,12 +6,12 @@
 //  Copyright © 2020 People Power Company. All rights reserved.
 //
 
-@interface PPInAppMessageParameters : NSObject
+@interface PPInAppMessageParameters : RLMObject
 
-@property (nonatomic, strong) NSArray *keys;
-@property (nonatomic, strong) NSArray *values;
+@property (nonatomic, strong) RLMArray<RLMString> *keys;
+@property (nonatomic, strong) RLMArray<RLMString> *values;
 
-- (id)initWithKeys:(NSArray *)keys value:(NSArray *)values;
+- (id)initWithKeys:(RLMArray *)keys value:(RLMArray *)values;
 
 + (PPInAppMessageParameters *)initWithDictionary:(NSDictionary *)paramsDict;
 
@@ -19,3 +19,5 @@
 + (NSDictionary *)data:(PPInAppMessageParameters *)parameters;
 
 @end
+
+RLM_ARRAY_TYPE(PPInAppMessageParameters);

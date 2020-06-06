@@ -10,6 +10,10 @@
 
 @implementation PPDeviceTypeRuleComponentTemplate
 
++(NSString *)primaryKey {
+    return @"templateId";
+}
+
 - (id)initWithTemplateId:(PPDeviceTypeRuleComponentTemplateId)templateId name:(NSString *)name type:(PPRuleComponentType)type display:(PPRuleComponentDisplayType)display timezone:(PPRuleComponentTimezone)timezone desc:(NSString *)desc past:(NSString *)past source:(NSString *)source sourceType:(PPDeviceTypeRuleComponentTemplateSourceType)sourceType conditionData:(PPDeviceTypeRuleComponentTemplateConditionData)conditionData updateDate:(NSDate *)updateDate products:(NSArray *)products parameters:(NSArray *)parameters {
     self = [super init];
     if(self) {
@@ -24,8 +28,8 @@
         self.sourceType = sourceType;
         self.conditionData = conditionData;
         self.updateDate = updateDate;
-        self.products = products;
-        self.parameters = parameters;
+        self.products = (RLMArray<PPDeviceTypeRuleComponentTemplateProduct *><PPDeviceTypeRuleComponentTemplateProduct> *)products;
+        self.parameters = (RLMArray<PPRuleComponentParameter *><PPRuleComponentParameter> *)parameters;
     }
     return self;
 }
@@ -80,7 +84,7 @@
         }
     }
     
-    PPDeviceTypeRuleComponentTemplate *component = [[PPDeviceTypeRuleComponentTemplate alloc] initWithTemplateId:templateId name:name type:type display:display timezone:timezone desc:desc past:past source:source sourceType:sourceType conditionData:conditionData updateDate:updateDate products:products parameters:parameters];
+    PPDeviceTypeRuleComponentTemplate *component = [[PPDeviceTypeRuleComponentTemplate alloc] initWithTemplateId:templateId name:name type:type display:display timezone:timezone desc:desc past:past source:source sourceType:sourceType conditionData:conditionData updateDate:updateDate products:(RLMArray *)products parameters:(RLMArray *)parameters];
     return component;
 }
 

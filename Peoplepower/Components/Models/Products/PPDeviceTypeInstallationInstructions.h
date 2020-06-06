@@ -9,7 +9,7 @@
 #import "PPBaseModel.h"
 #import "PPDeviceTypeGoal.h"
 
-@interface PPDeviceTypeInstallationInstructions : NSObject
+@interface PPDeviceTypeInstallationInstructions : RLMObject
 
 @property (nonatomic) PPDeviceTypeGoalId goalId;
 @property (nonatomic, strong) NSString *installation;
@@ -17,3 +17,5 @@
 - (id)initWithGoalId:(PPDeviceTypeGoalId)goalId installation:(NSString *)installation;
 
 @end
+
+RLM_ARRAY_TYPE(PPDeviceTypeInstallationInstructions);

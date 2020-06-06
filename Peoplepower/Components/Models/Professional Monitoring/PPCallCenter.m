@@ -10,17 +10,21 @@
 
 @implementation PPCallCenter
 
++ (NSString *)primaryKey {
+    return @"identifier";
+}
+
 - (NSString *)identifier {
     return @"callCenter"; // Only ever maintain one call center object
 }
 
-- (id)initWithStatus:(PPCallCenterStatus)status userId:(PPUserId)userId missingFields:(NSArray *)missingFields contacts:(NSArray *)contacts codeword:(NSString *)codeword permit:(NSString *)permit alertStatus:(PPCallCenterAlertStatus)alertStatus alertDate:(NSDate *)alertDate alertStatusDate:(NSDate *)alertStatusDate {
+- (id)initWithStatus:(PPCallCenterStatus)status userId:(PPUserId)userId missingFields:(RLMArray *)missingFields contacts:(RLMArray *)contacts codeword:(NSString *)codeword permit:(NSString *)permit alertStatus:(PPCallCenterAlertStatus)alertStatus alertDate:(NSDate *)alertDate alertStatusDate:(NSDate *)alertStatusDate {
     self = [super init];
     if(self) {
         self.status = status;
         self.userId = userId;
-        self.missingFields = missingFields;
-        self.contacts = contacts;
+        self.missingFields = (RLMArray<RLMString> *)missingFields;
+        self.contacts = (RLMArray<PPCallCenterContact *><PPCallCenterContact> *)contacts;
         self.codeword = codeword;
         self.permit = permit;
         self.alertStatus = alertStatus;
@@ -73,7 +77,7 @@
         }
     }
     
-    PPCallCenter *callCenter = [[PPCallCenter alloc] initWithStatus:status userId:userId missingFields:missingFields contacts:contacts codeword:codeword permit:permit alertStatus:alertStatus alertDate:alertDate alertStatusDate:alertStatusDate];
+    PPCallCenter *callCenter = [[PPCallCenter alloc] initWithStatus:status userId:userId missingFields:(RLMArray *)missingFields contacts:(RLMArray *)contacts codeword:codeword permit:permit alertStatus:alertStatus alertDate:alertDate alertStatusDate:alertStatusDate];
     
     return callCenter;
 }

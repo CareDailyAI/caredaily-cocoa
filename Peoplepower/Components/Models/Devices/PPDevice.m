@@ -21,35 +21,43 @@ NSString *DEVICE_LOCATION_ID = @"locationId";
 
 @implementation PPDevice
 
-//@synthesize deviceId;
-//@synthesize proxyId;
-//@synthesize typeId;
-//@synthesize locationId;
-//@synthesize category;
-//@synthesize typeAttributes;
-//@synthesize parameters;
-//@synthesize properties;
-//@synthesize name;
-//@synthesize connected;
-//@synthesize restricted;
-//@synthesize shared;
-//@synthesize newDevice;
-//@synthesize goalId;
-//@synthesize lastDataReceivedDate;
-//@synthesize lastMeasureDate;
-//@synthesize lastConnectedDate;
-//@synthesize icon;
++ (NSString *)primaryKey {
+    return @"deviceId";
+}
 
-- (id)initWithDeviceId:(NSString *)deviceId proxyId:(NSString *)proxyId name:(NSString *)name connected:(PPDeviceConnected)connected restricted:(PPDeviceRestricted)restricted shared:(PPDeviceShared)shared newDevice:(PPDeviceNewDevice)newDevice goalId:(PPDeviceTypeGoalId)goalId typeId:(PPDeviceTypeId)typeId category:(PPDeviceTypeCategory)category typeAttributes:(NSMutableArray *)typeAttributes locationId:(PPLocationId)locationId startDate:(NSDate *)startDate lastDataReceivedDate:(NSDate *)lastDataReceivedDate lastMeasureDate:(NSDate *)lastMeasureDate lastConnectedDate:(NSDate *)lastConnectedDate parameters:(NSMutableArray *)parameters properties:(NSMutableArray *)properties icon:(NSString *)icon spaces:(NSMutableArray *)spaces modelId:(NSString *)modelId {
+- (PPLocation *)location {
+    return [PPLocation objectForPrimaryKey:@(_locationId)];
+}
+/*
+@synthesize deviceId;
+@synthesize proxyId;
+@synthesize typeId;
+@synthesize locationId;
+@synthesize category;
+@synthesize typeAttributes;
+@synthesize parameters;
+@synthesize properties;
+@synthesize name;
+@synthesize connected;
+@synthesize restricted;
+@synthesize shared;
+@synthesize newDevice;
+@synthesize goalId;
+@synthesize lastDataReceivedDate;
+@synthesize lastMeasureDate;
+@synthesize lastConnectedDate;
+@synthesize icon;
+*/
+- (id)initWithDeviceId:(NSString *)deviceId proxyId:(NSString *)proxyId name:(NSString *)name connected:(PPDeviceConnected)connected restricted:(PPDeviceRestricted)restricted shared:(PPDeviceShared)shared newDevice:(PPDeviceNewDevice)newDevice goalId:(PPDeviceTypeGoalId)goalId typeId:(PPDeviceTypeId)typeId category:(PPDeviceTypeCategory)category typeAttributes:(RLMArray *)typeAttributes locationId:(PPLocationId)locationId startDate:(NSDate *)startDate lastDataReceivedDate:(NSDate *)lastDataReceivedDate lastMeasureDate:(NSDate *)lastMeasureDate lastConnectedDate:(NSDate *)lastConnectedDate parameters:(RLMArray *)parameters properties:(RLMArray *)properties icon:(NSString *)icon spaces:(RLMArray *)spaces modelId:(NSString *)modelId {
     self = [super init];
     if(self) {
         self.deviceId = deviceId;
         self.proxyId = proxyId;
         self.typeId = typeId;
         self.category = category;
-        self.typeAttributes = typeAttributes;
-        self.parameters = parameters;
-        self.properties = properties;
+        self.typeAttributes = (RLMArray<PPDeviceTypeAttribute *><PPDeviceTypeAttribute> *)typeAttributes;
+        self.parameters = (RLMArray<PPDeviceParameter *><PPDeviceParameter> *)parameters;
+        self.properties = (RLMArray<PPDeviceProperty *><PPDeviceProperty> *)properties;
         
         self.name = name;
         self.connected = connected;
@@ -63,7 +71,7 @@ NSString *DEVICE_LOCATION_ID = @"locationId";
         self.lastConnectedDate = lastConnectedDate;
         self.icon = icon;
         self.locationId = locationId;
-        self.spaces = spaces;
+        self.spaces = (RLMArray<PPLocationSpace *><PPLocationSpace> *)spaces;
         self.modelId = modelId;
     }
     return self;
@@ -192,7 +200,7 @@ NSString *DEVICE_LOCATION_ID = @"locationId";
     
     NSString *modelId = [deviceDict objectForKey:@"modelId"];
     
-    PPDevice *device = [[PPDevice alloc] initWithDeviceId:deviceId proxyId:proxyId name:name connected:connected restricted:restricted shared:shared newDevice:newDevice goalId:goalId typeId:typeId category:category typeAttributes:typeAttributes locationId:locationId startDate:startDate lastDataReceivedDate:lastDataReceivedDate lastMeasureDate:lastMeasureDate lastConnectedDate:lastConnectedDate parameters:parameters properties:properties icon:icon spaces:spaces modelId:modelId];
+    PPDevice *device = [[PPDevice alloc] initWithDeviceId:deviceId proxyId:proxyId name:name connected:connected restricted:restricted shared:shared newDevice:newDevice goalId:goalId typeId:typeId category:category typeAttributes:(RLMArray *)typeAttributes locationId:locationId startDate:startDate lastDataReceivedDate:lastDataReceivedDate lastMeasureDate:lastMeasureDate lastConnectedDate:lastConnectedDate parameters:(RLMArray *)parameters properties:(RLMArray *)properties icon:icon spaces:(RLMArray *)spaces modelId:modelId];
     return device;
 }
 
@@ -216,18 +224,19 @@ NSString *DEVICE_LOCATION_ID = @"locationId";
 
 - (void)setParameter:(NSString *)paramName value:(NSString *)paramValue index:(NSString *)paramIndex lastUpdateDate:(NSDate *)paramLastUpdateDate {
     if(!self.parameters) {
-        self.parameters = [[NSMutableArray alloc] initWithCapacity:0];
+        self.parameters = (RLMArray<PPDeviceParameter *><PPDeviceParameter> *)[[NSMutableArray alloc] initWithCapacity:0];
     }
-    PPDeviceParameter *param = [self parameterWithName:paramName index:paramIndex];
-    PPDeviceParameter *newParam = [[PPDeviceParameter alloc] initWithName:paramName index:paramIndex value:paramValue lastUpdateDate:paramLastUpdateDate];
-    if(param) {
-        if(![param.value isEqualToString:newParam.value] || [param.lastUpdateDate compare:newParam.lastUpdateDate] != NSOrderedSame) {
+#warning After removing logging this broke.  Need to check that paramaters are still being propagated to realm
+    [self.realm transactionWithBlock:^{
+        PPDeviceParameter *param = [self parameterWithName:paramName index:paramIndex];
+        PPDeviceParameter *newParam = [[PPDeviceParameter alloc] initWithName:paramName index:paramIndex value:paramValue lastUpdateDate:paramLastUpdateDate];
+        if(param) {
             [self.parameters replaceObjectAtIndex:[self.parameters indexOfObject:param] withObject:newParam];
         }
-    }
-    else {
-        [self.parameters addObject:newParam];
-    }
+        else {
+            [self.parameters addObject:newParam];
+        }
+    }];
 }
 
 //#pragma mark - Private

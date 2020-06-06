@@ -13,16 +13,18 @@ typedef NS_OPTIONS(NSInteger, PPDeviceMeasurementsAlertId) {
     PPDeviceMeasurementsAlertIdNone = -1
 };
 
-@interface PPDeviceMeasurementsAlert : NSObject <NSCopying>
+@interface PPDeviceMeasurementsAlert : RLMObject <NSCopying>
 
 @property (nonatomic) PPDeviceMeasurementsAlertId alertId;
 @property (nonatomic, strong) NSString *deviceId;
 @property (nonatomic, strong) NSString *alertType;
 @property (nonatomic, strong) NSDate *receivingDate;
-@property (nonatomic, strong) NSArray *params;
+@property (nonatomic, strong) RLMArray<PPDeviceParameter *><PPDeviceParameter> *params;
 
-- (id)initWithAlertId:(PPDeviceMeasurementsAlertId)alertId deviceId:(NSString *)deviceId alertType:(NSString *)alertType receivingDate:(NSDate *)receivingDate params:(NSArray *)params;
+- (id)initWithAlertId:(PPDeviceMeasurementsAlertId)alertId deviceId:(NSString *)deviceId alertType:(NSString *)alertType receivingDate:(NSDate *)receivingDate params:(RLMArray *)params;
 
 + (PPDeviceMeasurementsAlert *)initWithDictionary:(NSDictionary *)measurementAlertDict;
 
 @end
+
+RLM_ARRAY_TYPE(PPDeviceMeasurementsAlert);

@@ -10,11 +10,11 @@
 
 @implementation PPNotificationSMSMessage
 
-- (id)initWithTemplate:(NSString *)notificationTemplate content:(NSString *)content model:(NSDictionary *)model categories:(NSArray *)categories phones:(NSArray *)phones individual:(PPNotificationSMSMessageIndividual)individual {
+- (id)initWithTemplate:(NSString *)notificationTemplate content:(NSString *)content model:(PPNotificationMessageModel *)model categories:(RLMArray *)categories phones:(RLMArray *)phones individual:(PPNotificationSMSMessageIndividual)individual {
     self = [super initWithTemplate:notificationTemplate content:content model:model];
     if(self) {
-        self.categories = categories;
-        self.phones = phones;
+        self.categories = (RLMArray<RLMString> *)categories;
+        self.phones = (RLMArray<RLMString> *)phones;
         self.individual = individual;
     }
     return self;
@@ -28,7 +28,7 @@
     if([messageDict objectForKey:@"subject"]) {
         individual = (PPNotificationSMSMessageIndividual)((NSString *)[messageDict objectForKey:@"subject"]).integerValue;
     }
-    PPNotificationSMSMessage *SMSMessage = [[PPNotificationSMSMessage alloc] initWithTemplate:message.notificationTemplate content:message.content model:message.model categories:categories phones:phones individual:individual];
+    PPNotificationSMSMessage *SMSMessage = [[PPNotificationSMSMessage alloc] initWithTemplate:message.notificationTemplate content:message.content model:message.model categories:(RLMArray *)categories phones:(RLMArray *)phones individual:individual];
     
     return SMSMessage;
 }
@@ -45,14 +45,14 @@
         if(appendComma) {
             [JSONString appendString:@","];
         }
-        [JSONString appendFormat:@"\"categories\":[%@]", [message.categories componentsJoinedByString:@","]];
+        [JSONString appendFormat:@"\"categories\":[%@]", [PPRLMArray stringArray:message.categories componentsJoinedByString:@","]];
         appendComma = YES;
     }
     if([message.phones count]) {
         if(appendComma) {
             [JSONString appendString:@","];
         }
-        [JSONString appendFormat:@"\"phones\":[%@]", [message.phones componentsJoinedByString:@","]];
+        [JSONString appendFormat:@"\"phones\":[%@]", [PPRLMArray stringArray:message.phones componentsJoinedByString:@","]];
         appendComma = YES;
     }
     if(message.individual != PPNotificationSMSMessageIndividualNone) {
@@ -71,10 +71,10 @@
 + (NSDictionary *)data:(PPNotificationSMSMessage *)message {
     NSMutableDictionary *data = [super data:message].mutableCopy;
     if([message.categories count]) {
-        data[@"categories"] = message.categories;
+        data[@"categories"] = [PPRLMArray arrayFromArray:message.categories];
     }
     if([message.phones count]) {
-        data[@"phones"] = message.phones;
+        data[@"phones"] = [PPRLMArray arrayFromArray:message.phones];
     }
     if(message.individual != PPNotificationSMSMessageIndividualNone) {
         data[@"individual"] = (message.individual) ? @"true" : @"false";

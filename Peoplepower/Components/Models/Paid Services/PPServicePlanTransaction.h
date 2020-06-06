@@ -9,7 +9,7 @@
 #import "PPBaseModel.h"
 #import "PPServicePlan.h"
 
-@interface PPServicePlanTransaction : NSObject
+@interface PPServicePlanTransaction : RLMObject
 
 @property (nonatomic, strong) NSString *transactionId;
 @property (nonatomic, strong) NSString *gatewayId;
@@ -24,3 +24,5 @@
 + (PPServicePlanTransaction *)initWithDictionary:(NSDictionary *)transactionDict;
 
 @end
+
+RLM_ARRAY_TYPE(PPServicePlanTransaction);

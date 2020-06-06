@@ -6,14 +6,16 @@
 //  Copyright © 2020 People Power Company. All rights reserved.
 //
 
-@interface PPDeviceTypeParameterDisplayInfo : NSObject
+@interface PPDeviceTypeParameterDisplayInfo : RLMObject
 
-@property (nonatomic, strong) NSDictionary *info;
+@property (nonatomic, strong) PPRLMDictionary *info;
 
-- (id)initWithInfo:(NSDictionary *)info;
+- (id)initWithInfo:(PPRLMDictionary *)info;
 
 + (PPDeviceTypeParameterDisplayInfo *)initWithDictionary:(NSDictionary *)displayInfoDict;
 
 + (NSString *)stringify:(PPDeviceTypeParameterDisplayInfo *)displayInfo;
 
 @end
+
+RLM_ARRAY_TYPE(PPDeviceTypeParameterDisplayInfo);

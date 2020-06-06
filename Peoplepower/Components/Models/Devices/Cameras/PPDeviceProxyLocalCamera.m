@@ -20,7 +20,6 @@
 @end
 
 @implementation PPDeviceProxyLocalCamera
-@dynamic device;
 @dynamic delegate;
 @dynamic webSocket;
 

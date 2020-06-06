@@ -61,29 +61,35 @@ typedef void (^PPNotificationHistoryBlock)(NSArray * _Nullable notifications, NS
 
 /**
  * Shared notifications across the entire application
+ *
+ * @param userId Required PPUserId User Id to associate these notification with
  */
-+ (NSArray *)sharedNotifications;
++ (NSArray *)sharedNotificationsForUser:(PPUserId)userId;
 
 /**
  * Add notifications.
  * Add notifications to non-volatile reference.
  *
  * @param notifications NSArray Notifications to add
+ * @param userId Required PPUserId User Id to associate these notification with
  **/
-+ (void)addNotifications:(NSArray *)notifications;
++ (void)addNotifications:(NSArray *)notifications userId:(PPUserId)userId;
 
 /**
  * Remove notifications.
  * Remove notifications to non-volatile reference.
  *
  * @param notifications NSArray Notifications
+ * @param userId Required PPUserId User Id to associate these notification with
  **/
-+ (void)removeNotificaitons:(NSArray *)notifications;
++ (void)removeNotificaitons:(NSArray *)notifications userId:(PPUserId)userId;
 
 #pragma mark Notification Tokens
 
 /**
  * Shared tokens across the entire application
+ *
+ * @param userId Required PPUserId User Id to associate these token with
  */
 + (PPNotificationToken *)sharedTokenForUser:(PPUserId)userId;
 
@@ -92,7 +98,7 @@ typedef void (^PPNotificationHistoryBlock)(NSArray * _Nullable notifications, NS
  * Add APNs to non-volatile reference.
  *
  * @param notificationToken PPNotificationToken Notification token
- * @param userId Required PPUserId User Id to associate this token with
+ * @param userId Required PPUserId User Id to associate these token with
  **/
 + (void)addNotificationToken:(PPNotificationToken *)notificationToken userId:(PPUserId)userId;
 
@@ -101,7 +107,7 @@ typedef void (^PPNotificationHistoryBlock)(NSArray * _Nullable notifications, NS
  * Remove APNs to non-volatile reference.
  *
  * @param notificationToken PPNotificationToken Notification token
- * @param userId Required PPUserId User Id to disassociate this token with
+ * @param userId Required PPUserId User Id to associate these token with
  **/
 + (void)removeNotificaitonToken:(PPNotificationToken *)notificationToken userId:(PPUserId)userId;
 

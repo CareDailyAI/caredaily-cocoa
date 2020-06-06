@@ -60,7 +60,7 @@
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    NSArray *sharedCircles = @[];
+    RLMResults<PPCircle *> *sharedCircles = [PPCircle allObjects];
     
     NSMutableArray *sharedCirclesArray = [[NSMutableArray alloc] initWithCapacity:0];
     NSMutableArray *circlesArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
@@ -92,6 +92,15 @@
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s circles=%@", __PRETTY_FUNCTION__, circles);
+#endif
+#endif
+    [[PPRealm defaultRealm] beginWriteTransaction];
+    for(PPCircle *circle in circles) {
+        [PPCircle createOrUpdateInDefaultRealmWithValue:circle];
+    }
+    [[PPRealm defaultRealm] commitWriteTransaction];
+#ifdef DEBUG
+#ifdef DEBUG_MODELS
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
@@ -107,6 +116,15 @@
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s circles=%@", __PRETTY_FUNCTION__, circles);
+#endif
+#endif
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPCircle *circle in circles) {
+            [[PPRealm defaultRealm] deleteObject:[PPCircle objectForPrimaryKey:@(circle.circleId)]];
+        }
+    }];
+#ifdef DEBUG
+#ifdef DEBUG_MODELS
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
@@ -123,7 +141,7 @@
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    NSArray *sharedFiles = @[];
+    RLMResults<PPCircleFile *> *sharedFiles = [PPCircleFile allObjects];
     
     NSMutableArray *sharedFilesArray = [[NSMutableArray alloc] initWithCapacity:0];
     NSMutableArray *filesArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
@@ -152,6 +170,15 @@
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s files=%@", __PRETTY_FUNCTION__, files);
+#endif
+#endif
+    [[PPRealm defaultRealm] beginWriteTransaction];
+    for(PPCircleFile *file in files) {
+        [PPCircleFile createOrUpdateInDefaultRealmWithValue:file];
+    }
+    [[PPRealm defaultRealm] commitWriteTransaction];
+#ifdef DEBUG
+#ifdef DEBUG_MODELS
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
@@ -167,6 +194,15 @@
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s files=%@", __PRETTY_FUNCTION__, files);
+#endif
+#endif
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPCircleFile *file in files) {
+            [[PPRealm defaultRealm] deleteObject:[PPCircleFile objectForPrimaryKey:@(file.fileId)]];
+        }
+    }];
+#ifdef DEBUG
+#ifdef DEBUG_MODELS
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
@@ -183,7 +219,7 @@
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    NSArray *sharedPosts = @[];
+    RLMResults<PPCirclePost *> *sharedPosts = [PPCirclePost allObjects];
     
     NSMutableArray *sharedPostsArray = [[NSMutableArray alloc] initWithCapacity:0];
     NSMutableArray *postsArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
@@ -212,6 +248,11 @@
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s posts=%@", __PRETTY_FUNCTION__, posts);
+    [[PPRealm defaultRealm] beginWriteTransaction];
+    for(PPCirclePost *post in posts) {
+        [PPCirclePost createOrUpdateInDefaultRealmWithValue:post];
+    }
+    [[PPRealm defaultRealm] commitWriteTransaction];
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
@@ -227,6 +268,11 @@
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s posts=%@", __PRETTY_FUNCTION__, posts);
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPCirclePost *post in posts) {
+            [[PPRealm defaultRealm] deleteObject:[PPCirclePost objectForPrimaryKey:@(post.postId)]];
+        }
+    }];
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif

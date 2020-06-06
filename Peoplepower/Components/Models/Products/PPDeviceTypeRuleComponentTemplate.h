@@ -29,7 +29,7 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeRuleComponentTemplateConditionData) {
     PPDeviceTypeRuleComponentTemplateConditionDataLastAlertData = 1 << 3 // The last alert information sent from the device is needed to check the condition of this rule phrase.
 };
 
-@interface PPDeviceTypeRuleComponentTemplate : NSObject
+@interface PPDeviceTypeRuleComponentTemplate : RLMObject
 
 /* Template ID. The ID of this specific rule phrase. */
 @property (nonatomic) PPDeviceTypeRuleComponentTemplateId templateId;
@@ -71,15 +71,17 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeRuleComponentTemplateConditionData) {
 @property (nonatomic, strong) NSDate *updateDate;
 
 /* List of product ID's / device types that are compatible with this rule phrase. */
-@property (nonatomic, strong) NSArray *products;
+@property (nonatomic, strong) RLMArray<PPDeviceTypeRuleComponentTemplateProduct *><PPDeviceTypeRuleComponentTemplateProduct> *products;
 
 /* List of user input parameters to specify and fill out this rule phrase. */
-@property (nonatomic, strong) NSArray *parameters;
+@property (nonatomic, strong) RLMArray<PPRuleComponentParameter *><PPRuleComponentParameter> *parameters;
 
-- (id)initWithTemplateId:(PPDeviceTypeRuleComponentTemplateId )templateId name:(NSString *)name type:(PPRuleComponentType )type display:(PPRuleComponentDisplayType )display timezone:(PPRuleComponentTimezone )timezone desc:(NSString *)desc past:(NSString *)past source:(NSString *)source sourceType:(PPDeviceTypeRuleComponentTemplateSourceType )sourceType conditionData:(PPDeviceTypeRuleComponentTemplateConditionData )conditionData updateDate:(NSDate *)updateDate products:(NSArray *)products parameters:(NSArray *)parameters;
+- (id)initWithTemplateId:(PPDeviceTypeRuleComponentTemplateId )templateId name:(NSString *)name type:(PPRuleComponentType )type display:(PPRuleComponentDisplayType )display timezone:(PPRuleComponentTimezone )timezone desc:(NSString *)desc past:(NSString *)past source:(NSString *)source sourceType:(PPDeviceTypeRuleComponentTemplateSourceType )sourceType conditionData:(PPDeviceTypeRuleComponentTemplateConditionData )conditionData updateDate:(NSDate *)updateDate products:(RLMArray *)products parameters:(RLMArray *)parameters;
 
 + (PPDeviceTypeRuleComponentTemplate *)initWithDictionary:(NSDictionary *)componentDict;
 
 + (NSString *)stringify:(PPDeviceTypeRuleComponentTemplate *)component;
 
 @end
+
+RLM_ARRAY_TYPE(PPDeviceTypeRuleComponentTemplate);

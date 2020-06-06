@@ -35,7 +35,7 @@ typedef NS_OPTIONS(NSInteger, PPCloudsIntegrationClientAutoRefresh) {
     PPCloudsIntegrationClientAutoRefreshTrue = 1
 };
 
-@interface PPCloudsIntegrationClient : NSObject
+@interface PPCloudsIntegrationClient : RLMObject <NSCopying>
 
 @property (nonatomic, strong) NSString *appName;
 @property (nonatomic) PPCloudsIntegrationClientApplicationId appId;
@@ -53,3 +53,5 @@ typedef NS_OPTIONS(NSInteger, PPCloudsIntegrationClientAutoRefresh) {
 - (void)sync:(PPCloudsIntegrationClient *)client;
 
 @end
+
+RLM_ARRAY_TYPE(PPCloudsIntegrationClient);

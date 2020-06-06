@@ -15,8 +15,6 @@
 
 #pragma mark - Notification Messages
 
-__strong static NSMutableDictionary*_sharedMessages = nil;
-
 /**
  * Shared messages across the entire application
  */
@@ -26,48 +24,24 @@ __strong static NSMutableDictionary*_sharedMessages = nil;
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    if(!_sharedMessages) {
-        [PPInAppMessaging initializeSharedMessages];
-    }
-    NSMutableArray *sharedMessages = [[NSMutableArray alloc] initWithCapacity:0];
-    NSMutableArray *messagesArray = [[NSMutableArray alloc] initWithCapacity:0];
-    for(NSString *userIdKey in _sharedMessages.allKeys) {
-        for(PPInAppMessage *message in [_sharedMessages objectForKey:userIdKey]) {
-            NSMutableDictionary *messageIdentifiers = [[NSMutableDictionary alloc] initWithCapacity:2];
-            [messageIdentifiers setValue:@(message.messageId) forKey:@"messageId"];
-            [messagesArray addObject:messageIdentifiers];
-            
-            if([userIdKey isEqualToString:[NSString stringWithFormat:@"%li", (long)userId]]) {
-                [sharedMessages addObject:message];
-            }
-        }
-    }
+    RLMResults<PPInAppMessage *> *sharedMessages = [PPInAppMessage allObjects];
     
+    NSMutableArray *sharedMessagesArray = [[NSMutableArray alloc] initWithCapacity:0];
+    NSMutableArray *messagesArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
+    
+    for(PPInAppMessage *message in sharedMessages) {
+        
+        [sharedMessagesArray addObject:message];
+        NSMutableDictionary *messageIdentifiers = [[NSMutableDictionary alloc] initWithCapacity:2];
+        [messageIdentifiers setValue:@(message.messageId) forKey:@"messageId"];
+        [messagesArrayDebug addObject:messageIdentifiers];
+    }
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s sharedMessages=%@", __PRETTY_FUNCTION__, messagesArray);
+    NSLog(@"< %s sharedMessages=%@", __PRETTY_FUNCTION__, messagesArrayDebug);
 #endif
 #endif
-    return sharedMessages;
-}
-
-+ (void)initializeSharedMessages {
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"> %s", __PRETTY_FUNCTION__);
-#endif
-#endif
-    _sharedMessages = [[NSMutableDictionary alloc] initWithCapacity:0];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    NSData *storedMessagesData = [defaults objectForKey:@"user.notificationMessages"];
-//    if(storedMessagesData) {
-//        _sharedMessages = (NSMutableDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:storedMessagesData];
-//    }
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"< %s", __PRETTY_FUNCTION__);
-#endif
-#endif
+    return sharedMessagesArray;
 }
 
 /**
@@ -83,42 +57,14 @@ __strong static NSMutableDictionary*_sharedMessages = nil;
     NSLog(@"> %s messages=%@", __PRETTY_FUNCTION__, messages);
 #endif
 #endif
-    if(!_sharedMessages) {
-        [PPInAppMessaging initializeSharedMessages];
-    }
-    
-    NSMutableArray *messagesArray = [_sharedMessages objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!messagesArray) {
-        messagesArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-    
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
+    [[PPRealm defaultRealm] beginWriteTransaction];
     for(PPInAppMessage *message in messages) {
-        
-        BOOL found = NO;
-        for(PPInAppMessage *sharedMessage in messagesArray) {
-            if([sharedMessage isEqualToMessage:message]) {
-                [sharedMessage sync:message];
-                found = YES;
-                break;
-            }
-        }
-        if(!found) {
-            [indexSet addIndex:[messages indexOfObject:message]];
-        }
+        [PPInAppMessage createOrUpdateInDefaultRealmWithValue:message];
     }
-    
-    [messagesArray addObjectsFromArray:[messages objectsAtIndexes:indexSet]];
-    [_sharedMessages setObject:messagesArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    
-//    NSData *sharedMessageData = [NSKeyedArchiver archivedDataWithRootObject:_sharedMessages];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedMessageData forKey:@"user.notificationMessages"];
-//    [defaults synchronize];
-    
+    [[PPRealm defaultRealm] commitWriteTransaction];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s messagesArray=%@", __PRETTY_FUNCTION__, messagesArray);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }
@@ -136,37 +82,14 @@ __strong static NSMutableDictionary*_sharedMessages = nil;
     NSLog(@"> %s messages=%@", __PRETTY_FUNCTION__, messages);
 #endif
 #endif
-    
-    if(!_sharedMessages) {
-        [PPInAppMessaging initializeSharedMessages];
-    }
-    
-    NSMutableArray *messagesArray = [_sharedMessages objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!messagesArray) {
-        messagesArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-    
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
-    for(PPInAppMessage *message in messages) {
-        for(PPInAppMessage *sharedMessage in messagesArray) {
-            if([sharedMessage isEqualToMessage:message]) {
-                [indexSet addIndex:[messagesArray indexOfObject:sharedMessage]];
-                break;
-            }
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPInAppMessage *message in messages) {
+            [[PPRealm defaultRealm] deleteObject:[PPInAppMessage objectForPrimaryKey:@(message.messageId)]];
         }
-    }
-    
-    [messagesArray removeObjectsAtIndexes:indexSet];
-    [_sharedMessages setObject:messagesArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    
-//    NSData *sharedMessageData = [NSKeyedArchiver archivedDataWithRootObject:_sharedMessages];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedMessageData forKey:@"user.inAppMessages"];
-//    [defaults synchronize];
-    
+    }];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s messagesArray=%@", __PRETTY_FUNCTION__, messagesArray);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }

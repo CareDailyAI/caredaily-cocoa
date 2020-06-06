@@ -10,7 +10,11 @@
 
 @implementation PPCountry
 
-- (id)initWithCountryId:(PPCountryId)countryId name:(NSString *)name countryCode:(NSString *)countryCode currencyCode:(NSString *)currencyCode currencySymbol:(NSString *)currencySymbol zipFormat:(NSString *)zipFormat zipName:(NSString *)zipName stateName:(NSString *)stateName preferred:(PPPreferredCountry)preferred timezones:(NSArray *)timezones states:(NSArray *)states {
+//+ (NSString *)primaryKey {
+//    return @"countryId";
+//}
+
+- (id)initWithCountryId:(PPCountryId)countryId name:(NSString *)name countryCode:(NSString *)countryCode currencyCode:(NSString *)currencyCode currencySymbol:(NSString *)currencySymbol zipFormat:(NSString *)zipFormat zipName:(NSString *)zipName stateName:(NSString *)stateName preferred:(PPPreferredCountry)preferred timezones:(RLMArray *)timezones states:(RLMArray *)states {
     self = [super init];
     if(self) {
         self.countryId = countryId;
@@ -22,8 +26,8 @@
         self.zipName = zipName;
         self.stateName = stateName;
         self.preferred = preferred;
-        self.timezones = timezones;
-        self.states = states;
+        self.timezones = (RLMArray<PPTimezone *><PPTimezone> *)timezones;
+        self.states = (RLMArray<PPState *><PPState> *)states;
     }
     return self;
 }
@@ -64,7 +68,7 @@
         }
     }
     
-    PPCountry *country = [[PPCountry alloc] initWithCountryId:countryId name:name countryCode:countryCode currencyCode:currencyCode currencySymbol:currencySymbol zipFormat:zipFormat zipName:zipName stateName:stateName preferred:preferred timezones:timezones states:states];
+    PPCountry *country = [[PPCountry alloc] initWithCountryId:countryId name:name countryCode:countryCode currencyCode:currencyCode currencySymbol:currencySymbol zipFormat:zipFormat zipName:zipName stateName:stateName preferred:preferred timezones:(RLMArray<PPTimezone *><PPTimezone> *)timezones states:(RLMArray<PPState *><PPState> *)states];
     return country;
 }
 
@@ -82,8 +86,16 @@
     country.zipName = [self.zipName copyWithZone:zone];
     country.stateName = [self.stateName copyWithZone:zone];
     country.preferred = self.preferred;
-    country.timezones = self.timezones;
-    country.states = self.states;
+    NSMutableArray *timezones = [[NSMutableArray alloc] initWithCapacity:self.timezones.count];
+    for (PPTimezone *timezone in self.timezones) {
+        [timezones addObject:[timezone copyWithZone:zone]];
+    }
+    country.timezones = timezones;
+    NSMutableArray *states = [[NSMutableArray alloc] initWithCapacity:self.states.count];
+    for (PPState *state in self.states) {
+        [states addObject:[state copyWithZone:zone]];
+    }
+    country.states = states;
     
     return country;
 }

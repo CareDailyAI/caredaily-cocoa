@@ -126,5 +126,4 @@ typedef NS_OPTIONS(NSInteger, PPDeviceProxyLocalInitializationAttempts) {
 - (NSString *)webSocketURL;
 
 - (void)executeCommands:(NSArray *)parameters;
-
 @end

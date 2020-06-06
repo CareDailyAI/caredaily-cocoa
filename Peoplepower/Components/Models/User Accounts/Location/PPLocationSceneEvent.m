@@ -17,6 +17,10 @@ NSString *EVENT_TEST = @"TEST";
 
 @implementation PPLocationSceneEvent
 
++ (NSString *)primaryKey {
+    return @"eventId";
+}
+
 - (NSString *)eventId {
     if(_dateMS > 0) {
         return [NSString stringWithFormat:@"%li-%li-%@", (long)_locationId, (long)_dateMS, _event];

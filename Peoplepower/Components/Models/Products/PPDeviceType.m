@@ -10,7 +10,11 @@
 
 @implementation PPDeviceType
 
-- (id)initWithTypeId:(PPDeviceTypeId)typeId name:(NSString *)name editable:(PPDeviceTypeEditable)editable createdBy:(PPUser *)createdBy creationDate:(NSDate *)creationDate attributes:(NSArray *)attributes {
++ (NSString *)primaryKey {
+    return @"typeId";
+}
+
+- (id)initWithTypeId:(PPDeviceTypeId)typeId name:(NSString *)name editable:(PPDeviceTypeEditable)editable createdBy:(PPUser *)createdBy creationDate:(NSDate *)creationDate attributes:(RLMArray *)attributes {
     self = [super init];
     if(self) {
         self.typeId = typeId;
@@ -18,7 +22,7 @@
         self.editable = editable;
         self.createdBy = createdBy;
         self.creationDate = creationDate;
-        self.attributes = attributes;
+        self.attributes = (RLMArray<PPDeviceTypeAttribute *><PPDeviceTypeAttribute> *)attributes;
     }
     return self;
 }
@@ -55,7 +59,7 @@
         }
     }
     
-    PPDeviceType *type = [[PPDeviceType alloc] initWithTypeId:typeId name:name editable:editable createdBy:createdBy creationDate:creationDate attributes:attributes];
+    PPDeviceType *type = [[PPDeviceType alloc] initWithTypeId:typeId name:name editable:editable createdBy:createdBy creationDate:creationDate attributes:(RLMArray *)attributes];
     return type;
 }
 

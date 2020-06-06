@@ -18,7 +18,7 @@
     return [[PPBotengineAppMarketing alloc] initWithName:name author:author copyright:copyright desc:desc marketingUrl:marketingUrl supportUrl:supportUrl videoUrl:videoUrl privacyUrl:privacyUrl keywords:nil];
 }
 
-- (id)initWithName:(NSString *)name author:(NSString *)author copyright:(NSString *)copyright desc:(NSString *)desc marketingUrl:(NSString *)marketingUrl supportUrl:(NSString *)supportUrl videoUrl:(NSString *)videoUrl privacyUrl:(NSString *)privacyUrl keywords:(NSArray *)keywords {
+- (id)initWithName:(NSString *)name author:(NSString *)author copyright:(NSString *)copyright desc:(NSString *)desc marketingUrl:(NSString *)marketingUrl supportUrl:(NSString *)supportUrl videoUrl:(NSString *)videoUrl privacyUrl:(NSString *)privacyUrl keywords:(RLMArray *)keywords {
     self = [super init];
     if(self) {
         self.name = name;
@@ -29,7 +29,7 @@
         self.supportUrl = supportUrl;
         self.videoUrl = videoUrl;
         self.privacyUrl = privacyUrl;
-        self.keywords = keywords;
+        self.keywords = (RLMArray<RLMString> *)keywords;
     }
     return self;
 }

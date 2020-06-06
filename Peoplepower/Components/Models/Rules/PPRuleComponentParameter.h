@@ -47,7 +47,7 @@ typedef NS_OPTIONS(NSInteger, PPRuleComponentParameterMaxValue) {
     PPRuleComponentParameterMaxValueNone = -1,
 };
 
-@interface PPRuleComponentParameter : NSObject <NSCopying>
+@interface PPRuleComponentParameter : RLMObject <NSCopying>
 
 /* A descriptive name of the parameter, from the developer. Usually not displayed to the user. */
 @property (nonatomic, strong) NSString *name;
@@ -62,7 +62,7 @@ typedef NS_OPTIONS(NSInteger, PPRuleComponentParameterMaxValue) {
 @property (nonatomic, strong) NSString *desc;
 
 /* An object containing the possible values for the parameter, for example a list of devices and their nicknames that this rule phrase would apply to. */
-@property (nonatomic, strong) NSArray *values;
+@property (nonatomic, strong) RLMArray<PPRuleComponentParameterValue *><PPRuleComponentParameterValue> *values;
 
 /* A name of other parameter used as a selector in id/name enumeration list. */
 @property (nonatomic, strong) NSString *selectorName;
@@ -82,7 +82,7 @@ typedef NS_OPTIONS(NSInteger, PPRuleComponentParameterMaxValue) {
 /* Optional measure parameter unit (e.g. 'minute', 'hour', 'degrees C'). */
 @property (nonatomic, strong) NSString *unit;
 
-- (id)initWithName:(NSString *)name category:(PPRuleComponentParameterCategory)category optional:(PPRuleComponentParameterOptional)optional desc:(NSString *)desc values:(NSArray *)values selectorName:(NSString *)selectorName value:(PPRuleComponentParameterValue *)value minValue:(PPRuleComponentParameterMinValue)minValue maxValue:(PPRuleComponentParameterMaxValue)maxValue valueType:(PPRuleComponentParameterInputType)valueType unit:(NSString *)unit;
+- (id)initWithName:(NSString *)name category:(PPRuleComponentParameterCategory)category optional:(PPRuleComponentParameterOptional)optional desc:(NSString *)desc values:(RLMArray *)values selectorName:(NSString *)selectorName value:(PPRuleComponentParameterValue *)value minValue:(PPRuleComponentParameterMinValue)minValue maxValue:(PPRuleComponentParameterMaxValue)maxValue valueType:(PPRuleComponentParameterInputType)valueType unit:(NSString *)unit;
 
 + (PPRuleComponentParameter *)initWithDictionary:(NSDictionary *)parameterDict;
 
@@ -96,3 +96,5 @@ typedef NS_OPTIONS(NSInteger, PPRuleComponentParameterMaxValue) {
 - (void)sync:(PPRuleComponentParameter *)parameter;
 
 @end
+
+RLM_ARRAY_TYPE(PPRuleComponentParameter);

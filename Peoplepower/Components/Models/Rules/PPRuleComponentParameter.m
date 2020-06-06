@@ -17,7 +17,7 @@
         self.category = category;
         self.optional = optional;
         self.desc = desc;
-        self.values = values;
+        self.values = (RLMArray<PPRuleComponentParameterValue *><PPRuleComponentParameterValue> *)values;
         self.selectorName = selectorName;
         self.value = value;
         self.minValue = minValue;
@@ -67,7 +67,7 @@
     }
     NSString *unit = [parameterDict objectForKey:@"unit"];
     
-    PPRuleComponentParameter *parameter = [[PPRuleComponentParameter alloc] initWithName:name category:category optional:optional desc:desc values:values selectorName:selectorName value:value minValue:minValue maxValue:maxValue valueType:valueType unit:unit];
+    PPRuleComponentParameter *parameter = [[PPRuleComponentParameter alloc] initWithName:name category:category optional:optional desc:desc values:(RLMArray *)values selectorName:selectorName value:value minValue:minValue maxValue:maxValue valueType:valueType unit:unit];
     return parameter;
 }
 
@@ -168,7 +168,11 @@
     parameter.category = self.category;
     parameter.optional = self.optional;
     parameter.desc = [self.desc copyWithZone:zone];
-    parameter.values = [self.values copyWithZone:zone];
+    NSMutableArray *values = [[NSMutableArray alloc] initWithCapacity:self.values.count];
+    for (PPRuleComponentParameterValue *value in self.values) {
+        [values addObject:[value copyWithZone:zone]];
+    }
+    parameter.values = values;
     parameter.selectorName = [self.selectorName copyWithZone:zone];
     parameter.value = [self.value copyWithZone:zone];
     parameter.minValue = self.minValue;

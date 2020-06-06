@@ -8,7 +8,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PPCommunityUser : NSObject
+@interface PPCommunityUser : RLMObject
 
 @property (nonatomic) PPUserId userId;
 @property (nonatomic, strong) NSString *firstName;
@@ -25,5 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (PPCommunityUser *)initWithDictionary:(NSDictionary *)userDict;
 
 @end
+
+RLM_ARRAY_TYPE(PPCommunityUser);
 
 NS_ASSUME_NONNULL_END

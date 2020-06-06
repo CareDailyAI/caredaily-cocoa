@@ -22,7 +22,7 @@ extern NSString *RULE_COMPONENT_STATE_SCHEDULE_COMPONENT_PAMAMETER_NAME_2;
 
 @property (nonatomic) PPRuleComponentStateType stateType;
 
-- (id)initWithId:(PPRuleComponentId)componentId name:(NSString *)name stateType:(PPRuleComponentStateType)stateType displayType:(PPRuleComponentDisplayType)displayType desc:(NSString *)desc past:(NSString *)past timezone:(PPRuleComponentTimezone)timezone functionGroup:(NSString *)functionGroup parameters:(NSArray *)parameters serviceName:(NSString *)serviceName;
+- (id)initWithId:(PPRuleComponentId)componentId name:(NSString *)name stateType:(PPRuleComponentStateType)stateType displayType:(PPRuleComponentDisplayType)displayType desc:(NSString *)desc past:(NSString *)past timezone:(PPRuleComponentTimezone)timezone functionGroup:(NSString *)functionGroup parameters:(RLMArray *)parameters serviceName:(NSString *)serviceName;
 
 + (PPRuleComponentState *)initScheduleStateComponent:(PPRuleComponentStateType)stateType;
 
@@ -35,3 +35,5 @@ extern NSString *RULE_COMPONENT_STATE_SCHEDULE_COMPONENT_PAMAMETER_NAME_2;
 - (void)sync:(PPRuleComponentState *)ruleComponent;
 
 @end
+
+RLM_ARRAY_TYPE(PPRuleComponentState);

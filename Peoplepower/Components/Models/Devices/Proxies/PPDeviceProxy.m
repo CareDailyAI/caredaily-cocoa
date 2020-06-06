@@ -71,7 +71,7 @@ __strong static PPDeviceProxy *_currentProxy = nil;
     }
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s currentProxy=%@ localDevice=%@ device=%@", __PRETTY_FUNCTION__, _currentProxy, _currentProxy.localDevice, _currentProxy.localDevice.device);
+    NSLog(@"< %s currentProxy=%@ localDevice=%@", __PRETTY_FUNCTION__, _currentProxy, _currentProxy.localDevice);
 #endif
 #endif
     return _currentProxy;
@@ -223,7 +223,7 @@ __strong static PPDeviceProxy *_currentProxy = nil;
         [_localDevice.device setParameter:param.name value:param.value index:param.index lastUpdateDate:param.lastUpdateDate];
     }
     
-    PPDeviceMeasurement *measurement = [[PPDeviceMeasurement alloc] initWithDeviceId:_localDevice.device.deviceId lastDataReceivedDate:[NSDate date] lastMeasureDate:[NSDate date] params:parameters];
+    PPDeviceMeasurement *measurement = [[PPDeviceMeasurement alloc] initWithDeviceId:_localDevice.device.deviceId lastDataReceivedDate:[NSDate date] lastMeasureDate:[NSDate date] params:(RLMArray *)parameters];
     [measurements addObject:measurement];
     
     [self setHighSpeedMode:NO];
@@ -497,54 +497,62 @@ __strong static PPDeviceProxy *_currentProxy = nil;
             contentType = @"audio/mpeg";
         }
 		
-		__weak typeof(self)wself = self;
-  
-        [self sendFileOrFileFragment:(fileRef) ? (PPFileId)fileRef.integerValue : PPFileIdNone replacementFileId:(replacementFileId) ? (PPFileId)replacementFileId.integerValue : PPFileIdNone deviceId:device.deviceId proxyId:self.localDevice.device.deviceId fileExtension:extension expectedSize:(PPFileSize)expectedTotalBytes duration:(PPFileDuration)totalDuration rotate:(PPFileRotate)degrees type:mediaType thumbnail:(PPFileThumbnail)isThumbnail incomplete:(PPFileIncomplete)incomplete index:(PPFileFragmentIndex)fragmentIndex contentType:contentType data:data callback:^(NSString *status, PPFile *fileFragment, PPFileTotalFileSpace totalFileSpace, PPFileUsedFileSpace usedFileSpace, PPFileTwitterShare twitterShare, NSString *twitterAccount, NSString *contentUrl, PPFileStoragePolicy storagePolicy, NSDictionary *uploadHeaders, NSError *error) {
-           
-            if(error) {
-                // Keep trying
+		__weak PPDeviceProxy *weakSelf = self;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            __block NSString *deviceId = device.deviceId;
+            __block NSString *proxyId = weakSelf.localDevice.device.deviceId;
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+                [self sendFileOrFileFragment:(fileRef) ? (PPFileId)fileRef.integerValue : PPFileIdNone replacementFileId:(replacementFileId) ? (PPFileId)replacementFileId.integerValue : PPFileIdNone deviceId:deviceId proxyId:proxyId fileExtension:extension expectedSize:(PPFileSize)expectedTotalBytes duration:(PPFileDuration)totalDuration rotate:(PPFileRotate)degrees type:fileType thumbnail:(PPFileThumbnail)isThumbnail incomplete:(PPFileIncomplete)incomplete index:(PPFileFragmentIndex)fragmentIndex contentType:contentType data:data callback:^(NSString *status, PPFile *fileFragment, PPFileTotalFileSpace totalFileSpace, PPFileUsedFileSpace usedFileSpace, PPFileTwitterShare twitterShare, NSString *twitterAccount, NSString *contentUrl, PPFileStoragePolicy storagePolicy, NSDictionary *uploadHeaders, NSError *error) {
+                   
+                    if(error) {
+                        // Keep trying
 #ifdef DEBUG
-                NSLog(@"PPDeviceProxy sendFile: Error sending; keep trying: %@", error);
+                        NSLog(@"PPDeviceProxy sendFile: Error sending; keep trying");
 #endif
-                
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(wself.postFileRetryInterval * NSEC_PER_SEC)), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-                    [wself sendFile:data fileType:mediaType isThumbnail:isThumbnail rotation:degrees totalDuration:totalDuration fromDevice:device incomplete:incomplete fragmentIndex:fragmentIndex expectedTotalBytes:expectedTotalBytes fileRef:fileRef replacementFileId:replacementFileId attempt:attempt callback:callback];
-                });
-                return;
-             }
-            
-            if(!incomplete && !isThumbnail) {
-                [wself trackRecording:totalDuration];
-            }
-            if(status) {
-                [wself processServerResponse:@{@"status": status}];
-            }
-            callback(fileFragment.fileId, fileFragment.fragments, usedFileSpace, totalFileSpace, fileFragment.filesAction, fileFragment.thumbnail, twitterShare, error);
-            
-        }];
+                        
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(weakSelf.postFileRetryInterval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                            [weakSelf sendFile:data fileType:mediaType isThumbnail:isThumbnail rotation:degrees totalDuration:totalDuration fromDevice:device incomplete:incomplete fragmentIndex:fragmentIndex expectedTotalBytes:expectedTotalBytes fileRef:fileRef replacementFileId:replacementFileId attempt:attempt callback:callback];
+                        });
+                        return;
+                     }
+                    
+                    if(!incomplete && !isThumbnail) {
+                        [self trackRecording:totalDuration];
+                    }
+                    if(status) {
+                        [self processServerResponse:@{@"status": status}];
+                    }
+                    callback(fileFragment.fileId, fileFragment.fragments, usedFileSpace, totalFileSpace, fileFragment.filesAction, fileFragment.thumbnail, twitterShare, error);
+                    
+                }];
+            });
+        });
     });
 }
 
 
 - (void)sendFileOrFileFragment:(PPFileId)fileId replacementFileId:(PPFileId)replacementFileId deviceId:(NSString *)deviceId proxyId:(NSString *)proxyId fileExtension:(NSString *)fileExtension expectedSize:(PPFileSize)expectedSize duration:(PPFileDuration)fileDuration rotate:(PPFileRotate)rotate type:(PPFileFileType)type thumbnail:(PPFileThumbnail)thumbnail incomplete:(PPFileIncomplete)incomplete index:(PPFileFragmentIndex)fragmentIndex contentType:(NSString *)contentType data:(NSData *)data callback:(PPFileManagementFragmentBlock)callback {
-    
-    if(fileId != PPFileIdNone) {
-        [PPFileManagement uploadFileFragment:fileId proxyId:_localDevice.device.deviceId fileExtension:fileExtension thumbnail:thumbnail incomplete:incomplete index:fragmentIndex contentType:contentType authorizationType:PPFileManagementAuthorizationTypeDeviceAuthenticationToken token:_authToken sessionId:nil data:data callback:^(NSString *status, PPFile *fileFragment, PPFileTotalFileSpace totalFileSpace, PPFileUsedFileSpace usedFileSpace, PPFileTwitterShare twitterShare, NSString *twitterAccount, NSString *contentUrl, PPFileStoragePolicy storagePolicy, NSDictionary *uploadHeaders, NSError *error) {
-            callback(status, fileFragment, totalFileSpace, usedFileSpace, twitterShare, twitterAccount, contentUrl, storagePolicy, uploadHeaders, error);
-        }];
-        
-    }
-    else {
-        [PPFileManagement uploadNewFile:_localDevice.device.deviceId deviceId:_localDevice.device.deviceId fileExtension:fileExtension expectedSize:expectedSize duration:fileDuration rotate:rotate fileId:replacementFileId thumbnail:thumbnail incomplete:incomplete type:type contentType:contentType authorizationType:PPFileManagementAuthorizationTypeDeviceAuthenticationToken token:_authToken sessionId:nil data:data uploadUrl:PPFileUploadUrlNone progressBlock:^(NSProgress *progress) {
-            
-#ifdef DEBUG
-            NSLog(@"%s progress=%@", __PRETTY_FUNCTION__, progress);
-#endif
-            
-        } callback:^(NSString *status, PPFile *fileFragment, PPFileTotalFileSpace totalFileSpace, PPFileUsedFileSpace usedFileSpace, PPFileTwitterShare twitterShare, NSString *twitterAccount, NSString *contentUrl, PPFileStoragePolicy storagePolicy, NSDictionary *uploadHeaders, NSError *error) {
-            callback(status, fileFragment, totalFileSpace, usedFileSpace, twitterShare, twitterAccount, contentUrl, storagePolicy, uploadHeaders, error);
-        }];
-    }
+    __weak typeof(self)wself = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        __block NSString *deviceId = wself.localDevice.device.deviceId;
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+            if(fileId != PPFileIdNone) {
+                [PPFileManagement uploadFileFragment:fileId proxyId:deviceId fileExtension:fileExtension thumbnail:thumbnail incomplete:incomplete index:fragmentIndex contentType:contentType authorizationType:PPFileManagementAuthorizationTypeDeviceAuthenticationToken token:wself.authToken sessionId:nil data:data callback:^(NSString *status, PPFile *fileFragment, PPFileTotalFileSpace totalFileSpace, PPFileUsedFileSpace usedFileSpace, PPFileTwitterShare twitterShare, NSString *twitterAccount, NSString *contentUrl, PPFileStoragePolicy storagePolicy, NSDictionary *uploadHeaders, NSError *error) {
+                    callback(status, fileFragment, totalFileSpace, usedFileSpace, twitterShare, twitterAccount, contentUrl, storagePolicy, uploadHeaders, error);
+                }];
+                
+            }
+            else {
+                [PPFileManagement uploadNewFile:deviceId deviceId:deviceId fileExtension:fileExtension expectedSize:expectedSize duration:fileDuration rotate:rotate fileId:replacementFileId thumbnail:thumbnail incomplete:incomplete type:type contentType:contentType authorizationType:PPFileManagementAuthorizationTypeDeviceAuthenticationToken token:wself.authToken sessionId:nil data:data uploadUrl:PPFileUploadUrlNone progressBlock:^(NSProgress *progress) {
+#ifdef DEBUG                    
+                    NSLog(@"%s progress=%@", __PRETTY_FUNCTION__, progress);
+#endif        
+                } callback:^(NSString *status, PPFile *fileFragment, PPFileTotalFileSpace totalFileSpace, PPFileUsedFileSpace usedFileSpace, PPFileTwitterShare twitterShare, NSString *twitterAccount, NSString *contentUrl, PPFileStoragePolicy storagePolicy, NSDictionary *uploadHeaders, NSError *error) {
+                    callback(status, fileFragment, totalFileSpace, usedFileSpace, twitterShare, twitterAccount, contentUrl, storagePolicy, uploadHeaders, error);
+                }];
+            }
+        });
+    });
 }
 
 - (void)trackRecording:(PPFileDuration)totalDuration {
@@ -617,18 +625,27 @@ __strong static PPDeviceProxy *_currentProxy = nil;
 
 - (void)doPersistentConnection {
 	__weak PPDeviceProxy *weakSelf = self;
+    // Using Realm, device initialization executes setters and attempts to send measurements before our proxy device is created.
+    PPDevice *device = _localDevice.device;
+    if(!device) {
+        return;
+    }
+    __block NSString *proxyDeviceId = device.deviceId;
+    __block NSURL *baseUrl = [[PPCloudEngine sharedProxyEngine] getBaseURL];
 //    if(_localDevice.device == nil) {
 //        _localDevice.device = [PPDevices localDeviceForLocation:[[PPUserAccounts currentUser] currentLocation] userId:[PPUserAccounts currentUser].userId];
 //    }
 	dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.proxy", DISPATCH_QUEUE_SERIAL);
 	dispatch_async(queue, ^{
+        
+        PPCloudEngine *cloudEngine = [[PPCloudEngine alloc] initWithBaseURL:baseUrl];
+        
 		if(weakSelf.listeningToCommands || weakSelf.commandResponses.count || weakSelf.pendingMeasurements.count || weakSelf.pendingAlerts.count) {
             if(weakSelf.commandResponses.count || weakSelf.pendingMeasurements.count || weakSelf.pendingAlerts.count) {
                 NSMutableDictionary *JSON = [[NSMutableDictionary alloc] initWithCapacity:0];
                 NSString *seqNumber = [PPDeviceProxy uniqueSequenceNumber];
                 [JSON setValue:seqNumber forKey:@"seq"];
-                PPDevice *device = weakSelf.localDevice.device;
-                [JSON setValue:device.deviceId forKey:@"proxyId"];
+                [JSON setValue:proxyDeviceId forKey:@"proxyId"];
                 NSMutableArray *responses = [[NSMutableArray alloc] initWithCapacity:0];
                 for(PPDeviceCommand *response in [weakSelf.commandResponses copy]) {
                     [weakSelf addObjectToReliabilityBuffer:[response copy] type:PPDeviceProxyReliabilityBufferTypeCommandResponses];
@@ -793,7 +810,7 @@ __strong static PPDeviceProxy *_currentProxy = nil;
 				
 				NSError *error;
 				
-                weakSelf.commandsNetWrapper = [[[PPCloudEngine sharedProxyEngine] getRequestSerializer] requestWithMethod:@"POST" URLString:[NSURL URLWithString:[PPUrl deviceIOServerURLString:weakSelf.server]].absoluteString parameters:nil error:&error];
+                weakSelf.commandsNetWrapper = [[cloudEngine getRequestSerializer] requestWithMethod:@"POST" URLString:[NSURL URLWithString:[PPUrl deviceIOServerURLString:weakSelf.server]].absoluteString parameters:nil error:&error];
                 weakSelf.commandsNetWrapper.timeoutInterval = timeout;
                 // Trying to avoid a crash that occurred in our production baseline in Presence 4.0.8
                 @try {
@@ -820,12 +837,11 @@ __strong static PPDeviceProxy *_currentProxy = nil;
 				}
 				
 				NSError *error;
-                PPDevice *device = weakSelf.localDevice.device;
-                weakSelf.commandsNetWrapper = [[[PPCloudEngine sharedProxyEngine] getRequestSerializer] requestWithMethod:@"GET" URLString:[NSURL URLWithString: [NSString stringWithFormat:@"%@?id=%@&timeout=%ld", [PPUrl deviceIOServerURLString:weakSelf.server], device.deviceId, (long)timeout]].absoluteString parameters:nil error:&error];
+                weakSelf.commandsNetWrapper = [[cloudEngine getRequestSerializer] requestWithMethod:@"GET" URLString:[NSURL URLWithString: [NSString stringWithFormat:@"%@?id=%@&timeout=%ld", [PPUrl deviceIOServerURLString:weakSelf.server], proxyDeviceId, (long)timeout]].absoluteString parameters:nil error:&error];
 				[weakSelf.commandsNetWrapper setTimeoutInterval:timeout];
 			}
-			[weakSelf.commandsNetWrapper setValue:[NSString stringWithFormat:@"esp token=%@", self.authToken] forHTTPHeaderField:HTTP_HEADER_PPC_AUTHORIZATION];
-            weakSelf.proxyNetworkOperation = [[PPCloudEngine sharedProxyEngine] operationWithRequest:weakSelf.commandsNetWrapper success:^(NSData *responseData) {
+			[weakSelf.commandsNetWrapper setValue:[NSString stringWithFormat:@"esp token=%@", weakSelf.authToken] forHTTPHeaderField:HTTP_HEADER_PPC_AUTHORIZATION];
+            weakSelf.proxyNetworkOperation = [cloudEngine operationWithRequest:weakSelf.commandsNetWrapper success:^(NSData *responseData) {
 #ifdef DEBUG
                 NSLog(@"%s SUCCESS: %@", __PRETTY_FUNCTION__, [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
 #endif
@@ -919,18 +935,27 @@ __strong static PPDeviceProxy *_currentProxy = nil;
 
 - (void)cleanProxyConnection {
     __weak PPDeviceProxy *weakSelf = self;
+    // Using Realm, device initialization executes setters and attempts to send measurements before our proxy device is created.
+    PPDevice *device = _localDevice.device;
+    if(!device) {
+        return;
+    }
+    __block NSString *proxyDeviceId = device.deviceId;
+    __block NSURL *baseUrl = [[PPCloudEngine sharedProxyEngine] getBaseURL];
 
     dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.proxy", DISPATCH_QUEUE_SERIAL);
     dispatch_async(queue, ^{
+        
+        PPCloudEngine *cloudEngine = [[PPCloudEngine alloc] initWithBaseURL:baseUrl];
+        
         NSInteger timeout = 0;
 
         NSError *error;
-        PPDevice *device = weakSelf.localDevice.device;
-        weakSelf.commandsNetWrapper = [[[PPCloudEngine sharedProxyEngine] getRequestSerializer] requestWithMethod:@"GET" URLString:[NSURL URLWithString: [NSString stringWithFormat:@"%@?id=%@&timeout=%ld", [PPUrl deviceIOServerURLString:weakSelf.server], device.deviceId, (long)timeout]].absoluteString parameters:nil error:&error];
+        weakSelf.commandsNetWrapper = [[cloudEngine getRequestSerializer] requestWithMethod:@"GET" URLString:[NSURL URLWithString: [NSString stringWithFormat:@"%@?id=%@&timeout=%ld", [PPUrl deviceIOServerURLString:weakSelf.server], proxyDeviceId, (long)timeout]].absoluteString parameters:nil error:&error];
         [weakSelf.commandsNetWrapper setTimeoutInterval:timeout];
         [weakSelf.commandsNetWrapper setValue:[NSString stringWithFormat:@"esp token=%@", weakSelf.authToken] forHTTPHeaderField:HTTP_HEADER_PPC_AUTHORIZATION];
         
-        weakSelf.proxyNetworkOperation = [[PPCloudEngine sharedProxyEngine] operationWithRequest:weakSelf.commandsNetWrapper success:^(NSData *responseData) {
+        weakSelf.proxyNetworkOperation = [cloudEngine operationWithRequest:weakSelf.commandsNetWrapper success:^(NSData *responseData) {
             
 #ifdef DEBUG
             NSLog(@"%s SUCCESS: %@", __PRETTY_FUNCTION__, [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
@@ -1043,7 +1068,7 @@ __strong static PPDeviceProxy *_currentProxy = nil;
             [PPUserAnalytics track:@"ioscamera" properties:properties logLevel:ANALYTICS_LEVEL_ALERT];
         }
         
-        NSDictionary *returnElement = commandBlock(command.parameters);
+        NSDictionary *returnElement = commandBlock([PPRLMArray arrayFromArray:command.parameters]);
         if(returnElement) {
             [returnElements addObject:returnElement];
         }
@@ -1060,7 +1085,7 @@ __strong static PPDeviceProxy *_currentProxy = nil;
     [self.commandResponses addObject:responseCommand];
     
     if(returnElements.count > 0) {
-        PPDeviceCommand *returnCommand = [[PPDeviceCommand alloc] initWithCommandId:command.commandId deviceId:command.deviceId creationDate:command.creationDate typeId:command.typeId parameters:returnElements type:command.type result:PPDeviceCommandResultNone commandTimeout:PPDeviceCommandTimeoutNone comment:nil];
+        PPDeviceCommand *returnCommand = [[PPDeviceCommand alloc] initWithCommandId:command.commandId deviceId:command.deviceId creationDate:command.creationDate typeId:command.typeId parameters:(RLMArray *)returnElements type:command.type result:PPDeviceCommandResultNone commandTimeout:PPDeviceCommandTimeoutNone comment:nil];
         [self.commandResponses addObject:returnCommand];
     }
 }
@@ -1161,7 +1186,7 @@ __strong static PPDeviceProxy *_currentProxy = nil;
 }
 
 - (void)localDeviceDidExecuteCommand:(NSArray *)parameters {
-    PPDeviceMeasurement *measurement = [[PPDeviceMeasurement alloc] initWithDeviceId:_localDevice.device.deviceId lastDataReceivedDate:[NSDate date] lastMeasureDate:[NSDate date] params:parameters];
+    PPDeviceMeasurement *measurement = [[PPDeviceMeasurement alloc] initWithDeviceId:_localDevice.device.deviceId lastDataReceivedDate:[NSDate date] lastMeasureDate:[NSDate date] params:(RLMArray *)parameters];
     
 #ifdef DEBUG
     NSLog(@"%s command=%@", __PRETTY_FUNCTION__, parameters);

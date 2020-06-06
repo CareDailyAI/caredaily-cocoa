@@ -149,9 +149,10 @@ typedef NS_OPTIONS(NSInteger, PPUserAccountsStateOverwrite) {
  * Remove countries.
  * Remove countries from local reference.
  *
- * @param userId Required PPUserId User Id to associate these countries with
+ * @param countries NSArray Countries object to remove.
+ * @param userId Required PPUserId User Id to associate these objects with
  **/
-+ (void)removeCountriesForUserId:(PPUserId)userId;
++ (void)removeCountries:(NSArray *)countries userId:(PPUserId)userId;
 
 #pragma mark - Manage a user
 

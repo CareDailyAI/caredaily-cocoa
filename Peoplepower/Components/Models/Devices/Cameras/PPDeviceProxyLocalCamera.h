@@ -73,6 +73,8 @@
 - (void)connectWebSocket;
 - (NSString *)webSocketURL;
 
+- (PPDeviceCameraLocal *)device;
+
 #pragma mark - Streaming
 
 - (void)startPublishing;

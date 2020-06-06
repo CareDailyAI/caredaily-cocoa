@@ -10,6 +10,10 @@
 
 @implementation PPStoreProduct
 
++ (NSString *)primaryKey {
+    return @"productId";
+}
+
 - (id)initWithId:(PPStoreProductId)productId thumbnail:(NSString *)thumbnail name:(NSString *)name desc:(NSString *)desc productLink:(NSString *)productLink imageUrl:(NSString *)imageUrl imageHeight:(PPStoreProductImageHeight)imageHeight {
     self = [super init];
     if(self) {

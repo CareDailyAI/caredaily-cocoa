@@ -10,7 +10,7 @@
 
 @implementation PPDeviceTypeParameterDisplayInfo
 
-- (id)initWithInfo:(NSDictionary *)info {
+- (id)initWithInfo:(PPRLMDictionary *)info {
     self = [super init];
     if(self) {
         self.info = info;
@@ -19,7 +19,7 @@
 }
 
 + (PPDeviceTypeParameterDisplayInfo *)initWithDictionary:(NSDictionary *)displayInfoDict {
-    return [[PPDeviceTypeParameterDisplayInfo alloc] initWithInfo:displayInfoDict];
+    return [[PPDeviceTypeParameterDisplayInfo alloc] initWithInfo:[PPRLMDictionary initWithDictionary:displayInfoDict]];
 }
 
 + (NSString *)stringify:(PPDeviceTypeParameterDisplayInfo *)displayInfo {

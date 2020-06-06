@@ -46,7 +46,7 @@ typedef NS_OPTIONS(NSInteger, PPCommunityEventAllDay) {
     PPCommunityEventAllDayTrue = 1
 };
 
-@interface PPCommunityPost : NSObject
+@interface PPCommunityPost : RLMObject
 
 @property (nonatomic) PPCommunityPostType postType;
 @property (nonatomic) PPCommunityPostId postId;
@@ -55,28 +55,28 @@ typedef NS_OPTIONS(NSInteger, PPCommunityEventAllDay) {
 @property (nonatomic) PPCommunityModerator byModerator;
 @property (nonatomic, strong) PPCommunityUser *user;
 @property (nonatomic) PPCommunityId communityId;
-@property (nonatomic, strong) NSDate * creationDate;
+@property (nonatomic, strong) NSDate *creationDate;
 @property (nonatomic, strong) NSString * _Nullable title;
 @property (nonatomic, strong) NSString * _Nullable topic;
-@property (nonatomic, strong) NSURL * _Nullable driveUrl;
+@property (nonatomic, strong) NSString * _Nullable driveUrl;
 @property (nonatomic, strong) NSString * _Nullable postText;
 
 // Event parameters
 @property (nonatomic) PPCommunityEventAllDay allDay;
 @property (nonatomic, strong) NSDate * _Nullable eventDate;
 @property (nonatomic, strong) NSDate * _Nullable nextEventDate;
-@property (nonatomic) NSNumber * _Nullable duration;
+@property (nonatomic) NSNumber<RLMInt> * _Nullable duration;
 @property (nonatomic) NSString * _Nullable repeat;
 @property (nonatomic, strong) NSDate * _Nullable repeatEndDate;
 
-@property (nonatomic) NSNumber * _Nullable latitude;
-@property (nonatomic) NSNumber * _Nullable longitude;
-@property (nonatomic) PPAddress * _Nullable address;
 
-@property (nonatomic, strong) NSArray *files;
-@property (nonatomic, strong) NSArray *reactions;
-@property (nonatomic, strong) NSArray *comments;
-@property (nonatomic, strong) NSArray *reminders;
+@property (nonatomic) NSNumber<RLMFloat> * _Nullable latitude;
+@property (nonatomic) NSNumber<RLMFloat> * _Nullable longitude;
+@property (nonatomic) PPAddress * _Nullable address;
+@property (nonatomic, strong) RLMArray<PPCommunityFile *><PPCommunityFile> *files;
+@property (nonatomic, strong) RLMArray<PPCommunityReaction *><PPCommunityReaction> *reactions;
+@property (nonatomic, strong) RLMArray<PPCommunityComment *><PPCommunityComment> *comments;
+@property (nonatomic, strong) RLMArray<PPCommunityPostReminder *><PPCommunityPostReminder> *reminders;
 
 
 - (id)initWithPostType:(PPCommunityPostType)postType
@@ -100,14 +100,16 @@ typedef NS_OPTIONS(NSInteger, PPCommunityEventAllDay) {
               latitude:(NSNumber *)latitude
              longitude:(NSNumber *)longitude
                address:(PPAddress *)address
-                 files:(NSArray *)files
-             reactions:(NSArray *)reactions
-               comment:(NSArray *)comment
-             reminders:(NSArray *)reminders;
+                 files:(RLMArray *)files
+             reactions:(RLMArray *)reactions
+               replies:(RLMArray *)comments
+             reminders:(RLMArray *)reminders;
 
 + (PPCommunityPost *)initWithDictionary:(NSDictionary *)postDict;
 
 + (NSDictionary *)dataFromPost:(PPCommunityPost *)post;
 @end
+
+RLM_ARRAY_TYPE(PPCommunityPost);
 
 NS_ASSUME_NONNULL_END

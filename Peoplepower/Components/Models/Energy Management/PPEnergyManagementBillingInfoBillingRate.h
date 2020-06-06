@@ -27,7 +27,7 @@ typedef NS_OPTIONS(NSInteger, PPEnergyManagementBillingInfoBillingRateTypical) {
     PPEnergyManagementBillingInfoBillingRateTypicalTrue = 1
 };
 
-@interface PPEnergyManagementBillingInfoBillingRate : NSObject
+@interface PPEnergyManagementBillingInfoBillingRate : RLMObject
 
 @property (nonatomic) PPEnergyManagementBillingInfoBillingRateId billingRateId;
 @property (nonatomic) PPEnergyManagementBillingInfoBillingRateType type;
@@ -41,3 +41,5 @@ typedef NS_OPTIONS(NSInteger, PPEnergyManagementBillingInfoBillingRateTypical) {
 + (NSString *)stringify:(PPEnergyManagementBillingInfoBillingRate *)billingRate;
 
 @end
+
+RLM_ARRAY_TYPE(PPEnergyManagementBillingInfoBillingRate);

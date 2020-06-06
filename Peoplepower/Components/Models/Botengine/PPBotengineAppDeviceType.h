@@ -10,7 +10,7 @@
 
 @class PPDeviceType;
 
-@interface PPBotengineAppDeviceType : NSObject
+@interface PPBotengineAppDeviceType : RLMObject
 
 @property (nonatomic, strong) PPDeviceType *deviceType;
 @property (nonatomic) NSInteger minOccurence;
@@ -22,3 +22,5 @@
 - (id)initWithDeviceType:(PPDeviceType *)deviceType minOccurence:(NSInteger)minOccurence trigger:(BOOL)trigger read:(BOOL)read control:(BOOL)control reason:(NSString *)reason;
 
 @end
+
+RLM_ARRAY_TYPE(PPBotengineAppDeviceType);

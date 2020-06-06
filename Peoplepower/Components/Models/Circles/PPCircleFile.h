@@ -31,3 +31,5 @@ typedef NS_OPTIONS(NSInteger, PPCircleFileHeight) {
 + (PPCircleFile *)initWithDictionary:(NSDictionary *)fileDict;
 
 @end
+
+RLM_ARRAY_TYPE(PPCircleFile);

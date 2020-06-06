@@ -42,7 +42,7 @@ typedef NS_OPTIONS(long long, PPFileSummaryFavourite) {
     PPFileSummaryFavouriteNone = -1
 };
 
-@interface PPFileSummary : NSObject
+@interface PPFileSummary : RLMObject
 
 /* File creation date rounded to the beginning of an aggregation period */
 @property (nonatomic, strong) NSDate *date;
@@ -67,3 +67,5 @@ typedef NS_OPTIONS(long long, PPFileSummaryFavourite) {
 + (PPFileSummary *)initWithDictionary:(NSDictionary *)summaryDict;
 
 @end
+
+RLM_ARRAY_TYPE(PPFileSummary);

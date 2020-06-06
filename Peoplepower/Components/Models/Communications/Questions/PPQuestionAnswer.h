@@ -34,7 +34,7 @@ typedef NS_OPTIONS(NSInteger, PPQuestionAnswerModified) {
     PPQuestionAnswerModifiedTrue = 1
 };
 
-@interface PPQuestionAnswer : NSObject
+@interface PPQuestionAnswer : RLMObject
 
 /* Answer Status */
 @property (nonatomic) PPQuestionAnswerStatus status;
@@ -77,3 +77,5 @@ typedef NS_OPTIONS(NSInteger, PPQuestionAnswerModified) {
 + (PPQuestionAnswer *)initWithDictionary:(NSDictionary *)answerDict;
 
 @end
+
+RLM_ARRAY_TYPE(PPQuestionAnswer);

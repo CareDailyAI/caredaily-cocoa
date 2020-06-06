@@ -10,13 +10,13 @@
 
 @implementation PPDeviceMeasurement
 
-- (id)initWithDeviceId:(NSString *)deviceId lastDataReceivedDate:(NSDate *)lastDataReceivedDate lastMeasureDate:(NSDate *)lastMeasureDate params:(NSArray *)params {
+- (id)initWithDeviceId:(NSString *)deviceId lastDataReceivedDate:(NSDate *)lastDataReceivedDate lastMeasureDate:(NSDate *)lastMeasureDate params:(RLMArray *)params {
     self = [super self];
     if(self) {
         self.deviceId = deviceId;
         self.lastDataReceivedDate = lastDataReceivedDate;
         self.lastMeasureDate = lastMeasureDate;
-        self.parameters = params;
+        self.parameters = (RLMArray<PPDeviceParameter *><PPDeviceParameter> *)params;
     }
     return self;
 }
@@ -51,7 +51,7 @@
         }
     }
     
-    PPDeviceMeasurement *measurement = [[PPDeviceMeasurement alloc] initWithDeviceId:deviceId lastDataReceivedDate:lastDataReceivedDate lastMeasureDate:lastMeasureDate params:params];
+    PPDeviceMeasurement *measurement = [[PPDeviceMeasurement alloc] initWithDeviceId:deviceId lastDataReceivedDate:lastDataReceivedDate lastMeasureDate:lastMeasureDate params:(RLMArray *)params];
     return measurement;
 }
 
@@ -63,7 +63,11 @@
     measurement.deviceId = [self.deviceId copyWithZone:zone];
     measurement.lastDataReceivedDate = [self.lastDataReceivedDate copyWithZone:zone];
     measurement.lastMeasureDate = [self.lastMeasureDate copyWithZone:zone];
-    measurement.parameters = self.parameters;
+    NSMutableArray *parameters = [[NSMutableArray alloc] initWithCapacity:self.parameters.count];
+    for (PPDeviceParameter *parameter in self.parameters) {
+        [parameters addObject:[parameter copyWithZone:zone]];
+    }
+    measurement.parameters = parameters;
     
     return measurement;
 }

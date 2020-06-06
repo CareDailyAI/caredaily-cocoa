@@ -55,7 +55,7 @@ typedef NS_OPTIONS(NSInteger, PPBotengineAppType) {
     PPBotengineAppTypeCircleUserCircles = 3, // The bot is intended for purchase by the circle users for their circles
 };
 
-@interface PPBotengineApp : NSObject
+@interface PPBotengineApp : RLMObject
 
 @property (nonatomic, strong) NSString *bundle;
 @property (nonatomic, strong) PPBotengineAppMarketing *marketing;
@@ -63,13 +63,13 @@ typedef NS_OPTIONS(NSInteger, PPBotengineAppType) {
 @property (nonatomic) PPBotengineAppCategory category;
 @property (nonatomic, strong) NSString *instanceSummary;
 @property (nonatomic, strong) PPBotengineAppRating *rating;
-@property (nonatomic, strong) NSArray *versions;
+@property (nonatomic, strong) RLMArray<PPBotengineAppVersion *><PPBotengineAppVersion> *versions;
 @property (nonatomic) NSInteger trigger;
 @property (nonatomic, strong) NSString *schedule;
-@property (nonatomic, strong) NSArray *events;
-@property (nonatomic, strong) NSArray *deviceTypes;
-@property (nonatomic, strong) NSArray *access;
-@property (nonatomic, strong) NSArray *communications;
+@property (nonatomic, strong) RLMArray<RLMString> *events;
+@property (nonatomic, strong) RLMArray<PPBotengineAppDeviceType *><PPBotengineAppDeviceType> *deviceTypes;
+@property (nonatomic, strong) RLMArray<PPBotengineAppAccess *><PPBotengineAppAccess> *access;
+@property (nonatomic, strong) RLMArray<PPBotengineAppCommunications *><PPBotengineAppCommunications> *communications;
 
 + (PPBotengineApp *)appFromAppDict:(NSDictionary *)appDict;
 
@@ -77,6 +77,8 @@ typedef NS_OPTIONS(NSInteger, PPBotengineAppType) {
 
 + (PPBotengineApp *)appWithBundle:(NSString *)bundle category:(PPBotengineAppCategory)category marketing:(PPBotengineAppMarketing *)marketing rating:(PPBotengineAppRating *)rating compatible:(BOOL)compatible;
 
-- (id)initWithBundle:(NSString *)bundle category:(PPBotengineAppCategory)category marketing:(PPBotengineAppMarketing *)marketing rating:(PPBotengineAppRating *)rating compatible:(BOOL)compatible instanceSummary:(NSString *)instanceSummary versions:(NSArray *)versions trigger:(NSInteger)trigger schedule:(NSString *)schedule events:(NSArray *)events deviceTypes:(NSArray *)deviceTypes access:(NSArray *)access communications:(NSArray *)communications;
+- (id)initWithBundle:(NSString *)bundle category:(PPBotengineAppCategory)category marketing:(PPBotengineAppMarketing *)marketing rating:(PPBotengineAppRating *)rating compatible:(BOOL)compatible instanceSummary:(NSString *)instanceSummary versions:(RLMArray *)versions trigger:(NSInteger)trigger schedule:(NSString *)schedule events:(RLMArray *)events deviceTypes:(RLMArray *)deviceTypes access:(RLMArray *)access communications:(RLMArray *)communications;
 
 @end
+
+RLM_ARRAY_TYPE(PPBotengineApp);

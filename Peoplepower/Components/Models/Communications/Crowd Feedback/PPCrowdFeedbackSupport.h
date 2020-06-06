@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPCrowdFeedbackSupport : NSObject
+@interface PPCrowdFeedbackSupport : RLMObject
 
 @property (nonatomic, strong) NSString *firstName;
 @property (nonatomic, strong) NSString *lastName;
@@ -25,3 +25,5 @@
 + (NSDictionary *)data:(PPCrowdFeedbackSupport *)support;
 
 @end
+
+RLM_ARRAY_TYPE(PPCrowdFeedbackSupport);

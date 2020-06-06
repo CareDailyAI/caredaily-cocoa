@@ -24,6 +24,24 @@
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s measurements=%@", __PRETTY_FUNCTION__, measurements);
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPDeviceMeasurement *measurement in measurements) {
+            PPDevice *device = [PPDevice objectForPrimaryKey:measurement.deviceId];
+            for(PPDeviceParameter *parameter in measurement.parameters) {
+                BOOL found = NO;
+                for(PPDeviceParameter *existingParameter in device.parameters) {
+                    if([parameter.name isEqualToString:existingParameter.name] && parameter.index == existingParameter.index) {
+                        existingParameter.value = parameter.value;
+                        existingParameter.lastUpdateDate = parameter.lastUpdateDate;
+                        found = YES;
+                    }
+                }
+                if(!found) {
+                    [device.parameters addObject:parameter];
+                }
+            }
+        }
+    }];
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
@@ -40,6 +58,32 @@
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s readings=%@", __PRETTY_FUNCTION__, readings);
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPDeviceMeasurementsReading *reading in readings) {
+            PPDevice *device = [PPDevice objectForPrimaryKey:reading.deviceId];
+            BOOL found = NO;
+            for(PPDeviceMeasurementsReading *existingReading in [PPDeviceMeasurementsReading objectsWhere:@"deviceId == %@", device.deviceId]) {
+                if([reading.timeStamp compare:existingReading.timeStamp] == NSOrderedSame) {
+                    BOOL foundParam = NO;
+                    for(PPDeviceParameter *param in reading.params) {
+                        for(PPDeviceParameter *existingParam in existingReading.params) {
+                            if([param.name isEqualToString:existingParam.name] && param.index == existingParam.index) {
+                                existingParam.value = param.value;
+                                existingParam.lastUpdateDate = param.lastUpdateDate;
+                                found = YES;
+                            }
+                        }
+                        if(!foundParam) {
+                            [existingReading.params addObject:param];
+                        }
+                    }
+                }
+            }
+            if(!found) {
+                [[PPRealm defaultRealm] addObject:reading];
+            }
+        }
+    }];
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
@@ -56,6 +100,21 @@
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s alerts=%@", __PRETTY_FUNCTION__, alerts);
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPDeviceMeasurementsAlert *alert in alerts) {
+            PPDevice *device = [PPDevice objectForPrimaryKey:alert.deviceId];
+            BOOL found = NO;
+            for(PPDeviceMeasurementsAlert *existingAlert in [PPDeviceMeasurementsAlert objectsWhere:@"deviceId == %@", device.deviceId]) {
+                if([alert.receivingDate compare:existingAlert.receivingDate] == NSOrderedSame && [alert.alertType isEqualToString:existingAlert.alertType]) {
+                    existingAlert.params = alert.params;
+                    found = YES;
+                }
+            }
+            if(!found) {
+                [[PPRealm defaultRealm] addObject:alert];
+            }
+        }
+    }];
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
@@ -72,6 +131,11 @@
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s unitsOfMeasurement=%@", __PRETTY_FUNCTION__, unitsOfMeasurement);
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPDeviceMeasurementUnit *unit in unitsOfMeasurement) {
+            [PPDeviceMeasurementUnit createOrUpdateInDefaultRealmWithValue:unit];
+        }
+    }];
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif

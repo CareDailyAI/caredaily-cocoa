@@ -10,6 +10,10 @@
 
 @implementation PPServicePlanTransaction
 
++ (NSString *)primaryKey {
+    return @"transactionId";
+}
+
 - (id)initWithId:(NSString *)transactionId gatewayId:(NSString *)gatewayId status:(PPServicePlanStatus)status issueDate:(NSDate *)issueDate startDate:(NSDate *)startDate endDate:(NSDate *)endDate amount:(float)amount {
     self = [super init];
     if(self) {

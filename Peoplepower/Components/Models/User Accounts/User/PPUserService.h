@@ -12,7 +12,7 @@ typedef NS_OPTIONS(NSInteger, PPUserServiceAmount) {
     PPUserServiceAmountNone = -1,
 };
 
-@interface PPUserService : NSObject
+@interface PPUserService : RLMObject <NSCopying>
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *desc;
@@ -29,3 +29,5 @@ typedef NS_OPTIONS(NSInteger, PPUserServiceAmount) {
 - (void)sync:(PPUserService *)userService;
 
 @end
+
+RLM_ARRAY_TYPE(PPUserService)

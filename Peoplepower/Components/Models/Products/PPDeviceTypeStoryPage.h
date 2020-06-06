@@ -32,7 +32,7 @@ extern NSString *PPDeviceTypeStoryPageStyleConnect;
 extern NSString *PPDeviceTypeStoryPageStylePicture;
 extern NSString *PPDeviceTypeStoryPageStyleCalibrate;
 
-@interface PPDeviceTypeStoryPage : NSObject
+@interface PPDeviceTypeStoryPage : RLMObject
 
 @property (nonatomic) PPDeviceTypeStoryPageIndex index;
 @property (nonatomic) PPDeviceTypeStoryPageHidden hidden;
@@ -41,13 +41,15 @@ extern NSString *PPDeviceTypeStoryPageStyleCalibrate;
 @property (nonatomic, strong) NSString *desc;
 @property (nonatomic, strong) NSString *style;
 @property (nonatomic, strong) NSString *content;
-@property (nonatomic, strong) NSArray *actions;
-@property (nonatomic, strong) NSArray *media;
+@property (nonatomic, strong) RLMArray<PPDeviceTypeStoryPageAction *><PPDeviceTypeStoryPageAction> *actions;
+@property (nonatomic, strong) RLMArray<PPDeviceTypeMedia *><PPDeviceTypeMedia> *media;
 
-- (id)initWithIndex:(PPDeviceTypeStoryPageIndex)index hidden:(PPDeviceTypeStoryPageHidden)hidden dismissible:(PPDeviceTypeStoryPageDismissible)dismissible subtitle:(NSString *)subtitle desc:(NSString *)desc style:(NSString *)style content:(NSString *)content actions:(NSArray *)actions media:(NSArray *)media;
+- (id)initWithIndex:(PPDeviceTypeStoryPageIndex)index hidden:(PPDeviceTypeStoryPageHidden)hidden dismissible:(PPDeviceTypeStoryPageDismissible)dismissible subtitle:(NSString *)subtitle desc:(NSString *)desc style:(NSString *)style content:(NSString *)content actions:(RLMArray *)actions media:(RLMArray *)media;
 
 + (PPDeviceTypeStoryPage *)initWithDictionary:(NSDictionary *)pageDict;
 
 + (NSString *)stringify:(PPDeviceTypeStoryPage *)page;
 
 @end
+
+RLM_ARRAY_TYPE(PPDeviceTypeStoryPage);

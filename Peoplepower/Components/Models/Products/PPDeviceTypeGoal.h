@@ -35,7 +35,7 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeGoalCategories) {
     PPDeviceTypeGoalCategoryWellness  = 1 << 5
 };
 
-@interface PPDeviceTypeGoal : NSObject
+@interface PPDeviceTypeGoal : RLMObject
 
 /* Goal ID */
 @property (nonatomic) PPDeviceTypeGoalId goalId;
@@ -53,9 +53,9 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeGoalCategories) {
 @property (nonatomic) PPDeviceTypeGoalDeviceUsage deviceUsage;
 
 /* Suggestioned device names */
-@property (nonatomic, strong) NSArray *suggestions;
+@property (nonatomic, strong) RLMArray<RLMString> *suggestions;
 
-- (id)initWithId:(PPDeviceTypeGoalId)goalId name:(NSString *)name desc:(NSString *)desc categories:(PPDeviceTypeGoalCategories)categories deviceUsage:(PPDeviceTypeGoalDeviceUsage)deviceUsage suggestions:(NSArray *)suggestions;
+- (id)initWithId:(PPDeviceTypeGoalId)goalId name:(NSString *)name desc:(NSString *)desc categories:(PPDeviceTypeGoalCategories)categories deviceUsage:(PPDeviceTypeGoalDeviceUsage)deviceUsage suggestions:(RLMArray *)suggestions;
 
 + (PPDeviceTypeGoal *)initWithDictionary:(NSDictionary *)goalDict;
 
@@ -66,3 +66,5 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeGoalCategories) {
 - (void)sync:(PPDeviceTypeGoal *)goal;
 
 @end
+
+RLM_ARRAY_TYPE(PPDeviceTypeGoal);

@@ -10,6 +10,10 @@
 
 @implementation PPDeviceTypeInstallationInstructions
 
++ (NSString *)primaryKey {
+    return @"goalId";
+}
+
 - (id)initWithGoalId:(PPDeviceTypeGoalId)goalId installation:(NSString *)installation {
     self = [super init];
     if(self) {

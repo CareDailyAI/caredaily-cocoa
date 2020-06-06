@@ -15,8 +15,6 @@
 
 #pragma mark Call Center
 
-__strong static NSMutableDictionary*_sharedCallCenter = nil;
-
 /**
  * Shared subscriptions across the entire application
  */
@@ -26,45 +24,17 @@ __strong static NSMutableDictionary*_sharedCallCenter = nil;
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    if(!_sharedCallCenter) {
-        [PPProfessionalMonitoring initializeSharedCallCenter];
-    }
+    RLMResults<PPCallCenter *> *sharedCallCenters = [PPCallCenter allObjects];
     PPCallCenter *sharedCallCenter;
-    NSMutableArray *callCenterArray = [[NSMutableArray alloc] initWithCapacity:0];
-    for(NSString *userIdKey in _sharedCallCenter.allKeys) {
-        PPCallCenter *callCenter = [_sharedCallCenter objectForKey:userIdKey];
-        [callCenterArray addObject:@{@"status": @(callCenter.status)}];
-        
-        if([userIdKey isEqualToString:[NSString stringWithFormat:@"%li", (long)userId]]) {
-            sharedCallCenter = callCenter;
-        }
-    }
-    
+    for(PPCallCenter *callCenter in sharedCallCenters) {
+        sharedCallCenter = callCenter;
+    }    
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s sharedCallCenter=%@", __PRETTY_FUNCTION__, callCenterArray);
+    NSLog(@"< %s sharedCallCenter=%@", __PRETTY_FUNCTION__, sharedCallCenter);
 #endif
 #endif
     return sharedCallCenter;
-}
-
-+ (void)initializeSharedCallCenter {
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"> %s", __PRETTY_FUNCTION__);
-#endif
-#endif
-    _sharedCallCenter = [[NSMutableDictionary alloc] initWithCapacity:0];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    NSData *storedCallCenterData = [defaults objectForKey:@"user.callCenter"];
-//    if(storedCallCenterData) {
-//        _sharedCallCenter = (NSMutableDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:storedCallCenterData];
-//    }
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"< %s", __PRETTY_FUNCTION__);
-#endif
-#endif
 }
 
 /**
@@ -72,7 +42,7 @@ __strong static NSMutableDictionary*_sharedCallCenter = nil;
  * Add call center to local reference.
  *
  * @param callCenter PPCallCenter Call Center
- * @param userId Required PPUserId User Id to associate this token with
+ * @param userId Required PPUserId User Id to associate these subscriptions with
  **/
 + (void)addCallCenter:(PPCallCenter *)callCenter userId:(PPUserId)userId {
 #ifdef DEBUG
@@ -80,20 +50,12 @@ __strong static NSMutableDictionary*_sharedCallCenter = nil;
     NSLog(@"> %s callCenter=%@", __PRETTY_FUNCTION__, callCenter);
 #endif
 #endif
-    if(!_sharedCallCenter) {
-        [PPProfessionalMonitoring initializeSharedCallCenter];
-    }
-    
-    [_sharedCallCenter setObject:callCenter forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    
-//    NSData *sharedTokenData = [NSKeyedArchiver archivedDataWithRootObject:_sharedCallCenter];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedTokenData forKey:@"user.callCenter"];
-//    [defaults synchronize];
-    
+    [[PPRealm defaultRealm] beginWriteTransaction];
+    [PPCallCenter createOrUpdateInDefaultRealmWithValue:callCenter];
+    [[PPRealm defaultRealm] commitWriteTransaction];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s status=%li", __PRETTY_FUNCTION__, (long)callCenter.status);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }
@@ -102,7 +64,8 @@ __strong static NSMutableDictionary*_sharedCallCenter = nil;
  * Remove call center.
  * Remove call center from local reference.
  *
- * @param userId Required PPUserId User Id to disassociate this call center with
+ * @param userId Required PPUserId User Id to associate these subscriptions with
+ *
  **/
 + (void)removeCallCenterForUserId:(PPUserId)userId {
 #ifdef DEBUG
@@ -110,17 +73,12 @@ __strong static NSMutableDictionary*_sharedCallCenter = nil;
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    if(!_sharedCallCenter) {
-        [PPProfessionalMonitoring initializeSharedCallCenter];
-    }
-    
-    [_sharedCallCenter removeObjectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    
-//    NSData *sharedTokenData = [NSKeyedArchiver archivedDataWithRootObject:_sharedCallCenter];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedTokenData forKey:@"user.notificationCallCenter"];
-//    [defaults synchronize];
-    
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        RLMResults<PPCallCenter *> *callCenters = [PPCallCenter allObjects];
+        if([callCenters count]) {
+            [[PPRealm defaultRealm] deleteObjects:callCenters];
+        }
+    }];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"< %s", __PRETTY_FUNCTION__);
@@ -129,8 +87,6 @@ __strong static NSMutableDictionary*_sharedCallCenter = nil;
 }
 
 #pragma mark Alerts
-
-__strong static NSMutableDictionary*_sharedCallCenterAlerts = nil;
 
 /**
  * Shared alerts across the entire application
@@ -141,17 +97,14 @@ __strong static NSMutableDictionary*_sharedCallCenterAlerts = nil;
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    if(!_sharedCallCenterAlerts) {
-        [PPProfessionalMonitoring initializeSharedCallCenterAlerts];
-    }
     
-    NSArray* sharedAlerts = @[];
+    RLMResults<PPCallCenterAlert *> *sharedAlerts = [PPCallCenterAlert allObjects];
     
     NSMutableArray *sharedAlertsArray = [[NSMutableArray alloc] initWithCapacity:[sharedAlerts count]];
     NSMutableArray *alertsArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
     for(PPCallCenterAlert *alert in sharedAlerts) {
         [sharedAlertsArray addObject:alert];
-
+        
         [alertsArrayDebug addObject:@{@"alertDate": alert.alertDate}];
     }
 #ifdef DEBUG
@@ -162,35 +115,26 @@ __strong static NSMutableDictionary*_sharedCallCenterAlerts = nil;
     return sharedAlertsArray;
 }
 
-+ (void)initializeSharedCallCenterAlerts {
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"> %s", __PRETTY_FUNCTION__);
-#endif
-#endif
-    _sharedCallCenterAlerts = [[NSMutableDictionary alloc] initWithCapacity:0];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSData *storedCallCenterData = [defaults objectForKey:@"user.callCenter"];
-    if(storedCallCenterData) {
-        _sharedCallCenter = (NSMutableDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:storedCallCenterData];
-    }
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"< %s", __PRETTY_FUNCTION__);
-#endif
-#endif
-}
-
 /**
  * Add alerts.
  * Add alerts to local reference.
  *
  * @param alerts NSArray Array of alerts to add.
+ * @param userId Required PPUserId User Id to associate these subscriptions with
  **/
 + (void)addAlerts:(NSArray *)alerts userId:(PPUserId)userId {
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s alerts=%@", __PRETTY_FUNCTION__, alerts);
+#endif
+#endif
+    [[PPRealm defaultRealm] beginWriteTransaction];
+    for(PPCallCenterAlert *alert in alerts) {
+        [PPCallCenterAlert createOrUpdateInDefaultRealmWithValue:alert];
+    }
+    [[PPRealm defaultRealm] commitWriteTransaction];
+#ifdef DEBUG
+#ifdef DEBUG_MODELS
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
@@ -201,11 +145,21 @@ __strong static NSMutableDictionary*_sharedCallCenterAlerts = nil;
  * Remove alerts from local reference.
  *
  * @param alerts NSArray Array of alerts to remove.
+ * @param userId Required PPUserId User Id to associate these subscriptions with
  **/
 + (void)removeAlerts:(NSArray *)alerts userId:(PPUserId)userId {
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s alerts=%@", __PRETTY_FUNCTION__, alerts);
+#endif
+#endif
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPCallCenterAlert *alert in alerts) {
+            [[PPRealm defaultRealm] deleteObject:[PPCallCenterAlert objectForPrimaryKey:alert.alertDate]];
+        }
+    }];
+#ifdef DEBUG
+#ifdef DEBUG_MODELS
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
@@ -303,7 +257,7 @@ __strong static NSMutableDictionary*_sharedCallCenterAlerts = nil;
     
     NSMutableString *JSONString = [[NSMutableString alloc] init];
     [JSONString appendString:@"{"];
-    PPCallCenter *callCenter = [[PPCallCenter alloc] initWithStatus:PPCallCenterStatusNone userId:userId missingFields:nil contacts:contacts codeword:codeword permit:permit alertStatus:alertStatus alertDate:nil alertStatusDate:nil];
+    PPCallCenter *callCenter = [[PPCallCenter alloc] initWithStatus:PPCallCenterStatusNone userId:userId missingFields:nil contacts:(RLMArray *)contacts codeword:codeword permit:permit alertStatus:alertStatus alertDate:nil alertStatusDate:nil];
     [JSONString appendFormat:@"\"callCenter\": %@", [PPCallCenter stringify:callCenter]];
     [JSONString appendString:@"}"];
     

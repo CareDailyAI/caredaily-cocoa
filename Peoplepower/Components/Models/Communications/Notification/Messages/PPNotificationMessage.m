@@ -10,7 +10,7 @@
 
 @implementation PPNotificationMessage
 
-- (id)initWithTemplate:(NSString *)notificationTemplate content:(NSString *)content model:(NSDictionary *)model {
+- (id)initWithTemplate:(NSString *)notificationTemplate content:(NSString *)content model:(PPNotificationMessageModel *)model {
     self = [super init];
     if(self) {
         self.notificationTemplate = notificationTemplate;
@@ -23,7 +23,7 @@
 + (PPNotificationMessage *)initWithDictionary:(NSDictionary *)messageDict {
     NSString *notificationTemplate = [messageDict objectForKey:@"template"];
     NSString *content = [messageDict objectForKey:@"content"];
-    NSDictionary *model = [messageDict objectForKey:@"model"];
+    PPNotificationMessageModel *model = [PPNotificationMessageModel initWithDictionary:[messageDict objectForKey:@"model"]];
     
     PPNotificationMessage *message = [[PPNotificationMessage alloc] initWithTemplate:notificationTemplate content:content model:model];
     return message;
@@ -50,9 +50,7 @@
         if(appendComma) {
             [JSONString appendString:@","];
         }
-        NSError * err;
-        NSData * jsonData = [NSJSONSerialization dataWithJSONObject:message.model options:0 error:&err];
-        [JSONString appendFormat:@"\"model\": %@", [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+        [JSONString appendFormat:@"\"model\": {%@}", [PPNotificationMessageModel stringify:message.model]];
         appendComma = YES;
     }
     
@@ -68,10 +66,19 @@
         data[@"content"] = message.content;
     }
     if(message.model) {
-        data[@"model"] = message.model;
+        data[@"model"] = [PPRLMDictionary data:message.model];
     }
     
     return data;
+}
+
+@end
+
+@implementation PPNotificationMessageModel
+
++ (PPNotificationMessageModel *)initWithDictionary:(NSDictionary *)dict {
+    PPRLMDictionary *RLMDictionary = [super initWithDictionary:dict];
+    return [[PPNotificationMessageModel alloc] initWithKeys:RLMDictionary.keys value:RLMDictionary.values];
 }
 
 @end

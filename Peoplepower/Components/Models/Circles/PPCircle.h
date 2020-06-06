@@ -29,7 +29,7 @@ typedef NS_OPTIONS(long long, PPCircleData) {
     PPCircleDataNone = 0,
 };
 
-@interface PPCircle : NSObject
+@interface PPCircle : RLMObject
 
 @property (nonatomic) PPCircleId circleId;
 @property (nonatomic, strong) NSString *name;
@@ -39,10 +39,13 @@ typedef NS_OPTIONS(long long, PPCircleData) {
 @property (nonatomic, strong) NSDate *creationDate;
 @property (nonatomic) PPCircleData monthlyDataIn;
 @property (nonatomic) PPCircleData monthlyDataMax;
-@property (nonatomic, strong) NSArray *members;
+@property (nonatomic, strong) RLMArray<PPCircleMember *><PPCircleMember> *members;
+@property (readonly) RLMLinkingObjects *posts;
 
-- (id)initWithId:(PPCircleId)circleId name:(NSString *)name admin:(PPCircleAdmin)admin status:(PPCircleStatus)status memberStatus:(PPCircleMemberStatus)memberStatus creationDate:(NSDate *)creationDate monthlyDataIn:(PPCircleData)monthlyDataIn monthlyDataMax:(PPCircleData)monthlyDataMax members:(NSArray *)members;
+- (id)initWithId:(PPCircleId)circleId name:(NSString *)name admin:(PPCircleAdmin)admin status:(PPCircleStatus)status memberStatus:(PPCircleMemberStatus)memberStatus creationDate:(NSDate *)creationDate monthlyDataIn:(PPCircleData)monthlyDataIn monthlyDataMax:(PPCircleData)monthlyDataMax members:(RLMArray *)members;
 
 + (PPCircle *)initWithDictionary:(NSDictionary *)circleDict;
 
 @end
+
+RLM_ARRAY_TYPE(PPCircle);

@@ -13,12 +13,11 @@
 
 #pragma mark - Session Management
 
-#pragma mark - Service Planes
-
-__strong static NSMutableDictionary*_sharedServicePlans = nil;
+#pragma mark Service Planes
 
 /**
  * Shared servicePlans across the entire application
+ * @param userId Required PPUserId User Id to associate these servicePlans with
  */
 + (NSArray *)sharedServicePlansForUser:(PPUserId)userId {
 #ifdef DEBUG
@@ -26,54 +25,21 @@ __strong static NSMutableDictionary*_sharedServicePlans = nil;
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    if(!_sharedServicePlans) {
-        [PPPaidServices initializeSharedServicePlans];
-    }
-    NSMutableArray *sharedServicePlans = [[NSMutableArray alloc] initWithCapacity:0];
-    NSMutableArray *servicePlansArray = [[NSMutableArray alloc] initWithCapacity:0];
-    for(NSString *userIdKey in _sharedServicePlans.allKeys) {
-        for(PPServicePlan *servicePlan in [_sharedServicePlans objectForKey:userIdKey]) {
-            NSMutableDictionary *servicePlanIdentifiers = [[NSMutableDictionary alloc] initWithCapacity:2];
-            [servicePlanIdentifiers setValue:@(servicePlan.planId) forKey:@"planId"];
-            if(servicePlan.name) {
-                [servicePlanIdentifiers setValue:servicePlan.name forKey:@"name"];
-            }
-            if([servicePlan.subscriptions count]) {
-                [servicePlanIdentifiers setValue:@(((PPServicePlanSoftwareSubscription *)[servicePlan.subscriptions firstObject]).userPlanId) forKey:@"userPlanId"];
-            }
-            [servicePlansArray addObject:servicePlanIdentifiers];
-            
-            if([userIdKey isEqualToString:[NSString stringWithFormat:@"%li", (long)userId]]) {
-                [sharedServicePlans addObject:servicePlan];
-            }
-        }
-    }
+    RLMResults<PPServicePlan *> *sharedServicePlans = [PPServicePlan allObjects];
     
+    NSMutableArray *sharedServicePlansArray = [[NSMutableArray alloc] initWithCapacity:[sharedServicePlans count]];
+    NSMutableArray *servicePlansArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
+    for(PPServicePlan *servicePlan in sharedServicePlans) {
+        [sharedServicePlansArray addObject:servicePlan];
+        
+        [servicePlansArrayDebug addObject:@{@"planId": @(servicePlan.planId)}];
+    }
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s sharedServicePlans=%@", __PRETTY_FUNCTION__, servicePlansArray);
+    NSLog(@"< %s sharedServicePlans=%@", __PRETTY_FUNCTION__, servicePlansArrayDebug);
 #endif
 #endif
-    return sharedServicePlans;
-}
-
-+ (void)initializeSharedServicePlans {
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"> %s", __PRETTY_FUNCTION__);
-#endif
-#endif
-    _sharedServicePlans = [[NSMutableDictionary alloc] initWithCapacity:0];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    NSData *storedServicePlansData = [defaults objectForKey:@"user.servicePlans"];
-//    if(storedServicePlansData) {
-//        _sharedServicePlans = (NSMutableDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:storedServicePlansData];
-//    }
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"< %s", __PRETTY_FUNCTION__);
-#endif
-#endif
+    return sharedServicePlansArray;
 }
 
 /**
@@ -89,42 +55,14 @@ __strong static NSMutableDictionary*_sharedServicePlans = nil;
     NSLog(@"> %s servicePlans=%@", __PRETTY_FUNCTION__, servicePlans);
 #endif
 #endif
-    if(!_sharedServicePlans) {
-        [PPPaidServices initializeSharedServicePlans];
-    }
-    
-    NSMutableArray *servicePlansArray = [_sharedServicePlans objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!servicePlansArray) {
-        servicePlansArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-    
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
+    [[PPRealm defaultRealm] beginWriteTransaction];
     for(PPServicePlan *servicePlan in servicePlans) {
-        
-        BOOL found = NO;
-        for(PPServicePlan *sharedServicePlan in servicePlansArray) {
-            if([sharedServicePlan isEqualToPlan:servicePlan]) {
-                [sharedServicePlan sync:servicePlan];
-                found = YES;
-                break;
-            }
-        }
-        if(!found) {
-            [indexSet addIndex:[servicePlans indexOfObject:servicePlan]];
-        }
+        [PPServicePlan createOrUpdateInDefaultRealmWithValue:servicePlan];
     }
-    
-    [servicePlansArray addObjectsFromArray:[servicePlans objectsAtIndexes:indexSet]];
-    [_sharedServicePlans setObject:servicePlansArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    
-//    NSData *sharedServicePlanData = [NSKeyedArchiver archivedDataWithRootObject:_sharedServicePlans];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedServicePlanData forKey:@"user.servicePlans"];
-//    [defaults synchronize];
-    
+    [[PPRealm defaultRealm] commitWriteTransaction];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s servicePlansArray=%@", __PRETTY_FUNCTION__, servicePlansArray);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }
@@ -142,47 +80,23 @@ __strong static NSMutableDictionary*_sharedServicePlans = nil;
     NSLog(@"> %s servicePlans=%@", __PRETTY_FUNCTION__, servicePlans);
 #endif
 #endif
-    
-    if(!_sharedServicePlans) {
-        [PPPaidServices initializeSharedServicePlans];
-    }
-    
-    NSMutableArray *servicePlansArray = [_sharedServicePlans objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!servicePlansArray) {
-        servicePlansArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-    
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
-    for(PPServicePlan *servicePlan in servicePlans) {
-        for(PPServicePlan *sharedServicePlan in servicePlansArray) {
-            if([sharedServicePlan isEqualToPlan:servicePlan]) {
-                [indexSet addIndex:[servicePlansArray indexOfObject:sharedServicePlan]];
-                break;
-            }
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPServicePlan *servicePlan in servicePlans) {
+            [[PPRealm defaultRealm] deleteObject:[PPServicePlan objectForPrimaryKey:@(servicePlan.planId)]];
         }
-    }
-    
-    [servicePlansArray removeObjectsAtIndexes:indexSet];
-    [_sharedServicePlans setObject:servicePlansArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    
-//    NSData *sharedServicePlanData = [NSKeyedArchiver archivedDataWithRootObject:_sharedServicePlans];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedServicePlanData forKey:@"user.servicePlans"];
-//    [defaults synchronize];
-    
+    }];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s servicePlansArray=%@", __PRETTY_FUNCTION__, servicePlansArray);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }
 
 #pragma mark Products
 
-__strong static NSMutableDictionary*_sharedProducts = nil;
-
 /**
  * Shared products across the entire application
+ * @param userId Required PPUserId User Id to associate these products with
  */
 + (NSArray *)sharedProductsForUser:(PPUserId)userId {
 #ifdef DEBUG
@@ -190,48 +104,21 @@ __strong static NSMutableDictionary*_sharedProducts = nil;
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    if(!_sharedProducts) {
-        [PPPaidServices initializeSharedProducts];
-    }
-    NSMutableArray *sharedProducts = [[NSMutableArray alloc] initWithCapacity:0];
-    NSMutableArray *productsArray = [[NSMutableArray alloc] initWithCapacity:0];
-    for(NSString *userIdKey in _sharedProducts.allKeys) {
-        for(PPStoreProduct *product in [_sharedProducts objectForKey:userIdKey]) {
-            NSMutableDictionary *productIdentifiers = [[NSMutableDictionary alloc] initWithCapacity:2];
-            [productIdentifiers setValue:@(product.productId) forKey:@"ID"];
-            [productsArray addObject:productIdentifiers];
-            
-            if([userIdKey isEqualToString:[NSString stringWithFormat:@"%li", (long)userId]]) {
-                [sharedProducts addObject:product];
-            }
-        }
-    }
+    RLMResults<PPStoreProduct *> *sharedProducts = [PPStoreProduct allObjects];
     
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"< %s sharedProducts=%@", __PRETTY_FUNCTION__, productsArray);
-#endif
-#endif
-    return sharedProducts;
-}
-
-+ (void)initializeSharedProducts {
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"> %s", __PRETTY_FUNCTION__);
-#endif
-#endif
-    _sharedProducts = [[NSMutableDictionary alloc] initWithCapacity:0];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSData *storedProductsData = [defaults objectForKey:@"user.notificationProducts"];
-    if(storedProductsData) {
-        _sharedProducts = (NSMutableDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:storedProductsData];
+    NSMutableArray *sharedProductsArray = [[NSMutableArray alloc] initWithCapacity:[sharedProducts count]];
+    NSMutableArray *productsArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
+    for(PPStoreProduct *product in sharedProducts) {
+        [sharedProductsArray addObject:product];
+        
+        [productsArrayDebug addObject:@{@"productId": @(product.productId)}];
     }
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s", __PRETTY_FUNCTION__);
+    NSLog(@"< %s sharedProducts=%@", __PRETTY_FUNCTION__, productsArrayDebug);
 #endif
 #endif
+    return sharedProductsArray;
 }
 
 /**
@@ -247,42 +134,14 @@ __strong static NSMutableDictionary*_sharedProducts = nil;
     NSLog(@"> %s products=%@", __PRETTY_FUNCTION__, products);
 #endif
 #endif
-    if(!_sharedProducts) {
-        [PPPaidServices initializeSharedProducts];
-    }
-    
-    NSMutableArray *productsArray = [_sharedProducts objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!productsArray) {
-        productsArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-    
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
+    [[PPRealm defaultRealm] beginWriteTransaction];
     for(PPStoreProduct *product in products) {
-        
-        BOOL found = NO;
-        for(PPStoreProduct *sharedProduct in productsArray) {
-            if([sharedProduct isEqualToProduct:product]) {
-                [sharedProduct sync:product];
-                found = YES;
-                break;
-            }
-        }
-        if(!found) {
-            [indexSet addIndex:[products indexOfObject:product]];
-        }
+        [PPStoreProduct createOrUpdateInDefaultRealmWithValue:product];
     }
-    
-    [productsArray addObjectsFromArray:[products objectsAtIndexes:indexSet]];
-    [_sharedProducts setObject:productsArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    
-    NSData *sharedProductData = [NSKeyedArchiver archivedDataWithRootObject:_sharedProducts];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:sharedProductData forKey:@"user.notificationProducts"];
-    [defaults synchronize];
-    
+    [[PPRealm defaultRealm] commitWriteTransaction];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s productsArray=%@", __PRETTY_FUNCTION__, productsArray);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }
@@ -300,37 +159,14 @@ __strong static NSMutableDictionary*_sharedProducts = nil;
     NSLog(@"> %s products=%@", __PRETTY_FUNCTION__, products);
 #endif
 #endif
-    
-    if(!_sharedProducts) {
-        [PPPaidServices initializeSharedProducts];
-    }
-    
-    NSMutableArray *productsArray = [_sharedProducts objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!productsArray) {
-        productsArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-    
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
-    for(PPStoreProduct *product in products) {
-        for(PPStoreProduct *sharedProduct in productsArray) {
-            if([sharedProduct isEqualToProduct:product]) {
-                [indexSet addIndex:[productsArray indexOfObject:sharedProduct]];
-                break;
-            }
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPStoreProduct *product in products) {
+            [[PPRealm defaultRealm] deleteObject:[PPStoreProduct objectForPrimaryKey:@(product.productId)]];
         }
-    }
-    
-    [productsArray removeObjectsAtIndexes:indexSet];
-    [_sharedProducts setObject:productsArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    
-    NSData *sharedProductData = [NSKeyedArchiver archivedDataWithRootObject:_sharedProducts];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:sharedProductData forKey:@"user.notificationProducts"];
-    [defaults synchronize];
-    
+    }];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s productsArray=%@", __PRETTY_FUNCTION__, productsArray);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }

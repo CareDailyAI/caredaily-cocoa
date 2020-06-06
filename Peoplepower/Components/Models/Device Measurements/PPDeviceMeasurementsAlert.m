@@ -10,14 +10,14 @@
 
 @implementation PPDeviceMeasurementsAlert
 
-- (id)initWithAlertId:(PPDeviceMeasurementsAlertId)alertId deviceId:(NSString *)deviceId alertType:(NSString *)alertType receivingDate:(NSDate *)receivingDate params:(NSArray *)params {
+- (id)initWithAlertId:(PPDeviceMeasurementsAlertId)alertId deviceId:(NSString *)deviceId alertType:(NSString *)alertType receivingDate:(NSDate *)receivingDate params:(RLMArray *)params {
     self = [super init];
     if(self) {
         self.alertId = alertId;
         self.deviceId = deviceId;
         self.alertType = alertType;
         self.receivingDate = receivingDate;
-        self.params = params;
+        self.params = (RLMArray<PPDeviceParameter *><PPDeviceParameter> *)params;
     }
     return self;
 }
@@ -53,7 +53,7 @@
         }
     }
     
-    PPDeviceMeasurementsAlert *alert = [[PPDeviceMeasurementsAlert alloc] initWithAlertId:alertId deviceId:deviceId alertType:alertType receivingDate:receivingDate params:params];
+    PPDeviceMeasurementsAlert *alert = [[PPDeviceMeasurementsAlert alloc] initWithAlertId:alertId deviceId:deviceId alertType:alertType receivingDate:receivingDate params:(RLMArray<PPDeviceParameter *><PPDeviceParameter> *)params];
     return alert;
 }
 
@@ -66,7 +66,12 @@
     alert.deviceId = [self.deviceId copyWithZone:zone];
     alert.alertType = [self.alertType copyWithZone:zone];
     alert.receivingDate = [self.receivingDate copyWithZone:zone];
-    alert.params = self.params;
+    
+    NSMutableArray *params = [[NSMutableArray alloc] initWithCapacity:self.params.count];
+    for (PPDeviceParameter *param in self.params) {
+        [params addObject:[param copyWithZone:zone]];
+    }
+    alert.params = params;
     
     return alert;
 }

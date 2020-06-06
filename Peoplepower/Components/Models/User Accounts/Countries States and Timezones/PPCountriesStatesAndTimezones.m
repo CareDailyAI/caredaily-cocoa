@@ -11,7 +11,7 @@
 
 @implementation PPCountriesStatesAndTimezones
 
--(id) initWithCountries:(NSArray *)countries {
+-(id) initWithCountries:(RLMArray *)countries {
 	self = [super init];
 	if(self) {
         self.countries = countries;
@@ -23,7 +23,7 @@
     NSMutableArray *states = [[NSMutableArray alloc] initWithCapacity:0];
     for(PPCountry *country in _countries) {
         if(country.countryId == countryId || countryId == PPCountryIdNone) {
-            [states addObjectsFromArray:country.states];
+            [states addObjectsFromArray:[PPRLMArray arrayFromArray:country.states]];
         }
     }
     

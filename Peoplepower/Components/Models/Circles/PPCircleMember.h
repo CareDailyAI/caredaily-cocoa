@@ -37,8 +37,10 @@ typedef NS_OPTIONS(NSInteger, PPCircleMemberPhoneStatus) {
 @property (nonatomic, strong) NSString *nickname;
 @property (nonatomic, strong) NSString *circleUserId;
 
-- (id)initWithUserId:(PPUserId)userId email:(PPUserEmail *)email username:(NSString *)username altUsername:(NSString *)altUsername firstName:(NSString *)firstName lastName:(NSString *)lastName language:(NSString *)language phone:(NSString *)phone phoneType:(PPUserPhoneType)phoneType smsStatus:(PPUserSMSStatus)smsStatus anonymous:(PPUserAnonymousType)anonymous userPermissions:(NSArray *)userPermissions tags:(NSArray *)tags locations:(NSArray *)locations badges:(NSArray *)badges organizations:(NSArray *)organizations avatarFileId:(PPUserAvatarFileId)avatarFileId nickname:(NSString *)nickname admin:(PPCircleMemberAdmin)admin status:(PPCircleMemberStatus)status phoneStatus:(PPCircleMemberPhoneStatus)phoneStatus circleUserId:(NSString *)circleUserId;
+- (id)initWithUserId:(PPUserId)userId email:(PPUserEmail *)email username:(NSString *)username altUsername:(NSString *)altUsername firstName:(NSString *)firstName lastName:(NSString *)lastName language:(NSString *)language phone:(NSString *)phone phoneType:(PPUserPhoneType)phoneType smsStatus:(PPUserSMSStatus)smsStatus anonymous:(PPUserAnonymousType)anonymous userPermissions:(RLMArray *)userPermissions tags:(RLMArray *)tags locations:(RLMArray *)locations badges:(RLMArray *)badges organizations:(RLMArray *)organizations avatarFileId:(PPUserAvatarFileId)avatarFileId nickname:(NSString *)nickname admin:(PPCircleMemberAdmin)admin status:(PPCircleMemberStatus)status phoneStatus:(PPCircleMemberPhoneStatus)phoneStatus circleUserId:(NSString *)circleUserId;
 
 + (PPCircleMember *)initWithDictionary:(NSDictionary *)memberDict;
 
 @end
+
+RLM_ARRAY_TYPE(PPCircleMember);

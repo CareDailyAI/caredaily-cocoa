@@ -35,6 +35,14 @@
 
 #pragma mark - Encoding
 
+- (id)copyWithZone:(NSZone *)zone {
+    PPUserTag *tag = [[[self class] allocWithZone:zone] init];
+    
+    tag.tag = [self.tag copyWithZone:zone];
+    
+    return tag;
+}
+
 - (id)initWithCoder:(NSCoder *)decoder {
     self = [super init];
     if(self) {

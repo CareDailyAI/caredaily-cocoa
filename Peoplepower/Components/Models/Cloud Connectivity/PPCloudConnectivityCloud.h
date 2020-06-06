@@ -10,22 +10,24 @@
 #import "PPCloudConnectivityServer.h"
 #import "PPTimezone.h"
 
-@interface PPCloudConnectivityCloud : NSObject
+@interface PPCloudConnectivityCloud : RLMObject
 
 @property (nonatomic, strong) NSString *cloud;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSDate *currentTime;
 @property (nonatomic, strong) PPTimezone *timezone;
-@property (nonatomic, strong) NSArray *servers;
+@property (nonatomic, strong) RLMArray<PPCloudConnectivityServer *><PPCloudConnectivityServer> *servers;
 @property (nonatomic, strong) NSString *version;
 
-- (id)initWithCloud:(NSString *)cloud
-               name:(NSString *)name
-        currentTime:(NSDate *)currentTime
-           timezone:(PPTimezone *)timezone
-            servers:(NSArray *)servers
+- (id)initWithCloud:(NSString *)cloud 
+               name:(NSString *)name 
+        currentTime:(NSDate *)currentTime 
+           timezone:(PPTimezone *)timezone 
+            servers:(RLMArray *)servers
             version:(NSString *)version;
 
 + (PPCloudConnectivityCloud *)initWithDictionary:(NSDictionary *)cloudDict;
 
 @end
+
+RLM_ARRAY_TYPE(PPCloudConnectivityCloud);

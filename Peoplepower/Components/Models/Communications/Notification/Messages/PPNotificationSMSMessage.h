@@ -20,11 +20,11 @@ typedef NS_OPTIONS(NSInteger, PPNotificationSMSMessageIndividual) {
 
 @interface PPNotificationSMSMessage : PPNotificationMessage
 
-@property (nonatomic, strong) NSArray *categories;
-@property (nonatomic, strong) NSArray *phones;
+@property (nonatomic, strong) RLMArray<RLMString> *categories;
+@property (nonatomic, strong) RLMArray<RLMString> *phones;
 @property (nonatomic) PPNotificationSMSMessageIndividual individual;
 
-- (id)initWithTemplate:(NSString *)notificationTemplate content:(NSString *)content model:(NSDictionary *)model categories:(NSArray *)categories phones:(NSArray *)phones individual:(PPNotificationSMSMessageIndividual)individual;
+- (id)initWithTemplate:(NSString *)notificationTemplate content:(NSString *)content model:(PPNotificationMessageModel *)model categories:(RLMArray *)categories phones:(RLMArray *)phones individual:(PPNotificationSMSMessageIndividual)individual;
 
 + (PPNotificationSMSMessage *)initWithDictionary:(NSDictionary *)messageDict;
 
@@ -32,3 +32,5 @@ typedef NS_OPTIONS(NSInteger, PPNotificationSMSMessageIndividual) {
 + (NSDictionary *)data:(PPNotificationSMSMessage *)message;
 
 @end
+
+RLM_ARRAY_TYPE(PPNotificationSMSMessage);

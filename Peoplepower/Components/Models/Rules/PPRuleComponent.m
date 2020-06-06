@@ -13,7 +13,11 @@
 
 @implementation PPRuleComponent
 
-- (id)initWithId:(PPRuleComponentId)componentId name:(NSString *)name displayType:(PPRuleComponentDisplayType)displayType desc:(NSString *)desc past:(NSString *)past timezone:(PPRuleComponentTimezone)timezone functionGroup:(NSString *)functionGroup parameters:(NSMutableArray *)parameters serviceName:(NSString *)serviceName {
++ (NSString *)primaryKey {
+    return @"componentId";
+}
+
+- (id)initWithId:(PPRuleComponentId)componentId name:(NSString *)name displayType:(PPRuleComponentDisplayType)displayType desc:(NSString *)desc past:(NSString *)past timezone:(PPRuleComponentTimezone)timezone functionGroup:(NSString *)functionGroup parameters:(RLMArray *)parameters serviceName:(NSString *)serviceName {
     self = [super init];
     if(self) {
         self.componentId = componentId;
@@ -23,7 +27,7 @@
         self.past = past;
         self.timezone = timezone;
         self.functionGroup = functionGroup;
-        self.parameters = parameters;
+        self.parameters = (RLMArray<PPRuleComponentParameter *><PPRuleComponentParameter> *)parameters;
         self.serviceName = serviceName;
     }
     return self;
@@ -59,16 +63,16 @@
     
     NSObject *component;
     if([subclass isEqualToString:NSStringFromClass([PPRuleComponentTrigger class])]) {
-        component = [[PPRuleComponentTrigger alloc] initWithId:componentId name:name displayType:displayType desc:desc past:past timezone:timezone functionGroup:functionGroup parameters:parameters serviceName:serviceName];
+        component = [[PPRuleComponentTrigger alloc] initWithId:componentId name:name displayType:displayType desc:desc past:past timezone:timezone functionGroup:functionGroup parameters:(RLMArray *)parameters serviceName:serviceName];
     }
     else if([subclass isEqualToString:NSStringFromClass([PPRuleComponentState class])]) {
-        component = [[PPRuleComponentState alloc] initWithId:componentId name:name displayType:displayType desc:desc past:past timezone:timezone functionGroup:functionGroup parameters:parameters serviceName:serviceName];
+        component = [[PPRuleComponentState alloc] initWithId:componentId name:name displayType:displayType desc:desc past:past timezone:timezone functionGroup:functionGroup parameters:(RLMArray *)parameters serviceName:serviceName];
     }
     else if([subclass isEqualToString:NSStringFromClass([PPRuleComponentAction class])]) {
-        component = [[PPRuleComponentAction alloc] initWithId:componentId name:name displayType:displayType desc:desc past:past timezone:timezone functionGroup:functionGroup parameters:parameters serviceName:serviceName];
+        component = [[PPRuleComponentAction alloc] initWithId:componentId name:name displayType:displayType desc:desc past:past timezone:timezone functionGroup:functionGroup parameters:(RLMArray *)parameters serviceName:serviceName];
     }
     else {
-        component = [[PPRuleComponent alloc] initWithId:componentId name:name displayType:displayType desc:desc past:past timezone:timezone functionGroup:functionGroup parameters:parameters serviceName:serviceName];
+        component = [[PPRuleComponent alloc] initWithId:componentId name:name displayType:displayType desc:desc past:past timezone:timezone functionGroup:functionGroup parameters:(RLMArray *)parameters serviceName:serviceName];
     }
     
     return component;
@@ -197,7 +201,11 @@
     ruleComponent.past = [self.past copyWithZone:zone];
     ruleComponent.timezone = self.timezone;
     ruleComponent.functionGroup = [self.functionGroup copyWithZone:zone];
-    ruleComponent.parameters = [self.parameters copyWithZone:zone];
+    NSMutableArray *parameters = [[NSMutableArray alloc] initWithCapacity:self.parameters.count];
+    for (PPRuleComponentParameter *parameter in self.parameters) {
+        [parameters addObject:[parameter copyWithZone:zone]];
+    }
+    ruleComponent.parameters = parameters;
     ruleComponent.serviceName = [self.serviceName copyWithZone:zone];
     
     return ruleComponent;

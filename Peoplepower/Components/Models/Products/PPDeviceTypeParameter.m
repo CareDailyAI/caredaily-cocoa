@@ -10,6 +10,10 @@
 
 @implementation PPDeviceTypeParameter
 
++ (NSString *)primaryKey {
+    return @"name";
+}
+
 - (id)initWithName:(NSString *)name editable:(PPDeviceTypeParameterEditable)editable systemUnit:(NSString *)systemUnit systemMultiplier:(NSString *)systemMultiplier numeric:(PPDeviceTypeParameterNumeric)numeric profiled:(PPDeviceTypeParameterProfiled)profiled configured:(PPDeviceTypeParameterConfigured)configured historical:(PPDeviceTypeParameterHistorical)historical scale:(PPDeviceTypeParameterScale)scale adjustment:(PPDeviceTypeParameterAdjustment)adjustment displayInfo:(PPDeviceTypeParameterDisplayInfo *)displayInfo {
     self = [super init];
     if(self) {

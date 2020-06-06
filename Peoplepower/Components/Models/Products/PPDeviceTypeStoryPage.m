@@ -16,7 +16,7 @@ NSString *PPDeviceTypeStoryPageStyleCalibrate = @"calibrate";
 
 @implementation PPDeviceTypeStoryPage
 
-- (id)initWithIndex:(PPDeviceTypeStoryPageIndex)index hidden:(PPDeviceTypeStoryPageHidden)hidden dismissible:(PPDeviceTypeStoryPageDismissible)dismissible subtitle:(NSString *)subtitle desc:(NSString *)desc style:(NSString *)style content:(NSString *)content actions:(NSArray *)actions media:(NSArray *)media {
+- (id)initWithIndex:(PPDeviceTypeStoryPageIndex)index hidden:(PPDeviceTypeStoryPageHidden)hidden dismissible:(PPDeviceTypeStoryPageDismissible)dismissible subtitle:(NSString *)subtitle desc:(NSString *)desc style:(NSString *)style content:(NSString *)content actions:(RLMArray *)actions media:(RLMArray *)media {
     self = [super init];
     if(self) {
         self.index = index;
@@ -26,8 +26,8 @@ NSString *PPDeviceTypeStoryPageStyleCalibrate = @"calibrate";
         self.desc = desc;
         self.style = style;
         self.content = content;
-        self.actions = actions;
-        self.media = media;
+        self.actions = (RLMArray<PPDeviceTypeStoryPageAction *><PPDeviceTypeStoryPageAction> *)actions;
+        self.media = (RLMArray<PPDeviceTypeMedia *><PPDeviceTypeMedia> *)media;
     }
     return self;
 }
@@ -87,7 +87,7 @@ NSString *PPDeviceTypeStoryPageStyleCalibrate = @"calibrate";
         }
     }
     
-    PPDeviceTypeStoryPage *page = [[PPDeviceTypeStoryPage alloc] initWithIndex:index hidden:hidden dismissible:dismissible subtitle:subtitle desc:desc style:style content:content actions:actions media:medias];
+    PPDeviceTypeStoryPage *page = [[PPDeviceTypeStoryPage alloc] initWithIndex:index hidden:hidden dismissible:dismissible subtitle:subtitle desc:desc style:style content:content actions:(RLMArray *)actions media:(RLMArray *)medias];
     return page;
 }
 

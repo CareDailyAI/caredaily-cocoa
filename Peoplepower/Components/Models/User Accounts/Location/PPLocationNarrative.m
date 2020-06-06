@@ -12,7 +12,7 @@
 
 @implementation PPLocationNarrative
 
-- (id)initWithId:(PPLocationNarrativeId)narrativeId locationId:(PPLocationId)locationId narrativeDate:(NSDate *)narrativeDate priority:(PPLocationNarrativePriority)priority icon:(NSString *)icon title:(NSString *)title description:(NSString *)desc target:(NSDictionary *)target creationDate:(NSDate *)creationDate appInstanceId:(PPBotengineAppInstanceId)appInstanceId {
+- (id)initWithId:(PPLocationNarrativeId)narrativeId locationId:(PPLocationId)locationId narrativeDate:(NSDate *)narrativeDate priority:(PPLocationNarrativePriority)priority icon:(NSString *)icon title:(NSString *)title description:(NSString *)desc target:(PPLocationNarrativeTarget *)target creationDate:(NSDate *)creationDate appInstanceId:(PPBotengineAppInstanceId)appInstanceId {
     self = [super init];
     if(self) {
         self.narrativeId = narrativeId;
@@ -54,7 +54,7 @@
     NSString *icon = [narrativeDict objectForKey:@"icon"];
     NSString *title = [narrativeDict objectForKey:@"title"];
     NSString *desc = [narrativeDict objectForKey:@"description"];
-    NSDictionary *target = (NSDictionary *)[narrativeDict objectForKey:@"target"];
+    PPLocationNarrativeTarget *target = [PPLocationNarrativeTarget initWithDictionary:[narrativeDict objectForKey:@"target"]];
     
     NSString *creationDateString = [narrativeDict objectForKey:@"creationDate"];
     NSDate *creationDate = [NSDate date];
@@ -110,17 +110,13 @@
         appendComma = YES;
     }
     if(narrative.target) {
-        NSError *err = nil;
-        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:narrative.target options:0 error:&err];
-        if(!err) {
-            if(appendComma) {
-                [JSONString appendString:@","];
-            }
-            
-            
-            [JSONString appendFormat:@"\"target\":%@", [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
-            appendComma = YES;
+        if(appendComma) {
+            [JSONString appendString:@","];
         }
+        
+        
+        [JSONString appendFormat:@"\"target\":%@", [PPRLMDictionary stringify:narrative.target]];
+        appendComma = YES;
     }
         
     [JSONString appendString:@"}"];
@@ -147,10 +143,19 @@
         data[@"description"] = narrative.desc;
     }
     if(narrative.target) {
-        data[@"target"] = narrative.target;
+        data[@"target"] = [PPRLMDictionary data:narrative.target];
     }
     
     return data;
+}
+
+@end
+
+@implementation PPLocationNarrativeTarget
+
++ (PPLocationNarrativeTarget *)initWithDictionary:(NSDictionary *)dict {
+    PPRLMDictionary *RLMDictionary = [super initWithDictionary:dict];
+    return [[PPLocationNarrativeTarget alloc] initWithKeys:RLMDictionary.keys value:RLMDictionary.values];
 }
 
 @end

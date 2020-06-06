@@ -17,10 +17,10 @@ typedef NS_OPTIONS(NSInteger, PPFriendshipDeviceMute) {
 @interface PPFriendshipDevice : PPDevice
 
 /* Location event names: when are devices shared? (HOME, AWAY, etc.) */
-@property (nonatomic, strong) NSArray *events;
+@property (nonatomic, strong) RLMArray<RLMString> *events;
 
 /* Current device location event name */
-@property (nonatomic, strong) NSString *currentEvent;
+@property (nonatomic, strong) NSString* currentEvent;
 
 /* Indicates if notifications from this device is muted */
 @property (nonatomic) PPFriendshipDeviceMute mute;
@@ -31,12 +31,14 @@ typedef NS_OPTIONS(NSInteger, PPFriendshipDeviceMute) {
 @property (nonatomic, strong) NSString *friendshipDeviceId;
 @property (nonatomic) NSInteger friendshipId;
 
-- (id)initWithDeviceId:(NSString *)deviceId name:(NSString *)name typeId:(PPDeviceTypeId)typeId category:(PPDeviceTypeCategory)category events:(NSArray *)events currentEvent:(NSString *)currentEvent shared:(PPDeviceShared)shared shareDate:(NSDate *)shareDate mute:(PPFriendshipDeviceMute)mute connected:(PPDeviceConnected)connected typeAttributes:(NSMutableArray *)typeAttributes parameters:(NSMutableArray *)parameters properties:(NSMutableArray *)properties icon:(NSString *)icon spaces:(NSMutableArray *)spaces modelId:(NSString *)modelId;
+- (id)initWithDeviceId:(NSString *)deviceId name:(NSString *)name typeId:(PPDeviceTypeId)typeId category:(PPDeviceTypeCategory)category events:(RLMArray *)events currentEvent:(NSString *)currentEvent shared:(PPDeviceShared)shared shareDate:(NSDate *)shareDate mute:(PPFriendshipDeviceMute)mute connected:(PPDeviceConnected)connected typeAttributes:(RLMArray *)typeAttributes parameters:(RLMArray *)parameters properties:(RLMArray *)properties icon:(NSString *)icon spaces:(RLMArray *)spaces modelId:(NSString *)modelId;
 
-+ (PPFriendshipDevice *)initWithDevice:(PPDevice *)device events:(NSArray *)events currentEvent:(NSString *)currentEvent mute:(PPFriendshipDeviceMute)mute shareDate:(NSDate *)shareDate;
++ (PPFriendshipDevice *)initWithDevice:(PPDevice *)device events:(RLMArray *)events currentEvent:(NSString *)currentEvent mute:(PPFriendshipDeviceMute)mute shareDate:(NSDate *)shareDate;
 
 + (PPFriendshipDevice *)initWithDictionary:(NSDictionary *)friendshipDeviceDict;
 
 + (NSString *)stringify:(PPFriendshipDevice *)device;
 
 @end
+
+RLM_ARRAY_TYPE(PPFriendshipDevice)

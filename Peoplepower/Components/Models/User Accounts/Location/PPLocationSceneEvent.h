@@ -22,7 +22,7 @@ extern NSString *EVENT_SLEEP;
 extern NSString *EVENT_STAY;
 extern NSString *EVENT_TEST;
 
-@interface PPLocationSceneEvent : NSObject <NSCopying>
+@interface PPLocationSceneEvent : RLMObject <NSCopying>
 
 @property (nonatomic, strong) NSString *event;
 @property (nonatomic, strong) NSDate *date;
@@ -46,3 +46,5 @@ extern NSString *EVENT_TEST;
 + (NSArray *)availableEvents;
 
 @end
+
+RLM_ARRAY_TYPE(PPLocationSceneEvent)

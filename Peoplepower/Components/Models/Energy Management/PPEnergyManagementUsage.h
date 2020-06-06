@@ -17,7 +17,7 @@ typedef NS_OPTIONS(NSInteger, PPEnergyManagementUsageExternal) {
     PPEnergyManagementUsageExternalReturnBothInternallyAndExternallyGeneratedData = 4
 };
 
-@interface PPEnergyManagementUsage : NSObject
+@interface PPEnergyManagementUsage : RLMObject
 
 @property (nonatomic, strong) NSDate *startDate;
 @property (nonatomic, strong) NSDate *endDate;
@@ -30,3 +30,5 @@ typedef NS_OPTIONS(NSInteger, PPEnergyManagementUsageExternal) {
 + (PPEnergyManagementUsage *)initWithDictionary:(NSDictionary *)usageDict;
 
 @end
+
+RLM_ARRAY_TYPE(PPEnergyManagementUsage);

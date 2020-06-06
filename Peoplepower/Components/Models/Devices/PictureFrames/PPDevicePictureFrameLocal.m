@@ -20,235 +20,235 @@
 
 #pragma mark - Setters
 
-- (void)setSelectedCamera:(PPDeviceParametersSelectedCamera)selectedCamera {
+- (void)updateSelectedCamera:(PPDeviceParametersSelectedCamera)selectedCamera {
     if(self.selectedCamera == selectedCamera) {
         return;
     }
-    [super setSelectedCamera:selectedCamera];
+    [super updateSelectedCamera:selectedCamera];
     
     [self postMeasurement:SELECTED_CAMERA index:nil value:[NSString stringWithFormat:@"%li", (long)selectedCamera]];
 }
 
-- (void)setSelectedFlash:(PPDeviceParametersSelectedFlash)selectedFlash {
+- (void)updateSelectedFlash:(PPDeviceParametersSelectedFlash)selectedFlash {
     if(self.selectedFlash == selectedFlash) {
         return;
     }
-    [super setSelectedFlash:selectedFlash];
+    [super updateSelectedFlash:selectedFlash];
     [self postMeasurement:FLASH_ON index:nil value:[NSString stringWithFormat:@"%li", (long)selectedFlash]];
 }
 
-- (void)setAudioStatus:(PPDeviceParametersAudioStatus)audioStatus {
+- (void)updateAudioStatus:(PPDeviceParametersAudioStatus)audioStatus {
     if(self.audioStatus == audioStatus) {
         return;
     }
-    [super setAudioStatus:audioStatus];
+    [super updateAudioStatus:audioStatus];
     
     [self postMeasurement:AUDIO_STATUS index:nil value:[NSString stringWithFormat:@"%li", (long)audioStatus]];
 }
 
-- (void)setAudioSensitivity:(PPDeviceParametersAudioSensitiviy)audioSensitivity {
+- (void)updateAudioSensitivity:(PPDeviceParametersAudioSensitiviy)audioSensitivity {
     if(self.audioSensitivity == audioSensitivity) {
         return;
     }
-    [super setAudioSensitivity:audioSensitivity];
+    [super updateAudioSensitivity:audioSensitivity];
     
     [self postMeasurement:AUDIO_SENSITIVITY index:nil value:[NSString stringWithFormat:@"%li", (long)audioSensitivity]];
 }
 
-- (void)setAudioActivity:(PPDeviceParametersAudioActivity)audioActivity {
+- (void)updateAudioActivity:(PPDeviceParametersAudioActivity)audioActivity {
     if(self.audioActivity == audioActivity) {
         return;
     }
-    [super setAudioActivity:audioActivity];
+    [super updateAudioActivity:audioActivity];
     
     [self postMeasurement:AUDIO_ACTIVITY index:nil value:[NSString stringWithFormat:@"%li", (long)audioActivity]];
 }
 
-- (void)setRecordStatus:(PPDeviceParametersRecordStatus)recordStatus {
+- (void)updateRecordStatus:(PPDeviceParametersRecordStatus)recordStatus {
     if(self.recordStatus == recordStatus) {
         return;
     }
-    [super setRecordStatus:recordStatus];
+    [super updateRecordStatus:recordStatus];
     
     [self postMeasurement:RECORD_STATUS index:nil value:[NSString stringWithFormat:@"%li", (long)recordStatus]];
 }
 
-- (void)setAudioStreaming:(PPDeviceParametersAudioStreaming)audioStreaming {
+- (void)updateAudioStreaming:(PPDeviceParametersAudioStreaming)audioStreaming {
     if(self.audioStreaming == audioStreaming) {
         return;
     }
-    [super setAudioStreaming:audioStreaming];
+    [super updateAudioStreaming:audioStreaming];
 
     [self postMeasurement:AUDIO_STREAMING index:nil value:[NSString stringWithFormat:@"%li", (long)audioStreaming]];
 }
 
-- (void)setVideoStreaming:(PPDeviceParametersVideoStreaming)videoStreaming {
+- (void)updateVideoStreaming:(PPDeviceParametersVideoStreaming)videoStreaming {
     if(self.videoStreaming == videoStreaming) {
         return;
     }
-    [super setVideoStreaming:videoStreaming];
+    [super updateVideoStreaming:videoStreaming];
     
     [self postMeasurement:VIDEO_STREAMING index:nil value:[NSString stringWithFormat:@"%li", (long)videoStreaming]];
 }
 
-- (void)setSupportsVideoCall:(PPDeviceParametersSupportsVideoCall)supportsVideoCall {
+- (void)updateSupportsVideoCall:(PPDeviceParametersSupportsVideoCall)supportsVideoCall {
     if(self.supportsVideoCall == supportsVideoCall) {
         return;
     }
-    [super setSupportsVideoCall:supportsVideoCall];
+    [super updateSupportsVideoCall:supportsVideoCall];
     
     [self postMeasurement:SUPPORTS_VIDEO_CALL index:nil value:[NSString stringWithFormat:@"%li", (long)supportsVideoCall]];
 }
 
-- (void)setBatteryLevel:(PPDeviceParametersBatteryLevel)batteryLevel {
+- (void)updateBatteryLevel:(PPDeviceParametersBatteryLevel)batteryLevel {
     if(self.batteryLevel == batteryLevel) {
         return;
     }
-    [super setBatteryLevel:batteryLevel];
+    [super updateBatteryLevel:batteryLevel];
     
     [self postMeasurement:BATTERY_LEVEL index:nil value:[NSString stringWithFormat:@"%li", (long)batteryLevel]];
 }
 
-- (void)setCharging:(PPDeviceParametersCharging)charging {
+- (void)updateCharging:(PPDeviceParametersCharging)charging {
     if(self.charging == charging) {
         return;
     }
-    [super setCharging:charging];
+    [super updateCharging:charging];
     
     [self postMeasurement:CHARGING index:nil value:[NSString stringWithFormat:@"%li", (long)charging]];
 }
 
-- (void)setVersion:(PPVersion *)version {
+- (void)updateVersion:(PPVersion *)version {
     if([[self.version toNSString] isEqualToString:[version toNSString]]) {
         return;
     }
-    [super setVersion:version];
+    [super updateVersion:version];
     
     [self postMeasurement:VERSION index:nil value:[version toNSString]];
 }
 
-- (void)setAvailableBytes:(unsigned long long)availableBytes {
+- (void)updateAvailableBytes:(unsigned long long)availableBytes {
     if(self.availableBytes == availableBytes) {
         return;
     }
-    [super setAvailableBytes:availableBytes];
+    [super updateAvailableBytes:availableBytes];
     
     [self postMeasurement:AVAILABLE_BYTES index:nil value:[NSString stringWithFormat:@"%li", (long)availableBytes]];
 }
 
-- (void)setBlackoutScreenOn:(PPDeviceParametersBlackoutScreenOn)blackoutScreenOn {
+- (void)updateBlackoutScreenOn:(PPDeviceParametersBlackoutScreenOn)blackoutScreenOn {
     if(self.blackoutScreenOn == blackoutScreenOn) {
         return;
     }
-    [super setBlackoutScreenOn:blackoutScreenOn];
+    [super updateBlackoutScreenOn:blackoutScreenOn];
     
     [self postMeasurement:BLACKOUT_SCREEN_ON index:nil value:[NSString stringWithFormat:@"%li", (long)blackoutScreenOn]];
 }
 
-- (void)setOutputVolume:(PPDeviceParametersOutputVolume)outputVolume {
+- (void)updateOutputVolume:(PPDeviceParametersOutputVolume)outputVolume {
     if(self.outputVolume == outputVolume) {
         return;
     }
-    [super setOutputVolume:outputVolume];
+    [super updateOutputVolume:outputVolume];
     
     [self postMeasurement:OUTPUT_VOLUME index:nil value:[NSString stringWithFormat:@"%li", (long)outputVolume]];
 }
 
-- (void)setAlertTitle:(NSString *)alertTitle {
+- (void)updateAlertTitle:(NSString *)alertTitle {
     if([self.alertTitle isEqualToString:alertTitle]) {
         return;
     }
-    [super setAlertTitle:alertTitle];
+    [super updateAlertTitle:alertTitle];
     
     [((PPDeviceProxyLocalPictureFrame *)[PPDeviceProxy currentProxy].localDevice).webSocket sendMeasurementToViewer:ALERT_TITLE value:alertTitle sessionID:NO];
 }
 
-- (void)setAlertSubtitle:(NSString *)alertSubtitle {
+- (void)updateAlertSubtitle:(NSString *)alertSubtitle {
     if([self.alertSubtitle isEqualToString:alertSubtitle]) {
         return;
     }
-    [super setAlertSubtitle:alertSubtitle];
+    [super updateAlertSubtitle:alertSubtitle];
     
     [((PPDeviceProxyLocalPictureFrame *)[PPDeviceProxy currentProxy].localDevice).webSocket sendMeasurementToViewer:ALERT_SUBTITLE value:alertSubtitle sessionID:NO];
 }
 
-- (void)setAlertQuestionId:(PPQuestionId)alertQuestionId {
+- (void)updateAlertQuestionId:(PPQuestionId)alertQuestionId {
     if(self.alertQuestionId == alertQuestionId) {
         return;
     }
-    [super setAlertQuestionId:alertQuestionId];
+    [super updateAlertQuestionId:alertQuestionId];
     
     [((PPDeviceProxyLocalPictureFrame *)[PPDeviceProxy currentProxy].localDevice).webSocket sendMeasurementToViewer:ALERT_QUESTION_ID value:[NSString stringWithFormat:@"%li", (long)alertQuestionId] sessionID:NO];
 }
 
-- (void)setAlertMessage:(NSString *)alertMessage {
+- (void)updateAlertMessage:(NSString *)alertMessage {
     if([self.alertMessage isEqualToString:alertMessage]) {
         return;
     }
-    [super setAlertMessage:alertMessage];
+    [super updateAlertMessage:alertMessage];
     
     [((PPDeviceProxyLocalPictureFrame *)[PPDeviceProxy currentProxy].localDevice).webSocket sendMeasurementToViewer:ALERT_MESSAGE value:alertMessage sessionID:NO];
 }
 
-- (void)setAlertIcon:(NSString *)alertIcon {
+- (void)updateAlertIcon:(NSString *)alertIcon {
     if([self.alertIcon isEqualToString:alertIcon]) {
         return;
     }
-    [super setAlertIcon:alertIcon];
+    [super updateAlertIcon:alertIcon];
     
     [((PPDeviceProxyLocalPictureFrame *)[PPDeviceProxy currentProxy].localDevice).webSocket sendMeasurementToViewer:ALERT_ICON value:alertIcon sessionID:NO];
 }
 
-- (void)setAlertTimestamp:(NSDate *)alertTimestamp {
+- (void)updateAlertTimestamp:(NSDate *)alertTimestamp {
     if([self.alertTimestamp compare:alertTimestamp] == NSOrderedSame) {
         return;
     }
-    [super setAlertTimestamp:alertTimestamp];
+    [super updateAlertTimestamp:alertTimestamp];
     
     [((PPDeviceProxyLocalPictureFrame *)[PPDeviceProxy currentProxy].localDevice).webSocket sendMeasurementToViewer:ALERT_TIMESTAMP_MS value:[NSString stringWithFormat:@"%li", (long)[alertTimestamp timeIntervalSince1970] * 1000] sessionID:NO];
 }
 
-- (void)setAlertDuration:(PPDeviceParametersAlertDuration)alertDuration {
+- (void)updateAlertDuration:(PPDeviceParametersAlertDuration)alertDuration {
     if(self.alertDuration == alertDuration) {
         return;
     }
-    [super setAlertDuration:alertDuration];
+    [super updateAlertDuration:alertDuration];
     
     [((PPDeviceProxyLocalPictureFrame *)[PPDeviceProxy currentProxy].localDevice).webSocket sendMeasurementToViewer:ALERT_DURATION_MS value:[NSString stringWithFormat:@"%li", (long)alertDuration] sessionID:NO];
 }
 
-- (void)setAlertPriority:(PPDeviceParametersAlertPriority)alertPriority {
+- (void)updateAlertPriority:(PPDeviceParametersAlertPriority)alertPriority {
     if(self.alertPriority == alertPriority) {
         return;
     }
-    [super setAlertPriority:alertPriority];
+    [super updateAlertPriority:alertPriority];
     
     [((PPDeviceProxyLocalPictureFrame *)[PPDeviceProxy currentProxy].localDevice).webSocket sendMeasurementToViewer:ALERT_PRIORITY value:[NSString stringWithFormat:@"%li", (long)alertPriority] sessionID:NO];
 }
 
-- (void)setPlaySound:(NSString *)playSound {
+- (void)updatePlaySound:(NSString *)playSound {
     if([self.playSound isEqualToString:playSound]) {
         return;
     }
-    [super setPlaySound:playSound];
+    [super updatePlaySound:playSound];
     
     [((PPDeviceProxyLocalPictureFrame *)[PPDeviceProxy currentProxy].localDevice).webSocket sendMeasurementToViewer:PLAY_SOUND value:playSound sessionID:NO];
 }
 
-- (void)setAlertStatus:(PPDeviceParametersAlertStatus)alertStatus {
+- (void)updateAlertStatus:(PPDeviceParametersAlertStatus)alertStatus {
     if(self.alertStatus == alertStatus) {
         return;
     }
-    [super setAlertStatus:alertStatus];
+    [super updateAlertStatus:alertStatus];
     
     [((PPDeviceProxyLocalPictureFrame *)[PPDeviceProxy currentProxy].localDevice).webSocket sendMeasurementToViewer:ALERT_STATUS value:[NSString stringWithFormat:@"%li", (long)alertStatus] sessionID:NO];
 }
 
-- (void)setNotification:(NSString *)notification {
+- (void)updateNotification:(NSString *)notification {
     if([self.notification isEqualToString:notification]) {
         return;
     }
-    [super setNotification:notification];
+    [super updateNotification:notification];
     
     [((PPDeviceProxyLocalPictureFrame *)[PPDeviceProxy currentProxy].localDevice).webSocket sendMeasurementToViewer:NOTIFICATION value:notification sessionID:NO];
 }
@@ -257,7 +257,7 @@
 
 - (PPDeviceMeasurement *)measurementWithParameterName:(NSString *)name index:(NSString *)index value:(NSString *)value {
     PPDeviceParameter *parameter = [[PPDeviceParameter alloc] initWithName:name index:index value:value lastUpdateDate:[NSDate date]];
-    PPDeviceMeasurement *measurement = [[PPDeviceMeasurement alloc] initWithDeviceId:self.deviceId lastDataReceivedDate:self.lastDataReceivedDate lastMeasureDate:self.lastMeasureDate params:@[parameter]];
+    PPDeviceMeasurement *measurement = [[PPDeviceMeasurement alloc] initWithDeviceId:self.deviceId lastDataReceivedDate:self.lastDataReceivedDate lastMeasureDate:self.lastMeasureDate params:(RLMArray *)@[parameter]];
     return measurement;
 }
 

@@ -27,7 +27,7 @@ typedef NS_OPTIONS(NSInteger, PPOrganizationPointsLevel) {
     PPOrganizationPointsLevelNone = -1
 };
 
-@interface PPOrganization : NSObject <NSCopying>
+@interface PPOrganization : RLMObject <NSCopying>
 
 @property (nonatomic) PPOrganizationId organizationId;
 @property (nonatomic, strong) NSString *name;
@@ -51,3 +51,5 @@ typedef NS_OPTIONS(NSInteger, PPOrganizationPointsLevel) {
 
 
 @end
+
+RLM_ARRAY_TYPE(PPOrganization)

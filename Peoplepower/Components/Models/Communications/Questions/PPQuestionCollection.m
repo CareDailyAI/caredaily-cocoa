@@ -10,6 +10,10 @@
 
 @implementation PPQuestionCollection
 
++ (NSString *)primaryKey {
+    return @"name";
+}
+
 - (id)initWithName:(NSString *)name
               icon:(NSString *)icon
               desc:(NSString *)desc

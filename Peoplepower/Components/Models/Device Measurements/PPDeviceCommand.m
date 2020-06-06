@@ -11,14 +11,18 @@
 
 @implementation PPDeviceCommand
 
-- (id)initWithCommandId:(PPDeviceCommandId)commandId deviceId:(NSString *)deviceId creationDate:(NSDate *)creationDate typeId:(PPDeviceTypeId)typeId parameters:(NSMutableArray *)parameters type:(PPDeviceCommandType)type result:(PPDeviceCommandResult)result commandTimeout:(PPDeviceCommandTimeout)commandTimeout comment:(NSString *)comment {
++ (NSString *)primaryKey {
+    return @"commandId";
+}
+
+- (id)initWithCommandId:(PPDeviceCommandId)commandId deviceId:(NSString *)deviceId creationDate:(NSDate *)creationDate typeId:(PPDeviceTypeId)typeId parameters:(NSArray *)parameters type:(PPDeviceCommandType)type result:(PPDeviceCommandResult)result commandTimeout:(PPDeviceCommandTimeout)commandTimeout comment:(NSString *)comment {
     self = [super init];
     if(self) {
         self.commandId = commandId;
         self.deviceId = deviceId;
         self.creationDate = creationDate;
         self.typeId = typeId;
-        self.parameters = parameters;
+        self.parameters = (RLMArray<PPDeviceParameter *><PPDeviceParameter> *)parameters;
         self.type = type;
         self.result = result;
         self.commandTimeout = commandTimeout;
@@ -77,7 +81,7 @@
     NSString *comment = [commandDict objectForKey:@"comment"];
     
     
-    PPDeviceCommand *command = [[PPDeviceCommand alloc] initWithCommandId:commandId deviceId:deviceId creationDate:creationDate typeId:typeId parameters:parameters type:type result:result commandTimeout:commandTimeout comment:comment];
+    PPDeviceCommand *command = [[PPDeviceCommand alloc] initWithCommandId:commandId deviceId:deviceId creationDate:creationDate typeId:typeId parameters:(RLMArray<PPDeviceParameter *><PPDeviceParameter> *)parameters type:type result:result commandTimeout:commandTimeout comment:comment];
     return command;
 }
 
@@ -90,7 +94,11 @@
     command.deviceId = [self.deviceId copyWithZone:zone];
     command.creationDate = [self.creationDate copyWithZone:zone];
     command.typeId = self.typeId;
-    command.parameters = self.parameters;
+    NSMutableArray *parameters = [[NSMutableArray alloc] initWithCapacity:self.parameters.count];
+    for (PPDeviceParameter *parameter in self.parameters) {
+        [parameters addObject:[parameter copyWithZone:zone]];
+    }
+    command.parameters = parameters;
     command.type = self.type;
     command.result = self.result;
     command.commandTimeout = self.commandTimeout;

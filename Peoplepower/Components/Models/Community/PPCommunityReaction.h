@@ -20,7 +20,7 @@ typedef NS_OPTIONS(NSInteger, PPCommunityReactionType) {
     PPCommunityReactionTypeFlagged = 7,
 };
 
-@interface PPCommunityReaction : NSObject
+@interface PPCommunityReaction : RLMObject
 
 @property (nonatomic, strong) PPCommunityUser *user;
 @property (nonatomic) PPCommunityReactionType reaction;
@@ -31,5 +31,7 @@ typedef NS_OPTIONS(NSInteger, PPCommunityReactionType) {
 + (PPCommunityReaction *)initWithDictionary:(NSDictionary *)reactionDict;
 
 @end
+
+RLM_ARRAY_TYPE(PPCommunityReaction);
 
 NS_ASSUME_NONNULL_END

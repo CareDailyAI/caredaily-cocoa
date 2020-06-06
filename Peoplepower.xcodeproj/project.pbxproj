@@ -17,7 +17,6 @@
 		631A7AA6248B16DD00D86CFF /* Peoplepower-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63A9524E205AFC15000E466A /* Peoplepower-Info.plist */; };
 		631A7AA7248B16E000D86CFF /* Peoplepower-Framework-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63BEC9AF20C5D2AB00408494 /* Peoplepower-Framework-Info.plist */; };
 		631A7AA8248B171000D86CFF /* Peoplepower-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 637A632B206C44B000F7876D /* Peoplepower-Config.plist */; };
-		631A7B03248B3C2100D86CFF /* OHHTTPStubs.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 636B47E6248AF8CB00124F6A /* OHHTTPStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		631DB29B21077D8900C2F8F1 /* PPCircleDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 631DB29921077D8900C2F8F1 /* PPCircleDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		631DB29C21077D8900C2F8F1 /* PPCircleDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 631DB29A21077D8900C2F8F1 /* PPCircleDevice.m */; };
 		631F72F223BBC16600F98797 /* PPUserCommunity.h in Headers */ = {isa = PBXBuildFile; fileRef = 631F72F023BBC16600F98797 /* PPUserCommunity.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -305,6 +304,7 @@
 		636B4A36248AFBE700124F6A /* Weather-GetForecastByLocation-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 636B46A6248AF7D800124F6A /* Weather-GetForecastByLocation-ResponseData.json */; };
 		636D0F57210A1DF2005B9111 /* PPVideoToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 636D0F55210A1DF1005B9111 /* PPVideoToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		636D0F58210A1DF2005B9111 /* PPVideoToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 636D0F56210A1DF1005B9111 /* PPVideoToken.m */; };
+		63702583248C3AE1002CC1C5 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B9B14E248C36BA0056E7CE /* Realm.framework */; };
 		6372B66521349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 6372B66321349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6372B66621349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6372B66421349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.m */; };
 		6378CE842124E772009D76AF /* 10seconds_en.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6378CE802124E772009D76AF /* 10seconds_en.mp3 */; };
@@ -428,6 +428,16 @@
 		63AD0B17237CC76100F4900B /* PPCommunityUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AD0B15237CC76100F4900B /* PPCommunityUser.m */; };
 		63AD0B1A237CC77900F4900B /* PPCommunityLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 63AD0B18237CC77900F4900B /* PPCommunityLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63AD0B1B237CC77900F4900B /* PPCommunityLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AD0B19237CC77900F4900B /* PPCommunityLocation.m */; };
+		63B9B13B248C0D5C0056E7CE /* PPRLMArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 63B9B135248C0D5B0056E7CE /* PPRLMArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63B9B13C248C0D5C0056E7CE /* RLMObject+PPExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B9B136248C0D5B0056E7CE /* RLMObject+PPExtras.m */; };
+		63B9B13D248C0D5C0056E7CE /* PPRLMDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 63B9B137248C0D5B0056E7CE /* PPRLMDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63B9B13E248C0D5C0056E7CE /* PPRLMDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B9B138248C0D5C0056E7CE /* PPRLMDictionary.m */; };
+		63B9B13F248C0D5C0056E7CE /* PPRLMArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B9B139248C0D5C0056E7CE /* PPRLMArray.m */; };
+		63B9B140248C0D5C0056E7CE /* RLMObject+PPExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = 63B9B13A248C0D5C0056E7CE /* RLMObject+PPExtras.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63B9B143248C0D9C0056E7CE /* PPRealm.h in Headers */ = {isa = PBXBuildFile; fileRef = 63B9B141248C0D9B0056E7CE /* PPRealm.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63B9B144248C0D9C0056E7CE /* PPRealm.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B9B142248C0D9B0056E7CE /* PPRealm.m */; };
+		63B9B14C248C1DC10056E7CE /* Realm.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 63B9B14B248C1DC00056E7CE /* Realm.framework.dSYM */; };
+		63B9B14D248C1DC70056E7CE /* Realm.framework.dSYM in Carthage DSYM */ = {isa = PBXBuildFile; fileRef = 63B9B14B248C1DC00056E7CE /* Realm.framework.dSYM */; };
 		63BEC9CA20C5D67500408494 /* PPNetworkUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A9525B205C2E9A000E466A /* PPNetworkUtilities.m */; };
 		63BEC9CC20C5D67500408494 /* PPDateUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3937F204F46B600041C1A /* PPDateUtilities.m */; };
 		63BEC9CF20C5D67500408494 /* PPAppResources.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A95235205AD424000E466A /* PPAppResources.m */; };
@@ -1002,6 +1012,7 @@
 				636B445C248AF17E00124F6A /* AFNetworking.framework.dSYM in Carthage DSYM */,
 				636B445D248AF17E00124F6A /* UICKeyChainStore.framework.dSYM in Carthage DSYM */,
 				636B4464248AF38D00124F6A /* KissXML.framework.dSYM in Carthage DSYM */,
+				63B9B14D248C1DC70056E7CE /* Realm.framework.dSYM in Carthage DSYM */,
 			);
 			name = "Carthage DSYM";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1128,7 +1139,6 @@
 			dstPath = "include/$(PROJECT_NAME)/frameworks";
 			dstSubfolderSpec = 16;
 			files = (
-				631A7B03248B3C2100D86CFF /* OHHTTPStubs.framework in CopyFiles */,
 				63BECBC620C5F11A00408494 /* AddressBook.framework in CopyFiles */,
 				63BECBC720C5F11A00408494 /* Contacts.framework in CopyFiles */,
 				63BECBC820C5F11A00408494 /* libicucore.tbd in CopyFiles */,
@@ -1669,6 +1679,17 @@
 		63AD0B15237CC76100F4900B /* PPCommunityUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPCommunityUser.m; sourceTree = "<group>"; };
 		63AD0B18237CC77900F4900B /* PPCommunityLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPCommunityLocation.h; sourceTree = "<group>"; };
 		63AD0B19237CC77900F4900B /* PPCommunityLocation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPCommunityLocation.m; sourceTree = "<group>"; };
+		63B9B135248C0D5B0056E7CE /* PPRLMArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPRLMArray.h; sourceTree = "<group>"; };
+		63B9B136248C0D5B0056E7CE /* RLMObject+PPExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RLMObject+PPExtras.m"; sourceTree = "<group>"; };
+		63B9B137248C0D5B0056E7CE /* PPRLMDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPRLMDictionary.h; sourceTree = "<group>"; };
+		63B9B138248C0D5C0056E7CE /* PPRLMDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPRLMDictionary.m; sourceTree = "<group>"; };
+		63B9B139248C0D5C0056E7CE /* PPRLMArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPRLMArray.m; sourceTree = "<group>"; };
+		63B9B13A248C0D5C0056E7CE /* RLMObject+PPExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RLMObject+PPExtras.h"; sourceTree = "<group>"; };
+		63B9B141248C0D9B0056E7CE /* PPRealm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPRealm.h; sourceTree = "<group>"; };
+		63B9B142248C0D9B0056E7CE /* PPRealm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPRealm.m; sourceTree = "<group>"; };
+		63B9B145248C1D650056E7CE /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		63B9B14B248C1DC00056E7CE /* Realm.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Realm.framework.dSYM; path = Carthage/Build/iOS/Realm.framework.dSYM; sourceTree = "<group>"; };
+		63B9B14E248C36BA0056E7CE /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		63BEC9AC20C5D2AA00408494 /* Peoplepower.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Peoplepower.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BEC9AF20C5D2AB00408494 /* Peoplepower-Framework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Peoplepower-Framework-Info.plist"; sourceTree = "<group>"; };
 		63BEC9B420C5D2AB00408494 /* Peoplepower-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Peoplepower-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2046,6 +2067,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63702583248C3AE1002CC1C5 /* Realm.framework in Frameworks */,
 				63BECA8F20C5D77400408494 /* AddressBook.framework in Frameworks */,
 				636B4457248AF10F00124F6A /* AFNetworking.framework in Frameworks */,
 				636B444A248AE9A100124F6A /* SocketRocket.framework in Frameworks */,
@@ -2154,6 +2176,8 @@
 		63475E3B2069CFCF009BCDED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				63B9B14E248C36BA0056E7CE /* Realm.framework */,
+				63B9B145248C1D650056E7CE /* RealmSwift.framework */,
 				636B47E9248AF9EF00124F6A /* Foundation.framework */,
 				636B47E6248AF8CB00124F6A /* OHHTTPStubs.framework */,
 				636B445E248AF35F00124F6A /* KissXML.framework */,
@@ -2206,6 +2230,7 @@
 		636B4455248AECEF00124F6A /* DSYM */ = {
 			isa = PBXGroup;
 			children = (
+				63B9B14B248C1DC00056E7CE /* Realm.framework.dSYM */,
 				636B445A248AF13400124F6A /* AFNetworking.framework.dSYM */,
 				636B4452248AECDB00124F6A /* UICKeyChainStore.framework.dSYM */,
 				636B4462248AF37600124F6A /* KissXML.framework.dSYM */,
@@ -2747,6 +2772,8 @@
 		63D392D1204F263000041C1A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				63B9B141248C0D9B0056E7CE /* PPRealm.h */,
+				63B9B142248C0D9B0056E7CE /* PPRealm.m */,
 				631152DE21E7FB8400DA7755 /* PPTHConstants.h */,
 				63A9525C205C2E9B000E466A /* PPNetworkUtilities.h */,
 				63A9525B205C2E9A000E466A /* PPNetworkUtilities.m */,
@@ -2804,6 +2831,12 @@
 		63D392D4204F263000041C1A /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				63B9B135248C0D5B0056E7CE /* PPRLMArray.h */,
+				63B9B139248C0D5C0056E7CE /* PPRLMArray.m */,
+				63B9B137248C0D5B0056E7CE /* PPRLMDictionary.h */,
+				63B9B138248C0D5C0056E7CE /* PPRLMDictionary.m */,
+				63B9B13A248C0D5C0056E7CE /* RLMObject+PPExtras.h */,
+				63B9B136248C0D5B0056E7CE /* RLMObject+PPExtras.m */,
 				63D3933D204F420E00041C1A /* PPNSString.h */,
 				63D3933E204F420E00041C1A /* PPNSString.m */,
 				63D39378204F464600041C1A /* PPNSDate.h */,
@@ -3681,6 +3714,10 @@
 				63BECA9C20C5D7F400408494 /* PPNSData.h in Headers */,
 				63BECAC920C5D88400408494 /* PPDeviceParameters.h in Headers */,
 				63BECAF120C5D8A800408494 /* PPRuleCalendar.h in Headers */,
+				63B9B13B248C0D5C0056E7CE /* PPRLMArray.h in Headers */,
+				63B9B13D248C0D5C0056E7CE /* PPRLMDictionary.h in Headers */,
+				63B9B143248C0D9C0056E7CE /* PPRealm.h in Headers */,
+				63B9B140248C0D5C0056E7CE /* RLMObject+PPExtras.h in Headers */,
 				63BECA9F20C5D88300408494 /* PPCloudConnectivityServer.h in Headers */,
 				63BECB3020C5D8E600408494 /* PPCircleReaction.h in Headers */,
 				63BECB0720C5D8E600408494 /* PPEnergyManagementDeviceUsageAggregatedEnergy.h in Headers */,
@@ -3943,6 +3980,7 @@
 				6378CEDE2124E7A5009D76AF /* leavingtestmode_en.mp3 in Resources */,
 				63E54F7E22382874000FAD4B /* SF-Pro-Display-Black.otf in Resources */,
 				6378CEBD2124E78A009D76AF /* compliment_17_en.mp3 in Resources */,
+				63B9B14C248C1DC10056E7CE /* Realm.framework.dSYM in Resources */,
 				63E54F5022382874000FAD4B /* SF-Compact-Text-RegularItalic.otf in Resources */,
 				6378CED52124E79D009D76AF /* entry_delay.wav in Resources */,
 				63F2DE9123FDD28400813EDB /* alarm.caf in Resources */,
@@ -4312,6 +4350,7 @@
 				63BECA3E20C5D6C300408494 /* PPEnergyManagementDeviceUsagePower.m in Sources */,
 				63BECA7720C5D6E500408494 /* PPOrganization.m in Sources */,
 				63BECA7320C5D6E500408494 /* PPBotengineAppRating.m in Sources */,
+				63B9B13F248C0D5C0056E7CE /* PPRLMArray.m in Sources */,
 				63BEC9F120C5D67500408494 /* PPDeviceProxy.m in Sources */,
 				63BEC9E820C5D67500408494 /* PPUserBadge.m in Sources */,
 				63BECA5C20C5D6E500408494 /* PPCloudsIntegration.m in Sources */,
@@ -4325,6 +4364,7 @@
 				63BECA6420C5D6E500408494 /* PPCircles.m in Sources */,
 				63BECA5320C5D6C300408494 /* PPDeviceTypeGoal.m in Sources */,
 				63BECA6A20C5D6E500408494 /* PPReports.m in Sources */,
+				63B9B13E248C0D5C0056E7CE /* PPRLMDictionary.m in Sources */,
 				63BECA2620C5D6A100408494 /* PPRuleComponentState.m in Sources */,
 				63BECA6B20C5D6E500408494 /* PPDeviceAlert.m in Sources */,
 				63BECA2220C5D6A100408494 /* PPRules.m in Sources */,
@@ -4413,6 +4453,7 @@
 				63BECA5220C5D6C300408494 /* PPDeviceTypeRuleComponentTemplateProduct.m in Sources */,
 				63BECA3120C5D6A100408494 /* PPStoreProduct.m in Sources */,
 				63BEC9F720C5D67500408494 /* PPWebSocketConfiguration.m in Sources */,
+				63B9B144248C0D9C0056E7CE /* PPRealm.m in Sources */,
 				63BECA5D20C5D6E500408494 /* PPCloudsIntegrationClient.m in Sources */,
 				63BECA4D20C5D6C300408494 /* PPDeviceType.m in Sources */,
 				63BECA4220C5D6C300408494 /* PPEnergyManagementBillingInfo.m in Sources */,
@@ -4434,6 +4475,7 @@
 				63BECA8A20C5D74000408494 /* PPNotificationMessage.m in Sources */,
 				638E82FC24412416000B07FD /* PPUserCode.m in Sources */,
 				63BECA0720C5D67500408494 /* PPDeviceParameters.m in Sources */,
+				63B9B13C248C0D5C0056E7CE /* RLMObject+PPExtras.m in Sources */,
 				63BEC9F920C5D67500408494 /* PPWebSocketViewer.m in Sources */,
 				63AD0B1B237CC77900F4900B /* PPCommunityLocation.m in Sources */,
 				637F1D022125E321001DB910 /* PPStorage.m in Sources */,

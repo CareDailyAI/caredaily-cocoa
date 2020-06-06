@@ -9,7 +9,7 @@
 #import "PPBaseModel.h"
 #import "PPDeviceParameterRobotVantagePoint.h"
 
-@interface PPDeviceParameter : NSObject <NSCopying>
+@interface PPDeviceParameter : RLMObject <NSCopying>
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *index;
@@ -33,3 +33,5 @@
 - (BOOL)isEqual:(PPDeviceParameter *)parameter;
 
 @end
+
+RLM_ARRAY_TYPE(PPDeviceParameter)

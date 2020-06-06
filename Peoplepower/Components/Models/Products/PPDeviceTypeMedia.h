@@ -8,6 +8,9 @@
 
 #import "PPBaseModel.h"
 
+@class PPDeviceTypeMediaDesc;
+RLM_ARRAY_TYPE(PPDeviceTypeMediaDesc);
+
 typedef NS_OPTIONS(NSInteger, PPDeviceTypeMediaType) {
     PPDeviceTypeMediaTypeNone = -1,
     PPDeviceTypeMediaTypeVideo = 1,
@@ -15,15 +18,15 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeMediaType) {
     PPDeviceTypeMediaTypeAudio = 3,
     PPDeviceTypeMediaTypeTextDocument = 4
 };
-@interface PPDeviceTypeMedia : NSArray
+@interface PPDeviceTypeMedia : RLMObject
 
 @property (nonatomic, strong) NSString *mediaId;
 @property (nonatomic) PPDeviceTypeMediaType mediaType;
 @property (nonatomic, strong) NSString *url;
 @property (nonatomic, strong) NSString *contentType;
-@property (nonatomic, strong) NSDictionary *desc;
+@property (nonatomic, strong) PPDeviceTypeMediaDesc *desc;
 
-- (id)initWithId:(NSString *)mediaId mediaType:(PPDeviceTypeMediaType)mediaType url:(NSString *)url contentType:(NSString *)contentType desc:(NSDictionary *)desc;
+- (id)initWithId:(NSString *)mediaId mediaType:(PPDeviceTypeMediaType)mediaType url:(NSString *)url contentType:(NSString *)contentType desc:(PPDeviceTypeMediaDesc *)desc;
 
 + (PPDeviceTypeMedia *)initWithDictionary:(NSDictionary *)mediaDict;
 
@@ -35,4 +38,10 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeMediaType) {
 
 - (void)sync:(PPDeviceTypeMedia *)media;
 
+@end
+
+RLM_ARRAY_TYPE(PPDeviceTypeMedia);
+
+@interface PPDeviceTypeMediaDesc : PPRLMDictionary
++ (PPDeviceTypeMediaDesc *)initWithDictionary:(NSDictionary *)dict;
 @end

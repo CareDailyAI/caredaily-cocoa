@@ -15,7 +15,7 @@ typedef NS_OPTIONS(NSInteger, PPBotengineAppAccessCategory) {
     PPBotengineAppAccessCategoryDevices = 4
 };
 
-@interface PPBotengineAppAccess : NSObject
+@interface PPBotengineAppAccess : RLMObject
 
 @property (nonatomic) PPBotengineAppAccessCategory category;
 @property (nonatomic, strong) NSString *deviceId;
@@ -31,3 +31,5 @@ typedef NS_OPTIONS(NSInteger, PPBotengineAppAccessCategory) {
 - (NSString *)JSONString;
 
 @end
+
+RLM_ARRAY_TYPE(PPBotengineAppAccess);

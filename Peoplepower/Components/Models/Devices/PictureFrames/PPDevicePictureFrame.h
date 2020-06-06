@@ -45,7 +45,7 @@ extern PPDeviceParametersOutputVolume PICTURE_FRAME_VOLUME_OUTPUT_DEFAULT;
 @property (nonatomic) PPDeviceParametersBatteryLevel batteryLevel;
 @property (nonatomic) PPDeviceParametersCharging charging;
 @property (nonatomic) PPVersion *version;
-@property (nonatomic) unsigned long long availableBytes;
+@property (nonatomic) long long availableBytes;
 @property (nonatomic) PPDeviceParametersBlackoutScreenOn blackoutScreenOn;
 @property (nonatomic) PPDeviceParametersOutputVolume outputVolume;
 
@@ -66,7 +66,7 @@ extern PPDeviceParametersOutputVolume PICTURE_FRAME_VOLUME_OUTPUT_DEFAULT;
 @property (nonatomic) NSString *streamId;
 @property (nonatomic) NSInteger recordStream;
 
-- (id)initWithDeviceId:(NSString *)deviceId proxyId:(NSString *)proxyId name:(NSString *)name connected:(PPDeviceConnected)connected restricted:(PPDeviceRestricted)restricted shared:(PPDeviceShared)shared newDevice:(PPDeviceNewDevice)newDevice goalId:(PPDeviceTypeGoalId)goalId typeId:(PPDeviceTypeId)typeId category:(PPDeviceTypeCategory)category typeAttributes:(NSMutableArray *)typeAttributes locationId:(PPLocationId)locationId startDate:(NSDate *)startDate lastDataReceivedDate:(NSDate *)lastDataReceivedDate lastMeasureDate:(NSDate *)lastMeasureDate lastConnectedDate:(NSDate *)lastConnectedDate parameters:(NSMutableArray *)parameters properties:(NSMutableArray *)properties icon:(NSString *)icon spaces:(NSMutableArray *)spaces modelId:(NSString *)modelId;
+- (id)initWithDeviceId:(NSString *)deviceId proxyId:(NSString *)proxyId name:(NSString *)name connected:(PPDeviceConnected)connected restricted:(PPDeviceRestricted)restricted shared:(PPDeviceShared)shared newDevice:(PPDeviceNewDevice)newDevice goalId:(PPDeviceTypeGoalId)goalId typeId:(PPDeviceTypeId)typeId category:(PPDeviceTypeCategory)category typeAttributes:(RLMArray *)typeAttributes locationId:(PPLocationId)locationId startDate:(NSDate *)startDate lastDataReceivedDate:(NSDate *)lastDataReceivedDate lastMeasureDate:(NSDate *)lastMeasureDate lastConnectedDate:(NSDate *)lastConnectedDate parameters:(RLMArray *)parameters properties:(RLMArray *)properties icon:(NSString *)icon spaces:(RLMArray *)spaces modelId:(NSString *)modelId;
 
 + (PPDevicePictureFrame *)initWithDictionary:(NSDictionary *)deviceDict;
 
@@ -84,4 +84,59 @@ extern PPDeviceParametersOutputVolume PICTURE_FRAME_VOLUME_OUTPUT_DEFAULT;
 
 - (void)syncSelectedCamera;
 
+/// Override realm.io setters with custom methods
+- (void)updateSelectedCamera:(PPDeviceParametersSelectedCamera)selectedCamera;
+
+- (void)updateSelectedFlash:(PPDeviceParametersSelectedFlash)selectedFlash;
+
+- (void)updateAudioStatus:(PPDeviceParametersAudioStatus)audioStatus;
+
+- (void)updateAudioSensitivity:(PPDeviceParametersAudioSensitiviy)audioSensitivity;
+
+- (void)updateAudioActivity:(PPDeviceParametersAudioActivity)audioActivity;
+
+- (void)updateRecordStatus:(PPDeviceParametersRecordStatus)recordStatus;
+
+- (void)updateAudioStreaming:(PPDeviceParametersAudioStreaming)audioStreaming;
+
+- (void)updateVideoStreaming:(PPDeviceParametersVideoStreaming)videoStreaming;
+
+- (void)updateSupportsVideoCall:(PPDeviceParametersSupportsVideoCall)supportsVideoCall;
+
+- (void)updateBatteryLevel:(PPDeviceParametersBatteryLevel)batteryLevel;
+
+- (void)updateCharging:(PPDeviceParametersCharging)charging;
+
+- (void)updateVersion:(PPVersion *)version;
+
+- (void)updateAvailableBytes:(unsigned long long)availableBytes;
+
+- (void)updateBlackoutScreenOn:(PPDeviceParametersBlackoutScreenOn)blackoutScreenOn;
+
+- (void)updateOutputVolume:(PPDeviceParametersOutputVolume)outputVolume;
+
+- (void)updateAlertTitle:(NSString *)alertTitle;
+
+- (void)updateAlertSubtitle:(NSString *)alertSubtitle;
+
+- (void)updateAlertQuestionId:(PPQuestionId)alertQuestionId;
+
+- (void)updateAlertMessage:(NSString *)alertMessage;
+
+- (void)updateAlertIcon:(NSString *)alertIcon;
+
+- (void)updateAlertTimestamp:(NSDate *)alertTimestamp;
+
+- (void)updateAlertDuration:(PPDeviceParametersAlertDuration)alertDuration;
+
+- (void)updateAlertPriority:(PPDeviceParametersAlertPriority)alertPriority;
+
+- (void)updatePlaySound:(NSString *)playSound;
+
+- (void)updateAlertStatus:(PPDeviceParametersAlertStatus)alertStatus;
+
+- (void)updateNotification:(NSString *)notification;
+
 @end
+
+RLM_ARRAY_TYPE(PPDevicePictureFrame);

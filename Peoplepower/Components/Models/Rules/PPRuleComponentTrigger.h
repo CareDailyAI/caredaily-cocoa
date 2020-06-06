@@ -10,7 +10,7 @@
 
 @interface PPRuleComponentTrigger : PPRuleComponent
 
-- (id)initWithId:(PPRuleComponentId)componentId name:(NSString *)name displayType:(PPRuleComponentDisplayType)displayType desc:(NSString *)desc past:(NSString *)past timezone:(PPRuleComponentTimezone)timezone functionGroup:(NSString *)functionGroup parameters:(NSArray *)parameters serviceName:(NSString *)serviceName;
+- (id)initWithId:(PPRuleComponentId)componentId name:(NSString *)name displayType:(PPRuleComponentDisplayType)displayType desc:(NSString *)desc past:(NSString *)past timezone:(PPRuleComponentTimezone)timezone functionGroup:(NSString *)functionGroup parameters:(RLMArray *)parameters serviceName:(NSString *)serviceName;
 
 #pragma marker - Helper Methods
 
@@ -19,3 +19,5 @@
 - (void)sync:(PPRuleComponentTrigger *)ruleComponent;
 
 @end
+
+RLM_ARRAY_TYPE(PPRuleComponentTrigger);

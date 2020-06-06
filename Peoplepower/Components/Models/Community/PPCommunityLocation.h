@@ -8,7 +8,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PPCommunityLocation : NSObject
+@interface PPCommunityLocation : RLMObject
 
 @property (nonatomic) PPLocationId locationId;
 @property (nonatomic, strong) NSString *name;
@@ -22,5 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (PPCommunityLocation *)initWithDictionary:(NSDictionary *)locationDict;
 
 @end
+
+RLM_ARRAY_TYPE(PPCommunityLocation);
 
 NS_ASSUME_NONNULL_END

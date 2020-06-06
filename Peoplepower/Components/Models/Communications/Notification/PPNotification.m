@@ -10,6 +10,10 @@
 
 @implementation PPNotification
 
++ (NSString *)primaryKey {
+    return @"sendDateMS";
+}
+
 - (id)initWithSendDate:(NSDate *)sendDate sendDateMS:(NSInteger)sendDateMS deliveryType:(PPNotificationDeliveryType)deliveryType subscriptionType:(PPNotificationSubscriptionType)subscriptionType brand:(NSString *)brand templateName:(NSString *)templateName language:(NSString *)language sound:(NSString *)sound badge:(PPUserBadgeCount)badge sentCount:(PPNotificationSentCount)sentCount sourceType:(PPNotificationSourceType)sourceType sourceId:(PPNotificationSourceId)sourceId messageText:(NSString *)messageText {
     self = [super init];
     if(self) {

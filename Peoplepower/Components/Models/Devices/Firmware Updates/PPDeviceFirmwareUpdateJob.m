@@ -11,6 +11,10 @@
 
 @implementation PPDeviceFirmwareUpdateJob
 
++ (NSString *)primaryKey {
+    return @"jobId";
+}
+
 - (id)initWithJobId:(PPDeviceFirmwareUpdateJobId)jobId index:(NSString *)index firmware:(NSString *)firmware currentFirmware:(NSString *)currentFirmware status:(PPDeviceFirmwareUpdateStatus)status url:(NSString *)url checkSum:(NSString *)checkSum notificationDate:(NSDate *)notificationDate startDate:(NSDate *)startDate device:(PPDevice *)device {
     self = [super init];
     if(self) {

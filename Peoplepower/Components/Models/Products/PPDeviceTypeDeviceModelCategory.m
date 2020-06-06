@@ -11,19 +11,23 @@
 
 @implementation PPDeviceTypeDeviceModelCategory
 
-- (id)initWithId:(NSString *)categoryId parentId:(NSString *)parentId brands:(NSArray *)brands icon:(NSString *)icon search:(NSArray *)search hidden:(PPDeviceTypeDeviceModelHidden)hidden sortId:(PPDeviceTypeDeviceModelSortId)sortId name:(NSDictionary *)name stories:(NSArray *)stories models:(NSArray *)models {
++ (NSString *)primaryKey {
+    return @"categoryId";
+}
+
+- (id)initWithId:(NSString *)categoryId parentId:(NSString *)parentId brands:(RLMArray *)brands icon:(NSString *)icon search:(RLMArray *)search hidden:(PPDeviceTypeDeviceModelHidden)hidden sortId:(PPDeviceTypeDeviceModelSortId)sortId name:(PPDeviceTypeDeviceModelCategoryName *)name stories:(RLMArray *)stories models:(RLMArray *)models {
     self = [super init];
     if(self) {
         self.categoryId = categoryId;
         self.parentId = parentId;
-        self.brands = brands;
+        self.brands = (RLMArray<PPDeviceTypeDeviceModelBrand *><PPDeviceTypeDeviceModelBrand> *)brands;
         self.icon = icon;
-        self.search = search;
+        self.search = (RLMArray<RLMString> *)search;
         self.hidden = hidden;
         self.sortId = sortId;
         self.name = name;
-        self.stories = stories;
-        self.models = models;
+        self.stories = (RLMArray<PPDeviceTypeStory *><PPDeviceTypeStory> *)stories;
+        self.models = (RLMArray<PPDeviceTypeDeviceModel *><PPDeviceTypeDeviceModel> *)models;
     }
     return self;
 }
@@ -52,7 +56,7 @@
         sortId = (PPDeviceTypeDeviceModelSortId)((NSString *)[categoryDict objectForKey:@"sortId"]).integerValue;
     }
 
-    NSDictionary *name = [categoryDict objectForKey:@"name"];
+    PPDeviceTypeDeviceModelCategoryName *name = [PPDeviceTypeDeviceModelCategoryName initWithDictionary:[categoryDict objectForKey:@"name"]];
     
     NSMutableArray *stories;
     if([categoryDict objectForKey:@"stories"]) {
@@ -71,7 +75,7 @@
             [models addObject:model];
         }
     }
-    PPDeviceTypeDeviceModelCategory *category = [[PPDeviceTypeDeviceModelCategory alloc] initWithId:categoryId parentId:parentId brands:brands icon:icon search:search hidden:hidden sortId:sortId name:name stories:stories models:models];
+    PPDeviceTypeDeviceModelCategory *category = [[PPDeviceTypeDeviceModelCategory alloc] initWithId:categoryId parentId:parentId brands:(RLMArray<PPDeviceTypeDeviceModelBrand *><PPDeviceTypeDeviceModelBrand> *)brands icon:icon search:(RLMArray<RLMString> *)search hidden:hidden sortId:sortId name:name stories:(RLMArray<PPDeviceTypeStory *><PPDeviceTypeStory> *)stories models:(RLMArray<PPDeviceTypeDeviceModel *><PPDeviceTypeDeviceModel> *)models];
     return category;
 }
 
@@ -129,7 +133,7 @@
         if(appendComma) {
             [JSONString appendString:@","];
         }
-        [JSONString appendFormat:@"\"search\": [%@]", [category.search componentsJoinedByString:@","]];
+        [JSONString appendFormat:@"\"search\": [%@]", [PPRLMArray stringArray:category.search componentsJoinedByString:@","]];
         appendComma = YES;
     }
     
@@ -153,9 +157,7 @@
         if(appendComma) {
             [JSONString appendString:@","];
         }
-        NSError * err;
-        NSData * jsonData = [NSJSONSerialization dataWithJSONObject:category.name options:0 error:&err];
-        [JSONString appendFormat:@"\"name\": %@", [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+        [JSONString appendFormat:@"\"name\": {%@}", [PPDeviceTypeDeviceModelCategoryName stringify:category.name]];
         appendComma = YES;
     }
     
@@ -210,5 +212,14 @@
     }
 }
 
+
+@end
+
+@implementation PPDeviceTypeDeviceModelCategoryName
+
++ (PPDeviceTypeDeviceModelCategoryName *)initWithDictionary:(NSDictionary *)dict {
+    PPRLMDictionary *RLMDictionary = [super initWithDictionary:dict];
+    return [[PPDeviceTypeDeviceModelCategoryName alloc] initWithKeys:RLMDictionary.keys value:RLMDictionary.values];
+}
 
 @end

@@ -10,11 +10,11 @@
 
 @implementation PPWeather
 
-- (id)initWithMetaDate:(PPWeatherMetadata *)metaData forecasts:(NSArray *)forecasts observation:(PPWeatherObservation *)observation {
+- (id)initWithMetaDate:(PPWeatherMetadata *)metaData forecasts:(RLMArray *)forecasts observation:(PPWeatherObservation *)observation {
     self = [super init];
     if(self) {
         self.metadata = metaData;
-        self.forecasts = forecasts;
+        self.forecasts = (RLMArray<PPWeatherForecast *><PPWeatherForecast> *)forecasts;
         self.observation = observation;
     }
     return self;
@@ -32,7 +32,7 @@
     
     PPWeatherObservation *observation = [PPWeatherObservation initWithDictionary:[weatherDict objectForKey:@"observation"]];
     
-    PPWeather *weather = [[PPWeather alloc] initWithMetaDate:metaData forecasts:forecasts observation:observation];
+    PPWeather *weather = [[PPWeather alloc] initWithMetaDate:metaData forecasts:(RLMArray<PPWeatherForecast *><PPWeatherForecast> *)forecasts observation:observation];
     return weather;
 }
 

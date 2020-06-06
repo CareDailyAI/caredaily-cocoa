@@ -10,6 +10,10 @@
 
 @implementation PPNotificationToken
 
++ (NSString *)primaryKey {
+    return @"token";
+}
+
 - (id)initWithToken:(NSString *)token badges:(PPNotificationSubscriptionSupportsBadgeIcons)badges {
     self = [super init];
     if(self) {

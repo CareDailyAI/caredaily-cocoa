@@ -13,13 +13,13 @@ typedef NS_OPTIONS(NSInteger, PPDynamicUIScreenOrder) {
     PPDynamicUIScreenOrderNone = -1,
 };
 
-@interface PPDynamicUIScreen : NSObject
+@interface PPDynamicUIScreen : RLMObject
 
 @property (nonatomic, strong) NSString *screenId;
 @property (nonatomic) PPDynamicUIScreenOrder order;
-@property (nonatomic, strong) NSArray *sections;
+@property (nonatomic, strong) RLMArray<PPDynamicUIScreenSection *><PPDynamicUIScreenSection> *sections;
 
-- (id)initWithScreenId:(NSString *)screenId order:(PPDynamicUIScreenOrder)order sections:(NSArray *)sections;
+- (id)initWithScreenId:(NSString *)screenId order:(PPDynamicUIScreenOrder)order sections:(RLMArray *)sections;
 
 + (PPDynamicUIScreen *)initWithDictionary:(NSDictionary *)screenDict;
 
@@ -30,3 +30,5 @@ typedef NS_OPTIONS(NSInteger, PPDynamicUIScreenOrder) {
 - (void)sync:(PPDynamicUIScreen *)screen;
 
 @end
+
+RLM_ARRAY_TYPE(PPDynamicUIScreen);

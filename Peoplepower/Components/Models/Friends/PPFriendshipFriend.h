@@ -9,7 +9,7 @@
 #import "PPBaseModel.h"
 #import "PPUserEmail.h"
 
-@interface PPFriendshipFriend : NSObject
+@interface PPFriendshipFriend : RLMObject
 
 @property (nonatomic) PPUserId friendId;
 @property (nonatomic, strong) NSString *firstName;
@@ -23,3 +23,5 @@
 + (NSString *)stringify:(PPFriendshipFriend *)friendshipFriend;
 
 @end
+
+RLM_ARRAY_TYPE(PPFriendshipFriend);

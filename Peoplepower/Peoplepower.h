@@ -12,6 +12,7 @@
 #import <Peoplepower/PPNetworkUtilities.h>
 #import <Peoplepower/PPDateUtilities.h>
 #import <Peoplepower/PPAppResources.h>
+#import <Peoplepower/PPRealm.h>
 #import <Peoplepower/PPStorage.h>
 
 #pragma mark - Dependencies -
@@ -143,3 +144,6 @@
 #import <Peoplepower/PPNSString.h>
 #import <Peoplepower/PPNSDate.h>
 #import <Peoplepower/PPNSData.h>
+#import <Peoplepower/RLMObject+PPExtras.h>
+#import <Peoplepower/PPRLMArray.h>
+#import <Peoplepower/PPRLMDictionary.h>

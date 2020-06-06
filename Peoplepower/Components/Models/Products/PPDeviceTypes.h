@@ -159,7 +159,7 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypesDetails) {
 /**
  * Shared deviceTypeGoals across the entire application
  */
-+ (NSArray *)sharedDeviceTypeGoalsForUser:(PPUserId)userId;
++ (RLMResults *)sharedDeviceTypeGoalsForUser:(PPUserId)userId;
 
 /**
  * Add deviceTypeGoals.

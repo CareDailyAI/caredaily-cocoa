@@ -9,7 +9,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPBotengineAppRating : NSObject
+@interface PPBotengineAppRating : RLMObject
 
 @property (nonatomic) NSInteger total;
 @property (nonatomic) float average;
@@ -26,3 +26,5 @@
 - (id)initWithTotal:(NSInteger)total average:(float)average star1:(NSInteger)star1 star2:(NSInteger)star2 star3:(NSInteger)star3 star4:(NSInteger)star4 star5:(NSInteger)star5;
 
 @end
+
+RLM_ARRAY_TYPE(PPBotengineAppRating);

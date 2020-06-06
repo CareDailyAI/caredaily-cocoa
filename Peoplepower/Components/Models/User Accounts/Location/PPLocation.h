@@ -149,7 +149,7 @@ typedef NS_OPTIONS(NSInteger, PPLocationCodeType) {
     PPLocationCodeTypeKeypad   = 4,
 };
 
-@interface PPLocation : NSObject <NSCopying>
+@interface PPLocation : RLMObject <NSCopying>
 
 /* A location represents a physical place occupied by this person and where his or her devices can be installed. When creating or updating location information in a user's account, all fields are optional. */
 
@@ -224,7 +224,7 @@ typedef NS_OPTIONS(NSInteger, PPLocationCodeType) {
 @property (nonatomic) PPLocationOccupantsNumber occupantsNumber;
 
 /* Range of occupant ages. Array of PPLocationOccupantsRange objects describing age ranges in years, and the number of occupants in those age ranges. e.g. {"start": 0, "end": 6, "number": 1} */
-@property (nonatomic, strong) NSArray *occupantsRanges;
+@property (nonatomic, strong) RLMArray<PPLocationOccupantsRange *><PPLocationOccupantsRange> *occupantsRanges;
 
 /* Keeps a note about when the location is used by people.
  *  1 - Day
@@ -264,17 +264,19 @@ typedef NS_OPTIONS(NSInteger, PPLocationCodeType) {
  *  3 - Internet Connected */
 @property (nonatomic) PPLocationThermostatType thermostatType;
 
+@property (readonly) RLMLinkingObjects *devices;
+
 /* File Upload policy. By default, the IoT Software Suite will automatically delete old files (i.e. videos and images) once a user's account is full, such as videos and images. */
 @property (nonatomic) PPLocationFileUploadPolicy fileUploadPolicy;
 
 /* Location auths */
-@property (nonatomic, strong) NSArray *auths;
+@property (nonatomic, strong) RLMArray<PPCloudsIntegrationClient *><PPCloudsIntegrationClient> *auths;
 
 /* Location auth clients */
-@property (nonatomic, strong) NSArray *clients;
+@property (nonatomic, strong) RLMArray<PPCloudsIntegrationHost *><PPCloudsIntegrationHost> *clients;
 
 /* Location services */
-@property (nonatomic, strong) NSArray *services;
+@property (nonatomic, strong) RLMArray<PPUserService *><PPUserService> *services;
 
 /* Temporary access */
 @property (nonatomic) PPLocationTemporary temporary;
@@ -325,16 +327,16 @@ typedef NS_OPTIONS(NSInteger, PPLocationCodeType) {
              roomsNumber:(PPLocationRoomsNumber)roomsNumber
          bathroomsNumber:(PPLocationBathroomsNumber)bathroomsNumber
          occupantsNumber:(PPLocationOccupantsNumber)occupantsNumber
-         occupantsRanges:(NSArray *)occupantsRanges
+         occupantsRanges:(RLMArray *)occupantsRanges
              usagePeriod:(PPLocationUsagePeriod)usagePeriod
              heatingType:(PPLocationHeatingType)heatingType
              coolingType:(PPLocationCoolingType)coolingType
          waterHeaterType:(PPLocationWaterHeaterType)waterHeaterType
           thermostatType:(PPLocationThermostatType)thermostatType
         fileUploadPolicy:(PPLocationFileUploadPolicy)fileUploadPolicy
-                   auths:(NSArray *)auths
-                 clients:(NSArray *)clients
-                services:(NSArray *)services
+                   auths:(RLMArray *)auths
+                 clients:(RLMArray *)clients
+                services:(RLMArray *)services
                temporary:(PPLocationTemporary)temporary
            accessEndDate:(NSDate *)accessEndDate
                 smsPhone:(NSString *)smsPhone
@@ -385,3 +387,5 @@ typedef NS_OPTIONS(NSInteger, PPLocationCodeType) {
 + (NSDictionary *)JSONData:(PPLocation *)location appName:(NSString *)appName;
 
 @end
+
+RLM_ARRAY_TYPE(PPLocation)

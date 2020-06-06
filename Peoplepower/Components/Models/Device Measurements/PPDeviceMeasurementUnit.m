@@ -10,6 +10,10 @@
 
 @implementation PPDeviceMeasurementUnit
 
++ (NSString *)primaryKey {
+    return @"unit";
+}
+
 - (id)initWithUnit:(NSString *)unit desc:(NSString *)desc {
     self = [super init];
     if(self) {

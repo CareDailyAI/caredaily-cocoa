@@ -14,6 +14,16 @@
 
 @implementation PPLocation
 
++ (NSString *)primaryKey {
+    return @"locationId";
+}
+
++ (NSDictionary<NSString *,RLMPropertyDescriptor *> *)linkingObjectsProperties {
+    return @{
+             @"devices": [RLMPropertyDescriptor descriptorWithClass:PPDevice.class propertyName:@"location"]
+             };
+}
+
 - (id)initWithLocationId:(PPLocationId)locationId
                     name:(NSString *)name
           locationAccess:(PPLocationAccess)locationAccess
@@ -36,16 +46,16 @@
              roomsNumber:(PPLocationRoomsNumber)roomsNumber
          bathroomsNumber:(PPLocationBathroomsNumber)bathroomsNumber
          occupantsNumber:(PPLocationOccupantsNumber)occupantsNumber
-         occupantsRanges:(NSArray *)occupantsRanges
+         occupantsRanges:(RLMArray *)occupantsRanges
              usagePeriod:(PPLocationUsagePeriod)usagePeriod
              heatingType:(PPLocationHeatingType)heatingType
              coolingType:(PPLocationCoolingType)coolingType
          waterHeaterType:(PPLocationWaterHeaterType)waterHeaterType
           thermostatType:(PPLocationThermostatType)thermostatType
         fileUploadPolicy:(PPLocationFileUploadPolicy)fileUploadPolicy
-                   auths:(NSArray *)auths
-                 clients:(NSArray *)clients
-                services:(NSArray *)services
+                   auths:(RLMArray *)auths
+                 clients:(RLMArray *)clients
+                services:(RLMArray *)services
                temporary:(PPLocationTemporary)temporary
            accessEndDate:(NSDate *)accessEndDate
                 smsPhone:(NSString *)smsPhone
@@ -78,16 +88,16 @@
         self.roomsNumber = roomsNumber;
         self.bathroomsNumber = bathroomsNumber;
         self.occupantsNumber = occupantsNumber;
-        self.occupantsRanges = occupantsRanges;
+        self.occupantsRanges = (RLMArray<PPLocationOccupantsRange *><PPLocationOccupantsRange> *)occupantsRanges;
         self.usagePeriod = usagePeriod;
         self.heatingType = heatingType;
         self.coolingType = coolingType;
         self.waterHeaterType = waterHeaterType;
         self.thermostatType = thermostatType;
         self.fileUploadPolicy = fileUploadPolicy;
-        self.auths = auths;
-        self.clients = clients;
-        self.services = services;
+        self.auths = (RLMArray<PPCloudsIntegrationClient *><PPCloudsIntegrationClient> *)auths;
+        self.clients = (RLMArray<PPCloudsIntegrationHost *><PPCloudsIntegrationHost> *)clients;
+        self.services = (RLMArray<PPUserService *><PPUserService> *)services;
         self.temporary = temporary;
         self.accessEndDate = accessEndDate;
         self.smsPhone = smsPhone;
@@ -196,8 +206,7 @@
     if([locationDict objectForKey:@"fileUploadPolicy"]) {
         fileUploadPolicy = (PPLocationFileUploadPolicy)((NSString *)[locationDict objectForKey:@"fileUploadPolicy"]).integerValue;
     }
-    
-    
+        
     NSMutableArray *auths;
     if([locationDict objectForKey:@"auths"]) {
         auths = [[NSMutableArray alloc] initWithCapacity:0];
@@ -248,7 +257,7 @@
             creationDate = [PPNSDate parseDateTime:creationDateString];
         }
     }
-    
+
     NSString *appName = [locationDict objectForKey:@"appName"];
     PPOrganizationId organizationId = PPOrganizationIdNone;
     if([locationDict objectForKey:@"organizationId"]) {
@@ -258,7 +267,6 @@
     if ([locationDict objectForKey:@"organization"]) {
         organization = [PPOrganization initWithDictionary:[locationDict objectForKey:@"organization"]];
     }
-    
     PPLocationTest test = PPLocationTestNone;
     if([locationDict objectForKey:@"test"]) {
         test = (PPLocationTest)((NSString *)[locationDict objectForKey:@"test"]).integerValue;
@@ -291,7 +299,7 @@
                                                       roomsNumber:roomsNumber
                                                   bathroomsNumber:bathroomsNumber
                                                   occupantsNumber:occupantsNumber
-                                                  occupantsRanges:occupantsRanges
+                                                  occupantsRanges:(RLMArray<PPLocationOccupantsRange *><PPLocationOccupantsRange> *)occupantsRanges
                                                       usagePeriod:usagePeriod
                                                       heatingType:heatingTye
                                                       coolingType:coolingType
@@ -717,16 +725,32 @@
     location.roomsNumber = self.roomsNumber;
     location.bathroomsNumber = self.bathroomsNumber;
     location.occupantsNumber = self.occupantsNumber;
-    location.occupantsRanges = [self.occupantsRanges copyWithZone:zone];
+    NSMutableArray *occupantsRanges = [[NSMutableArray alloc] initWithCapacity:self.occupantsRanges.count];
+    for (PPLocationOccupantsRange *occupantsRange in self.occupantsRanges) {
+        [occupantsRanges addObject:[occupantsRange copyWithZone:zone]];
+    }
+    location.occupantsRanges = occupantsRanges;
     location.usagePeriod = self.usagePeriod;
     location.heatingType = self.heatingType;
     location.coolingType = self.coolingType;
     location.waterHeaterType = self.waterHeaterType;
     location.thermostatType = self.thermostatType;
     location.fileUploadPolicy = self.fileUploadPolicy;
-    location.auths = self.auths;
-    location.clients = self.clients;
-    location.services = self.services;
+    NSMutableArray *auths = [[NSMutableArray alloc] initWithCapacity:self.auths.count];
+    for (PPCloudsIntegrationClient *auth in self.auths) {
+        [auths addObject:[auth copyWithZone:zone]];
+    }
+    location.auths = auths;
+    NSMutableArray *clients = [[NSMutableArray alloc] initWithCapacity:self.clients.count];
+    for (PPCloudsIntegrationHost *client in self.clients) {
+        [clients addObject:[client copyWithZone:zone]];
+    }
+    location.clients = clients;
+    NSMutableArray *services = [[NSMutableArray alloc] initWithCapacity:self.services.count];
+    for (PPUserService *service in self.services) {
+        [services addObject:[service copyWithZone:zone]];
+    }
+    location.services = services;
     location.temporary = self.temporary;
     location.accessEndDate = [self.accessEndDate copyWithZone:zone];
     location.creationDate = [self.creationDate copyWithZone:zone];

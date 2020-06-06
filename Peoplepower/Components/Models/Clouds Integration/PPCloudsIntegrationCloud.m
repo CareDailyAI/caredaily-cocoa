@@ -10,6 +10,10 @@
 
 @implementation PPCloudsIntegrationCloud
 
++ (NSString *)primaryKey {
+    return @"appId";
+}
+
 - (id)initWithId:(PPCloudsIntegrationClientApplicationId)appId name:(NSString *)name microService:(PPCloudsIntegrationCloudMicroService)microservice icon:(NSString *)icon {
     self = [super init];
     if(self) {

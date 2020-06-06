@@ -10,18 +10,22 @@
 
 @implementation PPDeviceTypeStory
 
-- (id)initWithStoryId:(NSString *)storyId models:(NSArray *)models brands:(NSArray *)brands storyType:(PPDeviceTypeStoryType)storyType lang:(NSString *)lang title:(NSString *)title search:(NSArray *)search sortId:(PPDeviceTypeStorySortId)sortId pages:(NSArray *)pages {
++ (NSString *)primaryKey {
+    return @"storyId";
+}
+
+- (id)initWithStoryId:(NSString *)storyId models:(RLMArray *)models brands:(RLMArray *)brands storyType:(PPDeviceTypeStoryType)storyType lang:(NSString *)lang title:(NSString *)title search:(RLMArray *)search sortId:(PPDeviceTypeStorySortId)sortId pages:(RLMArray *)pages {
     self = [super init];
     if(self) {
         self.storyId = storyId;
-        self.models = models;
-        self.brands = brands;
+        self.models = (RLMArray<PPDeviceTypeStoryModel *><PPDeviceTypeStoryModel> *)models;
+        self.brands = (RLMArray<RLMString> *)brands;
         self.storyType = storyType;
         self.lang = lang;
         self.title = title;
-        self.search = search;
+        self.search = (RLMArray<RLMString> *)search;
         self.sortId = sortId;
-        self.pages = pages;
+        self.pages = (RLMArray<PPDeviceTypeStoryPage *><PPDeviceTypeStoryPage> *)pages;
     }
     return self;
 }
@@ -60,7 +64,7 @@
         }
     }
     
-    PPDeviceTypeStory *storybook = [[PPDeviceTypeStory alloc] initWithStoryId:storyId models:models brands:brands storyType:storyType lang:lang title:title search:search sortId:sortId pages:pages];
+    PPDeviceTypeStory *storybook = [[PPDeviceTypeStory alloc] initWithStoryId:storyId models:(RLMArray *)models brands:(RLMArray *)brands storyType:storyType lang:lang title:title search:(RLMArray *)search sortId:sortId pages:(RLMArray *)pages];
     return storybook;
 }
 
@@ -143,7 +147,7 @@
         if(appendComma) {
             [JSONString appendString:@","];
         }
-        [JSONString appendFormat:@"\"search\":\"%@\"", [story.search componentsJoinedByString:@","]];
+        [JSONString appendFormat:@"\"search\":\"%@\"", [PPRLMArray stringArray:story.search componentsJoinedByString:@","]];
         appendComma = YES;
     }
     

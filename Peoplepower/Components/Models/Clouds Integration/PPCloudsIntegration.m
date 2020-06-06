@@ -26,11 +26,11 @@
 #endif
 #endif
     
-    NSArray *sharedClients = @[];
+    RLMResults<PPCloudsIntegrationCloud *> *sharedClients = [PPCloudsIntegrationCloud allObjects];
     
     NSMutableArray *sharedClientsArray = [[NSMutableArray alloc] initWithCapacity:[sharedClients count]];
     NSMutableArray *clientsArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
-    for(PPCloudsIntegrationClient *client in sharedClients) {
+    for(PPCloudsIntegrationCloud *client in sharedClients) {
         [sharedClientsArray addObject:client];
         
         [clientsArrayDebug addObject:@{@"appId": @(client.appId)}];
@@ -54,6 +54,11 @@
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s clouds=%@", __PRETTY_FUNCTION__, clouds);
+    [[PPRealm defaultRealm] beginWriteTransaction];
+    for(PPCloudsIntegrationCloud *cloud in clouds) {
+        [PPCloudsIntegrationCloud createOrUpdateInDefaultRealmWithValue:cloud];
+    }
+    [[PPRealm defaultRealm] commitWriteTransaction];
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
@@ -70,6 +75,11 @@
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s clouds=%@", __PRETTY_FUNCTION__, clouds);
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPCloudsIntegrationCloud *cloud in clouds) {
+            [[PPRealm defaultRealm] deleteObject:[PPCloudsIntegrationCloud objectForPrimaryKey:@(cloud.appId)]];
+        }
+    }];
     NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif

@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPUserTag : NSObject
+@interface PPUserTag : RLMObject <NSCopying>
 /* An app can apply and remove tags to mark the user. */
 
 /* User tags */
@@ -23,3 +23,5 @@
 - (void)sync:(PPUserTag *)userTag;
 
 @end
+
+RLM_ARRAY_TYPE(PPUserTag)

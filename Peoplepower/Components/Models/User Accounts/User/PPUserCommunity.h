@@ -9,7 +9,7 @@
 #import "PPLocationCommunity.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PPUserCommunity : NSObject
+@interface PPUserCommunity : RLMObject
 
 @property (nonatomic) PPCommunityId communityId;
 @property (nonatomic, strong) NSString *communityName;
@@ -18,5 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (PPUserCommunity *)initWithDictionary:(NSDictionary *)communityDict;
 
 @end
+
+RLM_ARRAY_TYPE(PPUserCommunity);
 
 NS_ASSUME_NONNULL_END

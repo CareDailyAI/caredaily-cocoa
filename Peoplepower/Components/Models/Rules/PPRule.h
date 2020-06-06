@@ -37,7 +37,7 @@ typedef NS_OPTIONS(NSInteger, PPRuleDefault) {
     PPRuleDefaultTrue = 1,
 };
 
-@interface PPRule : NSObject <NSCopying>
+@interface PPRule : RLMObject <NSCopying>
 
 @property (nonatomic) PPRuleId ruleId;
 @property (nonatomic, strong) NSString *name;
@@ -47,11 +47,11 @@ typedef NS_OPTIONS(NSInteger, PPRuleDefault) {
 @property (nonatomic) PPRuleDefault defaultRule;
 @property (nonatomic) PPDeviceTypeGoalId goalId;
 @property (nonatomic, strong) PPRuleComponentTrigger *trigger;
-@property (nonatomic, strong) NSArray *states;
-@property (nonatomic, strong) NSArray *actions;
-@property (nonatomic, strong) NSArray *calendars;
+@property (nonatomic, strong) RLMArray<PPRuleComponentState *><PPRuleComponentState> *states;
+@property (nonatomic, strong) RLMArray<PPRuleComponentAction *><PPRuleComponentAction> *actions;
+@property (nonatomic, strong) RLMArray<PPRuleCalendar *><PPRuleCalendar> *calendars;
 
-- (id)initWithId:(PPRuleId)ruleId name:(NSString *)name status:(PPRuleStatus)status timezone:(PPTimezone *)timezone hidden:(PPRuleHidden)hidden defaultRule:(PPRuleDefault)defaultRule goalId:(PPDeviceTypeGoalId)goalId trigger:(PPRuleComponentTrigger *)trigger states:(NSArray *)states actions:(NSArray *)actions calendars:(NSArray *)calendars;
+- (id)initWithId:(PPRuleId)ruleId name:(NSString *)name status:(PPRuleStatus)status timezone:(PPTimezone *)timezone hidden:(PPRuleHidden)hidden defaultRule:(PPRuleDefault)defaultRule goalId:(PPDeviceTypeGoalId)goalId trigger:(PPRuleComponentTrigger *)trigger states:(RLMArray *)states actions:(RLMArray *)actions calendars:(RLMArray *)calendars;
 
 + (PPRule *)initWithDictionary:(NSDictionary *)ruleDict;
 
@@ -65,3 +65,5 @@ typedef NS_OPTIONS(NSInteger, PPRuleDefault) {
 - (void)sync:(PPRule *)rule;
 
 @end
+
+RLM_ARRAY_TYPE(PPRule);

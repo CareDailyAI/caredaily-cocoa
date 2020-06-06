@@ -18,19 +18,35 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeDeviceModelBrandSortId) {
     PPDeviceTypeDeviceModelBrandSortIdNone = -1,
 };
 
-@interface PPDeviceTypeDeviceModelBrand : NSObject
+@class PPDeviceTypeDeviceModelBrandName;
+RLM_ARRAY_TYPE(PPDeviceTypeDeviceModelBrandName);
+
+@class PPDeviceTypeDeviceModelBrandDesc;
+RLM_ARRAY_TYPE(PPDeviceTypeDeviceModelBrandDesc);
+
+@interface PPDeviceTypeDeviceModelBrand : RLMObject
 
 @property (nonatomic, strong) NSString *brand;
 @property (nonatomic) PPDeviceTypeDeviceModelBrandHidden hidden;
 @property (nonatomic, strong) NSString *parentId;
 @property (nonatomic) PPDeviceTypeDeviceModelBrandSortId sortId;
-@property (nonatomic, strong) NSDictionary *name;
-@property (nonatomic, strong) NSDictionary *desc;
+@property (nonatomic, strong) PPDeviceTypeDeviceModelBrandName *name;
+@property (nonatomic, strong) PPDeviceTypeDeviceModelBrandDesc *desc;
 
-- (id)initWithBrand:(NSString *)brand hidden:(PPDeviceTypeDeviceModelBrandHidden)hidden parentId:(NSString *)parentId sortId:(PPDeviceTypeDeviceModelBrandSortId)sortId name:(NSDictionary *)name desc:(NSDictionary *)desc;
+- (id)initWithBrand:(NSString *)brand hidden:(PPDeviceTypeDeviceModelBrandHidden)hidden parentId:(NSString *)parentId sortId:(PPDeviceTypeDeviceModelBrandSortId)sortId name:(PPDeviceTypeDeviceModelBrandName *)name desc:(PPDeviceTypeDeviceModelBrandDesc *)desc;
 
 + (PPDeviceTypeDeviceModelBrand *)initWithDictionary:(NSDictionary *)brandDict;
 
 + (NSString *)stringify:(PPDeviceTypeDeviceModelBrand *)brand;
 
+@end
+
+RLM_ARRAY_TYPE(PPDeviceTypeDeviceModelBrand);
+
+@interface PPDeviceTypeDeviceModelBrandName : PPRLMDictionary
++ (PPDeviceTypeDeviceModelBrandName *)initWithDictionary:(NSDictionary *)dict;
+@end
+
+@interface PPDeviceTypeDeviceModelBrandDesc : PPRLMDictionary
++ (PPDeviceTypeDeviceModelBrandDesc *)initWithDictionary:(NSDictionary *)dict;
 @end

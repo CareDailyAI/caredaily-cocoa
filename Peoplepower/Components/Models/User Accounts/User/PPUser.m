@@ -11,6 +11,16 @@
 
 @implementation PPUser
 
++ (NSString *)primaryKey {
+    return @"userId";
+}
+
++ (NSArray<NSString *> *)ignoredProperties {
+    return @[
+             @"keychain"
+             ];
+}
+
 - (id)initWithCachedUser {
     NSString *cachedUsername = [UICKeyChainStore keyChainStore][@"user.username"];
     NSString *cachedSessionKey = [UICKeyChainStore keyChainStore][[NSString stringWithFormat:@"user.sessionKey:%@", cachedUsername]];
@@ -26,7 +36,7 @@
     return self;
 }
 
-- (id)initWithUserId:(PPUserId)userId email:(PPUserEmail *)email username:(NSString *)username altUsername:(NSString *)altUsername firstName:(NSString *)firstName lastName:(NSString *)lastName communityName:(NSString *)communityName language:(NSString *)language phone:(NSString *)phone phoneType:(PPUserPhoneType)phoneType smsStatus:(PPUserSMSStatus)smsStatus anonymous:(PPUserAnonymousType)anonymous userPermissions:(NSArray *)userPermissions tags:(NSArray *)tags locations:(NSArray *)locations badges:(NSArray *)badges organizations:(NSArray *)organizations avatarFileId:(PPUserAvatarFileId)avatarFileId creationDate:(NSDate *)creationDate authClients:(NSArray *)authClients userCommunities:(NSArray *)userCommunities locationCommunities:(NSArray *)locationCommunities {
+- (id)initWithUserId:(PPUserId)userId email:(PPUserEmail *)email username:(NSString *)username altUsername:(NSString *)altUsername firstName:(NSString *)firstName lastName:(NSString *)lastName communityName:(NSString *)communityName language:(NSString *)language phone:(NSString *)phone phoneType:(PPUserPhoneType)phoneType smsStatus:(PPUserSMSStatus)smsStatus anonymous:(PPUserAnonymousType)anonymous userPermissions:(RLMArray *)userPermissions tags:(RLMArray *)tags locations:(RLMArray *)locations badges:(RLMArray *)badges organizations:(RLMArray *)organizations avatarFileId:(PPUserAvatarFileId)avatarFileId creationDate:(NSDate *)creationDate authClients:(RLMArray *)authClients userCommunities:(RLMArray *)userCommunities locationCommunities:(RLMArray *)locationCommunities {
     self = [super init];
     if(self) {
         self.userId = userId;
@@ -41,16 +51,16 @@
         self.phoneType = phoneType;
         self.smsStatus = smsStatus;
         self.anonymous = anonymous;
-        self.userPermissions = userPermissions;
-        self.tags = tags;
-        self.authClients = authClients;
-        self.locations = locations;
-        self.badges = badges;
-        self.organizations = organizations;
+        self.userPermissions = (RLMArray<RLMInt> *)userPermissions;
+        self.tags = (RLMArray<PPUserTag *><PPUserTag> *)tags;
+        self.authClients = (RLMArray<PPCloudsIntegrationHost *><PPCloudsIntegrationHost> *)authClients;
+        self.locations = (RLMArray<PPLocation *><PPLocation> *)locations;
+        self.badges = (RLMArray<PPUserBadge *><PPUserBadge> *)badges;
+        self.organizations = (RLMArray<PPOrganization *><PPOrganization> *)organizations;
         self.avatarFileId = avatarFileId;
         self.creationDate = creationDate;
-        self.userCommunities = userCommunities;
-        self.locationCommunities = locationCommunities;
+        self.userCommunities = (RLMArray<PPUserCommunity *><PPUserCommunity> *)userCommunities;
+        self.locationCommunities = (RLMArray<PPLocationCommunity *><PPLocationCommunity> *)locationCommunities;
     }
     return self;
 }
@@ -183,13 +193,16 @@
         }
     }
     
-    PPUser *user = [[PPUser alloc] initWithUserId:userId email:email username:username altUsername:altUsername firstName:firstName lastName:lastName communityName:communityName language:language phone:phone phoneType:phoneType smsStatus:smsStatus anonymous:anonymous userPermissions:permissionArray tags:tags locations:locations badges:badges organizations:organizations avatarFileId:avatarFileId creationDate:creationDate authClients:authClients userCommunities:userCommunities locationCommunities:locationCommunities];
+    PPUser *user = [[PPUser alloc] initWithUserId:userId email:email username:username altUsername:altUsername firstName:firstName lastName:lastName communityName:(NSString *)communityName language:language phone:phone phoneType:phoneType smsStatus:smsStatus anonymous:anonymous userPermissions:(RLMArray *)permissionArray tags:(RLMArray *)tags locations:(RLMArray *)locations badges:(RLMArray *)badges organizations:(RLMArray *)organizations avatarFileId:avatarFileId creationDate:creationDate authClients:(RLMArray *)authClients userCommunities:(RLMArray *)userCommunities locationCommunities:(RLMArray *)locationCommunities];
     return user;
 }
 
 #pragma mark - Locations
 
 - (PPLocation *)currentLocation {
+    if([self isInvalidated]) {
+        return nil;
+    }
     PPLocationId locationId = PPLocationIdNone;
     if([UICKeyChainStore keyChainStore][@"user.locationId"]) {
         locationId = (PPLocationId)[UICKeyChainStore keyChainStore][@"user.locationId"].integerValue;
@@ -197,7 +210,9 @@
     
     PPLocation *currentLocation;
     
+    NSMutableArray *locationIds = @[].mutableCopy;
     for(PPLocation *location in self.locations) {
+        [locationIds addObject:@(location.locationId)];
         if(location.locationId == locationId && location.locationAccess != PPLocationAccessNoAccess) {
             currentLocation = location;
             break;
@@ -205,12 +220,10 @@
     }
     
     if(!currentLocation) {
-        for (PPLocation *location in self.locations) {
-            if(location.locationId != PPLocationIdNone && location.locationAccess != PPLocationAccessNoAccess) {
-                currentLocation = location;
-                [self setCurrentLocation:currentLocation];
-                break;
-            }
+        PPLocation *location = [[PPLocation objectsWhere:@"locationId IN %@ && locationAccess != %@", locationIds, @(PPLocationAccessNoAccess)] firstObject];
+        if(location.locationId != PPLocationIdNone) {
+            currentLocation = location;
+            [self setCurrentLocation:currentLocation];
         }
     }
     return currentLocation;
@@ -226,7 +239,9 @@
 
 - (BOOL)isEqualToUser:(PPUser *)user {
     BOOL equal = NO;
-    
+    if (user == nil) {
+        return equal;
+    }
     if(self.userId != PPUserIdNone && user.userId != PPUserIdNone) {
         if(self.userId == user.userId) {
             equal = YES;
@@ -251,72 +266,146 @@
     return equal;
 }
 
-- (void)sync:(PPUser *)user {
-    if(user.userId != PPUserIdNone) {
-        self.userId = user.userId;
++ (void)sync:(PPUser *)existingUser withUser:(PPUser *)user {
+    BOOL shouldWrite = NO;
+    if (![[PPRealm defaultRealm] inWriteTransaction]) {
+        shouldWrite = YES;
+    }
+    if (shouldWrite) {
+//        [[PPRealm defaultRealm] beginWriteTransaction];
     }
     if(user.sessionKey) {
-        self.sessionKey = user.sessionKey;
+        existingUser.sessionKey = user.sessionKey;
     }
     if(user.sessionKeyExpiry) {
-        self.sessionKeyExpiry = user.sessionKeyExpiry;
+        existingUser.sessionKeyExpiry = user.sessionKeyExpiry;
     }
     if(user.email.email) {
-        self.email = user.email;
+        existingUser.email = user.email;
     }
     if(user.username) {
-        self.username = user.username;
+        existingUser.username = user.username;
     }
     if(user.altUsername) {
-        self.altUsername = user.altUsername;
+        existingUser.altUsername = user.altUsername;
     }
     if(user.firstName) {
-        self.firstName = user.firstName;
+        existingUser.firstName = user.firstName;
     }
     if(user.lastName) {
-        self.lastName = user.lastName;
+        existingUser.lastName = user.lastName;
     }
     if(user.language) {
-        self.language = user.language;
+        existingUser.language = user.language;
     }
     if(user.phone) {
-        self.phone = user.phone;
+        existingUser.phone = user.phone;
     }
     if(user.phoneType != PPUserPhoneTypeNone) {
-        self.phoneType = user.phoneType;
+        existingUser.phoneType = user.phoneType;
     }
     if(user.smsStatus != PPUserSMSStatusNone) {
-        self.smsStatus = user.smsStatus;
+        existingUser.smsStatus = user.smsStatus;
     }
     if(user.anonymous != PPUserAnonymousTypeNone) {
-        self.anonymous = user.anonymous;
+        existingUser.anonymous = user.anonymous;
     }
     if(user.userPermissions) {
-        self.userPermissions = user.userPermissions;
+        existingUser.userPermissions = user.userPermissions;
     }
     if(user.tags) {
-        self.tags = user.tags;
+        existingUser.tags = user.tags;
     }
     if(user.authClients) {
-        self.authClients = user.authClients;
+        existingUser.authClients = user.authClients;
     }
     if(user.locations) {
-        self.locations = user.locations;
+        for (PPLocation *location in user.locations) {
+            BOOL found = NO;
+            for (PPLocation *existingLocation in existingUser.locations) {
+                if (location.locationId == existingLocation.locationId) {
+                    [[PPRealm defaultRealm] addOrUpdateObject:location];
+                    found = YES;
+                    break;
+                }
+            }
+            if (!found) {
+                [existingUser.locations addObject:location];
+            }
+        }
+        
+        NSMutableArray *locationsToDelete = [[NSMutableArray alloc] initWithCapacity:0];
+        
+        for (PPLocation *location in existingUser.locations) {
+            BOOL found = NO;
+            for (PPLocation *existingLocation in user.locations) {
+                if (location.locationId == existingLocation.locationId) {
+                    found = YES;
+                    break;
+                }
+            }
+            if (!found) {
+                [locationsToDelete addObject:[PPLocation objectForPrimaryKey:@(location.locationId)]];
+            }
+        }
+        if ([locationsToDelete count] > 0) {
+            for (PPLocation *location in locationsToDelete) {
+                [existingUser.locations removeObjectAtIndex:[existingUser.locations indexOfObject:location]];
+            }
+        }
     }
     if(user.badges) {
-        self.badges = user.badges;
+        existingUser.badges = user.badges;
     }
     if(user.organizations) {
-        self.organizations = user.organizations;
+        
+        for (PPOrganization *organization in user.organizations) {
+            NSInteger index = NSNotFound;
+            for (PPOrganization *existingOrganization in existingUser.organizations) {
+                if (organization.organizationId == existingOrganization.organizationId) {
+                    index = [existingUser.organizations indexOfObject:existingOrganization];
+                    break;
+                }
+            }
+            if (index != NSNotFound) {
+                [existingUser.organizations replaceObjectAtIndex:index withObject:organization];
+            }
+            else {
+                [existingUser.organizations addObject:organization];
+            }
+        }
+        
+        NSMutableArray *organizationsToDelete = [[NSMutableArray alloc] initWithCapacity:0];
+        
+        for (PPOrganization *organization in existingUser.organizations) {
+            BOOL found = NO;
+            for (PPOrganization *existingOrganization in user.organizations) {
+                if (organization.organizationId == existingOrganization.organizationId) {
+                    found = YES;
+                    break;
+                }
+            }
+            if (!found) {
+                [organizationsToDelete addObject:organization];
+            }
+        }
+        if ([organizationsToDelete count] > 0) {
+            for (PPOrganization *organization in organizationsToDelete) {
+                [existingUser.organizations removeObjectAtIndex:[existingUser.organizations indexOfObject:organization]];
+            }
+        }
     }
     if(user.avatarFileId != PPUserAvatarFileIdNone) {
-        self.avatarFileId = user.avatarFileId;
+        existingUser.avatarFileId = user.avatarFileId;
+    }
+    if (shouldWrite) {
+//        [[PPRealm defaultRealm] commitWriteTransaction];
     }
     if(user.userCommunities) {
-        self.userCommunities = user.userCommunities;
+        existingUser.userCommunities = user.userCommunities;
     }
     if(user.locationCommunities) {
-        self.locationCommunities = user.locationCommunities;
+        existingUser.locationCommunities = user.locationCommunities;
     }
 }
 
@@ -336,12 +425,37 @@
     user.phoneType = self.phoneType;
     user.smsStatus = self.smsStatus;
     user.anonymous = self.anonymous;
-    user.userPermissions = self.userPermissions;
-    user.tags = self.tags;
-    user.authClients = self.authClients;
-    user.locations = self.locations;
-    user.badges = self.badges;
-    user.organizations = self.organizations;
+    NSMutableArray *userPermissions = [[NSMutableArray alloc] initWithCapacity:self.userPermissions.count];
+    for (int i = 0; i < self.userPermissions.count; i++) {
+        NSInteger userPermission = (NSInteger)[self.userPermissions objectAtIndex:i];
+        [userPermissions addObject:@(userPermission)];
+    }
+    user.userPermissions = userPermissions;
+    NSMutableArray *tags = [[NSMutableArray alloc] initWithCapacity:self.tags.count];
+    for (PPUserTag *tag in self.tags) {
+        [tags addObject:[tag copyWithZone:zone]];
+    }
+    user.tags = tags;
+    NSMutableArray *authClients = [[NSMutableArray alloc] initWithCapacity:self.authClients.count];
+    for (PPCloudsIntegrationHost *authClient in self.authClients) {
+        [authClients addObject:[authClient copyWithZone:zone]];
+    }
+    user.authClients = authClients;
+    NSMutableArray *locations = [[NSMutableArray alloc] initWithCapacity:self.locations.count];
+    for (PPLocation *location in self.locations) {
+        [locations addObject:[location copyWithZone:zone]];
+    }
+    user.locations = locations;
+    NSMutableArray *badges = [[NSMutableArray alloc] initWithCapacity:self.badges.count];
+    for (PPUserBadge *badge in self.badges) {
+        [badges addObject:[badge copyWithZone:zone]];
+    }
+    user.badges = badges;
+    NSMutableArray *organizations = [[NSMutableArray alloc] initWithCapacity:self.organizations.count];
+    for (PPOrganization *organization in self.organizations) {
+        [organizations addObject:[organization copyWithZone:zone]];
+    }
+    user.organizations = organizations;
     user.avatarFileId = self.avatarFileId;
     user.userCommunities = self.userCommunities;
     user.locationCommunities = self.locationCommunities;

@@ -36,10 +36,12 @@ typedef NS_OPTIONS(NSInteger, PPServicePlanStatus) {
 };
 
 @class PPServicePlanSoftwareSubscription;
+RLM_ARRAY_TYPE(PPServicePlanSoftwareSubscription);
 
 @class PPServicePlanPrice;
+RLM_ARRAY_TYPE(PPServicePlanPrice);
 
-@interface PPServicePlan : NSObject
+@interface PPServicePlan : RLMObject
 
 /* ID of a specific service plan */
 @property (nonatomic) PPServicePlanId planId;
@@ -57,15 +59,15 @@ typedef NS_OPTIONS(NSInteger, PPServicePlanStatus) {
 @property (nonatomic) PPServicePlanSubscribed subscribed;
 
 /* List of service plan ID's, where this plan can be upgraded */
-@property (nonatomic, strong) NSArray *upgradableTo;
+@property (nonatomic, strong) RLMArray<RLMInt> *upgradableTo;
 
 /* Set of available prices and options to purchase this service */
-@property (nonatomic, strong) NSArray *prices;
+@property (nonatomic, strong) RLMArray<PPServicePlanPrice *><PPServicePlanPrice> *prices;
 
 /* Existing subscriptions owned by the user. */
-@property (nonatomic, strong) NSArray *subscriptions;
+@property (nonatomic, strong) RLMArray<PPServicePlanSoftwareSubscription *><PPServicePlanSoftwareSubscription> *subscriptions;
 
-- (id)initWithId:(PPServicePlanId)planId name:(NSString *)name desc:(NSString *)desc available:(PPServicePlanAvailable)available upgradableTo:(NSArray *)upgradableTo prices:(NSArray *)prices subscriptions:(NSArray *)subscriptions;
+- (id)initWithId:(PPServicePlanId)planId name:(NSString *)name desc:(NSString *)desc available:(PPServicePlanAvailable)available upgradableTo:(RLMArray *)upgradableTo prices:(RLMArray *)prices subscriptions:(RLMArray *)subscriptions;
 
 + (PPServicePlan *)initWithDictionary:(NSDictionary *)planDict;
 
@@ -76,6 +78,8 @@ typedef NS_OPTIONS(NSInteger, PPServicePlanStatus) {
 - (void)sync:(PPServicePlan *)plan;
 
 @end
+
+RLM_ARRAY_TYPE(PPServicePlan);
 
 #pragma mark - PPServicePlanSoftwareSubscription
 
@@ -117,7 +121,7 @@ typedef NS_OPTIONS(NSInteger, PPServicePlanSoftwareSubscriptionSandbox) {
 
 @class PPServicePlanTransaction;
 
-@interface PPServicePlanSoftwareSubscription : NSObject
+@interface PPServicePlanSoftwareSubscription : RLMObject
 
 
 /* Subscription record ID */
@@ -173,7 +177,7 @@ typedef NS_OPTIONS(NSInteger, PPServicePlanPriceId) {
     PPServicePlanPriceIdNone = -1,
 };
 
-@interface PPServicePlanPrice : NSObject
+@interface PPServicePlanPrice : RLMObject
 
 /* ID of a plan price */
 @property (nonatomic) PPServicePlanPriceId priceId;

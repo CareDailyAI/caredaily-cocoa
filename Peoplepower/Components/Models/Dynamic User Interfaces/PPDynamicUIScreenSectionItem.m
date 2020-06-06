@@ -10,6 +10,10 @@
 
 @implementation PPDynamicUIScreenSectionItem
 
++ (NSString *)primaryKey {
+    return @"itemId";
+}
+
 - (id)initWithId:(NSString *)itemId name:(NSString *)name order:(PPDynamicUIScreenSectionItemOrder)order product:(NSString *)product details:(NSString *)details icon:(NSString *)icon {
     self = [super init];
     if(self) {

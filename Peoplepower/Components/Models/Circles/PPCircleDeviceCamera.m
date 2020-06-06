@@ -14,6 +14,7 @@
 @end
 
 @implementation PPCircleDeviceCamera
+/*
 @synthesize selectedCamera;
 @synthesize selectedFlash;
 @synthesize motionStatus;
@@ -64,8 +65,9 @@
 @synthesize keypadStatus;
 @synthesize motionAlarm;
 @synthesize mode;
+ */
 
-- (id)initWithCircleId:(PPCircleId)circleId user:(PPCircleMember *)user location:(PPLocation *)location deviceId:(NSString *)deviceId proxyId:(NSString *)proxyId name:(NSString *)name connected:(PPDeviceConnected)connected restricted:(PPDeviceRestricted)restricted shared:(PPDeviceShared)shared newDevice:(PPDeviceNewDevice)newDevice goalId:(PPDeviceTypeGoalId)goalId typeId:(PPDeviceTypeId)typeId category:(PPDeviceTypeCategory)category typeAttributes:(NSMutableArray *)typeAttributes startDate:(NSDate *)startDate lastDataReceivedDate:(NSDate *)lastDataReceivedDate lastMeasureDate:(NSDate *)lastMeasureDate lastConnectedDate:(NSDate *)lastConnectedDate parameters:(NSMutableArray *)parameters properties:(NSMutableArray *)properties icon:(NSString *)icon spaces:(NSMutableArray *)spaces modelId:(NSString *)modelId {
+- (id)initWithCircleId:(PPCircleId)circleId user:(PPCircleMember *)user location:(PPLocation *)location deviceId:(NSString *)deviceId proxyId:(NSString *)proxyId name:(NSString *)name connected:(PPDeviceConnected)connected restricted:(PPDeviceRestricted)restricted shared:(PPDeviceShared)shared newDevice:(PPDeviceNewDevice)newDevice goalId:(PPDeviceTypeGoalId)goalId typeId:(PPDeviceTypeId)typeId category:(PPDeviceTypeCategory)category typeAttributes:(RLMArray *)typeAttributes startDate:(NSDate *)startDate lastDataReceivedDate:(NSDate *)lastDataReceivedDate lastMeasureDate:(NSDate *)lastMeasureDate lastConnectedDate:(NSDate *)lastConnectedDate parameters:(RLMArray *)parameters properties:(RLMArray *)properties icon:(NSString *)icon spaces:(RLMArray *)spaces modelId:(NSString *)modelId {
     self = [super initWithDeviceId:deviceId proxyId:proxyId name:name connected:connected restricted:restricted shared:shared newDevice:newDevice goalId:goalId typeId:typeId category:category typeAttributes:typeAttributes locationId:location.locationId startDate:startDate lastDataReceivedDate:lastDataReceivedDate lastMeasureDate:lastMeasureDate lastConnectedDate:lastConnectedDate parameters:parameters properties:properties icon:icon spaces:spaces modelId:modelId];
     if(self) {
         self.circleId = circleId;
@@ -74,7 +76,7 @@
         
         for(PPDeviceParameter *defaultParam in [PPDeviceCamera defaultParameters]) {
             BOOL found = NO;
-            for(PPDeviceParameter *param in [parameters copy]) {
+            for(PPDeviceParameter *param in [[PPRLMArray arrayFromArray:parameters] copy]) {
                 if([defaultParam isEqual:param]) {
                     found = YES;
                     break;
@@ -85,7 +87,7 @@
             }
         }
         
-        for(PPDeviceParameter *param in [parameters copy]) {
+        for(PPDeviceParameter *param in [[PPRLMArray arrayFromArray:parameters] copy]) {
             [self setParameter:param.name value:param.value index:param.index lastUpdateDate:param.lastUpdateDate];
         }
         
@@ -112,8 +114,8 @@
     return [[PPCircleDeviceCamera alloc] initWithCircleId:PPCircleIdNone user:user location:location deviceId:device.deviceId proxyId:device.proxyId name:device.name connected:device.connected restricted:device.restricted shared:device.shared newDevice:device.newDevice goalId:device.goalId typeId:device.typeId category:device.category typeAttributes:device.typeAttributes startDate:device.startDate lastDataReceivedDate:device.lastDataReceivedDate lastMeasureDate:device.lastMeasureDate lastConnectedDate:device.lastConnectedDate parameters:device.parameters properties:device.properties icon:device.icon spaces:device.spaces modelId:device.modelId];
 }
 
-- (void)setProperties:(NSMutableArray *)properties {
-    [super setProperties:properties];
+- (void)setProperties:(RLMArray *)properties {
+    [super setProperties:(RLMArray<PPDeviceProperty *><PPDeviceProperty> *)properties];
     for(PPDeviceProperty *property in properties) {
         if([property.name isEqualToString:TWITTER_AUTO_SHARE]
            || [property.name isEqualToString:TWITTER_DESCRIPTION]) {
@@ -127,193 +129,142 @@
     
     // Camera
     if([paramName isEqualToString:SELECTED_CAMERA]) {
-        if(selectedCamera != (PPDeviceParametersSelectedCamera)paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(selectedCamera))];
-            selectedCamera = (PPDeviceParametersSelectedCamera)paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(selectedCamera))];
-            if(paramValue.integerValue == PPDeviceParametersSelectedCameraFront && selectedFlash == PPDeviceParametersSelectedFlashOn) {
-                [self willChangeValueForKey:NSStringFromSelector(@selector(selectedFlash))];
-                selectedFlash = PPDeviceParametersSelectedFlashWasOn;
-                [self didChangeValueForKey:NSStringFromSelector(@selector(selectedFlash))];
+        if(self.selectedCamera != (PPDeviceParametersSelectedCamera)paramValue.integerValue) {
+            self.selectedCamera = (PPDeviceParametersSelectedCamera)paramValue.integerValue;
+            if(paramValue.integerValue == PPDeviceParametersSelectedCameraFront && self.selectedFlash == PPDeviceParametersSelectedFlashOn) {
+                self.selectedFlash = PPDeviceParametersSelectedFlashWasOn;
             }
         }
     }
     
     // Flash
     else if([paramName isEqualToString:FLASH_ON]) {
-        if(selectedCamera == PPDeviceParametersSelectedCameraFront && paramValue.integerValue == PPDeviceParametersSelectedFlashOn) {
+        if(self.selectedCamera == PPDeviceParametersSelectedCameraFront && paramValue.integerValue == PPDeviceParametersSelectedFlashOn) {
             paramValue = [NSString stringWithFormat:@"%li", (long)PPDeviceParametersSelectedFlashWasOn];
         }
-        if(selectedFlash != (PPDeviceParametersSelectedFlash)paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(selectedFlash))];
-            selectedFlash = (PPDeviceParametersSelectedFlash)paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(selectedFlash))];
+        if(self.selectedFlash != (PPDeviceParametersSelectedFlash)paramValue.integerValue) {
+            self.selectedFlash = (PPDeviceParametersSelectedFlash)paramValue.integerValue;
         }
     }
     
     // Motion Detection/Recording
     else if([paramName isEqualToString:MOTION_STATUS]) {
-        if(motionStatus != (PPDeviceParametersCameraMotionStatus)paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(motionStatus))];
-            motionStatus = (PPDeviceParametersCameraMotionStatus)paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(motionStatus))];
+        if(self.motionStatus != (PPDeviceParametersCameraMotionStatus)paramValue.integerValue) {
+            self.motionStatus = (PPDeviceParametersCameraMotionStatus)paramValue.integerValue;
         }
     }
     else if([paramName isEqualToString:RECORD_SECONDS]) {
-        if(recordSeconds != (PPDeviceParametersRecordSeconds)paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(recordSeconds))];
-            recordSeconds = (PPDeviceParametersRecordSeconds)paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(recordSeconds))];
+        if(self.recordSeconds != (PPDeviceParametersRecordSeconds)paramValue.integerValue) {
+            self.recordSeconds = (PPDeviceParametersRecordSeconds)paramValue.integerValue;
         }
     }
     else if([paramName isEqualToString:MOTION_SENSITIVITY]) {
-        if(motionSensitivity != paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(motionSensitivity))];
-            motionSensitivity = paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(motionSensitivity))];
+        if(self.motionSensitivity != paramValue.integerValue) {
+            self.motionSensitivity = paramValue.integerValue;
         }
     }
     else if([paramName isEqualToString:MOTION_ACTIVITY]) {
-        if(motionActivity != paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(motionActivity))];
-            motionActivity = paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(motionActivity))];
+        if(self.motionActivity != paramValue.integerValue) {
+            self.motionActivity = paramValue.integerValue;
         }
     }
     else if([paramName isEqualToString:RAPID_MOTION_STATUS]) {
-        if(rapidMotionStatus != (PPDeviceParametersRapidMotionStatus)paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(rapidMotionStatus))];
-            rapidMotionStatus = (PPDeviceParametersRapidMotionStatus)paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(rapidMotionStatus))];
+        if(self.rapidMotionStatus != (PPDeviceParametersRapidMotionStatus)paramValue.integerValue) {
+            self.rapidMotionStatus = (PPDeviceParametersRapidMotionStatus)paramValue.integerValue;
         }
     }
     else if([paramName isEqualToString:MOTION_COUNTDOWN_TIME]) {
-        if(motionCountDownTime != (PPDeviceParametersMotionCountDownTime)paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(motionCountDownTime))];
-            motionCountDownTime = (PPDeviceParametersMotionCountDownTime)paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(motionCountDownTime))];
+        if(self.motionCountDownTime != (PPDeviceParametersMotionCountDownTime)paramValue.integerValue) {
+            self.motionCountDownTime = (PPDeviceParametersMotionCountDownTime)paramValue.integerValue;
         }
     }
     else if([paramName isEqualToString:RECORD_FULL_DURATION]) {
-        if(recordFullDuration != (PPDeviceParametersRecordFullDuration)paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(recordFullDuration))];
-            recordFullDuration = (PPDeviceParametersRecordFullDuration)paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(recordFullDuration))];
+        if(self.recordFullDuration != (PPDeviceParametersRecordFullDuration)paramValue.integerValue) {
+            self.recordFullDuration = (PPDeviceParametersRecordFullDuration)paramValue.integerValue;
         }
     }
     else if([paramName isEqualToString:RECORD_STATUS]) {
-        if(recordStatus != (PPDeviceParametersRecordStatus)paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(recordStatus))];
-            recordStatus = (PPDeviceParametersRecordStatus)paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(recordStatus))];
+        if(self.recordStatus != (PPDeviceParametersRecordStatus)paramValue.integerValue) {
+            self.recordStatus = (PPDeviceParametersRecordStatus)paramValue.integerValue;
         }
     }
     
     // Audio Detection/Recording
     else if([paramName isEqualToString:AUDIO_STATUS]) {
-        if(audioStatus != (PPDeviceParametersAudioStatus)paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(audioStatus))];
-            audioStatus = (PPDeviceParametersAudioStatus)paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(audioStatus))];
+        if(self.audioStatus != (PPDeviceParametersAudioStatus)paramValue.integerValue) {
+            self.audioStatus = (PPDeviceParametersAudioStatus)paramValue.integerValue;
         }
     }
     else if([paramName isEqualToString:AUDIO_SENSITIVITY]) {
-        if(audioSensitivity != paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(audioSensitivity))];
-            audioSensitivity = paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(audioSensitivity))];
+        if(self.audioSensitivity != paramValue.integerValue) {
+            self.audioSensitivity = paramValue.integerValue;
         }
     }
     else if([paramName isEqualToString:AUDIO_ACTIVITY]) {
-        if(audioActivity != paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(audioActivity))];
-            audioActivity = paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(audioActivity))];
+        if(self.audioActivity != paramValue.integerValue) {
+            self.audioActivity = paramValue.integerValue;
         }
     }
     
     // Streaming
     else if([paramName isEqualToString:AUDIO_STREAMING]) {
-        if(audioStreaming != (PPDeviceParametersAudioStatus)paramValue.integerValue > 0) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(audioStreaming))];
-            audioStreaming = (PPDeviceParametersAudioStatus)paramValue.integerValue > 0;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(audioStreaming))];
+        if(self.audioStreaming != (PPDeviceParametersAudioStatus)paramValue.integerValue > 0) {
+            self.audioStreaming = (PPDeviceParametersAudioStatus)paramValue.integerValue > 0;
         }
     }
     else if([paramName isEqualToString:VIDEO_STREAMING]) {
-        if(videoStreaming != (PPDeviceParametersVideoStreaming)paramValue.integerValue > 0) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(videoStreaming))];
-            videoStreaming = (PPDeviceParametersVideoStreaming)paramValue.integerValue > 0;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(videoStreaming))];
+        if(self.videoStreaming != (PPDeviceParametersVideoStreaming)paramValue.integerValue > 0) {
+            self.videoStreaming = (PPDeviceParametersVideoStreaming)paramValue.integerValue > 0;
         }
     }
     else if([paramName isEqualToString:ACCESS_CAMERA_SETTINGS]) {
-        if(accessCameraSettings != (PPDeviceParametersAccessCameraSettings)paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(accessCameraSettings))];
-            accessCameraSettings = (PPDeviceParametersAccessCameraSettings)paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(accessCameraSettings))];
+        if(self.accessCameraSettings != (PPDeviceParametersAccessCameraSettings)paramValue.integerValue) {
+            self.accessCameraSettings = (PPDeviceParametersAccessCameraSettings)paramValue.integerValue;
         }
     }
     else if([paramName isEqualToString:STREAM_ID]) {
-        if(![streamId isEqualToString:paramValue]) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(streamId))];
-            streamId = paramValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(streamId))];
+        if(![self.streamId isEqualToString:paramValue]) {
+            self.streamId = paramValue;
         }
     }
     else if([paramName isEqualToString:WARNING_STATUS]) {
-        if(warningStatus != (PPDeviceParametersWarningStatus)paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(warningStatus))];
-            warningStatus = (PPDeviceParametersWarningStatus)paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(warningStatus))];
+        if(self.warningStatus != (PPDeviceParametersWarningStatus)paramValue.integerValue) {
+            self.warningStatus = (PPDeviceParametersWarningStatus)paramValue.integerValue;
         }
     }
     else if([paramName isEqualToString:WARNING_TEXT]) {
-        if(![warningText isEqualToString:paramValue]) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(warningText))];
-            warningText = paramValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(warningText))];
+        if(![self.warningText isEqualToString:paramValue]) {
+            self.warningText = paramValue;
         }
     }
     else if([paramName isEqualToString:SUPPORTS_VIDEO_CALL]) {
-        if(supportsVideoCall != paramValue.boolValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(supportsVideoCall))];
-            supportsVideoCall = paramValue.boolValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(supportsVideoCall))];
+        if(self.supportsVideoCall != paramValue.boolValue) {
+            self.supportsVideoCall = paramValue.boolValue;
         }
     }
     else if([paramName isEqualToString:RECORD_STREAM]) {
-        if(recordStream != paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(recordStream))];
-            recordStream = paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(recordStream))];
+        if(self.recordStream != paramValue.integerValue) {
+            self.recordStream = paramValue.integerValue;
         }
     }
     else if([paramName isEqualToString:MOTION_ALARM]) {
-        if(motionAlarm != (PPDeviceParametersAlarm)paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(motionAlarm))];
-            motionAlarm = (PPDeviceParametersAlarm)paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(motionAlarm))];
+        if(self.motionAlarm != (PPDeviceParametersAlarm)paramValue.integerValue) {
+            self.motionAlarm = (PPDeviceParametersAlarm)paramValue.integerValue;
         }
     }
     
     // Robot
     else if([paramName isEqualToString:ROBOT_CONNECTED]) {
-        if(robotConnected != (PPDeviceParametersRobotConnected)paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(robotConnected))];
-            robotConnected = (PPDeviceParametersRobotConnected)paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(robotConnected))];
+        if(self.robotConnected != (PPDeviceParametersRobotConnected)paramValue.integerValue) {
+            self.robotConnected = (PPDeviceParametersRobotConnected)paramValue.integerValue;
         }
     }
     else if([paramName isEqualToString:ROBOT_MOTION_DIRECTION]) {
-        if(robotMotionDirection != (PPDeviceParametersRobotMotionDirection)paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(robotMotionDirection))];
-            robotMotionDirection = (PPDeviceParametersRobotMotionDirection)paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(robotMotionDirection))];
+        if(self.robotMotionDirection != (PPDeviceParametersRobotMotionDirection)paramValue.integerValue) {
+            self.robotMotionDirection = (PPDeviceParametersRobotMotionDirection)paramValue.integerValue;
         }
     }
     else if([paramName isEqualToString:ROBOT_VANTAGE_SPHERICAL_COORDINATES]) {
-        [self willChangeValueForKey:NSStringFromSelector(@selector(robotVantagePoints))];
         NSInteger vantageIndex = 0;
         if(paramIndex) {
             vantageIndex = paramIndex.integerValue;
@@ -322,224 +273,171 @@
         paramValue = [paramValue stringByReplacingOccurrencesOfString:@"]" withString:@""];
         NSArray *vantagePointArray = [paramValue componentsSeparatedByString:@","];
         PPDeviceParameterRobotVantagePoint *vantagePoint = [[PPDeviceParameterRobotVantagePoint alloc] initWithZoomLevel:[vantagePointArray objectAtIndex:0] horizontalRotation:[vantagePointArray objectAtIndex:1] verticalRotation:[vantagePointArray objectAtIndex:2]];
-        if(robotVantagePoints.count > vantageIndex) {
-            [robotVantagePoints replaceObjectAtIndex:vantageIndex withObject:vantagePoint];
+        if(self.robotVantagePoints.count > vantageIndex) {
+            [self.robotVantagePoints replaceObjectAtIndex:vantageIndex withObject:vantagePoint];
         }
         else {
-            [robotVantagePoints addObject:vantagePoint];
+            [self.robotVantagePoints addObject:vantagePoint];
         }
-        [self didChangeValueForKey:NSStringFromSelector(@selector(robotVantagePoints))];
     }
     else if([paramName isEqualToString:ROBOT_VANTAGE_TIME]) {
-        [self willChangeValueForKey:NSStringFromSelector(@selector(robotVantageTimers))];
         NSInteger vantageIndex = 0;
         if(paramIndex) {
             vantageIndex = paramIndex.integerValue;
         }
-        if(robotVantageTimers.count > vantageIndex) {
-            [robotVantageTimers replaceObjectAtIndex:vantageIndex withObject:paramValue];
+        if(self.robotVantageTimers.count > vantageIndex) {
+            [self.robotVantageTimers replaceObjectAtIndex:vantageIndex withObject:paramValue];
         }
         else {
             // Set every index below our current to -1 so we can maintain our current indexed value
-            while(robotVantageTimers.count < vantageIndex) {
-                [robotVantageTimers addObject:@"-1"];
+            while(self.robotVantageTimers.count < vantageIndex) {
+                [self.robotVantageTimers addObject:@"-1"];
             }
-            [robotVantageTimers addObject:paramValue];
+            [self.robotVantageTimers addObject:paramValue];
         }
-        [self didChangeValueForKey:NSStringFromSelector(@selector(robotVantageTimers))];
     }
     else if([paramName isEqualToString:ROBOT_VANTAGE_NAME]) {
-        [self willChangeValueForKey:NSStringFromSelector(@selector(robotVantageNames))];
         NSInteger vantageIndex = 0;
         if(paramIndex) {
             vantageIndex = paramIndex.integerValue;
         }
-        if(robotVantageNames.count > vantageIndex) {
-            [robotVantageNames replaceObjectAtIndex:vantageIndex withObject:paramValue];
+        if(self.robotVantageNames.count > vantageIndex) {
+            [self.robotVantageNames replaceObjectAtIndex:vantageIndex withObject:paramValue];
         }
         else {
             // Set every index below our current to -1 so we can maintain our current indexed value
-            while(robotVantageNames.count < vantageIndex) {
-                [robotVantageNames addObject:@" "];
+            while(self.robotVantageNames.count < vantageIndex) {
+                [self.robotVantageNames addObject:@" "];
             }
-            [robotVantageNames addObject:paramValue];
+            [self.robotVantageNames addObject:paramValue];
         }
-        [self didChangeValueForKey:NSStringFromSelector(@selector(robotVantageNames))];
     }
     else if([paramName isEqualToString:ROBOT_VANTAGE_SEQUENCE]) {
-        [self willChangeValueForKey:NSStringFromSelector(@selector(robotVantageSequence))];
         if([paramValue isEqualToString:@"-1"]) {
-            robotVantageSequence = [[NSMutableArray alloc] init];
+            self.robotVantageSequence = (RLMArray<RLMString> *)[[NSMutableArray alloc] init];
         }
         else {
             NSArray *vantageIndexes = [paramValue componentsSeparatedByString:@","];
-            robotVantageSequence = [[NSMutableArray alloc] initWithArray:vantageIndexes];
+            self.robotVantageSequence = (RLMArray<RLMString> *)[[NSMutableArray alloc] initWithArray:vantageIndexes];
         }
-        [self didChangeValueForKey:NSStringFromSelector(@selector(robotVantageNames))];
     }
     else if([paramName isEqualToString:ROBOT_VANTAGE_CONFIGURATION_STATUS]) {
-        if(robotVantageConfigurationStatus != paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(robotVantageConfigurationStatus))];
-            robotVantageConfigurationStatus = paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(robotVantageConfigurationStatus))];
+        if(self.robotVantageConfigurationStatus != paramValue.integerValue) {
+            self.robotVantageConfigurationStatus = paramValue.integerValue;
         }
     }
     else if([paramName isEqualToString:ROBOT_VANTAGE_MOVE_TO_INDEX]) {
-        if(robotVantageMoveToIndex != paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(robotVantageMoveToIndex))];
-            robotVantageMoveToIndex = paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(robotVantageMoveToIndex))];
+        if(self.robotVantageMoveToIndex != paramValue.integerValue) {
+            self.robotVantageMoveToIndex = paramValue.integerValue;
         }
     }
     else if([paramName isEqualToString:ROBOT_ORIENTATION]) {
-        if(robotOrientation != paramValue.boolValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(robotOrientation))];
-            robotOrientation = paramValue.boolValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(robotOrientation))];
+        if(self.robotOrientation != paramValue.boolValue) {
+            self.robotOrientation = paramValue.boolValue;
         }
     }
     
     // Twitter
     else if([paramName isEqualToString:TWITTER_AUTO_SHARE]) {
-        if(twitterAutoShare != (PPDeviceParametersTwitterAutoShare)paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(twitterAutoShare))];
-            twitterAutoShare = (PPDeviceParametersTwitterAutoShare)paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(twitterAutoShare))];
+        if(self.twitterAutoShare != (PPDeviceParametersTwitterAutoShare)paramValue.integerValue) {
+            self.twitterAutoShare = (PPDeviceParametersTwitterAutoShare)paramValue.integerValue;
         }
     }
     else if([paramName isEqualToString:TWITTER_DESCRIPTION]) {
-        if(![twitterDescription isEqualToString:paramValue]) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(twitterDescription))];
-            twitterDescription = paramValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(twitterDescription))];
+        if(![self.twitterDescription isEqualToString:paramValue]) {
+            self.twitterDescription = paramValue;
         }
     }
     else if([paramName isEqualToString:TWITTER_REMINDER]) {
-        if(twitterReminder != (PPDeviceParametersTwitterReminder)paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(twitterReminder))];
-            twitterReminder = (PPDeviceParametersTwitterReminder)paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(twitterReminder))];
+        if(self.twitterReminder != (PPDeviceParametersTwitterReminder)paramValue.integerValue) {
+            self.twitterReminder = (PPDeviceParametersTwitterReminder)paramValue.integerValue;
         }
     }
     else if([paramName isEqualToString:TWITTER_STATUS]) {
-        if(twitterStatus != (PPDeviceParametersTwitterStatus)paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(twitterStatus))];
-            twitterStatus = (PPDeviceParametersTwitterStatus)paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(twitterStatus))];
+        if(self.twitterStatus != (PPDeviceParametersTwitterStatus)paramValue.integerValue) {
+            self.twitterStatus = (PPDeviceParametersTwitterStatus)paramValue.integerValue;
         }
         
-        if(twitterAutoShare != paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(twitterAutoShare))];
-            twitterAutoShare = (PPDeviceParametersTwitterAutoShare)paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(twitterAutoShare))];
+        if(self.twitterAutoShare != paramValue.integerValue) {
+            self.twitterAutoShare = (PPDeviceParametersTwitterAutoShare)paramValue.integerValue;
         }
     }
     
     // Various
     else if([paramName isEqualToString:HD_STATUS]) {
-        if(HDStatus != (PPDeviceParametersHDStatus)paramValue.integerValue > 0) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(HDStatus))];
+        if(self.HDStatus != (PPDeviceParametersHDStatus)paramValue.integerValue > 0) {
             // Pro features need an extra check
-            HDStatus = (PPDeviceParametersHDStatus)paramValue.integerValue > 0;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(HDStatus))];
+            self.HDStatus = (PPDeviceParametersHDStatus)paramValue.integerValue > 0;
         }
     }
     else if ([paramName isEqualToString:BATTERY_LEVEL]) {
-        if(batteryLevel != (PPDeviceParametersBatteryLevel)paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(batteryLevel))];
-            batteryLevel = (PPDeviceParametersBatteryLevel)paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(batteryLevel))];
+        if(self.batteryLevel != (PPDeviceParametersBatteryLevel)paramValue.integerValue) {
+            self.batteryLevel = (PPDeviceParametersBatteryLevel)paramValue.integerValue;
         }
     }
     else if([paramName isEqualToString:CHARGING]) {
-        if(charging != (PPDeviceParametersCharging)paramValue.integerValue > 0) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(charging))];
-            charging = (PPDeviceParametersCharging)paramValue.integerValue > 0;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(charging))];
+        if(self.charging != (PPDeviceParametersCharging)paramValue.integerValue > 0) {
+            self.charging = (PPDeviceParametersCharging)paramValue.integerValue > 0;
         }
     }
     else if([paramName isEqualToString:VERSION]) {
-        [self willChangeValueForKey:NSStringFromSelector(@selector(version))];
-        version = [[PPVersion alloc] initWithVersion:paramValue];
-        [self didChangeValueForKey:NSStringFromSelector(@selector(version))];
+        self.version = [[PPVersion alloc] initWithVersion:paramValue];
     }
     else if([paramName isEqualToString:AVAILABLE_BYTES]) {
-        if(availableBytes != [[[[NSNumberFormatter alloc] init] numberFromString:paramValue] unsignedLongValue]) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(availableBytes))];
-            availableBytes = [[[[NSNumberFormatter alloc] init] numberFromString:paramValue] unsignedLongValue];
-            [self didChangeValueForKey:NSStringFromSelector(@selector(availableBytes))];
+        if(self.availableBytes != [[[[NSNumberFormatter alloc] init] numberFromString:paramValue] unsignedLongValue]) {
+            self.availableBytes = [[[[NSNumberFormatter alloc] init] numberFromString:paramValue] unsignedLongValue];
         }
     }
     else if([paramName isEqualToString:BLACKOUT_SCREEN_ON]) {
-        if(blackoutScreenOn != (PPDeviceParametersBlackoutScreenOn)paramValue.integerValue > 0) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(blackoutScreenOn))];
-            blackoutScreenOn = (PPDeviceParametersBlackoutScreenOn)paramValue.integerValue > 0;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(blackoutScreenOn))];
+        if(self.blackoutScreenOn != (PPDeviceParametersBlackoutScreenOn)paramValue.integerValue > 0) {
+            self.blackoutScreenOn = (PPDeviceParametersBlackoutScreenOn)paramValue.integerValue > 0;
         }
     }
     else if([paramName isEqualToString:AUTO_FOCUS]) {
-        if(autoFocus != (PPDeviceParametersAutoFocus)paramValue.boolValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(autoFocus))];
-            autoFocus = (PPDeviceParametersAutoFocus)paramValue.boolValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(autoFocus))];
+        if(self.autoFocus != (PPDeviceParametersAutoFocus)paramValue.boolValue) {
+            self.autoFocus = (PPDeviceParametersAutoFocus)paramValue.boolValue;
         }
     }
     else if([paramName isEqualToString:OUTPUT_VOLUME]) {
-        if(outputVolume != (PPDeviceParametersOutputVolume)paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(outputVolume))];
-            outputVolume = (PPDeviceParametersOutputVolume)paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(outputVolume))];
+        if(self.outputVolume != (PPDeviceParametersOutputVolume)paramValue.integerValue) {
+            self.outputVolume = (PPDeviceParametersOutputVolume)paramValue.integerValue;
         }
     }
     else if([paramName isEqualToString:CAPTURE_IMAGE]) {
-        if(captureImage != (PPDeviceParametersCaptureImage)paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(captureImage))];
-            captureImage = (PPDeviceParametersCaptureImage)paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(captureImage))];
+        if(self.captureImage != (PPDeviceParametersCaptureImage)paramValue.integerValue) {
+            self.captureImage = (PPDeviceParametersCaptureImage)paramValue.integerValue;
         }
     }
     
     // Security
     else if([paramName isEqualToString:ALARM]) {
-        if(alarm != (PPDeviceParametersAlarm)paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(alarm))];
-            alarm = (PPDeviceParametersAlarm)paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(alarm))];
+        if(self.alarm != (PPDeviceParametersAlarm)paramValue.integerValue) {
+            self.alarm = (PPDeviceParametersAlarm)paramValue.integerValue;
         }
     }
     else if([paramName isEqualToString:PLAY_SOUND]) {
-        if(![playSound isEqualToString:paramValue]) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(playSound))];
-            playSound = paramValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(playSound))];
+        if(![self.playSound isEqualToString:paramValue]) {
+            self.playSound = paramValue;
         }
     }
     else if([paramName isEqualToString:COUNTDOWN]) {
-        if(countdown != (PPDeviceParametersCountdown)paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(countdown))];
-            countdown = (PPDeviceParametersCountdown)paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(countdown))];
+        if(self.countdown != (PPDeviceParametersCountdown)paramValue.integerValue) {
+            self.countdown = (PPDeviceParametersCountdown)paramValue.integerValue;
         }
     }
     else if([paramName isEqualToString:VISUAL_COUNTDOWN]) {
-        if(visualCountdown != (PPDeviceParametersVisualCountdown)paramValue.integerValue) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(visualCountdown))];
-            visualCountdown = (PPDeviceParametersVisualCountdown)paramValue.integerValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(visualCountdown))];
+        if(self.visualCountdown != (PPDeviceParametersVisualCountdown)paramValue.integerValue) {
+            self.visualCountdown = (PPDeviceParametersVisualCountdown)paramValue.integerValue;
         }
     }
     else if([paramName isEqualToString:KEYPAD_STATUS]) {
-        if(![keypadStatus isEqualToString:paramValue]) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(keypadStatus))];
-            keypadStatus = paramValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(keypadStatus))];
+        if(![self.keypadStatus isEqualToString:paramValue]) {
+            self.keypadStatus = paramValue;
         }
     }
     else if([paramName isEqualToString:MODE]) {
-        if(![mode isEqualToString:paramValue]) {
-            [self willChangeValueForKey:NSStringFromSelector(@selector(mode))];
-            mode = paramValue;
-            [self didChangeValueForKey:NSStringFromSelector(@selector(mode))];
+        if(![self.mode isEqualToString:paramValue]) {
+            self.mode = paramValue;
         }
     }
 }
@@ -557,166 +455,166 @@
 
 #pragma mark - Setters
 
-- (void)setSelectedCamera:(PPDeviceParametersSelectedCamera)selectedCamera {
+- (void)updateSelectedCamera:(PPDeviceParametersSelectedCamera)selectedCamera {
     if(self.selectedCamera == selectedCamera) {
         return;
     }
     [self setParameter:SELECTED_CAMERA value:[NSString stringWithFormat:@"%li", (long)selectedCamera] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setSelectedFlash:(PPDeviceParametersSelectedFlash)selectedFlash {
+- (void)updateSelectedFlash:(PPDeviceParametersSelectedFlash)selectedFlash {
     if(self.selectedFlash == selectedFlash) {
         return;
     }
     [self setParameter:FLASH_ON value:[NSString stringWithFormat:@"%li", (long)selectedFlash] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setMotionStatus:(PPDeviceParametersCameraMotionStatus)motionStatus {
+- (void)updateMotionStatus:(PPDeviceParametersCameraMotionStatus)motionStatus {
     if(self.motionStatus == motionStatus) {
         return;
     }
     [self setParameter:MOTION_STATUS value:[NSString stringWithFormat:@"%li", (long)motionStatus] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setRecordSeconds:(PPDeviceParametersRecordSeconds)recordSeconds {
+- (void)updateRecordSeconds:(PPDeviceParametersRecordSeconds)recordSeconds {
     if(self.recordSeconds == recordSeconds) {
         return;
     }
     [self setParameter:RECORD_SECONDS value:[NSString stringWithFormat:@"%li", (long)recordSeconds] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setMotionSensitivity:(PPDeviceParametersMotionSensitiviy)motionSensitivity {
+- (void)updateMotionSensitivity:(PPDeviceParametersMotionSensitiviy)motionSensitivity {
     if(self.motionSensitivity == motionSensitivity) {
         return;
     }
     [self setParameter:MOTION_SENSITIVITY value:[NSString stringWithFormat:@"%li", (long)motionSensitivity] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setMotionActivity:(PPDeviceParametersMotionActivity)motionActivity {
+- (void)updateMotionActivity:(PPDeviceParametersMotionActivity)motionActivity {
     if(self.motionActivity == motionActivity) {
         return;
     }
     [self setParameter:MOTION_ACTIVITY value:[NSString stringWithFormat:@"%li", (long)motionActivity] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setRapidMotionStatus:(PPDeviceParametersRapidMotionStatus)rapidMotionStatus {
+- (void)updateRapidMotionStatus:(PPDeviceParametersRapidMotionStatus)rapidMotionStatus {
     if(self.rapidMotionStatus == rapidMotionStatus) {
         return;
     }
     [self setParameter:RAPID_MOTION_STATUS value:[NSString stringWithFormat:@"%li", (long)rapidMotionStatus] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setMotionCountDownTime:(PPDeviceParametersMotionCountDownTime)motionCountDownTime {
+- (void)updateMotionCountDownTime:(PPDeviceParametersMotionCountDownTime)motionCountDownTime {
     if(self.motionCountDownTime == motionCountDownTime) {
         return;
     }
     [self setParameter:MOTION_COUNTDOWN_TIME value:[NSString stringWithFormat:@"%li", (long)motionCountDownTime] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setRecordFullDuration:(PPDeviceParametersRecordFullDuration)recordFullDuration {
+- (void)updateRecordFullDuration:(PPDeviceParametersRecordFullDuration)recordFullDuration {
     if(self.recordFullDuration == recordFullDuration) {
         return;
     }
     [self setParameter:RECORD_FULL_DURATION value:[NSString stringWithFormat:@"%li", (long)recordFullDuration] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setRecordStatus:(PPDeviceParametersRecordStatus)recordStatus {
+- (void)updateRecordStatus:(PPDeviceParametersRecordStatus)recordStatus {
     if(self.recordStatus == recordStatus) {
         return;
     }
     [self setParameter:RECORD_STATUS value:[NSString stringWithFormat:@"%li", (long)recordStatus] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setMotionAlarm:(PPDeviceParametersAlarm)motionAlarm {
+- (void)updateMotionAlarm:(PPDeviceParametersAlarm)motionAlarm {
     if(self.motionAlarm == motionAlarm) {
         return;
     }
     [self setParameter:MOTION_ALARM value:[NSString stringWithFormat:@"%li", (long)motionAlarm] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setAudioStatus:(PPDeviceParametersAudioStatus)audioStatus {
+- (void)updateAudioStatus:(PPDeviceParametersAudioStatus)audioStatus {
     if(self.audioStatus == audioStatus) {
         return;
     }
     [self setParameter:AUDIO_STATUS value:[NSString stringWithFormat:@"%li", (long)audioStatus] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setAudioSensitivity:(PPDeviceParametersAudioSensitiviy)audioSensitivity {
+- (void)updateAudioSensitivity:(PPDeviceParametersAudioSensitiviy)audioSensitivity {
     if(self.audioSensitivity == audioSensitivity) {
         return;
     }
     [self setParameter:AUDIO_SENSITIVITY value:[NSString stringWithFormat:@"%li", (long)audioSensitivity] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setAudioActivity:(PPDeviceParametersAudioActivity)audioActivity {
+- (void)updateAudioActivity:(PPDeviceParametersAudioActivity)audioActivity {
     if(self.audioActivity == audioActivity) {
         return;
     }
     [self setParameter:AUDIO_ACTIVITY value:[NSString stringWithFormat:@"%li", (long)audioActivity] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setAudioStreaming:(PPDeviceParametersAudioStreaming)audioStreaming {
+- (void)updateAudioStreaming:(PPDeviceParametersAudioStreaming)audioStreaming {
     if(self.audioStreaming == audioStreaming) {
         return;
     }
     [self setParameter:AUDIO_STREAMING value:[NSString stringWithFormat:@"%li", (long)audioStreaming] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setVideoStreaming:(PPDeviceParametersVideoStreaming)videoStreaming {
+- (void)updateVideoStreaming:(PPDeviceParametersVideoStreaming)videoStreaming {
     if(self.videoStreaming == videoStreaming) {
         return;
     }
     [self setParameter:VIDEO_STREAMING value:[NSString stringWithFormat:@"%li", (long)videoStreaming] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setAccessCameraSettings:(PPDeviceParametersAccessCameraSettings)accessCameraSettings {
+- (void)updateAccessCameraSettings:(PPDeviceParametersAccessCameraSettings)accessCameraSettings {
     if(self.accessCameraSettings == accessCameraSettings) {
         return;
     }
     [self setParameter:ACCESS_CAMERA_SETTINGS value:[NSString stringWithFormat:@"%li", (long)accessCameraSettings] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setWarningStatus:(PPDeviceParametersWarningStatus)warningStatus {
+- (void)updateWarningStatus:(PPDeviceParametersWarningStatus)warningStatus {
     if(self.warningStatus == warningStatus) {
         return;
     }
     [self setParameter:WARNING_STATUS value:[NSString stringWithFormat:@"%li", (long)warningStatus] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setWarningText:(NSString *)warningText {
+- (void)updateWarningText:(NSString *)warningText {
     if(self.warningText == warningText) {
         return;
     }
     [self setParameter:WARNING_TEXT value:warningText index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setSupportsVideoCall:(PPDeviceParametersSupportsVideoCall)supportsVideoCall {
+- (void)updateSupportsVideoCall:(PPDeviceParametersSupportsVideoCall)supportsVideoCall {
     if(self.supportsVideoCall == supportsVideoCall) {
         return;
     }
     [self setParameter:SUPPORTS_VIDEO_CALL value:[NSString stringWithFormat:@"%li", (long)supportsVideoCall] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setRobotConnected:(PPDeviceParametersRobotConnected)robotConnected {
+- (void)updateRobotConnected:(PPDeviceParametersRobotConnected)robotConnected {
     if(self.robotConnected == robotConnected) {
         return;
     }
     [self setParameter:ROBOT_CONNECTED value:[NSString stringWithFormat:@"%li", (long)robotConnected] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setRobotMotionDirection:(PPDeviceParametersRobotMotionDirection)robotMotionDirection {
+- (void)updateRobotMotionDirection:(PPDeviceParametersRobotMotionDirection)robotMotionDirection {
     if(self.robotMotionDirection == robotMotionDirection) {
         return;
     }
     //    [self setParameter:ROBOT_CONNECTED value:[NSString stringWithFormat:@"%li", (long)robotConnected] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setRobotVantagePoint:(NSString *)robotVantagePoint index:(NSInteger)index {
+- (void)updateRobotVantagePoint:(NSString *)robotVantagePoint index:(NSInteger)index {
     [self setParameter:ROBOT_VANTAGE_SPHERICAL_COORDINATES value:robotVantagePoint index:[NSString stringWithFormat:@"%li", (long)index] lastUpdateDate:[NSDate date]];
 }
 
-- (void)setRobotVantageTimer:(NSInteger)robotVantageTimer index:(NSInteger)index {
-    NSMutableArray *robotVantageTimers = self.robotVantageTimers;
+- (void)updateRobotVantageTimer:(NSInteger)robotVantageTimer index:(NSInteger)index {
+    NSMutableArray *robotVantageTimers = [NSMutableArray arrayWithArray:[PPRLMArray arrayFromArray:self.robotVantageTimers]];
     if(robotVantageTimers.count > index) {
         [robotVantageTimers replaceObjectAtIndex:index withObject:@(robotVantageTimer)];
     }
@@ -726,13 +624,13 @@
         }
         [robotVantageTimers addObject:@(robotVantageTimer).stringValue];
     }
-    [self setRobotVantageTimers:robotVantageTimers];
+    [self setRobotVantageTimers:(RLMArray<RLMString> *)robotVantageTimers];
     
     [self setParameter:ROBOT_VANTAGE_TIME value:[NSString stringWithFormat:@"%li", (long)robotVantageTimer] index:[NSString stringWithFormat:@"%li", (long)index] lastUpdateDate:[NSDate date]];
 }
 
-- (void)setRobotVantageName:(NSString *)robotVantageName index:(NSInteger)index {
-    NSMutableArray *robotVantageNames = self.robotVantageNames;
+- (void)updateRobotVantageName:(NSString *)robotVantageName index:(NSInteger)index {
+    NSMutableArray *robotVantageNames = [NSMutableArray arrayWithArray:[PPRLMArray arrayFromArray:self.robotVantageNames]];
     if(robotVantageNames.count > index) {
         [robotVantageNames replaceObjectAtIndex:index withObject:robotVantageName];
     }
@@ -742,11 +640,11 @@
         }
         [robotVantageNames addObject:robotVantageName];
     }
-    [self setRobotVantageNames:robotVantageNames];
+    [self setRobotVantageNames:(RLMArray<RLMString> *)robotVantageNames];
     [self setParameter:ROBOT_VANTAGE_NAME value:robotVantageName index:[NSString stringWithFormat:@"%li", (long)index] lastUpdateDate:[NSDate date]];
 }
 
-- (void)setRobotVantageSequence:(NSMutableOrderedSet *)robotVantageSequence {
+- (void)updateRobotVantageSequence:(NSMutableOrderedSet *)robotVantageSequence {
 #ifdef DEBUG
     NSLog(@"%s current=%@; new=%@", __PRETTY_FUNCTION__, self.robotVantageSequence, robotVantageSequence);
 #endif
@@ -782,154 +680,154 @@
     [self setParameter:ROBOT_VANTAGE_SEQUENCE value:s index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setRobotVantageConfigurationStatus:(PPDeviceParametersRobotVantageConfigurationStatus)robotVantageConfigurationStatus {
+- (void)updateRobotVantageConfigurationStatus:(PPDeviceParametersRobotVantageConfigurationStatus)robotVantageConfigurationStatus {
     if(self.robotVantageConfigurationStatus == robotVantageConfigurationStatus) {
         return;
     }
     //    [self setParameter:ROBOT_VANTAGE_CONFIGURATION_STATUS value:[NSString stringWithFormat:@"%li", (long)robotVantageConfigurationStatus] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setRobotVantageMoveToIndex:(NSInteger)robotVantageMoveToIndex {
+- (void)updateRobotVantageMoveToIndex:(NSInteger)robotVantageMoveToIndex {
     if(self.robotVantageMoveToIndex == robotVantageMoveToIndex) {
         return;
     }
     //    [self setParameter:ROBOT_VANTAGE_MOVE_TO_INDEX value:[NSString stringWithFormat:@"%li", (long)robotVantageMoveToIndex] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setRobotOrientation:(PPDeviceParametersRobotOrientation)robotOrientation {
+- (void)updateRobotOrientation:(PPDeviceParametersRobotOrientation)robotOrientation {
     if(self.robotOrientation == robotOrientation) {
         return;
     }
     //    [self setParameter:ROBOT_ORIENTATION value:[NSString stringWithFormat:@"%li", (long)robotOrientation] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setTwitterReminder:(PPDeviceParametersTwitterReminder)twitterReminder {
+- (void)updateTwitterReminder:(PPDeviceParametersTwitterReminder)twitterReminder {
     if(self.twitterReminder == twitterReminder) {
         return;
     }
     [self setParameter:TWITTER_REMINDER value:[NSString stringWithFormat:@"%li", (long)twitterReminder] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setTwitterAutoShare:(PPDeviceParametersTwitterAutoShare)twitterAutoShare {
+- (void)updateTwitterAutoShare:(PPDeviceParametersTwitterAutoShare)twitterAutoShare {
     if(self.twitterAutoShare == twitterAutoShare) {
         return;
     }
     [self setParameter:TWITTER_AUTO_SHARE value:[NSString stringWithFormat:@"%li", (long)twitterAutoShare] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setTwitterDescription:(NSString *)twitterDescription {
+- (void)updateTwitterDescription:(NSString *)twitterDescription {
     if([self.twitterDescription isEqualToString:twitterDescription]) {
         return;
     }
     [self setParameter:TWITTER_DESCRIPTION value:twitterDescription index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setTwitterStatus:(PPDeviceParametersTwitterStatus)twitterStatus {
+- (void)updateTwitterStatus:(PPDeviceParametersTwitterStatus)twitterStatus {
     if(self.twitterStatus == twitterStatus) {
         return;
     }
     [self setParameter:TWITTER_STATUS value:[NSString stringWithFormat:@"%li", (long)twitterStatus] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setHDStatus:(PPDeviceParametersHDStatus)HDStatus {
+- (void)updateHDStatus:(PPDeviceParametersHDStatus)HDStatus {
     if(self.HDStatus == HDStatus) {
         return;
     }
     [self setParameter:HD_STATUS value:[NSString stringWithFormat:@"%li", (long)HDStatus] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setBatteryLevel:(PPDeviceParametersBatteryLevel)batteryLevel {
+- (void)updateBatteryLevel:(PPDeviceParametersBatteryLevel)batteryLevel {
     if(self.batteryLevel == batteryLevel) {
         return;
     }
     [self setParameter:BATTERY_LEVEL value:[NSString stringWithFormat:@"%li", (long)batteryLevel] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setCharging:(PPDeviceParametersCharging)charging {
+- (void)updateCharging:(PPDeviceParametersCharging)charging {
     if(self.charging == charging) {
         return;
     }
     [self setParameter:CHARGING value:[NSString stringWithFormat:@"%li", (long)charging] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setVersion:(PPVersion *)version {
+- (void)updateVersion:(PPVersion *)version {
     if([[self.version toNSString] isEqualToString:[version toNSString]]) {
         return;
     }
     [self setParameter:VERSION value:[version toNSString] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setAvailableBytes:(unsigned long long)availableBytes {
+- (void)updateAvailableBytes:(unsigned long long)availableBytes {
     if(self.availableBytes == availableBytes) {
         return;
     }
     [self setParameter:AVAILABLE_BYTES value:[NSString stringWithFormat:@"%llu", (unsigned long long )availableBytes] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setBlackoutScreenOn:(PPDeviceParametersBlackoutScreenOn)blackoutScreenOn {
+- (void)updateBlackoutScreenOn:(PPDeviceParametersBlackoutScreenOn)blackoutScreenOn {
     if(self.blackoutScreenOn == blackoutScreenOn) {
         return;
     }
     [self setParameter:BLACKOUT_SCREEN_ON value:[NSString stringWithFormat:@"%li", (long)blackoutScreenOn] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setAutoFocus:(PPDeviceParametersAutoFocus)autoFocus {
+- (void)updateAutoFocus:(PPDeviceParametersAutoFocus)autoFocus {
     if(self.autoFocus == autoFocus) {
         return;
     }
     //    [self setParameter:AUTO_FOCUS value:[NSString stringWithFormat:@"%li", (long)autoFocus] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setOutputVolume:(PPDeviceParametersOutputVolume)outputVolume {
+- (void)updateOutputVolume:(PPDeviceParametersOutputVolume)outputVolume {
     if(self.outputVolume == outputVolume) {
         return;
     }
     [self setParameter:OUTPUT_VOLUME value:[NSString stringWithFormat:@"%li", (long)outputVolume] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setCaptureImage:(PPDeviceParametersCaptureImage)captureImage {
+- (void)updateCaptureImage:(PPDeviceParametersCaptureImage)captureImage {
     if(self.captureImage == captureImage) {
         return;
     }
     [self setParameter:CAPTURE_IMAGE value:[NSString stringWithFormat:@"%li", (long)captureImage] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setAlarm:(PPDeviceParametersAlarm)alarm {
+- (void)updateAlarm:(PPDeviceParametersAlarm)alarm {
     if(self.alarm == alarm) {
         return;
     }
     [self setParameter:ALARM value:[NSString stringWithFormat:@"%li", (long)alarm] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setPlaySound:(NSString *)playSound {
+- (void)updatePlaySound:(NSString *)playSound {
     if([self.playSound isEqualToString:playSound]) {
         return;
     }
     //    [self setParameter:PLAY_SOUND value:playSound index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setCountdown:(PPDeviceParametersCountdown)countdown {
+- (void)updateCountdown:(PPDeviceParametersCountdown)countdown {
     if(self.countdown == countdown) {
         return;
     }
     //    [self setParameter:COUNTDOWN value:[NSString stringWithFormat:@"%li", (long)countdown] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setVisualCountdown:(PPDeviceParametersVisualCountdown)visualCountdown {
+- (void)updateVisualCountdown:(PPDeviceParametersVisualCountdown)visualCountdown {
     if(self.visualCountdown == visualCountdown) {
         return;
     }
     //    [self setParameter:VISUAL_COUNTDOWN value:[NSString stringWithFormat:@"%li", (long)visualCountdown] index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setKeypadStatus:(NSString *)keypadStatus {
+- (void)updateKeypadStatus:(NSString *)keypadStatus {
     if([self.keypadStatus isEqualToString:keypadStatus]) {
         return;
     }
     //    [self setParameter:KEYPAD_STATUS value:keypadStatus index:nil lastUpdateDate:[NSDate date]];
 }
 
-- (void)setMode:(NSString *)mode {
+- (void)updateMode:(NSString *)mode {
     if([self.mode isEqualToString:mode]) {
         return;
     }

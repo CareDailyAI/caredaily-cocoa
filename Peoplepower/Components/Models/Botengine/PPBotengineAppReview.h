@@ -14,7 +14,7 @@ typedef NS_OPTIONS(NSInteger, PPBotengineAppReviewVote) {
     PPBotengineAppReviewVoteUp = 1
 };
 
-@interface PPBotengineAppReview : NSObject
+@interface PPBotengineAppReview : RLMObject
 
 @property (nonatomic) NSInteger reviewId;
 @property (nonatomic) NSInteger userId;
@@ -33,3 +33,5 @@ typedef NS_OPTIONS(NSInteger, PPBotengineAppReviewVote) {
 - (id)initWithReviewId:(NSInteger)reviewId userId:(NSInteger)userId version:(NSString *)version creationDate:(NSDate *)creationDate rating:(NSInteger)rating votesUp:(NSInteger)votesUp votesDown:(NSInteger)votesDown ownVote:(BOOL)ownVote lang:(NSString *)lang nickname:(NSString *)nickname desc:(NSString *)desc;
 
 @end
+
+RLM_ARRAY_TYPE(PPBotengineAppReview);

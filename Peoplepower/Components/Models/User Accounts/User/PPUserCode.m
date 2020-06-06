@@ -10,6 +10,10 @@
 
 @implementation PPUserCode
 
++ (NSString *)primaryKey {
+    return @"name";
+}
+
 - (id)initWithName:(NSString *)name type:(PPUserCodeType)type {
     self = [super init];
     if(self) {

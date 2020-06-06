@@ -20,62 +20,36 @@
 
 #pragma mark - Notification ApplicationFiles
 
-__strong static NSMutableDictionary*_sharedApplicationFiles = nil;
-
 /**
  * Shared applicationFiles across the entire application
  */
+
 + (NSArray *)sharedApplicationFilesForUser:(PPUserId)userId {
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
     NSLog(@"> %s", __PRETTY_FUNCTION__);
 #endif
 #endif
-    if(!_sharedApplicationFiles) {
-        [PPApplicationFileManagement initializeSharedApplicationFiles];
-    }
-    NSMutableArray *sharedApplicationFiles = [[NSMutableArray alloc] initWithCapacity:0];
-    NSMutableArray *applicationFilesArray = [[NSMutableArray alloc] initWithCapacity:0];
-    for(NSString *userIdKey in _sharedApplicationFiles.allKeys) {
-        for(PPApplicationFile *applicationFile in [_sharedApplicationFiles objectForKey:userIdKey]) {
-            NSMutableDictionary *applicationFileIdentifiers = [[NSMutableDictionary alloc] initWithCapacity:2];
-            [applicationFileIdentifiers setValue:@(applicationFile.fileId) forKey:@"type"];
-            if(applicationFile.name) {
-                [applicationFileIdentifiers setValue:applicationFile.name forKey:@"name"];
-            }
-            [applicationFilesArray addObject:applicationFileIdentifiers];
-            
-            if([userIdKey isEqualToString:[NSString stringWithFormat:@"%li", (long)userId]]) {
-                [sharedApplicationFiles addObject:applicationFile];
-            }
+    RLMResults<PPApplicationFile *> *sharedApplicationFiles = [PPApplicationFile allObjects];
+    
+    NSMutableArray *sharedApplicationFilesArray = [[NSMutableArray alloc] initWithCapacity:0];
+    NSMutableArray *applicationFilesArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
+    for(PPApplicationFile *applicationFile in sharedApplicationFiles) {
+        [sharedApplicationFilesArray addObject:applicationFile];
+        NSMutableDictionary *applicationFileIdentifiers = [[NSMutableDictionary alloc] initWithCapacity:2];
+        [applicationFileIdentifiers setValue:@(applicationFile.fileId) forKey:@"type"];
+        if(applicationFile.name) {
+            [applicationFileIdentifiers setValue:applicationFile.name forKey:@"name"];
         }
+        [applicationFilesArrayDebug addObject:applicationFileIdentifiers];
     }
     
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s sharedApplicationFiles=%@", __PRETTY_FUNCTION__, applicationFilesArray);
+    NSLog(@"< %s sharedApplicationFiles=%@", __PRETTY_FUNCTION__, applicationFilesArrayDebug);
 #endif
 #endif
-    return sharedApplicationFiles;
-}
-
-+ (void)initializeSharedApplicationFiles {
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"> %s", __PRETTY_FUNCTION__);
-#endif
-#endif
-    _sharedApplicationFiles = [[NSMutableDictionary alloc] initWithCapacity:0];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    NSData *storedApplicationFilesData = [defaults objectForKey:@"user.notificationApplicationFiles"];
-//    if(storedApplicationFilesData) {
-//        _sharedApplicationFiles = (NSMutableDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:storedApplicationFilesData];
-//    }
-#ifdef DEBUG
-#ifdef DEBUG_MODELS
-    NSLog(@"< %s", __PRETTY_FUNCTION__);
-#endif
-#endif
+    return sharedApplicationFilesArray;
 }
 
 /**
@@ -91,42 +65,16 @@ __strong static NSMutableDictionary*_sharedApplicationFiles = nil;
     NSLog(@"> %s applicationFiles=%@", __PRETTY_FUNCTION__, applicationFiles);
 #endif
 #endif
-    if(!_sharedApplicationFiles) {
-        [PPApplicationFileManagement initializeSharedApplicationFiles];
-    }
     
-    NSMutableArray *applicationFilesArray = [_sharedApplicationFiles objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!applicationFilesArray) {
-        applicationFilesArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-    
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
+    [[PPRealm defaultRealm] beginWriteTransaction];
     for(PPApplicationFile *applicationFile in applicationFiles) {
-        
-        BOOL found = NO;
-        for(PPApplicationFile *sharedApplicationFile in applicationFilesArray) {
-            if([sharedApplicationFile isEqualToFile:applicationFile]) {
-                [sharedApplicationFile sync:applicationFile];
-                found = YES;
-                break;
-            }
-        }
-        if(!found) {
-            [indexSet addIndex:[applicationFiles indexOfObject:applicationFile]];
-        }
+        [PPApplicationFile createOrUpdateInDefaultRealmWithValue:applicationFile];
     }
-    
-    [applicationFilesArray addObjectsFromArray:[applicationFiles objectsAtIndexes:indexSet]];
-    [_sharedApplicationFiles setObject:applicationFilesArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    
-//    NSData *sharedApplicationFileData = [NSKeyedArchiver archivedDataWithRootObject:_sharedApplicationFiles];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedApplicationFileData forKey:@"user.notificationApplicationFiles"];
-//    [defaults synchronize];
+    [[PPRealm defaultRealm] commitWriteTransaction];
     
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s applicationFilesArray=%@", __PRETTY_FUNCTION__, applicationFilesArray);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }
@@ -144,37 +92,14 @@ __strong static NSMutableDictionary*_sharedApplicationFiles = nil;
     NSLog(@"> %s applicationFiles=%@", __PRETTY_FUNCTION__, applicationFiles);
 #endif
 #endif
-    
-    if(!_sharedApplicationFiles) {
-        [PPApplicationFileManagement initializeSharedApplicationFiles];
-    }
-    
-    NSMutableArray *applicationFilesArray = [_sharedApplicationFiles objectForKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    if(!applicationFilesArray) {
-        applicationFilesArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-    
-    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
-    for(PPApplicationFile *applicationFile in applicationFiles) {
-        for(PPApplicationFile *sharedApplicationFile in applicationFilesArray) {
-            if([sharedApplicationFile isEqualToFile:applicationFile]) {
-                [indexSet addIndex:[applicationFilesArray indexOfObject:sharedApplicationFile]];
-                break;
-            }
+    [[PPRealm defaultRealm] transactionWithBlock:^{
+        for(PPApplicationFile *applicationFile in applicationFiles) {
+            [[PPRealm defaultRealm] deleteObject:[PPApplicationFile objectForPrimaryKey:@(applicationFile.fileId)]];
         }
-    }
-    
-    [applicationFilesArray removeObjectsAtIndexes:indexSet];
-    [_sharedApplicationFiles setObject:applicationFilesArray forKey:[NSString stringWithFormat:@"%li", (long)userId]];
-    
-//    NSData *sharedApplicationFileData = [NSKeyedArchiver archivedDataWithRootObject:_sharedApplicationFiles];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setObject:sharedApplicationFileData forKey:@"user.notificationApplicationFiles"];
-//    [defaults synchronize];
-    
+    }];
 #ifdef DEBUG
 #ifdef DEBUG_MODELS
-    NSLog(@"< %s applicationFilesArray=%@", __PRETTY_FUNCTION__, applicationFilesArray);
+    NSLog(@"< %s", __PRETTY_FUNCTION__);
 #endif
 #endif
 }
@@ -399,10 +324,7 @@ __strong static NSMutableDictionary*_sharedApplicationFiles = nil;
 + (void)downloadFile:(PPApplicationFileId)fileId apiKey:(NSString *)apiKey userId:(PPUserId)userId locationId:(PPLocationId)locationId isPublic:(PPApplicationFilePublicAccess)isPublic attach:(PPApplicationFileAttach)attach range:(NSRange)range callback:(PPApplicationFileManagementContentBlock)callback {
     NSAssert1(fileId != PPApplicationFileIdNone, @"%s missing fileId", __FUNCTION__);
     NSMutableString *requestString = [[NSMutableString alloc] initWithFormat:@"appfiles/%li?", (long)fileId];
-    
-    if(apiKey) {
-        [requestString appendFormat:@"API_KEY=%@&", apiKey];
-    }
+
     if(userId != PPUserIdNone) {
         [requestString appendFormat:@"userId=%li&", (long)userId];
     }
@@ -418,6 +340,9 @@ __strong static NSMutableDictionary*_sharedApplicationFiles = nil;
         cloudEngine = [PPCloudEngine sharedAppEngine];
     }
     else {
+        if(apiKey) {
+            [requestString appendFormat:@"API_KEY=%@&", apiKey];
+        }
         cloudEngine = [[PPCloudEngine alloc] initSingleton:PPCloudEngineTypeApp];
     }
     NSMutableURLRequest *request = [[cloudEngine getRequestSerializer] requestWithMethod:@"GET" URLString:[NSURL URLWithString:requestString relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];

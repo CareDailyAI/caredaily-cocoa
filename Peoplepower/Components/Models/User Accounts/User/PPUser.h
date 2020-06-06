@@ -14,6 +14,8 @@
 #import "PPUserEmail.h"
 #import "PPOrganization.h"
 #import "PPLocation.h"
+#import "PPLocationCommunity.h"
+#import "PPUserCommunity.h"
 #import "PPUserBadge.h"
 #import "PPUserTag.h"
 
@@ -51,7 +53,6 @@ typedef NS_OPTIONS(NSInteger, PPUserAnonymousType) {
     PPUserAnonymousTypeNotAnonymous = 0,
     PPUserAnonymousTypeAnonymous = 1
 };
-
 typedef NS_OPTIONS(NSInteger, PPUserSMSStatus) {
     PPUserSMSStatusNone = -1,
     PPUserSMSStatusUnknown = 0,
@@ -64,7 +65,7 @@ typedef NS_OPTIONS(NSInteger, PPUserAvatarFileId) {
     PPUserAvatarFileIdNone = -1,
 };
 
-@interface PPUser : NSObject <NSCopying>
+@interface PPUser : RLMObject <NSCopying>
 
 @property (strong, nonatomic) NSString *sessionKey;
 @property (strong, nonatomic) NSDate *sessionKeyExpiry;
@@ -114,22 +115,22 @@ typedef NS_OPTIONS(NSInteger, PPUserAvatarFileId) {
 @property (nonatomic) PPUserAnonymousType anonymous;
 
 /* User permissions */
-@property (nonatomic, strong) NSArray *userPermissions;
+@property (nonatomic, strong) RLMArray<RLMInt> *userPermissions;
 
 /* User locations */
-@property (nonatomic, strong) NSArray *locations;
+@property (nonatomic, strong) RLMArray<PPLocation *><PPLocation> *locations;
 
 /* User badges */
-@property (nonatomic, strong) NSArray *badges;
+@property (nonatomic, strong) RLMArray<PPUserBadge *><PPUserBadge> *badges;
 
 /* User organizations */
-@property (nonatomic, strong) NSArray *organizations;
+@property (nonatomic, strong) RLMArray<PPOrganization *><PPOrganization> *organizations;
 
 /* User tags */
-@property (nonatomic, strong) NSArray *tags;
+@property (nonatomic, strong) RLMArray<PPUserTag *><PPUserTag> *tags;
 
 /* Auth Clients */
-@property (nonatomic, strong) NSArray *authClients;
+@property (nonatomic, strong) RLMArray<PPCloudsIntegrationHost *><PPCloudsIntegrationHost> *authClients;
 
 /* User creation date */
 @property (nonatomic, strong) NSDate *creationDate;
@@ -143,10 +144,10 @@ typedef NS_OPTIONS(NSInteger, PPUserAvatarFileId) {
 @property (nonatomic) PPUserAvatarFileId avatarFileId;
 
 /* User Communities */
-@property (nonatomic, strong) NSArray *userCommunities;
+@property (nonatomic, strong) RLMArray<PPUserCommunity *><PPUserCommunity> *userCommunities;
 
 /* Location Communities */
-@property (nonatomic, strong) NSArray *locationCommunities;
+@property (nonatomic, strong) RLMArray<PPLocationCommunity *><PPLocationCommunity> *locationCommunities;
 
 #pragma mark - Session Management
 
@@ -154,7 +155,7 @@ typedef NS_OPTIONS(NSInteger, PPUserAvatarFileId) {
 
 - (id)initWithSessionKey:(NSString *)sessionKey username:(NSString *)username;
 
-- (id)initWithUserId:(PPUserId)userId email:(PPUserEmail *)email username:(NSString *)username altUsername:(NSString *)altUsername firstName:(NSString *)firstName lastName:(NSString *)lastName communityName:(NSString *)communityName language:(NSString *)language phone:(NSString *)phone phoneType:(PPUserPhoneType)phoneType smsStatus:(PPUserSMSStatus)smsStatus anonymous:(PPUserAnonymousType)anonymous userPermissions:(NSArray *)userPermissions tags:(NSArray *)tags locations:(NSArray *)locations badges:(NSArray *)badges organizations:(NSArray *)organizations avatarFileId:(PPUserAvatarFileId)avatarFileId creationDate:(NSDate *)creationDate authClients:(NSArray *)authClients userCommunities:(NSArray *)userCommunities locationCommunities:(NSArray *)locationCommunities;
+- (id)initWithUserId:(PPUserId)userId email:(PPUserEmail *)email username:(NSString *)username altUsername:(NSString *)altUsername firstName:(NSString *)firstName lastName:(NSString *)lastName communityName:(NSString *)communityName language:(NSString *)language phone:(NSString *)phone phoneType:(PPUserPhoneType)phoneType smsStatus:(PPUserSMSStatus)smsStatus anonymous:(PPUserAnonymousType)anonymous userPermissions:(RLMArray *)userPermissions tags:(RLMArray *)tags locations:(RLMArray *)locations badges:(RLMArray *)badges organizations:(RLMArray *)organizations avatarFileId:(PPUserAvatarFileId)avatarFileId creationDate:(NSDate *)creationDate authClients:(RLMArray *)authClients userCommunities:(RLMArray *)userCommunities locationCommunities:(RLMArray *)locationCommunities;
 
 + (PPUser *)initWithDictionary:(NSDictionary *)root;
 
@@ -168,6 +169,8 @@ typedef NS_OPTIONS(NSInteger, PPUserAvatarFileId) {
 
 - (BOOL)isEqualToUser:(PPUser *)user;
 
-- (void)sync:(PPUser *)user;
++ (void)sync:(PPUser *)existingUser withUser:(PPUser *)user;
 
 @end
+
+RLM_ARRAY_TYPE(PPUser)

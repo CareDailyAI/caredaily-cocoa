@@ -11,7 +11,11 @@
 
 @implementation PPFile
 
-- (id)initWithStatus:(NSString *)status fileId:(PPFileId)fileId filesAction:(PPFileFilesAction)filesAction thumbnail:(PPFileThumbnail)thumbnail fragments:(PPFileFragments)fragments name:(NSString *)name type:(PPFileFileType)type publicAccess:(PPFilePublicAccess)publicAccess creationDate:(NSDate *)creationDate size:(PPFileSize)size duration:(PPFileDuration)duration shared:(PPFileShared)shared rotate:(PPFileRotate)rotate device:(PPDevice *)device user:(PPUser *)user viewCount:(PPFileViewCount)viewCount viewed:(PPFileViewed)viewed favourite:(PPFileFavourite)favourite tags:(NSArray *)tags data:(NSData *)data {
++ (NSString *)primaryKey {
+    return @"fileId";
+}
+
+- (id)initWithStatus:(NSString *)status fileId:(PPFileId)fileId filesAction:(PPFileFilesAction)filesAction thumbnail:(PPFileThumbnail)thumbnail fragments:(PPFileFragments)fragments name:(NSString *)name type:(PPFileFileType)type publicAccess:(PPFilePublicAccess)publicAccess creationDate:(NSDate *)creationDate size:(PPFileSize)size duration:(PPFileDuration)duration shared:(PPFileShared)shared rotate:(PPFileRotate)rotate device:(PPDevice *)device user:(PPUser *)user viewCount:(PPFileViewCount)viewCount viewed:(PPFileViewed)viewed favourite:(PPFileFavourite)favourite tags:(RLMArray *)tags data:(NSData *)data {
     self = [super init];
     if(self) {
         self.status = status;
@@ -32,7 +36,7 @@
         self.viewCount = viewCount;
         self.viewed = viewed;
         self.favourite = favourite;
-        self.tags = tags;
+        self.tags = (RLMArray<PPFileTag *><PPFileTag> *)tags;
         self.data = data;
     }
     return self;
@@ -133,7 +137,7 @@
         }
     }
     
-    PPFile *file = [[PPFile alloc] initWithStatus:status fileId:fileId filesAction:filesAction thumbnail:thumbnail fragments:fragments name:name type:type publicAccess:publicAccess creationDate:creationDate size:size duration:duration shared:shared rotate:rotate device:device user:user viewCount:viewCount viewed:viewed favourite:favourite tags:tags data:data];
+    PPFile *file = [[PPFile alloc] initWithStatus:status fileId:fileId filesAction:filesAction thumbnail:thumbnail fragments:fragments name:name type:type publicAccess:publicAccess creationDate:creationDate size:size duration:duration shared:shared rotate:rotate device:device user:user viewCount:viewCount viewed:viewed favourite:favourite tags:(RLMArray *)tags data:data];
     return file;
 }
 

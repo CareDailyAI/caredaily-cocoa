@@ -65,7 +65,7 @@ typedef NS_OPTIONS(NSInteger, PPNotificationSubscriptionSMSPeriod) {
     PPNotificationSubscriptionSMSPeriodAllTheTime = 0
 };
 
-@interface PPNotificationSubscription : NSObject
+@interface PPNotificationSubscription : RLMObject
 
 /* Notification type, defined by the IoT Software Suite and retrieved in the GET API */
 @property (nonatomic) PPNotificationSubscriptionType type;
@@ -102,3 +102,5 @@ typedef NS_OPTIONS(NSInteger, PPNotificationSubscriptionSMSPeriod) {
 - (void)sync:(PPNotificationSubscription *)subscription;
 
 @end
+
+RLM_ARRAY_TYPE(PPNotificationSubscription);

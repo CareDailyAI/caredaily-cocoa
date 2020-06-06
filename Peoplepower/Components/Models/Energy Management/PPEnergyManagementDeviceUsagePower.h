@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPEnergyManagementDeviceUsagePower : NSObject
+@interface PPEnergyManagementDeviceUsagePower : RLMObject
 
 @property (nonatomic, strong) NSString *amountPerHour;
 @property (nonatomic, strong) NSString *watts;
@@ -20,3 +20,5 @@
 + (PPEnergyManagementDeviceUsagePower *)initWithDictionary:(NSDictionary *)powerDict;
 
 @end
+
+RLM_ARRAY_TYPE(PPEnergyManagementDeviceUsagePower);

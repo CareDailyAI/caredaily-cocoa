@@ -10,6 +10,10 @@
 
 @implementation PPQuestion
 
++ (NSString *)primaryKey {
+    return @"questionId";
+}
+
 - (id)initWithId:(PPQuestionId)questionId
              key:(NSString *)key
     creationDate:(NSDate *)creationDate
@@ -22,7 +26,7 @@ aggregatePublicly:(PPQuestionAggregatePublicly)aggregatePublicly
         editable:(PPQuestionEditable)editable
   totalResponses:(PPQuestionTotalResponses)totalResponses
     responseType:(PPQuestionResponseOptionType)responseType
- responseOptions:(NSArray *)responseOptions
+ responseOptions:(RLMArray *)responseOptions
      displayType:(PPQuestionDisplayType)displayType
         deviceId:(NSString *)deviceId
             icon:(NSString *)icon
@@ -50,7 +54,7 @@ aggregatePublicly:(PPQuestionAggregatePublicly)aggregatePublicly
         self.editable = editable;
         self.totalResponses = totalResponses;
         self.responseType = responseType;
-        self.responseOptions = responseOptions;
+        self.responseOptions = (RLMArray<PPQuestionResponseOption *><PPQuestionResponseOption> *)responseOptions;
         self.displayType = displayType;
         self.deviceId = deviceId;
         self.icon = icon;
@@ -169,7 +173,7 @@ aggregatePublicly:(PPQuestionAggregatePublicly)aggregatePublicly
                                                  editable:editable
                                            totalResponses:totalResponses
                                              responseType:responseType
-                                          responseOptions:responseOptions
+                                          responseOptions:(RLMArray<PPQuestionResponseOption *><PPQuestionResponseOption> *)responseOptions
                                               displayType:displayType
                                                  deviceId:deviceId
                                                      icon:icon

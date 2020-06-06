@@ -38,6 +38,7 @@
 #import <SystemConfiguration/SystemConfiguration.h>
 #import <SocketRocket/SocketRocket.h>
 #import <UICKeyChainStore/UICKeyChainStore.h>
+#import <Realm/Realm.h>
 
 #endif
 

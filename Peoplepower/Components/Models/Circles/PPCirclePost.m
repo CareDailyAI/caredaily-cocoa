@@ -10,7 +10,11 @@
 
 @implementation PPCirclePost
 
-- (id)initWithId:(PPCirclePostId)postId originalPostId:(PPCirclePostId)originalPostId circleId:(PPCircleId)circleId text:(NSString *)text authorId:(PPUserId)authorId creationDate:(NSDate *)creationDate updateDate:(NSDate *)updateDate deleted:(PPCirclePostDeleted)deleted file:(PPCircleFile *)file displayAt:(PPCirclePostDisplayTime)displayAt displayDuration:(PPCirclePostDisplayTime)displayDuration reactions:(NSArray *)reactions {
++ (NSString *)primaryKey {
+    return @"postId";
+}
+
+- (id)initWithId:(PPCirclePostId)postId originalPostId:(PPCirclePostId)originalPostId circleId:(PPCircleId)circleId text:(NSString *)text authorId:(PPUserId)authorId creationDate:(NSDate *)creationDate updateDate:(NSDate *)updateDate deleted:(PPCirclePostDeleted)deleted file:(PPCircleFile *)file displayAt:(PPCirclePostDisplayTime)displayAt displayDuration:(PPCirclePostDisplayTime)displayDuration reactions:(RLMArray *)reactions {
     self = [super init];
     if(self) {
         self.postId = postId;
@@ -24,7 +28,7 @@
         self.file = file;
         self.displayAt = displayAt;
         self.displayDuration = displayDuration;
-        self.reactions = reactions;
+        self.reactions = (RLMArray<PPCircleReaction *><PPCircleReaction> *)reactions;
     }
     return self;
 }
@@ -91,7 +95,7 @@
         }
     }
     
-    PPCirclePost *post = [[PPCirclePost alloc] initWithId:postId originalPostId:originalPostId circleId:circleId text:text authorId:authorId creationDate:creationDate updateDate:updateDate deleted:deleted file:file displayAt:displayAt displayDuration:displayDuration reactions:reactions];
+    PPCirclePost *post = [[PPCirclePost alloc] initWithId:postId originalPostId:originalPostId circleId:circleId text:text authorId:authorId creationDate:creationDate updateDate:updateDate deleted:deleted file:file displayAt:displayAt displayDuration:displayDuration reactions:(RLMArray<PPCircleReaction *><PPCircleReaction> *)reactions];
     return post;
 }
 
@@ -135,6 +139,10 @@
     
     [JSONString appendString:@"}"];
     return JSONString;
+}
+
+- (PPCircle *)circle {
+    return [PPCircle objectForPrimaryKey:@(_circleId)];
 }
 
 @end

@@ -42,19 +42,19 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeStorySortId) {
     PPDeviceTypeStorySortIdNone = -1,
 };
 
-@interface PPDeviceTypeStory : NSArray
+@interface PPDeviceTypeStory : RLMObject
 
 @property (nonatomic, strong) NSString *storyId;
-@property (nonatomic, strong) NSArray *models;
-@property (nonatomic, strong) NSArray *brands;
+@property (nonatomic, strong) RLMArray<PPDeviceTypeStoryModel *><PPDeviceTypeStoryModel> *models;
+@property (nonatomic, strong) RLMArray<RLMString> *brands;
 @property (nonatomic) PPDeviceTypeStoryType storyType;
 @property (nonatomic, strong) NSString *lang;
 @property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSArray *search;
+@property (nonatomic, strong) RLMArray<RLMString> *search;
 @property (nonatomic) PPDeviceTypeStorySortId sortId;
-@property (nonatomic, strong) NSArray *pages;
+@property (nonatomic, strong) RLMArray<PPDeviceTypeStoryPage *><PPDeviceTypeStoryPage> *pages;
 
-- (id)initWithStoryId:(NSString *)storyId models:(NSArray *)models brands:(NSArray *)brands storyType:(PPDeviceTypeStoryType)storyType lang:(NSString *)lang title:(NSString *)title search:(NSArray *)search sortId:(PPDeviceTypeStorySortId)sortId pages:(NSArray *)pages;
+- (id)initWithStoryId:(NSString *)storyId models:(RLMArray *)models brands:(RLMArray *)brands storyType:(PPDeviceTypeStoryType)storyType lang:(NSString *)lang title:(NSString *)title search:(RLMArray *)search sortId:(PPDeviceTypeStorySortId)sortId pages:(RLMArray *)pages;
 
 + (PPDeviceTypeStory *)initWithDictionary:(NSDictionary *)storyDict;
 

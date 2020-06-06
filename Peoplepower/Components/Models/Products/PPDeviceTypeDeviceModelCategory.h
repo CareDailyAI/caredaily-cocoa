@@ -10,21 +10,25 @@
 #import "PPDeviceTypeDeviceModel.h"
 
 @class PPDeviceTypeStory;
+RLM_ARRAY_TYPE(PPDeviceTypeStory);
 
-@interface PPDeviceTypeDeviceModelCategory : NSObject
+@class PPDeviceTypeDeviceModelCategoryName;
+RLM_ARRAY_TYPE(PPDeviceTypeDeviceModelCategoryName);
+
+@interface PPDeviceTypeDeviceModelCategory : RLMObject
 
 @property (nonatomic) NSString *categoryId;
 @property (nonatomic) NSString *parentId;
-@property (nonatomic, strong) NSArray *brands;
+@property (nonatomic, strong) RLMArray<PPDeviceTypeDeviceModelBrand *><PPDeviceTypeDeviceModelBrand> *brands;
 @property (nonatomic, strong) NSString *icon;
-@property (nonatomic, strong) NSArray *search;
+@property (nonatomic, strong) RLMArray<RLMString> *search;
 @property (nonatomic) PPDeviceTypeDeviceModelHidden hidden;
 @property (nonatomic) PPDeviceTypeDeviceModelSortId sortId;
-@property (nonatomic, strong) NSDictionary *name;
-@property (nonatomic, strong) NSArray *stories;
-@property (nonatomic, strong) NSArray *models;
+@property (nonatomic, strong) PPDeviceTypeDeviceModelCategoryName *name;
+@property (nonatomic, strong) RLMArray<PPDeviceTypeStory *><PPDeviceTypeStory> *stories;
+@property (nonatomic, strong) RLMArray<PPDeviceTypeDeviceModel *><PPDeviceTypeDeviceModel> *models;
 
-- (id)initWithId:(NSString *)categoryId parentId:(NSString *)parentId brands:(NSArray *)brands icon:(NSString *)icon search:(NSArray *)search hidden:(PPDeviceTypeDeviceModelHidden)hidden sortId:(PPDeviceTypeDeviceModelSortId)sortId name:(NSDictionary *)name stories:(NSArray *)stories models:(NSArray *)models;
+- (id)initWithId:(NSString *)categoryId parentId:(NSString *)parentId brands:(RLMArray *)brands icon:(NSString *)icon search:(RLMArray *)search hidden:(PPDeviceTypeDeviceModelHidden)hidden sortId:(PPDeviceTypeDeviceModelSortId)sortId name:(PPDeviceTypeDeviceModelCategoryName *)name stories:(RLMArray *)stories models:(RLMArray *)models;
 
 + (PPDeviceTypeDeviceModelCategory *)initWithDictionary:(NSDictionary *)categoryDict;
 
@@ -37,3 +41,8 @@
 - (void)sync:(PPDeviceTypeDeviceModelCategory *)category;
 
 @end
+
+@interface PPDeviceTypeDeviceModelCategoryName : PPRLMDictionary
++ (PPDeviceTypeDeviceModelCategoryName *)initWithDictionary:(NSDictionary *)dict;
+@end
+

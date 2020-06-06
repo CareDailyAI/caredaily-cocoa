@@ -27,7 +27,7 @@ typedef NS_OPTIONS(NSInteger, PPRuleCalendarDaysOfWeek) {
     PPRuleCalendarDaysOfWeekSaturday  = 1 << 6,
 };
 
-@interface PPRuleCalendar : NSObject <NSCopying>
+@interface PPRuleCalendar : RLMObject <NSCopying>
 
 @property (nonatomic) PPRuleCalendarInclude include;
 @property (nonatomic) PPRuleCalendarTime startTime;
@@ -42,3 +42,5 @@ typedef NS_OPTIONS(NSInteger, PPRuleCalendarDaysOfWeek) {
 + (NSDictionary *)data:(PPRuleCalendar *)calendar;
 
 @end
+
+RLM_ARRAY_TYPE(PPRuleCalendar);

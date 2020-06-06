@@ -10,14 +10,14 @@
 
 @implementation PPDeviceTypeAttribute
 
-- (id)initWithName:(NSString *)name value:(NSString *)value extended:(PPDeviceTypeAttributeExtended)extended defaultValue:(NSString *)defaultValue options:(NSArray *)options {
+- (id)initWithName:(NSString *)name value:(NSString *)value extended:(PPDeviceTypeAttributeExtended)extended defaultValue:(NSString *)defaultValue options:(RLMArray *)options {
     self = [super init];
     if(self) {
         self.name = name;
         self.value = value;
         self.extended = extended;
         self.defaultValue = defaultValue;
-        self.options = options;
+        self.options = (RLMArray<PPDeviceTypeAttributeOption *><PPDeviceTypeAttributeOption> *)options;
     }
     return self;
 }
@@ -41,7 +41,7 @@
         }
     }
     
-    PPDeviceTypeAttribute *attribute = [[PPDeviceTypeAttribute alloc] initWithName:name value:value extended:extended defaultValue:defaultValue options:options];
+    PPDeviceTypeAttribute *attribute = [[PPDeviceTypeAttribute alloc] initWithName:name value:value extended:extended defaultValue:defaultValue options:(RLMArray<PPDeviceTypeAttributeOption *><PPDeviceTypeAttributeOption> *)options];
     return attribute;
 }
 
