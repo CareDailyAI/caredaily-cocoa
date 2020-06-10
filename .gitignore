@@ -1,9 +1,11 @@
 xcuserdata
 .DS_Store
-.project
 
 # Carthage
 Carthage/Build
 Carthage/Checkouts
 */Carthage/Build
 */Carthage/Checkouts
+
+# Cocoapods
+*/Pods
