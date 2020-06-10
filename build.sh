@@ -2,10 +2,14 @@
 
 # Update Carfile path
 FRAMEWORK_PATH=`find \`pwd\` -name Peoplepower | head -n 1`
-echo 'git "'$FRAMEWORK_PATH'" "rlm"' > Cartfile
+echo 'git "'$FRAMEWORK_PATH'" "rlm"' > PeoplepowerDemo/Cartfile
+
+cd PeoplepowerDemo
 
 # Install Carthage
 carthage update --platform iOS
 
 # Install Cocoapods
 pod install
+
+cd ..
