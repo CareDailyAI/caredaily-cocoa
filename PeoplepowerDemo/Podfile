@@ -1,0 +1,14 @@
+platform :ios, '11'
+
+workspace '../Peoplepower.xcworkspace'
+
+project 'PeoplepowerDemo.xcodeproj'
+
+def peoplepower
+  pod 'Peoplepower-Resources', :path => '../Peoplepower-Resources.podspec'
+end
+
+target 'PeoplepowerDemo' do
+  project 'PeoplepowerDemo.xcodeproj'
+  peoplepower
+end

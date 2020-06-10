@@ -1,0 +1,16 @@
+PODS:
+  - Peoplepower-Resources (0.1.1)
+
+DEPENDENCIES:
+  - Peoplepower-Resources (from `../Peoplepower-Resources.podspec`)
+
+EXTERNAL SOURCES:
+  Peoplepower-Resources:
+    :path: "../Peoplepower-Resources.podspec"
+
+SPEC CHECKSUMS:
+  Peoplepower-Resources: 08dbd7745b4edfcdb197f2b42864e0a085e129b9
+
+PODFILE CHECKSUM: f0fef4c9a19b2b834088998d9f7d8090c95206f7
+
+COCOAPODS: 1.9.1
