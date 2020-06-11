@@ -25,6 +25,7 @@
 		6355673D248C3EFD00BFA310 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6355673C248C3EFD00BFA310 /* Realm.framework */; };
 		6355673E248C3EFD00BFA310 /* Realm.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6355673C248C3EFD00BFA310 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		63E62AC52491A4060038A694 /* Peoplepower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63E62AC42491A4060038A694 /* Peoplepower.framework */; };
+		63E62B572492A1A60038A694 /* Peoplepower-Config-Override.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63E62B562492A1A60038A694 /* Peoplepower-Config-Override.plist */; };
 		7CB528D8BA63428051655F5B /* libPods-PeoplepowerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF778E716AB845FF414497 /* libPods-PeoplepowerDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		631A7AF3248B3AB800D86CFF /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICKeyChainStore.framework; path = Carthage/Build/iOS/UICKeyChainStore.framework; sourceTree = "<group>"; };
 		6355673C248C3EFD00BFA310 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		63E62AC42491A4060038A694 /* Peoplepower.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Peoplepower.framework; path = Carthage/Build/iOS/Peoplepower.framework; sourceTree = "<group>"; };
+		63E62B562492A1A60038A694 /* Peoplepower-Config-Override.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Peoplepower-Config-Override.plist"; sourceTree = "<group>"; };
 		8CDF778E716AB845FF414497 /* libPods-PeoplepowerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PeoplepowerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DCFEDE54CD2925EE3F5773D /* Pods-PeoplepowerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeoplepowerDemo.release.xcconfig"; path = "Target Support Files/Pods-PeoplepowerDemo/Pods-PeoplepowerDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,6 +162,7 @@
 				631A7AC3248B376600D86CFF /* LaunchScreen.storyboard */,
 				631A7AC6248B376600D86CFF /* Info.plist */,
 				631A7AC7248B376600D86CFF /* main.m */,
+				63E62B562492A1A60038A694 /* Peoplepower-Config-Override.plist */,
 			);
 			path = PeoplepowerDemo;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				631A7AC5248B376600D86CFF /* LaunchScreen.storyboard in Resources */,
 				631A7AC2248B376600D86CFF /* Assets.xcassets in Resources */,
 				631A7AEB248B377D00D86CFF /* Cartfile in Resources */,
+				63E62B572492A1A60038A694 /* Peoplepower-Config-Override.plist in Resources */,
 				631A7AC0248B376500D86CFF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

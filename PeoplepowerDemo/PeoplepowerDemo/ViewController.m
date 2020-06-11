@@ -24,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSString *appName = [PPBaseModel appName:NO];
+
     [self initRealm];
     [self reset];
     [self log:[self check]];
@@ -47,8 +49,7 @@
         self.location.appName = @"my app";
         [self.realm addOrUpdateObject:self.user];
         [self.realm addOrUpdateObject:self.location];
-    }];
-    
+    }];    
 }
 
 - (void)reset {
