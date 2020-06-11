@@ -156,7 +156,8 @@ NSString *PLIST_KEY_TEST_COMMUNITY_FILE_AUDIO = @"PPTCCommunityFileAudio";
     NSDictionary *plist = [NSDictionary dictionaryWithContentsOfFile:[bundle pathForResource:filename ofType:@"plist"]];
     
     // Retreive overrides
-    NSDictionary *plistOverride = [NSDictionary dictionaryWithContentsOfFile:[bundle pathForResource:[NSString stringWithFormat:@"%@-Override", filename] ofType:@"plist"]];
+    NSBundle *appBundle = [NSBundle mainBundle];
+    NSDictionary *plistOverride = [NSDictionary dictionaryWithContentsOfFile:[appBundle pathForResource:[NSString stringWithFormat:@"%@-Override", filename] ofType:@"plist"]];
     NSObject *value;
     if(plistOverride != nil) {
         value = [PPAppResources plistEntryForKey:key inPlist:plistOverride];
