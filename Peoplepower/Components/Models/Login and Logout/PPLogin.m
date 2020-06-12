@@ -1,6 +1,6 @@
 //
 //  PPLogin.m
-//  PPiOSCore
+//  Peoplepower
 //
 //  Created by Destry Teeter on 3/13/18.
 //  Copyright © 2020 People Power Company. All rights reserved.
@@ -80,19 +80,6 @@
                     
                     // Handle returning a localized error description of the lock time
                     [PPOperationTokenManagement isAccountLocked:username error:&error];
-                    
-                    // Explicitly track this error here because it's not tracked inside or PPBaseModel
-                    NSMutableDictionary *properties = [[NSMutableDictionary alloc] initWithCapacity:3];
-                    [properties setObject:[NSString stringWithFormat:@"%ld", (long)error.code] forKey:@"Code"];
-                    if([error.userInfo objectForKey:NSLocalizedDescriptionKey] != nil) {
-                        [properties setObject:[error.userInfo objectForKey:NSLocalizedDescriptionKey] forKey:@"Description"];
-                    }
-                    if([error.userInfo objectForKey:NSLocalizedRecoverySuggestionErrorKey] != nil) {
-                        [properties setObject:[error.userInfo objectForKey:NSLocalizedRecoverySuggestionErrorKey] forKey:@"Recovery"];
-                    }
-                    [properties setObject:NSStringFromClass([self class]) forKey:@"Location"];
-                    
-                    [PPUserAnalytics track:@"error" properties:properties logLevel:ANALYTICS_LEVEL_INFO];
                 }
                 
             }

@@ -10,8 +10,17 @@
 @implementation PPVersion
 
 + (PPVersion *)myVersion {
-	NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];
-	return [[PPVersion alloc] initWithVersion:[infoDict objectForKey:@"CFBundleShortVersionString"]];
+    return [PPVersion appVersion];
+}
+
++ (PPVersion *)appVersion {
+    NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];
+    return [[PPVersion alloc] initWithVersion:[infoDict objectForKey:@"CFBundleShortVersionString"]];
+}
+
++ (PPVersion *)bundleVersion {
+    NSDictionary* infoDict = [[NSBundle bundleForClass:[self class]] infoDictionary];
+    return [[PPVersion alloc] initWithVersion:[infoDict objectForKey:@"CFBundleShortVersionString"]];
 }
 
 - (id)initWithVersion:(NSString *)versionString {

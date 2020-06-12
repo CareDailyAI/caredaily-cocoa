@@ -10,15 +10,7 @@
 
 PPBasicBlock _loginBlock;
 
-static NSString *kTrackingKey = @"com.ppc.ioscore.trackingDisabled";
-
 @implementation PPBaseModel
-
-+ (void)disableTracking:(BOOL)disabled {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setBool:disabled forKey:kTrackingKey];
-    [userDefaults synchronize];
-}
 
 + (NSString *)appName:(BOOL)apiFriendly {
     
@@ -81,9 +73,6 @@ static NSString *kTrackingKey = @"com.ppc.ioscore.trackingDisabled";
 + (NSError *)resultCodeToNSError:(NSInteger)resultCode originatingClass:(NSString *)originatingClass argument:(NSString *)argument {
 	NSMutableDictionary *errorDetail = [NSMutableDictionary dictionary];
     
-    // Explicitly prevent tracking of some errors
-    BOOL track = ![[NSUserDefaults standardUserDefaults] boolForKey:kTrackingKey];
-    
 	switch(resultCode) {
 		case 0:
 			return nil;
@@ -133,7 +122,6 @@ static NSString *kTrackingKey = @"com.ppc.ioscore.trackingDisabled";
 			[errorDetail setValue:NSLocalizedString(@"Wrong consumer ID", @"Error - Wrong consumer ID") forKey:NSLocalizedDescriptionKey];
 			break;
 		case 16: // User account is locked out
-            track = NO;
 			[errorDetail setValue:NSLocalizedString(@"Account locked", @"Error - Account locked") forKey:NSLocalizedDescriptionKey];
 			break;
 		case 17: // A passcode, which has been sent to the user, is required to sign in
@@ -275,19 +263,15 @@ static NSString *kTrackingKey = @"com.ppc.ioscore.trackingDisabled";
 			[errorDetail setValue:NSLocalizedString(@"Having trouble connecting to Bluetooth!", @"Error - Having trouble connecting to Bluetooth!") forKey:NSLocalizedDescriptionKey];
 			break;
 		case 10012:
-            track = NO;
 			[errorDetail setValue:NSLocalizedString(@"This device is too old to support Bluetooth LE", @"Error - This device is too old to support Bluetooth LE") forKey:NSLocalizedDescriptionKey];
 			break;
         case 10013:
-            track = NO;
             [errorDetail setValue:[NSString stringWithFormat:NSLocalizedString(@"Please authorize %@ to access Bluetooth LE", @"Error - Please authorize {App Name} to access Bluetooth LE"), [PPBaseModel appName:NO]] forKey:NSLocalizedDescriptionKey];
 			break;
         case 10014:
-            track = NO;
 			[errorDetail setValue:NSLocalizedString(@"Bluetooth is currently powered off. Please go into your Settings and turn on Bluetooth.", @"Error - Bluetooth is currently powered off. Please go into your Settings and turn on Bluetooth.") forKey:NSLocalizedDescriptionKey];
 			break;
         case 10015:
-            track = NO;
 			[errorDetail setValue:NSLocalizedString(@"Waiting for Bluetooth to power up...", @"Error - Waiting for Bluetooth to power up...") forKey:NSLocalizedDescriptionKey];
 			break;
 		case 10016:
@@ -493,24 +477,8 @@ static NSString *kTrackingKey = @"com.ppc.ioscore.trackingDisabled";
             [errorDetail setValue:argument forKey:NSLocalizedRecoverySuggestionErrorKey];
         }
     }
-	
-    if(track) {
-        NSMutableDictionary *properties = [[NSMutableDictionary alloc] initWithCapacity:3];
-        [properties setObject:[NSString stringWithFormat:@"%ld", (long)resultCode] forKey:@"Code"];
-        if([errorDetail objectForKey:NSLocalizedDescriptionKey] != nil) {
-            [properties setObject:[errorDetail objectForKey:NSLocalizedDescriptionKey] forKey:@"Description"];
-        }
-        if([errorDetail objectForKey:NSLocalizedRecoverySuggestionErrorKey] != nil) {
-            [properties setObject:[errorDetail objectForKey:NSLocalizedRecoverySuggestionErrorKey] forKey:@"Recovery"];
-        }
-        if (originatingClass) {
-            [properties setObject:originatingClass forKey:@"Location"];
-        }
-        
-        [PPUserAnalytics track:@"error" properties:properties logLevel:ANALYTICS_LEVEL_INFO];
-    }
 
-	return [NSError errorWithDomain:@"com.peoplepowerco.PPiOSCore" code:resultCode userInfo:errorDetail];
+	return [NSError errorWithDomain:@"com.peoplepowerco.lib.Peoplepower" code:resultCode userInfo:errorDetail];
 }
 
 + (NSDictionary *)processJSONResponse:(NSData *)responseData error:(NSError **)error {

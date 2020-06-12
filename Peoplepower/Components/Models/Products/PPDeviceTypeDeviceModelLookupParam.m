@@ -1,6 +1,6 @@
 //
 //  PPDeviceTypeDeviceModelLookupParam.m
-//  PPiOSCore-Framework
+//  Peoplepower
 //
 //  Created by Destry Teeter on 6/28/18.
 //  Copyright © 2020 People Power Company. All rights reserved.

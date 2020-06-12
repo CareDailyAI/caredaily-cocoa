@@ -1,6 +1,6 @@
 //
 //  PPCircleDevice.h
-//  PPiOSCore-Framework
+//  Peoplepower
 //
 //  Created by Destry Teeter on 7/24/18.
 //  Copyright © 2020 People Power Company. All rights reserved.

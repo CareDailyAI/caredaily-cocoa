@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+@import Peoplepower;
 
 @interface AppDelegate ()
 
@@ -17,6 +18,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    NSLog(@"" \
+          "\n-------------" \
+          "\n %@" \
+          "\n v%@" \
+          "\n v%@" \
+          "\n-------------",
+          [PPBaseModel appName:NO],
+          [[PPVersion myVersion] toNSString],
+          @(PeoplepowerVersionNumber)
+          );
     return YES;
 }
 

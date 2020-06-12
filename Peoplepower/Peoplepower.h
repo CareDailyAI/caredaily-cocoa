@@ -6,6 +6,13 @@
 //  Copyright © 2020 People Power Company. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
+//! Project version number for PeoplepowerUI.
+FOUNDATION_EXPORT double PeoplepowerVersionNumber;
+
+//! Project version string for PeoplepowerUI.
+FOUNDATION_EXPORT const unsigned char PeoplepowerVersionString[];
 
 #pragma mark - Classes -
 

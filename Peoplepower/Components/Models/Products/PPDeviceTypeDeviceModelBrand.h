@@ -1,6 +1,6 @@
 //
 //  PPDeviceTypeDeviceModelBrand.h
-//  PPiOSCore
+//  Peoplepower
 //
 //  Created by Destry Teeter on 3/21/18.
 //  Copyright © 2020 People Power Company. All rights reserved.

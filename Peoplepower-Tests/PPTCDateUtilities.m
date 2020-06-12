@@ -1,15 +1,15 @@
 //
 //  PPTCDateUtilities.m
-//  PPiOSCore-Tests
+//  Peoplepower-Tests
 //
 //  Created by Destry Teeter on 3/25/19.
 //  Copyright © 2019 People Power Company. All rights reserved.
 //
 
-#import <XCTest/XCTest.h>
+#import "PPBaseTestCase.h"
 #import <Peoplepower/PPDateUtilities.h>
 
-@interface PPTCDateUtilities : XCTestCase
+@interface PPTCDateUtilities : PPBaseTestCase
 
 @end
 

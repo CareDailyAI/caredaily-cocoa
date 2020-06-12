@@ -1,6 +1,6 @@
 //
 //  PPLocationCommunity.h
-//  PPiOSCore
+//  Peoplepower
 //
 //  Created by Destry Teeter on 12/18/19.
 //  Copyright © 2019 People Power Company. All rights reserved.

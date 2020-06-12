@@ -24,7 +24,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSString *appName = [PPBaseModel appName:NO];
 
     [self initRealm];
     [self reset];

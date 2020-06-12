@@ -1,6 +1,6 @@
 //
 //  PPTCCloudsIntegration.m
-//  PPiOSCore-Tests
+//  Peoplepower-Tests
 //
 //  Created by Destry Teeter on 2/13/20.
 //  Copyright © 2020 People Power Company. All rights reserved.
