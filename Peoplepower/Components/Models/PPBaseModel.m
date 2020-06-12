@@ -22,7 +22,7 @@ static NSString *kTrackingKey = @"com.ppc.ioscore.trackingDisabled";
 
 + (NSString *)appName:(BOOL)apiFriendly {
     
-    NSString *appName = (NSString *)[PPAppResources getPlistEntry:PLIST_KEY_CONFIG_APP_NAME filename:PLIST_FILE_CONFIG];
+    NSString *appName = (NSString *)[PPAppResources getPlistEntry:PP_PLIST_KEY_CONFIG_APP_NAME filename:PP_PLIST_FILE_CONFIG];
     if(!appName || !apiFriendly) {
         appName = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"];
     }
@@ -32,7 +32,7 @@ static NSString *kTrackingKey = @"com.ppc.ioscore.trackingDisabled";
 
 + (NSString *)brandName {
     
-    NSString *brand = (NSString *)[PPAppResources getPlistEntry:PLIST_KEY_CONFIG_BRAND filename:PLIST_FILE_CONFIG];
+    NSString *brand = (NSString *)[PPAppResources getPlistEntry:PP_PLIST_KEY_CONFIG_BRAND filename:PP_PLIST_FILE_CONFIG];
     if(!brand) {
         brand = @"default";
     }

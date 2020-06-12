@@ -23,10 +23,6 @@ typedef NS_OPTIONS(NSInteger, PPVideoTokenExpireTimeInterval) {
     PPVideoTokenExpireTimeIntervalDefault = 3600
 };
 
-extern NSString *PLIST_KEY_CONFIG_VIDEO_TOKEN_PROVIDER_ID;
-extern NSString *PLIST_KEY_CONFIG_VIDEO_TOKEN_APP_ID;
-extern NSString *PLIST_KEY_CONFIG_VIDEO_TOKEN_APP_NAME;
-
 @interface PPVideoToken : RLMObject
 
 @property (nonatomic, strong) NSString *token;

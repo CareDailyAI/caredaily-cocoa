@@ -9,7 +9,6 @@
 #import "PPBaseTestCase.h"
 #import <Peoplepower/PPUser.h>
 #import <Peoplepower/PPProfessionalMonitoring.h>
-#import <Peoplepower/PPAppResources.h>
 
 static NSString *moduleName = @"ProfessionalMonitoring";
 

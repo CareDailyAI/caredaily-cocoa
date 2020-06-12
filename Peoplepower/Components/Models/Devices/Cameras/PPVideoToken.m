@@ -7,10 +7,6 @@
 
 #import "PPVideoToken.h"
 
-NSString *PLIST_KEY_CONFIG_VIDEO_TOKEN_PROVIDER_ID = @"PPVideoTokenProvider";
-NSString *PLIST_KEY_CONFIG_VIDEO_TOKEN_APP_ID = @"PPVideoTokenAppId";
-NSString *PLIST_KEY_CONFIG_VIDEO_TOKEN_APP_NAME = @"PPVideoTokenAppName";
-
 static PPVideoTokenProvider kDefaultProvider = PPVideoTokenProviderVidyo;
 
 @implementation PPVideoToken
@@ -35,11 +31,11 @@ static PPVideoTokenProvider kDefaultProvider = PPVideoTokenProviderVidyo;
 
 + (NSString *)appId:(PPVideoTokenProvider)provider {
     NSString *appId;
-    NSObject *providerDict = [PPAppResources getPlistEntry:[NSString stringWithFormat:@"%@.%li", PLIST_KEY_CONFIG_VIDEO_TOKEN_PROVIDER_ID, (long)provider] filename:PLIST_FILE_CONFIG];
+    NSObject *providerDict = [PPAppResources getPlistEntry:[NSString stringWithFormat:@"%@.%li", PP_PLIST_KEY_CONFIG_VIDEO_TOKEN_PROVIDER_ID, (long)provider] filename:PP_PLIST_FILE_CONFIG];
     
     if(providerDict && [providerDict isKindOfClass:[NSDictionary class]]) {
-        if([(NSDictionary *)providerDict objectForKey:PLIST_KEY_CONFIG_VIDEO_TOKEN_APP_ID]) {
-            appId = [(NSDictionary *)providerDict objectForKey:PLIST_KEY_CONFIG_VIDEO_TOKEN_APP_ID];
+        if([(NSDictionary *)providerDict objectForKey:PP_PLIST_KEY_CONFIG_VIDEO_TOKEN_APP_ID]) {
+            appId = [(NSDictionary *)providerDict objectForKey:PP_PLIST_KEY_CONFIG_VIDEO_TOKEN_APP_ID];
         }
     }
     return appId;
@@ -47,11 +43,11 @@ static PPVideoTokenProvider kDefaultProvider = PPVideoTokenProviderVidyo;
 
 + (NSString *)appName:(PPVideoTokenProvider)provider {
     NSString *appId;
-    NSObject *providerDict = [PPAppResources getPlistEntry:[NSString stringWithFormat:@"%@.%li", PLIST_KEY_CONFIG_VIDEO_TOKEN_PROVIDER_ID, (long)provider] filename:PLIST_FILE_CONFIG];
+    NSObject *providerDict = [PPAppResources getPlistEntry:[NSString stringWithFormat:@"%@.%li", PP_PLIST_KEY_CONFIG_VIDEO_TOKEN_PROVIDER_ID, (long)provider] filename:PP_PLIST_FILE_CONFIG];
     
     if(providerDict && [providerDict isKindOfClass:[NSDictionary class]]) {
-        if([(NSDictionary *)providerDict objectForKey:PLIST_KEY_CONFIG_VIDEO_TOKEN_APP_NAME]) {
-            appId = [(NSDictionary *)providerDict objectForKey:PLIST_KEY_CONFIG_VIDEO_TOKEN_APP_NAME];
+        if([(NSDictionary *)providerDict objectForKey:PP_PLIST_KEY_CONFIG_VIDEO_TOKEN_APP_NAME]) {
+            appId = [(NSDictionary *)providerDict objectForKey:PP_PLIST_KEY_CONFIG_VIDEO_TOKEN_APP_NAME];
         }
     }
     return appId;

@@ -7,7 +7,6 @@
 //
 
 #import "PPBaseTestCase.h"
-#import <Peoplepower/PPAppResources.h>
 #import <Peoplepower/PPDeviceTypes.h>
 
 static NSString *moduleName = @"Products";

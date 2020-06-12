@@ -9,7 +9,6 @@
 #import "PPBaseTestCase.h"
 #import <Peoplepower/PPCircles.h>
 #import <Peoplepower/PPCircle.h>
-#import <Peoplepower/PPAppResources.h>
 #import <Peoplepower/PPCircleFile.h>
 #import <Peoplepower/PPCirclePost.h>
 #import <Peoplepower/PPCommunityPost.h>

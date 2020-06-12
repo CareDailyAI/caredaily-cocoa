@@ -48,7 +48,6 @@
 		636B4464248AF38D00124F6A /* KissXML.framework.dSYM in Carthage DSYM */ = {isa = PBXBuildFile; fileRef = 636B4462248AF37600124F6A /* KissXML.framework.dSYM */; };
 		636B4465248AF52F00124F6A /* LICENSE in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63FAAFD6209B7CA90062638A /* LICENSE */; };
 		636B4812248AFA7F00124F6A /* UnitTests.plist in Resources */ = {isa = PBXBuildFile; fileRef = 636B47F1248AFA7B00124F6A /* UnitTests.plist */; };
-		636B4939248AFBCE00124F6A /* PPTCFontIcons.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B4806248AFA7E00124F6A /* PPTCFontIcons.m */; };
 		636B493A248AFBCE00124F6A /* PPTCWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B47F7248AFA7C00124F6A /* PPTCWeather.m */; };
 		636B493B248AFBCE00124F6A /* PPTCProducts.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B4803248AFA7E00124F6A /* PPTCProducts.m */; };
 		636B493C248AFBCE00124F6A /* PPTCCopying.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B47FF248AFA7D00124F6A /* PPTCCopying.m */; };
@@ -64,8 +63,6 @@
 		636B4946248AFBCE00124F6A /* PPTCDeviceProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B47ED248AFA7A00124F6A /* PPTCDeviceProxy.m */; };
 		636B4947248AFBCE00124F6A /* PPTCCloudConnectivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B4809248AFA7F00124F6A /* PPTCCloudConnectivity.m */; };
 		636B4948248AFBCE00124F6A /* PPTCLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B4801248AFA7D00124F6A /* PPTCLogin.m */; };
-		636B4949248AFBCE00124F6A /* PPTCFriends.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B480A248AFA7F00124F6A /* PPTCFriends.m */; };
-		636B494A248AFBCE00124F6A /* iOS_Core_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B47F4248AFA7B00124F6A /* iOS_Core_Tests.m */; };
 		636B494B248AFBCE00124F6A /* PPTCCommunity.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B47EE248AFA7A00124F6A /* PPTCCommunity.m */; };
 		636B494C248AFBCE00124F6A /* PPTCFileManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B480B248AFA7F00124F6A /* PPTCFileManagement.m */; };
 		636B494D248AFBCE00124F6A /* PPTCProfessionalMonitoring.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B47F0248AFA7A00124F6A /* PPTCProfessionalMonitoring.m */; };
@@ -305,6 +302,7 @@
 		636D0F57210A1DF2005B9111 /* PPVideoToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 636D0F55210A1DF1005B9111 /* PPVideoToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		636D0F58210A1DF2005B9111 /* PPVideoToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 636D0F56210A1DF1005B9111 /* PPVideoToken.m */; };
 		63702583248C3AE1002CC1C5 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B9B14E248C36BA0056E7CE /* Realm.framework */; };
+		636DCC062493E7C1000560E8 /* PPAppResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636DCC052493E7C1000560E8 /* PPAppResources.swift */; };
 		6372B66521349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 6372B66321349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6372B66621349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6372B66421349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.m */; };
 		637D0F2320C761A2003710AF /* PPDeviceParameterRobotVantagePoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 637D0F2120C761A2003710AF /* PPDeviceParameterRobotVantagePoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -351,7 +349,6 @@
 		63B9B14D248C1DC70056E7CE /* Realm.framework.dSYM in Carthage DSYM */ = {isa = PBXBuildFile; fileRef = 63B9B14B248C1DC00056E7CE /* Realm.framework.dSYM */; };
 		63BEC9CA20C5D67500408494 /* PPNetworkUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A9525B205C2E9A000E466A /* PPNetworkUtilities.m */; };
 		63BEC9CC20C5D67500408494 /* PPDateUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3937F204F46B600041C1A /* PPDateUtilities.m */; };
-		63BEC9CF20C5D67500408494 /* PPAppResources.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A95235205AD424000E466A /* PPAppResources.m */; };
 		63BEC9D120C5D67500408494 /* PPCurlDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D39305204F287800041C1A /* PPCurlDebug.m */; };
 		63BEC9DB20C5D67500408494 /* PPCloudConnectivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 631F8480206432840055C512 /* PPCloudConnectivity.m */; };
 		63BEC9DC20C5D67500408494 /* PPCloudConnectivityCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = 631F8483206435F30055C512 /* PPCloudConnectivityCloud.m */; };
@@ -1092,7 +1089,6 @@
 		636B47F1248AFA7B00124F6A /* UnitTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UnitTests.plist; sourceTree = "<group>"; };
 		636B47F2248AFA7B00124F6A /* PPBaseTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPBaseTestCase.m; sourceTree = "<group>"; };
 		636B47F3248AFA7B00124F6A /* PPTCDeviceMeasurements.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTCDeviceMeasurements.m; sourceTree = "<group>"; };
-		636B47F4248AFA7B00124F6A /* iOS_Core_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iOS_Core_Tests.m; sourceTree = "<group>"; };
 		636B47F5248AFA7B00124F6A /* PPTCDateUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTCDateUtilities.m; sourceTree = "<group>"; };
 		636B47F6248AFA7B00124F6A /* PPTCSystemAndUserProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTCSystemAndUserProperties.m; sourceTree = "<group>"; };
 		636B47F7248AFA7C00124F6A /* PPTCWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTCWeather.m; sourceTree = "<group>"; };
@@ -1110,14 +1106,14 @@
 		636B4803248AFA7E00124F6A /* PPTCProducts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTCProducts.m; sourceTree = "<group>"; };
 		636B4804248AFA7E00124F6A /* PPTCDynamicUserInterfaces.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTCDynamicUserInterfaces.m; sourceTree = "<group>"; };
 		636B4805248AFA7E00124F6A /* PPTCUserAccounts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTCUserAccounts.m; sourceTree = "<group>"; };
-		636B4806248AFA7E00124F6A /* PPTCFontIcons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTCFontIcons.m; sourceTree = "<group>"; };
 		636B4807248AFA7E00124F6A /* PPTCBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTCBaseModel.m; sourceTree = "<group>"; };
 		636B4808248AFA7E00124F6A /* PPTCApplicationFiles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTCApplicationFiles.m; sourceTree = "<group>"; };
 		636B4809248AFA7F00124F6A /* PPTCCloudConnectivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTCCloudConnectivity.m; sourceTree = "<group>"; };
-		636B480A248AFA7F00124F6A /* PPTCFriends.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTCFriends.m; sourceTree = "<group>"; };
 		636B480B248AFA7F00124F6A /* PPTCFileManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTCFileManagement.m; sourceTree = "<group>"; };
 		636D0F55210A1DF1005B9111 /* PPVideoToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPVideoToken.h; sourceTree = "<group>"; };
 		636D0F56210A1DF1005B9111 /* PPVideoToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPVideoToken.m; sourceTree = "<group>"; };
+		636DCC042493E4B8000560E8 /* PPTCAppResources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPTCAppResources.h; sourceTree = "<group>"; };
+		636DCC052493E7C1000560E8 /* PPAppResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPAppResources.swift; sourceTree = "<group>"; };
 		636EC3D520582983001ED811 /* PPEnergyManagementUsage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPEnergyManagementUsage.h; sourceTree = "<group>"; };
 		636EC3D620582983001ED811 /* PPEnergyManagementUsage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPEnergyManagementUsage.m; sourceTree = "<group>"; };
 		636EC3D820582C4B001ED811 /* PPEnergyManagementUtilityBill.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPEnergyManagementUtilityBill.h; sourceTree = "<group>"; };
@@ -1227,7 +1223,6 @@
 		63A69D6B2151B32B0077553F /* PPDevicePictureFrameAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPDevicePictureFrameAlert.m; path = Peoplepower/Components/Models/Devices/PictureFrames/PPDevicePictureFrameAlert.m; sourceTree = SOURCE_ROOT; };
 		63A69D6C2151B32B0077553F /* PPDevicePictureFrameAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPDevicePictureFrameAlert.h; path = Peoplepower/Components/Models/Devices/PictureFrames/PPDevicePictureFrameAlert.h; sourceTree = SOURCE_ROOT; };
 		63A95234205AD424000E466A /* PPAppResources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPAppResources.h; sourceTree = "<group>"; };
-		63A95235205AD424000E466A /* PPAppResources.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPAppResources.m; sourceTree = "<group>"; };
 		63A9524E205AFC15000E466A /* Peoplepower-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Peoplepower-Info.plist"; sourceTree = "<group>"; };
 		63A9525B205C2E9A000E466A /* PPNetworkUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkUtilities.m; sourceTree = "<group>"; };
 		63A9525C205C2E9B000E466A /* PPNetworkUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNetworkUtilities.h; sourceTree = "<group>"; };
@@ -1855,6 +1850,15 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		636DCC072493E880000560E8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				636DCC042493E4B8000560E8 /* PPTCAppResources.h */,
+				636B47F1248AFA7B00124F6A /* UnitTests.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		636EC3F62058395B001ED811 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
@@ -2075,8 +2079,8 @@
 		63C8A0AA2059FCEA00256F37 /* Peoplepower-Tests */ = {
 			isa = PBXGroup;
 			children = (
+				636DCC072493E880000560E8 /* Resources */,
 				636B4627248AF7A300124F6A /* Data */,
-				636B47F4248AFA7B00124F6A /* iOS_Core_Tests.m */,
 				636B47F9248AFA7C00124F6A /* PPBaseTestCase.h */,
 				636B47F2248AFA7B00124F6A /* PPBaseTestCase.m */,
 				636B4808248AFA7E00124F6A /* PPTCApplicationFiles.m */,
@@ -2094,8 +2098,6 @@
 				636B4804248AFA7E00124F6A /* PPTCDynamicUserInterfaces.m */,
 				636B47FC248AFA7C00124F6A /* PPTCEnergyManagement.m */,
 				636B480B248AFA7F00124F6A /* PPTCFileManagement.m */,
-				636B4806248AFA7E00124F6A /* PPTCFontIcons.m */,
-				636B480A248AFA7F00124F6A /* PPTCFriends.m */,
 				636B4801248AFA7D00124F6A /* PPTCLogin.m */,
 				636B47FE248AFA7D00124F6A /* PPTCLogout.m */,
 				636B47FB248AFA7C00124F6A /* PPTCOperationToken.m */,
@@ -2108,7 +2110,6 @@
 				636B47EC248AFA7A00124F6A /* PPTCUseCases.m */,
 				636B4805248AFA7E00124F6A /* PPTCUserAccounts.m */,
 				636B47F7248AFA7C00124F6A /* PPTCWeather.m */,
-				636B47F1248AFA7B00124F6A /* UnitTests.plist */,
 			);
 			path = "Peoplepower-Tests";
 			sourceTree = "<group>";
@@ -2168,7 +2169,7 @@
 				63D39380204F46B600041C1A /* PPDateUtilities.h */,
 				63D3937F204F46B600041C1A /* PPDateUtilities.m */,
 				63A95234205AD424000E466A /* PPAppResources.h */,
-				63A95235205AD424000E466A /* PPAppResources.m */,
+				636DCC052493E7C1000560E8 /* PPAppResources.swift */,
 				637F1CFF2125E321001DB910 /* PPStorage.h */,
 				637F1D002125E321001DB910 /* PPStorage.m */,
 			);
@@ -3397,7 +3398,6 @@
 				63BECA8E20C5D74000408494 /* PPNotificationSMSMessage.m in Sources */,
 				63BECA1A20C5D6A100408494 /* PPSystemAndUserProperties.m in Sources */,
 				63BECA0C20C5D6A100408494 /* PPCrowdFeedbacks.m in Sources */,
-				63BEC9CF20C5D67500408494 /* PPAppResources.m in Sources */,
 				63BECA6420C5D6E500408494 /* PPCircles.m in Sources */,
 				63BECA5320C5D6C300408494 /* PPDeviceTypeGoal.m in Sources */,
 				63BECA6A20C5D6E500408494 /* PPReports.m in Sources */,
@@ -3551,6 +3551,7 @@
 				63BECA1E20C5D6A100408494 /* PPFileTag.m in Sources */,
 				63BEC9F620C5D67500408494 /* PPWebSocket.m in Sources */,
 				63A69D6D2151B32B0077553F /* PPDevicePictureFrameAlert.m in Sources */,
+				636DCC062493E7C1000560E8 /* PPAppResources.swift in Sources */,
 				63BECA1420C5D6A100408494 /* PPQuestion.m in Sources */,
 				63BECA2E20C5D6A100408494 /* PPServicePlanPriceAmount.m in Sources */,
 				63BECA5420C5D6C300408494 /* PPDeviceTypeInstallationInstructions.m in Sources */,
@@ -3572,14 +3573,11 @@
 				636B493C248AFBCE00124F6A /* PPTCCopying.m in Sources */,
 				636B4952248AFBCE00124F6A /* PPTCCircles.m in Sources */,
 				636B4956248AFBCE00124F6A /* PPTCSystemAndUserProperties.m in Sources */,
-				636B494A248AFBCE00124F6A /* iOS_Core_Tests.m in Sources */,
-				636B4949248AFBCE00124F6A /* PPTCFriends.m in Sources */,
 				636B493B248AFBCE00124F6A /* PPTCProducts.m in Sources */,
 				636B494B248AFBCE00124F6A /* PPTCCommunity.m in Sources */,
 				636B4946248AFBCE00124F6A /* PPTCDeviceProxy.m in Sources */,
 				636B4950248AFBCE00124F6A /* PPTCApplicationFiles.m in Sources */,
 				636B494C248AFBCE00124F6A /* PPTCFileManagement.m in Sources */,
-				636B4939248AFBCE00124F6A /* PPTCFontIcons.m in Sources */,
 				636B4943248AFBCE00124F6A /* PPTCRules.m in Sources */,
 				636B4955248AFBCE00124F6A /* PPTCUseCases.m in Sources */,
 				636B494E248AFBCE00124F6A /* PPTCOperationToken.m in Sources */,
@@ -3647,6 +3645,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower;
 				PRODUCT_NAME = Peoplepower;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -3686,6 +3685,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower;
 				PRODUCT_NAME = Peoplepower;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

@@ -13,7 +13,7 @@
 #pragma mark - Cloud Configuration
 
 + (PPCloudConnectivityCloud *)defaultCloud {
-    NSDictionary *cloudDict = (NSDictionary *)[PPAppResources getPlistEntry:PLIST_KEY_CONFIG_CLOUD filename:PLIST_FILE_CONFIG];
+    NSDictionary *cloudDict = (NSDictionary *)[PPAppResources getPlistEntry:PP_PLIST_KEY_CONFIG_CLOUD filename:PP_PLIST_FILE_CONFIG];
     return [PPCloudConnectivityCloud initWithDictionary:cloudDict];
 }
 

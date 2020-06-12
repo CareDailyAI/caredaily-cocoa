@@ -8,7 +8,6 @@
 
 #import "PPBaseTestCase.h"
 #import <Peoplepower/PPDevice.h>
-#import <Peoplepower/PPAppResources.h>
 #import <Peoplepower/PPNSDate.h>
 
 static NSString *moduleName = @"DeviceMeasurements";

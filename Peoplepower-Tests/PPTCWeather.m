@@ -8,7 +8,6 @@
 
 #import "PPBaseTestCase.h"
 #import <Peoplepower/PPLocation.h>
-#import <Peoplepower/PPAppResources.h>
 #import <Peoplepower/PPWeatherManagement.h>
 
 static NSString *moduleName = @"Weather";

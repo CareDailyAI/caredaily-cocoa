@@ -9,7 +9,6 @@
 #import "PPBaseTestCase.h"
 #import <Peoplepower/PPDevice.h>
 #import <Peoplepower/PPRules.h>
-#import <Peoplepower/PPAppResources.h>
 
 static NSString *moduleName = @"Rules";
 

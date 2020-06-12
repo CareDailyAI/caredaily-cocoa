@@ -10,7 +10,6 @@
 #import <Peoplepower/PPDevice.h>
 #import <Peoplepower/PPLocation.h>
 #import <Peoplepower/PPFile.h>
-#import <Peoplepower/PPAppResources.h>
 #import <Peoplepower/PPFileManagement.h>
 #import <Peoplepower/PPUserAccounts.h>
 

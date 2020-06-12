@@ -9,7 +9,6 @@
 #import "PPBaseTestCase.h"
 #import <Peoplepower/PPUser.h>
 #import <Peoplepower/PPLocation.h>
-#import <Peoplepower/PPAppResources.h>
 #import <Peoplepower/PPUserAccounts.h>
 #import <Peoplepower/PPNSDate.h>
 

@@ -9,7 +9,6 @@
 #import "PPBaseTestCase.h"
 #import <Peoplepower/PPLocation.h>
 #import <Peoplepower/PPDevice.h>
-#import <Peoplepower/PPAppResources.h>
 #import <Peoplepower/PPCloudsIntegration.h>
 
 static NSString *moduleName = @"CloudsIntegration";

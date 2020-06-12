@@ -8,7 +8,6 @@
 
 #import "PPBaseTestCase.h"
 #import <Peoplepower/PPUser.h>
-#import <Peoplepower/PPAppResources.h>
 #import <Peoplepower/PPLogin.h>
 
 static NSString *moduleName = @"Login";
