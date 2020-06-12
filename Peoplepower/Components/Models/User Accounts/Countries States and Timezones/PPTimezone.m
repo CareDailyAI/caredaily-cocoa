@@ -68,7 +68,7 @@
 #pragma mark - Encoding
 
 - (id)copyWithZone:(NSZone *)zone {
-    PPTimezone *timezone = [[[self class] allocWithZone:zone] init];
+    PPTimezone *timezone = [[PPTimezone allocWithZone:zone] init];
     
     timezone.timezoneId = [self.timezoneId copyWithZone:zone];
     timezone.offset = self.offset;

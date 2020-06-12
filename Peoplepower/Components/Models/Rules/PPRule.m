@@ -423,7 +423,7 @@
 #pragma mark - Encoding
 
 - (id)copyWithZone:(NSZone *)zone {
-    PPRule *rule = [[[self class] allocWithZone:zone] init];
+    PPRule *rule = [[PPRule allocWithZone:zone] init];
     
     rule.ruleId = self.ruleId;
     rule.name = [self.name copyWithZone:zone];

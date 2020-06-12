@@ -72,6 +72,18 @@
 
 #pragma mark - Encoding
 
+- (id)copyWithZone:(NSZone *)zone {
+    PPUserService *service = [[PPUserService allocWithZone:zone] init];
+    
+    service.name = [self.name copyWithZone:zone];
+    service.desc = [self.desc copyWithZone:zone];
+    service.amount = self.amount;
+    service.startDate = [self.startDate copyWithZone:zone];
+    service.endDate = [self.endDate copyWithZone:zone];
+    
+    return service;
+}
+
 - (id)initWithCoder:(NSCoder *)decoder {
     self = [super init];
     if(self) {

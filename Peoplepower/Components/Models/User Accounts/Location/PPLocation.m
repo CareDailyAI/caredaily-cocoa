@@ -693,7 +693,7 @@
 #pragma mark - Encoding
 
 - (id)copyWithZone:(NSZone *)zone {
-    PPLocation *location = [[[self class] allocWithZone:zone] init];
+    PPLocation *location = [[PPLocation allocWithZone:zone] init];
     
     location.locationId = self.locationId;
     location.name = [self.name copyWithZone:zone];

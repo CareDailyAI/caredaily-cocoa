@@ -45,7 +45,7 @@
 #pragma mark - Encoding
 
 - (id)copyWithZone:(NSZone *)zone {
-    PPState *state = [[[self class] allocWithZone:zone] init];
+    PPState *state = [[PPState allocWithZone:zone] init];
     
     state.stateId = self.stateId;
     state.name = [self.name copyWithZone:zone];

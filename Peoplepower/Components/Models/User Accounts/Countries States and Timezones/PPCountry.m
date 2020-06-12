@@ -71,7 +71,7 @@
 #pragma mark - Encoding
 
 - (id)copyWithZone:(NSZone *)zone {
-    PPCountry *country = [[[self class] allocWithZone:zone] init];
+    PPCountry *country = [[PPCountry allocWithZone:zone] init];
     
     country.countryId = self.countryId;
     country.name = [self.name copyWithZone:zone];

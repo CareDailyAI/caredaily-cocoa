@@ -323,7 +323,7 @@
 #pragma mark - Encoding
 
 - (id)copyWithZone:(NSZone *)zone {
-    PPUser *user = [[[self class] allocWithZone:zone] init];
+    PPUser *user = [[PPUser allocWithZone:zone] init];
     
     user.userId = self.userId;
     user.email = [self.email copyWithZone:zone];

@@ -3,7 +3,7 @@
 //  Peoplepower
 //
 //  Created by Destry Teeter on 12/31/19.
-//  Copyright © 2019 People Power Company. All rights reserved.
+//  Copyright © 2020 People Power Company. All rights reserved.
 //
 
 #import "PPUserCommunity.h"
@@ -34,7 +34,7 @@
 #pragma mark - Encoding
 
 - (id)copyWithZone:(NSZone *)zone {
-    PPUserCommunity *community = [[[self class] allocWithZone:zone] init];
+    PPUserCommunity *community = [[PPUserCommunity allocWithZone:zone] init];
     
     community.communityId = self.communityId;
     community.communityName = [self.communityName copyWithZone:zone];

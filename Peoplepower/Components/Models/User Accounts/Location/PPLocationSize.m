@@ -33,7 +33,7 @@
 #pragma mark - Encoding
 
 - (id)copyWithZone:(NSZone *)zone {
-    PPLocationSize *size = [[[self class] allocWithZone:zone] init];
+    PPLocationSize *size = [[PPLocationSize allocWithZone:zone] init];
     
     size.unit = [self.unit copyWithZone:zone];
     size.content = self.content;

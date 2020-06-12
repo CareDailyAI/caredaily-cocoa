@@ -26,7 +26,7 @@ typedef NS_OPTIONS(NSInteger, PPOrganizationGroupType) {
     PPOrganizationGroupTypeBusiness = 1,
 };
 
-@interface PPOrganizationGroup : NSObject
+@interface PPOrganizationGroup : NSObject <NSCopying>
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *domainName;

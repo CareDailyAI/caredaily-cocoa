@@ -119,8 +119,18 @@ NSString *RULE_COMPONENT_STATE_SCHEDULE_COMPONENT_PAMAMETER_NAME_2 = @"time2";
 #pragma mark - Encoding
 
 - (id)copyWithZone:(NSZone *)zone {
-    PPRuleComponentState *ruleComponent = [super copyWithZone:zone];
+    PPRuleComponentState *ruleComponent = [[PPRuleComponentState allocWithZone:zone] init];
+    ruleComponent.componentId = self.componentId;
+    ruleComponent.name = [self.name copyWithZone:zone];
     ruleComponent.stateType = self.stateType;
+    ruleComponent.displayType = self.displayType;
+    ruleComponent.desc = [self.desc copyWithZone:zone];
+    ruleComponent.past = [self.past copyWithZone:zone];
+    ruleComponent.timezone = self.timezone;
+    ruleComponent.functionGroup = [self.functionGroup copyWithZone:zone];
+    ruleComponent.parameters = [self.parameters copyWithZone:zone];
+    ruleComponent.serviceName = [self.serviceName copyWithZone:zone];
+    
     return ruleComponent;
 }
 
