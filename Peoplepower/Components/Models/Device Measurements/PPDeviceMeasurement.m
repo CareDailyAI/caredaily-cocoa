@@ -58,7 +58,7 @@
 #pragma mark - Encoding
 
 - (id)copyWithZone:(NSZone *)zone {
-    PPDeviceMeasurement *measurement = [[[self class] allocWithZone:zone] init];
+    PPDeviceMeasurement *measurement = [[PPDeviceMeasurement allocWithZone:zone] init];
     
     measurement.deviceId = [self.deviceId copyWithZone:zone];
     measurement.lastDataReceivedDate = [self.lastDataReceivedDate copyWithZone:zone];

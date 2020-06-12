@@ -88,7 +88,7 @@
 #pragma mark - Encoding
 
 - (id)copyWithZone:(NSZone *)zone {
-    PPDeviceCommand *command = [[[self class] allocWithZone:zone] init];
+    PPDeviceCommand *command = [[PPDeviceCommand allocWithZone:zone] init];
     
     command.commandId = self.commandId;
     command.deviceId = [self.deviceId copyWithZone:zone];

@@ -50,6 +50,17 @@
 
 #pragma mark - Encoding
 
+- (id)copyWithZone:(NSZone *)zone {
+    PPOrganizationGroup *group = [[PPOrganizationGroup allocWithZone:zone] init];
+    group.name = [self.name copyWithZone:zone];
+    group.domainName = [self.domainName copyWithZone:zone];
+    group.groupId = self.groupId;
+    group.orgId = self.orgId;
+    group.groupPoints = self.groupPoints;
+    
+    return group;
+}
+
 - (id)initWithCoder:(NSCoder *)decoder {
     self = [super init];
     if(self) {

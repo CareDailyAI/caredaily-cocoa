@@ -136,7 +136,7 @@ __strong static PPCloudEngine *_sharedReportObject = nil;
 #pragma mark - Encoding
 
 - (id)copyWithZone:(NSZone *)zone {
-    PPCloudEngine *cloudEngine = [[[self class] allocWithZone:zone] init];
+    PPCloudEngine *cloudEngine = [[PPCloudEngine allocWithZone:zone] init];
     cloudEngine.ios7Manager = self.ios7Manager;
     return cloudEngine;
 }

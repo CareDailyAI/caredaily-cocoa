@@ -77,14 +77,14 @@
 #pragma mark - Encoding
 
 - (id)copyWithZone:(NSZone *)zone {
-    PPOrganization *organization = [[[self class] allocWithZone:zone] init];
+    PPOrganization *organization = [[PPOrganization allocWithZone:zone] init];
     
     organization.organizationId = self.organizationId;
     organization.name = [self.name copyWithZone:zone];
     organization.domainName = [self.domainName copyWithZone:zone];
     organization.organizationStatus = self.organizationStatus;
     organization.approvedDate = [self.approvedDate copyWithZone:zone];
-    organization.group = self.group;
+    organization.group = [self.group copyWithZone:zone];
     organization.points = self.points;
     organization.pointsLevel = self.pointsLevel;
     organization.notes = [self.notes copyWithZone:zone];

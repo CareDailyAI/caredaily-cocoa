@@ -143,7 +143,7 @@ NSString *EVENT_TEST = @"TEST";
 #pragma mark - Encoding
 
 - (id)copyWithZone:(NSZone *)zone {
-    PPLocationSceneEvent *sceneEvent = [[[self class] allocWithZone:zone] init];
+    PPLocationSceneEvent *sceneEvent = [[PPLocationSceneEvent allocWithZone:zone] init];
     
     sceneEvent.event = [self.event copyWithZone:zone];
     sceneEvent.date = [self.date copyWithZone:zone];

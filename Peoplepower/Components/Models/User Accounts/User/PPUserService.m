@@ -73,7 +73,7 @@
 #pragma mark - Encoding
 
 - (id)copyWithZone:(NSZone *)zone {
-    PPUserService *service = [[[self class] allocWithZone:zone] init];
+    PPUserService *service = [[PPUserService allocWithZone:zone] init];
     
     service.name = [self.name copyWithZone:zone];
     service.desc = [self.desc copyWithZone:zone];

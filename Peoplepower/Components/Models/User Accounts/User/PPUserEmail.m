@@ -86,7 +86,7 @@
 #pragma mark - Encoding
 
 - (id)copyWithZone:(NSZone *)zone {
-    PPUserEmail *email = [[[self class] allocWithZone:zone] init];
+    PPUserEmail *email = [[PPUserEmail allocWithZone:zone] init];
     
     email.email = [self.email copyWithZone:zone];
     email.verified = self.verified;

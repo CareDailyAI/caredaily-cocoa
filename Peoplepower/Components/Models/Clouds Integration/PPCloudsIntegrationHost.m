@@ -82,7 +82,7 @@ NSString *OAUTH_HOST_RESPONSE_TYPE_CODE = @"code";
 #pragma mark - Encoding
 
 - (id)copyWithZone:(NSZone *)zone {
-    PPCloudsIntegrationHost *host = [[[self class] allocWithZone:zone] init];
+    PPCloudsIntegrationHost *host = [[PPCloudsIntegrationHost allocWithZone:zone] init];
     
     host.appName = [self.appName copyWithZone:zone];
     host.appId = [self.appId copyWithZone:zone];

@@ -163,7 +163,7 @@
 #pragma mark - Encoding
 
 - (id)copyWithZone:(NSZone *)zone {
-    PPRuleComponentParameter *parameter = [[[self class] allocWithZone:zone] init];
+    PPRuleComponentParameter *parameter = [[PPRuleComponentParameter allocWithZone:zone] init];
     parameter.name = [self.name copyWithZone:zone];
     parameter.category = self.category;
     parameter.optional = self.optional;

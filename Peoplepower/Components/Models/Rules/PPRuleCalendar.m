@@ -110,7 +110,7 @@
 #pragma mark - Encoding
 
 - (id)copyWithZone:(NSZone *)zone {
-    PPRuleCalendar *calendar = [[[self class] allocWithZone:zone] init];
+    PPRuleCalendar *calendar = [[PPRuleCalendar allocWithZone:zone] init];
     calendar.startTime = self.startTime;
     calendar.endTime = self.endTime;
     calendar.daysOfWeek = self.daysOfWeek;

@@ -139,7 +139,7 @@
 #pragma mark - Encoding
 
 - (id)copyWithZone:(NSZone *)zone {
-    PPDeviceParameter *parameter = [[[self class] allocWithZone:zone] init];
+    PPDeviceParameter *parameter = [[PPDeviceParameter allocWithZone:zone] init];
     parameter.name = [self.name copyWithZone:zone];
     parameter.value = [self.value copyWithZone:zone];
     parameter.index = [self.index copyWithZone:zone];

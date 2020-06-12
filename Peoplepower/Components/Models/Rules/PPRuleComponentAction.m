@@ -25,4 +25,25 @@
     [super sync:ruleComponent];
 }
 
+#pragma mark - Encoding
+
+- (id)copyWithZone:(NSZone *)zone {
+    PPRuleComponentAction *ruleComponent = [[PPRuleComponentAction allocWithZone:zone] init];
+    ruleComponent.componentId = self.componentId;
+    ruleComponent.name = [self.name copyWithZone:zone];
+    ruleComponent.displayType = self.displayType;
+    ruleComponent.desc = [self.desc copyWithZone:zone];
+    ruleComponent.past = [self.past copyWithZone:zone];
+    ruleComponent.timezone = self.timezone;
+    ruleComponent.functionGroup = [self.functionGroup copyWithZone:zone];
+    NSMutableArray *parameters = [[NSMutableArray alloc] initWithCapacity:self.parameters.count];
+    for (PPRuleComponentParameter *parameter in self.parameters) {
+        [parameters addObject:[parameter copyWithZone:zone]];
+    }
+    ruleComponent.parameters = parameters;
+    ruleComponent.serviceName = [self.serviceName copyWithZone:zone];
+    
+    return ruleComponent;
+}
+
 @end

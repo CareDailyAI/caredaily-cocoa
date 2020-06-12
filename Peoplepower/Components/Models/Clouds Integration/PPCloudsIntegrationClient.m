@@ -91,7 +91,7 @@
 #pragma mark - Encoding
 
 - (id)copyWithZone:(NSZone *)zone {
-    PPCloudsIntegrationClient *client = [[[self class] allocWithZone:zone] init];
+    PPCloudsIntegrationClient *client = [[PPCloudsIntegrationClient allocWithZone:zone] init];
     
     client.appName = [self.appName copyWithZone:zone];
     client.appId = self.appId;

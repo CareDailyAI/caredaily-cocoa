@@ -60,7 +60,7 @@
 #pragma mark - Encoding
 
 - (id)copyWithZone:(NSZone *)zone {
-    PPDeviceMeasurementsAlert *alert = [[[self class] allocWithZone:zone] init];
+    PPDeviceMeasurementsAlert *alert = [[PPDeviceMeasurementsAlert allocWithZone:zone] init];
     
     alert.alertId = self.alertId;
     alert.deviceId = [self.deviceId copyWithZone:zone];

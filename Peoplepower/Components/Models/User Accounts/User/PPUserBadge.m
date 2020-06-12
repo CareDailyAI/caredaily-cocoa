@@ -47,7 +47,7 @@
 #pragma mark - Encoding
 
 - (id)copyWithZone:(NSZone *)zone {
-    PPUserBadge *badge = [[[self class] allocWithZone:zone] init];
+    PPUserBadge *badge = [[PPUserBadge allocWithZone:zone] init];
     
     badge.type = self.type;
     badge.count = self.count;

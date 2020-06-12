@@ -193,7 +193,7 @@
 #pragma mark - Encoding
 
 - (id)copyWithZone:(NSZone *)zone {
-    PPRuleComponent *ruleComponent = [[[self class] allocWithZone:zone] init];
+    PPRuleComponent *ruleComponent = [[PPRuleComponent allocWithZone:zone] init];
     ruleComponent.componentId = self.componentId;
     ruleComponent.name = [self.name copyWithZone:zone];
     ruleComponent.displayType = self.displayType;

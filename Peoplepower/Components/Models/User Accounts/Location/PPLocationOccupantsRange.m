@@ -31,7 +31,7 @@
 #pragma mark - Encoding
 
 - (id)copyWithZone:(NSZone *)zone {
-    PPLocationOccupantsRange *occupantsRange = [[[self class] allocWithZone:zone] init];
+    PPLocationOccupantsRange *occupantsRange = [[PPLocationOccupantsRange allocWithZone:zone] init];
     
     occupantsRange.start = self.start;
     occupantsRange.end = self.end;

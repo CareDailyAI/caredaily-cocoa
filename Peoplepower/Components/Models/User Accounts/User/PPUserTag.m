@@ -36,7 +36,7 @@
 #pragma mark - Encoding
 
 - (id)copyWithZone:(NSZone *)zone {
-    PPUserTag *tag = [[[self class] allocWithZone:zone] init];
+    PPUserTag *tag = [[PPUserTag allocWithZone:zone] init];
     
     tag.tag = [self.tag copyWithZone:zone];
     
