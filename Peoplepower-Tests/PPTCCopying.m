@@ -6,8 +6,7 @@
 //  Copyright © 2019 People Power Company. All rights reserved.
 //
 
-#import <XCTest/XCTest.h>
-#import <Peoplepower/PPAppResources.h>
+#import "PPBaseTestCase.h"
 #import <Peoplepower/PPLocation.h>
 #import <Peoplepower/PPUser.h>
 #import <Peoplepower/PPRule.h>

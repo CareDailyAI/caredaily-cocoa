@@ -7,7 +7,6 @@
 //
 
 #import "PPBaseTestCase.h"
-#import <Peoplepower/PPAppResources.h>
 #import <Peoplepower/PPApplicationFileManagement.h>
 
 static NSString *moduleName = @"ApplicationFiles";

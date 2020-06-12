@@ -7,7 +7,6 @@
 //
 
 #import "PPBaseTestCase.h"
-#import <Peoplepower/PPAppResources.h>
 #import <Peoplepower/PPLocation.h>
 #import <Peoplepower/PPNSDate.h>
 #import <Peoplepower/PPDynamicUIs.h>

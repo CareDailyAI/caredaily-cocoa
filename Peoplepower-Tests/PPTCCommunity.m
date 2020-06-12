@@ -8,7 +8,6 @@
 
 #import "PPBaseTestCase.h"
 #import <Peoplepower/PPCommunity.h>
-#import <Peoplepower/PPAppResources.h>
 
 static NSString *moduleName = @"Community";
 

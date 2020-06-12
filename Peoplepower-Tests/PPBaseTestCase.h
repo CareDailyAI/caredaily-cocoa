@@ -7,6 +7,9 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "PPTCAppResources.h"
+#import <Peoplepower/PPAppResources.h>
+#import <Peoplepower/Peoplepower-Swift.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

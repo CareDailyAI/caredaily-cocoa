@@ -8,10 +8,7 @@
 
 #import "PPBaseTestCase.h"
 #import <Peoplepower/PPNSData.h>
-//@import OHHTTPStubs;
 #import <OHHTTPStubs/OHHTTPStubs.h>
-//#import <OHHTTPStubs.h>
-//#import "OHHTTPStubs/OHHTTPStubsResponse+JSON.h"
 
 @implementation PPBaseTestCase
 
