@@ -1,6 +1,6 @@
 //
 //  PPTCCopying.m
-//  PPiOSCore-Tests
+//  Peoplepower-Tests
 //
 //  Created by Destry Teeter on 2/27/19.
 //  Copyright © 2019 People Power Company. All rights reserved.

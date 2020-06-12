@@ -19,7 +19,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSString *appName = [PPBaseModel appName:NO];
     
     PPUser *user = [PPUser initWithDictionary:@{}];
     user.firstName = @"this";

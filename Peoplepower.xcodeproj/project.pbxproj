@@ -74,7 +74,6 @@
 		636B4952248AFBCE00124F6A /* PPTCCircles.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B4802248AFA7D00124F6A /* PPTCCircles.m */; };
 		636B4953248AFBCE00124F6A /* PPTCCommunications.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B47EF248AFA7A00124F6A /* PPTCCommunications.m */; };
 		636B4954248AFBCE00124F6A /* PPTCEnergyManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B47FC248AFA7C00124F6A /* PPTCEnergyManagement.m */; };
-		636B4955248AFBCE00124F6A /* PPTCUseCases.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B47EC248AFA7A00124F6A /* PPTCUseCases.m */; };
 		636B4956248AFBCE00124F6A /* PPTCSystemAndUserProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B47F6248AFA7B00124F6A /* PPTCSystemAndUserProperties.m */; };
 		636B4957248AFBCE00124F6A /* PPTCPaidServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B47EB248AFA7900124F6A /* PPTCPaidServices.m */; };
 		636B4958248AFBD700124F6A /* ApplicationFiles-DeleteFile-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 636B46D4248AF7E000124F6A /* ApplicationFiles-DeleteFile-ResponseData.json */; };
@@ -303,6 +302,8 @@
 		636D0F57210A1DF2005B9111 /* PPVideoToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 636D0F55210A1DF1005B9111 /* PPVideoToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		636D0F58210A1DF2005B9111 /* PPVideoToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 636D0F56210A1DF1005B9111 /* PPVideoToken.m */; };
 		636DCC062493E7C1000560E8 /* PPAppResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636DCC052493E7C1000560E8 /* PPAppResources.swift */; };
+		636DCC102493F9BA000560E8 /* PPTCVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636DCC0F2493F9BA000560E8 /* PPTCVersion.swift */; };
+		636DCC1624940463000560E8 /* PPTCAppResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636DCC1524940463000560E8 /* PPTCAppResources.swift */; };
 		6372B66521349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 6372B66321349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6372B66621349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6372B66421349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.m */; };
 		637D0F2320C761A2003710AF /* PPDeviceParameterRobotVantagePoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 637D0F2120C761A2003710AF /* PPDeviceParameterRobotVantagePoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1071,7 +1072,6 @@
 		636B47E6248AF8CB00124F6A /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
 		636B47E9248AF9EF00124F6A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		636B47EB248AFA7900124F6A /* PPTCPaidServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTCPaidServices.m; sourceTree = "<group>"; };
-		636B47EC248AFA7A00124F6A /* PPTCUseCases.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTCUseCases.m; sourceTree = "<group>"; };
 		636B47ED248AFA7A00124F6A /* PPTCDeviceProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTCDeviceProxy.m; sourceTree = "<group>"; };
 		636B47EE248AFA7A00124F6A /* PPTCCommunity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTCCommunity.m; sourceTree = "<group>"; };
 		636B47EF248AFA7A00124F6A /* PPTCCommunications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTCCommunications.m; sourceTree = "<group>"; };
@@ -1104,6 +1104,9 @@
 		636D0F56210A1DF1005B9111 /* PPVideoToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPVideoToken.m; sourceTree = "<group>"; };
 		636DCC042493E4B8000560E8 /* PPTCAppResources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPTCAppResources.h; sourceTree = "<group>"; };
 		636DCC052493E7C1000560E8 /* PPAppResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPAppResources.swift; sourceTree = "<group>"; };
+		636DCC0E2493F9BA000560E8 /* Peoplepower-Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Peoplepower-Tests-Bridging-Header.h"; sourceTree = "<group>"; };
+		636DCC0F2493F9BA000560E8 /* PPTCVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPTCVersion.swift; sourceTree = "<group>"; };
+		636DCC1524940463000560E8 /* PPTCAppResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPTCAppResources.swift; sourceTree = "<group>"; };
 		636EC3D520582983001ED811 /* PPEnergyManagementUsage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPEnergyManagementUsage.h; sourceTree = "<group>"; };
 		636EC3D620582983001ED811 /* PPEnergyManagementUsage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPEnergyManagementUsage.m; sourceTree = "<group>"; };
 		636EC3D820582C4B001ED811 /* PPEnergyManagementUtilityBill.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPEnergyManagementUtilityBill.h; sourceTree = "<group>"; };
@@ -1828,10 +1831,68 @@
 		636DCC072493E880000560E8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				636DCC0E2493F9BA000560E8 /* Peoplepower-Tests-Bridging-Header.h */,
+				636B4627248AF7A300124F6A /* Data */,
 				636DCC042493E4B8000560E8 /* PPTCAppResources.h */,
 				636B47F1248AFA7B00124F6A /* UnitTests.plist */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		636DCC092493F8F1000560E8 /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				636B4802248AFA7D00124F6A /* PPTCCircles.m */,
+				636B4809248AFA7F00124F6A /* PPTCCloudConnectivity.m */,
+				636B47FD248AFA7D00124F6A /* PPTCCloudsIntegration.m */,
+				636B47EF248AFA7A00124F6A /* PPTCCommunications.m */,
+				636B47EE248AFA7A00124F6A /* PPTCCommunity.m */,
+				636B47F3248AFA7B00124F6A /* PPTCDeviceMeasurements.m */,
+				636B4800248AFA7D00124F6A /* PPTCDevices.m */,
+				636B4804248AFA7E00124F6A /* PPTCDynamicUserInterfaces.m */,
+				636B47FC248AFA7C00124F6A /* PPTCEnergyManagement.m */,
+				636B480B248AFA7F00124F6A /* PPTCFileManagement.m */,
+				636B4808248AFA7E00124F6A /* PPTCApplicationFiles.m */,
+				636B4801248AFA7D00124F6A /* PPTCLogin.m */,
+				636B47FE248AFA7D00124F6A /* PPTCLogout.m */,
+				636B47EB248AFA7900124F6A /* PPTCPaidServices.m */,
+				636B4803248AFA7E00124F6A /* PPTCProducts.m */,
+				636B47F0248AFA7A00124F6A /* PPTCProfessionalMonitoring.m */,
+				636B47FA248AFA7C00124F6A /* PPTCReports.m */,
+				636B47F8248AFA7C00124F6A /* PPTCRules.m */,
+				636B47F6248AFA7B00124F6A /* PPTCSystemAndUserProperties.m */,
+				636B4805248AFA7E00124F6A /* PPTCUserAccounts.m */,
+				636B47F7248AFA7C00124F6A /* PPTCWeather.m */,
+			);
+			name = APIs;
+			sourceTree = "<group>";
+		};
+		636DCC0B2493F92A000560E8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				636B47F5248AFA7B00124F6A /* PPTCDateUtilities.m */,
+				636DCC1524940463000560E8 /* PPTCAppResources.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		636DCC0C2493F939000560E8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				636B4807248AFA7E00124F6A /* PPTCBaseModel.m */,
+				636B47FF248AFA7D00124F6A /* PPTCCopying.m */,
+				636B47FB248AFA7C00124F6A /* PPTCOperationToken.m */,
+				636B47ED248AFA7A00124F6A /* PPTCDeviceProxy.m */,
+				636DCC0F2493F9BA000560E8 /* PPTCVersion.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		636DCC0D2493F945000560E8 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		636EC3F62058395B001ED811 /* Weather */ = {
@@ -2054,37 +2115,13 @@
 		63C8A0AA2059FCEA00256F37 /* Peoplepower-Tests */ = {
 			isa = PBXGroup;
 			children = (
+				636DCC0D2493F945000560E8 /* Categories */,
+				636DCC0C2493F939000560E8 /* Models */,
+				636DCC0B2493F92A000560E8 /* Classes */,
 				636DCC072493E880000560E8 /* Resources */,
-				636B4627248AF7A300124F6A /* Data */,
+				636DCC092493F8F1000560E8 /* APIs */,
 				636B47F9248AFA7C00124F6A /* PPBaseTestCase.h */,
 				636B47F2248AFA7B00124F6A /* PPBaseTestCase.m */,
-				636B4808248AFA7E00124F6A /* PPTCApplicationFiles.m */,
-				636B4807248AFA7E00124F6A /* PPTCBaseModel.m */,
-				636B4802248AFA7D00124F6A /* PPTCCircles.m */,
-				636B4809248AFA7F00124F6A /* PPTCCloudConnectivity.m */,
-				636B47FD248AFA7D00124F6A /* PPTCCloudsIntegration.m */,
-				636B47EF248AFA7A00124F6A /* PPTCCommunications.m */,
-				636B47EE248AFA7A00124F6A /* PPTCCommunity.m */,
-				636B47FF248AFA7D00124F6A /* PPTCCopying.m */,
-				636B47F5248AFA7B00124F6A /* PPTCDateUtilities.m */,
-				636B47F3248AFA7B00124F6A /* PPTCDeviceMeasurements.m */,
-				636B47ED248AFA7A00124F6A /* PPTCDeviceProxy.m */,
-				636B4800248AFA7D00124F6A /* PPTCDevices.m */,
-				636B4804248AFA7E00124F6A /* PPTCDynamicUserInterfaces.m */,
-				636B47FC248AFA7C00124F6A /* PPTCEnergyManagement.m */,
-				636B480B248AFA7F00124F6A /* PPTCFileManagement.m */,
-				636B4801248AFA7D00124F6A /* PPTCLogin.m */,
-				636B47FE248AFA7D00124F6A /* PPTCLogout.m */,
-				636B47FB248AFA7C00124F6A /* PPTCOperationToken.m */,
-				636B47EB248AFA7900124F6A /* PPTCPaidServices.m */,
-				636B4803248AFA7E00124F6A /* PPTCProducts.m */,
-				636B47F0248AFA7A00124F6A /* PPTCProfessionalMonitoring.m */,
-				636B47FA248AFA7C00124F6A /* PPTCReports.m */,
-				636B47F8248AFA7C00124F6A /* PPTCRules.m */,
-				636B47F6248AFA7B00124F6A /* PPTCSystemAndUserProperties.m */,
-				636B47EC248AFA7A00124F6A /* PPTCUseCases.m */,
-				636B4805248AFA7E00124F6A /* PPTCUserAccounts.m */,
-				636B47F7248AFA7C00124F6A /* PPTCWeather.m */,
 			);
 			path = "Peoplepower-Tests";
 			sourceTree = "<group>";
@@ -2976,6 +3013,7 @@
 					};
 					63BEC9B320C5D2AB00408494 = {
 						CreatedOnToolsVersion = 9.3.1;
+						LastSwiftMigration = 1150;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -3529,6 +3567,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				636B4940248AFBCE00124F6A /* PPTCLogout.m in Sources */,
+				636DCC102493F9BA000560E8 /* PPTCVersion.swift in Sources */,
 				636B493C248AFBCE00124F6A /* PPTCCopying.m in Sources */,
 				636B4952248AFBCE00124F6A /* PPTCCircles.m in Sources */,
 				636B4956248AFBCE00124F6A /* PPTCSystemAndUserProperties.m in Sources */,
@@ -3538,12 +3577,12 @@
 				636B4950248AFBCE00124F6A /* PPTCApplicationFiles.m in Sources */,
 				636B494C248AFBCE00124F6A /* PPTCFileManagement.m in Sources */,
 				636B4943248AFBCE00124F6A /* PPTCRules.m in Sources */,
-				636B4955248AFBCE00124F6A /* PPTCUseCases.m in Sources */,
 				636B494E248AFBCE00124F6A /* PPTCOperationToken.m in Sources */,
 				636B4951248AFBCE00124F6A /* PPTCCloudsIntegration.m in Sources */,
 				636B4953248AFBCE00124F6A /* PPTCCommunications.m in Sources */,
 				636B4948248AFBCE00124F6A /* PPTCLogin.m in Sources */,
 				636B4941248AFBCE00124F6A /* PPTCDeviceMeasurements.m in Sources */,
+				636DCC1624940463000560E8 /* PPTCAppResources.swift in Sources */,
 				636B4942248AFBCE00124F6A /* PPTCUserAccounts.m in Sources */,
 				636B493D248AFBCE00124F6A /* PPTCDateUtilities.m in Sources */,
 				636B4954248AFBCE00124F6A /* PPTCEnergyManagement.m in Sources */,
@@ -3654,6 +3693,7 @@
 		63BEC9C820C5D2AB00408494 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
@@ -3678,6 +3718,9 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.peoplepowerco.lib.Peoplepower-Framework-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Peoplepower-Tests/Peoplepower-Tests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -3685,6 +3728,7 @@
 		63BEC9C920C5D2AB00408494 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
@@ -3709,6 +3753,8 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.peoplepowerco.lib.Peoplepower-Framework-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Peoplepower-Tests/Peoplepower-Tests-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

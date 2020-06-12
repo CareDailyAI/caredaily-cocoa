@@ -1,6 +1,6 @@
 //
 //  PPDeviceDataRequest.m
-//  PPiOSCore
+//  Peoplepower
 //
 //  Created by Destry Teeter on 5/7/19.
 //  Copyright © 2019 People Power Company. All rights reserved.

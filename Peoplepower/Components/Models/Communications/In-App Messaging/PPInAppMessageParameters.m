@@ -1,6 +1,6 @@
 //
 //  PPInAppMessageParameters.m
-//  PPiOSCore
+//  Peoplepower
 //
 //  Created by Destry Teeter on 6/6/18.
 //  Copyright © 2020 People Power Company. All rights reserved.
