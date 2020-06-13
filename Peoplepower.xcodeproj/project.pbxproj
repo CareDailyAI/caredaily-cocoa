@@ -3,16 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		6309B76120E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.h in Headers */ = {isa = PBXBuildFile; fileRef = 6309B75F20E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6309B76220E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 6309B76020E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.m */; };
 		631152E321E817BD00DA7755 /* PPTHConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 631152DE21E7FB8400DA7755 /* PPTHConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		631A7A9D248B124400D86CFF /* Peoplepower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BEC9AC20C5D2AA00408494 /* Peoplepower.framework */; };
-		631A7A9E248B12A800D86CFF /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636B47E6248AF8CB00124F6A /* OHHTTPStubs.framework */; };
-		631A7AA1248B137C00D86CFF /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636B47E6248AF8CB00124F6A /* OHHTTPStubs.framework */; };
 		631A7AA3248B151600D86CFF /* UnitTests.plist in Resources */ = {isa = PBXBuildFile; fileRef = 636B47F1248AFA7B00124F6A /* UnitTests.plist */; };
 		631A7AA6248B16DD00D86CFF /* Peoplepower-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63A9524E205AFC15000E466A /* Peoplepower-Info.plist */; };
 		631A7AA7248B16E000D86CFF /* Peoplepower-Framework-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63BEC9AF20C5D2AB00408494 /* Peoplepower-Framework-Info.plist */; };
@@ -38,15 +35,6 @@
 		6360FAB821B8520200DB2B6B /* PPCloudsIntegrationCloud.h in Headers */ = {isa = PBXBuildFile; fileRef = 6360FAB621B8520200DB2B6B /* PPCloudsIntegrationCloud.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6360FAB921B8520200DB2B6B /* PPCloudsIntegrationCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = 6360FAB721B8520200DB2B6B /* PPCloudsIntegrationCloud.m */; };
 		636B4447248AE82A00124F6A /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 636B4446248AE82A00124F6A /* Cartfile */; };
-		636B444A248AE9A100124F6A /* SocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636B4449248AE9A100124F6A /* SocketRocket.framework */; };
-		636B444E248AEB1C00124F6A /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636B444D248AEB1C00124F6A /* UICKeyChainStore.framework */; };
-		636B4457248AF10F00124F6A /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636B4456248AF10F00124F6A /* AFNetworking.framework */; };
-		636B445C248AF17E00124F6A /* AFNetworking.framework.dSYM in Carthage DSYM */ = {isa = PBXBuildFile; fileRef = 636B445A248AF13400124F6A /* AFNetworking.framework.dSYM */; };
-		636B445D248AF17E00124F6A /* UICKeyChainStore.framework.dSYM in Carthage DSYM */ = {isa = PBXBuildFile; fileRef = 636B4452248AECDB00124F6A /* UICKeyChainStore.framework.dSYM */; };
-		636B445F248AF36000124F6A /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636B445E248AF35F00124F6A /* KissXML.framework */; };
-		636B4463248AF37700124F6A /* KissXML.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 636B4462248AF37600124F6A /* KissXML.framework.dSYM */; };
-		636B4464248AF38D00124F6A /* KissXML.framework.dSYM in Carthage DSYM */ = {isa = PBXBuildFile; fileRef = 636B4462248AF37600124F6A /* KissXML.framework.dSYM */; };
-		636B4465248AF52F00124F6A /* LICENSE in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63FAAFD6209B7CA90062638A /* LICENSE */; };
 		636B4812248AFA7F00124F6A /* UnitTests.plist in Resources */ = {isa = PBXBuildFile; fileRef = 636B47F1248AFA7B00124F6A /* UnitTests.plist */; };
 		636B493A248AFBCE00124F6A /* PPTCWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B47F7248AFA7C00124F6A /* PPTCWeather.m */; };
 		636B493B248AFBCE00124F6A /* PPTCProducts.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B4803248AFA7E00124F6A /* PPTCProducts.m */; };
@@ -303,7 +291,6 @@
 		636DCC062493E7C1000560E8 /* PPAppResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636DCC052493E7C1000560E8 /* PPAppResources.swift */; };
 		636DCC102493F9BA000560E8 /* PPTCVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636DCC0F2493F9BA000560E8 /* PPTCVersion.swift */; };
 		636DCC1624940463000560E8 /* PPTCAppResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636DCC1524940463000560E8 /* PPTCAppResources.swift */; };
-		63702583248C3AE1002CC1C5 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B9B14E248C36BA0056E7CE /* Realm.framework */; };
 		6372B66521349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 6372B66321349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6372B66621349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6372B66421349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.m */; };
 		637D0F2320C761A2003710AF /* PPDeviceParameterRobotVantagePoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 637D0F2120C761A2003710AF /* PPDeviceParameterRobotVantagePoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -346,7 +333,6 @@
 		63B9B140248C0D5C0056E7CE /* RLMObject+PPExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = 63B9B13A248C0D5C0056E7CE /* RLMObject+PPExtras.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63B9B143248C0D9C0056E7CE /* PPRealm.h in Headers */ = {isa = PBXBuildFile; fileRef = 63B9B141248C0D9B0056E7CE /* PPRealm.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63B9B144248C0D9C0056E7CE /* PPRealm.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B9B142248C0D9B0056E7CE /* PPRealm.m */; };
-		63B9B14D248C1DC70056E7CE /* Realm.framework.dSYM in Carthage DSYM */ = {isa = PBXBuildFile; fileRef = 63B9B14B248C1DC00056E7CE /* Realm.framework.dSYM */; };
 		63BEC9CA20C5D67500408494 /* PPNetworkUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A9525B205C2E9A000E466A /* PPNetworkUtilities.m */; };
 		63BEC9CC20C5D67500408494 /* PPDateUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3937F204F46B600041C1A /* PPDateUtilities.m */; };
 		63BEC9D120C5D67500408494 /* PPCurlDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D39305204F287800041C1A /* PPCurlDebug.m */; };
@@ -709,13 +695,6 @@
 		63BECB4F20C5D96F00408494 /* PPCurlDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D39304204F287800041C1A /* PPCurlDebug.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63BECB9320C5DDE000408494 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C7C9FF2098016700967C4C /* libicucore.tbd */; };
 		63BECB9420C5DFDB00408494 /* Peoplepower-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 63D39315204F3A0900041C1A /* Peoplepower-Prefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
-		63BECBB120C5EF0F00408494 /* Peoplepower-Prefix.pch in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63D39315204F3A0900041C1A /* Peoplepower-Prefix.pch */; };
-		63BECBB220C5EF0F00408494 /* Peoplepower-Config.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = 637A632B206C44B000F7876D /* Peoplepower-Config.plist */; };
-		63BECBC620C5F11A00408494 /* AddressBook.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63C7CA032098017C00967C4C /* AddressBook.framework */; };
-		63BECBC720C5F11A00408494 /* Contacts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63C7CA012098017800967C4C /* Contacts.framework */; };
-		63BECBC820C5F11A00408494 /* libicucore.tbd in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63C7C9FF2098016700967C4C /* libicucore.tbd */; };
-		63BECBC920C5F11A00408494 /* Security.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63C7C9FD2098015D00967C4C /* Security.framework */; };
-		63BECBCA20C5F11A00408494 /* SystemConfiguration.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63475E3C2069CFCF009BCDED /* SystemConfiguration.framework */; };
 		63CD14C021C19279002290C9 /* PPLocationUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 63CD14BE21C19279002290C9 /* PPLocationUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63CD14C121C19279002290C9 /* PPLocationUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CD14BF21C19279002290C9 /* PPLocationUser.m */; };
 		63CD14C421C19774002290C9 /* PPLocationUserSchedule.h in Headers */ = {isa = PBXBuildFile; fileRef = 63CD14C221C19774002290C9 /* PPLocationUserSchedule.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -739,70 +718,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		636B4451248AECB900124F6A /* Carthage DSYM */ = {
+		636DCC3F24947CAF000560E8 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
-			dstSubfolderSpec = 16;
+			dstSubfolderSpec = 10;
 			files = (
-				636B445C248AF17E00124F6A /* AFNetworking.framework.dSYM in Carthage DSYM */,
-				636B445D248AF17E00124F6A /* UICKeyChainStore.framework.dSYM in Carthage DSYM */,
-				636B4464248AF38D00124F6A /* KissXML.framework.dSYM in Carthage DSYM */,
-				63B9B14D248C1DC70056E7CE /* Realm.framework.dSYM in Carthage DSYM */,
-			);
-			name = "Carthage DSYM";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		63BECBB020C5EEFD00408494 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PROJECT_NAME)/resources";
-			dstSubfolderSpec = 16;
-			files = (
-				63BECBB120C5EF0F00408494 /* Peoplepower-Prefix.pch in CopyFiles */,
-				63BECBB220C5EF0F00408494 /* Peoplepower-Config.plist in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		63BECBB420C5EF6200408494 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PROJECT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-				636B4465248AF52F00124F6A /* LICENSE in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		63BECBB720C5F07200408494 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PROJECT_NAME)/resources/fonts";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		63BECBC020C5F0E400408494 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PROJECT_NAME)/resources/fonts/glyps";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		63BECBC520C5F10600408494 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PROJECT_NAME)/frameworks";
-			dstSubfolderSpec = 16;
-			files = (
-				63BECBC620C5F11A00408494 /* AddressBook.framework in CopyFiles */,
-				63BECBC720C5F11A00408494 /* Contacts.framework in CopyFiles */,
-				63BECBC820C5F11A00408494 /* libicucore.tbd in CopyFiles */,
-				63BECBC920C5F11A00408494 /* Security.framework in CopyFiles */,
-				63BECBCA20C5F11A00408494 /* SystemConfiguration.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -848,13 +769,6 @@
 		6360FAB621B8520200DB2B6B /* PPCloudsIntegrationCloud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPCloudsIntegrationCloud.h; sourceTree = "<group>"; };
 		6360FAB721B8520200DB2B6B /* PPCloudsIntegrationCloud.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPCloudsIntegrationCloud.m; sourceTree = "<group>"; };
 		636B4446248AE82A00124F6A /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
-		636B4449248AE9A100124F6A /* SocketRocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SocketRocket.framework; path = Carthage/Build/iOS/SocketRocket.framework; sourceTree = "<group>"; };
-		636B444D248AEB1C00124F6A /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICKeyChainStore.framework; path = Carthage/Build/iOS/UICKeyChainStore.framework; sourceTree = "<group>"; };
-		636B4452248AECDB00124F6A /* UICKeyChainStore.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = UICKeyChainStore.framework.dSYM; path = Carthage/Build/iOS/UICKeyChainStore.framework.dSYM; sourceTree = "<group>"; };
-		636B4456248AF10F00124F6A /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
-		636B445A248AF13400124F6A /* AFNetworking.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = AFNetworking.framework.dSYM; path = Carthage/Build/iOS/AFNetworking.framework.dSYM; sourceTree = "<group>"; };
-		636B445E248AF35F00124F6A /* KissXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KissXML.framework; path = Carthage/Build/iOS/KissXML.framework; sourceTree = "<group>"; };
-		636B4462248AF37600124F6A /* KissXML.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = KissXML.framework.dSYM; path = Carthage/Build/iOS/KissXML.framework.dSYM; sourceTree = "<group>"; };
 		636B4628248AF7C200124F6A /* Products-GetSupportedProducts-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Products-GetSupportedProducts-ResponseData.json"; sourceTree = "<group>"; };
 		636B4629248AF7C300124F6A /* Community-DeletePost-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Community-DeletePost-ResponseData.json"; sourceTree = "<group>"; };
 		636B462A248AF7C300124F6A /* Products-DeleteStory-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Products-DeleteStory-ResponseData.json"; sourceTree = "<group>"; };
@@ -1078,7 +992,6 @@
 		636B4704248AF7E800124F6A /* Community-GetPosts-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Community-GetPosts-ResponseData.json"; sourceTree = "<group>"; };
 		636B4705248AF7E800124F6A /* Rules-CreateDefaultRulesForDevice-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Rules-CreateDefaultRulesForDevice-ResponseData.json"; sourceTree = "<group>"; };
 		636B4706248AF7E800124F6A /* SystemAndUserProperties-GetUserOrSystemProperty-ResponseData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SystemAndUserProperties-GetUserOrSystemProperty-ResponseData.txt"; sourceTree = "<group>"; };
-		636B47E6248AF8CB00124F6A /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
 		636B47E9248AF9EF00124F6A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		636B47EB248AFA7900124F6A /* PPTCPaidServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTCPaidServices.m; sourceTree = "<group>"; };
 		636B47ED248AFA7A00124F6A /* PPTCDeviceProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTCDeviceProxy.m; sourceTree = "<group>"; };
@@ -1258,8 +1171,6 @@
 		63B9B13A248C0D5C0056E7CE /* RLMObject+PPExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RLMObject+PPExtras.h"; sourceTree = "<group>"; };
 		63B9B141248C0D9B0056E7CE /* PPRealm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPRealm.h; sourceTree = "<group>"; };
 		63B9B142248C0D9B0056E7CE /* PPRealm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPRealm.m; sourceTree = "<group>"; };
-		63B9B145248C1D650056E7CE /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
-		63B9B14B248C1DC00056E7CE /* Realm.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Realm.framework.dSYM; path = Carthage/Build/iOS/Realm.framework.dSYM; sourceTree = "<group>"; };
 		63B9B14E248C36BA0056E7CE /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		63BEC9AC20C5D2AA00408494 /* Peoplepower.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Peoplepower.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BEC9AF20C5D2AB00408494 /* Peoplepower-Framework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Peoplepower-Framework-Info.plist"; sourceTree = "<group>"; };
@@ -1534,15 +1445,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63702583248C3AE1002CC1C5 /* Realm.framework in Frameworks */,
 				63BECA8F20C5D77400408494 /* AddressBook.framework in Frameworks */,
-				636B4457248AF10F00124F6A /* AFNetworking.framework in Frameworks */,
-				636B444A248AE9A100124F6A /* SocketRocket.framework in Frameworks */,
 				63BECA9120C5D77400408494 /* Security.framework in Frameworks */,
-				636B445F248AF36000124F6A /* KissXML.framework in Frameworks */,
-				636B444E248AEB1C00124F6A /* UICKeyChainStore.framework in Frameworks */,
 				63BECA9220C5D77400408494 /* SystemConfiguration.framework in Frameworks */,
-				631A7A9E248B12A800D86CFF /* OHHTTPStubs.framework in Frameworks */,
 				63BECA9020C5D77400408494 /* Contacts.framework in Frameworks */,
 				63BECB9320C5DDE000408494 /* libicucore.tbd in Frameworks */,
 			);
@@ -1552,8 +1457,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				631A7AA1248B137C00D86CFF /* OHHTTPStubs.framework in Frameworks */,
-				631A7A9D248B124400D86CFF /* Peoplepower.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1577,13 +1480,7 @@
 			isa = PBXGroup;
 			children = (
 				63B9B14E248C36BA0056E7CE /* Realm.framework */,
-				63B9B145248C1D650056E7CE /* RealmSwift.framework */,
 				636B47E9248AF9EF00124F6A /* Foundation.framework */,
-				636B47E6248AF8CB00124F6A /* OHHTTPStubs.framework */,
-				636B445E248AF35F00124F6A /* KissXML.framework */,
-				636B4456248AF10F00124F6A /* AFNetworking.framework */,
-				636B444D248AEB1C00124F6A /* UICKeyChainStore.framework */,
-				636B4449248AE9A100124F6A /* SocketRocket.framework */,
 				6370D11F22611D34000C3B70 /* UIKit.framework */,
 				637E5A1720D01097001FC393 /* libz.tbd */,
 				637E5A1520D0108F001FC393 /* libc++.tbd */,
@@ -1609,17 +1506,6 @@
 				63A69D6B2151B32B0077553F /* PPDevicePictureFrameAlert.m */,
 			);
 			path = PictureFrames;
-			sourceTree = "<group>";
-		};
-		636B4455248AECEF00124F6A /* DSYM */ = {
-			isa = PBXGroup;
-			children = (
-				63B9B14B248C1DC00056E7CE /* Realm.framework.dSYM */,
-				636B445A248AF13400124F6A /* AFNetworking.framework.dSYM */,
-				636B4452248AECDB00124F6A /* UICKeyChainStore.framework.dSYM */,
-				636B4462248AF37600124F6A /* KissXML.framework.dSYM */,
-			);
-			name = DSYM;
 			sourceTree = "<group>";
 		};
 		636B4627248AF7A300124F6A /* Data */ = {
@@ -2159,7 +2045,6 @@
 				63D392BF204F21EE00041C1A /* Peoplepower */,
 				63D3930D204F39D700041C1A /* Resources */,
 				63C8A0AA2059FCEA00256F37 /* Peoplepower-Tests */,
-				636B4455248AECEF00124F6A /* DSYM */,
 				63D392BE204F21EE00041C1A /* Products */,
 				63475E3B2069CFCF009BCDED /* Frameworks */,
 			);
@@ -2995,14 +2880,6 @@
 				63BEC9A720C5D2AA00408494 /* Sources */,
 				63BEC9A820C5D2AA00408494 /* Frameworks */,
 				63BEC9AA20C5D2AA00408494 /* Resources */,
-				63BECBC520C5F10600408494 /* CopyFiles */,
-				63BECBB720C5F07200408494 /* CopyFiles */,
-				63BECBC020C5F0E400408494 /* CopyFiles */,
-				63BECBB420C5EF6200408494 /* CopyFiles */,
-				63BECBB020C5EEFD00408494 /* CopyFiles */,
-				63BECBAF20C5ED3F00408494 /* Run Script */,
-				636B4448248AE97200124F6A /* Carthage */,
-				636B4451248AECB900124F6A /* Carthage DSYM */,
 			);
 			buildRules = (
 			);
@@ -3020,7 +2897,7 @@
 				63BEC9B020C5D2AB00408494 /* Sources */,
 				63BEC9B120C5D2AB00408494 /* Frameworks */,
 				63BEC9B220C5D2AB00408494 /* Resources */,
-				631A7AA2248B137F00D86CFF /* Carthage */,
+				636DCC3F24947CAF000560E8 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -3084,7 +2961,6 @@
 				63E62AB7249196B30038A694 /* Peoplepower-Resources.podspec in Resources */,
 				631A7AA3248B151600D86CFF /* UnitTests.plist in Resources */,
 				631A7AA6248B16DD00D86CFF /* Peoplepower-Info.plist in Resources */,
-				636B4463248AF37700124F6A /* KissXML.framework.dSYM in Resources */,
 				631A7AA7248B16E000D86CFF /* Peoplepower-Framework-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3321,63 +3197,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		631A7AA2248B137F00D86CFF /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/OHHTTPStubs.framework",
-			);
-			name = Carthage;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/OHHTTPStubs.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-		636B4448248AE97200124F6A /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"$(SRCROOT)/input.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = Carthage;
-			outputFileListPaths = (
-				"$(SRCROOT)/output.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-		63BECBAF20C5ED3F00408494 /* Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# \n# # define output folder environment variable\n# UNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\n# \n# if [ \"${ACTION}\" = \"build\" ]\n# then\n# # Set the target folders and the final framework product.\n# INSTALL_DIR=${BUILD_DIR}/${CONFIGURATION}-universal/${PROJECT_NAME}_Framework.framework\n# DEVICE_DIR=${BUILD_DIR}/${CONFIGURATION}-iphoneos\n# SIMULATOR_DIR=${BUILD_DIR}/${CONFIGURATION}-iphonesimulator\n# \n# # Create and renews the final product folder.\n# mkdir -p \"${INSTALL_DIR}\"\n# rm -rf \"${INSTALL_DIR}\"\n# rm -rf \"${INSTALL_DIR}/${PROJECT_NAME}\"\n# \n# # Copy the header files to the final product folder.\n# ditto \"${DEVICE_DIR}/${PROJECT_NAME}.framework/Headers\" \"${INSTALL_DIR}/Headers\"\n# \n# # Copy the code signature files to the final product folder.\n# ditto \"${DEVICE_DIR}/${PROJECT_NAME}.framework/_CodeSignature\" \"${INSTALL_DIR}/_CodeSignature\"\n# \n# # Copy the plist file to the final product folder.\n# ditto \"${DEVICE_DIR}/${PROJECT_NAME}.framework/Info.plist\" \"${INSTALL_DIR}/Info.plist\"\n# \n# # Use the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.\n# lipo -create \"${DEVICE_DIR}/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${SIMULATOR_DIR}/${PROJECT_NAME}.framework/${PROJECT_NAME}\" -output \"${INSTALL_DIR}/${PROJECT_NAME}\"\n# fi\n# \n# # Last touch. copy the header files. Just for convenience\n# cp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/include\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n# \n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		63BEC9A720C5D2AA00408494 /* Sources */ = {
@@ -3673,11 +3492,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "Resources/Peoplepower-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower;
@@ -3713,11 +3528,7 @@
 				FRAMEWORK_VERSION = "$(inherited)";
 				INFOPLIST_FILE = "Resources/Peoplepower-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower;
@@ -3750,11 +3561,7 @@
 				FRAMEWORK_VERSION = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "Resources/Peoplepower-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.peoplepowerco.lib.Peoplepower-Framework-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3785,11 +3592,7 @@
 				FRAMEWORK_VERSION = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "Resources/Peoplepower-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.peoplepowerco.lib.Peoplepower-Framework-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
