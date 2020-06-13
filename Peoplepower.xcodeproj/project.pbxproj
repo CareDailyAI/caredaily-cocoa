@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		6309B76120E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.h in Headers */ = {isa = PBXBuildFile; fileRef = 6309B75F20E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6309B76220E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 6309B76020E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.m */; };
+		630EB9A824948778002D5614 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630EB9A324948777002D5614 /* OHHTTPStubs.framework */; };
+		630EB9A924948778002D5614 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630EB9A424948777002D5614 /* AFNetworking.framework */; };
+		630EB9AA24948778002D5614 /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630EB9A524948777002D5614 /* KissXML.framework */; };
+		630EB9AB24948778002D5614 /* SocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630EB9A624948777002D5614 /* SocketRocket.framework */; };
+		630EB9AC24948778002D5614 /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630EB9A724948777002D5614 /* UICKeyChainStore.framework */; };
+		630EB9AD2494878B002D5614 /* AFNetworking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 630EB9A424948777002D5614 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		630EB9AE2494878B002D5614 /* KissXML.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 630EB9A524948777002D5614 /* KissXML.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		630EB9AF2494878B002D5614 /* OHHTTPStubs.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 630EB9A324948777002D5614 /* OHHTTPStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		630EB9B02494878B002D5614 /* SocketRocket.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 630EB9A624948777002D5614 /* SocketRocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		630EB9B12494878B002D5614 /* UICKeyChainStore.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 630EB9A724948777002D5614 /* UICKeyChainStore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		631152E321E817BD00DA7755 /* PPTHConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 631152DE21E7FB8400DA7755 /* PPTHConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		631A7AA3248B151600D86CFF /* UnitTests.plist in Resources */ = {isa = PBXBuildFile; fileRef = 636B47F1248AFA7B00124F6A /* UnitTests.plist */; };
 		631A7AA6248B16DD00D86CFF /* Peoplepower-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63A9524E205AFC15000E466A /* Peoplepower-Info.plist */; };
@@ -716,6 +726,11 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				630EB9AD2494878B002D5614 /* AFNetworking.framework in CopyFiles */,
+				630EB9AE2494878B002D5614 /* KissXML.framework in CopyFiles */,
+				630EB9AF2494878B002D5614 /* OHHTTPStubs.framework in CopyFiles */,
+				630EB9B02494878B002D5614 /* SocketRocket.framework in CopyFiles */,
+				630EB9B12494878B002D5614 /* UICKeyChainStore.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -724,6 +739,11 @@
 /* Begin PBXFileReference section */
 		6309B75F20E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPDeviceTypeDeviceModelLookupParam.h; sourceTree = "<group>"; };
 		6309B76020E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPDeviceTypeDeviceModelLookupParam.m; sourceTree = "<group>"; };
+		630EB9A324948777002D5614 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
+		630EB9A424948777002D5614 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
+		630EB9A524948777002D5614 /* KissXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KissXML.framework; path = Carthage/Build/iOS/KissXML.framework; sourceTree = "<group>"; };
+		630EB9A624948777002D5614 /* SocketRocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SocketRocket.framework; path = Carthage/Build/iOS/SocketRocket.framework; sourceTree = "<group>"; };
+		630EB9A724948777002D5614 /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICKeyChainStore.framework; path = Carthage/Build/iOS/UICKeyChainStore.framework; sourceTree = "<group>"; };
 		631152DE21E7FB8400DA7755 /* PPTHConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPTHConstants.h; sourceTree = "<group>"; };
 		6313EBF420655DC90017EF74 /* PPNotificationToken.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPNotificationToken.h; sourceTree = "<group>"; };
 		6313EBF520655DC90017EF74 /* PPNotificationToken.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPNotificationToken.m; sourceTree = "<group>"; };
@@ -1440,6 +1460,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				630EB9A824948778002D5614 /* OHHTTPStubs.framework in Frameworks */,
+				630EB9A924948778002D5614 /* AFNetworking.framework in Frameworks */,
+				630EB9AA24948778002D5614 /* KissXML.framework in Frameworks */,
+				630EB9AB24948778002D5614 /* SocketRocket.framework in Frameworks */,
+				630EB9AC24948778002D5614 /* UICKeyChainStore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1462,6 +1487,11 @@
 		63475E3B2069CFCF009BCDED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				630EB9A424948777002D5614 /* AFNetworking.framework */,
+				630EB9A524948777002D5614 /* KissXML.framework */,
+				630EB9A324948777002D5614 /* OHHTTPStubs.framework */,
+				630EB9A624948777002D5614 /* SocketRocket.framework */,
+				630EB9A724948777002D5614 /* UICKeyChainStore.framework */,
 				636B47E9248AF9EF00124F6A /* Foundation.framework */,
 				6370D11F22611D34000C3B70 /* UIKit.framework */,
 				637E5A1720D01097001FC393 /* libz.tbd */,
