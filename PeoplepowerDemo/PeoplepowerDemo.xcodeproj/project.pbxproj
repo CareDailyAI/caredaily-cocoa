@@ -14,6 +14,7 @@
 		630EB99C24948298002D5614 /* Peoplepower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63E62AC42491A4060038A694 /* Peoplepower.framework */; };
 		630EB99E24948298002D5614 /* SocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631A7AEF248B3AB800D86CFF /* SocketRocket.framework */; };
 		630EB9A024948298002D5614 /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631A7AF3248B3AB800D86CFF /* UICKeyChainStore.framework */; };
+		630EB9B5249489C0002D5614 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630EB9B4249489C0002D5614 /* Realm.framework */; };
 		631A7AB7248B376500D86CFF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 631A7AB6248B376500D86CFF /* AppDelegate.m */; };
 		631A7ABA248B376500D86CFF /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 631A7AB9248B376500D86CFF /* SceneDelegate.m */; };
 		631A7ABD248B376500D86CFF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631A7ABC248B376500D86CFF /* ViewController.m */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		2F534E53D235EE0405015FFD /* Pods-PeoplepowerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeoplepowerDemo.debug.xcconfig"; path = "Target Support Files/Pods-PeoplepowerDemo/Pods-PeoplepowerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		630EB9B4249489C0002D5614 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		631A7AB2248B376500D86CFF /* PeoplepowerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeoplepowerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		631A7AB5248B376500D86CFF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		631A7AB6248B376500D86CFF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				630EB99A24948298002D5614 /* OHHTTPStubs.framework in Frameworks */,
 				630EB99824948298002D5614 /* KissXML.framework in Frameworks */,
 				630EB99624948298002D5614 /* AFNetworking.framework in Frameworks */,
+				630EB9B5249489C0002D5614 /* Realm.framework in Frameworks */,
 				630EB99C24948298002D5614 /* Peoplepower.framework in Frameworks */,
 				630EB99E24948298002D5614 /* SocketRocket.framework in Frameworks */,
 				03E6D12E7797007BC11F6BF3 /* libPods-PeoplepowerDemo.a in Frameworks */,
@@ -171,6 +174,7 @@
 		631A7AED248B3AB800D86CFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				630EB9B4249489C0002D5614 /* Realm.framework */,
 				63E62AC42491A4060038A694 /* Peoplepower.framework */,
 				631A7AF1248B3AB800D86CFF /* AFNetworking.framework */,
 				631A7AEE248B3AB800D86CFF /* KissXML.framework */,
