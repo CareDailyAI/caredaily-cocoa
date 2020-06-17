@@ -19,13 +19,30 @@
 }
 
 + (NSDate *)parseDateTime:(NSString *)dateString {
-    return [[[NSISO8601DateFormatter alloc] init] dateFromString:dateString];
+    NSDate *date = [[[NSISO8601DateFormatter alloc] init] dateFromString:dateString];
+    if (date == nil) {
+        NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+        NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+        [dateFormatter setLocale:enUSPOSIXLocale];
+        dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ";
+        date = [dateFormatter dateFromString:dateString];
+    }
+    return (date != nil) ? date : [NSDate now];
 }
 
 + (NSDate *)parseDateTime:(NSString *)dateString timeZone:(NSTimeZone *)timeZone {
     NSISO8601DateFormatter *formatter = [[NSISO8601DateFormatter alloc] init];
     [formatter setTimeZone:timeZone];
-    return  [formatter dateFromString:dateString];
+    NSDate *date = [formatter dateFromString:dateString];
+    if (date == nil) {
+        NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+        NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+        [dateFormatter setLocale:enUSPOSIXLocale];
+        [dateFormatter setTimeZone:timeZone];
+        dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ";
+        date = [dateFormatter dateFromString:dateString];
+    }
+    return (date != nil) ? date : [NSDate now];
 }
 
 /*
