@@ -977,18 +977,10 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
         NSMutableDictionary *data = @{}.mutableCopy;
         
         if(emails) {
-            NSMutableArray *emails = @[].mutableCopy;
-            for(NSString *email in emails) {
-                [emails addObject:email];
-            }
             data[@"emails"] = emails;
         }
         
         if(phones) {
-            NSMutableArray *phones = @[].mutableCopy;
-            for(NSString *phone in phones) {
-                [phones addObject:phone];
-            }
             data[@"phones"] = phones;
         }
         
