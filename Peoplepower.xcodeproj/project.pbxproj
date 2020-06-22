@@ -305,6 +305,8 @@
 		636DCC1624940463000560E8 /* PPTCAppResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636DCC1524940463000560E8 /* PPTCAppResources.swift */; };
 		6372B66521349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 6372B66321349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6372B66621349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6372B66421349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.m */; };
+		637931F224A14F8B0007D70C /* RLMRealm+PPExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 637931F024A14F8B0007D70C /* RLMRealm+PPExtras.m */; };
+		637931F324A14F8B0007D70C /* RLMRealm+PPExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = 637931F124A14F8B0007D70C /* RLMRealm+PPExtras.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		637D0F2320C761A2003710AF /* PPDeviceParameterRobotVantagePoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 637D0F2120C761A2003710AF /* PPDeviceParameterRobotVantagePoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		637D0F2520C761A2003710AF /* PPDeviceParameterRobotVantagePoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 637D0F2220C761A2003710AF /* PPDeviceParameterRobotVantagePoint.m */; };
 		637D0F3220C85CFE003710AF /* PPInAppMessageParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 637D0F3020C85CFE003710AF /* PPInAppMessageParameters.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1139,6 +1141,8 @@
 		6370D11F22611D34000C3B70 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6372B66321349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPDeviceTypeParameterDisplayInfo.h; sourceTree = "<group>"; };
 		6372B66421349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPDeviceTypeParameterDisplayInfo.m; sourceTree = "<group>"; };
+		637931F024A14F8B0007D70C /* RLMRealm+PPExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RLMRealm+PPExtras.m"; sourceTree = "<group>"; };
+		637931F124A14F8B0007D70C /* RLMRealm+PPExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RLMRealm+PPExtras.h"; sourceTree = "<group>"; };
 		637A632B206C44B000F7876D /* Peoplepower-Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Peoplepower-Config.plist"; sourceTree = "<group>"; };
 		637D0F2120C761A2003710AF /* PPDeviceParameterRobotVantagePoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPDeviceParameterRobotVantagePoint.h; sourceTree = "<group>"; };
 		637D0F2220C761A2003710AF /* PPDeviceParameterRobotVantagePoint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPDeviceParameterRobotVantagePoint.m; sourceTree = "<group>"; };
@@ -2181,6 +2185,8 @@
 				63B9B138248C0D5C0056E7CE /* PPRLMDictionary.m */,
 				63B9B13A248C0D5C0056E7CE /* RLMObject+PPExtras.h */,
 				63B9B136248C0D5B0056E7CE /* RLMObject+PPExtras.m */,
+				637931F124A14F8B0007D70C /* RLMRealm+PPExtras.h */,
+				637931F024A14F8B0007D70C /* RLMRealm+PPExtras.m */,
 				63D3933D204F420E00041C1A /* PPNSString.h */,
 				63D3933E204F420E00041C1A /* PPNSString.m */,
 				63D39378204F464600041C1A /* PPNSDate.h */,
@@ -2741,6 +2747,7 @@
 				63BECACD20C5D88400408494 /* PPNotificationEmailMessage.h in Headers */,
 				63BECAD320C5D88400408494 /* PPCrowdFeedbacks.h in Headers */,
 				63BECAEC20C5D8A800408494 /* PPRuleComponentTrigger.h in Headers */,
+				637931F324A14F8B0007D70C /* RLMRealm+PPExtras.h in Headers */,
 				63BECAB320C5D88400408494 /* PPDeviceProxy.h in Headers */,
 				63BECB2520C5D8E600408494 /* PPCloudsIntegrationHost.h in Headers */,
 				63BECAA520C5D88400408494 /* PPLocationOccupantsRange.h in Headers */,
@@ -3377,6 +3384,7 @@
 				63BECA7620C5D6E500408494 /* PPOrganizations.m in Sources */,
 				63BECA0B20C5D6A100408494 /* PPNotificationToken.m in Sources */,
 				63BECA4F20C5D6C300408494 /* PPDeviceTypeAttributeOption.m in Sources */,
+				637931F224A14F8B0007D70C /* RLMRealm+PPExtras.m in Sources */,
 				63BECA5220C5D6C300408494 /* PPDeviceTypeRuleComponentTemplateProduct.m in Sources */,
 				63BECA3120C5D6A100408494 /* PPStoreProduct.m in Sources */,
 				63BEC9F720C5D67500408494 /* PPWebSocketConfiguration.m in Sources */,

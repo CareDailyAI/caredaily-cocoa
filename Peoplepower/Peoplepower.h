@@ -152,5 +152,6 @@ FOUNDATION_EXPORT const unsigned char PeoplepowerVersionString[];
 #import <Peoplepower/PPNSDate.h>
 #import <Peoplepower/PPNSData.h>
 #import <Peoplepower/RLMObject+PPExtras.h>
+#import <Peoplepower/RLMRealm+PPExtras.h>
 #import <Peoplepower/PPRLMArray.h>
 #import <Peoplepower/PPRLMDictionary.h>
