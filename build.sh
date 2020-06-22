@@ -7,7 +7,7 @@ echo 'git "'$FRAMEWORK_PATH'" "master"' > PeoplepowerDemo/Cartfile
 cd PeoplepowerDemo
 
 # Install Carthage
-carthage update --platform iOS
+carthage update --platform iOS --cache-builds
 
 # Install Cocoapods
 pod install
