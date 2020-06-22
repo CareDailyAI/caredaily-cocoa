@@ -60,7 +60,7 @@ __strong static PPOrganizations *_sharedObject = nil;
     
     // Create a custom admin cloud engine.  API key is not needed
     PPCloudEngine *adminEngine = [[PPCloudEngine alloc] initSingleton:PPCloudEngineTypeAdmin];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.organizations.getOrganizations()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.organizations.getOrganizations()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [adminEngine GET:request success:^(NSData *responseData) {
@@ -132,7 +132,7 @@ __strong static PPOrganizations *_sharedObject = nil;
     if(billsStartDate) {
         [request appendFormat:@"startDate=%@&", [PPNSString stringByAddingURIPercentEscapesUsingEncoding:NSUTF8StringEncoding toString:[PPNSDate apiFriendStringFromDate:billsStartDate]]];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.organizations.getGroups()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.organizations.getGroups()", DISPATCH_QUEUE_SERIAL);
     [[PPCloudEngine sharedAdminEngine] setCompleteionQueue:queue];
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
@@ -212,7 +212,7 @@ __strong static PPOrganizations *_sharedObject = nil;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAdminEngine] getRequestSerializer] requestWithMethod:@"PUT" URLString:[NSURL URLWithString:urlString relativeToURL:[[PPCloudEngine sharedAdminEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     
     [request setHTTPBody:[JSONString dataUsingEncoding:NSUTF8StringEncoding]];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.organizations.joinOrganization()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.organizations.joinOrganization()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAdminEngine] operationWithRequest:request success:^(NSData *responseData) {

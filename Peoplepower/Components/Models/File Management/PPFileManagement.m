@@ -250,7 +250,7 @@
         [request setHTTPBody:data];
         [request setValue:[NSString stringWithFormat:@"%li", (long)data.length] forHTTPHeaderField:HTTP_HEADER_CONTENT_LENGTH];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.filemanagement.uploadNewFile()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.filemanagement.uploadNewFile()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -372,7 +372,7 @@
     if(searchTag) {
         [requestString appendFormat:@"searchTag=%@&", searchTag];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.filemanagement.getFiles()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.filemanagement.getFiles()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -447,7 +447,7 @@
     if(locationId != PPLocationIdNone) {
         [requestString appendFormat:@"locationId=%li&", (long)locationId];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.filemanagement.deleteAllFiles()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.filemanagement.deleteAllFiles()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -516,7 +516,7 @@
     if(deviceDescription) {
         [requestString appendFormat:@"deviceDescription=%@&", [PPNSString stringByAddingURIPercentEscapesUsingEncoding:NSUTF8StringEncoding toString:deviceDescription]];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.filemanagement.getLastNFiles()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.filemanagement.getLastNFiles()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -624,7 +624,7 @@
     [request setHTTPBody:data];
     [request setValue:[NSString stringWithFormat:@"%li", (long)data.length] forHTTPHeaderField:HTTP_HEADER_CONTENT_LENGTH];
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.filemanagement.uploadFileFragment()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.filemanagement.uploadFileFragment()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -740,7 +740,7 @@
     if(range.location != 0 && range.length != 0) {
         [request setValue:[NSString stringWithFormat:@"bytes=%li-%li", (long)range.location, (long)range.length] forHTTPHeaderField:HTTP_HEADER_RANGE];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.filemanagement.downloadFile()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.filemanagement.downloadFile()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -812,7 +812,7 @@
     if(expiration != PPFileURLExpirationNone) {
         [requestString appendFormat:@"expiration=%@&", (expiration) ? @"true" : @"false"];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.filemanagement.getDownloadURL()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.filemanagement.getDownloadURL()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -896,7 +896,7 @@
     NSError *error;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"PUT" URLString:[NSURL URLWithString:requestString relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:[JSONString dataUsingEncoding:NSUTF8StringEncoding]];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.filemanagement.updateFileAttribute()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.filemanagement.updateFileAttribute()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -939,7 +939,7 @@
     if(locationId != PPLocationIdNone) {
         [requestString appendFormat:@"locationId=%li&", (long)locationId];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.filemanagement.deleteFile()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.filemanagement.deleteFile()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -1021,7 +1021,7 @@
     if(endDate) {
         [requestString appendFormat:@"endDate=%@&", [PPNSString stringByAddingURIPercentEscapesUsingEncoding:NSUTF8StringEncoding toString:[PPNSDate apiFriendStringFromDate:endDate]]];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.filemanagement.getAggregatedListOfFiles()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.filemanagement.getAggregatedListOfFiles()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -1114,7 +1114,7 @@
     if(locationId != PPLocationIdNone) {
         [requestString appendFormat:@"locationId=%li&", (long)locationId];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.filemanagement.getListOfFileDevices()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.filemanagement.getListOfFileDevices()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -1184,7 +1184,7 @@
         cloudEngine = [[PPCloudEngine alloc] initSingleton:PPCloudEngineTypeApp];
     }
     NSMutableURLRequest *request = [[cloudEngine getRequestSerializer] requestWithMethod:@"GET" URLString:[NSURL URLWithString:requestString relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.filemanagement.getFileInformation()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.filemanagement.getFileInformation()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -1255,7 +1255,7 @@
     if(locationId != PPLocationIdNone) {
         [requestString appendFormat:@"locationId=%li&", (long)locationId];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.filemanagement.applyTag()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.filemanagement.applyTag()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -1304,7 +1304,7 @@
     if(locationId != PPLocationIdNone) {
         [requestString appendFormat:@"locationId=%li&", (long)locationId];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.filemanagement.deleteTag()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.filemanagement.deleteTag()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -1362,7 +1362,7 @@
         cloudEngine = [[PPCloudEngine alloc] initSingleton:PPCloudEngineTypeApp];
     }
     NSMutableURLRequest *request = [[cloudEngine getRequestSerializer] requestWithMethod:@"PUT" URLString:[NSURL URLWithString:requestString relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.filemanagement.reportAbuse()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.filemanagement.reportAbuse()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -1421,7 +1421,7 @@
     [request setValue:contentType forHTTPHeaderField:HTTP_HEADER_CONTENT_TYPE];
     [request setHTTPBody:data];
     [request setValue:[NSString stringWithFormat:@"%li", (long)data.length] forHTTPHeaderField:HTTP_HEADER_CONTENT_LENGTH];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.filemanagement.uploadS3File()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.filemanagement.uploadS3File()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         

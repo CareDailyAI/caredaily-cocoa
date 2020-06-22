@@ -95,7 +95,7 @@
  **/
 + (void)getThirdPartyClouds:(PPCloudsIntegrationCloudsCallback)callback {
     NSMutableString *requestString = [[NSMutableString alloc] initWithString:@"authorize?"];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.cloudsintegration.getThirdPartyClouds()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.cloudsintegration.getThirdPartyClouds()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {
@@ -195,7 +195,7 @@
     if(userId != PPUserIdNone) {
         [requestString appendFormat:@"userId=%li&", (long)userId];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.cloudsintegration.revokeAccessToThirdyPartyCloud()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.cloudsintegration.revokeAccessToThirdyPartyCloud()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] DELETE:requestString success:^(NSData *responseData) {
@@ -369,7 +369,7 @@
         
         [request setHTTPBody:[dataString dataUsingEncoding:NSUTF8StringEncoding]];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.cloudsintegration.getAccessToken()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.cloudsintegration.getAccessToken()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedDefaultEngine] operationWithRequest:request success:^(NSData *responseData) {
@@ -463,7 +463,7 @@
     NSError *error;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"POST" URLString:[NSURL URLWithString:requestString relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:[JSONString dataUsingEncoding:NSUTF8StringEncoding]];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.cloudsintegration.updateOauthClien()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.cloudsintegration.updateOauthClien()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedDefaultEngine] operationWithRequest:request success:^(NSData *responseData) {
@@ -509,7 +509,7 @@
     if(userId != PPUserIdNone) {
         [requestString appendFormat:@"user_id=%li&", (long)userId];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.cloudsintegration.revokeOAuthClien()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.cloudsintegration.revokeOAuthClien()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] DELETE:requestString success:^(NSData *responseData) {

@@ -106,7 +106,7 @@
     if(version) {
         [requestString appendFormat:@"version=%@&", version];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.dynamicuis.getDynamicUI()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.dynamicuis.getDynamicUI()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     
@@ -179,7 +179,7 @@
     if(userId != PPUserIdNone) {
         [requestString appendFormat:@"userId=%li", (long)userId];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.dynamicuis.getLocationTotals()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.dynamicuis.getLocationTotals()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     

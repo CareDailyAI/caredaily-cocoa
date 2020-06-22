@@ -179,7 +179,7 @@
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.deviceMeasurements.getCurrentMeasurements()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.deviceMeasurements.getCurrentMeasurements()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -285,7 +285,7 @@
     NSError *error;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"PUT" URLString:[NSURL URLWithString:components.string relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:body];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.deviceMeasurements.sendCommand()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.deviceMeasurements.sendCommand()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -368,7 +368,7 @@
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.deviceMeasurements.getMeasurementsWithSearchTerms()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.deviceMeasurements.getMeasurementsWithSearchTerms()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -478,7 +478,7 @@
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"PUT" URLString:[NSURL URLWithString:components.string relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:body];
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.deviceMeasurements.sendSetCommands()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.deviceMeasurements.sendSetCommands()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -595,7 +595,7 @@
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.deviceMeasurements.getHistoryOfMeasurements()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.deviceMeasurements.getHistoryOfMeasurements()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -688,7 +688,7 @@
     }
     components.queryItems = queryItems;
               
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.deviceMeasurements.getLastNMeasurements()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.deviceMeasurements.getLastNMeasurements()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -770,7 +770,7 @@
     
     
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.deviceMeasurements.getHistoryOfAlerts()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.deviceMeasurements.getHistoryOfAlerts()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -872,7 +872,7 @@
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"POST" URLString:[NSURL URLWithString:components.string relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:body];
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.deviceMeasurements.submitDataRequest()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.deviceMeasurements.submitDataRequest()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     
@@ -923,7 +923,7 @@
 + (void)getUnitsOfMeasurement:(PPDeviceMeasurementsUnitsBlock)callback {
     NSURLComponents *components = [NSURLComponents componentsWithString:@"units"];
 
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.deviceMeasurements.getUnitsOfMeasurements()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.deviceMeasurements.getUnitsOfMeasurements()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         

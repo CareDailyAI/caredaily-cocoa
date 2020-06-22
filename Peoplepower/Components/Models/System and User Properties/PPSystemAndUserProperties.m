@@ -168,7 +168,7 @@ NSString *SYSTEM_PROPERTY_COMMUNITY_POST_FILE_CONTENT_LIMIT = @"ppc.communityPos
 + (void)getUserOrSystemProperty:(NSString *)propertyName isPublic:(PPSystemPropertyPublic)isPublic callback:(PPNSStringBlock)callback {
     NSURLComponents *components = [NSURLComponents componentsWithString:[NSString stringWithFormat:@"systemProperty/%@", propertyName]];
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.systemanduserproperties.getUserOrSystemProperty()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.systemanduserproperties.getUserOrSystemProperty()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -224,7 +224,7 @@ NSString *SYSTEM_PROPERTY_COMMUNITY_POST_FILE_CONTENT_LIMIT = @"ppc.communityPos
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.systemanduserproperties.getUserProperties()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.systemanduserproperties.getUserProperties()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -300,7 +300,7 @@ NSString *SYSTEM_PROPERTY_COMMUNITY_POST_FILE_CONTENT_LIMIT = @"ppc.communityPos
     NSError *error;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"POST" URLString:[NSURL URLWithString:components.string relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:body];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.systemanduserproperties.updateMultipleUserProperties()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.systemanduserproperties.updateMultipleUserProperties()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -355,7 +355,7 @@ NSString *SYSTEM_PROPERTY_COMMUNITY_POST_FILE_CONTENT_LIMIT = @"ppc.communityPos
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.systemanduserproperties.getUserProperty()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.systemanduserproperties.getUserProperty()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -413,7 +413,7 @@ NSString *SYSTEM_PROPERTY_COMMUNITY_POST_FILE_CONTENT_LIMIT = @"ppc.communityPos
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.systemanduserproperties.updateSingleUserProperty()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.systemanduserproperties.updateSingleUserProperty()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         

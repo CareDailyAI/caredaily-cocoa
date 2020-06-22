@@ -60,7 +60,7 @@
         [request setValue:encodedPasscode forHTTPHeaderField:HTTP_HEADER_PASSCODE];
     }
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.login.loginWithUsername()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.login.loginWithUsername()", DISPATCH_QUEUE_SERIAL);
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     
     [[PPCloudEngine sharedAppEngine] operationWithRequest:request success:^(NSData *responseData) {
@@ -152,7 +152,7 @@
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.login.sendPasscode()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.login.sendPasscode()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -227,7 +227,7 @@
         [request setValue:key forHTTPHeaderField:HTTP_HEADER_API_KEY];
     }
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.login.loginWithKey()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.login.loginWithKey()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     

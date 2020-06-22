@@ -153,7 +153,7 @@
 
     [request setValue:contentType forHTTPHeaderField:HTTP_HEADER_CONTENT_TYPE];
     [request setHTTPBody:data];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.applicationfilemanagement.uploadFile()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.applicationfilemanagement.uploadFile()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -246,7 +246,7 @@
     else {
         cloudEngine = [[PPCloudEngine alloc] initSingleton:PPCloudEngineTypeApp];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.applicationfilemanagement.getFiles()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.applicationfilemanagement.getFiles()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -349,7 +349,7 @@
     if(range.location != 0 && range.length != 0) {
         [request setValue:[NSString stringWithFormat:@"bytes=%li-%li", (long)range.location, (long)range.length] forHTTPHeaderField:HTTP_HEADER_RANGE];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.applicationfilemanagement.downloadFile()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.applicationfilemanagement.downloadFile()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -415,7 +415,7 @@
     if(locationId != PPLocationIdNone) {
         [requestString appendFormat:@"locationId=%li&", (long)locationId];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.applicationfilemanagement.deleteFile()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.applicationfilemanagement.deleteFile()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         

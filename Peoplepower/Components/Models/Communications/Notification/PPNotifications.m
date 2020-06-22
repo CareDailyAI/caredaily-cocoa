@@ -259,7 +259,7 @@ __strong static NSMutableDictionary*_sharedTokens = nil;
  **/
 + (void)getNotificationSubscriptions:(PPNotificationSubscriptionsBlock)callback {
     NSURLComponents *components = [NSURLComponents componentsWithString:@"notificationSubscriptions"];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.communications.notifications.getNotificationSubscription()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.communications.notifications.getNotificationSubscription()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -338,7 +338,7 @@ __strong static NSMutableDictionary*_sharedTokens = nil;
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.communications.notifications.setNotificationSubscription()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.communications.notifications.setNotificationSubscription()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -389,7 +389,7 @@ __strong static NSMutableDictionary*_sharedTokens = nil;
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.communications.notifications.registerAnAppForPushNotifications()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.communications.notifications.registerAnAppForPushNotifications()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -430,7 +430,7 @@ __strong static NSMutableDictionary*_sharedTokens = nil;
     NSAssert1(notificationToken != nil, @"%s missing notificationToken", __FUNCTION__);
     NSURLComponents *components = [NSURLComponents componentsWithString:[NSString stringWithFormat:@"notificationToken/%@", notificationToken]];
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.communications.notifications.unregisterAnAppForPushNotifications()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.communications.notifications.unregisterAnAppForPushNotifications()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -511,7 +511,7 @@ __strong static NSMutableDictionary*_sharedTokens = nil;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"POST" URLString:[NSURL URLWithString:components.string relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:body];
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.communications.notifications.sendNotification()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.communications.notifications.sendNotification()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -564,7 +564,7 @@ __strong static NSMutableDictionary*_sharedTokens = nil;
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.communications.notifications.getNotifications()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.communications.notifications.getNotifications()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         

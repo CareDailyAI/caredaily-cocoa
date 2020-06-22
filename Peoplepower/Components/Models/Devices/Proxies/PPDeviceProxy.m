@@ -599,7 +599,7 @@ __strong static PPDeviceProxy *_currentProxy = nil;
 //    if(_localDevice.device == nil) {
 //        _localDevice.device = [PPDevices localDeviceForLocation:[[PPUserAccounts currentUser] currentLocation] userId:[PPUserAccounts currentUser].userId];
 //    }
-	dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.proxy", DISPATCH_QUEUE_SERIAL);
+	dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.proxy", DISPATCH_QUEUE_SERIAL);
 	dispatch_async(queue, ^{
         
         PPCloudEngine *cloudEngine = [[PPCloudEngine alloc] initWithBaseURL:baseUrl];
@@ -907,7 +907,7 @@ __strong static PPDeviceProxy *_currentProxy = nil;
     __block NSString *proxyDeviceId = device.deviceId;
     __block NSURL *baseUrl = [[PPCloudEngine sharedProxyEngine] getBaseURL];
 
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.proxy", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.proxy", DISPATCH_QUEUE_SERIAL);
     dispatch_async(queue, ^{
         
         PPCloudEngine *cloudEngine = [[PPCloudEngine alloc] initWithBaseURL:baseUrl];

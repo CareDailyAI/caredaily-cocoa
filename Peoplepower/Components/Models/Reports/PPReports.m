@@ -26,7 +26,7 @@
     if(alertType) {
         [requestString appendFormat:@"alertType=%@&", alertType];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.reports.getTotalDeviceAlerts()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.reports.getTotalDeviceAlerts()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedReportEngine] GET:requestString success:^(NSData *responseData) {
