@@ -245,7 +245,7 @@ __strong static NSMutableDictionary*_sharedCallCenterAlerts = nil;
     if(userId != PPUserIdNone) {
         [requestString appendFormat:@"userId=%li&", (long)userId];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.profesionalmonitoring.getCallCenter()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.profesionalmonitoring.getCallCenter()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {
@@ -310,7 +310,7 @@ __strong static NSMutableDictionary*_sharedCallCenterAlerts = nil;
     NSError *error;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"PUT" URLString:[NSURL URLWithString:requestString relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:[JSONString dataUsingEncoding:NSUTF8StringEncoding]];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.profesionalmonitoring.updateCallCenter()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.profesionalmonitoring.updateCallCenter()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] operationWithRequest:request success:^(NSData *responseData) {
@@ -366,7 +366,7 @@ __strong static NSMutableDictionary*_sharedCallCenterAlerts = nil;
     if(locationId != PPLocationIdNone) {
         [requestString appendFormat:@"locationId=%li&", (long)locationId];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.profesionalmonitoring.cancelCallCenter()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.profesionalmonitoring.cancelCallCenter()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] DELETE:requestString success:^(NSData *responseData) {
@@ -415,7 +415,7 @@ __strong static NSMutableDictionary*_sharedCallCenterAlerts = nil;
     if(locationId != PPLocationIdNone) {
         [requestString appendFormat:@"locationId=%li&", (long)locationId];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.profesionalmonitoring.getCallCenterAlerts()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.profesionalmonitoring.getCallCenterAlerts()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {

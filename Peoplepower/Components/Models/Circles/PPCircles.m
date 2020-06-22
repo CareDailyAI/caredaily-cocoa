@@ -318,7 +318,7 @@
     NSError *error;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"POST" URLString:[NSURL URLWithString:requestString relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:[JSONString dataUsingEncoding:NSUTF8StringEncoding]];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.circles.createCircle()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.circles.createCircle()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] operationWithRequest:request success:^(NSData *responseData) {
@@ -371,7 +371,7 @@
             [requestString appendFormat:@"circleId=%@&", circleId];
         }
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.circles.getCircles()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.circles.getCircles()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {
@@ -440,7 +440,7 @@
     NSError *error;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"PUT" URLString:[NSURL URLWithString:requestString relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:[JSONString dataUsingEncoding:NSUTF8StringEncoding]];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.circles.modifyCircle()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.circles.modifyCircle()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] operationWithRequest:request success:^(NSData *responseData) {
@@ -478,7 +478,7 @@
 + (void)deleteCircle:(PPCircleId)circleId callback:(PPErrorBlock)callback {
     NSAssert1(circleId != PPCountryIdNone, @"%s missing circleId", __FUNCTION__);
     NSMutableString *requestString = [[NSMutableString alloc] initWithFormat:@"circles?circleId=%li&", (long)circleId];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.circles.deleteCircle()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.circles.deleteCircle()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] DELETE:requestString success:^(NSData *responseData) {
@@ -564,7 +564,7 @@
     NSError *error;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"POST" URLString:[NSURL URLWithString:requestString relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:[JSONString dataUsingEncoding:NSUTF8StringEncoding]];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.circles.addMembers()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.circles.addMembers()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] operationWithRequest:request success:^(NSData *responseData) {
@@ -662,7 +662,7 @@
         [request setValue:circleKey forHTTPHeaderField:HTTP_HEADER_CIRCLE_KEY];
     }
     [request setHTTPBody:[JSONString dataUsingEncoding:NSUTF8StringEncoding]];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.circles.updateMemberStatus()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.circles.updateMemberStatus()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] operationWithRequest:request success:^(NSData *responseData) {
@@ -713,7 +713,7 @@
     if(circleUserId != nil) {
         [requestString appendFormat:@"circleUserId=%@&", circleUserId];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.circles.removeMembers*(", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.circles.removeMembers*(", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] DELETE:requestString success:^(NSData *responseData) {
@@ -793,7 +793,7 @@
     
     [request setValue:contentType forHTTPHeaderField:HTTP_HEADER_CONTENT_TYPE];
     [request setHTTPBody:data];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.circles.uploadFile()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.circles.uploadFile()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] operationWithRequest:request progressBlock:^(NSProgress *progress) {
@@ -887,7 +887,7 @@
     if(endDate) {
         [requestString appendFormat:@"endDate=%@&", [PPNSString stringByAddingURIPercentEscapesUsingEncoding:NSUTF8StringEncoding toString:[PPNSDate apiFriendStringFromDate:endDate]]];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.circles.getFiles()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.circles.getFiles()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {
@@ -985,7 +985,7 @@
     
     [request setValue:contentType forHTTPHeaderField:HTTP_HEADER_CONTENT_TYPE];
     [request setHTTPBody:data];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.cirlces.uploadFileFragment()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.cirlces.uploadFileFragment()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] operationWithRequest:request progressBlock:^(NSProgress *progress) {
@@ -1085,7 +1085,7 @@
     if(range.location != 0 && range.length != 0) {
         [request setValue:[NSString stringWithFormat:@"bytes=%li-%li", (long)range.location, (long)range.length] forHTTPHeaderField:HTTP_HEADER_RANGE];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.circles.downloadFile()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.circles.downloadFile()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] operationWithRequestIncludingResponse:request success:^(NSData *responseData, NSObject *response) {
@@ -1158,7 +1158,7 @@
     if(expiration != PPFileURLExpirationNone) {
         [requestString appendFormat:@"expiration=%@&", (expiration) ? @"true" : @"false"];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.circles.getDownloadURL()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.circles.getDownloadURL()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {
@@ -1219,7 +1219,7 @@
     NSAssert1(circleId != PPCountryIdNone, @"%s missing circleId", __FUNCTION__);
     NSAssert1(fileId != PPFileIdNone, @"%s missing fileId", __FUNCTION__);
     NSMutableString *requestString = [[NSMutableString alloc] initWithFormat:@"circles/%li/files/%li?", (long)circleId, (long)fileId];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.circles.deleteFile()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.circles.deleteFile()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] DELETE:requestString success:^(NSData *responseData) {
@@ -1285,7 +1285,7 @@
     NSError *error;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"POST" URLString:[NSURL URLWithString:requestString relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:[JSONString dataUsingEncoding:NSUTF8StringEncoding]];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.circles.makePost()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.circles.makePost()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] operationWithRequest:request success:^(NSData *responseData) {
@@ -1359,7 +1359,7 @@
     if(searchText) {
         [requestString appendFormat:@"searchText=%@&", [PPNSString stringByAddingURIPercentEscapesUsingEncoding:NSUTF8StringEncoding toString:searchText]];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.circles.getPosts()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.circles.getPosts()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {
@@ -1418,7 +1418,7 @@
     NSAssert1(circleId != PPCountryIdNone, @"%s missing circleId", __FUNCTION__);
     NSAssert1(postId != PPCirclePostIdNone, @"%s missing postId", __FUNCTION__);
     NSMutableString *requestString = [[NSMutableString alloc] initWithFormat:@"circles/%li/posts?postId=%li", (long)circleId, (long)postId];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.circles.deletePost()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.circles.deletePost()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] DELETE:requestString success:^(NSData *responseData) {
@@ -1461,7 +1461,7 @@
     NSAssert1(postId != PPCirclePostIdNone, @"%s missing postId", __FUNCTION__);
     NSAssert1(type != PPCircleReactionTypeNone, @"%s missing type", __FUNCTION__);
     NSMutableString *requestString = [[NSMutableString alloc] initWithFormat:@"circles/%li/posts/%li/reactions/%li", (long)circleId, (long)postId, (long)type];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.circles.react()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.circles.react()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] PUT:requestString success:^(NSData *responseData) {
@@ -1501,7 +1501,7 @@
 + (void)getDevices:(PPCircleId)circleId callback:(PPCircleDevicesBlock)callback {
     NSAssert1(circleId != PPCountryIdNone, @"%s missing circleId", __FUNCTION__);
     NSMutableString *requestString = [[NSMutableString alloc] initWithFormat:@"circles/%li/devices?", (long)circleId];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.circles.getDevices()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.circles.getDevices()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {

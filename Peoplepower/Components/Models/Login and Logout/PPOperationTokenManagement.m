@@ -29,7 +29,7 @@
     [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"type" value:@(tokenType).stringValue]];
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.operationToken.getOperationToken()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.operationToken.getOperationToken()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         

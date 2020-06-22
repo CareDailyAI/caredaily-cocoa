@@ -584,7 +584,7 @@ __strong static PPDeviceProxy *_currentProxy = nil;
 //    if(_localDevice.device == nil) {
 //        _localDevice.device = [PPDevices localDeviceForLocation:[[PPUserAccounts currentUser] currentLocation] userId:[PPUserAccounts currentUser].userId];
 //    }
-	dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.proxy", DISPATCH_QUEUE_SERIAL);
+	dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.proxy", DISPATCH_QUEUE_SERIAL);
 	dispatch_async(queue, ^{
 		if(weakSelf.listeningToCommands || weakSelf.commandResponses.count || weakSelf.pendingMeasurements.count || weakSelf.pendingAlerts.count) {
             if(weakSelf.commandResponses.count || weakSelf.pendingMeasurements.count || weakSelf.pendingAlerts.count) {
@@ -884,7 +884,7 @@ __strong static PPDeviceProxy *_currentProxy = nil;
 - (void)cleanProxyConnection {
     __weak PPDeviceProxy *weakSelf = self;
 
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.proxy", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.proxy", DISPATCH_QUEUE_SERIAL);
     dispatch_async(queue, ^{
         NSInteger timeout = 0;
 

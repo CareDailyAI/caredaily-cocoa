@@ -35,7 +35,7 @@ static NSTimeInterval kSystemEndTimeInterval   = 5000000000; // 2128-06-11T08:53
 + (void)checkAvailability:(PPCloudConnectivityAvailabilityBlock)callback {
     NSURLComponents *components = [NSURLComponents componentsWithString:@"watch"];
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.cloud.checkAvailability()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.cloud.checkAvailability()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     
@@ -94,7 +94,7 @@ static NSTimeInterval kSystemEndTimeInterval   = 5000000000; // 2128-06-11T08:53
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.cloud.getConnectionSettings()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.cloud.getConnectionSettings()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     
@@ -173,7 +173,7 @@ static NSTimeInterval kSystemEndTimeInterval   = 5000000000; // 2128-06-11T08:53
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.cloud.getServer()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.cloud.getServer()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     
@@ -249,7 +249,7 @@ static NSTimeInterval kSystemEndTimeInterval   = 5000000000; // 2128-06-11T08:53
         [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"appName" value:appName]];
     }
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.cloud.getServerURL()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.cloud.getServerURL()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
 
@@ -297,7 +297,7 @@ static NSTimeInterval kSystemEndTimeInterval   = 5000000000; // 2128-06-11T08:53
     NSURLComponents *components = [NSURLComponents componentsWithURL:[NSURL URLWithString:@"settingsCloud"] resolvingAgainstBaseURL:NO];
     components.queryItems = @[[[NSURLQueryItem alloc] initWithName:@"deviceId" value:deviceId]];
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.cloud.getCloudInstances()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.cloud.getCloudInstances()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     
@@ -343,7 +343,7 @@ static NSTimeInterval kSystemEndTimeInterval   = 5000000000; // 2128-06-11T08:53
 + (void)getVersionInformation:(PPCloudConnectivityVersionBlock)callback {
     NSURLComponents *components = [NSURLComponents componentsWithString:@"version"];
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.cloud.getVersionInformation()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.cloud.getVersionInformation()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     

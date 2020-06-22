@@ -317,7 +317,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
     if(properties) {
         [request setHTTPBody:body];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.devices.registerDevice()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.devices.registerDevice()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -400,7 +400,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
     }
     components.queryItems = queryItems;
 
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.devices.getListOfDevicesForLocation()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.devices.getListOfDevicesForLocation()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -516,7 +516,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.devices.deleteDevices()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.devices.deleteDevices()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -578,7 +578,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.devices.getDevice()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.devices.getDevice()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -742,7 +742,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
     NSError *error;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"PUT" URLString:[NSURL URLWithString:components.string relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:body];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.devices.updateDeviceAtLocation()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.devices.updateDeviceAtLocation()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -808,7 +808,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.devices.deleteDeviceAtLocation()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.devices.deleteDeviceAtLocation()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -862,7 +862,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.devices.getDeviceActivationInfo()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.devices.getDeviceActivationInfo()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -921,7 +921,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.devices.getDeviceActivationInfoAtLocation()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.devices.getDeviceActivationInfoAtLocation()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -990,7 +990,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.devices.setDeviceProperty()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.devices.setDeviceProperty()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -1058,7 +1058,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"POST" URLString:[NSURL URLWithString:components.string relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:body];
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.devices.setDeviceProperties()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.devices.setDeviceProperties()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -1116,7 +1116,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.devices.getDeviceProperties()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.devices.getDeviceProperties()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -1184,7 +1184,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.devices.deleteDeviceProperties()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.devices.deleteDeviceProperties()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -1241,7 +1241,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.devices.getDeviceFirmwareUpdateJobs()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.devices.getDeviceFirmwareUpdateJobs()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -1311,7 +1311,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.devices.setCurrentFirmwareUpdateStatus()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.devices.setCurrentFirmwareUpdateStatus()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -1391,7 +1391,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
     }
     [request setValue:appId forHTTPHeaderField:@"APP_ID"];
        
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.devices.getVideoToken()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.devices.getVideoToken()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -1446,7 +1446,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
     
     NSURLComponents *components = [NSURLComponents componentsWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"locations/%@/devices/%@/spaces/%@", @(locationId), [PPNSString stringByAddingURIPercentEscapesUsingEncoding:NSUTF8StringEncoding toString:deviceId], @(spaceId)]] resolvingAgainstBaseURL:NO];
         
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.devices.linkSpace()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.devices.linkSpace()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -1490,7 +1490,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
         
     NSURLComponents *components = [NSURLComponents componentsWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"locations/%@/devices/%@/spaces/%@", @(locationId), [PPNSString stringByAddingURIPercentEscapesUsingEncoding:NSUTF8StringEncoding toString:deviceId], @(spaceId)]] resolvingAgainstBaseURL:NO];
         
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.devices.unlinkSpace()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.devices.unlinkSpace()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         

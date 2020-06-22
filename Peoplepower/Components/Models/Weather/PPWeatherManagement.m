@@ -36,7 +36,7 @@
     if(organizationId != PPOrganizationIdNone) {
         [requestString appendFormat:@"organizationId=%li&", (long)organizationId];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.weathermanagement.getForecastByGeocode()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.weathermanagement.getForecastByGeocode()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {
@@ -91,7 +91,7 @@
     if(hours != PPWeatherManagementForecastHoursNone) {
         [requestString appendFormat:@"hours=%li&", (long)hours];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.weathermanagement.getForecastByLocation()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.weathermanagement.getForecastByLocation()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {
@@ -146,7 +146,7 @@
     if(organizationId != PPOrganizationIdNone) {
         [requestString appendFormat:@"organizationId=%li&", (long)organizationId];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.weathermanagement.getCurrentWeatherByGeocode()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.weathermanagement.getCurrentWeatherByGeocode()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {
@@ -198,7 +198,7 @@
     if(units) {
         [requestString appendFormat:@"units=%@&", units];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.weathermanagement.getCurrentWeatherByLocation()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.weathermanagement.getCurrentWeatherByLocation()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {

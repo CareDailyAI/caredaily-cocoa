@@ -556,7 +556,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     [operationToken isValid:^(BOOL isValid) {
         if(isValid) {
             
-            dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.registerWithUsername()", DISPATCH_QUEUE_SERIAL);
+            dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.registerWithUsername()", DISPATCH_QUEUE_SERIAL);
             
             dispatch_async(queue, ^{
                 
@@ -641,7 +641,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.getUserInformation()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.getUserInformation()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -757,7 +757,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     [request addValue:encodedPassword forHTTPHeaderField:HTTP_HEADER_PASSWORD];
     [request setHTTPBody:body];
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.updateUser()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.updateUser()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     
@@ -830,7 +830,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
         [request setValue:[NSString stringWithFormat:@"%@,%@", apiKeyHeader, mergeUserApiKey] forHTTPHeaderField:HTTP_HEADER_API_KEY];
     }
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.deleteUser()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.deleteUser()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     
@@ -902,7 +902,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     }
     
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.getServicesByDevice()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.getServicesByDevice()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -973,7 +973,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
         }
         components.queryItems = queryItems;
 
-        dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.getUserByEmails()", DISPATCH_QUEUE_SERIAL);
+        dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.getUserByEmails()", DISPATCH_QUEUE_SERIAL);
         
         PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -1034,7 +1034,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
         NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"POST" URLString:[NSURL URLWithString:components.string relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
         [request setHTTPBody:body];
 
-        dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.getUserByEmails()", DISPATCH_QUEUE_SERIAL);
+        dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.getUserByEmails()", DISPATCH_QUEUE_SERIAL);
         
         PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -1135,7 +1135,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"POST" URLString:[NSURL URLWithString:components.string relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:body];
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.addNewLocation()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.addNewLocation()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -1241,7 +1241,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     [request setHTTPBody:body];
     
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.editLocation()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.editLocation()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -1287,7 +1287,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
 + (void)deleteLocation:(PPLocationId)locationId callback:(PPErrorBlock)callback {
     NSAssert1(locationId != PPLocationIdNone, @"%s missing locationId", __FUNCTION__);
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.deleteLocation()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.deleteLocation()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -1348,7 +1348,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
         [request setHTTPBody:body];
     }
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.changeSceneAtLocation()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.changeSceneAtLocation()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -1404,7 +1404,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.locationSceneHistory()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.locationSceneHistory()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -1478,7 +1478,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.sendAVerificationMessage()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.sendAVerificationMessage()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -1526,7 +1526,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"code" value:code]];
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.provideVerificationCode()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.provideVerificationCode()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -1583,7 +1583,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"username" value:[[username stringByReplacingOccurrencesOfString:@" " withString:@""] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]]];
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.recoverPassword()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.recoverPassword()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:components.string success:^(NSData *responseData) {
@@ -1664,7 +1664,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
         [request setValue:tempKey forHTTPHeaderField:HTTP_HEADER_API_KEY];
     }
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.newPassword()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.newPassword()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     
@@ -1712,7 +1712,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.resetBadges()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.resetBadges()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -1752,7 +1752,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
  **/
 + (void)signTermsOfService:(NSString *)termsOfServiceId callback:(PPErrorBlock)callback {
     NSAssert1(termsOfServiceId != nil, @"%s missing termsOfServiceId", __FUNCTION__);
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.signTermsOfService()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.signTermsOfService()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -1792,7 +1792,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
  **/
 + (void)getSignatures:(PPUserAccountTermsOfServiceBlock)callback {
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.getSignatures()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.getSignatures()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -1848,7 +1848,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
 + (void)applyTag:(NSString *)tag callback:(PPErrorBlock)callback {
     NSAssert1(tag != nil, @"%s missing tag", __FUNCTION__);
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.applyTag()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.applyTag()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -1887,7 +1887,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
 + (void)deleteTag:(NSString *)tag callback:(PPErrorBlock)callback {
     NSAssert1(tag != nil, @"%s missing tag", __FUNCTION__);
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.deleteTag()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.deleteTag()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -1971,7 +1971,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"PUT" URLString:[NSURL URLWithString:components.string relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:body];
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.putUserCode()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.putUserCode()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     
@@ -2028,7 +2028,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.deleteUserCode()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.deleteUserCode()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -2067,7 +2067,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     
     NSURLComponents *components = [NSURLComponents componentsWithURL:[NSURL URLWithString:@"userCodes"] resolvingAgainstBaseURL:NO];
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.deleteTag()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.deleteTag()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -2134,7 +2134,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.getCountries()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.getCountries()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -2190,7 +2190,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     
     NSURLComponents *components = [NSURLComponents componentsWithString:[NSString stringWithFormat:@"location/%@/users", @(locationId)]];
 
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.getLocationUsers()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.getLocationUsers()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -2254,7 +2254,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"POST" URLString:[NSURL URLWithString:components.string relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:body];
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.addLocationUsers()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.addLocationUsers()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -2305,7 +2305,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.deleteLocationUser()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.deleteLocationUser()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -2358,7 +2358,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     
     NSURLComponents *components = [NSURLComponents componentsWithString:[NSString stringWithFormat:@"location/%@/spaces", @(locationId)]];
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.getLocationSpaces()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.getLocationSpaces()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     
@@ -2429,7 +2429,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"POST" URLString:[NSURL URLWithString:components.string relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:body];
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.updateLocationSpace()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.updateLocationSpace()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -2481,7 +2481,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"spaceId" value:@(spaceId).stringValue]];
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.deleteLocationSpace()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.deleteLocationSpace()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -2551,7 +2551,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     [request setValue:analyticAPIKey forHTTPHeaderField:@"ANALYTIC_API_KEY"];
     [request setHTTPBody:body];
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.createOrUpdateNarrative()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.createOrUpdateNarrative()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] operationWithRequest:request success:^(NSData *responseData) {
@@ -2611,7 +2611,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"DELETE" URLString:[NSURL URLWithString:components.string relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setValue:analyticAPIKey forHTTPHeaderField:@"ANALYTIC_API_KEY"];
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.deleteNarrative()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.deleteNarrative()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] operationWithRequest:request success:^(NSData *responseData) {
@@ -2699,7 +2699,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.getNarrative()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.getNarrative()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -2786,7 +2786,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"PUT" URLString:[NSURL URLWithString:components.string relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:body];
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.setState()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.setState()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] operationWithRequest:request success:^(NSData *responseData) {
@@ -2837,7 +2837,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"name" value:name]];
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.getState()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.getState()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     
@@ -2893,7 +2893,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.getState()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.getState()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     
@@ -2986,7 +2986,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"PUT" URLString:[NSURL URLWithString:components.string relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:body];
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.setTimeState()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.setTimeState()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] operationWithRequest:request success:^(NSData *responseData) {
@@ -3042,7 +3042,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.getTimeStates()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.getTimeStates()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     
@@ -3126,7 +3126,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     
     NSURLComponents *components = [NSURLComponents componentsWithString:@"presence"];
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.getPresenceIDs()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.getPresenceIDs()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     
@@ -3190,7 +3190,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"POST" URLString:[NSURL URLWithString:components.string relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:body];
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.user.authorizeAccess()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.authorizeAccess()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] operationWithRequest:request success:^(NSData *responseData) {

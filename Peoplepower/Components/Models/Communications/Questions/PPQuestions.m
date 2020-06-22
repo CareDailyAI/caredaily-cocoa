@@ -398,7 +398,7 @@ __strong static NSMutableDictionary*_sharedQuestions = nil;
     components.queryItems = queryItems;
     
     PPCloudEngine *cloudEngine = [PPCloudEngine sharedAppEngine];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.communications.questions.getQuestions()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.communications.questions.getQuestions()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -497,7 +497,7 @@ __strong static NSMutableDictionary*_sharedQuestions = nil;
     NSError *error;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"PUT" URLString:[NSURL URLWithString:components.string relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:body];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.communications.inappmessaging.answerQuestions()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.communications.inappmessaging.answerQuestions()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         

@@ -1268,7 +1268,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
     if(organizationId != PPOrganizationIdNone) {
         [requestString appendFormat:@"organizationId=%li&", (long)organizationId];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.products.getSupportedProducts()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.products.getSupportedProducts()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {
@@ -1317,7 +1317,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
  **/
 + (void)getSupportedProductAttributes:(PPDeviceTypeAttributesBlock)callback {
     NSMutableString *requestString = [[NSMutableString alloc] initWithString:@"deviceTypeAttrs?"];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.products.getSupportedProductAttribrutes()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.products.getSupportedProductAttribrutes()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {
@@ -1377,7 +1377,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
     NSError *error;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"POST" URLString:[NSURL URLWithString:requestString relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:[JSONString dataUsingEncoding:NSUTF8StringEncoding]];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.products.createProduct()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.products.createProduct()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] operationWithRequest:request success:^(NSData *responseData) {
@@ -1428,7 +1428,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
     NSError *error;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"PUT" URLString:[NSURL URLWithString:requestString relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:[JSONString dataUsingEncoding:NSUTF8StringEncoding]];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.products.updateProduct()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.products.updateProduct()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] operationWithRequest:request success:^(NSData *responseData) {
@@ -1469,7 +1469,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
     if(name) {
         [requestString appendFormat:@"name=%@&", name];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.products.getParameters()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.products.getParameters()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {
@@ -1527,7 +1527,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
     NSError *error;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"POST" URLString:[NSURL URLWithString:requestString relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:[JSONString dataUsingEncoding:NSUTF8StringEncoding]];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.products.createAndUpdateParameter()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.products.createAndUpdateParameter()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] operationWithRequest:request success:^(NSData *responseData) {
@@ -1567,7 +1567,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
 + (void)deleteParameter:(NSString *)parameterName callback:(PPErrorBlock)callback {
     NSAssert1(parameterName != nil, @"%s missing parameterName", __FUNCTION__);
     NSMutableString *requestString = [[NSMutableString alloc] initWithFormat:@"deviceParameters/%@", parameterName];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.products.deleteParameter()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.products.deleteParameter()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] DELETE:requestString success:^(NSData *responseData) {
@@ -1604,7 +1604,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
  **/
 + (void)getExistingRulePhrases:(PPDeviceTypeRulePhrasesBlock)callback {
     NSMutableString *requestString = [[NSMutableString alloc] initWithString:@"ruleTemplates?"];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.products.getExistingRulePhrases()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.products.getExistingRulePhrases()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {
@@ -1661,7 +1661,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
     NSError *error;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"POST" URLString:[NSURL URLWithString:requestString relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:[JSONString dataUsingEncoding:NSUTF8StringEncoding]];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.products.createRulePhrase()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.products.createRulePhrase()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] operationWithRequest:request success:^(NSData *responseData) {
@@ -1707,7 +1707,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
 + (void)getRulePhraseById:(PPDeviceTypeRuleComponentTemplateId)templateId callback:(PPDeviceTypeRulePhraseBlock)callback {
     NSAssert1(templateId != PPDeviceTypeRuleComponentTemplateIdNone, @"%s missing templateId", __FUNCTION__);
     NSMutableString *requestString = [[NSMutableString alloc] initWithFormat:@"ruleTemplates/%li", (long)templateId];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.products.getRulePhraseById()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.products.getRulePhraseById()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {
@@ -1762,7 +1762,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
     NSError *error;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"PUT" URLString:[NSURL URLWithString:requestString relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:[JSONString dataUsingEncoding:NSUTF8StringEncoding]];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.products.updateRulePhrase()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.products.updateRulePhrase()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] operationWithRequest:request success:^(NSData *responseData) {
@@ -1806,7 +1806,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
 + (void)deleteRulePhrase:(PPDeviceTypeRuleComponentTemplateId)templateId callback:(PPErrorBlock)callback {
     NSAssert1(templateId != PPDeviceTypeRuleComponentTemplateIdNone, @"%s missing templateId", __FUNCTION__);
     NSMutableString *requestString = [[NSMutableString alloc] initWithFormat:@"ruleTemplates/%li", (long)templateId];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.products.deleteRulePhrase()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.products.deleteRulePhrase()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] DELETE:requestString success:^(NSData *responseData) {
@@ -1850,7 +1850,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
     if(details != PPDeviceTypesDetailsNone) {
         [requestString appendFormat:@"details=%@&", (details) ? @"true" : @"false"];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.products.getProductDefaultRules()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.products.getProductDefaultRules()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {
@@ -1908,7 +1908,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
     if(hidden != PPRuleHiddenNone) {
         [requestString appendFormat:@"hidden=%@&", (hidden) ? @"true" : @"false"];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.products.addDefaultRule()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.products.addDefaultRule()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] POST:requestString success:^(NSData *responseData) {
@@ -1948,7 +1948,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
     NSAssert1(ruleId != PPRuleIdNone, @"%s missing ruleId", __FUNCTION__);
     NSAssert1(deviceTypeId != PPDeviceTypeIdNone, @"%s missing deviceTypeId", __FUNCTION__);
     NSMutableString *requestString = [[NSMutableString alloc] initWithFormat:@"deviceType/%li/rules/%li?", (long)deviceTypeId, (long)ruleId];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.products.deleteDefaultRule()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.products.deleteDefaultRule()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] DELETE:requestString success:^(NSData *responseData) {
@@ -1992,7 +1992,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
     if(appName) {
         [requestString appendFormat:@"appName=%@&", appName.lowercaseString];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.products.getDeviceGoalsByType()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.products.getDeviceGoalsByType()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {
@@ -2043,7 +2043,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
 + (void)getInstallationInstructions:(PPDeviceTypeGoalId)goalId callback:(PPDeviceTypeInstallationInstructionsBlock)callback {
     NSAssert1(goalId != PPDeviceTypeGoalIdNone, @"%s missing goalId", __FUNCTION__);
     NSMutableString *requestString = [[NSMutableString alloc] initWithFormat:@"goals/%li/installation?", (long)goalId];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.products.getInstallationInstructions()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.products.getInstallationInstructions()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {
@@ -2091,7 +2091,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
     if(mediaId) {
         [requestString appendFormat:@"mediaId=%@&", mediaId];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.products.getMedia()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.products.getMedia()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {
@@ -2159,7 +2159,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
     NSError *error;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"PUT" URLString:[NSURL URLWithString:requestString relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:[JSONString dataUsingEncoding:NSUTF8StringEncoding]];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.products.putMedia()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.products.putMedia()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] operationWithRequest:request success:^(NSData *responseData) {
@@ -2202,7 +2202,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
             [requestString appendFormat:@"mediaId=%@&", media.mediaId];
         }
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.products.deleteMedias()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.products.deleteMedias()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] DELETE:requestString success:^(NSData *responseData) {
@@ -2268,7 +2268,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
     if(modelId) {
         [requestString appendFormat:@"modelId=%@&", [PPNSString stringByAddingURIPercentEscapesUsingEncoding:NSUTF8StringEncoding toString:modelId]];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.products.getDeviceModels()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.products.getDeviceModels()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {
@@ -2376,7 +2376,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
     if(JSONString) {
         [request setHTTPBody:[JSONString dataUsingEncoding:NSUTF8StringEncoding]];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.products.uploadDeviceModels()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.products.uploadDeviceModels()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] operationWithRequest:request success:^(NSData *responseData) {
@@ -2427,7 +2427,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
         [requestString appendFormat:@"brand=%@&", brand];
     }
 
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.products.deleteDeviceModels()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.products.deleteDeviceModels()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] DELETE:requestString success:^(NSData *responseData) {
@@ -2492,7 +2492,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
     if(JSONString) {
         [request setHTTPBody:[JSONString dataUsingEncoding:NSUTF8StringEncoding]];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.products.putStories()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.products.putStories()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] operationWithRequest:request success:^(NSData *responseData) {
@@ -2555,7 +2555,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
     if(lang) {
         [requestString appendFormat:@"lang=%@&", lang];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.products.getStories()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.products.getStories()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {
@@ -2603,7 +2603,7 @@ __strong static NSMutableDictionary*_sharedDeviceTypeStories = nil;
  **/
 + (void)deleteStory:(NSString *)storyId callback:(PPErrorBlock)callback {
     NSString *requestString = [NSString stringWithFormat:@"stories?storyId=%@", [PPNSString stringByAddingURIPercentEscapesUsingEncoding:NSUTF8StringEncoding toString:storyId]];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.products.deleteStory()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.products.deleteStory()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] DELETE:requestString success:^(NSData *responseData) {

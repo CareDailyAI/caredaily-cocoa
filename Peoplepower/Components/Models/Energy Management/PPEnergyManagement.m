@@ -38,7 +38,7 @@
     if(external != PPEnergyManagementUsageExternalNone) {
         [requestString appendFormat:@"external=%li&", (long)external];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.energymanagement.getEnergyUsageForLocation()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.energymanagement.getEnergyUsageForLocation()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {
@@ -108,7 +108,7 @@
     NSError *error;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"POST" URLString:[NSURL URLWithString:requestString relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:[JSONString dataUsingEncoding:NSUTF8StringEncoding]];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.energymanagement.uploadUtilityBillsForLocation()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.energymanagement.uploadUtilityBillsForLocation()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] operationWithRequest:request success:^(NSData *responseData) {
@@ -149,7 +149,7 @@
     NSAssert1(locationId != PPLocationIdNone, @"%s missing locationId", __FUNCTION__);
     NSAssert1(billId != PPEnergyManagementUtilityBillIdNone, @"%s missing billId", __FUNCTION__);
     NSMutableString *requestString = [[NSMutableString alloc] initWithFormat:@"locations/%li/bills/%li/", (long)locationId, (long)billId];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.energymanagement.deleteUtilityBill()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.energymanagement.deleteUtilityBill()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] DELETE:requestString success:^(NSData *responseData) {
@@ -205,7 +205,7 @@
     if(userId != PPUserIdNone) {
         [requestString appendFormat:@"userId=%li&", (long)userId];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.energymanagement.getDeviceEnergyUsage()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.energymanagement.getDeviceEnergyUsage()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {
@@ -281,7 +281,7 @@
     if(userId != PPUserIdNone) {
         [requestString appendFormat:@"userId=%li&", (long)userId];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.energymanagement.getAggrevatedEnergyUsageForDevice()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.energymanagement.getAggrevatedEnergyUsageForDevice()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {
@@ -335,7 +335,7 @@
     NSAssert1(locationId != PPLocationIdNone, @"%s missing locationId", __FUNCTION__);
     NSAssert1(filter != PPEnergyManagementBillingInfoFilterNone, @"%s missing filter", __FUNCTION__);
     NSMutableString *requestString = [[NSMutableString alloc] initWithFormat:@"locations/%li/billing/%li", (long)locationId, (long)filter];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.energymanagement.getBillingInformation()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.energymanagement.getBillingInformation()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {
@@ -393,7 +393,7 @@
     NSError *error;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"PUT" URLString:[NSURL URLWithString:requestString relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:[JSONString dataUsingEncoding:NSUTF8StringEncoding]];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.energymanagement.updateBillingInformation()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.energymanagement.updateBillingInformation()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] operationWithRequest:request success:^(NSData *responseData) {

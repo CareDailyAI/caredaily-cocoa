@@ -227,7 +227,7 @@ __strong static NSMutableDictionary *_sharedFriendships = nil;
     NSError *error;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"POST" URLString:[NSURL URLWithString:requestString relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:[JSONString dataUsingEncoding:NSUTF8StringEncoding]];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.fiends.addFriends()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.fiends.addFriends()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] operationWithRequest:request success:^(NSData *responseData) {
@@ -275,7 +275,7 @@ __strong static NSMutableDictionary *_sharedFriendships = nil;
     if(checkConnected != PPDeviceConnectedNone) {
         [requestString appendFormat:@"checkConnected=%@&", (checkConnected) ? @"true" : @"false"];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.fiends.getFriends()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.fiends.getFriends()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {
@@ -343,7 +343,7 @@ __strong static NSMutableDictionary *_sharedFriendships = nil;
     NSError *error;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"PUT" URLString:[NSURL URLWithString:requestString relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:[JSONString dataUsingEncoding:NSUTF8StringEncoding]];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.fiends.updateFriendship()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.fiends.updateFriendship()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] operationWithRequest:request success:^(NSData *responseData) {
@@ -382,7 +382,7 @@ __strong static NSMutableDictionary *_sharedFriendships = nil;
  **/
 + (void)deleteFriendship:(PPFriendshipId)friendshipId callback:(PPErrorBlock)callback {
     NSString *requestString = [NSString stringWithFormat:@"friends/%lu",(long)friendshipId];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.fiends.deleteFriendship()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.fiends.deleteFriendship()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] DELETE:requestString success:^(NSData *responseData) {
@@ -424,7 +424,7 @@ __strong static NSMutableDictionary *_sharedFriendships = nil;
  **/
 + (void)deleteSharedDevice:(PPFriendshipId)friendshipId deviceId:(NSString *)deviceId callback:(PPErrorBlock)callback {
     NSString *requestString = [NSString stringWithFormat:@"friends/%lu/devices/%@",(long)friendshipId, deviceId];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.fiends.deleteSharedDevice()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.fiends.deleteSharedDevice()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] DELETE:requestString success:^(NSData *responseData) {

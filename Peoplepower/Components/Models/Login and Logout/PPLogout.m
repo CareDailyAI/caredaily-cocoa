@@ -20,7 +20,7 @@
  **/
 + (void)logoutcallback:(PPErrorBlock)callback {
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.logout.logout()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.logout.logout()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:@"logout" success:^(NSData *responseData) {

@@ -54,7 +54,7 @@
     if(organizationId != PPOrganizationIdNone) {
         [request appendFormat:@"organizationId=%li&", (long)organizationId];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.botengine.searchAppStore()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.botengine.searchAppStore()", DISPATCH_QUEUE_SERIAL);
 
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
@@ -111,7 +111,7 @@
     
     [request appendFormat:@"%@?", name];
     [request appendFormat:@"bundle=%@", bundle];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.botengine.getAppObject()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.botengine.getAppObject()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppStrippedEngine] GET:request success:^(NSData *responseData) {
@@ -162,7 +162,7 @@
     if(organizationId != PPOrganizationIdNone) {
         [request appendFormat:@"organizationId=%li&", (long)organizationId];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.botengine.getAppInformation()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.botengine.getAppInformation()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppStrippedEngine] GET:request success:^(NSData *responseData) {
@@ -227,7 +227,7 @@
         [request appendFormat:@"circleId=%li&", (long)circleId];
     }
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.botengine.purchaseAppInstance()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.botengine.purchaseAppInstance()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     
@@ -345,7 +345,7 @@
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppStrippedEngine] getRequestSerializer] requestWithMethod:@"PUT" URLString:[NSURL URLWithString:urlString relativeToURL:[[PPCloudEngine sharedAppStrippedEngine] getBaseURL]].absoluteString parameters:nil error:&error];
 
     [request setHTTPBody:[JSONString dataUsingEncoding:NSUTF8StringEncoding]];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.botengine.configureAppInstance()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.botengine.configureAppInstance()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppStrippedEngine] operationWithRequest:request success:^(NSData *responseData) {
@@ -408,7 +408,7 @@
     if(userId != PPUserIdNone) {
         [request appendFormat:@"userId=%li&", (long)userId];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.botengine.getAppInstances()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.botengine.getAppInstances()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppStrippedEngine] GET:request success:^(NSData *responseData) {
@@ -459,7 +459,7 @@
  */
 + (void)deleteAppInstances:(NSInteger)appInstanceId callback:(PPErrorBlock)callback {
     NSString *request = [NSString stringWithFormat:@"appstore/appInstance?appInstanceId=%lu", (long unsigned)appInstanceId];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.botengine.deleteAppInstances()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.botengine.deleteAppInstances()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppStrippedEngine] DELETE:request success:^(NSData *responseData) {
@@ -509,7 +509,7 @@
     if(lang) {
         [request appendFormat:@"lang=%@&", lang];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.botengine.getAppReviews()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.botengine.getAppReviews()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppStrippedEngine] GET:request success:^(NSData *responseData) {
@@ -604,7 +604,7 @@
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppStrippedEngine] getRequestSerializer] requestWithMethod:@"POST" URLString:[NSURL URLWithString:urlString relativeToURL:[[PPCloudEngine sharedAppStrippedEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     
     [request setHTTPBody:[JSONString dataUsingEncoding:NSUTF8StringEncoding]];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.botengine.writeAppReview()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.botengine.writeAppReview()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppStrippedEngine] operationWithRequest:request success:^(NSData *responseData) {
@@ -645,7 +645,7 @@
     NSMutableString *request = [NSMutableString stringWithString:@"appstore/reviews/"];
     [request appendFormat:@"%lu/", (long unsigned)reviewId];
     [request appendFormat:@"vote/%li", (long)vote];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.botengine.voteForReview()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.botengine.voteForReview()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppStrippedEngine] PUT:request success:^(NSData *responseData) {
@@ -720,7 +720,7 @@
     
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppStrippedEngine] getRequestSerializer] requestWithMethod:@"POST" URLString:[NSURL URLWithString:urlString relativeToURL:[[PPCloudEngine sharedAppStrippedEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:body];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.botengine.postDataStream()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.botengine.postDataStream()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppStrippedEngine] operationWithRequest:request success:^(NSData *responseData) {
@@ -768,7 +768,7 @@
         [request appendFormat:@"organizationId=%li&", (long)organizationId];
     }
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.botengine.getSummary()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.botengine.getSummary()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppStrippedEngine] GET:request success:^(NSData *responseData) {
