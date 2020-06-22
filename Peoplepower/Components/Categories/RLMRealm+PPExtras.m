@@ -12,7 +12,7 @@
 
 - (BOOL)pp_beginWriteTransaction:(NSError *__autoreleasing *)error {
     if ([self inWriteTransaction]) {
-        *error = [NSError errorWithDomain:@"com.peoplepowerco.PPiOSCore.realm"
+        *error = [NSError errorWithDomain:@"com.peoplepowerco.lib.Peoplepower.realm"
                                      code:1
                                  userInfo:@{
                                      NSLocalizedDescriptionKey: @"Failure to begin write transaction.",
