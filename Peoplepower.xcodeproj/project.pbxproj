@@ -777,6 +777,8 @@
 		63475D6C20685D72009BCDED /* PPDeviceCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPDeviceCommand.h; sourceTree = "<group>"; };
 		63475D6D20685D72009BCDED /* PPDeviceCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPDeviceCommand.m; sourceTree = "<group>"; };
 		63475E3C2069CFCF009BCDED /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		634C1EC924A292570012F715 /* copyFramework.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = copyFramework.sh; sourceTree = "<group>"; };
+		634C1ECA24A292580012F715 /* build.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
 		635123522138540B003E7EAA /* PPDeviceProxyLocalPictureFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPDeviceProxyLocalPictureFrame.m; path = Peoplepower/Components/Models/Devices/PictureFrames/PPDeviceProxyLocalPictureFrame.m; sourceTree = SOURCE_ROOT; };
 		635123532138540C003E7EAA /* PPDevicePictureFrameLocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPDevicePictureFrameLocal.h; path = Peoplepower/Components/Models/Devices/PictureFrames/PPDevicePictureFrameLocal.h; sourceTree = SOURCE_ROOT; };
 		635123542138540C003E7EAA /* PPDevicePictureFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPDevicePictureFrame.h; path = Peoplepower/Components/Models/Devices/PictureFrames/PPDevicePictureFrame.h; sourceTree = SOURCE_ROOT; };
@@ -1531,6 +1533,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		634C1EC824A292450012F715 /* Build Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				634C1ECA24A292580012F715 /* build.sh */,
+				634C1EC924A292570012F715 /* copyFramework.sh */,
+			);
+			name = "Build Scripts";
+			sourceTree = "<group>";
+		};
 		63512351213853DC003E7EAA /* PictureFrames */ = {
 			isa = PBXGroup;
 			children = (
@@ -2080,6 +2091,7 @@
 				63E62AB6249196B30038A694 /* Peoplepower-Resources.podspec */,
 				636B4446248AE82A00124F6A /* Cartfile */,
 				63FAAFD6209B7CA90062638A /* LICENSE */,
+				634C1EC824A292450012F715 /* Build Scripts */,
 				63D392BF204F21EE00041C1A /* Peoplepower */,
 				63D3930D204F39D700041C1A /* Resources */,
 				63C8A0AA2059FCEA00256F37 /* Peoplepower-Tests */,
@@ -2921,6 +2933,7 @@
 				63BEC9A720C5D2AA00408494 /* Sources */,
 				63BEC9A820C5D2AA00408494 /* Frameworks */,
 				63BEC9AA20C5D2AA00408494 /* Resources */,
+				634C1EC424A290F60012F715 /* Copy Demo Framework */,
 			);
 			buildRules = (
 			);
@@ -3238,6 +3251,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		634C1EC424A290F60012F715 /* Copy Demo Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Demo Framework";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$SRCROOT/copyFramework.sh\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		63BEC9A720C5D2AA00408494 /* Sources */ = {
