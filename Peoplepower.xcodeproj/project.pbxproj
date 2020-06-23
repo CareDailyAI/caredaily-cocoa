@@ -2892,7 +2892,6 @@
 				63BEC9A720C5D2AA00408494 /* Sources */,
 				63BEC9A820C5D2AA00408494 /* Frameworks */,
 				63BEC9AA20C5D2AA00408494 /* Resources */,
-				634C1EC424A290F60012F715 /* Copy Demo Framework */,
 			);
 			buildRules = (
 			);
@@ -3210,27 +3209,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		634C1EC424A290F60012F715 /* Copy Demo Framework */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Demo Framework";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "$SRCROOT/copyFramework.sh\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		63BEC9A720C5D2AA00408494 /* Sources */ = {

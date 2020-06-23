@@ -10,6 +10,10 @@ echo "Build Directory: $BUILD_DIR"
 CARTHAGE_BUILD_DIR=${PROJECT_DIR}/${PROJECT_NAME}Demo/Carthage/Build/iOS
 echo "Carthage Build Directory: $CARTHAGE_BUILD_DIR"
 
+# Remove existing framework
+echo "Remove Current Framework"
+rm -rf "$CARTHAGE_BUILD_DIR/${PROJECT_NAME}.framework"
+
 # Copy framework
 echo "Copy Framework"
 cp -R "$BUILD_DIR/${PROJECT_NAME}.framework" "$CARTHAGE_BUILD_DIR/${PROJECT_NAME}.framework"
