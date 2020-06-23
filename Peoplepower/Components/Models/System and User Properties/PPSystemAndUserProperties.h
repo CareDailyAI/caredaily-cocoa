@@ -33,11 +33,13 @@ extern NSString * _Nonnull USER_PROPERTY_USER_CURRENCY_CODE;
 extern NSString * _Nonnull USER_PROPERTY_USER_CURRENCY_SYMBOL;
 extern NSString * _Nonnull USER_PROPERTY_USER_CURRENCY_COUNTRY;
 
-#define USER_PROPERTY_SERVICE_START_DATE(serviceName) [NSString stringWithFormat:@"%@.startDate", serviceName]
-#define SYSTEM_PROPERTY_PASSWORD_REGEX(appName) [NSString stringWithFormat:@"%@-password_regex", appName]
-#define SYSTEM_PROPERTY_IOS_VERSION(appName) [NSString stringWithFormat:@"ios-version-%@", appName]
-#define SYSTEM_PROPERTY_TERMS_OF_SERVICE(appName) [NSString stringWithFormat:@"%@-tos", appName]
-#define SYSTEM_PROPERTY_LOCATION_ACCESS(appName) [NSString stringWithFormat:@"%@-LocationAccess", appName]
+#define USER_PROPERTY_SERVICE_START_DATE(serviceName)   [NSString stringWithFormat:@"%@.startDate", serviceName]
+#define USER_PROPERTY_END_OF_LIFE_NOTICE(appName)       [NSString stringWithFormat:@"%@-end_of_life_notice", appName]
+#define SYSTEM_PROPERTY_PASSWORD_REGEX(appName)         [NSString stringWithFormat:@"%@-password_regex", appName]
+#define SYSTEM_PROPERTY_IOS_VERSION(appName)            [NSString stringWithFormat:@"ios-version-%@", appName]
+#define SYSTEM_PROPERTY_TERMS_OF_SERVICE(appName)       [NSString stringWithFormat:@"%@-tos", appName]
+#define SYSTEM_PROPERTY_LOCATION_ACCESS(appName)        [NSString stringWithFormat:@"%@-LocationAccess", appName]
+#define SYSTEM_PROPERTY_END_OF_LIFE_DATE(appName)       [NSString stringWithFormat:@"%@-end_of_life_date", appName]
 
 extern NSString * _Nonnull SYSTEM_PROPERTY_DEFAULT_PASSWORD_REGEX;
 extern NSString * _Nonnull SYSTEM_PROPERTY_CALL_CENTER_SUPPORTED_STATE_IDS;
