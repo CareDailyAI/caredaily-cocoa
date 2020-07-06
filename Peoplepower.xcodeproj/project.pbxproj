@@ -418,6 +418,17 @@
 		630BDE1F24B3AFFC0035D8B3 /* PPDeviceProxyLocalPictureFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 635123522138540B003E7EAA /* PPDeviceProxyLocalPictureFrame.m */; };
 		630BDE2024B3AFFF0035D8B3 /* PPDevicePictureFrameLocal.h in Headers */ = {isa = PBXBuildFile; fileRef = 635123532138540C003E7EAA /* PPDevicePictureFrameLocal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		630BDE2124B3AFFF0035D8B3 /* PPDevicePictureFrameLocal.m in Sources */ = {isa = PBXBuildFile; fileRef = 635123562138540C003E7EAA /* PPDevicePictureFrameLocal.m */; };
+		630BDE8F24B3E3220035D8B3 /* PPSurveys.m in Sources */ = {isa = PBXBuildFile; fileRef = 630BDE8B24B3E3210035D8B3 /* PPSurveys.m */; };
+		630BDE9024B3E3220035D8B3 /* PPSurveys.m in Sources */ = {isa = PBXBuildFile; fileRef = 630BDE8B24B3E3210035D8B3 /* PPSurveys.m */; };
+		630BDE9124B3E3220035D8B3 /* PPSurveys.h in Headers */ = {isa = PBXBuildFile; fileRef = 630BDE8C24B3E3210035D8B3 /* PPSurveys.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDE9224B3E3220035D8B3 /* PPSurveys.h in Headers */ = {isa = PBXBuildFile; fileRef = 630BDE8C24B3E3210035D8B3 /* PPSurveys.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDE9324B3E3220035D8B3 /* PPSurveyQuestion.h in Headers */ = {isa = PBXBuildFile; fileRef = 630BDE8D24B3E3220035D8B3 /* PPSurveyQuestion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDE9424B3E3220035D8B3 /* PPSurveyQuestion.h in Headers */ = {isa = PBXBuildFile; fileRef = 630BDE8D24B3E3220035D8B3 /* PPSurveyQuestion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDE9524B3E3220035D8B3 /* PPSurveyQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 630BDE8E24B3E3220035D8B3 /* PPSurveyQuestion.m */; };
+		630BDE9624B3E3220035D8B3 /* PPSurveyQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 630BDE8E24B3E3220035D8B3 /* PPSurveyQuestion.m */; };
+		630BDE9924B3E4540035D8B3 /* UserCommunications-GetSurveyQuestions-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 630BDE9724B3E4530035D8B3 /* UserCommunications-GetSurveyQuestions-ResponseData.json */; };
+		630BDE9A24B3E4540035D8B3 /* UserCommunications-AnswerQuestion-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 630BDE9824B3E4530035D8B3 /* UserCommunications-AnswerQuestion-ResponseData.json */; };
+		630BDE9C24B3F0520035D8B3 /* AFNetworking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 630BDE9B24B3F0520035D8B3 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		630EB9A824948778002D5614 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630EB9A324948777002D5614 /* OHHTTPStubs.framework */; };
 		630EB9AA24948778002D5614 /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630EB9A524948777002D5614 /* KissXML.framework */; };
 		630EB9AB24948778002D5614 /* SocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630EB9A624948777002D5614 /* SocketRocket.framework */; };
@@ -1133,6 +1144,7 @@
 				630EB9AF2494878B002D5614 /* OHHTTPStubs.framework in CopyFiles */,
 				630EB9B02494878B002D5614 /* SocketRocket.framework in CopyFiles */,
 				630EB9B12494878B002D5614 /* UICKeyChainStore.framework in CopyFiles */,
+				630BDE9C24B3F0520035D8B3 /* AFNetworking.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1145,7 +1157,13 @@
 		630BDC4224B389D40035D8B3 /* input.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = input.xcfilelist; sourceTree = "<group>"; };
 		630BDC4B24B392400035D8B3 /* Peoplepower.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Peoplepower.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		630BDC5524B393480035D8B3 /* Peoplepower-Info-watchOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Peoplepower-Info-watchOS.plist"; sourceTree = "<group>"; };
-		630BDE5124B3B5CA0035D8B3 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Demo/Carthage/Build/watchOS/AFNetworking.framework; sourceTree = "<group>"; };
+		630BDE8B24B3E3210035D8B3 /* PPSurveys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPSurveys.m; sourceTree = "<group>"; };
+		630BDE8C24B3E3210035D8B3 /* PPSurveys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPSurveys.h; sourceTree = "<group>"; };
+		630BDE8D24B3E3220035D8B3 /* PPSurveyQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPSurveyQuestion.h; sourceTree = "<group>"; };
+		630BDE8E24B3E3220035D8B3 /* PPSurveyQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPSurveyQuestion.m; sourceTree = "<group>"; };
+		630BDE9724B3E4530035D8B3 /* UserCommunications-GetSurveyQuestions-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "UserCommunications-GetSurveyQuestions-ResponseData.json"; sourceTree = "<group>"; };
+		630BDE9824B3E4530035D8B3 /* UserCommunications-AnswerQuestion-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "UserCommunications-AnswerQuestion-ResponseData.json"; sourceTree = "<group>"; };
+		630BDE9B24B3F0520035D8B3 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
 		630EB9A324948777002D5614 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
 		630EB9A524948777002D5614 /* KissXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KissXML.framework; path = Carthage/Build/iOS/KissXML.framework; sourceTree = "<group>"; };
 		630EB9A624948777002D5614 /* SocketRocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SocketRocket.framework; path = Carthage/Build/iOS/SocketRocket.framework; sourceTree = "<group>"; };
@@ -1894,6 +1912,17 @@
 			name = Metadata;
 			sourceTree = "<group>";
 		};
+		630BDE8A24B3E30C0035D8B3 /* Survey */ = {
+			isa = PBXGroup;
+			children = (
+				630BDE8D24B3E3220035D8B3 /* PPSurveyQuestion.h */,
+				630BDE8E24B3E3220035D8B3 /* PPSurveyQuestion.m */,
+				630BDE8C24B3E3210035D8B3 /* PPSurveys.h */,
+				630BDE8B24B3E3210035D8B3 /* PPSurveys.m */,
+			);
+			path = Survey;
+			sourceTree = "<group>";
+		};
 		631F847E2064326F0055C512 /* Cloud Connectivity */ = {
 			isa = PBXGroup;
 			children = (
@@ -1910,7 +1939,6 @@
 		63475E3B2069CFCF009BCDED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				630BDE5124B3B5CA0035D8B3 /* AFNetworking.framework */,
 				630EB9A524948777002D5614 /* KissXML.framework */,
 				630EB9A324948777002D5614 /* OHHTTPStubs.framework */,
 				630EB9A624948777002D5614 /* SocketRocket.framework */,
@@ -2177,6 +2205,8 @@
 				636B46EA248AF7E400124F6A /* UserCommunications-UpdateFeedback-ResponseData.json */,
 				636B4685248AF7D300124F6A /* UserCommunications-UpdateMessageAttributions-ResponseData.json */,
 				636B4675248AF7CE00124F6A /* UserCommunications-VoteForFeedback-ResponseData.json */,
+				630BDE9824B3E4530035D8B3 /* UserCommunications-AnswerQuestion-ResponseData.json */,
+				630BDE9724B3E4530035D8B3 /* UserCommunications-GetSurveyQuestions-ResponseData.json */,
 				636B467D248AF7D100124F6A /* Weather-GetCurrentWeatherByGeocode-ResponseData.json */,
 				636B4631248AF7C400124F6A /* Weather-GetCurrentWeatherByLocation-ResponseData.json */,
 				636B4641248AF7C600124F6A /* Weather-GetForecastByGeocode-ResponseData.json */,
@@ -2188,8 +2218,8 @@
 		636DCC072493E880000560E8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				636DCC0E2493F9BA000560E8 /* Peoplepower-Tests-Bridging-Header.h */,
 				636B4627248AF7A300124F6A /* Data */,
+				636DCC0E2493F9BA000560E8 /* Peoplepower-Tests-Bridging-Header.h */,
 				636DCC042493E4B8000560E8 /* PPTCAppResources.h */,
 				636B47F1248AFA7B00124F6A /* UnitTests.plist */,
 			);
@@ -2486,6 +2516,7 @@
 		63D392B4204F21EE00041C1A = {
 			isa = PBXGroup;
 			children = (
+				630BDE9B24B3F0520035D8B3 /* AFNetworking.framework */,
 				634C1EC824A292450012F715 /* Build Utilities */,
 				630BDC3F24B386470035D8B3 /* Metadata */,
 				63D392BF204F21EE00041C1A /* Sources */,
@@ -2848,6 +2879,7 @@
 				63D3948D2052FA8C00041C1A /* In-App Messaging */,
 				63D394972053073500041C1A /* Questions */,
 				63D394A720531D4800041C1A /* SMS Group Texting */,
+				630BDE8A24B3E30C0035D8B3 /* Survey */,
 			);
 			path = Communications;
 			sourceTree = "<group>";
@@ -3218,6 +3250,7 @@
 				630BDD7E24B3AAF10035D8B3 /* PPDynamicUIScreen.h in Headers */,
 				630BDD7424B3AAED0035D8B3 /* PPProfessionalMonitoring.h in Headers */,
 				630BDDD424B3AB080035D8B3 /* PPCommunityUser.h in Headers */,
+				630BDE9224B3E3220035D8B3 /* PPSurveys.h in Headers */,
 				630BDDF024B3AB220035D8B3 /* PPAFHTTPRequestOperationManager.h in Headers */,
 				630BDDE224B3AB0D0035D8B3 /* PPFriendshipDevice.h in Headers */,
 				630BDD1E24B3AABA0035D8B3 /* PPDeviceMeasurementUnit.h in Headers */,
@@ -3228,6 +3261,7 @@
 				630BDDEC24B3AB160035D8B3 /* PPDeviceAlert.h in Headers */,
 				630BDD9A24B3AAF50035D8B3 /* PPEnergyManagementBillingInfoBillingRate.h in Headers */,
 				630BDDA824B3AAFF0035D8B3 /* PPDeviceTypes.h in Headers */,
+				630BDE9424B3E3220035D8B3 /* PPSurveyQuestion.h in Headers */,
 				630BDD4224B3AAC90035D8B3 /* PPCrowdFeedbackTicket.h in Headers */,
 				630BDD1C24B3AABA0035D8B3 /* PPDeviceMeasurementsAlert.h in Headers */,
 				630BDD6C24B3AAE90035D8B3 /* PPServicePlanPriceAmount.h in Headers */,
@@ -3291,6 +3325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63BECAF520C5D8A800408494 /* PPServicePlanPriceAmount.h in Headers */,
+				630BDE9324B3E3220035D8B3 /* PPSurveyQuestion.h in Headers */,
 				631152E321E817BD00DA7755 /* PPTHConstants.h in Headers */,
 				63BECAB820C5D88400408494 /* PPWebSocket.h in Headers */,
 				63BECB1820C5D8E600408494 /* PPDeviceTypeRuleComponentTemplate.h in Headers */,
@@ -3399,6 +3434,7 @@
 				63BECB4D20C5D96F00408494 /* PPAppResources.h in Headers */,
 				63BECAB220C5D88400408494 /* PPUserAnalytics.h in Headers */,
 				63BECB2020C5D8E600408494 /* PPDeviceTypeStory.h in Headers */,
+				630BDE9124B3E3220035D8B3 /* PPSurveys.h in Headers */,
 				63BECB1420C5D8E600408494 /* PPDeviceType.h in Headers */,
 				63BECADB20C5D8A700408494 /* PPQuestion.h in Headers */,
 				63BECAA320C5D88400408494 /* PPOperationToken.h in Headers */,
@@ -3791,6 +3827,7 @@
 				636B498B248AFBDB00124F6A /* DeviceMeasurements-GetMeasurementsWithSearchTerms-ResponseData.json in Resources */,
 				636B4A31248AFBE600124F6A /* UserCommunications-UpdateMessageAttributions-ResponseData.json in Resources */,
 				636B49CC248AFBDF00124F6A /* Products-DeleteMedia-ResponseData.json in Resources */,
+				630BDE9924B3E4540035D8B3 /* UserCommunications-GetSurveyQuestions-ResponseData.json in Resources */,
 				636B49EE248AFBE200124F6A /* Rules-UpdateRuleStatus-ResponseData.json in Resources */,
 				636B4A0F248AFBE400124F6A /* UserAccounts-GetTimeStates-ResponseData.json in Resources */,
 				636B49B2248AFBDD00124F6A /* FilesManagement-ReportAbuse-ResponseData.json in Resources */,
@@ -3841,6 +3878,7 @@
 				636B4A21248AFBE500124F6A /* UserCommunications-DeleteMessage-ResponseData.json in Resources */,
 				636B499B248AFBDC00124F6A /* Devices-SetCurrentFirmwareUpdateStatus-ResponseData.json in Resources */,
 				636B49EA248AFBE100124F6A /* Rules-GetRuleComponents-ResponseData.json in Resources */,
+				630BDE9A24B3E4540035D8B3 /* UserCommunications-AnswerQuestion-ResponseData.json in Resources */,
 				636B49EF248AFBE200124F6A /* SystemAndUserProperties-GetSystemProperty-Analytics_Level-ResponseData.txt in Resources */,
 				636B4996248AFBDB00124F6A /* Devices-GetDeviceFirmwareJobs-ResponseData.json in Resources */,
 				636B4A02248AFBE300124F6A /* UserAccounts-DeleteTag-ResponseData.json in Resources */,
@@ -4000,6 +4038,7 @@
 				630BDCEF24B3A6FD0035D8B3 /* PPCircleFile.m in Sources */,
 				630BDC7C24B3A6280035D8B3 /* PPLogin.m in Sources */,
 				630BDDD724B3AB080035D8B3 /* PPCommunityLocation.m in Sources */,
+				630BDE9624B3E3220035D8B3 /* PPSurveyQuestion.m in Sources */,
 				630BDDE324B3AB0D0035D8B3 /* PPFriendshipDevice.m in Sources */,
 				630BDC7E24B3A6280035D8B3 /* PPOperationTokenManagement.m in Sources */,
 				630BDDE724B3AB110035D8B3 /* PPCircleDeviceCamera.m in Sources */,
@@ -4031,6 +4070,7 @@
 				630BDD8F24B3AAF50035D8B3 /* PPEnergyManagementDeviceUsageAggregated.m in Sources */,
 				630BDCF124B3A6FD0035D8B3 /* PPCirclePost.m in Sources */,
 				630BDD9924B3AAF50035D8B3 /* PPEnergyManagementBillingInfoUtility.m in Sources */,
+				630BDE9024B3E3220035D8B3 /* PPSurveys.m in Sources */,
 				630BDDF324B3AB220035D8B3 /* PPAFHTTPSessionManager.m in Sources */,
 				630BDD4B24B3AACB0035D8B3 /* PPInAppMessageRecipient.m in Sources */,
 				630BDD7324B3AAE90035D8B3 /* PPStoreProduct.m in Sources */,
@@ -4187,6 +4227,7 @@
 				63BECA0220C5D67500408494 /* PPDeviceMeasurement.m in Sources */,
 				63BECA7820C5D6E500408494 /* PPOrganizationGroup.m in Sources */,
 				63BECA4620C5D6C300408494 /* PPWeatherManagement.m in Sources */,
+				630BDE8F24B3E3220035D8B3 /* PPSurveys.m in Sources */,
 				63BECA0920C5D6A100408494 /* PPNotifications.m in Sources */,
 				63BEC9FA20C5D67500408494 /* PPDeviceProperty.m in Sources */,
 				63BECA0A20C5D6A100408494 /* PPNotificationSubscription.m in Sources */,
@@ -4245,6 +4286,7 @@
 				63BECA0720C5D67500408494 /* PPDeviceParameters.m in Sources */,
 				63BEC9F920C5D67500408494 /* PPWebSocketViewer.m in Sources */,
 				63AD0B1B237CC77900F4900B /* PPCommunityLocation.m in Sources */,
+				630BDE9524B3E3220035D8B3 /* PPSurveyQuestion.m in Sources */,
 				637F1D022125E321001DB910 /* PPStorage.m in Sources */,
 				63D3873923D7AB1200BBC378 /* PPAddress.m in Sources */,
 				6309B76220E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.m in Sources */,

@@ -20,6 +20,7 @@
 #import <Peoplepower/PPCrowdFeedbacks.h>
 #import <Peoplepower/PPInAppMessaging.h>
 #import <Peoplepower/PPSMSGroupTexting.h>
+#import <Peoplepower/PPSurveys.h>
 
 static NSString *moduleName = @"UserCommunications";
 
@@ -37,6 +38,7 @@ static NSString *moduleName = @"UserCommunications";
 @property (strong, nonatomic) NSArray *answerStatuses;
 @property (strong, nonatomic) NSArray *questions;
 @property (strong, nonatomic) PPSMSSubscriber *smsSubscriber;
+@property (strong, nonatomic) PPSurveyQuestion *surveyQuestion;
 @end
 
 @implementation PPTCCommunications
@@ -56,6 +58,7 @@ static NSString *moduleName = @"UserCommunications";
     NSDictionary *messageDict = (NSDictionary *)[PPAppResources getPlistEntry:PLIST_KEY_TEST_IN_APP_MESSAGING_MESSAGE filename:PLIST_FILE_UNIT_TESTS];
     NSArray *questionsArray = (NSArray *)[PPAppResources getPlistEntry:PLIST_KEY_TEST_QUESTIONS filename:PLIST_FILE_UNIT_TESTS];
     NSDictionary *subscriberDict = (NSDictionary *)[PPAppResources getPlistEntry:PLIST_KEY_TEST_SMS_GROUP_TEXTING_SUBSCRIBER filename:PLIST_FILE_UNIT_TESTS];
+    NSDictionary *surveyQuestionDict = (NSDictionary *)[PPAppResources getPlistEntry:PLIST_KEY_TEST_SURVEY_QUESTION filename:PLIST_FILE_UNIT_TESTS];
 
     
     self.appName = appName;
@@ -80,6 +83,7 @@ static NSString *moduleName = @"UserCommunications";
     }];
     self.questions = questions;
     self.smsSubscriber = [PPSMSSubscriber initWithDictionary:subscriberDict];
+    self.surveyQuestion = [PPSurveyQuestion initWithDictionary:surveyQuestionDict];
 }
 
 - (void)tearDown {
@@ -534,7 +538,7 @@ static NSString *moduleName = @"UserCommunications";
     [self waitForExpectations:@[expectation] timeout:10.0];
 }
 
-#pragma mark - Get Questions
+#pragma mark - Questions
 
 /**
  * Get Questions.
@@ -671,6 +675,55 @@ static NSString *moduleName = @"UserCommunications";
     }];
 
     [self waitForExpectations:@[expectation] timeout:10.0];
+}
+
+#pragma mark - Surveys
+
+/**
+ * Get Survey Questions
+ *
+ * @ param brand NSString App brand
+ * @ param callback required PPSurveyQuestionsBlock Surveys callback block
+ */
+- (void)testGetSurveyQuestions {
+    NSString *methodName = @"GetSurveyQuestions";
+    XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
+    
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/surveys" statusCode:200 headers:nil];
+
+    [PPSurveys getSurveyQuestions:nil callback:^(NSArray * _Nullable questions, NSError * _Nullable error) {
+        
+        XCTAssertNil(error);
+        [expectation fulfill];
+
+    }];
+
+    [self waitForExpectations:@[expectation] timeout:10.0];
+}
+
+/**
+ * Answer Question
+ *
+ * @ param questionId required PPSurveyQuestionId Survey question id
+ * @ param slider required NSInteger Slider value
+ * @ param answerText NSString Answer text
+ * @ param callback required PPErrorBlock Error callback block
+ */
+- (void)testAnswerQuestion {
+    NSString *methodName = @"AnswerQuestion";
+    XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
+    
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/surveys" statusCode:200 headers:nil];
+
+    [PPSurveys answerQuestion:self.surveyQuestion.questionId slider:1 answerText:@"Some Answer" callback:^(NSError * _Nullable error) {
+        
+        XCTAssertNil(error);
+        [expectation fulfill];
+
+    }];
+
+    [self waitForExpectations:@[expectation] timeout:10.0];
+
 }
 
 @end

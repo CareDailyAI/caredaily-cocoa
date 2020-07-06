@@ -64,6 +64,7 @@ FOUNDATION_EXPORT const unsigned char PeoplepowerVersionString[];
 #import <Peoplepower/PPInAppMessaging.h>
 #import <Peoplepower/PPQuestions.h>
 #import <Peoplepower/PPSMSGroupTexting.h>
+#import <Peoplepower/PPSurveys.h>
 
 #pragma mark System and User Properties
 

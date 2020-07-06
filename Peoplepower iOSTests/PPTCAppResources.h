@@ -73,6 +73,10 @@
 
 #define PLIST_KEY_TEST_SMS_GROUP_TEXTING_SUBSCRIBER @"PPTCSMSGroupTextingSubscriber"
 
+// MARK: Survey Question
+
+#define PLIST_KEY_TEST_SURVEY_QUESTION @"PPTCSurveyQuestion"
+
 // MARK: - User and System Properties
 
 #define PLIST_KEY_TEST_SYSTEM_AND_USER_PROPERTIES @"PPTCSystemAndUserProperties"
