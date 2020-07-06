@@ -1,7 +1,0 @@
-git "/Users/destry/Developer/PPC/iOS/Peoplepower" "845abe5d48c7077669e8eb64b40485dafacb9658"
-github "AFNetworking/AFNetworking" "4.0.1"
-github "AliSoftware/OHHTTPStubs" "9.0.0"
-github "facebook/SocketRocket" "0.4.2"
-github "kishikawakatsumi/UICKeyChainStore" "v2.2.0"
-github "realm/realm-cocoa" "v5.0.3"
-github "robbiehanson/KissXML" "5.3.1"

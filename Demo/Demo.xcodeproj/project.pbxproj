@@ -1,0 +1,1126 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		630BDE0024B3ADC60035D8B3 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630BDDFF24B3ADC60035D8B3 /* NotificationCenter.framework */; };
+		630BDE0324B3ADC60035D8B3 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630BDE0224B3ADC60035D8B3 /* TodayViewController.swift */; };
+		630BDE0624B3ADC60035D8B3 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 630BDE0424B3ADC60035D8B3 /* MainInterface.storyboard */; };
+		630BDE0A24B3ADC60035D8B3 /* Demo iOS Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 630BDDFE24B3ADC60035D8B3 /* Demo iOS Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		630BDE0F24B3ADEC0035D8B3 /* Peoplepower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63E62AC42491A4060038A694 /* Peoplepower.framework */; };
+		630BDE1124B3ADEC0035D8B3 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631A7AF1248B3AB800D86CFF /* AFNetworking.framework */; };
+		630BDE1324B3ADEC0035D8B3 /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631A7AEE248B3AB800D86CFF /* KissXML.framework */; };
+		630BDE1524B3ADEC0035D8B3 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631A7AF0248B3AB800D86CFF /* OHHTTPStubs.framework */; };
+		630BDE1724B3ADEC0035D8B3 /* SocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631A7AEF248B3AB800D86CFF /* SocketRocket.framework */; };
+		630BDE1924B3ADEC0035D8B3 /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631A7AF3248B3AB800D86CFF /* UICKeyChainStore.framework */; };
+		630BDE2824B3B0F20035D8B3 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 630BDE2624B3B0F10035D8B3 /* Interface.storyboard */; };
+		630BDE2A24B3B0F30035D8B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 630BDE2924B3B0F30035D8B3 /* Assets.xcassets */; };
+		630BDE3124B3B0F30035D8B3 /* Demo watchOS Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 630BDE3024B3B0F30035D8B3 /* Demo watchOS Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		630BDE3624B3B0F30035D8B3 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630BDE3524B3B0F30035D8B3 /* InterfaceController.swift */; };
+		630BDE3824B3B0F30035D8B3 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630BDE3724B3B0F30035D8B3 /* ExtensionDelegate.swift */; };
+		630BDE3A24B3B0F30035D8B3 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630BDE3924B3B0F30035D8B3 /* NotificationController.swift */; };
+		630BDE3C24B3B0F30035D8B3 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630BDE3B24B3B0F30035D8B3 /* ComplicationController.swift */; };
+		630BDE3E24B3B0F40035D8B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 630BDE3D24B3B0F40035D8B3 /* Assets.xcassets */; };
+		630BDE4324B3B0F40035D8B3 /* Demo watchOS.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 630BDE2424B3B0F10035D8B3 /* Demo watchOS.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		630BDE5F24B3B60C0035D8B3 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630BDE5B24B3B60C0035D8B3 /* AFNetworking.framework */; };
+		630BDE6124B3B60C0035D8B3 /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630BDE5C24B3B60C0035D8B3 /* KissXML.framework */; };
+		630BDE6324B3B60C0035D8B3 /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630BDE5D24B3B60C0035D8B3 /* UICKeyChainStore.framework */; };
+		630BDE6524B3B60C0035D8B3 /* Peoplepower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630BDE5E24B3B60C0035D8B3 /* Peoplepower.framework */; };
+		630BDE6924B3B7390035D8B3 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630BDE5B24B3B60C0035D8B3 /* AFNetworking.framework */; };
+		630BDE6B24B3B7390035D8B3 /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630BDE5C24B3B60C0035D8B3 /* KissXML.framework */; };
+		630BDE6D24B3B7390035D8B3 /* Peoplepower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630BDE5E24B3B60C0035D8B3 /* Peoplepower.framework */; };
+		630BDE7024B3B73D0035D8B3 /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630BDE5D24B3B60C0035D8B3 /* UICKeyChainStore.framework */; };
+		630EB99624948298002D5614 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631A7AF1248B3AB800D86CFF /* AFNetworking.framework */; };
+		630EB99824948298002D5614 /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631A7AEE248B3AB800D86CFF /* KissXML.framework */; };
+		630EB99A24948298002D5614 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631A7AF0248B3AB800D86CFF /* OHHTTPStubs.framework */; };
+		630EB99C24948298002D5614 /* Peoplepower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63E62AC42491A4060038A694 /* Peoplepower.framework */; };
+		630EB99E24948298002D5614 /* SocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631A7AEF248B3AB800D86CFF /* SocketRocket.framework */; };
+		630EB9A024948298002D5614 /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631A7AF3248B3AB800D86CFF /* UICKeyChainStore.framework */; };
+		631A7AB7248B376500D86CFF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 631A7AB6248B376500D86CFF /* AppDelegate.m */; };
+		631A7ABA248B376500D86CFF /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 631A7AB9248B376500D86CFF /* SceneDelegate.m */; };
+		631A7ABD248B376500D86CFF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631A7ABC248B376500D86CFF /* ViewController.m */; };
+		631A7AC0248B376500D86CFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631A7ABE248B376500D86CFF /* Main.storyboard */; };
+		631A7AC2248B376600D86CFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 631A7AC1248B376600D86CFF /* Assets.xcassets */; };
+		631A7AC5248B376600D86CFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631A7AC3248B376600D86CFF /* LaunchScreen.storyboard */; };
+		631A7AC8248B376600D86CFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 631A7AC7248B376600D86CFF /* main.m */; };
+		631A7ADD248B376600D86CFF /* Peoplepower_DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631A7ADC248B376600D86CFF /* Peoplepower_DemoUITests.m */; };
+		631A7AEB248B377D00D86CFF /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 631A7AEA248B377D00D86CFF /* Cartfile */; };
+		63E62B572492A1A60038A694 /* Peoplepower-Config-Override.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63E62B562492A1A60038A694 /* Peoplepower-Config-Override.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		630BDE0824B3ADC60035D8B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 631A7AAA248B376500D86CFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 630BDDFD24B3ADC60035D8B3;
+			remoteInfo = "Demo iOS Today";
+		};
+		630BDE3224B3B0F30035D8B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 631A7AAA248B376500D86CFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 630BDE2F24B3B0F30035D8B3;
+			remoteInfo = "Demo watchOS Extension";
+		};
+		630BDE4124B3B0F40035D8B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 631A7AAA248B376500D86CFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 630BDE2324B3B0F10035D8B3;
+			remoteInfo = "Demo watchOS";
+		};
+		631A7AD9248B376600D86CFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 631A7AAA248B376500D86CFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 631A7AB1248B376500D86CFF;
+			remoteInfo = "Peoplepower Demo";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		630BDE0E24B3ADC60035D8B3 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				630BDE0A24B3ADC60035D8B3 /* Demo iOS Today.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		630BDE4724B3B0F40035D8B3 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				630BDE3124B3B0F30035D8B3 /* Demo watchOS Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		630BDE4B24B3B0F40035D8B3 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				630BDE4324B3B0F40035D8B3 /* Demo watchOS.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		630BDC4324B389E50035D8B3 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		630BDC4424B389E50035D8B3 /* output.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = output.xcfilelist; sourceTree = "<group>"; };
+		630BDC4524B389E60035D8B3 /* input.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = input.xcfilelist; sourceTree = "<group>"; };
+		630BDDFE24B3ADC60035D8B3 /* Demo iOS Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Demo iOS Today.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		630BDDFF24B3ADC60035D8B3 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		630BDE0224B3ADC60035D8B3 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		630BDE0524B3ADC60035D8B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		630BDE0724B3ADC60035D8B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		630BDE1C24B3AE0E0035D8B3 /* Demo iOS Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Demo iOS Today.entitlements"; sourceTree = "<group>"; };
+		630BDE1D24B3AE360035D8B3 /* Demo iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Demo iOS.entitlements"; sourceTree = "<group>"; };
+		630BDE2424B3B0F10035D8B3 /* Demo watchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo watchOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		630BDE2724B3B0F20035D8B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		630BDE2924B3B0F30035D8B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		630BDE2B24B3B0F30035D8B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		630BDE3024B3B0F30035D8B3 /* Demo watchOS Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Demo watchOS Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		630BDE3524B3B0F30035D8B3 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		630BDE3724B3B0F30035D8B3 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		630BDE3924B3B0F30035D8B3 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		630BDE3B24B3B0F30035D8B3 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		630BDE3D24B3B0F40035D8B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		630BDE3F24B3B0F40035D8B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		630BDE4024B3B0F40035D8B3 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		630BDE4C24B3B1D80035D8B3 /* input_watchOS.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = input_watchOS.xcfilelist; sourceTree = "<group>"; };
+		630BDE4D24B3B1D80035D8B3 /* output_watchOS.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = output_watchOS.xcfilelist; sourceTree = "<group>"; };
+		630BDE5B24B3B60C0035D8B3 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/watchOS/AFNetworking.framework; sourceTree = "<group>"; };
+		630BDE5C24B3B60C0035D8B3 /* KissXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KissXML.framework; path = Carthage/Build/watchOS/KissXML.framework; sourceTree = "<group>"; };
+		630BDE5D24B3B60C0035D8B3 /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICKeyChainStore.framework; path = Carthage/Build/watchOS/UICKeyChainStore.framework; sourceTree = "<group>"; };
+		630BDE5E24B3B60C0035D8B3 /* Peoplepower.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Peoplepower.framework; path = Carthage/Build/watchOS/Peoplepower.framework; sourceTree = "<group>"; };
+		631A7AB2248B376500D86CFF /* Demo iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		631A7AB5248B376500D86CFF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		631A7AB6248B376500D86CFF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		631A7AB8248B376500D86CFF /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		631A7AB9248B376500D86CFF /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		631A7ABB248B376500D86CFF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		631A7ABC248B376500D86CFF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		631A7ABF248B376500D86CFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		631A7AC1248B376600D86CFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		631A7AC4248B376600D86CFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		631A7AC6248B376600D86CFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		631A7AC7248B376600D86CFF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		631A7AD8248B376600D86CFF /* Peoplepower iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Peoplepower iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		631A7ADC248B376600D86CFF /* Peoplepower_DemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Peoplepower_DemoUITests.m; sourceTree = "<group>"; };
+		631A7ADE248B376600D86CFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		631A7AEA248B377D00D86CFF /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		631A7AEE248B3AB800D86CFF /* KissXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KissXML.framework; path = Carthage/Build/iOS/KissXML.framework; sourceTree = "<group>"; };
+		631A7AEF248B3AB800D86CFF /* SocketRocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SocketRocket.framework; path = Carthage/Build/iOS/SocketRocket.framework; sourceTree = "<group>"; };
+		631A7AF0248B3AB800D86CFF /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
+		631A7AF1248B3AB800D86CFF /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
+		631A7AF3248B3AB800D86CFF /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICKeyChainStore.framework; path = Carthage/Build/iOS/UICKeyChainStore.framework; sourceTree = "<group>"; };
+		63E62AC42491A4060038A694 /* Peoplepower.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Peoplepower.framework; path = Carthage/Build/iOS/Peoplepower.framework; sourceTree = "<group>"; };
+		63E62B562492A1A60038A694 /* Peoplepower-Config-Override.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Peoplepower-Config-Override.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		630BDDFB24B3ADC60035D8B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				630BDE1324B3ADEC0035D8B3 /* KissXML.framework in Frameworks */,
+				630BDE1724B3ADEC0035D8B3 /* SocketRocket.framework in Frameworks */,
+				630BDE0024B3ADC60035D8B3 /* NotificationCenter.framework in Frameworks */,
+				630BDE1924B3ADEC0035D8B3 /* UICKeyChainStore.framework in Frameworks */,
+				630BDE1524B3ADEC0035D8B3 /* OHHTTPStubs.framework in Frameworks */,
+				630BDE1124B3ADEC0035D8B3 /* AFNetworking.framework in Frameworks */,
+				630BDE0F24B3ADEC0035D8B3 /* Peoplepower.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		630BDE2D24B3B0F30035D8B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				630BDE6B24B3B7390035D8B3 /* KissXML.framework in Frameworks */,
+				630BDE6924B3B7390035D8B3 /* AFNetworking.framework in Frameworks */,
+				630BDE7024B3B73D0035D8B3 /* UICKeyChainStore.framework in Frameworks */,
+				630BDE6D24B3B7390035D8B3 /* Peoplepower.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		631A7AAF248B376500D86CFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				630EB9A024948298002D5614 /* UICKeyChainStore.framework in Frameworks */,
+				630EB99A24948298002D5614 /* OHHTTPStubs.framework in Frameworks */,
+				630EB99824948298002D5614 /* KissXML.framework in Frameworks */,
+				630EB99624948298002D5614 /* AFNetworking.framework in Frameworks */,
+				630EB99C24948298002D5614 /* Peoplepower.framework in Frameworks */,
+				630EB99E24948298002D5614 /* SocketRocket.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		631A7AD5248B376600D86CFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A853F2C1BBBCEA47B935FC46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				630BDE6324B3B60C0035D8B3 /* UICKeyChainStore.framework in Frameworks */,
+				630BDE6124B3B60C0035D8B3 /* KissXML.framework in Frameworks */,
+				630BDE5F24B3B60C0035D8B3 /* AFNetworking.framework in Frameworks */,
+				630BDE6524B3B60C0035D8B3 /* Peoplepower.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		630BDC4024B389A30035D8B3 /* Build Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				630BDC4324B389E50035D8B3 /* Podfile */,
+				631A7AEA248B377D00D86CFF /* Cartfile */,
+				630BDC4524B389E60035D8B3 /* input.xcfilelist */,
+				630BDC4424B389E50035D8B3 /* output.xcfilelist */,
+				630BDE4C24B3B1D80035D8B3 /* input_watchOS.xcfilelist */,
+				630BDE4D24B3B1D80035D8B3 /* output_watchOS.xcfilelist */,
+			);
+			name = "Build Utilities";
+			sourceTree = "<group>";
+		};
+		630BDE0124B3ADC60035D8B3 /* Demo iOS Today */ = {
+			isa = PBXGroup;
+			children = (
+				630BDE1C24B3AE0E0035D8B3 /* Demo iOS Today.entitlements */,
+				630BDE0224B3ADC60035D8B3 /* TodayViewController.swift */,
+				630BDE0424B3ADC60035D8B3 /* MainInterface.storyboard */,
+				630BDE0724B3ADC60035D8B3 /* Info.plist */,
+			);
+			path = "Demo iOS Today";
+			sourceTree = "<group>";
+		};
+		630BDE2524B3B0F10035D8B3 /* Demo watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				630BDE2624B3B0F10035D8B3 /* Interface.storyboard */,
+				630BDE2924B3B0F30035D8B3 /* Assets.xcassets */,
+				630BDE2B24B3B0F30035D8B3 /* Info.plist */,
+			);
+			path = "Demo watchOS";
+			sourceTree = "<group>";
+		};
+		630BDE3424B3B0F30035D8B3 /* Demo watchOS Extension */ = {
+			isa = PBXGroup;
+			children = (
+				630BDE3524B3B0F30035D8B3 /* InterfaceController.swift */,
+				630BDE3724B3B0F30035D8B3 /* ExtensionDelegate.swift */,
+				630BDE3924B3B0F30035D8B3 /* NotificationController.swift */,
+				630BDE3B24B3B0F30035D8B3 /* ComplicationController.swift */,
+				630BDE3D24B3B0F40035D8B3 /* Assets.xcassets */,
+				630BDE3F24B3B0F40035D8B3 /* Info.plist */,
+				630BDE4024B3B0F40035D8B3 /* PushNotificationPayload.apns */,
+			);
+			path = "Demo watchOS Extension";
+			sourceTree = "<group>";
+		};
+		631A7AA9248B376500D86CFF = {
+			isa = PBXGroup;
+			children = (
+				630BDC4024B389A30035D8B3 /* Build Utilities */,
+				631A7AB4248B376500D86CFF /* Demo iOS */,
+				631A7ADB248B376600D86CFF /* Demo iOSUITests */,
+				630BDE0124B3ADC60035D8B3 /* Demo iOS Today */,
+				630BDE2524B3B0F10035D8B3 /* Demo watchOS */,
+				630BDE3424B3B0F30035D8B3 /* Demo watchOS Extension */,
+				631A7AB3248B376500D86CFF /* Products */,
+				631A7AED248B3AB800D86CFF /* Frameworks */,
+				881665657F0C74EC55363359 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		631A7AB3248B376500D86CFF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				631A7AB2248B376500D86CFF /* Demo iOS.app */,
+				631A7AD8248B376600D86CFF /* Peoplepower iOSUITests.xctest */,
+				630BDDFE24B3ADC60035D8B3 /* Demo iOS Today.appex */,
+				630BDE2424B3B0F10035D8B3 /* Demo watchOS.app */,
+				630BDE3024B3B0F30035D8B3 /* Demo watchOS Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		631A7AB4248B376500D86CFF /* Demo iOS */ = {
+			isa = PBXGroup;
+			children = (
+				630BDE1D24B3AE360035D8B3 /* Demo iOS.entitlements */,
+				631A7AB5248B376500D86CFF /* AppDelegate.h */,
+				631A7AB6248B376500D86CFF /* AppDelegate.m */,
+				631A7AB8248B376500D86CFF /* SceneDelegate.h */,
+				631A7AB9248B376500D86CFF /* SceneDelegate.m */,
+				631A7ABB248B376500D86CFF /* ViewController.h */,
+				631A7ABC248B376500D86CFF /* ViewController.m */,
+				631A7ABE248B376500D86CFF /* Main.storyboard */,
+				631A7AC1248B376600D86CFF /* Assets.xcassets */,
+				631A7AC3248B376600D86CFF /* LaunchScreen.storyboard */,
+				631A7AC6248B376600D86CFF /* Info.plist */,
+				631A7AC7248B376600D86CFF /* main.m */,
+				63E62B562492A1A60038A694 /* Peoplepower-Config-Override.plist */,
+			);
+			path = "Demo iOS";
+			sourceTree = "<group>";
+		};
+		631A7ADB248B376600D86CFF /* Demo iOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				631A7ADC248B376600D86CFF /* Peoplepower_DemoUITests.m */,
+				631A7ADE248B376600D86CFF /* Info.plist */,
+			);
+			path = "Demo iOSUITests";
+			sourceTree = "<group>";
+		};
+		631A7AED248B3AB800D86CFF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63E62AC42491A4060038A694 /* Peoplepower.framework */,
+				631A7AF1248B3AB800D86CFF /* AFNetworking.framework */,
+				631A7AEE248B3AB800D86CFF /* KissXML.framework */,
+				630BDE5B24B3B60C0035D8B3 /* AFNetworking.framework */,
+				630BDE5C24B3B60C0035D8B3 /* KissXML.framework */,
+				630BDE5E24B3B60C0035D8B3 /* Peoplepower.framework */,
+				630BDE5D24B3B60C0035D8B3 /* UICKeyChainStore.framework */,
+				631A7AF0248B3AB800D86CFF /* OHHTTPStubs.framework */,
+				631A7AEF248B3AB800D86CFF /* SocketRocket.framework */,
+				631A7AF3248B3AB800D86CFF /* UICKeyChainStore.framework */,
+				630BDDFF24B3ADC60035D8B3 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		881665657F0C74EC55363359 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		630BDDFD24B3ADC60035D8B3 /* Demo iOS Today */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 630BDE0B24B3ADC60035D8B3 /* Build configuration list for PBXNativeTarget "Demo iOS Today" */;
+			buildPhases = (
+				630BDDFA24B3ADC60035D8B3 /* Sources */,
+				630BDDFB24B3ADC60035D8B3 /* Frameworks */,
+				630BDDFC24B3ADC60035D8B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Demo iOS Today";
+			productName = "Demo iOS Today";
+			productReference = 630BDDFE24B3ADC60035D8B3 /* Demo iOS Today.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		630BDE2324B3B0F10035D8B3 /* Demo watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 630BDE4824B3B0F40035D8B3 /* Build configuration list for PBXNativeTarget "Demo watchOS" */;
+			buildPhases = (
+				630BDE2224B3B0F10035D8B3 /* Resources */,
+				630BDE4724B3B0F40035D8B3 /* Embed App Extensions */,
+				A853F2C1BBBCEA47B935FC46 /* Frameworks */,
+				630BDE6824B3B6400035D8B3 /* Carthage */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				630BDE3324B3B0F30035D8B3 /* PBXTargetDependency */,
+			);
+			name = "Demo watchOS";
+			productName = "Demo watchOS";
+			productReference = 630BDE2424B3B0F10035D8B3 /* Demo watchOS.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		630BDE2F24B3B0F30035D8B3 /* Demo watchOS Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 630BDE4424B3B0F40035D8B3 /* Build configuration list for PBXNativeTarget "Demo watchOS Extension" */;
+			buildPhases = (
+				630BDE2C24B3B0F30035D8B3 /* Sources */,
+				630BDE2D24B3B0F30035D8B3 /* Frameworks */,
+				630BDE2E24B3B0F30035D8B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Demo watchOS Extension";
+			productName = "Demo watchOS Extension";
+			productReference = 630BDE3024B3B0F30035D8B3 /* Demo watchOS Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		631A7AB1248B376500D86CFF /* Demo iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 631A7AE1248B376600D86CFF /* Build configuration list for PBXNativeTarget "Demo iOS" */;
+			buildPhases = (
+				631A7AAE248B376500D86CFF /* Sources */,
+				631A7AAF248B376500D86CFF /* Frameworks */,
+				631A7AB0248B376500D86CFF /* Resources */,
+				631A7AEC248B39EE00D86CFF /* Carthage */,
+				630BDE0E24B3ADC60035D8B3 /* Embed App Extensions */,
+				630BDE4B24B3B0F40035D8B3 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				630BDE0924B3ADC60035D8B3 /* PBXTargetDependency */,
+				630BDE4224B3B0F40035D8B3 /* PBXTargetDependency */,
+			);
+			name = "Demo iOS";
+			productName = "Peoplepower Demo";
+			productReference = 631A7AB2248B376500D86CFF /* Demo iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		631A7AD7248B376600D86CFF /* Peoplepower iOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 631A7AE7248B376600D86CFF /* Build configuration list for PBXNativeTarget "Peoplepower iOSUITests" */;
+			buildPhases = (
+				631A7AD4248B376600D86CFF /* Sources */,
+				631A7AD5248B376600D86CFF /* Frameworks */,
+				631A7AD6248B376600D86CFF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				631A7ADA248B376600D86CFF /* PBXTargetDependency */,
+			);
+			name = "Peoplepower iOSUITests";
+			productName = "Peoplepower DemoUITests";
+			productReference = 631A7AD8248B376600D86CFF /* Peoplepower iOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		631A7AAA248B376500D86CFF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = peoplepowerco;
+				TargetAttributes = {
+					630BDDFD24B3ADC60035D8B3 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					630BDE2324B3B0F10035D8B3 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					630BDE2F24B3B0F30035D8B3 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					631A7AB1248B376500D86CFF = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					631A7AD7248B376600D86CFF = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 631A7AB1248B376500D86CFF;
+					};
+				};
+			};
+			buildConfigurationList = 631A7AAD248B376500D86CFF /* Build configuration list for PBXProject "Demo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 631A7AA9248B376500D86CFF;
+			productRefGroup = 631A7AB3248B376500D86CFF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				631A7AB1248B376500D86CFF /* Demo iOS */,
+				630BDDFD24B3ADC60035D8B3 /* Demo iOS Today */,
+				631A7AD7248B376600D86CFF /* Peoplepower iOSUITests */,
+				630BDE2324B3B0F10035D8B3 /* Demo watchOS */,
+				630BDE2F24B3B0F30035D8B3 /* Demo watchOS Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		630BDDFC24B3ADC60035D8B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				630BDE0624B3ADC60035D8B3 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		630BDE2224B3B0F10035D8B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				630BDE2A24B3B0F30035D8B3 /* Assets.xcassets in Resources */,
+				630BDE2824B3B0F20035D8B3 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		630BDE2E24B3B0F30035D8B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				630BDE3E24B3B0F40035D8B3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		631A7AB0248B376500D86CFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				631A7AC5248B376600D86CFF /* LaunchScreen.storyboard in Resources */,
+				631A7AC2248B376600D86CFF /* Assets.xcassets in Resources */,
+				631A7AEB248B377D00D86CFF /* Cartfile in Resources */,
+				63E62B572492A1A60038A694 /* Peoplepower-Config-Override.plist in Resources */,
+				631A7AC0248B376500D86CFF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		631A7AD6248B376600D86CFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		630BDE6824B3B6400035D8B3 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/input_watchOS.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = Carthage;
+			outputFileListPaths = (
+				"$(SRCROOT)/output_watchOS.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		631A7AEC248B39EE00D86CFF /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/input.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = Carthage;
+			outputFileListPaths = (
+				"$(SRCROOT)/output.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		630BDDFA24B3ADC60035D8B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				630BDE0324B3ADC60035D8B3 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		630BDE2C24B3B0F30035D8B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				630BDE3A24B3B0F30035D8B3 /* NotificationController.swift in Sources */,
+				630BDE3C24B3B0F30035D8B3 /* ComplicationController.swift in Sources */,
+				630BDE3824B3B0F30035D8B3 /* ExtensionDelegate.swift in Sources */,
+				630BDE3624B3B0F30035D8B3 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		631A7AAE248B376500D86CFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				631A7ABD248B376500D86CFF /* ViewController.m in Sources */,
+				631A7AB7248B376500D86CFF /* AppDelegate.m in Sources */,
+				631A7AC8248B376600D86CFF /* main.m in Sources */,
+				631A7ABA248B376500D86CFF /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		631A7AD4248B376600D86CFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				631A7ADD248B376600D86CFF /* Peoplepower_DemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		630BDE0924B3ADC60035D8B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 630BDDFD24B3ADC60035D8B3 /* Demo iOS Today */;
+			targetProxy = 630BDE0824B3ADC60035D8B3 /* PBXContainerItemProxy */;
+		};
+		630BDE3324B3B0F30035D8B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 630BDE2F24B3B0F30035D8B3 /* Demo watchOS Extension */;
+			targetProxy = 630BDE3224B3B0F30035D8B3 /* PBXContainerItemProxy */;
+		};
+		630BDE4224B3B0F40035D8B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 630BDE2324B3B0F10035D8B3 /* Demo watchOS */;
+			targetProxy = 630BDE4124B3B0F40035D8B3 /* PBXContainerItemProxy */;
+		};
+		631A7ADA248B376600D86CFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 631A7AB1248B376500D86CFF /* Demo iOS */;
+			targetProxy = 631A7AD9248B376600D86CFF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		630BDE0424B3ADC60035D8B3 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				630BDE0524B3ADC60035D8B3 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		630BDE2624B3B0F10035D8B3 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				630BDE2724B3B0F20035D8B3 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		631A7ABE248B376500D86CFF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				631A7ABF248B376500D86CFF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		631A7AC3248B376600D86CFF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				631A7AC4248B376600D86CFF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		630BDE0C24B3ADC60035D8B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Demo iOS Today/Demo iOS Today.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EAWY6XBUH2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "Demo iOS Today/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.demo.iOS.Today;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG=1 EXTENSION=1";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		630BDE0D24B3ADC60035D8B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Demo iOS Today/Demo iOS Today.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EAWY6XBUH2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "Demo iOS Today/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.demo.iOS.Today;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "EXTENSION=1";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		630BDE4524B3B0F40035D8B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EAWY6XBUH2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
+				INFOPLIST_FILE = "Demo watchOS Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.demo.iOS.watchOS.extension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		630BDE4624B3B0F40035D8B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EAWY6XBUH2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
+				INFOPLIST_FILE = "Demo watchOS Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.demo.iOS.watchOS.extension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Release;
+		};
+		630BDE4924B3B0F40035D8B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EAWY6XBUH2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
+				IBSC_MODULE = Demo_watchOS_Extension;
+				INFOPLIST_FILE = "Demo watchOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.demo.iOS.watchOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Debug;
+		};
+		630BDE4A24B3B0F40035D8B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EAWY6XBUH2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
+				IBSC_MODULE = Demo_watchOS_Extension;
+				INFOPLIST_FILE = "Demo watchOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.demo.iOS.watchOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Release;
+		};
+		631A7ADF248B376600D86CFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		631A7AE0248B376600D86CFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		631A7AE2248B376600D86CFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Demo iOS/Demo iOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = EAWY6XBUH2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "Demo iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.demo.iOS;
+				PRODUCT_NAME = "Demo iOS";
+			};
+			name = Debug;
+		};
+		631A7AE3248B376600D86CFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Demo iOS/Demo iOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = EAWY6XBUH2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "Demo iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.demo.iOS;
+				PRODUCT_NAME = "Demo iOS";
+			};
+			name = Release;
+		};
+		631A7AE8248B376600D86CFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EAWY6XBUH2;
+				INFOPLIST_FILE = "Demo iOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.iOS.UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Demo iOS";
+			};
+			name = Debug;
+		};
+		631A7AE9248B376600D86CFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EAWY6XBUH2;
+				INFOPLIST_FILE = "Demo iOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.iOS.UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Demo iOS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		630BDE0B24B3ADC60035D8B3 /* Build configuration list for PBXNativeTarget "Demo iOS Today" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				630BDE0C24B3ADC60035D8B3 /* Debug */,
+				630BDE0D24B3ADC60035D8B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		630BDE4424B3B0F40035D8B3 /* Build configuration list for PBXNativeTarget "Demo watchOS Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				630BDE4524B3B0F40035D8B3 /* Debug */,
+				630BDE4624B3B0F40035D8B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		630BDE4824B3B0F40035D8B3 /* Build configuration list for PBXNativeTarget "Demo watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				630BDE4924B3B0F40035D8B3 /* Debug */,
+				630BDE4A24B3B0F40035D8B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		631A7AAD248B376500D86CFF /* Build configuration list for PBXProject "Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				631A7ADF248B376600D86CFF /* Debug */,
+				631A7AE0248B376600D86CFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		631A7AE1248B376600D86CFF /* Build configuration list for PBXNativeTarget "Demo iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				631A7AE2248B376600D86CFF /* Debug */,
+				631A7AE3248B376600D86CFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		631A7AE7248B376600D86CFF /* Build configuration list for PBXNativeTarget "Peoplepower iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				631A7AE8248B376600D86CFF /* Debug */,
+				631A7AE9248B376600D86CFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 631A7AAA248B376500D86CFF /* Project object */;
+}

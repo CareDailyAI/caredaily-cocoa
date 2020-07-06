@@ -7,7 +7,7 @@ BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-${PLATFORM_NAME}
 echo "Build Directory: $BUILD_DIR"
 
 # Set Carthage build directory
-CARTHAGE_BUILD_DIR=${PROJECT_DIR}/${PROJECT_NAME}Demo/Carthage/Build/iOS
+CARTHAGE_BUILD_DIR=${PROJECT_DIR}/Demo/Carthage/Build/iOS
 echo "Carthage Build Directory: $CARTHAGE_BUILD_DIR"
 
 # Remove existing framework
@@ -20,6 +20,6 @@ cp -R "$BUILD_DIR/${PROJECT_NAME}.framework" "$CARTHAGE_BUILD_DIR/${PROJECT_NAME
 
 # Install Cocoapods
 echo "Copy resources using Cocoapods"
-pod install --project-directory=${PROJECT_DIR}/${PROJECT_NAME}Demo/
+pod install --project-directory=${PROJECT_DIR}/Demo/
 
 fi

@@ -12,8 +12,18 @@ Pod::Spec.new do |s|
   
   s.version      = "0.1.1"
   
-  s.platform     = :ios, "11.0"
+  s.ios.deployment_target = "11.0"
+  s.watchos.deployment_target = "6.0"
+#  s.osx.deployment_target = "10.9"
+#  s.tvos.deployment_target = "9.0"
+  
   s.source       = { :git => "https://github.com/destryteeter/Peoplepower.git", :tag => "#{s.version}" }
-
-  s.resources = "Peoplepower/Resources/*.{plist}"
+  
+  s.subspec 'iOS' do |ios|
+    ios.resources = "Sources/*.{plist}"
+  end
+  
+  s.subspec 'watchOS' do |watchos|
+    watchos.resources = "Sources/*.{plist}"
+  end
 end

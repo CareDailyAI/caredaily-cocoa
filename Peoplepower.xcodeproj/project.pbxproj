@@ -9,12 +9,430 @@
 /* Begin PBXBuildFile section */
 		6309B76120E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.h in Headers */ = {isa = PBXBuildFile; fileRef = 6309B75F20E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6309B76220E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 6309B76020E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.m */; };
+		630BDC5624B393480035D8B3 /* Peoplepower-Info-watchOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 630BDC5524B393480035D8B3 /* Peoplepower-Info-watchOS.plist */; };
+		630BDC5A24B393D90035D8B3 /* PPNetworkUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 63A9525C205C2E9B000E466A /* PPNetworkUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC5B24B393DD0035D8B3 /* PPNetworkUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A9525B205C2E9A000E466A /* PPNetworkUtilities.m */; };
+		630BDC5C24B393F00035D8B3 /* PPTHConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 631152DE21E7FB8400DA7755 /* PPTHConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC5D24B393F80035D8B3 /* PPDateUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D39380204F46B600041C1A /* PPDateUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC5E24B393FC0035D8B3 /* PPDateUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3937F204F46B600041C1A /* PPDateUtilities.m */; };
+		630BDC5F24B394BA0035D8B3 /* PPAppResources.h in Headers */ = {isa = PBXBuildFile; fileRef = 63A95234205AD424000E466A /* PPAppResources.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC6024B394BE0035D8B3 /* PPAppResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636DCC052493E7C1000560E8 /* PPAppResources.swift */; };
+		630BDC6124B394C90035D8B3 /* PPStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 637F1CFF2125E321001DB910 /* PPStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC6224B394D00035D8B3 /* PPStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 637F1D002125E321001DB910 /* PPStorage.m */; };
+		630BDC6324B3A5200035D8B3 /* Peoplepower.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D392C0204F21EE00041C1A /* Peoplepower.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC6424B3A5840035D8B3 /* PPVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3940A20509AE800041C1A /* PPVersion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC6524B3A58A0035D8B3 /* PPVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3940920509AE700041C1A /* PPVersion.m */; };
+		630BDC6624B3A5B50035D8B3 /* PPCurlDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D39304204F287800041C1A /* PPCurlDebug.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC6724B3A5B80035D8B3 /* PPCurlDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D39305204F287800041C1A /* PPCurlDebug.m */; };
+		630BDC6824B3A5D60035D8B3 /* PPCloudConnectivity.h in Headers */ = {isa = PBXBuildFile; fileRef = 631F847F206432840055C512 /* PPCloudConnectivity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC6924B3A5D60035D8B3 /* PPCloudConnectivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 631F8480206432840055C512 /* PPCloudConnectivity.m */; };
+		630BDC6A24B3A5D60035D8B3 /* PPCloudConnectivityCloud.h in Headers */ = {isa = PBXBuildFile; fileRef = 631F8482206435F30055C512 /* PPCloudConnectivityCloud.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC6B24B3A5D60035D8B3 /* PPCloudConnectivityCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = 631F8483206435F30055C512 /* PPCloudConnectivityCloud.m */; };
+		630BDC6C24B3A5D60035D8B3 /* PPCloudConnectivityServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 631F8485206436000055C512 /* PPCloudConnectivityServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC6D24B3A5D60035D8B3 /* PPCloudConnectivityServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 631F8486206436000055C512 /* PPCloudConnectivityServer.m */; };
+		630BDC6E24B3A5E30035D8B3 /* PPBaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3931C204F3E6300041C1A /* PPBaseModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC6F24B3A5E80035D8B3 /* PPBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3931D204F3E6300041C1A /* PPBaseModel.m */; };
+		630BDC7024B3A5F40035D8B3 /* PPTimezone.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D393DC20503A6C00041C1A /* PPTimezone.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC7124B3A5F90035D8B3 /* PPCountriesStatesAndTimezones.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D39406205093CC00041C1A /* PPCountriesStatesAndTimezones.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC7224B3A5FD0035D8B3 /* PPCountriesStatesAndTimezones.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D39403205093CB00041C1A /* PPCountriesStatesAndTimezones.m */; };
+		630BDC7324B3A6020035D8B3 /* PPCountry.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D393D92050392A00041C1A /* PPCountry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC7424B3A6070035D8B3 /* PPCountry.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D393DA2050392A00041C1A /* PPCountry.m */; };
+		630BDC7524B3A6090035D8B3 /* PPState.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D393D62050386900041C1A /* PPState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC7624B3A60C0035D8B3 /* PPState.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D393D72050386900041C1A /* PPState.m */; };
+		630BDC7724B3A6100035D8B3 /* PPTimezone.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D393DD20503A6C00041C1A /* PPTimezone.m */; };
+		630BDC7824B3A6230035D8B3 /* PPLogin.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC45220588E29001ED811 /* PPLogin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC7924B3A6230035D8B3 /* PPLogout.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC45520588E30001ED811 /* PPLogout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC7A24B3A6230035D8B3 /* PPOperationTokenManagement.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC45820588F41001ED811 /* PPOperationTokenManagement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC7B24B3A6230035D8B3 /* PPOperationToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D393BC204F542C00041C1A /* PPOperationToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC7C24B3A6280035D8B3 /* PPLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC45320588E29001ED811 /* PPLogin.m */; };
+		630BDC7D24B3A6280035D8B3 /* PPLogout.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC45620588E30001ED811 /* PPLogout.m */; };
+		630BDC7E24B3A6280035D8B3 /* PPOperationTokenManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC45920588F41001ED811 /* PPOperationTokenManagement.m */; };
+		630BDC7F24B3A6280035D8B3 /* PPOperationToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D393BB204F542C00041C1A /* PPOperationToken.m */; };
+		630BDC8024B3A6460035D8B3 /* PPLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D39320204F3E9100041C1A /* PPLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC8124B3A6460035D8B3 /* PPLocationCommunity.h in Headers */ = {isa = PBXBuildFile; fileRef = 6390F2FB23AB441E00426CCC /* PPLocationCommunity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC8224B3A6460035D8B3 /* PPLocationSpace.h in Headers */ = {isa = PBXBuildFile; fileRef = 63872B442135AE99003EE488 /* PPLocationSpace.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC8324B3A6460035D8B3 /* PPLocationOccupantsRange.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D393DF20503C1600041C1A /* PPLocationOccupantsRange.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC8424B3A6460035D8B3 /* PPLocationSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D393E2205042B400041C1A /* PPLocationSize.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC8524B3A6460035D8B3 /* PPLocationSceneEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D393E82050642300041C1A /* PPLocationSceneEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC8624B3A6460035D8B3 /* PPLocationNarrative.h in Headers */ = {isa = PBXBuildFile; fileRef = 63DC1D0E215A98EF0091FB2D /* PPLocationNarrative.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC8724B3A6460035D8B3 /* PPLocationUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 63CD14BE21C19279002290C9 /* PPLocationUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC8824B3A6460035D8B3 /* PPLocationUserSchedule.h in Headers */ = {isa = PBXBuildFile; fileRef = 63CD14C221C19774002290C9 /* PPLocationUserSchedule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC8924B3A6460035D8B3 /* PPUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3931A204F3CD300041C1A /* PPUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC8A24B3A6460035D8B3 /* PPUserEmail.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D393E52050532800041C1A /* PPUserEmail.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC8B24B3A6460035D8B3 /* PPUserBadge.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D393BE204F750200041C1A /* PPUserBadge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC8C24B3A6460035D8B3 /* PPUserTag.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D393C1204F776400041C1A /* PPUserTag.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC8D24B3A6460035D8B3 /* PPUserCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 638E82F924412416000B07FD /* PPUserCode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC8E24B3A6460035D8B3 /* PPUserService.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D393CA204F871200041C1A /* PPUserService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC8F24B3A6460035D8B3 /* PPUserCommunity.h in Headers */ = {isa = PBXBuildFile; fileRef = 631F72F023BBC16600F98797 /* PPUserCommunity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC9024B3A6460035D8B3 /* PPUserAccounts.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3943120518D0D00041C1A /* PPUserAccounts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC9124B3A6460035D8B3 /* PPUserAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D39337204F418C00041C1A /* PPUserAnalytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDC9224B3A65C0035D8B3 /* PPLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3931F204F3E9100041C1A /* PPLocation.m */; };
+		630BDC9324B3A65C0035D8B3 /* PPLocationCommunity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6390F2FC23AB441E00426CCC /* PPLocationCommunity.m */; };
+		630BDC9424B3A65C0035D8B3 /* PPLocationSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 63872B452135AE99003EE488 /* PPLocationSpace.m */; };
+		630BDC9524B3A65C0035D8B3 /* PPLocationOccupantsRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D393E020503C1600041C1A /* PPLocationOccupantsRange.m */; };
+		630BDC9624B3A65C0035D8B3 /* PPLocationSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D393E3205042B400041C1A /* PPLocationSize.m */; };
+		630BDC9724B3A65C0035D8B3 /* PPLocationSceneEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D393E92050642300041C1A /* PPLocationSceneEvent.m */; };
+		630BDC9824B3A65C0035D8B3 /* PPLocationNarrative.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DC1D0F215A98EF0091FB2D /* PPLocationNarrative.m */; };
+		630BDC9924B3A65C0035D8B3 /* PPLocationUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CD14BF21C19279002290C9 /* PPLocationUser.m */; };
+		630BDC9A24B3A65C0035D8B3 /* PPLocationUserSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CD14C321C19774002290C9 /* PPLocationUserSchedule.m */; };
+		630BDC9B24B3A65C0035D8B3 /* PPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D39319204F3CD300041C1A /* PPUser.m */; };
+		630BDC9C24B3A65C0035D8B3 /* PPUserEmail.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D393E62050532800041C1A /* PPUserEmail.m */; };
+		630BDC9D24B3A65C0035D8B3 /* PPUserBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D393BF204F750200041C1A /* PPUserBadge.m */; };
+		630BDC9E24B3A65C0035D8B3 /* PPUserTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D393C2204F776400041C1A /* PPUserTag.m */; };
+		630BDC9F24B3A65C0035D8B3 /* PPUserCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 638E82FA24412416000B07FD /* PPUserCode.m */; };
+		630BDCA024B3A65C0035D8B3 /* PPUserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D393CB204F871200041C1A /* PPUserService.m */; };
+		630BDCA124B3A65C0035D8B3 /* PPUserCommunity.m in Sources */ = {isa = PBXBuildFile; fileRef = 631F72F123BBC16600F98797 /* PPUserCommunity.m */; };
+		630BDCA224B3A65C0035D8B3 /* PPUserAccounts.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3943220518D0D00041C1A /* PPUserAccounts.m */; };
+		630BDCA324B3A65C0035D8B3 /* PPUserAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D39338204F418C00041C1A /* PPUserAnalytics.m */; };
+		630BDCA424B3A6790035D8B3 /* PPOrganizations.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394342051900500041C1A /* PPOrganizations.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCA524B3A6790035D8B3 /* PPOrganizations.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394352051900500041C1A /* PPOrganizations.m */; };
+		630BDCA624B3A6790035D8B3 /* PPOrganization.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D39351204F441F00041C1A /* PPOrganization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCA724B3A6790035D8B3 /* PPOrganization.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D39350204F441E00041C1A /* PPOrganization.m */; };
+		630BDCA824B3A6790035D8B3 /* PPOrganizationGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D39353204F441F00041C1A /* PPOrganizationGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCA924B3A6790035D8B3 /* PPOrganizationGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D39352204F441F00041C1A /* PPOrganizationGroup.m */; };
+		630BDCAA24B3A6890035D8B3 /* PPCloudsIntegration.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC42E205865E3001ED811 /* PPCloudsIntegration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCAB24B3A6890035D8B3 /* PPCloudsIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC42F205865E3001ED811 /* PPCloudsIntegration.m */; };
+		630BDCAC24B3A6890035D8B3 /* PPCloudsIntegrationCloud.h in Headers */ = {isa = PBXBuildFile; fileRef = 6360FAB621B8520200DB2B6B /* PPCloudsIntegrationCloud.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCAD24B3A6890035D8B3 /* PPCloudsIntegrationCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = 6360FAB721B8520200DB2B6B /* PPCloudsIntegrationCloud.m */; };
+		630BDCAE24B3A6890035D8B3 /* PPCloudsIntegrationClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC43120586637001ED811 /* PPCloudsIntegrationClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCAF24B3A6890035D8B3 /* PPCloudsIntegrationClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC43220586637001ED811 /* PPCloudsIntegrationClient.m */; };
+		630BDCB024B3A6890035D8B3 /* PPCloudsIntegrationHost.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC4342058663F001ED811 /* PPCloudsIntegrationHost.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCB124B3A6890035D8B3 /* PPCloudsIntegrationHost.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC4352058663F001ED811 /* PPCloudsIntegrationHost.m */; };
+		630BDCB224B3A6890035D8B3 /* PPCloudsIntegrationHostAccessToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC4372058764A001ED811 /* PPCloudsIntegrationHostAccessToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCB324B3A6890035D8B3 /* PPCloudsIntegrationHostAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC4382058764A001ED811 /* PPCloudsIntegrationHostAccessToken.m */; };
+		630BDCB424B3A69C0035D8B3 /* PPRules.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3942B20518C5900041C1A /* PPRules.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCB524B3A69C0035D8B3 /* PPRules.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3942C20518C5900041C1A /* PPRules.m */; };
+		630BDCB624B3A69C0035D8B3 /* PPRule.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3944F20522A5A00041C1A /* PPRule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCB724B3A69C0035D8B3 /* PPRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3945020522A5A00041C1A /* PPRule.m */; };
+		630BDCB824B3A69C0035D8B3 /* PPRuleComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394D22056FA1200041C1A /* PPRuleComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCB924B3A69C0035D8B3 /* PPRuleComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394D32056FA1200041C1A /* PPRuleComponent.m */; };
+		630BDCBA24B3A69C0035D8B3 /* PPRuleComponentTrigger.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394D52056FB1100041C1A /* PPRuleComponentTrigger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCBB24B3A69C0035D8B3 /* PPRuleComponentTrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394D62056FB1100041C1A /* PPRuleComponentTrigger.m */; };
+		630BDCBC24B3A69C0035D8B3 /* PPRuleComponentState.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394D82056FB1C00041C1A /* PPRuleComponentState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCBD24B3A69C0035D8B3 /* PPRuleComponentState.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394D92056FB1C00041C1A /* PPRuleComponentState.m */; };
+		630BDCBE24B3A69C0035D8B3 /* PPRuleComponentAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394DB2056FB2A00041C1A /* PPRuleComponentAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCBF24B3A69C0035D8B3 /* PPRuleComponentAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394DC2056FB2A00041C1A /* PPRuleComponentAction.m */; };
+		630BDCC024B3A69C0035D8B3 /* PPRuleComponentParameter.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394E12057054D00041C1A /* PPRuleComponentParameter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCC124B3A69C0035D8B3 /* PPRuleComponentParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394E22057054D00041C1A /* PPRuleComponentParameter.m */; };
+		630BDCC224B3A69C0035D8B3 /* PPRuleComponentParameterValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394E42057057C00041C1A /* PPRuleComponentParameterValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCC324B3A69C0035D8B3 /* PPRuleComponentParameterValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394E52057057C00041C1A /* PPRuleComponentParameterValue.m */; };
+		630BDCC424B3A69C0035D8B3 /* PPRuleCalendar.h in Headers */ = {isa = PBXBuildFile; fileRef = 63A9525F205C33F7000E466A /* PPRuleCalendar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCC524B3A69C0035D8B3 /* PPRuleCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A95260205C33F7000E466A /* PPRuleCalendar.m */; };
+		630BDCC624B3A69C0035D8B3 /* PPDeviceTypeRuleComponentTemplate.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC41620584ECD001ED811 /* PPDeviceTypeRuleComponentTemplate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCC724B3A69C0035D8B3 /* PPDeviceTypeRuleComponentTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC41720584ECD001ED811 /* PPDeviceTypeRuleComponentTemplate.m */; };
+		630BDCC824B3A69C0035D8B3 /* PPDeviceTypeRuleComponentTemplateProduct.h in Headers */ = {isa = PBXBuildFile; fileRef = 63A95268205C882C000E466A /* PPDeviceTypeRuleComponentTemplateProduct.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCC924B3A69C0035D8B3 /* PPDeviceTypeRuleComponentTemplateProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A95269205C882C000E466A /* PPDeviceTypeRuleComponentTemplateProduct.m */; };
+		630BDCCA24B3A6AF0035D8B3 /* PPBotengine.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3939D204F4B1000041C1A /* PPBotengine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCCB24B3A6AF0035D8B3 /* PPBotengine.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3939C204F4B1000041C1A /* PPBotengine.m */; };
+		630BDCCC24B3A6AF0035D8B3 /* PPBotengineApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D39393204F4B0F00041C1A /* PPBotengineApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCCD24B3A6AF0035D8B3 /* PPBotengineApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D39392204F4B0F00041C1A /* PPBotengineApp.m */; };
+		630BDCCE24B3A6AF0035D8B3 /* PPBotengineAppAccess.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D39391204F4B0F00041C1A /* PPBotengineAppAccess.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCCF24B3A6AF0035D8B3 /* PPBotengineAppAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D39396204F4B0F00041C1A /* PPBotengineAppAccess.m */; };
+		630BDCD024B3A6AF0035D8B3 /* PPBotengineAppCommunications.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3939F204F4B1100041C1A /* PPBotengineAppCommunications.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCD124B3A6AF0035D8B3 /* PPBotengineAppCommunications.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3939A204F4B1000041C1A /* PPBotengineAppCommunications.m */; };
+		630BDCD224B3A6AF0035D8B3 /* PPBotengineAppDeviceType.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D393A1204F4B1100041C1A /* PPBotengineAppDeviceType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCD324B3A6AF0035D8B3 /* PPBotengineAppDeviceType.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D39397204F4B0F00041C1A /* PPBotengineAppDeviceType.m */; };
+		630BDCD424B3A6AF0035D8B3 /* PPBotengineAppInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3939E204F4B1000041C1A /* PPBotengineAppInstance.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCD524B3A6AF0035D8B3 /* PPBotengineAppInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D393A0204F4B1100041C1A /* PPBotengineAppInstance.m */; };
+		630BDCD624B3A6AF0035D8B3 /* PPBotengineAppMarketing.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3939B204F4B1000041C1A /* PPBotengineAppMarketing.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCD724B3A6AF0035D8B3 /* PPBotengineAppMarketing.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D39398204F4B0F00041C1A /* PPBotengineAppMarketing.m */; };
+		630BDCD824B3A6AF0035D8B3 /* PPBotengineAppRating.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D39394204F4B0F00041C1A /* PPBotengineAppRating.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCD924B3A6AF0035D8B3 /* PPBotengineAppRating.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D39395204F4B0F00041C1A /* PPBotengineAppRating.m */; };
+		630BDCDA24B3A6AF0035D8B3 /* PPBotengineAppReview.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D393A4204F4B1100041C1A /* PPBotengineAppReview.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCDB24B3A6AF0035D8B3 /* PPBotengineAppReview.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D39399204F4B1000041C1A /* PPBotengineAppReview.m */; };
+		630BDCDC24B3A6AF0035D8B3 /* PPBotengineAppVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D393A2204F4B1100041C1A /* PPBotengineAppVersion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCDD24B3A6AF0035D8B3 /* PPBotengineAppVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D393A3204F4B1100041C1A /* PPBotengineAppVersion.m */; };
+		630BDCDE24B3A6C20035D8B3 /* PPNSString.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3933D204F420E00041C1A /* PPNSString.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCDF24B3A6C20035D8B3 /* PPNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3933E204F420E00041C1A /* PPNSString.m */; };
+		630BDCE024B3A6C20035D8B3 /* PPNSDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D39378204F464600041C1A /* PPNSDate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCE124B3A6C20035D8B3 /* PPNSDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D39379204F464600041C1A /* PPNSDate.m */; };
+		630BDCE224B3A6C20035D8B3 /* PPNSData.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D393F22050852D00041C1A /* PPNSData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCE324B3A6C20035D8B3 /* PPNSData.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D393F32050852D00041C1A /* PPNSData.m */; };
+		630BDCE424B3A6E60035D8B3 /* PPSystemAndUserProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394AF205323B700041C1A /* PPSystemAndUserProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCE524B3A6E60035D8B3 /* PPSystemAndUserProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394B0205323B700041C1A /* PPSystemAndUserProperties.m */; };
+		630BDCE624B3A6E60035D8B3 /* PPProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394B22053562F00041C1A /* PPProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCE724B3A6E60035D8B3 /* PPProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394B32053562F00041C1A /* PPProperty.m */; };
+		630BDCE824B3A6FD0035D8B3 /* PPCircles.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC43B2058783C001ED811 /* PPCircles.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCE924B3A6FD0035D8B3 /* PPCircles.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC43C2058783C001ED811 /* PPCircles.m */; };
+		630BDCEA24B3A6FD0035D8B3 /* PPCircle.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC43E205879F7001ED811 /* PPCircle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCEB24B3A6FD0035D8B3 /* PPCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC43F205879F7001ED811 /* PPCircle.m */; };
+		630BDCEC24B3A6FD0035D8B3 /* PPCircleMember.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC44120587A32001ED811 /* PPCircleMember.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCED24B3A6FD0035D8B3 /* PPCircleMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC44220587A32001ED811 /* PPCircleMember.m */; };
+		630BDCEE24B3A6FD0035D8B3 /* PPCircleFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC44420587A87001ED811 /* PPCircleFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCEF24B3A6FD0035D8B3 /* PPCircleFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC44520587A87001ED811 /* PPCircleFile.m */; };
+		630BDCF024B3A6FD0035D8B3 /* PPCirclePost.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC44720587A96001ED811 /* PPCirclePost.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCF124B3A6FD0035D8B3 /* PPCirclePost.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC44820587A96001ED811 /* PPCirclePost.m */; };
+		630BDCF224B3A6FD0035D8B3 /* PPCircleReaction.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC44A20587AAC001ED811 /* PPCircleReaction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCF324B3A6FD0035D8B3 /* PPCircleReaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC44B20587AAC001ED811 /* PPCircleReaction.m */; };
+		630BDCF424B3AA630035D8B3 /* PPDevicePictureFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 635123542138540C003E7EAA /* PPDevicePictureFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCF524B3AA630035D8B3 /* PPDevicePictureFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 635123552138540C003E7EAA /* PPDevicePictureFrame.m */; };
+		630BDCFA24B3AA630035D8B3 /* PPDevicePictureFrameAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 63A69D6C2151B32B0077553F /* PPDevicePictureFrameAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDCFB24B3AA630035D8B3 /* PPDevicePictureFrameAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A69D6B2151B32B0077553F /* PPDevicePictureFrameAlert.m */; };
+		630BDD0024B3AA770035D8B3 /* PPDeviceCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 63C7CA28209910D800967C4C /* PPDeviceCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD0124B3AA770035D8B3 /* PPDeviceCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C7CA2A209910D800967C4C /* PPDeviceCamera.m */; };
+		630BDD0624B3AA770035D8B3 /* PPVideoToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 636D0F55210A1DF1005B9111 /* PPVideoToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD0724B3AA770035D8B3 /* PPVideoToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 636D0F56210A1DF1005B9111 /* PPVideoToken.m */; };
+		630BDD0824B3AA840035D8B3 /* PPDeviceProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3944C2052188900041C1A /* PPDeviceProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD0924B3AA840035D8B3 /* PPDeviceProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3944D2052188900041C1A /* PPDeviceProperty.m */; };
+		630BDD0A24B3AAAE0035D8B3 /* PPDeviceActivationInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394452052178600041C1A /* PPDeviceActivationInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD0B24B3AAAE0035D8B3 /* PPDeviceActivationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394462052178600041C1A /* PPDeviceActivationInfo.m */; };
+		630BDD0C24B3AAB20035D8B3 /* PPDeviceFirmwareUpdates.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3943B20520AEE00041C1A /* PPDeviceFirmwareUpdates.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD0D24B3AAB20035D8B3 /* PPDeviceFirmwareUpdates.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3943C20520AEE00041C1A /* PPDeviceFirmwareUpdates.m */; };
+		630BDD0E24B3AAB20035D8B3 /* PPDeviceFirmwareUpdateDownloadManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3940C20509B1100041C1A /* PPDeviceFirmwareUpdateDownloadManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD0F24B3AAB20035D8B3 /* PPDeviceFirmwareUpdateDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3940D20509B1100041C1A /* PPDeviceFirmwareUpdateDownloadManager.m */; };
+		630BDD1024B3AAB20035D8B3 /* PPDeviceFirmwareUpdateJob.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3940F20509B1100041C1A /* PPDeviceFirmwareUpdateJob.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD1124B3AAB20035D8B3 /* PPDeviceFirmwareUpdateJob.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3941120509B1200041C1A /* PPDeviceFirmwareUpdateJob.m */; };
+		630BDD1224B3AAB50035D8B3 /* PPDevices.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394212050B72D00041C1A /* PPDevices.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD1324B3AAB50035D8B3 /* PPDevices.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394222050B72D00041C1A /* PPDevices.m */; };
+		630BDD1424B3AAB50035D8B3 /* PPDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3932D204F40E200041C1A /* PPDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD1524B3AAB50035D8B3 /* PPDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3932C204F40E200041C1A /* PPDevice.m */; };
+		630BDD1624B3AABA0035D8B3 /* PPDeviceMeasurements.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3945320522F8800041C1A /* PPDeviceMeasurements.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD1724B3AABA0035D8B3 /* PPDeviceMeasurements.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3945420522F8800041C1A /* PPDeviceMeasurements.m */; };
+		630BDD1824B3AABA0035D8B3 /* PPDeviceMeasurement.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3945F20523B2500041C1A /* PPDeviceMeasurement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD1924B3AABA0035D8B3 /* PPDeviceMeasurement.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3946020523B2500041C1A /* PPDeviceMeasurement.m */; };
+		630BDD1A24B3AABA0035D8B3 /* PPDeviceMeasurementsReading.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3945C20523ABA00041C1A /* PPDeviceMeasurementsReading.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD1B24B3AABA0035D8B3 /* PPDeviceMeasurementsReading.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3945D20523ABA00041C1A /* PPDeviceMeasurementsReading.m */; };
+		630BDD1C24B3AABA0035D8B3 /* PPDeviceMeasurementsAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394622052DEEA00041C1A /* PPDeviceMeasurementsAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD1D24B3AABA0035D8B3 /* PPDeviceMeasurementsAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394632052DEEA00041C1A /* PPDeviceMeasurementsAlert.m */; };
+		630BDD1E24B3AABA0035D8B3 /* PPDeviceMeasurementUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394652052DFCC00041C1A /* PPDeviceMeasurementUnit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD1F24B3AABA0035D8B3 /* PPDeviceMeasurementUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394662052DFCC00041C1A /* PPDeviceMeasurementUnit.m */; };
+		630BDD2024B3AABA0035D8B3 /* PPDeviceParameter.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394562052345800041C1A /* PPDeviceParameter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD2124B3AABA0035D8B3 /* PPDeviceParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394572052345800041C1A /* PPDeviceParameter.m */; };
+		630BDD2224B3AABA0035D8B3 /* PPDeviceParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D39333204F410600041C1A /* PPDeviceParameters.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD2324B3AABA0035D8B3 /* PPDeviceParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D39332204F410500041C1A /* PPDeviceParameters.m */; };
+		630BDD2424B3AABA0035D8B3 /* PPDeviceCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 63475D6C20685D72009BCDED /* PPDeviceCommand.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD2524B3AABA0035D8B3 /* PPDeviceCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 63475D6D20685D72009BCDED /* PPDeviceCommand.m */; };
+		630BDD2624B3AABA0035D8B3 /* PPDeviceParameterRobotVantagePoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 637D0F2120C761A2003710AF /* PPDeviceParameterRobotVantagePoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD2724B3AABA0035D8B3 /* PPDeviceParameterRobotVantagePoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 637D0F2220C761A2003710AF /* PPDeviceParameterRobotVantagePoint.m */; };
+		630BDD2824B3AABA0035D8B3 /* PPDeviceDataRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 638147522282101100CC1CCD /* PPDeviceDataRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD2924B3AABA0035D8B3 /* PPDeviceDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 638147532282101100CC1CCD /* PPDeviceDataRequest.m */; };
+		630BDD2A24B3AAC20035D8B3 /* PPNotificationMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394702052EA5800041C1A /* PPNotificationMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD2B24B3AAC20035D8B3 /* PPNotificationMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394712052EA5800041C1A /* PPNotificationMessage.m */; };
+		630BDD2C24B3AAC20035D8B3 /* PPNotificationPushMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394742052EA7700041C1A /* PPNotificationPushMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD2D24B3AAC20035D8B3 /* PPNotificationPushMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394752052EA7700041C1A /* PPNotificationPushMessage.m */; };
+		630BDD2E24B3AAC20035D8B3 /* PPNotificationEmailMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394772052EA8300041C1A /* PPNotificationEmailMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD2F24B3AAC20035D8B3 /* PPNotificationEmailMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394782052EA8300041C1A /* PPNotificationEmailMessage.m */; };
+		630BDD3024B3AAC20035D8B3 /* PPNotificationEmailMessageAttachment.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3947D2052EBEC00041C1A /* PPNotificationEmailMessageAttachment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD3124B3AAC20035D8B3 /* PPNotificationEmailMessageAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3947E2052EBEC00041C1A /* PPNotificationEmailMessageAttachment.m */; };
+		630BDD3224B3AAC20035D8B3 /* PPNotificationSMSMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3947A2052EA8F00041C1A /* PPNotificationSMSMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD3324B3AAC20035D8B3 /* PPNotificationSMSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3947B2052EA8F00041C1A /* PPNotificationSMSMessage.m */; };
+		630BDD3424B3AAC20035D8B3 /* PPNotifications.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394692052E19D00041C1A /* PPNotifications.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD3524B3AAC20035D8B3 /* PPNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3946A2052E19D00041C1A /* PPNotifications.m */; };
+		630BDD3624B3AAC20035D8B3 /* PPNotificationSubscription.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3946C2052E2E900041C1A /* PPNotificationSubscription.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD3724B3AAC20035D8B3 /* PPNotificationSubscription.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3946D2052E2E900041C1A /* PPNotificationSubscription.m */; };
+		630BDD3824B3AAC20035D8B3 /* PPNotificationToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 6313EBF420655DC90017EF74 /* PPNotificationToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD3924B3AAC20035D8B3 /* PPNotificationToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 6313EBF520655DC90017EF74 /* PPNotificationToken.m */; };
+		630BDD3A24B3AAC20035D8B3 /* PPNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = 63A56D0D20D3161600AC2212 /* PPNotification.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD3B24B3AAC20035D8B3 /* PPNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A56D0E20D3161600AC2212 /* PPNotification.m */; };
+		630BDD3C24B3AAC90035D8B3 /* PPCrowdFeedbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394812052EE2600041C1A /* PPCrowdFeedbacks.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD3D24B3AAC90035D8B3 /* PPCrowdFeedbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394822052EE2600041C1A /* PPCrowdFeedbacks.m */; };
+		630BDD3E24B3AAC90035D8B3 /* PPCrowdFeedback.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394842052EE3100041C1A /* PPCrowdFeedback.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD3F24B3AAC90035D8B3 /* PPCrowdFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394852052EE3100041C1A /* PPCrowdFeedback.m */; };
+		630BDD4024B3AAC90035D8B3 /* PPCrowdFeedbackSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3948A2052F9C500041C1A /* PPCrowdFeedbackSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD4124B3AAC90035D8B3 /* PPCrowdFeedbackSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3948B2052F9C500041C1A /* PPCrowdFeedbackSupport.m */; };
+		630BDD4224B3AAC90035D8B3 /* PPCrowdFeedbackTicket.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394872052F0AF00041C1A /* PPCrowdFeedbackTicket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD4324B3AAC90035D8B3 /* PPCrowdFeedbackTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394882052F0AF00041C1A /* PPCrowdFeedbackTicket.m */; };
+		630BDD4424B3AACB0035D8B3 /* PPInAppMessaging.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3948E2052FAB300041C1A /* PPInAppMessaging.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD4524B3AACB0035D8B3 /* PPInAppMessaging.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3948F2052FAB300041C1A /* PPInAppMessaging.m */; };
+		630BDD4624B3AACB0035D8B3 /* PPInAppMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394912052FAFF00041C1A /* PPInAppMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD4724B3AACB0035D8B3 /* PPInAppMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394922052FAFF00041C1A /* PPInAppMessage.m */; };
+		630BDD4824B3AACB0035D8B3 /* PPInAppMessageParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 637D0F3020C85CFE003710AF /* PPInAppMessageParameters.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD4924B3AACB0035D8B3 /* PPInAppMessageParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 637D0F3120C85CFE003710AF /* PPInAppMessageParameters.m */; };
+		630BDD4A24B3AACB0035D8B3 /* PPInAppMessageRecipient.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394942052FBD100041C1A /* PPInAppMessageRecipient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD4B24B3AACB0035D8B3 /* PPInAppMessageRecipient.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394952052FBD100041C1A /* PPInAppMessageRecipient.m */; };
+		630BDD4C24B3AACF0035D8B3 /* PPQuestions.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394982053074800041C1A /* PPQuestions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD4D24B3AACF0035D8B3 /* PPQuestions.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394992053074800041C1A /* PPQuestions.m */; };
+		630BDD4E24B3AACF0035D8B3 /* PPQuestion.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3949B2053075100041C1A /* PPQuestion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD4F24B3AACF0035D8B3 /* PPQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3949C2053075100041C1A /* PPQuestion.m */; };
+		630BDD5024B3AACF0035D8B3 /* PPQuestionCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3949E2053076E00041C1A /* PPQuestionCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD5124B3AACF0035D8B3 /* PPQuestionCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3949F2053076E00041C1A /* PPQuestionCollection.m */; };
+		630BDD5224B3AACF0035D8B3 /* PPQuestionResponseOption.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394A12053078D00041C1A /* PPQuestionResponseOption.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD5324B3AACF0035D8B3 /* PPQuestionResponseOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394A22053078D00041C1A /* PPQuestionResponseOption.m */; };
+		630BDD5424B3AACF0035D8B3 /* PPQuestionAnswer.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394A42053097B00041C1A /* PPQuestionAnswer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD5524B3AACF0035D8B3 /* PPQuestionAnswer.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394A52053097B00041C1A /* PPQuestionAnswer.m */; };
+		630BDD5624B3AAD20035D8B3 /* PPSMSGroupTexting.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394A820531D5F00041C1A /* PPSMSGroupTexting.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD5724B3AAD20035D8B3 /* PPSMSGroupTexting.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394A920531D5F00041C1A /* PPSMSGroupTexting.m */; };
+		630BDD5824B3AAD20035D8B3 /* PPSMSSubscriber.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394AB2053200400041C1A /* PPSMSSubscriber.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD5924B3AAD20035D8B3 /* PPSMSSubscriber.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394AC2053200400041C1A /* PPSMSSubscriber.m */; };
+		630BDD5A24B3AADB0035D8B3 /* PPFileManagement.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394B6205356F700041C1A /* PPFileManagement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD5B24B3AADB0035D8B3 /* PPFileManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394B7205356F700041C1A /* PPFileManagement.m */; };
+		630BDD5C24B3AADB0035D8B3 /* PPFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394B92053575600041C1A /* PPFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD5D24B3AADB0035D8B3 /* PPFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394BA2053575600041C1A /* PPFile.m */; };
+		630BDD5E24B3AADB0035D8B3 /* PPFileTag.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394C22053681B00041C1A /* PPFileTag.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD5F24B3AADB0035D8B3 /* PPFileTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394C32053681B00041C1A /* PPFileTag.m */; };
+		630BDD6024B3AADB0035D8B3 /* PPFileSummary.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394C52053737E00041C1A /* PPFileSummary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD6124B3AADB0035D8B3 /* PPFileSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394C62053737E00041C1A /* PPFileSummary.m */; };
+		630BDD6224B3AAE00035D8B3 /* PPApplicationFileManagement.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394CC2056E63C00041C1A /* PPApplicationFileManagement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD6324B3AAE00035D8B3 /* PPApplicationFileManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394CD2056E63C00041C1A /* PPApplicationFileManagement.m */; };
+		630BDD6424B3AAE00035D8B3 /* PPApplicationFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394CF2056E68700041C1A /* PPApplicationFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD6524B3AAE00035D8B3 /* PPApplicationFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394D02056E68700041C1A /* PPApplicationFile.m */; };
+		630BDD6624B3AAE90035D8B3 /* PPPaidServices.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394E920571CC500041C1A /* PPPaidServices.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD6724B3AAE90035D8B3 /* PPPaidServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394EA20571CC500041C1A /* PPPaidServices.m */; };
+		630BDD6824B3AAE90035D8B3 /* PPServicePlan.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394EC20571D9200041C1A /* PPServicePlan.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD6924B3AAE90035D8B3 /* PPServicePlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394ED20571D9200041C1A /* PPServicePlan.m */; };
+		630BDD6A24B3AAE90035D8B3 /* PPServicePlanPrice.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394EF20571EBE00041C1A /* PPServicePlanPrice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD6B24B3AAE90035D8B3 /* PPServicePlanPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394F020571EBE00041C1A /* PPServicePlanPrice.m */; };
+		630BDD6C24B3AAE90035D8B3 /* PPServicePlanPriceAmount.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394F220571FC500041C1A /* PPServicePlanPriceAmount.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD6D24B3AAE90035D8B3 /* PPServicePlanPriceAmount.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394F320571FC500041C1A /* PPServicePlanPriceAmount.m */; };
+		630BDD6E24B3AAE90035D8B3 /* PPServicePlanSoftwareSubscription.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394F5205720C900041C1A /* PPServicePlanSoftwareSubscription.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD6F24B3AAE90035D8B3 /* PPServicePlanSoftwareSubscription.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394F6205720C900041C1A /* PPServicePlanSoftwareSubscription.m */; };
+		630BDD7024B3AAE90035D8B3 /* PPServicePlanTransaction.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394F82057308D00041C1A /* PPServicePlanTransaction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD7124B3AAE90035D8B3 /* PPServicePlanTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394F92057308D00041C1A /* PPServicePlanTransaction.m */; };
+		630BDD7224B3AAE90035D8B3 /* PPStoreProduct.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394FB2057337400041C1A /* PPStoreProduct.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD7324B3AAE90035D8B3 /* PPStoreProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D394FC2057337400041C1A /* PPStoreProduct.m */; };
+		630BDD7424B3AAED0035D8B3 /* PPProfessionalMonitoring.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D394FF205734A100041C1A /* PPProfessionalMonitoring.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD7524B3AAED0035D8B3 /* PPProfessionalMonitoring.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D39500205734A100041C1A /* PPProfessionalMonitoring.m */; };
+		630BDD7624B3AAED0035D8B3 /* PPCallCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D39502205734F100041C1A /* PPCallCenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD7724B3AAED0035D8B3 /* PPCallCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D39503205734F100041C1A /* PPCallCenter.m */; };
+		630BDD7824B3AAED0035D8B3 /* PPCallCenterContact.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D395052057360600041C1A /* PPCallCenterContact.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD7924B3AAED0035D8B3 /* PPCallCenterContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D395062057360600041C1A /* PPCallCenterContact.m */; };
+		630BDD7A24B3AAED0035D8B3 /* PPCallCenterAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D39508205738B500041C1A /* PPCallCenterAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD7B24B3AAED0035D8B3 /* PPCallCenterAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D39509205738B500041C1A /* PPCallCenterAlert.m */; };
+		630BDD7C24B3AAF10035D8B3 /* PPDynamicUIs.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3950F20573A6600041C1A /* PPDynamicUIs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD7D24B3AAF10035D8B3 /* PPDynamicUIs.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3951020573A6600041C1A /* PPDynamicUIs.m */; };
+		630BDD7E24B3AAF10035D8B3 /* PPDynamicUIScreen.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3951220573B8400041C1A /* PPDynamicUIScreen.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD7F24B3AAF10035D8B3 /* PPDynamicUIScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3951320573B8400041C1A /* PPDynamicUIScreen.m */; };
+		630BDD8024B3AAF10035D8B3 /* PPDynamicUIScreenSection.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3951820573C6600041C1A /* PPDynamicUIScreenSection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD8124B3AAF10035D8B3 /* PPDynamicUIScreenSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3951920573C6600041C1A /* PPDynamicUIScreenSection.m */; };
+		630BDD8224B3AAF10035D8B3 /* PPDynamicUIScreenSectionItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3951520573B9100041C1A /* PPDynamicUIScreenSectionItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD8324B3AAF10035D8B3 /* PPDynamicUIScreenSectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3951620573B9100041C1A /* PPDynamicUIScreenSectionItem.m */; };
+		630BDD8424B3AAF50035D8B3 /* PPEnergyManagement.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3951F20573E7500041C1A /* PPEnergyManagement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD8524B3AAF50035D8B3 /* PPEnergyManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3952020573E7500041C1A /* PPEnergyManagement.m */; };
+		630BDD8624B3AAF50035D8B3 /* PPEnergyManagementUsage.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC3D520582983001ED811 /* PPEnergyManagementUsage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD8724B3AAF50035D8B3 /* PPEnergyManagementUsage.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC3D620582983001ED811 /* PPEnergyManagementUsage.m */; };
+		630BDD8824B3AAF50035D8B3 /* PPEnergyManagementUtilityBill.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC3D820582C4B001ED811 /* PPEnergyManagementUtilityBill.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD8924B3AAF50035D8B3 /* PPEnergyManagementUtilityBill.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC3D920582C4B001ED811 /* PPEnergyManagementUtilityBill.m */; };
+		630BDD8A24B3AAF50035D8B3 /* PPEnergyManagementDeviceUsageEnergy.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC3DB20582F67001ED811 /* PPEnergyManagementDeviceUsageEnergy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD8B24B3AAF50035D8B3 /* PPEnergyManagementDeviceUsageEnergy.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC3DC20582F67001ED811 /* PPEnergyManagementDeviceUsageEnergy.m */; };
+		630BDD8C24B3AAF50035D8B3 /* PPEnergyManagementDeviceUsagePower.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC3DE20582FC7001ED811 /* PPEnergyManagementDeviceUsagePower.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD8D24B3AAF50035D8B3 /* PPEnergyManagementDeviceUsagePower.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC3DF20582FC7001ED811 /* PPEnergyManagementDeviceUsagePower.m */; };
+		630BDD8E24B3AAF50035D8B3 /* PPEnergyManagementDeviceUsageAggregated.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC3E1205831C4001ED811 /* PPEnergyManagementDeviceUsageAggregated.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD8F24B3AAF50035D8B3 /* PPEnergyManagementDeviceUsageAggregated.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC3E2205831C4001ED811 /* PPEnergyManagementDeviceUsageAggregated.m */; };
+		630BDD9024B3AAF50035D8B3 /* PPEnergyManagementDeviceUsageAggregatedEnergy.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC3E42058323C001ED811 /* PPEnergyManagementDeviceUsageAggregatedEnergy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD9124B3AAF50035D8B3 /* PPEnergyManagementDeviceUsageAggregatedEnergy.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC3E52058323C001ED811 /* PPEnergyManagementDeviceUsageAggregatedEnergy.m */; };
+		630BDD9224B3AAF50035D8B3 /* PPEnergyManagementDeviceUsageAggregatedCost.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC3E72058324C001ED811 /* PPEnergyManagementDeviceUsageAggregatedCost.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD9324B3AAF50035D8B3 /* PPEnergyManagementDeviceUsageAggregatedCost.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC3E82058324C001ED811 /* PPEnergyManagementDeviceUsageAggregatedCost.m */; };
+		630BDD9424B3AAF50035D8B3 /* PPEnergyManagementBillingInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC3F3205835E9001ED811 /* PPEnergyManagementBillingInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD9524B3AAF50035D8B3 /* PPEnergyManagementBillingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC3F4205835E9001ED811 /* PPEnergyManagementBillingInfo.m */; };
+		630BDD9624B3AAF50035D8B3 /* PPEnergyManagementBillingInfoBudget.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC3EA2058336B001ED811 /* PPEnergyManagementBillingInfoBudget.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD9724B3AAF50035D8B3 /* PPEnergyManagementBillingInfoBudget.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC3EB2058336B001ED811 /* PPEnergyManagementBillingInfoBudget.m */; };
+		630BDD9824B3AAF50035D8B3 /* PPEnergyManagementBillingInfoUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC3ED2058337A001ED811 /* PPEnergyManagementBillingInfoUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD9924B3AAF50035D8B3 /* PPEnergyManagementBillingInfoUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC3EE2058337A001ED811 /* PPEnergyManagementBillingInfoUtility.m */; };
+		630BDD9A24B3AAF50035D8B3 /* PPEnergyManagementBillingInfoBillingRate.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC3F020583387001ED811 /* PPEnergyManagementBillingInfoBillingRate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD9B24B3AAF50035D8B3 /* PPEnergyManagementBillingInfoBillingRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC3F120583387001ED811 /* PPEnergyManagementBillingInfoBillingRate.m */; };
+		630BDD9C24B3AAF90035D8B3 /* PPWeatherManagement.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC3F720583969001ED811 /* PPWeatherManagement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD9D24B3AAF90035D8B3 /* PPWeatherManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC3F820583969001ED811 /* PPWeatherManagement.m */; };
+		630BDD9E24B3AAF90035D8B3 /* PPWeather.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC3FA20583A66001ED811 /* PPWeather.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDD9F24B3AAF90035D8B3 /* PPWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC3FB20583A66001ED811 /* PPWeather.m */; };
+		630BDDA024B3AAF90035D8B3 /* PPWeatherMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC3FD20583A73001ED811 /* PPWeatherMetadata.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDA124B3AAF90035D8B3 /* PPWeatherMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC3FE20583A73001ED811 /* PPWeatherMetadata.m */; };
+		630BDDA224B3AAF90035D8B3 /* PPWeatherForecast.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC40020583A7C001ED811 /* PPWeatherForecast.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDA324B3AAF90035D8B3 /* PPWeatherForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC40120583A7C001ED811 /* PPWeatherForecast.m */; };
+		630BDDA424B3AAF90035D8B3 /* PPWeatherObservation.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC40320583A90001ED811 /* PPWeatherObservation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDA524B3AAF90035D8B3 /* PPWeatherObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC40420583A90001ED811 /* PPWeatherObservation.m */; };
+		630BDDA624B3AAF90035D8B3 /* PPWeatherObservationMetric.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC40620583A9E001ED811 /* PPWeatherObservationMetric.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDA724B3AAF90035D8B3 /* PPWeatherObservationMetric.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC40720583A9E001ED811 /* PPWeatherObservationMetric.m */; };
+		630BDDA824B3AAFF0035D8B3 /* PPDeviceTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC40A205844A0001ED811 /* PPDeviceTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDA924B3AAFF0035D8B3 /* PPDeviceTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC40B205844A0001ED811 /* PPDeviceTypes.m */; };
+		630BDDAA24B3AAFF0035D8B3 /* PPDeviceType.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC40D205844E8001ED811 /* PPDeviceType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDAB24B3AAFF0035D8B3 /* PPDeviceType.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC40E205844E8001ED811 /* PPDeviceType.m */; };
+		630BDDAC24B3AAFF0035D8B3 /* PPDeviceTypeAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC410205848B9001ED811 /* PPDeviceTypeAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDAD24B3AAFF0035D8B3 /* PPDeviceTypeAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC411205848B9001ED811 /* PPDeviceTypeAttribute.m */; };
+		630BDDAE24B3AAFF0035D8B3 /* PPDeviceTypeAttributeOption.h in Headers */ = {isa = PBXBuildFile; fileRef = 63A95264205C8012000E466A /* PPDeviceTypeAttributeOption.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDAF24B3AAFF0035D8B3 /* PPDeviceTypeAttributeOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A95265205C8012000E466A /* PPDeviceTypeAttributeOption.m */; };
+		630BDDB024B3AAFF0035D8B3 /* PPDeviceTypeParameter.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC41320584B37001ED811 /* PPDeviceTypeParameter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDB124B3AAFF0035D8B3 /* PPDeviceTypeParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC41420584B37001ED811 /* PPDeviceTypeParameter.m */; };
+		630BDDB224B3AAFF0035D8B3 /* PPDeviceTypeParameterDisplayInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 6372B66321349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDB324B3AAFF0035D8B3 /* PPDeviceTypeParameterDisplayInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6372B66421349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.m */; };
+		630BDDB424B3AAFF0035D8B3 /* PPDeviceTypeGoal.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3943E205212F800041C1A /* PPDeviceTypeGoal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDB524B3AAFF0035D8B3 /* PPDeviceTypeGoal.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3943F205212F800041C1A /* PPDeviceTypeGoal.m */; };
+		630BDDB624B3AAFF0035D8B3 /* PPDeviceTypeInstallationInstructions.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC4192058580D001ED811 /* PPDeviceTypeInstallationInstructions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDB724B3AAFF0035D8B3 /* PPDeviceTypeInstallationInstructions.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC41A2058580D001ED811 /* PPDeviceTypeInstallationInstructions.m */; };
+		630BDDB824B3AAFF0035D8B3 /* PPDeviceTypeMedia.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC41C205858EA001ED811 /* PPDeviceTypeMedia.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDB924B3AAFF0035D8B3 /* PPDeviceTypeMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC41D205858EA001ED811 /* PPDeviceTypeMedia.m */; };
+		630BDDBA24B3AAFF0035D8B3 /* PPDeviceTypeDeviceModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC42120585B1C001ED811 /* PPDeviceTypeDeviceModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDBB24B3AAFF0035D8B3 /* PPDeviceTypeDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC42220585B1C001ED811 /* PPDeviceTypeDeviceModel.m */; };
+		630BDDBC24B3AAFF0035D8B3 /* PPDeviceTypeDeviceModelCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC42420585C63001ED811 /* PPDeviceTypeDeviceModelCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDBD24B3AAFF0035D8B3 /* PPDeviceTypeDeviceModelCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC42520585C63001ED811 /* PPDeviceTypeDeviceModelCategory.m */; };
+		630BDDBE24B3AAFF0035D8B3 /* PPDeviceTypeDeviceModelBrand.h in Headers */ = {isa = PBXBuildFile; fileRef = 634360AB206313D800B1DAE2 /* PPDeviceTypeDeviceModelBrand.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDBF24B3AAFF0035D8B3 /* PPDeviceTypeDeviceModelBrand.m in Sources */ = {isa = PBXBuildFile; fileRef = 634360AC206313D800B1DAE2 /* PPDeviceTypeDeviceModelBrand.m */; };
+		630BDDC024B3AAFF0035D8B3 /* PPDeviceTypeDeviceModelLookupParam.h in Headers */ = {isa = PBXBuildFile; fileRef = 6309B75F20E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDC124B3AAFF0035D8B3 /* PPDeviceTypeDeviceModelLookupParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 6309B76020E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.m */; };
+		630BDDC224B3AAFF0035D8B3 /* PPDeviceTypeStory.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC427205862C7001ED811 /* PPDeviceTypeStory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDC324B3AAFF0035D8B3 /* PPDeviceTypeStory.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC428205862C7001ED811 /* PPDeviceTypeStory.m */; };
+		630BDDC424B3AAFF0035D8B3 /* PPDeviceTypeStoryPage.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC42A205862DB001ED811 /* PPDeviceTypeStoryPage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDC524B3AAFF0035D8B3 /* PPDeviceTypeStoryPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC42B205862DB001ED811 /* PPDeviceTypeStoryPage.m */; };
+		630BDDC624B3AAFF0035D8B3 /* PPDeviceTypeStoryPageAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 635E3AC122C26BE600C171B0 /* PPDeviceTypeStoryPageAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDC724B3AAFF0035D8B3 /* PPDeviceTypeStoryPageAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E3AC222C26BE600C171B0 /* PPDeviceTypeStoryPageAction.m */; };
+		630BDDC824B3AAFF0035D8B3 /* PPDeviceTypeStoryModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 634360AE2063288D00B1DAE2 /* PPDeviceTypeStoryModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDC924B3AAFF0035D8B3 /* PPDeviceTypeStoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 634360AF2063288D00B1DAE2 /* PPDeviceTypeStoryModel.m */; };
+		630BDDCA24B3AB080035D8B3 /* PPCommunity.h in Headers */ = {isa = PBXBuildFile; fileRef = 63AD0B06237C975300F4900B /* PPCommunity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDCB24B3AB080035D8B3 /* PPCommunity.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AD0B07237C975300F4900B /* PPCommunity.m */; };
+		630BDDCC24B3AB080035D8B3 /* PPCommunityPost.h in Headers */ = {isa = PBXBuildFile; fileRef = 63AD0B0A237C97CA00F4900B /* PPCommunityPost.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDCD24B3AB080035D8B3 /* PPCommunityPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AD0B0B237C97CA00F4900B /* PPCommunityPost.m */; };
+		630BDDCE24B3AB080035D8B3 /* PPCommunityPostReminder.h in Headers */ = {isa = PBXBuildFile; fileRef = 63AD0B0E237C9A9F00F4900B /* PPCommunityPostReminder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDCF24B3AB080035D8B3 /* PPCommunityPostReminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AD0B0F237C9A9F00F4900B /* PPCommunityPostReminder.m */; };
+		630BDDD024B3AB080035D8B3 /* PPCommunityReaction.h in Headers */ = {isa = PBXBuildFile; fileRef = 63AB4A2223AD85580056AE8B /* PPCommunityReaction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDD124B3AB080035D8B3 /* PPCommunityReaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AB4A2323AD85580056AE8B /* PPCommunityReaction.m */; };
+		630BDDD224B3AB080035D8B3 /* PPCommunityComment.h in Headers */ = {isa = PBXBuildFile; fileRef = 63AB4A2623AD856B0056AE8B /* PPCommunityComment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDD324B3AB080035D8B3 /* PPCommunityComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AB4A2723AD856B0056AE8B /* PPCommunityComment.m */; };
+		630BDDD424B3AB080035D8B3 /* PPCommunityUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 63AD0B14237CC76100F4900B /* PPCommunityUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDD524B3AB080035D8B3 /* PPCommunityUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AD0B15237CC76100F4900B /* PPCommunityUser.m */; };
+		630BDDD624B3AB080035D8B3 /* PPCommunityLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 63AD0B18237CC77900F4900B /* PPCommunityLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDD724B3AB080035D8B3 /* PPCommunityLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AD0B19237CC77900F4900B /* PPCommunityLocation.m */; };
+		630BDDD824B3AB080035D8B3 /* PPCommunityFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 635680E7241863C400EAA1D8 /* PPCommunityFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDD924B3AB080035D8B3 /* PPCommunityFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 635680E8241863C400EAA1D8 /* PPCommunityFile.m */; };
+		630BDDDA24B3AB080035D8B3 /* PPAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3873623D7AB1200BBC378 /* PPAddress.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDDB24B3AB080035D8B3 /* PPAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3873723D7AB1200BBC378 /* PPAddress.m */; };
+		630BDDDC24B3AB0D0035D8B3 /* PPFriends.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3941B2050A85B00041C1A /* PPFriends.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDDD24B3AB0D0035D8B3 /* PPFriends.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3941C2050A85B00041C1A /* PPFriends.m */; };
+		630BDDDE24B3AB0D0035D8B3 /* PPFriendship.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D39383204F49B700041C1A /* PPFriendship.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDDF24B3AB0D0035D8B3 /* PPFriendship.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D39384204F49B700041C1A /* PPFriendship.m */; };
+		630BDDE024B3AB0D0035D8B3 /* PPFriendshipFriend.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3941520509DA400041C1A /* PPFriendshipFriend.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDE124B3AB0D0035D8B3 /* PPFriendshipFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3941620509DA400041C1A /* PPFriendshipFriend.m */; };
+		630BDDE224B3AB0D0035D8B3 /* PPFriendshipDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3941820509F3B00041C1A /* PPFriendshipDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDE324B3AB0D0035D8B3 /* PPFriendshipDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3941920509F3B00041C1A /* PPFriendshipDevice.m */; };
+		630BDDE424B3AB110035D8B3 /* PPCircleDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 631DB29921077D8900C2F8F1 /* PPCircleDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDE524B3AB110035D8B3 /* PPCircleDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 631DB29A21077D8900C2F8F1 /* PPCircleDevice.m */; };
+		630BDDE624B3AB110035D8B3 /* PPCircleDeviceCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 63512367213890BB003E7EAA /* PPCircleDeviceCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDE724B3AB110035D8B3 /* PPCircleDeviceCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 63512368213890BB003E7EAA /* PPCircleDeviceCamera.m */; };
+		630BDDE824B3AB110035D8B3 /* PPCircleDevicePictureFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 6351236B21389112003E7EAA /* PPCircleDevicePictureFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDE924B3AB110035D8B3 /* PPCircleDevicePictureFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6351236C21389112003E7EAA /* PPCircleDevicePictureFrame.m */; };
+		630BDDEA24B3AB160035D8B3 /* PPReports.h in Headers */ = {isa = PBXBuildFile; fileRef = 636EC44E20588CBF001ED811 /* PPReports.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDEB24B3AB160035D8B3 /* PPReports.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EC44F20588CBF001ED811 /* PPReports.m */; };
+		630BDDEC24B3AB160035D8B3 /* PPDeviceAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 63A9526D205DC1B3000E466A /* PPDeviceAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDED24B3AB160035D8B3 /* PPDeviceAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A9526E205DC1B3000E466A /* PPDeviceAlert.m */; };
+		630BDDEE24B3AB220035D8B3 /* PPAFHTTPBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D392FA204F27A500041C1A /* PPAFHTTPBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDEF24B3AB220035D8B3 /* PPAFHTTPBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D392F7204F27A500041C1A /* PPAFHTTPBridge.m */; };
+		630BDDF024B3AB220035D8B3 /* PPAFHTTPRequestOperationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D392FB204F27A500041C1A /* PPAFHTTPRequestOperationManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDF124B3AB220035D8B3 /* PPAFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D392F8204F27A500041C1A /* PPAFHTTPRequestOperationManager.m */; };
+		630BDDF224B3AB220035D8B3 /* PPAFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D392F9204F27A500041C1A /* PPAFHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDF324B3AB220035D8B3 /* PPAFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D392FC204F27A500041C1A /* PPAFHTTPSessionManager.m */; };
+		630BDDF424B3AB220035D8B3 /* PPHTTPOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D39300204F27E700041C1A /* PPHTTPOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDF524B3AB220035D8B3 /* PPHTTPOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D39301204F27E700041C1A /* PPHTTPOperation.m */; };
+		630BDDF624B3AB250035D8B3 /* PPUrl.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3930B204F37D000041C1A /* PPUrl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDF724B3AB250035D8B3 /* PPUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3930A204F37D000041C1A /* PPUrl.m */; };
+		630BDDF824B3AB250035D8B3 /* PPCloudEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D39307204F379100041C1A /* PPCloudEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDDF924B3AB250035D8B3 /* PPCloudEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D39308204F379100041C1A /* PPCloudEngine.m */; };
+		630BDE1E24B3AFE60035D8B3 /* PPDeviceProxyLocalPictureFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 635123572138540C003E7EAA /* PPDeviceProxyLocalPictureFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDE1F24B3AFFC0035D8B3 /* PPDeviceProxyLocalPictureFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 635123522138540B003E7EAA /* PPDeviceProxyLocalPictureFrame.m */; };
+		630BDE2024B3AFFF0035D8B3 /* PPDevicePictureFrameLocal.h in Headers */ = {isa = PBXBuildFile; fileRef = 635123532138540C003E7EAA /* PPDevicePictureFrameLocal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDE2124B3AFFF0035D8B3 /* PPDevicePictureFrameLocal.m in Sources */ = {isa = PBXBuildFile; fileRef = 635123562138540C003E7EAA /* PPDevicePictureFrameLocal.m */; };
+		630BDE8F24B3E3220035D8B3 /* PPSurveys.m in Sources */ = {isa = PBXBuildFile; fileRef = 630BDE8B24B3E3210035D8B3 /* PPSurveys.m */; };
+		630BDE9024B3E3220035D8B3 /* PPSurveys.m in Sources */ = {isa = PBXBuildFile; fileRef = 630BDE8B24B3E3210035D8B3 /* PPSurveys.m */; };
+		630BDE9124B3E3220035D8B3 /* PPSurveys.h in Headers */ = {isa = PBXBuildFile; fileRef = 630BDE8C24B3E3210035D8B3 /* PPSurveys.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDE9224B3E3220035D8B3 /* PPSurveys.h in Headers */ = {isa = PBXBuildFile; fileRef = 630BDE8C24B3E3210035D8B3 /* PPSurveys.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDE9324B3E3220035D8B3 /* PPSurveyQuestion.h in Headers */ = {isa = PBXBuildFile; fileRef = 630BDE8D24B3E3220035D8B3 /* PPSurveyQuestion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDE9424B3E3220035D8B3 /* PPSurveyQuestion.h in Headers */ = {isa = PBXBuildFile; fileRef = 630BDE8D24B3E3220035D8B3 /* PPSurveyQuestion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDE9524B3E3220035D8B3 /* PPSurveyQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 630BDE8E24B3E3220035D8B3 /* PPSurveyQuestion.m */; };
+		630BDE9624B3E3220035D8B3 /* PPSurveyQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 630BDE8E24B3E3220035D8B3 /* PPSurveyQuestion.m */; };
+		630BDE9924B3E4540035D8B3 /* UserCommunications-GetSurveyQuestions-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 630BDE9724B3E4530035D8B3 /* UserCommunications-GetSurveyQuestions-ResponseData.json */; };
+		630BDE9A24B3E4540035D8B3 /* UserCommunications-AnswerQuestion-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 630BDE9824B3E4530035D8B3 /* UserCommunications-AnswerQuestion-ResponseData.json */; };
+		630BDE9C24B3F0520035D8B3 /* AFNetworking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 630BDE9B24B3F0520035D8B3 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		630EB9A824948778002D5614 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630EB9A324948777002D5614 /* OHHTTPStubs.framework */; };
-		630EB9A924948778002D5614 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630EB9A424948777002D5614 /* AFNetworking.framework */; };
 		630EB9AA24948778002D5614 /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630EB9A524948777002D5614 /* KissXML.framework */; };
 		630EB9AB24948778002D5614 /* SocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630EB9A624948777002D5614 /* SocketRocket.framework */; };
 		630EB9AC24948778002D5614 /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630EB9A724948777002D5614 /* UICKeyChainStore.framework */; };
-		630EB9AD2494878B002D5614 /* AFNetworking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 630EB9A424948777002D5614 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		630EB9AE2494878B002D5614 /* KissXML.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 630EB9A524948777002D5614 /* KissXML.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		630EB9AF2494878B002D5614 /* OHHTTPStubs.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 630EB9A324948777002D5614 /* OHHTTPStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		630EB9B02494878B002D5614 /* SocketRocket.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 630EB9A624948777002D5614 /* SocketRocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -23,19 +441,15 @@
 		630EB9B324948940002D5614 /* Realm.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63B9B14E248C36BA0056E7CE /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		631152E321E817BD00DA7755 /* PPTHConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 631152DE21E7FB8400DA7755 /* PPTHConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		631A7AA3248B151600D86CFF /* UnitTests.plist in Resources */ = {isa = PBXBuildFile; fileRef = 636B47F1248AFA7B00124F6A /* UnitTests.plist */; };
-		631A7AA6248B16DD00D86CFF /* Peoplepower-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63A9524E205AFC15000E466A /* Peoplepower-Info.plist */; };
+		631A7AA6248B16DD00D86CFF /* Peoplepower-Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63A9524E205AFC15000E466A /* Peoplepower-Info-iOS.plist */; };
 		631A7AA7248B16E000D86CFF /* Peoplepower-Framework-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63BEC9AF20C5D2AB00408494 /* Peoplepower-Framework-Info.plist */; };
 		631A7AA8248B171000D86CFF /* Peoplepower-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 637A632B206C44B000F7876D /* Peoplepower-Config.plist */; };
 		631DB29B21077D8900C2F8F1 /* PPCircleDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 631DB29921077D8900C2F8F1 /* PPCircleDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		631DB29C21077D8900C2F8F1 /* PPCircleDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 631DB29A21077D8900C2F8F1 /* PPCircleDevice.m */; };
 		631F72F223BBC16600F98797 /* PPUserCommunity.h in Headers */ = {isa = PBXBuildFile; fileRef = 631F72F023BBC16600F98797 /* PPUserCommunity.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		631F72F323BBC16600F98797 /* PPUserCommunity.m in Sources */ = {isa = PBXBuildFile; fileRef = 631F72F123BBC16600F98797 /* PPUserCommunity.m */; };
-		635123582138540C003E7EAA /* PPDeviceProxyLocalPictureFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 635123522138540B003E7EAA /* PPDeviceProxyLocalPictureFrame.m */; };
-		635123592138540C003E7EAA /* PPDevicePictureFrameLocal.h in Headers */ = {isa = PBXBuildFile; fileRef = 635123532138540C003E7EAA /* PPDevicePictureFrameLocal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6351235A2138540C003E7EAA /* PPDevicePictureFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 635123542138540C003E7EAA /* PPDevicePictureFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6351235B2138540C003E7EAA /* PPDevicePictureFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 635123552138540C003E7EAA /* PPDevicePictureFrame.m */; };
-		6351235C2138540C003E7EAA /* PPDevicePictureFrameLocal.m in Sources */ = {isa = PBXBuildFile; fileRef = 635123562138540C003E7EAA /* PPDevicePictureFrameLocal.m */; };
-		6351235D2138540C003E7EAA /* PPDeviceProxyLocalPictureFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 635123572138540C003E7EAA /* PPDeviceProxyLocalPictureFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63512369213890BB003E7EAA /* PPCircleDeviceCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 63512367213890BB003E7EAA /* PPCircleDeviceCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6351236A213890BB003E7EAA /* PPCircleDeviceCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 63512368213890BB003E7EAA /* PPCircleDeviceCamera.m */; };
 		6351236D21389112003E7EAA /* PPCircleDevicePictureFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 6351236B21389112003E7EAA /* PPCircleDevicePictureFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -738,12 +1152,12 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				630EB9AD2494878B002D5614 /* AFNetworking.framework in CopyFiles */,
 				630EB9AE2494878B002D5614 /* KissXML.framework in CopyFiles */,
 				630EB9AF2494878B002D5614 /* OHHTTPStubs.framework in CopyFiles */,
 				630EB9B02494878B002D5614 /* SocketRocket.framework in CopyFiles */,
 				630EB9B12494878B002D5614 /* UICKeyChainStore.framework in CopyFiles */,
 				630EB9B324948940002D5614 /* Realm.framework in CopyFiles */,
+				630BDE9C24B3F0520035D8B3 /* AFNetworking.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -752,8 +1166,18 @@
 /* Begin PBXFileReference section */
 		6309B75F20E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPDeviceTypeDeviceModelLookupParam.h; sourceTree = "<group>"; };
 		6309B76020E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPDeviceTypeDeviceModelLookupParam.m; sourceTree = "<group>"; };
+		630BDC4124B389D40035D8B3 /* output.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = output.xcfilelist; sourceTree = "<group>"; };
+		630BDC4224B389D40035D8B3 /* input.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = input.xcfilelist; sourceTree = "<group>"; };
+		630BDC4B24B392400035D8B3 /* Peoplepower.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Peoplepower.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		630BDC5524B393480035D8B3 /* Peoplepower-Info-watchOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Peoplepower-Info-watchOS.plist"; sourceTree = "<group>"; };
+		630BDE8B24B3E3210035D8B3 /* PPSurveys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPSurveys.m; sourceTree = "<group>"; };
+		630BDE8C24B3E3210035D8B3 /* PPSurveys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPSurveys.h; sourceTree = "<group>"; };
+		630BDE8D24B3E3220035D8B3 /* PPSurveyQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPSurveyQuestion.h; sourceTree = "<group>"; };
+		630BDE8E24B3E3220035D8B3 /* PPSurveyQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPSurveyQuestion.m; sourceTree = "<group>"; };
+		630BDE9724B3E4530035D8B3 /* UserCommunications-GetSurveyQuestions-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "UserCommunications-GetSurveyQuestions-ResponseData.json"; sourceTree = "<group>"; };
+		630BDE9824B3E4530035D8B3 /* UserCommunications-AnswerQuestion-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "UserCommunications-AnswerQuestion-ResponseData.json"; sourceTree = "<group>"; };
+		630BDE9B24B3F0520035D8B3 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
 		630EB9A324948777002D5614 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
-		630EB9A424948777002D5614 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
 		630EB9A524948777002D5614 /* KissXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KissXML.framework; path = Carthage/Build/iOS/KissXML.framework; sourceTree = "<group>"; };
 		630EB9A624948777002D5614 /* SocketRocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SocketRocket.framework; path = Carthage/Build/iOS/SocketRocket.framework; sourceTree = "<group>"; };
 		630EB9A724948777002D5614 /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICKeyChainStore.framework; path = Carthage/Build/iOS/UICKeyChainStore.framework; sourceTree = "<group>"; };
@@ -779,12 +1203,12 @@
 		63475E3C2069CFCF009BCDED /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		634C1EC924A292570012F715 /* copyFramework.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = copyFramework.sh; sourceTree = "<group>"; };
 		634C1ECA24A292580012F715 /* build.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
-		635123522138540B003E7EAA /* PPDeviceProxyLocalPictureFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPDeviceProxyLocalPictureFrame.m; path = Peoplepower/Components/Models/Devices/PictureFrames/PPDeviceProxyLocalPictureFrame.m; sourceTree = SOURCE_ROOT; };
-		635123532138540C003E7EAA /* PPDevicePictureFrameLocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPDevicePictureFrameLocal.h; path = Peoplepower/Components/Models/Devices/PictureFrames/PPDevicePictureFrameLocal.h; sourceTree = SOURCE_ROOT; };
-		635123542138540C003E7EAA /* PPDevicePictureFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPDevicePictureFrame.h; path = Peoplepower/Components/Models/Devices/PictureFrames/PPDevicePictureFrame.h; sourceTree = SOURCE_ROOT; };
-		635123552138540C003E7EAA /* PPDevicePictureFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPDevicePictureFrame.m; path = Peoplepower/Components/Models/Devices/PictureFrames/PPDevicePictureFrame.m; sourceTree = SOURCE_ROOT; };
-		635123562138540C003E7EAA /* PPDevicePictureFrameLocal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPDevicePictureFrameLocal.m; path = Peoplepower/Components/Models/Devices/PictureFrames/PPDevicePictureFrameLocal.m; sourceTree = SOURCE_ROOT; };
-		635123572138540C003E7EAA /* PPDeviceProxyLocalPictureFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPDeviceProxyLocalPictureFrame.h; path = Peoplepower/Components/Models/Devices/PictureFrames/PPDeviceProxyLocalPictureFrame.h; sourceTree = SOURCE_ROOT; };
+		635123522138540B003E7EAA /* PPDeviceProxyLocalPictureFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPDeviceProxyLocalPictureFrame.m; sourceTree = "<group>"; };
+		635123532138540C003E7EAA /* PPDevicePictureFrameLocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPDevicePictureFrameLocal.h; sourceTree = "<group>"; };
+		635123542138540C003E7EAA /* PPDevicePictureFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPDevicePictureFrame.h; sourceTree = "<group>"; };
+		635123552138540C003E7EAA /* PPDevicePictureFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPDevicePictureFrame.m; sourceTree = "<group>"; };
+		635123562138540C003E7EAA /* PPDevicePictureFrameLocal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPDevicePictureFrameLocal.m; sourceTree = "<group>"; };
+		635123572138540C003E7EAA /* PPDeviceProxyLocalPictureFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPDeviceProxyLocalPictureFrame.h; sourceTree = "<group>"; };
 		63512367213890BB003E7EAA /* PPCircleDeviceCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPCircleDeviceCamera.h; sourceTree = "<group>"; };
 		63512368213890BB003E7EAA /* PPCircleDeviceCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPCircleDeviceCamera.m; sourceTree = "<group>"; };
 		6351236B21389112003E7EAA /* PPCircleDevicePictureFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPCircleDevicePictureFrame.h; sourceTree = "<group>"; };
@@ -1164,10 +1588,10 @@
 		6390F2FC23AB441E00426CCC /* PPLocationCommunity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPLocationCommunity.m; sourceTree = "<group>"; };
 		63A56D0D20D3161600AC2212 /* PPNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPNotification.h; sourceTree = "<group>"; };
 		63A56D0E20D3161600AC2212 /* PPNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPNotification.m; sourceTree = "<group>"; };
-		63A69D6B2151B32B0077553F /* PPDevicePictureFrameAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPDevicePictureFrameAlert.m; path = Peoplepower/Components/Models/Devices/PictureFrames/PPDevicePictureFrameAlert.m; sourceTree = SOURCE_ROOT; };
-		63A69D6C2151B32B0077553F /* PPDevicePictureFrameAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPDevicePictureFrameAlert.h; path = Peoplepower/Components/Models/Devices/PictureFrames/PPDevicePictureFrameAlert.h; sourceTree = SOURCE_ROOT; };
+		63A69D6B2151B32B0077553F /* PPDevicePictureFrameAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPDevicePictureFrameAlert.m; sourceTree = "<group>"; };
+		63A69D6C2151B32B0077553F /* PPDevicePictureFrameAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPDevicePictureFrameAlert.h; sourceTree = "<group>"; };
 		63A95234205AD424000E466A /* PPAppResources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPAppResources.h; sourceTree = "<group>"; };
-		63A9524E205AFC15000E466A /* Peoplepower-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Peoplepower-Info.plist"; sourceTree = "<group>"; };
+		63A9524E205AFC15000E466A /* Peoplepower-Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Peoplepower-Info-iOS.plist"; sourceTree = "<group>"; };
 		63A9525B205C2E9A000E466A /* PPNetworkUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkUtilities.m; sourceTree = "<group>"; };
 		63A9525C205C2E9B000E466A /* PPNetworkUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNetworkUtilities.h; sourceTree = "<group>"; };
 		63A9525F205C33F7000E466A /* PPRuleCalendar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPRuleCalendar.h; sourceTree = "<group>"; };
@@ -1203,7 +1627,7 @@
 		63B9B14E248C36BA0056E7CE /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		63BEC9AC20C5D2AA00408494 /* Peoplepower.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Peoplepower.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BEC9AF20C5D2AB00408494 /* Peoplepower-Framework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Peoplepower-Framework-Info.plist"; sourceTree = "<group>"; };
-		63BEC9B420C5D2AB00408494 /* Peoplepower-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Peoplepower-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63BEC9B420C5D2AB00408494 /* Peoplepower iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Peoplepower iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C7C9FD2098015D00967C4C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		63C7C9FF2098016700967C4C /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		63C7CA012098017800967C4C /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
@@ -1462,7 +1886,7 @@
 		63D3952020573E7500041C1A /* PPEnergyManagement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPEnergyManagement.m; sourceTree = "<group>"; };
 		63DC1D0E215A98EF0091FB2D /* PPLocationNarrative.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPLocationNarrative.h; sourceTree = "<group>"; };
 		63DC1D0F215A98EF0091FB2D /* PPLocationNarrative.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPLocationNarrative.m; sourceTree = "<group>"; };
-		63E62AB6249196B30038A694 /* Peoplepower-Resources.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Peoplepower-Resources.podspec"; sourceTree = "<group>"; };
+		63E62AB6249196B30038A694 /* Peoplepower-Resources.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Peoplepower-Resources.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		63EC62E8219A44AE0054010D /* Peoplepower-Attributions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Peoplepower-Attributions.plist"; sourceTree = "<group>"; };
 		63FAAF97209B609F0062638A /* PPDeviceProxyLocalCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPDeviceProxyLocalCamera.h; sourceTree = "<group>"; };
 		63FAAF98209B609F0062638A /* PPDeviceProxyLocalCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPDeviceProxyLocalCamera.m; sourceTree = "<group>"; };
@@ -1470,6 +1894,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		630BDC4824B392400035D8B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63BEC9A820C5D2AA00408494 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1487,7 +1918,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				630EB9A824948778002D5614 /* OHHTTPStubs.framework in Frameworks */,
-				630EB9A924948778002D5614 /* AFNetworking.framework in Frameworks */,
 				630EB9AA24948778002D5614 /* KissXML.framework in Frameworks */,
 				630EB9AB24948778002D5614 /* SocketRocket.framework in Frameworks */,
 				630EB9AC24948778002D5614 /* UICKeyChainStore.framework in Frameworks */,
@@ -1498,6 +1928,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		630BDC3F24B386470035D8B3 /* Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				63E62AB6249196B30038A694 /* Peoplepower-Resources.podspec */,
+				63FAAFD6209B7CA90062638A /* LICENSE */,
+			);
+			name = Metadata;
+			sourceTree = "<group>";
+		};
+		630BDE8A24B3E30C0035D8B3 /* Survey */ = {
+			isa = PBXGroup;
+			children = (
+				630BDE8D24B3E3220035D8B3 /* PPSurveyQuestion.h */,
+				630BDE8E24B3E3220035D8B3 /* PPSurveyQuestion.m */,
+				630BDE8C24B3E3210035D8B3 /* PPSurveys.h */,
+				630BDE8B24B3E3210035D8B3 /* PPSurveys.m */,
+			);
+			path = Survey;
+			sourceTree = "<group>";
+		};
 		631F847E2064326F0055C512 /* Cloud Connectivity */ = {
 			isa = PBXGroup;
 			children = (
@@ -1533,13 +1983,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		634C1EC824A292450012F715 /* Build Scripts */ = {
+		634C1EC824A292450012F715 /* Build Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				636B4446248AE82A00124F6A /* Cartfile */,
 				634C1ECA24A292580012F715 /* build.sh */,
 				634C1EC924A292570012F715 /* copyFramework.sh */,
+				630BDC4224B389D40035D8B3 /* input.xcfilelist */,
+				630BDC4124B389D40035D8B3 /* output.xcfilelist */,
 			);
-			name = "Build Scripts";
+			name = "Build Utilities";
 			sourceTree = "<group>";
 		};
 		63512351213853DC003E7EAA /* PictureFrames */ = {
@@ -1779,6 +2232,8 @@
 				636B46EA248AF7E400124F6A /* UserCommunications-UpdateFeedback-ResponseData.json */,
 				636B4685248AF7D300124F6A /* UserCommunications-UpdateMessageAttributions-ResponseData.json */,
 				636B4675248AF7CE00124F6A /* UserCommunications-VoteForFeedback-ResponseData.json */,
+				630BDE9824B3E4530035D8B3 /* UserCommunications-AnswerQuestion-ResponseData.json */,
+				630BDE9724B3E4530035D8B3 /* UserCommunications-GetSurveyQuestions-ResponseData.json */,
 				636B467D248AF7D100124F6A /* Weather-GetCurrentWeatherByGeocode-ResponseData.json */,
 				636B4631248AF7C400124F6A /* Weather-GetCurrentWeatherByLocation-ResponseData.json */,
 				636B4641248AF7C600124F6A /* Weather-GetForecastByGeocode-ResponseData.json */,
@@ -1790,8 +2245,8 @@
 		636DCC072493E880000560E8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				636DCC0E2493F9BA000560E8 /* Peoplepower-Tests-Bridging-Header.h */,
 				636B4627248AF7A300124F6A /* Data */,
+				636DCC0E2493F9BA000560E8 /* Peoplepower-Tests-Bridging-Header.h */,
 				636DCC042493E4B8000560E8 /* PPTCAppResources.h */,
 				636B47F1248AFA7B00124F6A /* UnitTests.plist */,
 			);
@@ -2071,7 +2526,7 @@
 			path = Cameras;
 			sourceTree = "<group>";
 		};
-		63C8A0AA2059FCEA00256F37 /* Peoplepower-Tests */ = {
+		63C8A0AA2059FCEA00256F37 /* Peoplepower iOSTests */ = {
 			isa = PBXGroup;
 			children = (
 				636DCC0D2493F945000560E8 /* Categories */,
@@ -2082,19 +2537,17 @@
 				636B47F9248AFA7C00124F6A /* PPBaseTestCase.h */,
 				636B47F2248AFA7B00124F6A /* PPBaseTestCase.m */,
 			);
-			path = "Peoplepower-Tests";
+			path = "Peoplepower iOSTests";
 			sourceTree = "<group>";
 		};
 		63D392B4204F21EE00041C1A = {
 			isa = PBXGroup;
 			children = (
-				63E62AB6249196B30038A694 /* Peoplepower-Resources.podspec */,
-				636B4446248AE82A00124F6A /* Cartfile */,
-				63FAAFD6209B7CA90062638A /* LICENSE */,
-				634C1EC824A292450012F715 /* Build Scripts */,
-				63D392BF204F21EE00041C1A /* Peoplepower */,
-				63D3930D204F39D700041C1A /* Resources */,
-				63C8A0AA2059FCEA00256F37 /* Peoplepower-Tests */,
+				630BDE9B24B3F0520035D8B3 /* AFNetworking.framework */,
+				634C1EC824A292450012F715 /* Build Utilities */,
+				630BDC3F24B386470035D8B3 /* Metadata */,
+				63D392BF204F21EE00041C1A /* Sources */,
+				63C8A0AA2059FCEA00256F37 /* Peoplepower iOSTests */,
 				63D392BE204F21EE00041C1A /* Products */,
 				63475E3B2069CFCF009BCDED /* Frameworks */,
 			);
@@ -2104,18 +2557,25 @@
 			isa = PBXGroup;
 			children = (
 				63BEC9AC20C5D2AA00408494 /* Peoplepower.framework */,
-				63BEC9B420C5D2AB00408494 /* Peoplepower-Tests.xctest */,
+				63BEC9B420C5D2AB00408494 /* Peoplepower iOSTests.xctest */,
+				630BDC4B24B392400035D8B3 /* Peoplepower.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		63D392BF204F21EE00041C1A /* Peoplepower */ = {
+		63D392BF204F21EE00041C1A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				63D392D0204F263000041C1A /* Components */,
 				63D392C0204F21EE00041C1A /* Peoplepower.h */,
+				63D39315204F3A0900041C1A /* Peoplepower-Prefix.pch */,
+				637A632B206C44B000F7876D /* Peoplepower-Config.plist */,
+				63A9524E205AFC15000E466A /* Peoplepower-Info-iOS.plist */,
+				630BDC5524B393480035D8B3 /* Peoplepower-Info-watchOS.plist */,
+				63BEC9AF20C5D2AB00408494 /* Peoplepower-Framework-Info.plist */,
+				63EC62E8219A44AE0054010D /* Peoplepower-Attributions.plist */,
 			);
-			path = Peoplepower;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		63D392D0204F263000041C1A /* Components */ = {
@@ -2236,18 +2696,6 @@
 				63D39301204F27E700041C1A /* PPHTTPOperation.m */,
 			);
 			path = HTTP;
-			sourceTree = "<group>";
-		};
-		63D3930D204F39D700041C1A /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				63D39315204F3A0900041C1A /* Peoplepower-Prefix.pch */,
-				637A632B206C44B000F7876D /* Peoplepower-Config.plist */,
-				63A9524E205AFC15000E466A /* Peoplepower-Info.plist */,
-				63BEC9AF20C5D2AB00408494 /* Peoplepower-Framework-Info.plist */,
-				63EC62E8219A44AE0054010D /* Peoplepower-Attributions.plist */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		63D39322204F402D00041C1A /* Devices */ = {
@@ -2468,6 +2916,7 @@
 				63D3948D2052FA8C00041C1A /* In-App Messaging */,
 				63D394972053073500041C1A /* Questions */,
 				63D394A720531D4800041C1A /* SMS Group Texting */,
+				630BDE8A24B3E30C0035D8B3 /* Survey */,
 			);
 			path = Communications;
 			sourceTree = "<group>";
@@ -2696,11 +3145,224 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		630BDC4624B392400035D8B3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				630BDC7524B3A6090035D8B3 /* PPState.h in Headers */,
+				630BDC8224B3A6460035D8B3 /* PPLocationSpace.h in Headers */,
+				630BDCEA24B3A6FD0035D8B3 /* PPCircle.h in Headers */,
+				630BDCAE24B3A6890035D8B3 /* PPCloudsIntegrationClient.h in Headers */,
+				630BDC6624B3A5B50035D8B3 /* PPCurlDebug.h in Headers */,
+				630BDC8C24B3A6460035D8B3 /* PPUserTag.h in Headers */,
+				630BDC9124B3A6460035D8B3 /* PPUserAnalytics.h in Headers */,
+				630BDCDA24B3A6AF0035D8B3 /* PPBotengineAppReview.h in Headers */,
+				630BDC6824B3A5D60035D8B3 /* PPCloudConnectivity.h in Headers */,
+				630BDC5A24B393D90035D8B3 /* PPNetworkUtilities.h in Headers */,
+				630BDCE224B3A6C20035D8B3 /* PPNSData.h in Headers */,
+				630BDC7A24B3A6230035D8B3 /* PPOperationTokenManagement.h in Headers */,
+				630BDC6E24B3A5E30035D8B3 /* PPBaseModel.h in Headers */,
+				630BDCBE24B3A69C0035D8B3 /* PPRuleComponentAction.h in Headers */,
+				630BDCD424B3A6AF0035D8B3 /* PPBotengineAppInstance.h in Headers */,
+				630BDC5D24B393F80035D8B3 /* PPDateUtilities.h in Headers */,
+				630BDC6C24B3A5D60035D8B3 /* PPCloudConnectivityServer.h in Headers */,
+				630BDC8924B3A6460035D8B3 /* PPUser.h in Headers */,
+				630BDC8F24B3A6460035D8B3 /* PPUserCommunity.h in Headers */,
+				630BDC6424B3A5840035D8B3 /* PPVersion.h in Headers */,
+				630BDCA824B3A6790035D8B3 /* PPOrganizationGroup.h in Headers */,
+				630BDC8E24B3A6460035D8B3 /* PPUserService.h in Headers */,
+				630BDCD224B3A6AF0035D8B3 /* PPBotengineAppDeviceType.h in Headers */,
+				630BDCC624B3A69C0035D8B3 /* PPDeviceTypeRuleComponentTemplate.h in Headers */,
+				630BDC6A24B3A5D60035D8B3 /* PPCloudConnectivityCloud.h in Headers */,
+				630BDC8524B3A6460035D8B3 /* PPLocationSceneEvent.h in Headers */,
+				630BDCB224B3A6890035D8B3 /* PPCloudsIntegrationHostAccessToken.h in Headers */,
+				630BDCE824B3A6FD0035D8B3 /* PPCircles.h in Headers */,
+				630BDC7B24B3A6230035D8B3 /* PPOperationToken.h in Headers */,
+				630BDCB024B3A6890035D8B3 /* PPCloudsIntegrationHost.h in Headers */,
+				630BDC7124B3A5F90035D8B3 /* PPCountriesStatesAndTimezones.h in Headers */,
+				630BDCC824B3A69C0035D8B3 /* PPDeviceTypeRuleComponentTemplateProduct.h in Headers */,
+				630BDCDC24B3A6AF0035D8B3 /* PPBotengineAppVersion.h in Headers */,
+				630BDCD024B3A6AF0035D8B3 /* PPBotengineAppCommunications.h in Headers */,
+				630BDC7924B3A6230035D8B3 /* PPLogout.h in Headers */,
+				630BDCFA24B3AA630035D8B3 /* PPDevicePictureFrameAlert.h in Headers */,
+				630BDCEC24B3A6FD0035D8B3 /* PPCircleMember.h in Headers */,
+				630BDD8E24B3AAF50035D8B3 /* PPEnergyManagementDeviceUsageAggregated.h in Headers */,
+				630BDD2E24B3AAC20035D8B3 /* PPNotificationEmailMessage.h in Headers */,
+				630BDDF824B3AB250035D8B3 /* PPCloudEngine.h in Headers */,
+				630BDDF424B3AB220035D8B3 /* PPHTTPOperation.h in Headers */,
+				630BDD5024B3AACF0035D8B3 /* PPQuestionCollection.h in Headers */,
+				630BDD8424B3AAF50035D8B3 /* PPEnergyManagement.h in Headers */,
+				630BDDCA24B3AB080035D8B3 /* PPCommunity.h in Headers */,
+				630BDDB424B3AAFF0035D8B3 /* PPDeviceTypeGoal.h in Headers */,
+				630BDD2C24B3AAC20035D8B3 /* PPNotificationPushMessage.h in Headers */,
+				630BDDAE24B3AAFF0035D8B3 /* PPDeviceTypeAttributeOption.h in Headers */,
+				630BDD4C24B3AACF0035D8B3 /* PPQuestions.h in Headers */,
+				630BDDA024B3AAF90035D8B3 /* PPWeatherMetadata.h in Headers */,
+				630BDD9C24B3AAF90035D8B3 /* PPWeatherManagement.h in Headers */,
+				630BDDAC24B3AAFF0035D8B3 /* PPDeviceTypeAttribute.h in Headers */,
+				630BDD5C24B3AADB0035D8B3 /* PPFile.h in Headers */,
+				630BDD7C24B3AAF10035D8B3 /* PPDynamicUIs.h in Headers */,
+				630BDDB224B3AAFF0035D8B3 /* PPDeviceTypeParameterDisplayInfo.h in Headers */,
+				630BDD5424B3AACF0035D8B3 /* PPQuestionAnswer.h in Headers */,
+				630BDD2024B3AABA0035D8B3 /* PPDeviceParameter.h in Headers */,
+				630BDD5624B3AAD20035D8B3 /* PPSMSGroupTexting.h in Headers */,
+				630BDDDC24B3AB0D0035D8B3 /* PPFriends.h in Headers */,
+				630BDDF224B3AB220035D8B3 /* PPAFHTTPSessionManager.h in Headers */,
+				630BDDEE24B3AB220035D8B3 /* PPAFHTTPBridge.h in Headers */,
+				630BDD1624B3AABA0035D8B3 /* PPDeviceMeasurements.h in Headers */,
+				630BDD5E24B3AADB0035D8B3 /* PPFileTag.h in Headers */,
+				630BDDBC24B3AAFF0035D8B3 /* PPDeviceTypeDeviceModelCategory.h in Headers */,
+				630BDD0E24B3AAB20035D8B3 /* PPDeviceFirmwareUpdateDownloadManager.h in Headers */,
+				630BDDE024B3AB0D0035D8B3 /* PPFriendshipFriend.h in Headers */,
+				630BDD3A24B3AAC20035D8B3 /* PPNotification.h in Headers */,
+				630BDD1424B3AAB50035D8B3 /* PPDevice.h in Headers */,
+				630BDD4624B3AACB0035D8B3 /* PPInAppMessage.h in Headers */,
+				630BDDC824B3AAFF0035D8B3 /* PPDeviceTypeStoryModel.h in Headers */,
+				630BDD8024B3AAF10035D8B3 /* PPDynamicUIScreenSection.h in Headers */,
+				630BDDD824B3AB080035D8B3 /* PPCommunityFile.h in Headers */,
+				630BDD1824B3AABA0035D8B3 /* PPDeviceMeasurement.h in Headers */,
+				630BDD3624B3AAC20035D8B3 /* PPNotificationSubscription.h in Headers */,
+				630BDDDA24B3AB080035D8B3 /* PPAddress.h in Headers */,
+				630BDD6A24B3AAE90035D8B3 /* PPServicePlanPrice.h in Headers */,
+				630BDDA424B3AAF90035D8B3 /* PPWeatherObservation.h in Headers */,
+				630BDD3C24B3AAC90035D8B3 /* PPCrowdFeedbacks.h in Headers */,
+				630BDD6024B3AADB0035D8B3 /* PPFileSummary.h in Headers */,
+				630BDDB824B3AAFF0035D8B3 /* PPDeviceTypeMedia.h in Headers */,
+				630BDDCC24B3AB080035D8B3 /* PPCommunityPost.h in Headers */,
+				630BDD6424B3AAE00035D8B3 /* PPApplicationFile.h in Headers */,
+				630BDDF624B3AB250035D8B3 /* PPUrl.h in Headers */,
+				630BDDBE24B3AAFF0035D8B3 /* PPDeviceTypeDeviceModelBrand.h in Headers */,
+				630BDD4424B3AACB0035D8B3 /* PPInAppMessaging.h in Headers */,
+				630BDDC224B3AAFF0035D8B3 /* PPDeviceTypeStory.h in Headers */,
+				630BDD8A24B3AAF50035D8B3 /* PPEnergyManagementDeviceUsageEnergy.h in Headers */,
+				630BDD3024B3AAC20035D8B3 /* PPNotificationEmailMessageAttachment.h in Headers */,
+				630BDD2224B3AABA0035D8B3 /* PPDeviceParameters.h in Headers */,
+				630BDD0C24B3AAB20035D8B3 /* PPDeviceFirmwareUpdates.h in Headers */,
+				630BDD5A24B3AADB0035D8B3 /* PPFileManagement.h in Headers */,
+				630BDD7624B3AAED0035D8B3 /* PPCallCenter.h in Headers */,
+				630BDD3E24B3AAC90035D8B3 /* PPCrowdFeedback.h in Headers */,
+				630BDD6224B3AAE00035D8B3 /* PPApplicationFileManagement.h in Headers */,
+				630BDD9024B3AAF50035D8B3 /* PPEnergyManagementDeviceUsageAggregatedEnergy.h in Headers */,
+				630BDDC624B3AAFF0035D8B3 /* PPDeviceTypeStoryPageAction.h in Headers */,
+				630BDD1024B3AAB20035D8B3 /* PPDeviceFirmwareUpdateJob.h in Headers */,
+				630BDD6E24B3AAE90035D8B3 /* PPServicePlanSoftwareSubscription.h in Headers */,
+				630BDD3424B3AAC20035D8B3 /* PPNotifications.h in Headers */,
+				630BDD9E24B3AAF90035D8B3 /* PPWeather.h in Headers */,
+				630BDD8C24B3AAF50035D8B3 /* PPEnergyManagementDeviceUsagePower.h in Headers */,
+				630BDD1224B3AAB50035D8B3 /* PPDevices.h in Headers */,
+				630BDD9624B3AAF50035D8B3 /* PPEnergyManagementBillingInfoBudget.h in Headers */,
+				630BDD0024B3AA770035D8B3 /* PPDeviceCamera.h in Headers */,
+				630BDD4024B3AAC90035D8B3 /* PPCrowdFeedbackSupport.h in Headers */,
+				630BDD7224B3AAE90035D8B3 /* PPStoreProduct.h in Headers */,
+				630BDD7824B3AAED0035D8B3 /* PPCallCenterContact.h in Headers */,
+				630BDD4E24B3AACF0035D8B3 /* PPQuestion.h in Headers */,
+				630BDDD224B3AB080035D8B3 /* PPCommunityComment.h in Headers */,
+				630BDD4A24B3AACB0035D8B3 /* PPInAppMessageRecipient.h in Headers */,
+				630BDD1A24B3AABA0035D8B3 /* PPDeviceMeasurementsReading.h in Headers */,
+				630BDD9424B3AAF50035D8B3 /* PPEnergyManagementBillingInfo.h in Headers */,
+				630BDDE624B3AB110035D8B3 /* PPCircleDeviceCamera.h in Headers */,
+				630BDD2424B3AABA0035D8B3 /* PPDeviceCommand.h in Headers */,
+				630BDD6824B3AAE90035D8B3 /* PPServicePlan.h in Headers */,
+				630BDD7A24B3AAED0035D8B3 /* PPCallCenterAlert.h in Headers */,
+				630BDD6624B3AAE90035D8B3 /* PPPaidServices.h in Headers */,
+				630BDD9224B3AAF50035D8B3 /* PPEnergyManagementDeviceUsageAggregatedCost.h in Headers */,
+				630BDDC024B3AAFF0035D8B3 /* PPDeviceTypeDeviceModelLookupParam.h in Headers */,
+				630BDD2624B3AABA0035D8B3 /* PPDeviceParameterRobotVantagePoint.h in Headers */,
+				630BDDD624B3AB080035D8B3 /* PPCommunityLocation.h in Headers */,
+				630BDD4824B3AACB0035D8B3 /* PPInAppMessageParameters.h in Headers */,
+				630BDDAA24B3AAFF0035D8B3 /* PPDeviceType.h in Headers */,
+				630BDD0A24B3AAAE0035D8B3 /* PPDeviceActivationInfo.h in Headers */,
+				630BDD8224B3AAF10035D8B3 /* PPDynamicUIScreenSectionItem.h in Headers */,
+				630BDDB624B3AAFF0035D8B3 /* PPDeviceTypeInstallationInstructions.h in Headers */,
+				630BDD2824B3AABA0035D8B3 /* PPDeviceDataRequest.h in Headers */,
+				630BDDE824B3AB110035D8B3 /* PPCircleDevicePictureFrame.h in Headers */,
+				630BDDCE24B3AB080035D8B3 /* PPCommunityPostReminder.h in Headers */,
+				630BDD5824B3AAD20035D8B3 /* PPSMSSubscriber.h in Headers */,
+				630BDDA624B3AAF90035D8B3 /* PPWeatherObservationMetric.h in Headers */,
+				630BDD0624B3AA770035D8B3 /* PPVideoToken.h in Headers */,
+				630BDDEA24B3AB160035D8B3 /* PPReports.h in Headers */,
+				630BDD0824B3AA840035D8B3 /* PPDeviceProperty.h in Headers */,
+				630BDD7024B3AAE90035D8B3 /* PPServicePlanTransaction.h in Headers */,
+				630BDDD024B3AB080035D8B3 /* PPCommunityReaction.h in Headers */,
+				630BDD7E24B3AAF10035D8B3 /* PPDynamicUIScreen.h in Headers */,
+				630BDD7424B3AAED0035D8B3 /* PPProfessionalMonitoring.h in Headers */,
+				630BDDD424B3AB080035D8B3 /* PPCommunityUser.h in Headers */,
+				630BDE9224B3E3220035D8B3 /* PPSurveys.h in Headers */,
+				630BDDF024B3AB220035D8B3 /* PPAFHTTPRequestOperationManager.h in Headers */,
+				630BDDE224B3AB0D0035D8B3 /* PPFriendshipDevice.h in Headers */,
+				630BDD1E24B3AABA0035D8B3 /* PPDeviceMeasurementUnit.h in Headers */,
+				630BDDBA24B3AAFF0035D8B3 /* PPDeviceTypeDeviceModel.h in Headers */,
+				630BDD8624B3AAF50035D8B3 /* PPEnergyManagementUsage.h in Headers */,
+				630BDD9824B3AAF50035D8B3 /* PPEnergyManagementBillingInfoUtility.h in Headers */,
+				630BDDA224B3AAF90035D8B3 /* PPWeatherForecast.h in Headers */,
+				630BDDEC24B3AB160035D8B3 /* PPDeviceAlert.h in Headers */,
+				630BDD9A24B3AAF50035D8B3 /* PPEnergyManagementBillingInfoBillingRate.h in Headers */,
+				630BDDA824B3AAFF0035D8B3 /* PPDeviceTypes.h in Headers */,
+				630BDE9424B3E3220035D8B3 /* PPSurveyQuestion.h in Headers */,
+				630BDD4224B3AAC90035D8B3 /* PPCrowdFeedbackTicket.h in Headers */,
+				630BDD1C24B3AABA0035D8B3 /* PPDeviceMeasurementsAlert.h in Headers */,
+				630BDD6C24B3AAE90035D8B3 /* PPServicePlanPriceAmount.h in Headers */,
+				630BDD8824B3AAF50035D8B3 /* PPEnergyManagementUtilityBill.h in Headers */,
+				630BDD5224B3AACF0035D8B3 /* PPQuestionResponseOption.h in Headers */,
+				630BDD2A24B3AAC20035D8B3 /* PPNotificationMessage.h in Headers */,
+				630BDDDE24B3AB0D0035D8B3 /* PPFriendship.h in Headers */,
+				630BDDC424B3AAFF0035D8B3 /* PPDeviceTypeStoryPage.h in Headers */,
+				630BDDB024B3AAFF0035D8B3 /* PPDeviceTypeParameter.h in Headers */,
+				630BDDE424B3AB110035D8B3 /* PPCircleDevice.h in Headers */,
+				630BDD3224B3AAC20035D8B3 /* PPNotificationSMSMessage.h in Headers */,
+				630BDD3824B3AAC20035D8B3 /* PPNotificationToken.h in Headers */,
+				630BDCF024B3A6FD0035D8B3 /* PPCirclePost.h in Headers */,
+				630BDCB424B3A69C0035D8B3 /* PPRules.h in Headers */,
+				630BDC8424B3A6460035D8B3 /* PPLocationSize.h in Headers */,
+				630BDCCC24B3A6AF0035D8B3 /* PPBotengineApp.h in Headers */,
+				630BDCAC24B3A6890035D8B3 /* PPCloudsIntegrationCloud.h in Headers */,
+				630BDCCA24B3A6AF0035D8B3 /* PPBotengine.h in Headers */,
+				630BDC6124B394C90035D8B3 /* PPStorage.h in Headers */,
+				630BDCB824B3A69C0035D8B3 /* PPRuleComponent.h in Headers */,
+				630BDC7324B3A6020035D8B3 /* PPCountry.h in Headers */,
+				630BDC8D24B3A6460035D8B3 /* PPUserCode.h in Headers */,
+				630BDCA424B3A6790035D8B3 /* PPOrganizations.h in Headers */,
+				630BDCDE24B3A6C20035D8B3 /* PPNSString.h in Headers */,
+				630BDC7024B3A5F40035D8B3 /* PPTimezone.h in Headers */,
+				630BDCCE24B3A6AF0035D8B3 /* PPBotengineAppAccess.h in Headers */,
+				630BDCD824B3A6AF0035D8B3 /* PPBotengineAppRating.h in Headers */,
+				630BDC5C24B393F00035D8B3 /* PPTHConstants.h in Headers */,
+				630BDCF424B3AA630035D8B3 /* PPDevicePictureFrame.h in Headers */,
+				630BDCE424B3A6E60035D8B3 /* PPSystemAndUserProperties.h in Headers */,
+				630BDC8B24B3A6460035D8B3 /* PPUserBadge.h in Headers */,
+				630BDCE024B3A6C20035D8B3 /* PPNSDate.h in Headers */,
+				630BDCF224B3A6FD0035D8B3 /* PPCircleReaction.h in Headers */,
+				630BDCAA24B3A6890035D8B3 /* PPCloudsIntegration.h in Headers */,
+				630BDCD624B3A6AF0035D8B3 /* PPBotengineAppMarketing.h in Headers */,
+				630BDC7824B3A6230035D8B3 /* PPLogin.h in Headers */,
+				630BDC5F24B394BA0035D8B3 /* PPAppResources.h in Headers */,
+				630BDCE624B3A6E60035D8B3 /* PPProperty.h in Headers */,
+				630BDC8A24B3A6460035D8B3 /* PPUserEmail.h in Headers */,
+				630BDCB624B3A69C0035D8B3 /* PPRule.h in Headers */,
+				630BDC8624B3A6460035D8B3 /* PPLocationNarrative.h in Headers */,
+				630BDC8824B3A6460035D8B3 /* PPLocationUserSchedule.h in Headers */,
+				630BDCBC24B3A69C0035D8B3 /* PPRuleComponentState.h in Headers */,
+				630BDCC224B3A69C0035D8B3 /* PPRuleComponentParameterValue.h in Headers */,
+				630BDC9024B3A6460035D8B3 /* PPUserAccounts.h in Headers */,
+				630BDCBA24B3A69C0035D8B3 /* PPRuleComponentTrigger.h in Headers */,
+				630BDC8124B3A6460035D8B3 /* PPLocationCommunity.h in Headers */,
+				630BDCA624B3A6790035D8B3 /* PPOrganization.h in Headers */,
+				630BDC8024B3A6460035D8B3 /* PPLocation.h in Headers */,
+				630BDCC024B3A69C0035D8B3 /* PPRuleComponentParameter.h in Headers */,
+				630BDC8324B3A6460035D8B3 /* PPLocationOccupantsRange.h in Headers */,
+				630BDC8724B3A6460035D8B3 /* PPLocationUser.h in Headers */,
+				630BDCC424B3A69C0035D8B3 /* PPRuleCalendar.h in Headers */,
+				630BDCEE24B3A6FD0035D8B3 /* PPCircleFile.h in Headers */,
+				630BDC6324B3A5200035D8B3 /* Peoplepower.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63BEC9A920C5D2AA00408494 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				63BECAF520C5D8A800408494 /* PPServicePlanPriceAmount.h in Headers */,
+				630BDE9324B3E3220035D8B3 /* PPSurveyQuestion.h in Headers */,
 				631152E321E817BD00DA7755 /* PPTHConstants.h in Headers */,
 				63BECAB820C5D88400408494 /* PPWebSocket.h in Headers */,
 				63BECB1820C5D8E600408494 /* PPDeviceTypeRuleComponentTemplate.h in Headers */,
@@ -2810,6 +3472,7 @@
 				63BECB4D20C5D96F00408494 /* PPAppResources.h in Headers */,
 				63BECAB220C5D88400408494 /* PPUserAnalytics.h in Headers */,
 				63BECB2020C5D8E600408494 /* PPDeviceTypeStory.h in Headers */,
+				630BDE9124B3E3220035D8B3 /* PPSurveys.h in Headers */,
 				63BECB1420C5D8E600408494 /* PPDeviceType.h in Headers */,
 				63BECADB20C5D8A700408494 /* PPQuestion.h in Headers */,
 				63BECAA320C5D88400408494 /* PPOperationToken.h in Headers */,
@@ -2840,6 +3503,7 @@
 				63BECABA20C5D88400408494 /* PPWebSocketCamera.h in Headers */,
 				63BECB1020C5D8E600408494 /* PPWeatherForecast.h in Headers */,
 				63BECAB620C5D88400408494 /* PPDeviceCameraLocal.h in Headers */,
+				630BDE2024B3AFFF0035D8B3 /* PPDevicePictureFrameLocal.h in Headers */,
 				63BECB1320C5D8E600408494 /* PPDeviceTypes.h in Headers */,
 				63BECAB720C5D88400408494 /* PPDeviceProxyLocalCamera.h in Headers */,
 				63BECB3E20C5D8E600408494 /* PPOrganization.h in Headers */,
@@ -2880,14 +3544,13 @@
 				63CD14C021C19279002290C9 /* PPLocationUser.h in Headers */,
 				6309B76120E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.h in Headers */,
 				63A69D6E2151B32B0077553F /* PPDevicePictureFrameAlert.h in Headers */,
-				6351235D2138540C003E7EAA /* PPDeviceProxyLocalPictureFrame.h in Headers */,
-				635123592138540C003E7EAA /* PPDevicePictureFrameLocal.h in Headers */,
 				63D3873823D7AB1200BBC378 /* PPAddress.h in Headers */,
 				638147542282101100CC1CCD /* PPDeviceDataRequest.h in Headers */,
 				63CD14C421C19774002290C9 /* PPLocationUserSchedule.h in Headers */,
 				63512369213890BB003E7EAA /* PPCircleDeviceCamera.h in Headers */,
 				63AD0B16237CC76100F4900B /* PPCommunityUser.h in Headers */,
 				6390F2FE23AB443800426CCC /* PPLocationCommunity.h in Headers */,
+				630BDE1E24B3AFE60035D8B3 /* PPDeviceProxyLocalPictureFrame.h in Headers */,
 				6351236D21389112003E7EAA /* PPCircleDevicePictureFrame.h in Headers */,
 				63AB4A2423AD85580056AE8B /* PPCommunityReaction.h in Headers */,
 				63DC1D10215A98EF0091FB2D /* PPLocationNarrative.h in Headers */,
@@ -2925,9 +3588,27 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		63BEC9AB20C5D2AA00408494 /* Peoplepower */ = {
+		630BDC4A24B392400035D8B3 /* Peoplepower watchOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 63BEC9C320C5D2AB00408494 /* Build configuration list for PBXNativeTarget "Peoplepower" */;
+			buildConfigurationList = 630BDC5224B392400035D8B3 /* Build configuration list for PBXNativeTarget "Peoplepower watchOS" */;
+			buildPhases = (
+				630BDC4624B392400035D8B3 /* Headers */,
+				630BDC4724B392400035D8B3 /* Sources */,
+				630BDC4824B392400035D8B3 /* Frameworks */,
+				630BDC4924B392400035D8B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Peoplepower watchOS";
+			productName = "Peoplepower watchOS";
+			productReference = 630BDC4B24B392400035D8B3 /* Peoplepower.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		63BEC9AB20C5D2AA00408494 /* Peoplepower iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63BEC9C320C5D2AB00408494 /* Build configuration list for PBXNativeTarget "Peoplepower iOS" */;
 			buildPhases = (
 				63BEC9A920C5D2AA00408494 /* Headers */,
 				63BEC9A720C5D2AA00408494 /* Sources */,
@@ -2938,14 +3619,14 @@
 			);
 			dependencies = (
 			);
-			name = Peoplepower;
+			name = "Peoplepower iOS";
 			productName = "PPiOSCore-Framework";
 			productReference = 63BEC9AC20C5D2AA00408494 /* Peoplepower.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		63BEC9B320C5D2AB00408494 /* Peoplepower-Tests */ = {
+		63BEC9B320C5D2AB00408494 /* Peoplepower iOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 63BEC9C720C5D2AB00408494 /* Build configuration list for PBXNativeTarget "Peoplepower-Tests" */;
+			buildConfigurationList = 63BEC9C720C5D2AB00408494 /* Build configuration list for PBXNativeTarget "Peoplepower iOSTests" */;
 			buildPhases = (
 				63BEC9B020C5D2AB00408494 /* Sources */,
 				63BEC9B120C5D2AB00408494 /* Frameworks */,
@@ -2957,9 +3638,9 @@
 			dependencies = (
 				631A7A9C248B0AD500D86CFF /* PBXTargetDependency */,
 			);
-			name = "Peoplepower-Tests";
+			name = "Peoplepower iOSTests";
 			productName = "PPiOSCore-FrameworkTests";
-			productReference = 63BEC9B420C5D2AB00408494 /* Peoplepower-Tests.xctest */;
+			productReference = 63BEC9B420C5D2AB00408494 /* Peoplepower iOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -2973,6 +3654,10 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "People Power Company";
 				TargetAttributes = {
+					630BDC4A24B392400035D8B3 = {
+						CreatedOnToolsVersion = 11.5;
+						ProvisioningStyle = Automatic;
+					};
 					63BEC9AB20C5D2AA00408494 = {
 						CreatedOnToolsVersion = 9.3.1;
 						ProvisioningStyle = Automatic;
@@ -2997,23 +3682,32 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				63BEC9AB20C5D2AA00408494 /* Peoplepower */,
-				63BEC9B320C5D2AB00408494 /* Peoplepower-Tests */,
+				63BEC9AB20C5D2AA00408494 /* Peoplepower iOS */,
+				630BDC4A24B392400035D8B3 /* Peoplepower watchOS */,
+				63BEC9B320C5D2AB00408494 /* Peoplepower iOSTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		630BDC4924B392400035D8B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63BEC9AA20C5D2AA00408494 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				630BDC5624B393480035D8B3 /* Peoplepower-Info-watchOS.plist in Resources */,
 				631A7AA8248B171000D86CFF /* Peoplepower-Config.plist in Resources */,
 				63EC62E9219A44AE0054010D /* Peoplepower-Attributions.plist in Resources */,
 				636B4447248AE82A00124F6A /* Cartfile in Resources */,
 				63E62AB7249196B30038A694 /* Peoplepower-Resources.podspec in Resources */,
 				631A7AA3248B151600D86CFF /* UnitTests.plist in Resources */,
-				631A7AA6248B16DD00D86CFF /* Peoplepower-Info.plist in Resources */,
+				631A7AA6248B16DD00D86CFF /* Peoplepower-Info-iOS.plist in Resources */,
 				631A7AA7248B16E000D86CFF /* Peoplepower-Framework-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3175,6 +3869,7 @@
 				636B498B248AFBDB00124F6A /* DeviceMeasurements-GetMeasurementsWithSearchTerms-ResponseData.json in Resources */,
 				636B4A31248AFBE600124F6A /* UserCommunications-UpdateMessageAttributions-ResponseData.json in Resources */,
 				636B49CC248AFBDF00124F6A /* Products-DeleteMedia-ResponseData.json in Resources */,
+				630BDE9924B3E4540035D8B3 /* UserCommunications-GetSurveyQuestions-ResponseData.json in Resources */,
 				636B49EE248AFBE200124F6A /* Rules-UpdateRuleStatus-ResponseData.json in Resources */,
 				636B4A0F248AFBE400124F6A /* UserAccounts-GetTimeStates-ResponseData.json in Resources */,
 				636B49B2248AFBDD00124F6A /* FilesManagement-ReportAbuse-ResponseData.json in Resources */,
@@ -3225,6 +3920,7 @@
 				636B4A21248AFBE500124F6A /* UserCommunications-DeleteMessage-ResponseData.json in Resources */,
 				636B499B248AFBDC00124F6A /* Devices-SetCurrentFirmwareUpdateStatus-ResponseData.json in Resources */,
 				636B49EA248AFBE100124F6A /* Rules-GetRuleComponents-ResponseData.json in Resources */,
+				630BDE9A24B3E4540035D8B3 /* UserCommunications-AnswerQuestion-ResponseData.json in Resources */,
 				636B49EF248AFBE200124F6A /* SystemAndUserProperties-GetSystemProperty-Analytics_Level-ResponseData.txt in Resources */,
 				636B4996248AFBDB00124F6A /* Devices-GetDeviceFirmwareJobs-ResponseData.json in Resources */,
 				636B4A02248AFBE300124F6A /* UserAccounts-DeleteTag-ResponseData.json in Resources */,
@@ -3252,6 +3948,216 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		630BDC4724B392400035D8B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				630BDDB324B3AAFF0035D8B3 /* PPDeviceTypeParameterDisplayInfo.m in Sources */,
+				630BDC6024B394BE0035D8B3 /* PPAppResources.swift in Sources */,
+				630BDD2D24B3AAC20035D8B3 /* PPNotificationPushMessage.m in Sources */,
+				630BDDB124B3AAFF0035D8B3 /* PPDeviceTypeParameter.m in Sources */,
+				630BDDC524B3AAFF0035D8B3 /* PPDeviceTypeStoryPage.m in Sources */,
+				630BDDF724B3AB250035D8B3 /* PPUrl.m in Sources */,
+				630BDCB524B3A69C0035D8B3 /* PPRules.m in Sources */,
+				630BDD4F24B3AACF0035D8B3 /* PPQuestion.m in Sources */,
+				630BDD8324B3AAF10035D8B3 /* PPDynamicUIScreenSectionItem.m in Sources */,
+				630BDD2524B3AABA0035D8B3 /* PPDeviceCommand.m in Sources */,
+				630BDDEB24B3AB160035D8B3 /* PPReports.m in Sources */,
+				630BDC9F24B3A65C0035D8B3 /* PPUserCode.m in Sources */,
+				630BDDAD24B3AAFF0035D8B3 /* PPDeviceTypeAttribute.m in Sources */,
+				630BDD1324B3AAB50035D8B3 /* PPDevices.m in Sources */,
+				630BDC9224B3A65C0035D8B3 /* PPLocation.m in Sources */,
+				630BDCB924B3A69C0035D8B3 /* PPRuleComponent.m in Sources */,
+				630BDD1F24B3AABA0035D8B3 /* PPDeviceMeasurementUnit.m in Sources */,
+				630BDCB124B3A6890035D8B3 /* PPCloudsIntegrationHost.m in Sources */,
+				630BDDBD24B3AAFF0035D8B3 /* PPDeviceTypeDeviceModelCategory.m in Sources */,
+				630BDDD524B3AB080035D8B3 /* PPCommunityUser.m in Sources */,
+				630BDD6524B3AAE00035D8B3 /* PPApplicationFile.m in Sources */,
+				630BDC9824B3A65C0035D8B3 /* PPLocationNarrative.m in Sources */,
+				630BDD6724B3AAE90035D8B3 /* PPPaidServices.m in Sources */,
+				630BDC9724B3A65C0035D8B3 /* PPLocationSceneEvent.m in Sources */,
+				630BDCED24B3A6FD0035D8B3 /* PPCircleMember.m in Sources */,
+				630BDD1724B3AABA0035D8B3 /* PPDeviceMeasurements.m in Sources */,
+				630BDCD524B3A6AF0035D8B3 /* PPBotengineAppInstance.m in Sources */,
+				630BDC7624B3A60C0035D8B3 /* PPState.m in Sources */,
+				630BDDC124B3AAFF0035D8B3 /* PPDeviceTypeDeviceModelLookupParam.m in Sources */,
+				630BDD8924B3AAF50035D8B3 /* PPEnergyManagementUtilityBill.m in Sources */,
+				630BDDB924B3AAFF0035D8B3 /* PPDeviceTypeMedia.m in Sources */,
+				630BDDBB24B3AAFF0035D8B3 /* PPDeviceTypeDeviceModel.m in Sources */,
+				630BDDEF24B3AB220035D8B3 /* PPAFHTTPBridge.m in Sources */,
+				630BDCD124B3A6AF0035D8B3 /* PPBotengineAppCommunications.m in Sources */,
+				630BDDE924B3AB110035D8B3 /* PPCircleDevicePictureFrame.m in Sources */,
+				630BDCBF24B3A69C0035D8B3 /* PPRuleComponentAction.m in Sources */,
+				630BDDAB24B3AAFF0035D8B3 /* PPDeviceType.m in Sources */,
+				630BDD1B24B3AABA0035D8B3 /* PPDeviceMeasurementsReading.m in Sources */,
+				630BDD2324B3AABA0035D8B3 /* PPDeviceParameters.m in Sources */,
+				630BDDAF24B3AAFF0035D8B3 /* PPDeviceTypeAttributeOption.m in Sources */,
+				630BDD7924B3AAED0035D8B3 /* PPCallCenterContact.m in Sources */,
+				630BDCE724B3A6E60035D8B3 /* PPProperty.m in Sources */,
+				630BDD7F24B3AAF10035D8B3 /* PPDynamicUIScreen.m in Sources */,
+				630BDDC324B3AAFF0035D8B3 /* PPDeviceTypeStory.m in Sources */,
+				630BDD8124B3AAF10035D8B3 /* PPDynamicUIScreenSection.m in Sources */,
+				630BDDB524B3AAFF0035D8B3 /* PPDeviceTypeGoal.m in Sources */,
+				630BDD5524B3AACF0035D8B3 /* PPQuestionAnswer.m in Sources */,
+				630BDCAB24B3A6890035D8B3 /* PPCloudsIntegration.m in Sources */,
+				630BDD6B24B3AAE90035D8B3 /* PPServicePlanPrice.m in Sources */,
+				630BDCCD24B3A6AF0035D8B3 /* PPBotengineApp.m in Sources */,
+				630BDD8724B3AAF50035D8B3 /* PPEnergyManagementUsage.m in Sources */,
+				630BDD5724B3AAD20035D8B3 /* PPSMSGroupTexting.m in Sources */,
+				630BDD8D24B3AAF50035D8B3 /* PPEnergyManagementDeviceUsagePower.m in Sources */,
+				630BDD1124B3AAB20035D8B3 /* PPDeviceFirmwareUpdateJob.m in Sources */,
+				630BDDC924B3AAFF0035D8B3 /* PPDeviceTypeStoryModel.m in Sources */,
+				630BDCD724B3A6AF0035D8B3 /* PPBotengineAppMarketing.m in Sources */,
+				630BDCAD24B3A6890035D8B3 /* PPCloudsIntegrationCloud.m in Sources */,
+				630BDC9624B3A65C0035D8B3 /* PPLocationSize.m in Sources */,
+				630BDD3724B3AAC20035D8B3 /* PPNotificationSubscription.m in Sources */,
+				630BDC6524B3A58A0035D8B3 /* PPVersion.m in Sources */,
+				630BDD9F24B3AAF90035D8B3 /* PPWeather.m in Sources */,
+				630BDDDF24B3AB0D0035D8B3 /* PPFriendship.m in Sources */,
+				630BDD6124B3AADB0035D8B3 /* PPFileSummary.m in Sources */,
+				630BDC7F24B3A6280035D8B3 /* PPOperationToken.m in Sources */,
+				630BDCE124B3A6C20035D8B3 /* PPNSDate.m in Sources */,
+				630BDDF124B3AB220035D8B3 /* PPAFHTTPRequestOperationManager.m in Sources */,
+				630BDC6B24B3A5D60035D8B3 /* PPCloudConnectivityCloud.m in Sources */,
+				630BDCA124B3A65C0035D8B3 /* PPUserCommunity.m in Sources */,
+				630BDCDF24B3A6C20035D8B3 /* PPNSString.m in Sources */,
+				630BDD6D24B3AAE90035D8B3 /* PPServicePlanPriceAmount.m in Sources */,
+				630BDDBF24B3AAFF0035D8B3 /* PPDeviceTypeDeviceModelBrand.m in Sources */,
+				630BDCB324B3A6890035D8B3 /* PPCloudsIntegrationHostAccessToken.m in Sources */,
+				630BDDD124B3AB080035D8B3 /* PPCommunityReaction.m in Sources */,
+				630BDDCF24B3AB080035D8B3 /* PPCommunityPostReminder.m in Sources */,
+				630BDD3524B3AAC20035D8B3 /* PPNotifications.m in Sources */,
+				630BDD3F24B3AAC90035D8B3 /* PPCrowdFeedback.m in Sources */,
+				630BDC9324B3A65C0035D8B3 /* PPLocationCommunity.m in Sources */,
+				630BDDE524B3AB110035D8B3 /* PPCircleDevice.m in Sources */,
+				630BDCD924B3A6AF0035D8B3 /* PPBotengineAppRating.m in Sources */,
+				630BDCBD24B3A69C0035D8B3 /* PPRuleComponentState.m in Sources */,
+				630BDDF524B3AB220035D8B3 /* PPHTTPOperation.m in Sources */,
+				630BDD0724B3AA770035D8B3 /* PPVideoToken.m in Sources */,
+				630BDCBB24B3A69C0035D8B3 /* PPRuleComponentTrigger.m in Sources */,
+				630BDD5324B3AACF0035D8B3 /* PPQuestionResponseOption.m in Sources */,
+				630BDCE324B3A6C20035D8B3 /* PPNSData.m in Sources */,
+				630BDC7724B3A6100035D8B3 /* PPTimezone.m in Sources */,
+				630BDD1524B3AAB50035D8B3 /* PPDevice.m in Sources */,
+				630BDD7B24B3AAED0035D8B3 /* PPCallCenterAlert.m in Sources */,
+				630BDDD324B3AB080035D8B3 /* PPCommunityComment.m in Sources */,
+				630BDDA124B3AAF90035D8B3 /* PPWeatherMetadata.m in Sources */,
+				630BDD7724B3AAED0035D8B3 /* PPCallCenter.m in Sources */,
+				630BDD0F24B3AAB20035D8B3 /* PPDeviceFirmwareUpdateDownloadManager.m in Sources */,
+				630BDCF324B3A6FD0035D8B3 /* PPCircleReaction.m in Sources */,
+				630BDCAF24B3A6890035D8B3 /* PPCloudsIntegrationClient.m in Sources */,
+				630BDDB724B3AAFF0035D8B3 /* PPDeviceTypeInstallationInstructions.m in Sources */,
+				630BDD2924B3AABA0035D8B3 /* PPDeviceDataRequest.m in Sources */,
+				630BDD1D24B3AABA0035D8B3 /* PPDeviceMeasurementsAlert.m in Sources */,
+				630BDD9524B3AAF50035D8B3 /* PPEnergyManagementBillingInfo.m in Sources */,
+				630BDC9A24B3A65C0035D8B3 /* PPLocationUserSchedule.m in Sources */,
+				630BDCA024B3A65C0035D8B3 /* PPUserService.m in Sources */,
+				630BDD0124B3AA770035D8B3 /* PPDeviceCamera.m in Sources */,
+				630BDD5D24B3AADB0035D8B3 /* PPFile.m in Sources */,
+				630BDCA524B3A6790035D8B3 /* PPOrganizations.m in Sources */,
+				630BDD1924B3AABA0035D8B3 /* PPDeviceMeasurement.m in Sources */,
+				630BDDA524B3AAF90035D8B3 /* PPWeatherObservation.m in Sources */,
+				630BDD3B24B3AAC20035D8B3 /* PPNotification.m in Sources */,
+				630BDDDB24B3AB080035D8B3 /* PPAddress.m in Sources */,
+				630BDD4724B3AACB0035D8B3 /* PPInAppMessage.m in Sources */,
+				630BDD4524B3AACB0035D8B3 /* PPInAppMessaging.m in Sources */,
+				630BDD4D24B3AACF0035D8B3 /* PPQuestions.m in Sources */,
+				630BDD9324B3AAF50035D8B3 /* PPEnergyManagementDeviceUsageAggregatedCost.m in Sources */,
+				630BDD7D24B3AAF10035D8B3 /* PPDynamicUIs.m in Sources */,
+				630BDD3324B3AAC20035D8B3 /* PPNotificationSMSMessage.m in Sources */,
+				630BDCA924B3A6790035D8B3 /* PPOrganizationGroup.m in Sources */,
+				630BDD5F24B3AADB0035D8B3 /* PPFileTag.m in Sources */,
+				630BDDA724B3AAF90035D8B3 /* PPWeatherObservationMetric.m in Sources */,
+				630BDC5E24B393FC0035D8B3 /* PPDateUtilities.m in Sources */,
+				630BDD8B24B3AAF50035D8B3 /* PPEnergyManagementDeviceUsageEnergy.m in Sources */,
+				630BDC6924B3A5D60035D8B3 /* PPCloudConnectivity.m in Sources */,
+				630BDDCD24B3AB080035D8B3 /* PPCommunityPost.m in Sources */,
+				630BDD4924B3AACB0035D8B3 /* PPInAppMessageParameters.m in Sources */,
+				630BDCDD24B3A6AF0035D8B3 /* PPBotengineAppVersion.m in Sources */,
+				630BDC9C24B3A65C0035D8B3 /* PPUserEmail.m in Sources */,
+				630BDC9E24B3A65C0035D8B3 /* PPUserTag.m in Sources */,
+				630BDC9B24B3A65C0035D8B3 /* PPUser.m in Sources */,
+				630BDCEF24B3A6FD0035D8B3 /* PPCircleFile.m in Sources */,
+				630BDC7C24B3A6280035D8B3 /* PPLogin.m in Sources */,
+				630BDDD724B3AB080035D8B3 /* PPCommunityLocation.m in Sources */,
+				630BDE9624B3E3220035D8B3 /* PPSurveyQuestion.m in Sources */,
+				630BDDE324B3AB0D0035D8B3 /* PPFriendshipDevice.m in Sources */,
+				630BDC7E24B3A6280035D8B3 /* PPOperationTokenManagement.m in Sources */,
+				630BDDE724B3AB110035D8B3 /* PPCircleDeviceCamera.m in Sources */,
+				630BDCE524B3A6E60035D8B3 /* PPSystemAndUserProperties.m in Sources */,
+				630BDD6324B3AAE00035D8B3 /* PPApplicationFileManagement.m in Sources */,
+				630BDDA324B3AAF90035D8B3 /* PPWeatherForecast.m in Sources */,
+				630BDD2124B3AABA0035D8B3 /* PPDeviceParameter.m in Sources */,
+				630BDD7124B3AAE90035D8B3 /* PPServicePlanTransaction.m in Sources */,
+				630BDC9924B3A65C0035D8B3 /* PPLocationUser.m in Sources */,
+				630BDC6724B3A5B80035D8B3 /* PPCurlDebug.m in Sources */,
+				630BDDE124B3AB0D0035D8B3 /* PPFriendshipFriend.m in Sources */,
+				630BDCC924B3A69C0035D8B3 /* PPDeviceTypeRuleComponentTemplateProduct.m in Sources */,
+				630BDCD324B3A6AF0035D8B3 /* PPBotengineAppDeviceType.m in Sources */,
+				630BDD9724B3AAF50035D8B3 /* PPEnergyManagementBillingInfoBudget.m in Sources */,
+				630BDD6924B3AAE90035D8B3 /* PPServicePlan.m in Sources */,
+				630BDD7524B3AAED0035D8B3 /* PPProfessionalMonitoring.m in Sources */,
+				630BDC7224B3A5FD0035D8B3 /* PPCountriesStatesAndTimezones.m in Sources */,
+				630BDD0D24B3AAB20035D8B3 /* PPDeviceFirmwareUpdates.m in Sources */,
+				630BDCA724B3A6790035D8B3 /* PPOrganization.m in Sources */,
+				630BDC9424B3A65C0035D8B3 /* PPLocationSpace.m in Sources */,
+				630BDD2724B3AABA0035D8B3 /* PPDeviceParameterRobotVantagePoint.m in Sources */,
+				630BDC5B24B393DD0035D8B3 /* PPNetworkUtilities.m in Sources */,
+				630BDCA324B3A65C0035D8B3 /* PPUserAnalytics.m in Sources */,
+				630BDD5B24B3AADB0035D8B3 /* PPFileManagement.m in Sources */,
+				630BDD2F24B3AAC20035D8B3 /* PPNotificationEmailMessage.m in Sources */,
+				630BDCB724B3A69C0035D8B3 /* PPRule.m in Sources */,
+				630BDCEB24B3A6FD0035D8B3 /* PPCircle.m in Sources */,
+				630BDCC124B3A69C0035D8B3 /* PPRuleComponentParameter.m in Sources */,
+				630BDD8F24B3AAF50035D8B3 /* PPEnergyManagementDeviceUsageAggregated.m in Sources */,
+				630BDCF124B3A6FD0035D8B3 /* PPCirclePost.m in Sources */,
+				630BDD9924B3AAF50035D8B3 /* PPEnergyManagementBillingInfoUtility.m in Sources */,
+				630BDE9024B3E3220035D8B3 /* PPSurveys.m in Sources */,
+				630BDDF324B3AB220035D8B3 /* PPAFHTTPSessionManager.m in Sources */,
+				630BDD4B24B3AACB0035D8B3 /* PPInAppMessageRecipient.m in Sources */,
+				630BDD7324B3AAE90035D8B3 /* PPStoreProduct.m in Sources */,
+				630BDCC724B3A69C0035D8B3 /* PPDeviceTypeRuleComponentTemplate.m in Sources */,
+				630BDC6D24B3A5D60035D8B3 /* PPCloudConnectivityServer.m in Sources */,
+				630BDC6F24B3A5E80035D8B3 /* PPBaseModel.m in Sources */,
+				630BDDED24B3AB160035D8B3 /* PPDeviceAlert.m in Sources */,
+				630BDD0924B3AA840035D8B3 /* PPDeviceProperty.m in Sources */,
+				630BDD9124B3AAF50035D8B3 /* PPEnergyManagementDeviceUsageAggregatedEnergy.m in Sources */,
+				630BDC7424B3A6070035D8B3 /* PPCountry.m in Sources */,
+				630BDCE924B3A6FD0035D8B3 /* PPCircles.m in Sources */,
+				630BDD0B24B3AAAE0035D8B3 /* PPDeviceActivationInfo.m in Sources */,
+				630BDDC724B3AAFF0035D8B3 /* PPDeviceTypeStoryPageAction.m in Sources */,
+				630BDD3D24B3AAC90035D8B3 /* PPCrowdFeedbacks.m in Sources */,
+				630BDDCB24B3AB080035D8B3 /* PPCommunity.m in Sources */,
+				630BDD9D24B3AAF90035D8B3 /* PPWeatherManagement.m in Sources */,
+				630BDCF524B3AA630035D8B3 /* PPDevicePictureFrame.m in Sources */,
+				630BDCFB24B3AA630035D8B3 /* PPDevicePictureFrameAlert.m in Sources */,
+				630BDCCF24B3A6AF0035D8B3 /* PPBotengineAppAccess.m in Sources */,
+				630BDDF924B3AB250035D8B3 /* PPCloudEngine.m in Sources */,
+				630BDD4324B3AAC90035D8B3 /* PPCrowdFeedbackTicket.m in Sources */,
+				630BDC9D24B3A65C0035D8B3 /* PPUserBadge.m in Sources */,
+				630BDD3924B3AAC20035D8B3 /* PPNotificationToken.m in Sources */,
+				630BDCC324B3A69C0035D8B3 /* PPRuleComponentParameterValue.m in Sources */,
+				630BDDDD24B3AB0D0035D8B3 /* PPFriends.m in Sources */,
+				630BDCA224B3A65C0035D8B3 /* PPUserAccounts.m in Sources */,
+				630BDD8524B3AAF50035D8B3 /* PPEnergyManagement.m in Sources */,
+				630BDD5924B3AAD20035D8B3 /* PPSMSSubscriber.m in Sources */,
+				630BDCCB24B3A6AF0035D8B3 /* PPBotengine.m in Sources */,
+				630BDD6F24B3AAE90035D8B3 /* PPServicePlanSoftwareSubscription.m in Sources */,
+				630BDD9B24B3AAF50035D8B3 /* PPEnergyManagementBillingInfoBillingRate.m in Sources */,
+				630BDD2B24B3AAC20035D8B3 /* PPNotificationMessage.m in Sources */,
+				630BDC6224B394D00035D8B3 /* PPStorage.m in Sources */,
+				630BDD4124B3AAC90035D8B3 /* PPCrowdFeedbackSupport.m in Sources */,
+				630BDD5124B3AACF0035D8B3 /* PPQuestionCollection.m in Sources */,
+				630BDDA924B3AAFF0035D8B3 /* PPDeviceTypes.m in Sources */,
+				630BDD3124B3AAC20035D8B3 /* PPNotificationEmailMessageAttachment.m in Sources */,
+				630BDDD924B3AB080035D8B3 /* PPCommunityFile.m in Sources */,
+				630BDC7D24B3A6280035D8B3 /* PPLogout.m in Sources */,
+				630BDCC524B3A69C0035D8B3 /* PPRuleCalendar.m in Sources */,
+				630BDC9524B3A65C0035D8B3 /* PPLocationOccupantsRange.m in Sources */,
+				630BDCDB24B3A6AF0035D8B3 /* PPBotengineAppReview.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63BEC9A720C5D2AA00408494 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3267,6 +4173,7 @@
 				63BEC9E220C5D67500408494 /* PPLocation.m in Sources */,
 				63BECA2520C5D6A100408494 /* PPRuleComponentTrigger.m in Sources */,
 				63BECA3F20C5D6C300408494 /* PPEnergyManagementDeviceUsageAggregated.m in Sources */,
+				630BDE2124B3AFFF0035D8B3 /* PPDevicePictureFrameLocal.m in Sources */,
 				63BEC9E020C5D67500408494 /* PPOperationTokenManagement.m in Sources */,
 				63BEC9DF20C5D67500408494 /* PPLogout.m in Sources */,
 				63AB4A2523AD85580056AE8B /* PPCommunityReaction.m in Sources */,
@@ -3331,7 +4238,6 @@
 				63AD0B0D237C97CA00F4900B /* PPCommunityPost.m in Sources */,
 				63BECA5920C5D6C300408494 /* PPDeviceTypeStory.m in Sources */,
 				63BECA3C20C5D6C300408494 /* PPEnergyManagementUtilityBill.m in Sources */,
-				635123582138540C003E7EAA /* PPDeviceProxyLocalPictureFrame.m in Sources */,
 				63BECA8820C5D6E500408494 /* PPNSDate.m in Sources */,
 				63BECA2920C5D6A100408494 /* PPRuleComponentParameterValue.m in Sources */,
 				6390F2FD23AB441E00426CCC /* PPLocationCommunity.m in Sources */,
@@ -3365,6 +4271,7 @@
 				63BECA0220C5D67500408494 /* PPDeviceMeasurement.m in Sources */,
 				63BECA7820C5D6E500408494 /* PPOrganizationGroup.m in Sources */,
 				63BECA4620C5D6C300408494 /* PPWeatherManagement.m in Sources */,
+				630BDE8F24B3E3220035D8B3 /* PPSurveys.m in Sources */,
 				63BECA0920C5D6A100408494 /* PPNotifications.m in Sources */,
 				63BEC9FA20C5D67500408494 /* PPDeviceProperty.m in Sources */,
 				63BECA0A20C5D6A100408494 /* PPNotificationSubscription.m in Sources */,
@@ -3391,6 +4298,7 @@
 				63BECA4720C5D6C300408494 /* PPWeather.m in Sources */,
 				63BECA4B20C5D6C300408494 /* PPWeatherObservationMetric.m in Sources */,
 				63BECA2720C5D6A100408494 /* PPRuleComponentAction.m in Sources */,
+				630BDE1F24B3AFFC0035D8B3 /* PPDeviceProxyLocalPictureFrame.m in Sources */,
 				63BECA7A20C5D6E500408494 /* PPAFHTTPRequestOperationManager.m in Sources */,
 				635E3AC422C26BE600C171B0 /* PPDeviceTypeStoryPageAction.m in Sources */,
 				63BECA7620C5D6E500408494 /* PPOrganizations.m in Sources */,
@@ -3425,6 +4333,7 @@
 				63B9B13C248C0D5C0056E7CE /* RLMObject+PPExtras.m in Sources */,
 				63BEC9F920C5D67500408494 /* PPWebSocketViewer.m in Sources */,
 				63AD0B1B237CC77900F4900B /* PPCommunityLocation.m in Sources */,
+				630BDE9524B3E3220035D8B3 /* PPSurveyQuestion.m in Sources */,
 				637F1D022125E321001DB910 /* PPStorage.m in Sources */,
 				63D3873923D7AB1200BBC378 /* PPAddress.m in Sources */,
 				6309B76220E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.m in Sources */,
@@ -3449,7 +4358,6 @@
 				63BECA2020C5D6A100408494 /* PPApplicationFileManagement.m in Sources */,
 				63BEC9F820C5D67500408494 /* PPWebSocketCamera.m in Sources */,
 				63BECA7420C5D6E500408494 /* PPBotengineAppReview.m in Sources */,
-				6351235C2138540C003E7EAA /* PPDevicePictureFrameLocal.m in Sources */,
 				63BECA3220C5D6A100408494 /* PPProfessionalMonitoring.m in Sources */,
 				6360FAB921B8520200DB2B6B /* PPCloudsIntegrationCloud.m in Sources */,
 				63BECA6520C5D6E500408494 /* PPCircle.m in Sources */,
@@ -3516,20 +4424,85 @@
 /* Begin PBXTargetDependency section */
 		631A7A9C248B0AD500D86CFF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 63BEC9AB20C5D2AA00408494 /* Peoplepower */;
+			target = 63BEC9AB20C5D2AA00408494 /* Peoplepower iOS */;
 			targetProxy = 631A7A9B248B0AD500D86CFF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		630BDC5024B392400035D8B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = EAWY6XBUH2;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+					"$(PROJECT_DIR)/Demo/Carthage/Build/watchOS",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sources/Peoplepower-Prefix.pch";
+				INFOPLIST_FILE = "Sources/Peoplepower-Info-watchOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.watchOS;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Debug;
+		};
+		630BDC5124B392400035D8B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = EAWY6XBUH2;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+					"$(PROJECT_DIR)/Demo/Carthage/Build/watchOS",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sources/Peoplepower-Prefix.pch";
+				INFOPLIST_FILE = "Sources/Peoplepower-Info-watchOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.watchOS;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Release;
+		};
 		63BEC9C420C5D2AB00408494 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -3539,37 +4512,27 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Peoplepower/Components/Frameworks",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				FRAMEWORK_VERSION = "$(inherited)";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"DEBUG_APIS=1",
-				);
-				INFOPLIST_FILE = "Resources/Peoplepower-Info.plist";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sources/Peoplepower-Prefix.pch";
+				INFOPLIST_FILE = "Sources/Peoplepower-Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MARKETING_VERSION = 1.0;
-				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower;
-				PRODUCT_NAME = Peoplepower;
+				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.iOS;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
 		63BEC9C520C5D2AB00408494 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -3579,22 +4542,17 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Peoplepower/Components/Frameworks",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				FRAMEWORK_VERSION = "$(inherited)";
-				INFOPLIST_FILE = "Resources/Peoplepower-Info.plist";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sources/Peoplepower-Prefix.pch";
+				INFOPLIST_FILE = "Sources/Peoplepower-Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MARKETING_VERSION = 1.0;
-				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower;
-				PRODUCT_NAME = Peoplepower;
+				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.iOS;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -3612,20 +4570,20 @@
 				DYLIB_CURRENT_VERSION = "$(inherited)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Peoplepower/Components/Frameworks",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				FRAMEWORK_VERSION = "$(inherited)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sources/Peoplepower-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
-				INFOPLIST_FILE = "Resources/Peoplepower-Info.plist";
+				INFOPLIST_FILE = "Sources/Peoplepower-Info-iOS.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.peoplepowerco.lib.Peoplepower-Framework-Tests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.iOS.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Peoplepower-Tests/Peoplepower-Tests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Peoplepower iOSTests/Peoplepower-Tests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -3643,19 +4601,19 @@
 				DYLIB_CURRENT_VERSION = "$(inherited)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Peoplepower/Components/Frameworks",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				FRAMEWORK_VERSION = "$(inherited)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sources/Peoplepower-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
-				INFOPLIST_FILE = "Resources/Peoplepower-Info.plist";
+				INFOPLIST_FILE = "Sources/Peoplepower-Info-iOS.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.peoplepowerco.lib.Peoplepower-Framework-Tests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.iOS.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Peoplepower-Tests/Peoplepower-Tests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Peoplepower iOSTests/Peoplepower-Tests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -3690,7 +4648,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = "";
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -3701,11 +4658,10 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Resources/Peoplepower-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					DEBUG,
 					"$(inherited)",
+					"DEBUG=1",
+					"DEBUG_APIS=1",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -3713,10 +4669,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = Peoplepower;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -3751,7 +4710,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = "";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -3760,25 +4718,35 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Resources/Peoplepower-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Peoplepower;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		63BEC9C320C5D2AB00408494 /* Build configuration list for PBXNativeTarget "Peoplepower" */ = {
+		630BDC5224B392400035D8B3 /* Build configuration list for PBXNativeTarget "Peoplepower watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				630BDC5024B392400035D8B3 /* Debug */,
+				630BDC5124B392400035D8B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63BEC9C320C5D2AB00408494 /* Build configuration list for PBXNativeTarget "Peoplepower iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				63BEC9C420C5D2AB00408494 /* Debug */,
@@ -3787,7 +4755,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		63BEC9C720C5D2AB00408494 /* Build configuration list for PBXNativeTarget "Peoplepower-Tests" */ = {
+		63BEC9C720C5D2AB00408494 /* Build configuration list for PBXNativeTarget "Peoplepower iOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				63BEC9C820C5D2AB00408494 /* Debug */,

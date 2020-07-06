@@ -1,0 +1,12 @@
+{
+  "resultCode": 0,
+  "questions": [
+    {
+      "id": 50234,
+      "title": "Tell us what you think",
+      "question": "On a scale from 0-10 how likely you recommend our app?",
+      "sliderMin": 0,
+      "sliderMax": 10
+    }
+  ]
+}

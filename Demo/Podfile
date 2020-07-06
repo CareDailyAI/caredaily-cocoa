@@ -1,0 +1,29 @@
+workspace '../Peoplepower.xcworkspace'
+
+project 'Demo.xcodeproj'
+
+def peoplepower_ios
+  pod 'Peoplepower-Resources/iOS', :path => '../Peoplepower-Resources.podspec'
+end
+
+def peoplepower_watchos
+  pod 'Peoplepower-Resources/watchOS', :path => '../Peoplepower-Resources.podspec'
+end
+
+target 'Demo iOS' do
+  project 'Demo.xcodeproj'
+  platform :ios, '11'
+  peoplepower_ios
+end
+
+target 'Demo iOS Today' do
+  project 'Demo.xcodeproj'
+  platform :ios, '11'
+  peoplepower_ios
+end
+
+target 'Demo watchOS Extension' do
+  project 'Demo.xcodeproj'
+  platform :watchos, '6.0'
+  peoplepower_watchos
+end

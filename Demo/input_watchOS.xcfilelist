@@ -1,0 +1,4 @@
+$(SRCROOT)/Carthage/Build/watchOS/AFNetworking.framework
+$(SRCROOT)/Carthage/Build/watchOS/KissXML.framework
+$(SRCROOT)/Carthage/Build/watchOS/Peoplepower.framework
+$(SRCROOT)/Carthage/Build/watchOS/UICKeyChainStore.framework
