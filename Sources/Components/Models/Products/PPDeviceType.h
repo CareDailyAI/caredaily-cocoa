@@ -34,7 +34,8 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeId)  {
     PPDeviceTypeIdEWIGGateway = 32,
     PPDeviceTypeIdAWSIOTGateway = 34,
     PPDeviceTypeIdDevelcoX5Gateway = 35,
-    PPDeviceTypeIdDevelcoGateway = 36,
+    PPDeviceTypeIdDevelcoGatewayDP0X = 36,
+    PPDeviceTypeIdDevelcoGatewayDP2X = 37,
     
     PPDeviceTypeIdQmote = 120,
     PPDeviceTypeIdLintAlertProPlus = 130,
