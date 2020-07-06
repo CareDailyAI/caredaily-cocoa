@@ -1,0 +1,49 @@
+//
+//  Peoplepower-Prefix.pch
+//  Peoplepower
+//
+//  Created by Destry Teeter on 3/6/18.
+//  Copyright © 2020 People Power Company. All rights reserved.
+//
+
+#ifndef Peoplepower_Prefix_pch
+#define Peoplepower_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <Availability.h>
+
+#ifdef DEBUG
+#define PPLog(args...) NSLog(args);
+#else
+#define PPLog(args...)
+#endif
+
+#ifdef DEBUG_MODELS
+#define PPLogModel(args...) PPLog(args);
+#else
+#define PPLogModel(args...)
+#endif
+
+#ifdef DEBUG_APIS
+#define PPLogAPI(args...) PPLog(args);
+#else
+#define PPLogAPI(args...)
+#endif
+
+#ifdef __OBJC__
+#import <Foundation/Foundation.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+#if !TARGET_OS_WATCH
+#import <SystemConfiguration/SystemConfiguration.h>
+#import <SocketRocket/SocketRocket.h>
+#endif
+#import <UICKeyChainStore/UICKeyChainStore.h>
+
+#endif
+
+#import "Peoplepower.h"
+#import <Peoplepower/Peoplepower-Swift.h>
+
+#endif /* Peoplepower_Prefix_pch */
