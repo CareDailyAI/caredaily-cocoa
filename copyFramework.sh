@@ -18,8 +18,8 @@ rm -rf "$CARTHAGE_BUILD_DIR/${PROJECT_NAME}.framework"
 echo "Copy Framework"
 cp -R "$BUILD_DIR/${PROJECT_NAME}.framework" "$CARTHAGE_BUILD_DIR/${PROJECT_NAME}.framework"
 
-# Install Cocoapods
-echo "Copy resources using Cocoapods"
-pod install --project-directory=${PROJECT_DIR}/Demo/
+# Install Cocoapods (ignored, no assets anyway)
+#echo "Copy resources using Cocoapods"
+#pod install --project-directory=${PROJECT_DIR}/Demo/
 
 fi

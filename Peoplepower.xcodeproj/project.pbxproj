@@ -2615,6 +2615,7 @@
 				636DCC052493E7C1000560E8 /* PPAppResources.swift */,
 				637F1CFF2125E321001DB910 /* PPStorage.h */,
 				637F1D002125E321001DB910 /* PPStorage.m */,
+				630BDE9D24B3F6D50035D8B3 /* PPRealmTypes.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -2656,7 +2657,6 @@
 				63D392F5204F277800041C1A /* Networking */,
 				63D3931C204F3E6300041C1A /* PPBaseModel.h */,
 				63D3931D204F3E6300041C1A /* PPBaseModel.m */,
-				630BDE9D24B3F6D50035D8B3 /* PPRealmTypes.h */,
 			);
 			path = Models;
 			sourceTree = "<group>";

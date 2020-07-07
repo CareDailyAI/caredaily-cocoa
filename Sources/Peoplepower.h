@@ -19,8 +19,9 @@ FOUNDATION_EXPORT const unsigned char PeoplepowerVersionString[];
 #import <Peoplepower/PPNetworkUtilities.h>
 #import <Peoplepower/PPDateUtilities.h>
 #import <Peoplepower/PPAppResources.h>
-#import <Peoplepower/PPRealm.h>
 #import <Peoplepower/PPStorage.h>
+#import <Peoplepower/PPRealm.h>
+#import <Peoplepower/PPRealmTypes.h>
 
 #pragma mark - Dependencies -
 
