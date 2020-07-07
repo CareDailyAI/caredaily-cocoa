@@ -1937,7 +1937,7 @@
 			name = Metadata;
 			sourceTree = "<group>";
 		};
-		630BDE8A24B3E30C0035D8B3 /* Survey */ = {
+		630BDE8A24B3E30C0035D8B3 /* Surveys */ = {
 			isa = PBXGroup;
 			children = (
 				630BDE8D24B3E3220035D8B3 /* PPSurveyQuestion.h */,
@@ -1945,7 +1945,7 @@
 				630BDE8C24B3E3210035D8B3 /* PPSurveys.h */,
 				630BDE8B24B3E3210035D8B3 /* PPSurveys.m */,
 			);
-			path = Survey;
+			path = Surveys;
 			sourceTree = "<group>";
 		};
 		631F847E2064326F0055C512 /* Cloud Connectivity */ = {
@@ -2916,7 +2916,7 @@
 				63D3948D2052FA8C00041C1A /* In-App Messaging */,
 				63D394972053073500041C1A /* Questions */,
 				63D394A720531D4800041C1A /* SMS Group Texting */,
-				630BDE8A24B3E30C0035D8B3 /* Survey */,
+				630BDE8A24B3E30C0035D8B3 /* Surveys */,
 			);
 			path = Communications;
 			sourceTree = "<group>";
