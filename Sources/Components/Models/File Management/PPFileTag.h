@@ -12,7 +12,7 @@ typedef NS_OPTIONS(NSInteger, PPFileTagAppId) {
     PPFileTagAppIdNone = -1
 };
 
-@interface PPFileTag : RLMObject
+@interface PPFileTag : PPBaseModel
 
 @property (nonatomic, strong) NSString *tag;
 @property (nonatomic) PPFileTagAppId appId;
@@ -23,5 +23,3 @@ typedef NS_OPTIONS(NSInteger, PPFileTagAppId) {
 + (PPFileTag *)initWithDictionary:(NSDictionary *)tagDict;
 
 @end
-
-RLM_ARRAY_TYPE(PPFileTag);

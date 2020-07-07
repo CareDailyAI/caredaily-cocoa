@@ -28,7 +28,7 @@ typedef NS_OPTIONS(NSInteger, PPCallCenterAlertStatus) {
     PPCallCenterAlertStatusReported = 3, // The alert reported to the call center
 };
 
-@interface PPCallCenter : RLMObject
+@interface PPCallCenter : PPBaseModel
 
 @property (nonatomic) PPCallCenterStatus status;
 @property (nonatomic) PPUserId userId;
@@ -49,5 +49,3 @@ typedef NS_OPTIONS(NSInteger, PPCallCenterAlertStatus) {
 + (NSString *)stringify:(PPCallCenter *)callCenter;
 
 @end
-
-RLM_ARRAY_TYPE(PPCallCenter);

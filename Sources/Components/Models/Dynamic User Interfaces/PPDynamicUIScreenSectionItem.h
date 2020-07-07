@@ -12,7 +12,7 @@ typedef NS_OPTIONS(NSInteger, PPDynamicUIScreenSectionItemOrder) {
     PPDynamicUIScreenSectionItemOrderNone = -1,
 };
 
-@interface PPDynamicUIScreenSectionItem : RLMObject
+@interface PPDynamicUIScreenSectionItem : PPBaseModel
 
 @property (nonatomic, strong) NSString *itemId;
 @property (nonatomic, strong) NSString *name;
@@ -26,5 +26,3 @@ typedef NS_OPTIONS(NSInteger, PPDynamicUIScreenSectionItemOrder) {
 + (PPDynamicUIScreenSectionItem *)initWithDictionary:(NSDictionary *)itemDict;
 
 @end
-
-RLM_ARRAY_TYPE(PPDynamicUIScreenSectionItem);

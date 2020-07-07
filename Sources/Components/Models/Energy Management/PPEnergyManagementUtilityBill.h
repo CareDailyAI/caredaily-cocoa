@@ -17,7 +17,7 @@ typedef NS_OPTIONS(NSInteger, PPEnergyManagementUtilityBillDaysNumber) {
     PPEnergyManagementUtilityBillDaysNumberNone = -1,
 };
 
-@interface PPEnergyManagementUtilityBill : RLMObject
+@interface PPEnergyManagementUtilityBill : PPBaseModel
 
 /* Location ID */
 @property (nonatomic) PPLocationId locationId;
@@ -44,5 +44,3 @@ typedef NS_OPTIONS(NSInteger, PPEnergyManagementUtilityBillDaysNumber) {
 + (NSString *)stringify:(PPEnergyManagementUtilityBill *)bill;
 
 @end
-
-RLM_ARRAY_TYPE(PPEnergyManagementUtilityBill);

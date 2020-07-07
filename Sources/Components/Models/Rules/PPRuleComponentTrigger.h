@@ -19,5 +19,3 @@
 - (void)sync:(PPRuleComponentTrigger *)ruleComponent;
 
 @end
-
-RLM_ARRAY_TYPE(PPRuleComponentTrigger);

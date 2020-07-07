@@ -12,7 +12,7 @@
 @class PPNotificationMessageModel;
 RLM_ARRAY_TYPE(PPNotificationMessageModel);
 
-@interface PPNotificationMessage : RLMObject
+@interface PPNotificationMessage : PPBaseModel
 
 @property (nonatomic, strong) NSString *notificationTemplate;
 @property (nonatomic, strong) NSString *content;
@@ -26,8 +26,6 @@ RLM_ARRAY_TYPE(PPNotificationMessageModel);
 + (NSDictionary *)data:(PPNotificationMessage *)message;
 
 @end
-
-RLM_ARRAY_TYPE(PPNotificationMessage)
 
 @interface PPNotificationMessageModel : PPRLMDictionary
 + (PPNotificationMessageModel *)initWithDictionary:(NSDictionary *)dict;

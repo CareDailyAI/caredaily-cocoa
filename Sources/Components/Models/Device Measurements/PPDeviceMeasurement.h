@@ -9,7 +9,7 @@
 #import "PPBaseModel.h"
 #import "PPDeviceParameter.h"
 
-@interface PPDeviceMeasurement : RLMObject <NSCopying>
+@interface PPDeviceMeasurement : PPBaseModel <NSCopying>
 
 @property (nonatomic, strong) NSString *deviceId;
 @property (nonatomic, strong) NSDate *lastDataReceivedDate;
@@ -22,4 +22,3 @@
 
 @end
 
-RLM_ARRAY_TYPE(PPDeviceMeasurement)

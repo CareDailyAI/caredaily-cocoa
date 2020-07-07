@@ -70,7 +70,7 @@ typedef NS_OPTIONS(NSInteger, PPQuestionPoints) {
     PPQuestionPointsNone = -1
 };
 
-@interface PPQuestion : RLMObject
+@interface PPQuestion : PPBaseModel
 
 /* Question ID assigned by the system */
 @property (nonatomic) PPQuestionId questionId;
@@ -190,4 +190,3 @@ aggregatePublicly:(PPQuestionAggregatePublicly)aggregatePublicly
 
 @end
 
-RLM_ARRAY_TYPE(PPQuestion);

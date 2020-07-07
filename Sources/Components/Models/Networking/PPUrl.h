@@ -8,7 +8,7 @@
 #import "PPCloudConnectivityServer.h"
 #import "PPCloudConnectivityCloud.h"
 
-@interface PPUrl : NSObject
+@interface PPUrl : PPBaseModel
 
 
 #ifndef HTTP_TIMEOUT_WITH_ACTIVE_CAMERA

@@ -13,7 +13,7 @@ typedef NS_OPTIONS(NSInteger, PPDeviceMeasurementsAlertId) {
     PPDeviceMeasurementsAlertIdNone = -1
 };
 
-@interface PPDeviceMeasurementsAlert : RLMObject <NSCopying>
+@interface PPDeviceMeasurementsAlert : PPBaseModel <NSCopying>
 
 @property (nonatomic) PPDeviceMeasurementsAlertId alertId;
 @property (nonatomic, strong) NSString *deviceId;
@@ -27,4 +27,3 @@ typedef NS_OPTIONS(NSInteger, PPDeviceMeasurementsAlertId) {
 
 @end
 
-RLM_ARRAY_TYPE(PPDeviceMeasurementsAlert);

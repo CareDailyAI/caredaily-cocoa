@@ -16,7 +16,7 @@ typedef NS_OPTIONS(NSInteger, PPBotengineAppCommunicationsCategory) {
     PPBotengineAppCommunicationsCategoryOrganizationAdmins = 4
 };
 
-@interface PPBotengineAppCommunications : RLMObject
+@interface PPBotengineAppCommunications : PPBaseModel
 
 @property (nonatomic) PPBotengineAppCommunicationsCategory category;
 @property (nonatomic) BOOL email;
@@ -29,4 +29,3 @@ typedef NS_OPTIONS(NSInteger, PPBotengineAppCommunicationsCategory) {
 - (NSString *)JSONString;
 @end
 
-RLM_ARRAY_TYPE(PPBotengineAppCommunications);

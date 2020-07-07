@@ -13,7 +13,7 @@ typedef NS_OPTIONS(NSInteger, PPCrowdFeedbackTicketId) {
     PPCrowdFeedbackTicketIdNone = -1
 };
 
-@interface PPCrowdFeedbackTicket : RLMObject
+@interface PPCrowdFeedbackTicket : PPBaseModel
 
 @property (nonatomic) PPCrowdFeedbackId feedbackId;
 @property (nonatomic, strong) NSString *brand;
@@ -25,4 +25,3 @@ typedef NS_OPTIONS(NSInteger, PPCrowdFeedbackTicketId) {
 
 @end
 
-RLM_ARRAY_TYPE(PPCrowdFeedbackTicket)

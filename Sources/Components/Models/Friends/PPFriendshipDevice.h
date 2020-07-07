@@ -41,4 +41,3 @@ typedef NS_OPTIONS(NSInteger, PPFriendshipDeviceMute) {
 
 @end
 
-RLM_ARRAY_TYPE(PPFriendshipDevice)

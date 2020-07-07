@@ -138,5 +138,3 @@ extern PPDeviceParametersOutputVolume PICTURE_FRAME_VOLUME_OUTPUT_DEFAULT;
 - (void)updateNotification:(NSString *)notification;
 
 @end
-
-RLM_ARRAY_TYPE(PPDevicePictureFrame);

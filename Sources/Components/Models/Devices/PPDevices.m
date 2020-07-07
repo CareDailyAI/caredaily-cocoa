@@ -30,24 +30,28 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
     if(location) {
         [sharedDevices addObject:[PPDevice objectsWhere:@"locationId == %li", (long)location.locationId]];
         [sharedDevices addObject:[PPDeviceCamera objectsWhere:@"locationId == %li", (long)location.locationId]];
-        [sharedDevices addObject:[PPDeviceCameraLocal objectsWhere:@"locationId == %li", (long)location.locationId]];
         [sharedDevices addObject:[PPDevicePictureFrame objectsWhere:@"locationId == %li", (long)location.locationId]];
-        [sharedDevices addObject:[PPDevicePictureFrameLocal objectsWhere:@"locationId == %li", (long)location.locationId]];
         [sharedDevices addObject:[PPCircleDevice objectsWhere:@"locationId == %li", (long)location.locationId]];
         [sharedDevices addObject:[PPCircleDeviceCamera objectsWhere:@"locationId == %li", (long)location.locationId]];
         [sharedDevices addObject:[PPCircleDevicePictureFrame objectsWhere:@"locationId == %li", (long)location.locationId]];
         [sharedDevices addObject:[PPFriendshipDevice objectsWhere:@"locationId == %li", (long)location.locationId]];
+#if !TARGET_OS_WATCH
+        [sharedDevices addObject:[PPDeviceCameraLocal objectsWhere:@"locationId == %li", (long)location.locationId]];
+        [sharedDevices addObject:[PPDevicePictureFrameLocal objectsWhere:@"locationId == %li", (long)location.locationId]];
+#endif
     }
     else {
         [sharedDevices addObject:[PPDevice allObjects]];
         [sharedDevices addObject:[PPDeviceCamera allObjects]];
-        [sharedDevices addObject:[PPDeviceCameraLocal allObjects]];
         [sharedDevices addObject:[PPDevicePictureFrame allObjects]];
-        [sharedDevices addObject:[PPDevicePictureFrameLocal allObjects]];
         [sharedDevices addObject:[PPCircleDevice allObjects]];
         [sharedDevices addObject:[PPCircleDeviceCamera allObjects]];
         [sharedDevices addObject:[PPCircleDevicePictureFrame allObjects]];
         [sharedDevices addObject:[PPFriendshipDevice allObjects]];
+#if !TARGET_OS_WATCH
+        [sharedDevices addObject:[PPDeviceCameraLocal allObjects]];
+        [sharedDevices addObject:[PPDevicePictureFrameLocal allObjects]];
+#endif
     }
     NSMutableArray *sharedDevicesArray = [[NSMutableArray alloc] initWithCapacity:[sharedDevices count]];
     NSMutableArray *devicesArrayDebug = [[NSMutableArray alloc] initWithCapacity:0];
@@ -90,34 +94,10 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
         if([device isKindOfClass:[PPFriendshipDevice class]]) {
             [PPFriendshipDevice createOrUpdateInDefaultRealmWithValue:device];
         }
-        else if([device isKindOfClass:[PPDeviceCameraLocal class]]) {
-            [PPDeviceCameraLocal createOrUpdateInDefaultRealmWithValue:device];
-            if([[PPDeviceCamera objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId] count] > 0) {
-                [[PPRealm defaultRealm] deleteObjects:[PPDeviceCamera objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId]];
-            }
-            else if([[PPDevicePictureFrame objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId] count] > 0) {
-                [[PPRealm defaultRealm] deleteObjects:[PPDevicePictureFrame objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId]];
-            }
-            else if([[PPDevicePictureFrameLocal objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId] count] > 0) {
-                [[PPRealm defaultRealm] deleteObjects:[PPDevicePictureFrameLocal objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId]];
-            }
-        }
         else if([device isKindOfClass:[PPDeviceCamera class]]) {
             [PPDeviceCamera createOrUpdateInDefaultRealmWithValue:device];
             if([[PPDevicePictureFrame objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId] count] > 0) {
                 [[PPRealm defaultRealm] deleteObjects:[PPDevicePictureFrame objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId]];
-            }
-        }
-        else if([device isKindOfClass:[PPDevicePictureFrameLocal class]]) {
-            [PPDevicePictureFrameLocal createOrUpdateInDefaultRealmWithValue:device];
-            if([[PPDevicePictureFrame objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId] count] > 0) {
-                [[PPRealm defaultRealm] deleteObjects:[PPDevicePictureFrame objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId]];
-            }
-            else if([[PPDeviceCamera objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId] count] > 0) {
-                [[PPRealm defaultRealm] deleteObjects:[PPDeviceCamera objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId]];
-            }
-            else if([[PPDeviceCameraLocal objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId] count] > 0) {
-                [[PPRealm defaultRealm] deleteObjects:[PPDeviceCameraLocal objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId]];
             }
         }
         else if([device isKindOfClass:[PPDevicePictureFrame class]]) {
@@ -127,9 +107,11 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
             }
         }
         else if([device isKindOfClass:[PPCircleDeviceCamera class]]) {
+#if !TARGET_OS_WATCH
             if([[PPDeviceCameraLocal objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId] count] > 0) {
                 continue;
             }
+#endif
             [PPCircleDeviceCamera createOrUpdateInDefaultRealmWithValue:device];
             if([[PPCircleDevice objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId] count] > 0) {
                 [[PPRealm defaultRealm] deleteObjects:[PPCircleDevice objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId]];
@@ -142,9 +124,11 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
             }
         }
         else if([device isKindOfClass:[PPCircleDevicePictureFrame class]]) {
+#if !TARGET_OS_WATCH
             if([[PPDevicePictureFrameLocal objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId] count] > 0) {
                 continue;
             }
+#endif
             [PPCircleDevicePictureFrame createOrUpdateInDefaultRealmWithValue:device];
             if([[PPCircleDevice objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId] count] > 0) {
                 [[PPRealm defaultRealm] deleteObjects:[PPCircleDevice objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId]];
@@ -162,6 +146,32 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
                 [[PPRealm defaultRealm] deleteObjects:[PPDevice objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId]];
             }
         }
+#if !TARGET_OS_WATCH
+        else if([device isKindOfClass:[PPDeviceCameraLocal class]]) {
+            [PPDeviceCameraLocal createOrUpdateInDefaultRealmWithValue:device];
+            if([[PPDeviceCamera objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId] count] > 0) {
+                [[PPRealm defaultRealm] deleteObjects:[PPDeviceCamera objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId]];
+            }
+            else if([[PPDevicePictureFrame objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId] count] > 0) {
+                [[PPRealm defaultRealm] deleteObjects:[PPDevicePictureFrame objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId]];
+            }
+            else if([[PPDevicePictureFrameLocal objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId] count] > 0) {
+                [[PPRealm defaultRealm] deleteObjects:[PPDevicePictureFrameLocal objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId]];
+            }
+        }
+        else if([device isKindOfClass:[PPDevicePictureFrameLocal class]]) {
+            [PPDevicePictureFrameLocal createOrUpdateInDefaultRealmWithValue:device];
+            if([[PPDevicePictureFrame objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId] count] > 0) {
+                [[PPRealm defaultRealm] deleteObjects:[PPDevicePictureFrame objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId]];
+            }
+            else if([[PPDeviceCamera objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId] count] > 0) {
+                [[PPRealm defaultRealm] deleteObjects:[PPDeviceCamera objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId]];
+            }
+            else if([[PPDeviceCameraLocal objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId] count] > 0) {
+                [[PPRealm defaultRealm] deleteObjects:[PPDeviceCameraLocal objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId]];
+            }
+        }
+#endif
         else {
             [PPDevice createOrUpdateInDefaultRealmWithValue:device];
             if([[PPCircleDevice objectsWhere:@"deviceId == %@ && locationId == %li", device.deviceId, (long)device.locationId] count] > 0) {
@@ -204,18 +214,20 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
             else if([device isKindOfClass:[PPCircleDevice class]]) {
                 [[PPRealm defaultRealm] deleteObject:[PPCircleDevice objectForPrimaryKey:device.deviceId]];
             }
-            else if([device isKindOfClass:[PPDeviceCameraLocal class]]) {
-                [[PPRealm defaultRealm] deleteObject:[PPDeviceCameraLocal objectForPrimaryKey:device.deviceId]];
-            }
             else if([device isKindOfClass:[PPDeviceCamera class]]) {
                 [[PPRealm defaultRealm] deleteObject:[PPDeviceCamera objectForPrimaryKey:device.deviceId]];
-            }
-            else if([device isKindOfClass:[PPDevicePictureFrameLocal class]]) {
-                [[PPRealm defaultRealm] deleteObject:[PPDevicePictureFrameLocal objectForPrimaryKey:device.deviceId]];
             }
             else if([device isKindOfClass:[PPDevicePictureFrame class]]) {
                 [[PPRealm defaultRealm] deleteObject:[PPDevicePictureFrame objectForPrimaryKey:device.deviceId]];
             }
+#if !TARGET_OS_WATCH
+            else if([device isKindOfClass:[PPDeviceCameraLocal class]]) {
+                [[PPRealm defaultRealm] deleteObject:[PPDeviceCameraLocal objectForPrimaryKey:device.deviceId]];
+            }
+            else if([device isKindOfClass:[PPDevicePictureFrameLocal class]]) {
+                [[PPRealm defaultRealm] deleteObject:[PPDevicePictureFrameLocal objectForPrimaryKey:device.deviceId]];
+            }
+#endif
             else {
                 [[PPRealm defaultRealm] deleteObject:[PPDevice objectForPrimaryKey:device.deviceId]];
             }

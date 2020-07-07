@@ -10,12 +10,9 @@
 #import "PPDeviceTypeDeviceModel.h"
 
 @class PPDeviceTypeStory;
-RLM_ARRAY_TYPE(PPDeviceTypeStory);
-
 @class PPDeviceTypeDeviceModelCategoryName;
-RLM_ARRAY_TYPE(PPDeviceTypeDeviceModelCategoryName);
 
-@interface PPDeviceTypeDeviceModelCategory : RLMObject
+@interface PPDeviceTypeDeviceModelCategory : PPBaseModel
 
 @property (nonatomic) NSString *categoryId;
 @property (nonatomic) NSString *parentId;

@@ -28,7 +28,7 @@ typedef NS_OPTIONS(NSInteger, PPDeviceCommandTimeout) {
     PPDeviceCommandTimeoutDefault = 60
 };
 
-@interface PPDeviceCommand : RLMObject <NSCopying>
+@interface PPDeviceCommand : PPBaseModel <NSCopying>
 
 @property (nonatomic) PPDeviceCommandId commandId;
 @property (nonatomic, strong) NSString *deviceId;
@@ -45,5 +45,3 @@ typedef NS_OPTIONS(NSInteger, PPDeviceCommandTimeout) {
 + (PPDeviceCommand *)initWithDictionary:(NSDictionary *)commandDict;
 
 @end
-
-RLM_ARRAY_TYPE(PPDeviceCommand);

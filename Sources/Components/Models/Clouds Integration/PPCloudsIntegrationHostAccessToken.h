@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPCloudsIntegrationHostAccessToken : RLMObject
+@interface PPCloudsIntegrationHostAccessToken : PPBaseModel
 
 @property (nonatomic, strong) NSString *accessToken;
 @property (nonatomic, strong) NSString *tokenType;
@@ -21,4 +21,3 @@
 
 @end
 
-RLM_ARRAY_TYPE(PPCloudsIntegrationHostAccessToken);

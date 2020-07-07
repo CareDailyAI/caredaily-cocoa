@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPBotengineAppMarketing : RLMObject
+@interface PPBotengineAppMarketing : PPBaseModel
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *author;
@@ -28,4 +28,3 @@
 
 @end
 
-RLM_ARRAY_TYPE(PPBotengineAppMarketing);

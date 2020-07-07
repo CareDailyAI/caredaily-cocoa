@@ -14,7 +14,7 @@ typedef NS_OPTIONS(NSInteger, PPSurveyQuestionId) {
     PPSurveyQuestionIdNone = -1
 };
 
-@interface PPSurveyQuestion: RLMObject
+@interface PPSurveyQuestion: PPBaseModel
 
 @property (nonatomic) PPSurveyQuestionId questionId;
 @property (nonatomic, strong) NSString * _Nullable key;
@@ -35,5 +35,3 @@ typedef NS_OPTIONS(NSInteger, PPSurveyQuestionId) {
 @end
 
 NS_ASSUME_NONNULL_END
-
-RLM_ARRAY_TYPE(PPSurveyQuestion);

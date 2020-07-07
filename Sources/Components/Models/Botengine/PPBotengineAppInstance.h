@@ -47,4 +47,3 @@ typedef NS_OPTIONS(NSInteger, PPBotengineAppInstanceDataStreamBitmask) {
 
 @end
 
-RLM_ARRAY_TYPE(PPBotengineAppInstance);

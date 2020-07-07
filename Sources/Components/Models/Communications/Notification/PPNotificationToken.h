@@ -14,7 +14,7 @@ typedef NS_OPTIONS(NSInteger, PPNotificationSubscriptionSupportsBadgeIcons) {
     PPNotificationSubscriptionSupportsBadgeIconsTrue = 1
 };
 
-@interface PPNotificationToken : RLMObject
+@interface PPNotificationToken : PPBaseModel
 
 @property (nonatomic, strong) NSString *token;
 @property (nonatomic) PPNotificationSubscriptionSupportsBadgeIcons badges;
@@ -26,5 +26,3 @@ typedef NS_OPTIONS(NSInteger, PPNotificationSubscriptionSupportsBadgeIcons) {
 - (BOOL)isEqualToToken:(PPNotificationToken *)token;
 
 @end
-
-RLM_ARRAY_TYPE(PPNotificationToken);

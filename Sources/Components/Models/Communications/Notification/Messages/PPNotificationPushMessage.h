@@ -31,8 +31,6 @@ typedef NS_OPTIONS(NSInteger, PPNotificationPushMessageType) {
 
 @end
 
-RLM_ARRAY_TYPE(PPNotificationPushMessage);
-
 @interface PPNotificationPushMessageInfo : PPRLMDictionary
 + (PPNotificationPushMessageInfo *)initWithDictionary:(NSDictionary *)dict;
 @end

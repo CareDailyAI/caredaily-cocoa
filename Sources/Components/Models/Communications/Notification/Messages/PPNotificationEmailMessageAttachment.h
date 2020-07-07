@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPNotificationEmailMessageAttachment : RLMObject
+@interface PPNotificationEmailMessageAttachment : PPBaseModel
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *content;
@@ -21,5 +21,3 @@
 + (NSMutableDictionary *)data:(PPNotificationEmailMessageAttachment *)attachment;
 
 @end
-
-RLM_ARRAY_TYPE(PPNotificationEmailMessageAttachment);

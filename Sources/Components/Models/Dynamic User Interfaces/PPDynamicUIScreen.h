@@ -13,7 +13,7 @@ typedef NS_OPTIONS(NSInteger, PPDynamicUIScreenOrder) {
     PPDynamicUIScreenOrderNone = -1,
 };
 
-@interface PPDynamicUIScreen : RLMObject
+@interface PPDynamicUIScreen : PPBaseModel
 
 @property (nonatomic, strong) NSString *screenId;
 @property (nonatomic) PPDynamicUIScreenOrder order;
@@ -30,5 +30,3 @@ typedef NS_OPTIONS(NSInteger, PPDynamicUIScreenOrder) {
 - (void)sync:(PPDynamicUIScreen *)screen;
 
 @end
-
-RLM_ARRAY_TYPE(PPDynamicUIScreen);

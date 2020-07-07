@@ -32,4 +32,3 @@ typedef NS_OPTIONS(NSInteger, PPCircleFileHeight) {
 
 @end
 
-RLM_ARRAY_TYPE(PPCircleFile);

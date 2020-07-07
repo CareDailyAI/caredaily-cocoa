@@ -65,7 +65,7 @@ typedef NS_OPTIONS(NSInteger, PPUserAvatarFileId) {
     PPUserAvatarFileIdNone = -1,
 };
 
-@interface PPUser : RLMObject <NSCopying>
+@interface PPUser : PPBaseModel <NSCopying>
 
 @property (strong, nonatomic) NSString *sessionKey;
 @property (strong, nonatomic) NSDate *sessionKeyExpiry;
@@ -172,5 +172,3 @@ typedef NS_OPTIONS(NSInteger, PPUserAvatarFileId) {
 + (void)sync:(PPUser *)existingUser withUser:(PPUser *)user;
 
 @end
-
-RLM_ARRAY_TYPE(PPUser)

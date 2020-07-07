@@ -35,5 +35,3 @@ extern NSString *RULE_COMPONENT_STATE_SCHEDULE_COMPONENT_PAMAMETER_NAME_2;
 - (void)sync:(PPRuleComponentState *)ruleComponent;
 
 @end
-
-RLM_ARRAY_TYPE(PPRuleComponentState);

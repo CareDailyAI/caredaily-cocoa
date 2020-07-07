@@ -29,7 +29,7 @@ typedef NS_OPTIONS(long long, PPCircleData) {
     PPCircleDataNone = 0,
 };
 
-@interface PPCircle : RLMObject
+@interface PPCircle : PPBaseModel
 
 @property (nonatomic) PPCircleId circleId;
 @property (nonatomic, strong) NSString *name;
@@ -48,4 +48,3 @@ typedef NS_OPTIONS(long long, PPCircleData) {
 
 @end
 
-RLM_ARRAY_TYPE(PPCircle);

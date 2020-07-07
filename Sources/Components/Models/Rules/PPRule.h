@@ -37,7 +37,7 @@ typedef NS_OPTIONS(NSInteger, PPRuleDefault) {
     PPRuleDefaultTrue = 1,
 };
 
-@interface PPRule : RLMObject <NSCopying>
+@interface PPRule : PPBaseModel <NSCopying>
 
 @property (nonatomic) PPRuleId ruleId;
 @property (nonatomic, strong) NSString *name;
@@ -65,5 +65,3 @@ typedef NS_OPTIONS(NSInteger, PPRuleDefault) {
 - (void)sync:(PPRule *)rule;
 
 @end
-
-RLM_ARRAY_TYPE(PPRule);

@@ -22,7 +22,7 @@ typedef NS_OPTIONS(NSInteger, PPSMSSubscriberStatus) {
     PPSMSSubscriberStatusInvalid = 3, // SMS cannot be sent to this number
 };
 
-@interface PPSMSSubscriber : RLMObject
+@interface PPSMSSubscriber : PPBaseModel
 
 @property (nonatomic, strong) NSString *phone;
 @property (nonatomic, strong) RLMArray<RLMInt> *categories;
@@ -45,5 +45,3 @@ typedef NS_OPTIONS(NSInteger, PPSMSSubscriberStatus) {
 - (void)sync:(PPSMSSubscriber *)subscriber;
 
 @end
-
-RLM_ARRAY_TYPE(PPSMSSubscriber);

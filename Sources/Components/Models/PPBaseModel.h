@@ -5,6 +5,8 @@
 //  Copyright (c) 2020 People Power. All rights reserved.
 //
 
+#import "PPRealmTypes.h"
+
 @class PPFile;
 
 typedef void (^PPBasicBlock)(void);
@@ -17,7 +19,7 @@ typedef void (^PPNSArrayBlock)(NSArray * _Nullable a);
 typedef void (^PPNSDictionaryBlock)(NSDictionary * _Nullable a);
 typedef void (^PPFileBlock)(PPFile * _Nullable f);
 
-@interface PPBaseModel : NSObject
+@interface PPBaseModel : RLMObject
 
 + (void)disableTracking:(BOOL)disabled;
 

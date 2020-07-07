@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPRuleComponentParameterValue : RLMObject <NSCopying>
+@interface PPRuleComponentParameterValue : PPBaseModel <NSCopying>
 
 @property (nonatomic, strong) NSString *valueId;
 @property (nonatomic, strong) NSString *name;
@@ -26,5 +26,3 @@
 - (void)sync:(PPRuleComponentParameterValue *)parameterValue;
 
 @end
-
-RLM_ARRAY_TYPE(PPRuleComponentParameterValue);

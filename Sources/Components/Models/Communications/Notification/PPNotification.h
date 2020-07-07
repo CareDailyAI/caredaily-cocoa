@@ -34,7 +34,7 @@ typedef NS_OPTIONS(NSInteger, PPNotificationSentCount) {
     PPNotificationSentCountNone = -1
 };
 
-@interface PPNotification : RLMObject
+@interface PPNotification : PPBaseModel
 
 @property (nonatomic, strong) NSDate *sendDate;
 @property (nonatomic) NSInteger sendDateMS;
@@ -57,5 +57,3 @@ typedef NS_OPTIONS(NSInteger, PPNotificationSentCount) {
 + (NSString *)stringify:(PPNotification *)message;
 
 @end
-
-RLM_ARRAY_TYPE(PPNotification)

@@ -12,7 +12,7 @@ typedef NS_OPTIONS(NSInteger, PPCommunityCommentId) {
     PPCommunityCommentIdNone = -1
 };
 
-@interface PPCommunityComment : RLMObject
+@interface PPCommunityComment : PPBaseModel
 
 @property (nonatomic) PPCommunityCommentId commentId;
 @property (nonatomic) PPCommunityCommentId replyCommentId;
@@ -32,6 +32,5 @@ typedef NS_OPTIONS(NSInteger, PPCommunityCommentId) {
 
 @end
 
-RLM_ARRAY_TYPE(PPCommunityComment);
 
 NS_ASSUME_NONNULL_END

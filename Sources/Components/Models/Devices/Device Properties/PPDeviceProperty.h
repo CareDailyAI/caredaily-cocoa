@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPDeviceProperty : RLMObject
+@interface PPDeviceProperty : PPBaseModel
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *index;
@@ -26,5 +26,3 @@
 - (void)sync:(PPDeviceProperty *)property;
 
 @end
-
-RLM_ARRAY_TYPE(PPDeviceProperty);

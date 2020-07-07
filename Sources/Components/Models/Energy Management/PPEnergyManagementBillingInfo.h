@@ -16,7 +16,7 @@ typedef NS_OPTIONS(NSInteger, PPEnergyManagementBillingInfoBillingDay) {
     PPEnergyManagementBillingInfoBillingDayNone = -1,
 };
 
-@interface PPEnergyManagementBillingInfo : RLMObject
+@interface PPEnergyManagementBillingInfo : PPBaseModel
 
 @property (nonatomic) PPEnergyManagementBillingInfoBillingDay billingDay;
 @property (nonatomic, strong) RLMArray<PPEnergyManagementBillingInfoBudget *><PPEnergyManagementBillingInfoBudget> *budgets;
@@ -30,5 +30,3 @@ typedef NS_OPTIONS(NSInteger, PPEnergyManagementBillingInfoBillingDay) {
 + (NSString *)stringify:(PPEnergyManagementBillingInfo *)bill;
 
 @end
-
-RLM_ARRAY_TYPE(PPEnergyManagementBillingInfo);

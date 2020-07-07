@@ -67,5 +67,3 @@
 - (void)updateNotification:(NSString *)notification;
 
 @end
-
-RLM_ARRAY_TYPE(PPDevicePictureFrameLocal);

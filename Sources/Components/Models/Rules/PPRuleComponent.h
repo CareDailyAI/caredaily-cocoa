@@ -40,7 +40,7 @@ typedef NS_OPTIONS(NSInteger, PPRuleComponentTimezone) {
     PPRuleComponentTimezoneTrue = 1,
 };
 
-@interface PPRuleComponent : RLMObject <NSCopying, NSCoding>
+@interface PPRuleComponent : PPBaseModel <NSCopying, NSCoding>
 
 /* Id of this component */
 @property (nonatomic) PPRuleComponentId componentId;
@@ -86,5 +86,3 @@ typedef NS_OPTIONS(NSInteger, PPRuleComponentTimezone) {
 - (void)sync:(PPRuleComponent *)ruleComponent;
 
 @end
-
-RLM_ARRAY_TYPE(PPRuleComponent);

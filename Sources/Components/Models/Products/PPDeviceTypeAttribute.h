@@ -15,7 +15,7 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeAttributeExtended) {
     PPDeviceTypeAttributeExtendedTrue = 1
 };
 
-@interface PPDeviceTypeAttribute : RLMObject
+@interface PPDeviceTypeAttribute : PPBaseModel
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *value;
@@ -36,5 +36,3 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeAttributeExtended) {
 - (void)sync:(PPDeviceTypeAttribute *)attribute;
 
 @end
-
-RLM_ARRAY_TYPE(PPDeviceTypeAttribute);

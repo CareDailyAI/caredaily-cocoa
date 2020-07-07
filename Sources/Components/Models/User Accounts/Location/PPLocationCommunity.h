@@ -12,7 +12,7 @@ typedef NS_OPTIONS(NSInteger, PPCommunityId) {
     PPCommunityIdNone = -1
 };
 
-@interface PPLocationCommunity : RLMObject
+@interface PPLocationCommunity : PPBaseModel
 
 @property (nonatomic) PPCommunityId communityId;
 @property (nonatomic, strong) NSString *communityName;
@@ -22,7 +22,5 @@ typedef NS_OPTIONS(NSInteger, PPCommunityId) {
 + (PPLocationCommunity *)initWithDictionary:(NSDictionary *)communityDict;
 
 @end
-
-RLM_ARRAY_TYPE(PPLocationCommunity);
 
 NS_ASSUME_NONNULL_END

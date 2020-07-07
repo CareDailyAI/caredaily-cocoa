@@ -6,7 +6,7 @@
 //  Copyright © 2020 People Power Company. All rights reserved.
 //
 
-@interface PPDeviceTypeParameterDisplayInfo : RLMObject
+@interface PPDeviceTypeParameterDisplayInfo : PPBaseModel
 
 @property (nonatomic, strong) PPRLMDictionary *info;
 
@@ -17,5 +17,3 @@
 + (NSString *)stringify:(PPDeviceTypeParameterDisplayInfo *)displayInfo;
 
 @end
-
-RLM_ARRAY_TYPE(PPDeviceTypeParameterDisplayInfo);

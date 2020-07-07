@@ -18,7 +18,7 @@ typedef NS_OPTIONS(NSInteger, PPCallCenterAlertSourceType) {
     PPCallCenterAlertSourceTypeApp = 3, // Raised by an app API
 };
 
-@interface PPCallCenterAlert : RLMObject
+@interface PPCallCenterAlert : PPBaseModel
 
 @property (nonatomic, strong) NSDate *alertDate;
 @property (nonatomic) NSInteger alertDateMS;
@@ -33,5 +33,3 @@ typedef NS_OPTIONS(NSInteger, PPCallCenterAlertSourceType) {
 + (PPCallCenterAlert *)initWithDictionary:(NSDictionary *)alertDict;
 
 @end
-
-RLM_ARRAY_TYPE(PPCallCenterAlert);

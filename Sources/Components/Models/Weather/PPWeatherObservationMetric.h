@@ -9,7 +9,7 @@
 #import "PPBaseModel.h"
 #import "PPWeatherObservationMetric.h"
 
-@interface PPWeatherObservationMetric : RLMObject
+@interface PPWeatherObservationMetric : PPBaseModel
 
 @property (nonatomic, strong) NSNumber<RLMInt> *wspd;
 @property (nonatomic, strong) NSNumber<RLMInt> *gust;
@@ -53,5 +53,3 @@
 + (PPWeatherObservationMetric *)initWithDictionary:(NSDictionary *)metricDict;
 
 @end
-
-RLM_ARRAY_TYPE(PPWeatherObservationMetric);

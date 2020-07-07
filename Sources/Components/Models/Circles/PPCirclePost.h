@@ -28,7 +28,7 @@ typedef NS_OPTIONS(NSInteger, PPCirclePostDisplayTime) {
     PPCirclePostDisplayTimeNone = 0
 };
 
-@interface PPCirclePost : RLMObject
+@interface PPCirclePost : PPBaseModel
 
 @property (nonatomic) PPCircleId circleId;
 @property (nonatomic) PPCirclePostId postId;
@@ -52,4 +52,3 @@ typedef NS_OPTIONS(NSInteger, PPCirclePostDisplayTime) {
 
 @end
 
-RLM_ARRAY_TYPE(PPCirclePost);

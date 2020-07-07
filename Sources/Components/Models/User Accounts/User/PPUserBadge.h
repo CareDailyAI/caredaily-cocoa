@@ -27,7 +27,7 @@ typedef NS_OPTIONS(NSInteger, PPUserBadgeCount) {
     PPUserBadgeCountNone = -1,
 };
 
-@interface PPUserBadge : RLMObject <NSCopying>
+@interface PPUserBadge : PPBaseModel <NSCopying>
 
 @property (nonatomic) PPUserBadgeType type;
 @property (nonatomic) PPUserBadgeCount count;
@@ -41,5 +41,3 @@ typedef NS_OPTIONS(NSInteger, PPUserBadgeCount) {
 - (void)sync:(PPUserBadge *)userBadge;
 
 @end
-
-RLM_ARRAY_TYPE(PPUserBadge)

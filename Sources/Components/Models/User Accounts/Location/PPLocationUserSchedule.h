@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PPLocationUserSchedule : RLMObject
+@interface PPLocationUserSchedule : PPBaseModel
 
 @property (nonatomic) PPRuleCalendarDaysOfWeek daysOfWeek;
 @property (nonatomic) NSTimeInterval startTime;
@@ -24,5 +24,3 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
-
-RLM_ARRAY_TYPE(PPLocationUserSchedule);

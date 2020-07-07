@@ -29,7 +29,7 @@ extern NSString *CLOUD_CONNECTIVITY_SERVER_TYPE_DEVICE_WS;
 extern NSString *CLOUD_CONNECTIVITY_SERVER_TYPE_STREAMING;
 extern NSString *CLOUD_CONNECTIVITY_SERVER_TYPE_WEB_APP;
 
-@interface PPCloudConnectivityServer : RLMObject
+@interface PPCloudConnectivityServer : PPBaseModel
 
 @property (nonatomic, strong) NSString *type;
 @property (nonatomic, strong) NSString *host;
@@ -49,5 +49,3 @@ extern NSString *CLOUD_CONNECTIVITY_SERVER_TYPE_WEB_APP;
 - (NSString *)URLString;
 
 @end
-
-RLM_ARRAY_TYPE(PPCloudConnectivityServer);

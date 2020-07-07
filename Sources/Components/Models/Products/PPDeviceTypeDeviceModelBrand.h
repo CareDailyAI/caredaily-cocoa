@@ -19,12 +19,9 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeDeviceModelBrandSortId) {
 };
 
 @class PPDeviceTypeDeviceModelBrandName;
-RLM_ARRAY_TYPE(PPDeviceTypeDeviceModelBrandName);
-
 @class PPDeviceTypeDeviceModelBrandDesc;
-RLM_ARRAY_TYPE(PPDeviceTypeDeviceModelBrandDesc);
 
-@interface PPDeviceTypeDeviceModelBrand : RLMObject
+@interface PPDeviceTypeDeviceModelBrand : PPBaseModel
 
 @property (nonatomic, strong) NSString *brand;
 @property (nonatomic) PPDeviceTypeDeviceModelBrandHidden hidden;
@@ -40,8 +37,6 @@ RLM_ARRAY_TYPE(PPDeviceTypeDeviceModelBrandDesc);
 + (NSString *)stringify:(PPDeviceTypeDeviceModelBrand *)brand;
 
 @end
-
-RLM_ARRAY_TYPE(PPDeviceTypeDeviceModelBrand);
 
 @interface PPDeviceTypeDeviceModelBrandName : PPRLMDictionary
 + (PPDeviceTypeDeviceModelBrandName *)initWithDictionary:(NSDictionary *)dict;

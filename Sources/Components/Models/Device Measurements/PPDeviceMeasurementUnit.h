@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPDeviceMeasurementUnit : RLMObject
+@interface PPDeviceMeasurementUnit : PPBaseModel
 
 @property (nonatomic, strong) NSString *unit;
 @property (nonatomic, strong) NSString *desc;
@@ -18,5 +18,3 @@
 + (PPDeviceMeasurementUnit *)initWithDictionary:(NSDictionary *)measurementUnit;
 
 @end
-
-RLM_ARRAY_TYPE(PPDeviceMeasurementUnit);

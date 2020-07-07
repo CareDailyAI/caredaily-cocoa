@@ -13,7 +13,7 @@ extern NSString *WEATHER_METADATA_UNIT_METRIC;
 extern NSString *WEATHER_METADATA_UNIT_HUBRID; // UK
 extern NSString *WEATHER_METADATA_UNIT_METRICSI; // Not available for all APIs
 
-@interface PPWeatherMetadata : RLMObject
+@interface PPWeatherMetadata : PPBaseModel
 
 @property (nonatomic, strong) NSString *language;
 @property (nonatomic, strong) NSString *transactionId;
@@ -29,5 +29,3 @@ extern NSString *WEATHER_METADATA_UNIT_METRICSI; // Not available for all APIs
 + (PPWeatherMetadata *)initWithDictionary:(NSDictionary *)metadataDict;
 
 @end
-
-RLM_ARRAY_TYPE(PPWeatherMetadata);

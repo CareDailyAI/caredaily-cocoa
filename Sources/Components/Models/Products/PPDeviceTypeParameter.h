@@ -100,7 +100,7 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeParameterValueType) {
     PPDeviceTypeParameterValueTypeObject        = 8, // - Object
 };
 
-@interface PPDeviceTypeParameter : RLMObject
+@interface PPDeviceTypeParameter : PPBaseModel
 
 
 /* Parameter name (no spaces) */
@@ -161,5 +161,3 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeParameterValueType) {
 - (void)sync:(PPDeviceTypeParameter *)parameter;
 
 @end
-
-RLM_ARRAY_TYPE(PPDeviceTypeParameter);

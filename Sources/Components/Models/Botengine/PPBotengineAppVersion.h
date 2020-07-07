@@ -9,7 +9,7 @@
 #import "PPBaseModel.h"
 #import "PPBotengineAppRating.h"
 
-@interface PPBotengineAppVersion : RLMObject
+@interface PPBotengineAppVersion : PPBaseModel
 
 @property (nonatomic, strong) NSString *version;
 @property (nonatomic, strong) NSDate *creationDate;
@@ -21,4 +21,3 @@
 
 @end
 
-RLM_ARRAY_TYPE(PPBotengineAppVersion);

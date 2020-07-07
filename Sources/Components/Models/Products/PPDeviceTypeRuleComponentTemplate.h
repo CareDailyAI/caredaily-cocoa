@@ -29,7 +29,7 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeRuleComponentTemplateConditionData) {
     PPDeviceTypeRuleComponentTemplateConditionDataLastAlertData = 1 << 3 // The last alert information sent from the device is needed to check the condition of this rule phrase.
 };
 
-@interface PPDeviceTypeRuleComponentTemplate : RLMObject
+@interface PPDeviceTypeRuleComponentTemplate : PPBaseModel
 
 /* Template ID. The ID of this specific rule phrase. */
 @property (nonatomic) PPDeviceTypeRuleComponentTemplateId templateId;
@@ -83,5 +83,3 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeRuleComponentTemplateConditionData) {
 + (NSString *)stringify:(PPDeviceTypeRuleComponentTemplate *)component;
 
 @end
-
-RLM_ARRAY_TYPE(PPDeviceTypeRuleComponentTemplate);

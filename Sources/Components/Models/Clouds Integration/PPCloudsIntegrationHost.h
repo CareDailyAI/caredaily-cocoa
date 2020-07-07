@@ -29,7 +29,7 @@ typedef NS_OPTIONS(NSInteger, PPCloudsIntegrationHostAutoRefresh) {
     PPCloudsIntegrationHostAutoRefreshTrue = 1
 };
 
-@interface PPCloudsIntegrationHost : RLMObject <NSCopying>
+@interface PPCloudsIntegrationHost : PPBaseModel <NSCopying>
 
 @property (nonatomic, strong) NSString *appName;
 @property (nonatomic, strong) NSString *appId;
@@ -46,4 +46,3 @@ typedef NS_OPTIONS(NSInteger, PPCloudsIntegrationHostAutoRefresh) {
 
 @end
 
-RLM_ARRAY_TYPE(PPCloudsIntegrationHost);

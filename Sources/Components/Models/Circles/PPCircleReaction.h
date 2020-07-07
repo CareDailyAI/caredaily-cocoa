@@ -22,7 +22,7 @@ typedef NS_OPTIONS(NSInteger, PPCircleReactionType) {
     PPCircleReactionTypeAngry = 6
 };
 
-@interface PPCircleReaction : RLMObject
+@interface PPCircleReaction : PPBaseModel
 
 @property (nonatomic) PPUserId userId;
 @property (nonatomic) PPCircleReactionType type;
@@ -33,4 +33,3 @@ typedef NS_OPTIONS(NSInteger, PPCircleReactionType) {
 
 @end
 
-RLM_ARRAY_TYPE(PPCircleReaction);

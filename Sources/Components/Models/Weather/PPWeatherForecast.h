@@ -16,7 +16,7 @@ typedef NS_OPTIONS(NSInteger, PPWeatherManagementForecastHours) {
     PPWeatherManagementForecastHours48 = 48,
 };
 
-@interface PPWeatherForecast : RLMObject
+@interface PPWeatherForecast : PPBaseModel
 
 @property (nonatomic, strong) NSString *forecastClass;
 @property (nonatomic, strong) NSNumber<RLMInt> *expireTimeGMT;
@@ -64,5 +64,3 @@ typedef NS_OPTIONS(NSInteger, PPWeatherManagementForecastHours) {
 + (PPWeatherForecast *)initWithDictionary:(NSDictionary *)forecastDict;
 
 @end
-
-RLM_ARRAY_TYPE(PPWeatherForecast);

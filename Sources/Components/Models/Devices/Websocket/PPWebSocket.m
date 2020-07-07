@@ -13,6 +13,9 @@
 @end
 
 @implementation PPWebSocket
++ (NSArray<NSString *> *)ignoredProperties {
+    return @[@"delegate", @"webSocket"];
+}
 
 -(id) initWithURL:(NSString*)URL resourceEndpoint:(PPWebSocketResourceEndpoint)resourceEndpoint sessionId:(NSString*)sessionId delegate:(NSObject<PPWebSocketDelegate> *)delegate {
 	self = [super init];

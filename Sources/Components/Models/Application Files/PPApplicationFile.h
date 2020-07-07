@@ -40,7 +40,7 @@ typedef NS_OPTIONS(NSInteger, PPApplicationFileAttach) {
     PPApplicationFileAttachTrue = 1
 };
 
-@interface PPApplicationFile : RLMObject
+@interface PPApplicationFile : PPBaseModel
 
 @property (nonatomic) PPApplicationFileId fileId;
 @property (nonatomic) PPApplicationFileFileType type;
@@ -63,5 +63,3 @@ typedef NS_OPTIONS(NSInteger, PPApplicationFileAttach) {
 - (void)sync:(PPApplicationFile *)file;
 
 @end
-
-RLM_ARRAY_TYPE(PPApplicationFile);

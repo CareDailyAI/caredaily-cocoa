@@ -54,7 +54,7 @@ typedef NS_OPTIONS(NSInteger, PPDeviceRestricted) {
     PPDeviceRestrictedTrue = 1
 };
 
-@interface PPDevice : RLMObject
+@interface PPDevice : PPBaseModel
 
 @property (nonatomic, strong) NSString *deviceId;
 @property (nonatomic, strong) NSString *proxyId;
@@ -95,5 +95,3 @@ typedef NS_OPTIONS(NSInteger, PPDeviceRestricted) {
 - (void)sync:(PPDevice *)device;
 
 @end
-
-RLM_ARRAY_TYPE(PPDevice);

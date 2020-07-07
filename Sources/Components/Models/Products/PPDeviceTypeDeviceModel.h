@@ -17,13 +17,8 @@
 #import "PPDeviceTypeDeviceModelLookupParam.h"
 
 @class PPDeviceTypeDeviceModelManufacture;
-RLM_ARRAY_TYPE(PPDeviceTypeDeviceModelManufacture);
-
 @class PPDeviceTypeDeviceModelName;
-RLM_ARRAY_TYPE(PPDeviceTypeDeviceModelName);
-
 @class PPDeviceTypeDeviceModelDesc;
-RLM_ARRAY_TYPE(PPDeviceTypeDeviceModelDesc);
 
 typedef NS_OPTIONS(NSInteger, PPDeviceTypeDeviceModelPairingType) {
     PPDeviceTypeDeviceModelPairingTypeNone = -1,
@@ -45,7 +40,7 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeDeviceModelSortId) {
     PPDeviceTypeDeviceModelSortIdNone = -1,
 };
 
-@interface PPDeviceTypeDeviceModel : RLMObject
+@interface PPDeviceTypeDeviceModel : PPBaseModel
 
 @property (nonatomic, strong) NSString *modelId;
 @property (nonatomic, strong) RLMArray<PPDeviceTypeDeviceModelBrand *><PPDeviceTypeDeviceModelBrand> *brands;
@@ -69,8 +64,6 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeDeviceModelSortId) {
 + (NSString *)stringify:(PPDeviceTypeDeviceModel *)model;
 
 @end
-
-RLM_ARRAY_TYPE(PPDeviceTypeDeviceModel)
 
 @interface PPDeviceTypeDeviceModelManufacture : PPRLMDictionary
 + (PPDeviceTypeDeviceModelManufacture *)initWithDictionary:(NSDictionary *)dict;

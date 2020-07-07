@@ -34,7 +34,7 @@ typedef NS_OPTIONS(NSInteger, PPDeviceDataRequestCompression) {
 @property (nonatomic, strong) NSDate *startDate;
 @property (nonatomic, strong) NSDate *endDate;
 @property (nonatomic, strong) NSArray *paramNames;
-@property (nonatomic, strong) NSNumber *index;
+@property (nonatomic, strong) NSNumber<RLMInt> *index;
 @property (nonatomic) PPDeviceDataRequestOdered ordered;
 @property (nonatomic) PPDeviceDataRequestCompression compression;
 

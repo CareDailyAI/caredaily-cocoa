@@ -23,7 +23,7 @@ typedef NS_OPTIONS(NSInteger, PPUserCodeExpiry) {
 /* User codes are similar to passwords.
  They are not retrievable in any readable form, so a name is provided instead.
  It is up to the user to remember their codes (or delete and recreate). */
-@interface PPUserCode : RLMObject
+@interface PPUserCode : PPBaseModel
 
 /* Name assigned to this code */
 @property (strong, nonatomic) NSString *name;
@@ -40,6 +40,3 @@ typedef NS_OPTIONS(NSInteger, PPUserCodeExpiry) {
 + (PPUserCode *)initWithDictionary:(NSDictionary *)codeDict;
 
 @end
-
-
-RLM_ARRAY_TYPE(PPUserCode);

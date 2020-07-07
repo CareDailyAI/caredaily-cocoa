@@ -19,5 +19,3 @@
 - (void)sync:(PPRuleComponentAction *)ruleComponent;
 
 @end
-
-RLM_ARRAY_TYPE(PPRuleComponentAction);

@@ -43,4 +43,3 @@ typedef NS_OPTIONS(NSInteger, PPCircleMemberPhoneStatus) {
 
 @end
 
-RLM_ARRAY_TYPE(PPCircleMember);

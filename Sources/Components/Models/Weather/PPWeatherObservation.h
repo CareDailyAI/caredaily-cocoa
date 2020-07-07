@@ -9,7 +9,7 @@
 #import "PPBaseModel.h"
 #import "PPWeatherObservationMetric.h"
 
-@interface PPWeatherObservation : RLMObject
+@interface PPWeatherObservation : PPBaseModel
 
 @property (nonatomic, strong) NSString *observationClass;
 @property (nonatomic, strong) NSNumber<RLMInt> *expireTimeGMT;
@@ -44,5 +44,3 @@
 + (PPWeatherObservation *)initWithDictionary:(NSDictionary *)observationDict;
 
 @end
-
-RLM_ARRAY_TYPE(PPWeatherObservation);

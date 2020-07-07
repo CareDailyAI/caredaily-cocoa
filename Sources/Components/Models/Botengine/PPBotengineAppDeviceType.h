@@ -10,7 +10,7 @@
 
 @class PPDeviceType;
 
-@interface PPBotengineAppDeviceType : RLMObject
+@interface PPBotengineAppDeviceType : PPBaseModel
 
 @property (nonatomic, strong) PPDeviceType *deviceType;
 @property (nonatomic) NSInteger minOccurence;
@@ -23,4 +23,3 @@
 
 @end
 
-RLM_ARRAY_TYPE(PPBotengineAppDeviceType);

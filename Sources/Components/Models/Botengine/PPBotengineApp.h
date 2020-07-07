@@ -55,7 +55,7 @@ typedef NS_OPTIONS(NSInteger, PPBotengineAppType) {
     PPBotengineAppTypeCircleUserCircles = 3, // The bot is intended for purchase by the circle users for their circles
 };
 
-@interface PPBotengineApp : RLMObject
+@interface PPBotengineApp : PPBaseModel
 
 @property (nonatomic, strong) NSString *bundle;
 @property (nonatomic, strong) PPBotengineAppMarketing *marketing;
@@ -81,4 +81,3 @@ typedef NS_OPTIONS(NSInteger, PPBotengineAppType) {
 
 @end
 
-RLM_ARRAY_TYPE(PPBotengineApp);

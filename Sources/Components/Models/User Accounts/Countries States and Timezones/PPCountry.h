@@ -11,7 +11,7 @@
 #import "PPState.h"
 #import "PPTimezone.h"
 
-@interface PPCountry : RLMObject <NSCopying>
+@interface PPCountry : PPBaseModel <NSCopying>
 
 @property (nonatomic) PPCountryId countryId;
 @property (nonatomic, strong) NSString *name;
@@ -30,5 +30,3 @@
 + (PPCountry *)initWithDictionary:(NSDictionary *)countryDict;
 
 @end
-
-RLM_ARRAY_TYPE(PPCountry);

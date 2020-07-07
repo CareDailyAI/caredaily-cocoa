@@ -6,7 +6,7 @@
 //  Copyright © 2020 People Power Company. All rights reserved.
 //
 
-@interface PPInAppMessageParameters : RLMObject
+@interface PPInAppMessageParameters : PPBaseModel
 
 @property (nonatomic, strong) RLMArray<RLMString> *keys;
 @property (nonatomic, strong) RLMArray<RLMString> *values;
@@ -20,4 +20,3 @@
 
 @end
 
-RLM_ARRAY_TYPE(PPInAppMessageParameters);

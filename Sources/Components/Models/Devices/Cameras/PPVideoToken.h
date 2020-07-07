@@ -23,7 +23,7 @@ typedef NS_OPTIONS(NSInteger, PPVideoTokenExpireTimeInterval) {
     PPVideoTokenExpireTimeIntervalDefault = 3600
 };
 
-@interface PPVideoToken : RLMObject
+@interface PPVideoToken : PPBaseModel
 
 @property (nonatomic, strong) NSString *token;
 @property (nonatomic, strong) NSDate *expiration;
@@ -39,5 +39,3 @@ typedef NS_OPTIONS(NSInteger, PPVideoTokenExpireTimeInterval) {
 + (void)setDefaultProvider:(PPVideoTokenProvider)provider;
 
 @end
-
-RLM_ARRAY_TYPE(PPVideoToken)

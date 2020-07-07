@@ -37,7 +37,7 @@ typedef NS_OPTIONS(NSInteger, PPLocationNarrativeRowCount) {
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PPLocationNarrative : RLMObject
+@interface PPLocationNarrative : PPBaseModel
 
 @property (nonatomic) PPLocationNarrativeId narrativeId;
 @property (nonatomic) PPLocationId locationId;
@@ -58,8 +58,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSDictionary *)data:(PPLocationNarrative *)narrative;
 
 @end
-
-RLM_ARRAY_TYPE(PPLocationNarrative);
 
 @interface PPLocationNarrativeTarget : PPRLMDictionary
 + (PPLocationNarrativeTarget *)initWithDictionary:(NSDictionary *)dict;

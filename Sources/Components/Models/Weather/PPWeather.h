@@ -11,7 +11,7 @@
 #import "PPWeatherForecast.h"
 #import "PPWeatherObservation.h"
 
-@interface PPWeather : RLMObject
+@interface PPWeather : PPBaseModel
 
 @property (nonatomic, strong) PPWeatherMetadata *metadata;
 @property (nonatomic, strong) RLMArray<PPWeatherForecast *><PPWeatherForecast> *forecasts;
@@ -22,5 +22,3 @@
 + (PPWeather *)initWithDictionary:(NSDictionary *)weatherDict;
 
 @end
-
-RLM_ARRAY_TYPE(PPWeather);

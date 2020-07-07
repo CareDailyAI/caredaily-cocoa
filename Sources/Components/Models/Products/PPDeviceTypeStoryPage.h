@@ -32,7 +32,7 @@ extern NSString *PPDeviceTypeStoryPageStyleConnect;
 extern NSString *PPDeviceTypeStoryPageStylePicture;
 extern NSString *PPDeviceTypeStoryPageStyleCalibrate;
 
-@interface PPDeviceTypeStoryPage : RLMObject
+@interface PPDeviceTypeStoryPage : PPBaseModel
 
 @property (nonatomic) PPDeviceTypeStoryPageIndex index;
 @property (nonatomic) PPDeviceTypeStoryPageHidden hidden;
@@ -51,5 +51,3 @@ extern NSString *PPDeviceTypeStoryPageStyleCalibrate;
 + (NSString *)stringify:(PPDeviceTypeStoryPage *)page;
 
 @end
-
-RLM_ARRAY_TYPE(PPDeviceTypeStoryPage);

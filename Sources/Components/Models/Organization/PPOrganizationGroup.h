@@ -26,7 +26,7 @@ typedef NS_OPTIONS(NSInteger, PPOrganizationGroupType) {
     PPOrganizationGroupTypeBusiness = 1,
 };
 
-@interface PPOrganizationGroup : RLMObject <NSCopying>
+@interface PPOrganizationGroup : PPBaseModel <NSCopying>
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *domainName;
@@ -40,4 +40,3 @@ typedef NS_OPTIONS(NSInteger, PPOrganizationGroupType) {
 
 @end
 
-RLM_ARRAY_TYPE(PPOrganizationGroup);

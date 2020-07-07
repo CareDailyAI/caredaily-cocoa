@@ -9,7 +9,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPBotengineAppRating : RLMObject
+@interface PPBotengineAppRating : PPBaseModel
 
 @property (nonatomic) NSInteger total;
 @property (nonatomic) float average;
@@ -27,4 +27,3 @@
 
 @end
 
-RLM_ARRAY_TYPE(PPBotengineAppRating);

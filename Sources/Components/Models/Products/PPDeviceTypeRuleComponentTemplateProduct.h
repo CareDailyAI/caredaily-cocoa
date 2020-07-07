@@ -9,7 +9,7 @@
 #import "PPBaseModel.h"
 #import "PPDeviceType.h"
 
-@interface PPDeviceTypeRuleComponentTemplateProduct : RLMObject
+@interface PPDeviceTypeRuleComponentTemplateProduct : PPBaseModel
 
 @property (nonatomic) PPDeviceTypeId typeId;
 @property (nonatomic, strong) NSString *paramName;
@@ -22,5 +22,3 @@
 + (NSString *)stringify:(PPDeviceTypeRuleComponentTemplateProduct *)product;
 
 @end
-
-RLM_ARRAY_TYPE(PPDeviceTypeRuleComponentTemplateProduct);

@@ -429,6 +429,18 @@
 		630BDE9924B3E4540035D8B3 /* UserCommunications-GetSurveyQuestions-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 630BDE9724B3E4530035D8B3 /* UserCommunications-GetSurveyQuestions-ResponseData.json */; };
 		630BDE9A24B3E4540035D8B3 /* UserCommunications-AnswerQuestion-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 630BDE9824B3E4530035D8B3 /* UserCommunications-AnswerQuestion-ResponseData.json */; };
 		630BDE9C24B3F0520035D8B3 /* AFNetworking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 630BDE9B24B3F0520035D8B3 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		630BDE9E24B3F6D50035D8B3 /* PPRealmTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 630BDE9D24B3F6D50035D8B3 /* PPRealmTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDE9F24B3F6D50035D8B3 /* PPRealmTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 630BDE9D24B3F6D50035D8B3 /* PPRealmTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDEA024B424E60035D8B3 /* PPRealm.h in Headers */ = {isa = PBXBuildFile; fileRef = 63B9B141248C0D9B0056E7CE /* PPRealm.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDEA124B424EA0035D8B3 /* PPRealm.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B9B142248C0D9B0056E7CE /* PPRealm.m */; };
+		630BDEA224B424F30035D8B3 /* PPRLMArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 63B9B135248C0D5B0056E7CE /* PPRLMArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDEA324B424F30035D8B3 /* PPRLMArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B9B139248C0D5C0056E7CE /* PPRLMArray.m */; };
+		630BDEA424B424F30035D8B3 /* PPRLMDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 63B9B137248C0D5B0056E7CE /* PPRLMDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDEA524B424F30035D8B3 /* PPRLMDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B9B138248C0D5C0056E7CE /* PPRLMDictionary.m */; };
+		630BDEA624B424F30035D8B3 /* RLMObject+PPExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = 63B9B13A248C0D5C0056E7CE /* RLMObject+PPExtras.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDEA724B424F30035D8B3 /* RLMObject+PPExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B9B136248C0D5B0056E7CE /* RLMObject+PPExtras.m */; };
+		630BDEA824B424F30035D8B3 /* RLMRealm+PPExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = 637931F124A14F8B0007D70C /* RLMRealm+PPExtras.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630BDEA924B424F30035D8B3 /* RLMRealm+PPExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 637931F024A14F8B0007D70C /* RLMRealm+PPExtras.m */; };
 		630EB9A824948778002D5614 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630EB9A324948777002D5614 /* OHHTTPStubs.framework */; };
 		630EB9AA24948778002D5614 /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630EB9A524948777002D5614 /* KissXML.framework */; };
 		630EB9AB24948778002D5614 /* SocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630EB9A624948777002D5614 /* SocketRocket.framework */; };
@@ -1177,6 +1189,7 @@
 		630BDE9724B3E4530035D8B3 /* UserCommunications-GetSurveyQuestions-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "UserCommunications-GetSurveyQuestions-ResponseData.json"; sourceTree = "<group>"; };
 		630BDE9824B3E4530035D8B3 /* UserCommunications-AnswerQuestion-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "UserCommunications-AnswerQuestion-ResponseData.json"; sourceTree = "<group>"; };
 		630BDE9B24B3F0520035D8B3 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
+		630BDE9D24B3F6D50035D8B3 /* PPRealmTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPRealmTypes.h; sourceTree = "<group>"; };
 		630EB9A324948777002D5614 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
 		630EB9A524948777002D5614 /* KissXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KissXML.framework; path = Carthage/Build/iOS/KissXML.framework; sourceTree = "<group>"; };
 		630EB9A624948777002D5614 /* SocketRocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SocketRocket.framework; path = Carthage/Build/iOS/SocketRocket.framework; sourceTree = "<group>"; };
@@ -1964,8 +1977,8 @@
 		63475E3B2069CFCF009BCDED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				630BDE9B24B3F0520035D8B3 /* AFNetworking.framework */,
 				63B9B14E248C36BA0056E7CE /* Realm.framework */,
-				630EB9A424948777002D5614 /* AFNetworking.framework */,
 				630EB9A524948777002D5614 /* KissXML.framework */,
 				630EB9A324948777002D5614 /* OHHTTPStubs.framework */,
 				630EB9A624948777002D5614 /* SocketRocket.framework */,
@@ -2543,7 +2556,6 @@
 		63D392B4204F21EE00041C1A = {
 			isa = PBXGroup;
 			children = (
-				630BDE9B24B3F0520035D8B3 /* AFNetworking.framework */,
 				634C1EC824A292450012F715 /* Build Utilities */,
 				630BDC3F24B386470035D8B3 /* Metadata */,
 				63D392BF204F21EE00041C1A /* Sources */,
@@ -2644,6 +2656,7 @@
 				63D392F5204F277800041C1A /* Networking */,
 				63D3931C204F3E6300041C1A /* PPBaseModel.h */,
 				63D3931D204F3E6300041C1A /* PPBaseModel.m */,
+				630BDE9D24B3F6D50035D8B3 /* PPRealmTypes.h */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -3177,6 +3190,8 @@
 				630BDC8524B3A6460035D8B3 /* PPLocationSceneEvent.h in Headers */,
 				630BDCB224B3A6890035D8B3 /* PPCloudsIntegrationHostAccessToken.h in Headers */,
 				630BDCE824B3A6FD0035D8B3 /* PPCircles.h in Headers */,
+				630BDEA224B424F30035D8B3 /* PPRLMArray.h in Headers */,
+				630BDEA024B424E60035D8B3 /* PPRealm.h in Headers */,
 				630BDC7B24B3A6230035D8B3 /* PPOperationToken.h in Headers */,
 				630BDCB024B3A6890035D8B3 /* PPCloudsIntegrationHost.h in Headers */,
 				630BDC7124B3A5F90035D8B3 /* PPCountriesStatesAndTimezones.h in Headers */,
@@ -3225,6 +3240,7 @@
 				630BDDDA24B3AB080035D8B3 /* PPAddress.h in Headers */,
 				630BDD6A24B3AAE90035D8B3 /* PPServicePlanPrice.h in Headers */,
 				630BDDA424B3AAF90035D8B3 /* PPWeatherObservation.h in Headers */,
+				630BDEA624B424F30035D8B3 /* RLMObject+PPExtras.h in Headers */,
 				630BDD3C24B3AAC90035D8B3 /* PPCrowdFeedbacks.h in Headers */,
 				630BDD6024B3AADB0035D8B3 /* PPFileSummary.h in Headers */,
 				630BDDB824B3AAFF0035D8B3 /* PPDeviceTypeMedia.h in Headers */,
@@ -3250,6 +3266,7 @@
 				630BDD9E24B3AAF90035D8B3 /* PPWeather.h in Headers */,
 				630BDD8C24B3AAF50035D8B3 /* PPEnergyManagementDeviceUsagePower.h in Headers */,
 				630BDD1224B3AAB50035D8B3 /* PPDevices.h in Headers */,
+				630BDEA824B424F30035D8B3 /* RLMRealm+PPExtras.h in Headers */,
 				630BDD9624B3AAF50035D8B3 /* PPEnergyManagementBillingInfoBudget.h in Headers */,
 				630BDD0024B3AA770035D8B3 /* PPDeviceCamera.h in Headers */,
 				630BDD4024B3AAC90035D8B3 /* PPCrowdFeedbackSupport.h in Headers */,
@@ -3271,6 +3288,7 @@
 				630BDDD624B3AB080035D8B3 /* PPCommunityLocation.h in Headers */,
 				630BDD4824B3AACB0035D8B3 /* PPInAppMessageParameters.h in Headers */,
 				630BDDAA24B3AAFF0035D8B3 /* PPDeviceType.h in Headers */,
+				630BDEA424B424F30035D8B3 /* PPRLMDictionary.h in Headers */,
 				630BDD0A24B3AAAE0035D8B3 /* PPDeviceActivationInfo.h in Headers */,
 				630BDD8224B3AAF10035D8B3 /* PPDynamicUIScreenSectionItem.h in Headers */,
 				630BDDB624B3AAFF0035D8B3 /* PPDeviceTypeInstallationInstructions.h in Headers */,
@@ -3339,6 +3357,7 @@
 				630BDCE624B3A6E60035D8B3 /* PPProperty.h in Headers */,
 				630BDC8A24B3A6460035D8B3 /* PPUserEmail.h in Headers */,
 				630BDCB624B3A69C0035D8B3 /* PPRule.h in Headers */,
+				630BDE9F24B3F6D50035D8B3 /* PPRealmTypes.h in Headers */,
 				630BDC8624B3A6460035D8B3 /* PPLocationNarrative.h in Headers */,
 				630BDC8824B3A6460035D8B3 /* PPLocationUserSchedule.h in Headers */,
 				630BDCBC24B3A69C0035D8B3 /* PPRuleComponentState.h in Headers */,
@@ -3525,6 +3544,7 @@
 				63BECB0320C5D8E600408494 /* PPEnergyManagementUtilityBill.h in Headers */,
 				63BECAF820C5D8A800408494 /* PPStoreProduct.h in Headers */,
 				63BECAD220C5D88400408494 /* PPNotificationToken.h in Headers */,
+				630BDE9E24B3F6D50035D8B3 /* PPRealmTypes.h in Headers */,
 				63BECB3C20C5D8E600408494 /* PPBotengineAppVersion.h in Headers */,
 				63BECB2A20C5D8E600408494 /* PPFriendshipDevice.h in Headers */,
 				63BECAC820C5D88400408494 /* PPDeviceParameter.h in Headers */,
@@ -4001,9 +4021,11 @@
 				630BDD5524B3AACF0035D8B3 /* PPQuestionAnswer.m in Sources */,
 				630BDCAB24B3A6890035D8B3 /* PPCloudsIntegration.m in Sources */,
 				630BDD6B24B3AAE90035D8B3 /* PPServicePlanPrice.m in Sources */,
+				630BDEA124B424EA0035D8B3 /* PPRealm.m in Sources */,
 				630BDCCD24B3A6AF0035D8B3 /* PPBotengineApp.m in Sources */,
 				630BDD8724B3AAF50035D8B3 /* PPEnergyManagementUsage.m in Sources */,
 				630BDD5724B3AAD20035D8B3 /* PPSMSGroupTexting.m in Sources */,
+				630BDEA524B424F30035D8B3 /* PPRLMDictionary.m in Sources */,
 				630BDD8D24B3AAF50035D8B3 /* PPEnergyManagementDeviceUsagePower.m in Sources */,
 				630BDD1124B3AAB20035D8B3 /* PPDeviceFirmwareUpdateJob.m in Sources */,
 				630BDDC924B3AAFF0035D8B3 /* PPDeviceTypeStoryModel.m in Sources */,
@@ -4031,6 +4053,7 @@
 				630BDC9324B3A65C0035D8B3 /* PPLocationCommunity.m in Sources */,
 				630BDDE524B3AB110035D8B3 /* PPCircleDevice.m in Sources */,
 				630BDCD924B3A6AF0035D8B3 /* PPBotengineAppRating.m in Sources */,
+				630BDEA324B424F30035D8B3 /* PPRLMArray.m in Sources */,
 				630BDCBD24B3A69C0035D8B3 /* PPRuleComponentState.m in Sources */,
 				630BDDF524B3AB220035D8B3 /* PPHTTPOperation.m in Sources */,
 				630BDD0724B3AA770035D8B3 /* PPVideoToken.m in Sources */,
@@ -4057,6 +4080,7 @@
 				630BDCA524B3A6790035D8B3 /* PPOrganizations.m in Sources */,
 				630BDD1924B3AABA0035D8B3 /* PPDeviceMeasurement.m in Sources */,
 				630BDDA524B3AAF90035D8B3 /* PPWeatherObservation.m in Sources */,
+				630BDEA924B424F30035D8B3 /* RLMRealm+PPExtras.m in Sources */,
 				630BDD3B24B3AAC20035D8B3 /* PPNotification.m in Sources */,
 				630BDDDB24B3AB080035D8B3 /* PPAddress.m in Sources */,
 				630BDD4724B3AACB0035D8B3 /* PPInAppMessage.m in Sources */,
@@ -4097,6 +4121,7 @@
 				630BDD9724B3AAF50035D8B3 /* PPEnergyManagementBillingInfoBudget.m in Sources */,
 				630BDD6924B3AAE90035D8B3 /* PPServicePlan.m in Sources */,
 				630BDD7524B3AAED0035D8B3 /* PPProfessionalMonitoring.m in Sources */,
+				630BDEA724B424F30035D8B3 /* RLMObject+PPExtras.m in Sources */,
 				630BDC7224B3A5FD0035D8B3 /* PPCountriesStatesAndTimezones.m in Sources */,
 				630BDD0D24B3AAB20035D8B3 /* PPDeviceFirmwareUpdates.m in Sources */,
 				630BDCA724B3A6790035D8B3 /* PPOrganization.m in Sources */,

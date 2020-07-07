@@ -10,7 +10,7 @@
 #import "PPCloudConnectivityServer.h"
 #import "PPTimezone.h"
 
-@interface PPCloudConnectivityCloud : RLMObject
+@interface PPCloudConnectivityCloud : PPBaseModel
 
 @property (nonatomic, strong) NSString *cloud;
 @property (nonatomic, strong) NSString *name;
@@ -30,4 +30,3 @@
 
 @end
 
-RLM_ARRAY_TYPE(PPCloudConnectivityCloud);

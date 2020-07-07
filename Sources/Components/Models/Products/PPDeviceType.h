@@ -158,7 +158,7 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeEditable) {
     PPDeviceTypeEditableTrue = 1,
 };
 
-@interface PPDeviceType : RLMObject
+@interface PPDeviceType : PPBaseModel
 
 @property (nonatomic) PPDeviceTypeId typeId;
 @property (nonatomic, strong) NSString *name;
@@ -180,5 +180,3 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeEditable) {
 - (void)sync:(PPDeviceType *)deviceType;
 
 @end
-
-RLM_ARRAY_TYPE(PPDeviceType);

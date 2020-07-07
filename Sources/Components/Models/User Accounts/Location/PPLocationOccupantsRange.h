@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPLocationOccupantsRange : RLMObject <NSCopying>
+@interface PPLocationOccupantsRange : PPBaseModel <NSCopying>
 
 @property (nonatomic) NSInteger start;
 @property (nonatomic) NSInteger end;
@@ -20,4 +20,3 @@
 
 @end
 
-RLM_ARRAY_TYPE(PPLocationOccupantsRange);

@@ -22,7 +22,7 @@ typedef NS_OPTIONS(NSInteger, PPQuestionCollectionGeneralPublic) {
     PPQuestionCollectionGeneralPublicTrue = 1
 };
 
-@interface PPQuestionCollection : RLMObject
+@interface PPQuestionCollection : PPBaseModel
 
 /* A number set by the admin to indicate where this question should appear relative to other questions inside a collection. The higher the order, the lower the question drops to the bottom. */
 @property (nonatomic) PPQuestionCollectionWeight weight;
@@ -61,5 +61,3 @@ typedef NS_OPTIONS(NSInteger, PPQuestionCollectionGeneralPublic) {
 - (void)sync:(PPQuestionCollection *)collection;
 
 @end
-
-RLM_ARRAY_TYPE(PPQuestionCollection)

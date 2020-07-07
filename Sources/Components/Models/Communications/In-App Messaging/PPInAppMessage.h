@@ -54,7 +54,7 @@ typedef NS_OPTIONS(NSInteger, PPInAppMessageMessagesRead) {
     PPInAppMessageMessagesReadTrue = 1
 };
 
-@interface PPInAppMessage : RLMObject
+@interface PPInAppMessage : PPBaseModel
 
 /* Subject line of the message */
 @property (nonatomic, strong) NSString *subject;
@@ -118,5 +118,3 @@ typedef NS_OPTIONS(NSInteger, PPInAppMessageMessagesRead) {
 - (void)sync:(PPInAppMessage *)message;
 
 @end
-
-RLM_ARRAY_TYPE(PPInAppMessage)

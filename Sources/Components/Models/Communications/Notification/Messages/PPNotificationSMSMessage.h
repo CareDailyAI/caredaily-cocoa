@@ -32,5 +32,3 @@ typedef NS_OPTIONS(NSInteger, PPNotificationSMSMessageIndividual) {
 + (NSDictionary *)data:(PPNotificationSMSMessage *)message;
 
 @end
-
-RLM_ARRAY_TYPE(PPNotificationSMSMessage);

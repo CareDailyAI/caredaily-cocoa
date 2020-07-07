@@ -81,7 +81,7 @@ typedef NS_OPTIONS(NSInteger, PPQuestionDisplayTypeTextBox) {
     PPQuestionDisplayTypeTextBoxDefault = 0
 };
 
-@interface PPQuestionResponseOption : RLMObject
+@interface PPQuestionResponseOption : PPBaseModel
 
 @property (nonatomic) PPResponseOptionId responseOptionId;
 @property (nonatomic, strong) NSString *text;
@@ -92,5 +92,3 @@ typedef NS_OPTIONS(NSInteger, PPQuestionDisplayTypeTextBox) {
 + (PPQuestionResponseOption *)initWithDictionary:(NSDictionary *)responseOptionDict;
 
 @end
-
-RLM_ARRAY_TYPE(PPQuestionResponseOption);

@@ -29,5 +29,3 @@ typedef NS_OPTIONS(NSInteger, PPNotificationEmailMessageHTML) {
 + (NSDictionary *)data:(PPNotificationEmailMessage *)emailMessage;
 
 @end
-
-RLM_ARRAY_TYPE(PPNotificationEmailMessage);

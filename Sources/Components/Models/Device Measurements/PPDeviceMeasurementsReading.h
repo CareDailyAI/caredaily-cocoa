@@ -11,7 +11,7 @@
 
 @class PPDevice;
 
-@interface PPDeviceMeasurementsReading : RLMObject
+@interface PPDeviceMeasurementsReading : PPBaseModel
 
 @property (nonatomic, strong) NSString *deviceId;
 @property (nonatomic, strong) NSDate *timeStamp;
@@ -22,5 +22,3 @@
 + (PPDeviceMeasurementsReading *)initWithDictionary:(NSDictionary *)measurementReadingDict;
 
 @end
-
-RLM_ARRAY_TYPE(PPDeviceMeasurementsReading);

@@ -149,7 +149,7 @@ typedef NS_OPTIONS(NSInteger, PPLocationCodeType) {
     PPLocationCodeTypeKeypad   = 4,
 };
 
-@interface PPLocation : RLMObject <NSCopying>
+@interface PPLocation : PPBaseModel <NSCopying>
 
 /* A location represents a physical place occupied by this person and where his or her devices can be installed. When creating or updating location information in a user's account, all fields are optional. */
 
@@ -388,4 +388,3 @@ typedef NS_OPTIONS(NSInteger, PPLocationCodeType) {
 
 @end
 
-RLM_ARRAY_TYPE(PPLocation)

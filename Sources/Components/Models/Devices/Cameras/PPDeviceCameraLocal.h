@@ -111,5 +111,3 @@
 - (void)updateMode:(NSString *)mode;
 
 @end
-
-RLM_ARRAY_TYPE(PPDeviceCameraLocal)

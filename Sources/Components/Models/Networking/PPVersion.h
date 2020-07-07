@@ -5,6 +5,8 @@
 //  Copyright (c) 2020 People Power. All rights reserved.
 //
 
+#import "PPBaseModel.h"
+
 #ifndef PPVersion_h
 #define PPVersion_h
 #if !TARGET_OS_WATCH
@@ -15,7 +17,8 @@
 #define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
 #endif
 #endif // PPVersion_h
-@interface PPVersion : RLMObject
+
+@interface PPVersion : PPBaseModel
 
 + (PPVersion * _Nonnull )myVersion;
 
@@ -36,5 +39,3 @@
 @property (readonly, nonatomic) NSString * _Nullable commit;
 
 @end
-
-RLM_ARRAY_TYPE(PPVersion);

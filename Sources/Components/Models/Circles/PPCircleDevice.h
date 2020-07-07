@@ -19,4 +19,3 @@
 
 @end
 
-RLM_ARRAY_TYPE(PPCircleDevice)

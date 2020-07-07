@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPDeviceTypeAttributeOption : RLMObject
+@interface PPDeviceTypeAttributeOption : PPBaseModel
 
 @property (nonatomic, strong) NSString *optionId;
 @property (nonatomic, strong) NSString *value;
@@ -22,5 +22,3 @@
 - (void)sync:(PPDeviceTypeAttributeOption *)option;
 
 @end
-
-RLM_ARRAY_TYPE(PPDeviceTypeAttributeOption);

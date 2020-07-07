@@ -35,7 +35,7 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeGoalCategories) {
     PPDeviceTypeGoalCategoryWellness  = 1 << 5
 };
 
-@interface PPDeviceTypeGoal : RLMObject
+@interface PPDeviceTypeGoal : PPBaseModel
 
 /* Goal ID */
 @property (nonatomic) PPDeviceTypeGoalId goalId;
@@ -66,5 +66,3 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeGoalCategories) {
 - (void)sync:(PPDeviceTypeGoal *)goal;
 
 @end
-
-RLM_ARRAY_TYPE(PPDeviceTypeGoal);

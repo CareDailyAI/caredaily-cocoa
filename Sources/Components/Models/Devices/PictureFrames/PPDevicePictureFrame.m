@@ -197,11 +197,13 @@ PPDeviceParametersOutputVolume PICTURE_FRAME_VOLUME_OUTPUT_DEFAULT = 8;
             self.supportsVideoCall = paramValue.boolValue;
         }
     }
+#if !TARGET_OS_WATCH
     else if([paramName isEqualToString:RECORD_STREAM]) {
         if(self.recordStream != paramValue.integerValue) {
             self.recordStream = paramValue.integerValue;
         }
     }
+#endif
     
     // Various
     else if ([paramName isEqualToString:BATTERY_LEVEL]) {

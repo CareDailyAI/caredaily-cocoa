@@ -42,7 +42,7 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeStorySortId) {
     PPDeviceTypeStorySortIdNone = -1,
 };
 
-@interface PPDeviceTypeStory : RLMObject
+@interface PPDeviceTypeStory : PPBaseModel
 
 @property (nonatomic, strong) NSString *storyId;
 @property (nonatomic, strong) RLMArray<PPDeviceTypeStoryModel *><PPDeviceTypeStoryModel> *models;

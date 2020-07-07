@@ -16,7 +16,7 @@ typedef NS_OPTIONS(NSInteger, PPCallCenterContactPhoneType) {
     PPCallCenterContactPhoneTypeWork = 3,
     PPCallCenterContactPhoneTypeOffice = 4
 };
-@interface PPCallCenterContact : RLMObject
+@interface PPCallCenterContact : PPBaseModel
 
 @property (nonatomic, strong) NSString *firstName;
 @property (nonatomic, strong) NSString *lastName;
@@ -31,5 +31,3 @@ typedef NS_OPTIONS(NSInteger, PPCallCenterContactPhoneType) {
 + (NSString *)stringify:(PPCallCenterContact *)contact;
 
 @end
-
-RLM_ARRAY_TYPE(PPCallCenterContact);

@@ -30,7 +30,7 @@ typedef NS_OPTIONS(NSInteger, PPCloudsIntegrationCloudMicroServiceVersionStatus)
     PPCloudsIntegrationCloudMicroServiceVersionStatusReplacedByNewerVersion = 7
 };
 
-@interface PPCloudsIntegrationCloud : RLMObject
+@interface PPCloudsIntegrationCloud : PPBaseModel
 
 // Application ID used in the API to gain access to the cloud/application
 @property (nonatomic) PPCloudsIntegrationClientApplicationId appId;
@@ -46,5 +46,3 @@ typedef NS_OPTIONS(NSInteger, PPCloudsIntegrationCloudMicroServiceVersionStatus)
 + (PPCloudsIntegrationCloud *)initWithDictionary:(NSDictionary *)cloudDict;
 
 @end
-
-RLM_ARRAY_TYPE(PPCloudsIntegrationCloud);

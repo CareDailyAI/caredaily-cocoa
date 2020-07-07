@@ -47,7 +47,7 @@ typedef NS_OPTIONS(NSInteger, PPRuleComponentParameterMaxValue) {
     PPRuleComponentParameterMaxValueNone = -1,
 };
 
-@interface PPRuleComponentParameter : RLMObject <NSCopying>
+@interface PPRuleComponentParameter : PPBaseModel <NSCopying>
 
 /* A descriptive name of the parameter, from the developer. Usually not displayed to the user. */
 @property (nonatomic, strong) NSString *name;
@@ -96,5 +96,3 @@ typedef NS_OPTIONS(NSInteger, PPRuleComponentParameterMaxValue) {
 - (void)sync:(PPRuleComponentParameter *)parameter;
 
 @end
-
-RLM_ARRAY_TYPE(PPRuleComponentParameter);

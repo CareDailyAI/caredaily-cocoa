@@ -144,7 +144,7 @@ typedef NS_OPTIONS(NSInteger, PPFileURLExpiration) {
     PPFileURLExpirationTrue = 1
 };
 
-@interface PPFile : RLMObject
+@interface PPFile : PPBaseModel
 
 /* Server-to-Hardware Status Code (i.e. ACK) as described in the Device API doc */
 @property (nonatomic, strong) NSString *status;
@@ -230,5 +230,3 @@ typedef NS_OPTIONS(NSInteger, PPFileURLExpiration) {
 - (void)sync:(PPFile *)file;
 
 @end
-
-RLM_ARRAY_TYPE(PPFile);

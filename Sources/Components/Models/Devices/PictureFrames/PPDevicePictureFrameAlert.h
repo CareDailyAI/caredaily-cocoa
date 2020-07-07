@@ -8,7 +8,7 @@
 
 #import "PPQuestion.h"
 
-@interface PPDevicePictureFrameAlert : RLMObject
+@interface PPDevicePictureFrameAlert : PPBaseModel
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *subTitle;
@@ -27,4 +27,3 @@
 
 @end
 
-RLM_ARRAY_TYPE(PPDevicePictureFrameAlert);

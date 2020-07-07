@@ -18,7 +18,7 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeMediaType) {
     PPDeviceTypeMediaTypeAudio = 3,
     PPDeviceTypeMediaTypeTextDocument = 4
 };
-@interface PPDeviceTypeMedia : RLMObject
+@interface PPDeviceTypeMedia : PPBaseModel
 
 @property (nonatomic, strong) NSString *mediaId;
 @property (nonatomic) PPDeviceTypeMediaType mediaType;
@@ -39,8 +39,6 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeMediaType) {
 - (void)sync:(PPDeviceTypeMedia *)media;
 
 @end
-
-RLM_ARRAY_TYPE(PPDeviceTypeMedia);
 
 @interface PPDeviceTypeMediaDesc : PPRLMDictionary
 + (PPDeviceTypeMediaDesc *)initWithDictionary:(NSDictionary *)dict;

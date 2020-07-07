@@ -21,7 +21,7 @@ typedef NS_OPTIONS(NSInteger, PPFriendshipBlocked) {
     PPFriendshipBlockedTrue = 1
 };
 
-@interface PPFriendship : RLMObject
+@interface PPFriendship : PPBaseModel
 
 /* An ID of the friendship record */
 @property (nonatomic) PPFriendshipId friendshipId;
@@ -55,4 +55,3 @@ typedef NS_OPTIONS(NSInteger, PPFriendshipBlocked) {
 
 @end
 
-RLM_ARRAY_TYPE(PPFriendship);

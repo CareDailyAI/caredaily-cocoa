@@ -24,7 +24,7 @@ typedef NS_OPTIONS(NSInteger, PPEnergyManagementBillingInfoBudgetMonth) {
     PPEnergyManagementBillingInfoBudgetMonthDecember = 12
 };
 
-@interface PPEnergyManagementBillingInfoBudget : RLMObject
+@interface PPEnergyManagementBillingInfoBudget : PPBaseModel
 
 @property (nonatomic) PPEnergyManagementBillingInfoBudgetMonth month;
 @property (nonatomic, strong) NSString *budget;
@@ -36,5 +36,3 @@ typedef NS_OPTIONS(NSInteger, PPEnergyManagementBillingInfoBudgetMonth) {
 + (NSString *)stringify:(PPEnergyManagementBillingInfoBudget *)budget;
 
 @end
-
-RLM_ARRAY_TYPE(PPEnergyManagementBillingInfoBudget);

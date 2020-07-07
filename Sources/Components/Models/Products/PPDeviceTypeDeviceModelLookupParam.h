@@ -6,7 +6,7 @@
 //  Copyright © 2020 People Power Company. All rights reserved.
 //
 
-@interface PPDeviceTypeDeviceModelLookupParam : RLMObject
+@interface PPDeviceTypeDeviceModelLookupParam : PPBaseModel
 
 @property (nonatomic) PPDeviceTypeId deviceType;
 @property (nonatomic, strong) RLMArray<PPDeviceParameter *><PPDeviceParameter> *params;
@@ -18,5 +18,3 @@
 + (NSString *)stringify:(PPDeviceTypeDeviceModelLookupParam *)lookupParam;
 
 @end
-
-RLM_ARRAY_TYPE(PPDeviceTypeDeviceModelLookupParam);

@@ -46,7 +46,7 @@ typedef NS_OPTIONS(NSInteger, PPCommunityEventAllDay) {
     PPCommunityEventAllDayTrue = 1
 };
 
-@interface PPCommunityPost : RLMObject
+@interface PPCommunityPost : PPBaseModel
 
 @property (nonatomic) PPCommunityPostType postType;
 @property (nonatomic) PPCommunityPostId postId;
@@ -110,6 +110,5 @@ typedef NS_OPTIONS(NSInteger, PPCommunityEventAllDay) {
 + (NSDictionary *)dataFromPost:(PPCommunityPost *)post;
 @end
 
-RLM_ARRAY_TYPE(PPCommunityPost);
 
 NS_ASSUME_NONNULL_END
