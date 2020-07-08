@@ -88,7 +88,7 @@
     }
     
     NSError *dataError;
-    NSData *body = [NSJSONSerialization dataWithJSONObject:data options:0 error:&dataError];
+    NSData *body = [NSJSONSerialization dataWithJSONObject:@{@"question": data} options:0 error:&dataError];
     if (dataError) {
         callback([PPBaseModel resultCodeToNSError:14 originatingClass:NSStringFromClass([self class]) argument:[NSString stringWithFormat:@"%@",dataError.userInfo]]);
         return;

@@ -20,6 +20,7 @@
              sliderValue:(PPSurveyQuestionSliderValue)sliderValue {
     self = [super init];
     if (self) {
+        self.questionId = questionId;
         self.key = key;
         self.title = title;
         self.question = question;
@@ -48,12 +49,27 @@
     if([questionDict objectForKey:@"sliderMax"]) {
         sliderMax = ((NSString *)[questionDict objectForKey:@"sliderMax"]).integerValue;
     }
-    PPSurveyQuestionSliderValue sliderValue = 5;
+    PPSurveyQuestionSliderValue sliderValue = PPSurveyQuestionSliderValueNone;
     if([questionDict objectForKey:@"sliderValue"]) {
         sliderValue = (PPSurveyQuestionSliderValue)((NSString *)[questionDict objectForKey:@"sliderValue"]).integerValue;
     }
     
     PPSurveyQuestion *surveyQuestion = [[PPSurveyQuestion alloc] initWithQuestionId:questionId key:key title:title question:question answer:answer sliderMin:sliderMin sliderMax:sliderMax sliderValue:sliderValue];
+    return surveyQuestion;
+}
+
+#pragma mark - Encoding
+
+- (id)copyWithZone:(NSZone *)zone {
+    PPSurveyQuestion *surveyQuestion = [[PPSurveyQuestion allocWithZone:zone] init];
+    surveyQuestion.questionId = self.questionId;
+    surveyQuestion.key = [self.key copyWithZone:zone];
+    surveyQuestion.title = [self.title copyWithZone:zone];
+    surveyQuestion.question = [self.question copyWithZone:zone];
+    surveyQuestion.answer = [self.answer copyWithZone:zone];
+    surveyQuestion.sliderMin = self.sliderMin;
+    surveyQuestion.sliderMax = self.sliderMax;
+    surveyQuestion.sliderValue = self.sliderValue;
     return surveyQuestion;
 }
 
