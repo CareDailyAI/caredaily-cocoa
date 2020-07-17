@@ -18,7 +18,7 @@ typedef NS_OPTIONS(NSInteger, PPSurveyQuestionSliderValue) {
     PPSurveyQuestionSliderValueNone = -1
 };
 
-@interface PPSurveyQuestion: NSObject <NSCopying>
+@interface PPSurveyQuestion: PPBaseModel <NSCopying>
 
 @property (nonatomic) PPSurveyQuestionId questionId;
 @property (nonatomic, strong) NSString * _Nullable key;
