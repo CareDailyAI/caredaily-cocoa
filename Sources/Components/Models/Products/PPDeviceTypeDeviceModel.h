@@ -42,38 +42,51 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeDeviceModelSortId) {
 
 @interface PPDeviceTypeDeviceModel : PPBaseModel
 
-@property (nonatomic, strong) NSString *modelId;
-@property (nonatomic, strong) RLMArray<PPDeviceTypeDeviceModelBrand *><PPDeviceTypeDeviceModelBrand> *brands;
-@property (nonatomic, strong) PPDeviceTypeDeviceModelManufacture *manufacturer;
+@property (nonatomic, strong) NSString * _Nonnull modelId;
+@property (nonatomic, strong) RLMArray<PPDeviceTypeDeviceModelBrand *><PPDeviceTypeDeviceModelBrand> * _Nullable brands;
+@property (nonatomic, strong) PPDeviceTypeDeviceModelManufacture * _Nullable manufacturer;
 @property (nonatomic) PPDeviceTypeDeviceModelPairingType pairingType;
 @property (nonatomic) PPCloudsIntegrationClientApplicationId OAuthAppId;
-@property (nonatomic, strong) RLMArray<RLMInt> *dependencyDeviceTypes;
+@property (nonatomic, strong) RLMArray<RLMInt> * _Nullable dependencyDeviceTypes;
 @property (nonatomic) PPDeviceTypeDeviceModelHidden hidden;
 @property (nonatomic) PPDeviceTypeDeviceModelSortId sortId;
-@property (nonatomic, strong) PPDeviceTypeDeviceModelName *name;
-@property (nonatomic, strong) PPDeviceTypeDeviceModelDesc *desc;
-@property (nonatomic, strong) RLMArray<PPDeviceTypeDeviceModelLookupParam *><PPDeviceTypeDeviceModelLookupParam> *lookupParams;
-@property (nonatomic, strong) NSString *modelTemplate;
-@property (nonatomic, strong) RLMArray<PPDeviceTypeMedia *><PPDeviceTypeMedia> *media;
-@property (nonatomic, strong) PPDeviceTypeParameterDisplayInfo *displayInfo;
+@property (nonatomic, strong) PPDeviceTypeDeviceModelName * _Nonnull name;
+@property (nonatomic, strong) PPDeviceTypeDeviceModelDesc * _Nonnull desc;
+@property (nonatomic, strong) RLMArray<PPDeviceTypeDeviceModelLookupParam *><PPDeviceTypeDeviceModelLookupParam> * _Nullable lookupParams;
+@property (nonatomic, strong) NSString * _Nullable modelTemplate;
+@property (nonatomic, strong) RLMArray<PPDeviceTypeMedia *><PPDeviceTypeMedia> * _Nullable media;
+@property (nonatomic, strong) PPDeviceTypeParameterDisplayInfo * _Nullable displayInfo;
 
-- (id)initWithModelId:(NSString *)modelId brands:(RLMArray *)brands manufacturer:(PPDeviceTypeDeviceModelManufacture *)manufacturer pairingType:(PPDeviceTypeDeviceModelPairingType)pairingType OAuthAppId:(PPCloudsIntegrationClientApplicationId)OAuthAppId dependencyDeviceTypes:(RLMArray *)dependencyDeviceTypes hidden:(PPDeviceTypeDeviceModelHidden)hidden sortId:(PPDeviceTypeDeviceModelSortId)sortId name:(PPDeviceTypeDeviceModelName *)name desc:(PPDeviceTypeDeviceModelDesc *)desc lookupParams:(RLMArray *)lookupParams modelTemplate:(NSString *)modelTemplate media:(RLMArray *)media displayInfo:(PPDeviceTypeParameterDisplayInfo *)displayInfo;
+- (id _Nonnull )initWithModelId:(NSString * _Nonnull )modelId
+               brands:(RLMArray * _Nullable )brands
+         manufacturer:(PPDeviceTypeDeviceModelManufacture * _Nullable )manufacturer
+          pairingType:(PPDeviceTypeDeviceModelPairingType)pairingType
+           OAuthAppId:(PPCloudsIntegrationClientApplicationId)OAuthAppId
+dependencyDeviceTypes:(RLMArray * _Nullable )dependencyDeviceTypes
+               hidden:(PPDeviceTypeDeviceModelHidden)hidden
+               sortId:(PPDeviceTypeDeviceModelSortId)sortId
+                 name:(PPDeviceTypeDeviceModelName * _Nonnull )name
+                 desc:(PPDeviceTypeDeviceModelDesc * _Nonnull )desc
+         lookupParams:(RLMArray * _Nullable )lookupParams
+        modelTemplate:(NSString * _Nullable )modelTemplate
+                media:(RLMArray * _Nullable )media
+          displayInfo:(PPDeviceTypeParameterDisplayInfo * _Nullable )displayInfo;
 
-+ (PPDeviceTypeDeviceModel *)initWithDictionary:(NSDictionary *)modelDict;
++ (PPDeviceTypeDeviceModel * _Nonnull )initWithDictionary:(NSDictionary * _Nonnull )modelDict;
 
-+ (NSString *)stringify:(PPDeviceTypeDeviceModel *)model;
++ (NSString * _Nonnull )stringify:(PPDeviceTypeDeviceModel * _Nonnull )model;
 
 @end
 
 @interface PPDeviceTypeDeviceModelManufacture : PPRLMDictionary
-+ (PPDeviceTypeDeviceModelManufacture *)initWithDictionary:(NSDictionary *)dict;
++ (PPDeviceTypeDeviceModelManufacture * _Nonnull )initWithDictionary:(NSDictionary * _Nonnull )dict;
 @end
 
 @interface PPDeviceTypeDeviceModelName : PPRLMDictionary
-+ (PPDeviceTypeDeviceModelName *)initWithDictionary:(NSDictionary *)dict;
++ (PPDeviceTypeDeviceModelName * _Nonnull )initWithDictionary:(NSDictionary * _Nonnull )dict;
 @end
 
 @interface PPDeviceTypeDeviceModelDesc : PPRLMDictionary
-+ (PPDeviceTypeDeviceModelDesc *)initWithDictionary:(NSDictionary *)dict;
++ (PPDeviceTypeDeviceModelDesc * _Nonnull )initWithDictionary:(NSDictionary * _Nonnull )dict;
 @end
 

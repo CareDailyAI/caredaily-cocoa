@@ -14,32 +14,41 @@
 
 @interface PPDeviceTypeDeviceModelCategory : PPBaseModel
 
-@property (nonatomic) NSString *categoryId;
-@property (nonatomic) NSString *parentId;
-@property (nonatomic, strong) RLMArray<PPDeviceTypeDeviceModelBrand *><PPDeviceTypeDeviceModelBrand> *brands;
-@property (nonatomic, strong) NSString *icon;
-@property (nonatomic, strong) RLMArray<RLMString> *search;
+@property (nonatomic) NSString * _Nonnull categoryId;
+@property (nonatomic) NSString * _Nullable parentId;
+@property (nonatomic, strong) RLMArray<PPDeviceTypeDeviceModelBrand *><PPDeviceTypeDeviceModelBrand> * _Nullable brands;
+@property (nonatomic, strong) NSString * _Nullable icon;
+@property (nonatomic, strong) RLMArray<RLMString> * _Nullable search;
 @property (nonatomic) PPDeviceTypeDeviceModelHidden hidden;
 @property (nonatomic) PPDeviceTypeDeviceModelSortId sortId;
-@property (nonatomic, strong) PPDeviceTypeDeviceModelCategoryName *name;
-@property (nonatomic, strong) RLMArray<PPDeviceTypeStory *><PPDeviceTypeStory> *stories;
-@property (nonatomic, strong) RLMArray<PPDeviceTypeDeviceModel *><PPDeviceTypeDeviceModel> *models;
+@property (nonatomic, strong) PPDeviceTypeDeviceModelCategoryName * _Nonnull name;
+@property (nonatomic, strong) RLMArray<PPDeviceTypeStory *><PPDeviceTypeStory> * _Nullable stories;
+@property (nonatomic, strong) RLMArray<PPDeviceTypeDeviceModel *><PPDeviceTypeDeviceModel> * _Nullable models;
 
-- (id)initWithId:(NSString *)categoryId parentId:(NSString *)parentId brands:(RLMArray *)brands icon:(NSString *)icon search:(RLMArray *)search hidden:(PPDeviceTypeDeviceModelHidden)hidden sortId:(PPDeviceTypeDeviceModelSortId)sortId name:(PPDeviceTypeDeviceModelCategoryName *)name stories:(RLMArray *)stories models:(RLMArray *)models;
+- (id _Nonnull )initWithId:(NSString * _Nonnull )categoryId
+        parentId:(NSString * _Nullable )parentId
+          brands:(RLMArray * _Nullable )brands
+            icon:(NSString * _Nullable )icon
+          search:(RLMArray * _Nullable )search
+          hidden:(PPDeviceTypeDeviceModelHidden)hidden
+          sortId:(PPDeviceTypeDeviceModelSortId)sortId
+            name:(PPDeviceTypeDeviceModelCategoryName * _Nonnull )name
+         stories:(RLMArray * _Nullable )stories
+          models:(RLMArray * _Nullable )models;
 
-+ (PPDeviceTypeDeviceModelCategory *)initWithDictionary:(NSDictionary *)categoryDict;
++ (PPDeviceTypeDeviceModelCategory * _Nonnull )initWithDictionary:(NSDictionary * _Nonnull )categoryDict;
 
-+ (NSString *)stringify:(PPDeviceTypeDeviceModelCategory *)category;
++ (NSString * _Nonnull )stringify:(PPDeviceTypeDeviceModelCategory * _Nonnull )category;
 
 #pragma mark - Helper Methods
 
-- (BOOL)isEqualToCategory:(PPDeviceTypeDeviceModelCategory *)category;
+- (BOOL)isEqualToCategory:(PPDeviceTypeDeviceModelCategory * _Nonnull )category;
 
-- (void)sync:(PPDeviceTypeDeviceModelCategory *)category;
+- (void)sync:(PPDeviceTypeDeviceModelCategory * _Nonnull )category;
 
 @end
 
 @interface PPDeviceTypeDeviceModelCategoryName : PPRLMDictionary
-+ (PPDeviceTypeDeviceModelCategoryName *)initWithDictionary:(NSDictionary *)dict;
++ (PPDeviceTypeDeviceModelCategoryName * _Nonnull )initWithDictionary:(NSDictionary * _Nonnull )dict;
 @end
 

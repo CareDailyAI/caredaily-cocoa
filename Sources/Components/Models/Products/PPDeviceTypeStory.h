@@ -21,6 +21,7 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeStoryType) {
     PPDeviceTypeStoryTypeScenarios                          = 6, // Device goals
     PPDeviceTypeStoryTypePromotions                         = 7, // Marketing information that can shows up in app.
     PPDeviceTypeStoryTypeBundle                             = 8, // Device model bundles (kits)
+    PPDeviceTypeStoryTypeBundleV2                           = 9, // Story bundles (kits)
     PPDeviceTypeStoryTypeBotMicroservies                    = 10, // Bot stories.
     PPDeviceTypeStoryTypeDeviceReconnectionRandomDisconnect = 11, // Troubleshooting if something goes wrong with device connection.
     PPDeviceTypeStoryTypeDeviceReconnectionBattery          = 12, // Troubleshooting if the battery is dead and the device is now disconnected.
@@ -44,26 +45,36 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeStorySortId) {
 
 @interface PPDeviceTypeStory : PPBaseModel
 
-@property (nonatomic, strong) NSString *storyId;
-@property (nonatomic, strong) RLMArray<PPDeviceTypeStoryModel *><PPDeviceTypeStoryModel> *models;
-@property (nonatomic, strong) RLMArray<RLMString> *brands;
+@property (nonatomic, strong) NSString * _Nonnull storyId;
+@property (nonatomic, strong) RLMArray<PPDeviceTypeStoryModel *><PPDeviceTypeStoryModel> * _Nullable models;
+@property (nonatomic, strong) RLMArray<RLMString> * _Nullable brands;
 @property (nonatomic) PPDeviceTypeStoryType storyType;
-@property (nonatomic, strong) NSString *lang;
-@property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) RLMArray<RLMString> *search;
+@property (nonatomic, strong) NSString * _Nonnull lang;
+@property (nonatomic, strong) NSString * _Nonnull title;
+@property (nonatomic, strong) RLMArray<RLMString> * _Nullable search;
 @property (nonatomic) PPDeviceTypeStorySortId sortId;
-@property (nonatomic, strong) RLMArray<PPDeviceTypeStoryPage *><PPDeviceTypeStoryPage> *pages;
+@property (nonatomic, strong) RLMArray<PPDeviceTypeStoryPage *><PPDeviceTypeStoryPage> * _Nonnull pages;
+@property (nonatomic, strong) PPDeviceTypeParameterDisplayInfo * _Nullable displayInfo;
 
-- (id)initWithStoryId:(NSString *)storyId models:(RLMArray *)models brands:(RLMArray *)brands storyType:(PPDeviceTypeStoryType)storyType lang:(NSString *)lang title:(NSString *)title search:(RLMArray *)search sortId:(PPDeviceTypeStorySortId)sortId pages:(RLMArray *)pages;
+- (id _Nullable )initWithStoryId:(NSString * _Nonnull )storyId
+               models:(RLMArray * _Nullable )models
+               brands:(RLMArray * _Nullable )brands
+            storyType:(PPDeviceTypeStoryType)storyType
+                 lang:(NSString * _Nonnull )lang
+                title:(NSString * _Nonnull )title
+               search:(RLMArray * _Nullable )search
+               sortId:(PPDeviceTypeStorySortId)sortId
+                pages:(RLMArray * _Nonnull )pages
+          displayInfo:(PPDeviceTypeParameterDisplayInfo * _Nullable )displayInfo;
 
-+ (PPDeviceTypeStory *)initWithDictionary:(NSDictionary *)storyDict;
++ (PPDeviceTypeStory * _Nonnull )initWithDictionary:(NSDictionary * _Nonnull )storyDict;
 
-+ (NSString *)stringify:(PPDeviceTypeStory *)story;
++ (NSString * _Nonnull )stringify:(PPDeviceTypeStory * _Nonnull )story;
 
 #pragma mark - Helper methods
 
-- (BOOL)isEqualToStory:(PPDeviceTypeStory *)story;
+- (BOOL)isEqualToStory:(PPDeviceTypeStory * _Nonnull )story;
 
-- (void)sync:(PPDeviceTypeStory *)story;
+- (void)sync:(PPDeviceTypeStory * _Nonnull )story;
 
 @end

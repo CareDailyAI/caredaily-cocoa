@@ -26,28 +26,38 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeStoryPageHidden) {
     PPDeviceTypeStoryPageHiddenTrue = 1
 };
 
-extern NSString *PPDeviceTypeStoryPageStyleDefault;
-extern NSString *PPDeviceTypeStoryPageStyleInfo;
-extern NSString *PPDeviceTypeStoryPageStyleConnect;
-extern NSString *PPDeviceTypeStoryPageStylePicture;
-extern NSString *PPDeviceTypeStoryPageStyleCalibrate;
+extern NSString * _Nonnull PPDeviceTypeStoryPageStyleDefault;
+extern NSString * _Nonnull PPDeviceTypeStoryPageStyleInfo;
+extern NSString * _Nonnull PPDeviceTypeStoryPageStyleConnect;
+extern NSString * _Nonnull PPDeviceTypeStoryPageStylePicture;
+extern NSString * _Nonnull PPDeviceTypeStoryPageStyleCalibrate;
 
 @interface PPDeviceTypeStoryPage : PPBaseModel
 
 @property (nonatomic) PPDeviceTypeStoryPageIndex index;
 @property (nonatomic) PPDeviceTypeStoryPageHidden hidden;
 @property (nonatomic) PPDeviceTypeStoryPageDismissible dismissible;
-@property (nonatomic, strong) NSString *subtitle;
-@property (nonatomic, strong) NSString *desc;
-@property (nonatomic, strong) NSString *style;
-@property (nonatomic, strong) NSString *content;
-@property (nonatomic, strong) RLMArray<PPDeviceTypeStoryPageAction *><PPDeviceTypeStoryPageAction> *actions;
-@property (nonatomic, strong) RLMArray<PPDeviceTypeMedia *><PPDeviceTypeMedia> *media;
+@property (nonatomic, strong) NSString * _Nonnull subtitle;
+@property (nonatomic, strong) NSString * _Nullable desc;
+@property (nonatomic, strong) NSString * _Nonnull style;
+@property (nonatomic, strong) NSString * _Nonnull content;
+@property (nonatomic, strong) RLMArray<PPDeviceTypeStoryPageAction *><PPDeviceTypeStoryPageAction> * _Nullable actions;
+@property (nonatomic, strong) RLMArray<PPDeviceTypeMedia *><PPDeviceTypeMedia> * _Nullable media;
+@property (nonatomic, strong) PPDeviceTypeParameterDisplayInfo * _Nullable displayInfo;
 
-- (id)initWithIndex:(PPDeviceTypeStoryPageIndex)index hidden:(PPDeviceTypeStoryPageHidden)hidden dismissible:(PPDeviceTypeStoryPageDismissible)dismissible subtitle:(NSString *)subtitle desc:(NSString *)desc style:(NSString *)style content:(NSString *)content actions:(RLMArray *)actions media:(RLMArray *)media;
+- (id _Nonnull )initWithIndex:(PPDeviceTypeStoryPageIndex)index
+             hidden:(PPDeviceTypeStoryPageHidden)hidden
+        dismissible:(PPDeviceTypeStoryPageDismissible)dismissible
+           subtitle:(NSString * _Nonnull )subtitle
+               desc:(NSString * _Nullable )desc
+              style:(NSString * _Nonnull )style
+            content:(NSString * _Nonnull )content
+            actions:(RLMArray * _Nullable )actions
+              media:(RLMArray * _Nullable )media
+        displayInfo:(PPDeviceTypeParameterDisplayInfo * _Nullable )displayInfo;
 
-+ (PPDeviceTypeStoryPage *)initWithDictionary:(NSDictionary *)pageDict;
++ (PPDeviceTypeStoryPage * _Nonnull )initWithDictionary:(NSDictionary * _Nonnull )pageDict;
 
-+ (NSString *)stringify:(PPDeviceTypeStoryPage *)page;
++ (NSString * _Nonnull )stringify:(PPDeviceTypeStoryPage * _Nonnull )page;
 
 @end

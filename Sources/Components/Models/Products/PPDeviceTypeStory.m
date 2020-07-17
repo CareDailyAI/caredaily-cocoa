@@ -14,7 +14,7 @@
     return @"storyId";
 }
 
-- (id)initWithStoryId:(NSString *)storyId models:(RLMArray *)models brands:(RLMArray *)brands storyType:(PPDeviceTypeStoryType)storyType lang:(NSString *)lang title:(NSString *)title search:(RLMArray *)search sortId:(PPDeviceTypeStorySortId)sortId pages:(RLMArray *)pages {
+- (id)initWithStoryId:(NSString *)storyId models:(RLMArray *)models brands:(RLMArray *)brands storyType:(PPDeviceTypeStoryType)storyType lang:(NSString *)lang title:(NSString *)title search:(RLMArray *)search sortId:(PPDeviceTypeStorySortId)sortId pages:(RLMArray *)pages displayInfo:(PPDeviceTypeParameterDisplayInfo *)displayInfo {
     self = [super init];
     if(self) {
         self.storyId = storyId;
@@ -26,6 +26,7 @@
         self.search = (RLMArray<RLMString> *)search;
         self.sortId = sortId;
         self.pages = (RLMArray<PPDeviceTypeStoryPage *><PPDeviceTypeStoryPage> *)pages;
+        self.displayInfo = displayInfo;
     }
     return self;
 }
@@ -64,7 +65,12 @@
         }
     }
     
-    PPDeviceTypeStory *storybook = [[PPDeviceTypeStory alloc] initWithStoryId:storyId models:(RLMArray *)models brands:(RLMArray *)brands storyType:storyType lang:lang title:title search:(RLMArray *)search sortId:sortId pages:(RLMArray *)pages];
+    PPDeviceTypeParameterDisplayInfo *displayInfo;
+    if([storyDict objectForKey:@"displayInfo"]) {
+        displayInfo = [PPDeviceTypeParameterDisplayInfo initWithDictionary:[storyDict objectForKey:@"displayInfo"]];
+    }
+    
+    PPDeviceTypeStory *storybook = [[PPDeviceTypeStory alloc] initWithStoryId:storyId models:(RLMArray *)models brands:(RLMArray *)brands storyType:storyType lang:lang title:title search:(RLMArray *)search sortId:sortId pages:(RLMArray *)pages displayInfo:displayInfo];
     return storybook;
 }
 
@@ -175,6 +181,14 @@
         }
         
         [JSONString appendString:@"]"];
+        appendComma = YES;
+    }
+    
+    if(story.displayInfo) {
+        if(appendComma) {
+            [JSONString appendString:@","];
+        }
+        [JSONString appendFormat:@"\"displayInfo\":%@", [PPDeviceTypeParameterDisplayInfo stringify:story.displayInfo]];
         appendComma = YES;
     }
     

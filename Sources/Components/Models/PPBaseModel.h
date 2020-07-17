@@ -5,6 +5,7 @@
 //  Copyright (c) 2020 People Power. All rights reserved.
 //
 
+@import Realm;
 #import "PPRealmTypes.h"
 
 @class PPFile;

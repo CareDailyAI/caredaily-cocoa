@@ -9,12 +9,13 @@
 @interface PPDeviceTypeDeviceModelLookupParam : PPBaseModel
 
 @property (nonatomic) PPDeviceTypeId deviceType;
-@property (nonatomic, strong) RLMArray<PPDeviceParameter *><PPDeviceParameter> *params;
+@property (nonatomic, strong) RLMArray<PPDeviceParameter *><PPDeviceParameter> * _Nullable params;
 
-- (id)initWithDeviceType:(PPDeviceTypeId)deviceType params:(RLMArray *)params;
+- (id _Nonnull )initWithDeviceType:(PPDeviceTypeId)deviceType
+                            params:(RLMArray * _Nullable )params;
 
-+ (PPDeviceTypeDeviceModelLookupParam *)initWithDictionary:(NSDictionary *)lookupParamDict;
++ (PPDeviceTypeDeviceModelLookupParam * _Nonnull )initWithDictionary:(NSDictionary * _Nonnull )lookupParamDict;
 
-+ (NSString *)stringify:(PPDeviceTypeDeviceModelLookupParam *)lookupParam;
++ (NSString * _Nonnull )stringify:(PPDeviceTypeDeviceModelLookupParam * _Nonnull )lookupParam;
 
 @end
