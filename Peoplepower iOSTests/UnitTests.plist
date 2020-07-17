@@ -832,6 +832,25 @@
 			<key>initials</key>
 			<string>JS</string>
 		</dict>
+		<key>PPTCSurveyQuestion</key>
+		<dict>
+			<key>id</key>
+			<string>123</string>
+			<key>key</key>
+			<string>Question Key</string>
+			<key>question</key>
+			<string>What do you think of this question?</string>
+			<key>sliderMin</key>
+			<integer>1</integer>
+			<key>sliderMax</key>
+			<integer>10</integer>
+			<key>sliderValue</key>
+			<integer>4</integer>
+			<key>title</key>
+			<string>Main questions</string>
+			<key>answer</key>
+			<string>This is some text input</string>
+		</dict>
 	</dict>
 	<key>System and User Properties</key>
 	<dict>

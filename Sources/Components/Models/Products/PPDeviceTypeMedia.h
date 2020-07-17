@@ -15,24 +15,28 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeMediaType) {
     PPDeviceTypeMediaTypeAudio = 3,
     PPDeviceTypeMediaTypeTextDocument = 4
 };
-@interface PPDeviceTypeMedia : NSArray
+@interface PPDeviceTypeMedia : NSObject
 
-@property (nonatomic, strong) NSString *mediaId;
+@property (nonatomic, strong) NSString * _Nonnull mediaId;
 @property (nonatomic) PPDeviceTypeMediaType mediaType;
-@property (nonatomic, strong) NSString *url;
-@property (nonatomic, strong) NSString *contentType;
-@property (nonatomic, strong) NSDictionary *desc;
+@property (nonatomic, strong) NSString * _Nonnull url;
+@property (nonatomic, strong) NSString * _Nonnull contentType;
+@property (nonatomic, strong) NSDictionary * _Nonnull desc;
 
-- (id)initWithId:(NSString *)mediaId mediaType:(PPDeviceTypeMediaType)mediaType url:(NSString *)url contentType:(NSString *)contentType desc:(NSDictionary *)desc;
+- (id _Nonnull )initWithId:(NSString * _Nonnull )mediaId
+       mediaType:(PPDeviceTypeMediaType)mediaType
+             url:(NSString * _Nonnull )url
+     contentType:(NSString * _Nonnull )contentType
+            desc:(NSDictionary * _Nonnull )desc;
 
-+ (PPDeviceTypeMedia *)initWithDictionary:(NSDictionary *)mediaDict;
++ (PPDeviceTypeMedia * _Nonnull )initWithDictionary:(NSDictionary * _Nonnull )mediaDict;
 
-+ (NSString *)stringify:(PPDeviceTypeMedia *)media;
++ (NSString * _Nonnull )stringify:(PPDeviceTypeMedia * _Nonnull )media;
 
 #pragma mark - Helper methods
 
-- (BOOL)isEqualToMedia:(PPDeviceTypeMedia *)media;
+- (BOOL)isEqualToMedia:(PPDeviceTypeMedia * _Nonnull )media;
 
-- (void)sync:(PPDeviceTypeMedia *)media;
+- (void)sync:(PPDeviceTypeMedia * _Nonnull )media;
 
 @end

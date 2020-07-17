@@ -10,13 +10,14 @@
 
 @interface PPDeviceTypeStoryModel : NSObject
 
-@property (nonatomic, strong) NSString *modelId;
-@property (nonatomic, strong) NSString *brand;
+@property (nonatomic, strong) NSString * _Nonnull modelId;
+@property (nonatomic, strong) NSString * _Nonnull brand;
 
-- (id)initWithId:(NSString *)modelId brand:(NSString *)brand;
+- (id _Nonnull )initWithId:(NSString * _Nonnull )modelId
+           brand:(NSString * _Nonnull )brand;
 
-+ (PPDeviceTypeStoryModel *)initWithDictionary:(NSDictionary *)modelDict;
++ (PPDeviceTypeStoryModel * _Nonnull )initWithDictionary:(NSDictionary * _Nonnull )modelDict;
 
-+ (NSString *)stringify:(PPDeviceTypeStoryModel *)model;
++ (NSString * _Nonnull )stringify:(PPDeviceTypeStoryModel * _Nonnull )model;
 
 @end

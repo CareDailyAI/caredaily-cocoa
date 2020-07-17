@@ -38,26 +38,39 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeDeviceModelSortId) {
 
 @interface PPDeviceTypeDeviceModel : NSObject
 
-@property (nonatomic, strong) NSString *modelId;
-@property (nonatomic, strong) NSArray *brands;
-@property (nonatomic, strong) NSDictionary *manufacturer;
+@property (nonatomic, strong) NSString * _Nonnull modelId;
+@property (nonatomic, strong) NSArray * _Nullable brands;
+@property (nonatomic, strong) NSDictionary * _Nullable manufacturer;
 @property (nonatomic) PPDeviceTypeDeviceModelPairingType pairingType;
 @property (nonatomic) PPCloudsIntegrationClientApplicationId OAuthAppId;
-@property (nonatomic, strong) NSArray *dependencyDeviceTypes;
+@property (nonatomic, strong) NSArray * _Nullable dependencyDeviceTypes;
 @property (nonatomic) PPDeviceTypeDeviceModelHidden hidden;
 @property (nonatomic) PPDeviceTypeDeviceModelSortId sortId;
-@property (nonatomic, strong) NSDictionary *name;
-@property (nonatomic, strong) NSDictionary *desc;
-@property (nonatomic, strong) NSArray *lookupParams;
-@property (nonatomic, strong) NSString *modelTemplate;
-@property (nonatomic, strong) NSArray *media;
-@property (nonatomic, strong) PPDeviceTypeParameterDisplayInfo *displayInfo;
+@property (nonatomic, strong) NSDictionary * _Nonnull name;
+@property (nonatomic, strong) NSDictionary * _Nonnull desc;
+@property (nonatomic, strong) NSArray * _Nullable lookupParams;
+@property (nonatomic, strong) NSString * _Nullable modelTemplate;
+@property (nonatomic, strong) NSArray * _Nullable media;
+@property (nonatomic, strong) PPDeviceTypeParameterDisplayInfo * _Nullable displayInfo;
 
-- (id)initWithModelId:(NSString *)modelId brands:(NSArray *)brands manufacturer:(NSDictionary *)manufacturer pairingType:(PPDeviceTypeDeviceModelPairingType)pairingType OAuthAppId:(PPCloudsIntegrationClientApplicationId)OAuthAppId dependencyDeviceTypes:(NSArray *)dependencyDeviceTypes hidden:(PPDeviceTypeDeviceModelHidden)hidden sortId:(PPDeviceTypeDeviceModelSortId)sortId name:(NSDictionary *)name desc:(NSDictionary *)desc lookupParams:(NSArray *)lookupParams modelTemplate:(NSString *)modelTemplate media:(NSArray *)media displayInfo:(PPDeviceTypeParameterDisplayInfo *)displayInfo;
+- (id _Nonnull )initWithModelId:(NSString * _Nonnull )modelId
+               brands:(NSArray * _Nullable )brands
+         manufacturer:(NSDictionary * _Nullable )manufacturer
+          pairingType:(PPDeviceTypeDeviceModelPairingType)pairingType
+           OAuthAppId:(PPCloudsIntegrationClientApplicationId)OAuthAppId
+dependencyDeviceTypes:(NSArray * _Nullable )dependencyDeviceTypes
+               hidden:(PPDeviceTypeDeviceModelHidden)hidden
+               sortId:(PPDeviceTypeDeviceModelSortId)sortId
+                 name:(NSDictionary * _Nonnull )name
+                 desc:(NSDictionary * _Nonnull )desc
+         lookupParams:(NSArray * _Nullable )lookupParams
+        modelTemplate:(NSString * _Nullable )modelTemplate
+                media:(NSArray * _Nullable )media
+          displayInfo:(PPDeviceTypeParameterDisplayInfo * _Nullable )displayInfo;
 
-+ (PPDeviceTypeDeviceModel *)initWithDictionary:(NSDictionary *)modelDict;
++ (PPDeviceTypeDeviceModel * _Nonnull )initWithDictionary:(NSDictionary * _Nonnull )modelDict;
 
-+ (NSString *)stringify:(PPDeviceTypeDeviceModel *)model;
++ (NSString * _Nonnull )stringify:(PPDeviceTypeDeviceModel * _Nonnull )model;
 
 @end
 

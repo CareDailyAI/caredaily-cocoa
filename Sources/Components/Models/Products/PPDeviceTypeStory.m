@@ -10,7 +10,7 @@
 
 @implementation PPDeviceTypeStory
 
-- (id)initWithStoryId:(NSString *)storyId models:(NSArray *)models brands:(NSArray *)brands storyType:(PPDeviceTypeStoryType)storyType lang:(NSString *)lang title:(NSString *)title search:(NSArray *)search sortId:(PPDeviceTypeStorySortId)sortId pages:(NSArray *)pages {
+- (id)initWithStoryId:(NSString *)storyId models:(NSArray *)models brands:(NSArray *)brands storyType:(PPDeviceTypeStoryType)storyType lang:(NSString *)lang title:(NSString *)title search:(NSArray *)search sortId:(PPDeviceTypeStorySortId)sortId pages:(NSArray *)pages displayInfo:(PPDeviceTypeParameterDisplayInfo *)displayInfo {
     self = [super init];
     if(self) {
         self.storyId = storyId;
@@ -22,6 +22,7 @@
         self.search = search;
         self.sortId = sortId;
         self.pages = pages;
+        self.displayInfo = displayInfo;
     }
     return self;
 }
@@ -60,7 +61,12 @@
         }
     }
     
-    PPDeviceTypeStory *storybook = [[PPDeviceTypeStory alloc] initWithStoryId:storyId models:models brands:brands storyType:storyType lang:lang title:title search:search sortId:sortId pages:pages];
+    PPDeviceTypeParameterDisplayInfo *displayInfo;
+    if([storyDict objectForKey:@"displayInfo"]) {
+        displayInfo = [PPDeviceTypeParameterDisplayInfo initWithDictionary:[storyDict objectForKey:@"displayInfo"]];
+    }
+    
+    PPDeviceTypeStory *storybook = [[PPDeviceTypeStory alloc] initWithStoryId:storyId models:models brands:brands storyType:storyType lang:lang title:title search:search sortId:sortId pages:pages displayInfo:displayInfo];
     return storybook;
 }
 
@@ -171,6 +177,14 @@
         }
         
         [JSONString appendString:@"]"];
+        appendComma = YES;
+    }
+    
+    if(story.displayInfo) {
+        if(appendComma) {
+            [JSONString appendString:@","];
+        }
+        [JSONString appendFormat:@"\"displayInfo\":%@", [PPDeviceTypeParameterDisplayInfo stringify:story.displayInfo]];
         appendComma = YES;
     }
     

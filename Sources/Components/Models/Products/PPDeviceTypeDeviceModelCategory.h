@@ -13,27 +13,36 @@
 
 @interface PPDeviceTypeDeviceModelCategory : NSObject
 
-@property (nonatomic) NSString *categoryId;
-@property (nonatomic) NSString *parentId;
-@property (nonatomic, strong) NSArray *brands;
-@property (nonatomic, strong) NSString *icon;
-@property (nonatomic, strong) NSArray *search;
+@property (nonatomic) NSString * _Nonnull categoryId;
+@property (nonatomic) NSString * _Nullable parentId;
+@property (nonatomic, strong) NSArray * _Nullable brands;
+@property (nonatomic, strong) NSString * _Nullable icon;
+@property (nonatomic, strong) NSArray * _Nullable search;
 @property (nonatomic) PPDeviceTypeDeviceModelHidden hidden;
 @property (nonatomic) PPDeviceTypeDeviceModelSortId sortId;
-@property (nonatomic, strong) NSDictionary *name;
-@property (nonatomic, strong) NSArray *stories;
-@property (nonatomic, strong) NSArray *models;
+@property (nonatomic, strong) NSDictionary * _Nonnull name;
+@property (nonatomic, strong) NSArray * _Nullable stories;
+@property (nonatomic, strong) NSArray * _Nullable models;
 
-- (id)initWithId:(NSString *)categoryId parentId:(NSString *)parentId brands:(NSArray *)brands icon:(NSString *)icon search:(NSArray *)search hidden:(PPDeviceTypeDeviceModelHidden)hidden sortId:(PPDeviceTypeDeviceModelSortId)sortId name:(NSDictionary *)name stories:(NSArray *)stories models:(NSArray *)models;
+- (id _Nonnull )initWithId:(NSString * _Nonnull )categoryId
+        parentId:(NSString * _Nullable )parentId
+          brands:(NSArray * _Nullable )brands
+            icon:(NSString * _Nullable )icon
+          search:(NSArray * _Nullable )search
+          hidden:(PPDeviceTypeDeviceModelHidden)hidden
+          sortId:(PPDeviceTypeDeviceModelSortId)sortId
+            name:(NSDictionary * _Nonnull )name
+         stories:(NSArray * _Nullable )stories
+          models:(NSArray * _Nullable )models;
 
-+ (PPDeviceTypeDeviceModelCategory *)initWithDictionary:(NSDictionary *)categoryDict;
++ (PPDeviceTypeDeviceModelCategory * _Nonnull )initWithDictionary:(NSDictionary * _Nonnull )categoryDict;
 
-+ (NSString *)stringify:(PPDeviceTypeDeviceModelCategory *)category;
++ (NSString * _Nonnull )stringify:(PPDeviceTypeDeviceModelCategory * _Nonnull )category;
 
 #pragma mark - Helper Methods
 
-- (BOOL)isEqualToCategory:(PPDeviceTypeDeviceModelCategory *)category;
+- (BOOL)isEqualToCategory:(PPDeviceTypeDeviceModelCategory * _Nonnull )category;
 
-- (void)sync:(PPDeviceTypeDeviceModelCategory *)category;
+- (void)sync:(PPDeviceTypeDeviceModelCategory * _Nonnull )category;
 
 @end

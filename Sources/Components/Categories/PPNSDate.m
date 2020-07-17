@@ -27,7 +27,7 @@
         dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ";
         date = [dateFormatter dateFromString:dateString];
     }
-    return (date != nil) ? date : [NSDate now];
+    return (date != nil) ? date : [NSDate date];
 }
 
 + (NSDate *)parseDateTime:(NSString *)dateString timeZone:(NSTimeZone *)timeZone {
@@ -42,7 +42,7 @@
         dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ";
         date = [dateFormatter dateFromString:dateString];
     }
-    return (date != nil) ? date : [NSDate now];
+    return (date != nil) ? date : [NSDate date];
 }
 
 /*

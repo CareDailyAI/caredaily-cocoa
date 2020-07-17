@@ -20,17 +20,22 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeDeviceModelBrandSortId) {
 
 @interface PPDeviceTypeDeviceModelBrand : NSObject
 
-@property (nonatomic, strong) NSString *brand;
+@property (nonatomic, strong) NSString * _Nonnull brand;
 @property (nonatomic) PPDeviceTypeDeviceModelBrandHidden hidden;
-@property (nonatomic, strong) NSString *parentId;
+@property (nonatomic, strong) NSString * _Nullable parentId;
 @property (nonatomic) PPDeviceTypeDeviceModelBrandSortId sortId;
-@property (nonatomic, strong) NSDictionary *name;
-@property (nonatomic, strong) NSDictionary *desc;
+@property (nonatomic, strong) NSDictionary * _Nonnull name;
+@property (nonatomic, strong) NSDictionary * _Nullable desc;
 
-- (id)initWithBrand:(NSString *)brand hidden:(PPDeviceTypeDeviceModelBrandHidden)hidden parentId:(NSString *)parentId sortId:(PPDeviceTypeDeviceModelBrandSortId)sortId name:(NSDictionary *)name desc:(NSDictionary *)desc;
+- (id _Nonnull )initWithBrand:(NSString * _Nonnull )brand
+             hidden:(PPDeviceTypeDeviceModelBrandHidden)hidden
+           parentId:(NSString * _Nullable )parentId
+             sortId:(PPDeviceTypeDeviceModelBrandSortId)sortId
+               name:(NSDictionary * _Nonnull )name
+               desc:(NSDictionary * _Nullable )desc;
 
-+ (PPDeviceTypeDeviceModelBrand *)initWithDictionary:(NSDictionary *)brandDict;
++ (PPDeviceTypeDeviceModelBrand * _Nonnull )initWithDictionary:(NSDictionary * _Nonnull )brandDict;
 
-+ (NSString *)stringify:(PPDeviceTypeDeviceModelBrand *)brand;
++ (NSString * _Nonnull )stringify:(PPDeviceTypeDeviceModelBrand * _Nonnull )brand;
 
 @end
