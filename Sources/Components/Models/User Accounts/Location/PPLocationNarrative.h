@@ -13,7 +13,6 @@
 #import "PPBotengineAppInstance.h"
 
 @class PPLocationNarrativeTarget;
-RLM_ARRAY_TYPE(PPLocationNarrativeTarget);
 
 typedef NS_OPTIONS(NSInteger, PPLocationNarrativeId) {
     PPLocationNarrativeIdNone = -1

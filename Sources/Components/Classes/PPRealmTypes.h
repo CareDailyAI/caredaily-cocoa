@@ -25,6 +25,7 @@ RLM_ARRAY_TYPE(PPLocationOccupantsRange)
 RLM_ARRAY_TYPE(PPLocationSize)
 RLM_ARRAY_TYPE(PPLocationSceneEvent)
 RLM_ARRAY_TYPE(PPLocationNarrative)
+RLM_ARRAY_TYPE(PPLocationNarrativeTarget);
 RLM_ARRAY_TYPE(PPLocationUserSchedule)
 
 // MARK: User
@@ -87,8 +88,10 @@ RLM_ARRAY_TYPE(PPDeviceDataRequest)
 // MARK: Notification
 
 RLM_ARRAY_TYPE(PPNotificationMessage)
+RLM_ARRAY_TYPE(PPNotificationMessageModel);
 RLM_ARRAY_TYPE(PPNotificationSubscription)
 RLM_ARRAY_TYPE(PPNotificationPushMessage)
+RLM_ARRAY_TYPE(PPNotificationPushMessageInfo);
 RLM_ARRAY_TYPE(PPNotificationEmailMessage)
 RLM_ARRAY_TYPE(PPNotificationEmailMessageAttachment)
 RLM_ARRAY_TYPE(PPNotificationSMSMessage)
@@ -202,6 +205,7 @@ RLM_ARRAY_TYPE(PPDeviceTypeRuleComponentTemplateProduct)
 RLM_ARRAY_TYPE(PPDeviceTypeGoal)
 RLM_ARRAY_TYPE(PPDeviceTypeInstallationInstructions)
 RLM_ARRAY_TYPE(PPDeviceTypeMedia)
+RLM_ARRAY_TYPE(PPDeviceTypeMediaDesc);
 RLM_ARRAY_TYPE(PPDeviceTypeDeviceModel)
 RLM_ARRAY_TYPE(PPDeviceTypeDeviceModelManufacture)
 RLM_ARRAY_TYPE(PPDeviceTypeDeviceModelName)
@@ -274,5 +278,10 @@ RLM_ARRAY_TYPE(PPOrganizationGroup);
 // MARK: - Networking
 
 RLM_ARRAY_TYPE(PPVersion);
+
+// MARK: -
+// MARK: - Categories
+
+RLM_ARRAY_TYPE(PPRLMDictionary);
 
 #endif /* PPRealmTypes_h */

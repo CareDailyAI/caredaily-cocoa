@@ -12,16 +12,22 @@
 #import "PPBaseModel.h"
 #import "PPDeviceFirmwareUpdateJob.h"
 
+@class PPDeviceFirmwareUpdatesFirmwareUpdates;
+
 @interface PPDeviceFirmwareUpdates : PPBaseModel
 
 @property (nonatomic, strong) PPDeviceFirmwareUpdateJob *currentFirmwareUpdate;
-@property (nonatomic, strong) NSMutableDictionary *firmwareUpdates;
+@property (nonatomic, strong) PPDeviceFirmwareUpdatesFirmwareUpdates *firmwareUpdates;
 
 /**
  * Shared firmware updates across the entire application
  */
 + (PPDeviceFirmwareUpdates *)sharedFirmwareUpdates;
 
-- (id)initWithFirmwareUpdates:(NSMutableDictionary *)firmwareUpdates currentUpdate:(PPDeviceFirmwareUpdateJob *)currentFirmwareUpdate;
+- (id)initWithFirmwareUpdates:(PPDeviceFirmwareUpdatesFirmwareUpdates *)firmwareUpdates currentUpdate:(PPDeviceFirmwareUpdateJob *)currentFirmwareUpdate;
 
+@end
+
+@interface PPDeviceFirmwareUpdatesFirmwareUpdates : PPRLMDictionary
++ (PPDeviceFirmwareUpdatesFirmwareUpdates *)initWithDictionary:(NSDictionary *)dict;
 @end

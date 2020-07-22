@@ -18,12 +18,12 @@ __strong static PPDeviceFirmwareUpdates *_sharedFirmwareUpdates = nil;
  */
 + (PPDeviceFirmwareUpdates *)sharedFirmwareUpdates {
     if(!_sharedFirmwareUpdates) {
-        _sharedFirmwareUpdates = [[PPDeviceFirmwareUpdates alloc] initWithFirmwareUpdates:[[NSMutableDictionary alloc] initWithCapacity:0] currentUpdate:nil];
+        _sharedFirmwareUpdates = [[PPDeviceFirmwareUpdates alloc] initWithFirmwareUpdates:[[PPDeviceFirmwareUpdatesFirmwareUpdates alloc] init] currentUpdate:nil];
     }
     return _sharedFirmwareUpdates;
 }
 
-- (id)initWithFirmwareUpdates:(NSMutableDictionary *)firmwareUpdates currentUpdate:(PPDeviceFirmwareUpdateJob *)currentFirmwareUpdate {
+- (id)initWithFirmwareUpdates:(PPDeviceFirmwareUpdatesFirmwareUpdates *)firmwareUpdates currentUpdate:(PPDeviceFirmwareUpdateJob *)currentFirmwareUpdate {
     self = [super init];
     if(self) {
         _sharedFirmwareUpdates = self;
@@ -37,6 +37,15 @@ __strong static PPDeviceFirmwareUpdates *_sharedFirmwareUpdates = nil;
 
 - (void)setCurrentFirmwareUpdate:(PPDeviceFirmwareUpdateJob *)currentFirmwareUpdate {
     _currentFirmwareUpdate = currentFirmwareUpdate;
+}
+
+@end
+
+@implementation PPDeviceFirmwareUpdatesFirmwareUpdates
+
++ (PPDeviceFirmwareUpdatesFirmwareUpdates *)initWithDictionary:(NSDictionary *)dict {
+    PPRLMDictionary *RLMDictionary = [super initWithDictionary:dict];
+    return [[PPDeviceFirmwareUpdatesFirmwareUpdates alloc] initWithKeys:RLMDictionary.keys value:RLMDictionary.values];
 }
 
 @end

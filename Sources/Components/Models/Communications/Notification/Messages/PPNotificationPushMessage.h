@@ -9,7 +9,6 @@
 #import "PPNotificationMessage.h"
 
 @class PPNotificationPushMessageInfo;
-RLM_ARRAY_TYPE(PPNotificationPushMessageInfo);
 
 typedef NS_OPTIONS(NSInteger, PPNotificationPushMessageType) {
     PPNotificationPushMessageTypeNone = -1,

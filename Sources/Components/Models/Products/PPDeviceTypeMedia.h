@@ -9,7 +9,6 @@
 #import "PPBaseModel.h"
 
 @class PPDeviceTypeMediaDesc;
-RLM_ARRAY_TYPE(PPDeviceTypeMediaDesc);
 
 typedef NS_OPTIONS(NSInteger, PPDeviceTypeMediaType) {
     PPDeviceTypeMediaTypeNone = -1,

@@ -15,6 +15,9 @@
 
 - (void)setUp {
     [super setUp];
+    RLMRealmConfiguration *config = [RLMRealmConfiguration defaultConfiguration];
+    config.inMemoryIdentifier = self.name;
+    [RLMRealmConfiguration setDefaultConfiguration:config];
     
     // Supress Analytics
     [self stubRequestForModule:@"SystemAndUserProperties" methodName:@"GetSystemProperty-Analytics_Level" ofType:@"txt" path:@"/espapi/cloud/json/systemProperty/analytics-level" statusCode:200 headers:nil];

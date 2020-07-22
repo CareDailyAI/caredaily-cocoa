@@ -23,5 +23,3 @@
 + (NSDictionary *)data:(PPRLMDictionary *)model;
 
 @end
-
-RLM_ARRAY_TYPE(PPRLMDictionary);

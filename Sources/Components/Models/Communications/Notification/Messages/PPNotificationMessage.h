@@ -10,7 +10,6 @@
 #import "PPRLMDictionary.h"
 
 @class PPNotificationMessageModel;
-RLM_ARRAY_TYPE(PPNotificationMessageModel);
 
 @interface PPNotificationMessage : PPBaseModel
 
