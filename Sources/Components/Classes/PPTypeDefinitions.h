@@ -3454,11 +3454,11 @@ typedef NS_OPTIONS(NSInteger, PPCloudEngineType) {
 #define DEVICE_TYPE_GOAL_CATEGORY_WELLNESS @"W"
 
 
-#define PPDeviceTypeStoryPageStyleDefault @"";
-#define PPDeviceTypeStoryPageStyleInfo @"info";
-#define PPDeviceTypeStoryPageStyleConnect @"connect";
-#define PPDeviceTypeStoryPageStylePicture @"picture";
-#define PPDeviceTypeStoryPageStyleCalibrate @"calibrate";
+#define PPDeviceTypeStoryPageStyleDefault @""
+#define PPDeviceTypeStoryPageStyleInfo @"info"
+#define PPDeviceTypeStoryPageStyleConnect @"connect"
+#define PPDeviceTypeStoryPageStylePicture @"picture"
+#define PPDeviceTypeStoryPageStyleCalibrate @"calibrate"
 
 // MARK: - Clouds Integration
 
