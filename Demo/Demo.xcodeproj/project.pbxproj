@@ -25,7 +25,6 @@
 		630BDE3A24B3B0F30035D8B3 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630BDE3924B3B0F30035D8B3 /* NotificationController.swift */; };
 		630BDE3C24B3B0F30035D8B3 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630BDE3B24B3B0F30035D8B3 /* ComplicationController.swift */; };
 		630BDE3E24B3B0F40035D8B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 630BDE3D24B3B0F40035D8B3 /* Assets.xcassets */; };
-		630BDE4324B3B0F40035D8B3 /* Demo watchOS.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 630BDE2424B3B0F10035D8B3 /* Demo watchOS.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		630BDE5F24B3B60C0035D8B3 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630BDE5B24B3B60C0035D8B3 /* AFNetworking.framework */; };
 		630BDE6124B3B60C0035D8B3 /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630BDE5C24B3B60C0035D8B3 /* KissXML.framework */; };
 		630BDE6324B3B60C0035D8B3 /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630BDE5D24B3B60C0035D8B3 /* UICKeyChainStore.framework */; };
@@ -67,13 +66,6 @@
 			remoteGlobalIDString = 630BDE2F24B3B0F30035D8B3;
 			remoteInfo = "Demo watchOS Extension";
 		};
-		630BDE4124B3B0F40035D8B3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 631A7AAA248B376500D86CFF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 630BDE2324B3B0F10035D8B3;
-			remoteInfo = "Demo watchOS";
-		};
 		631A7AD9248B376600D86CFF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 631A7AAA248B376500D86CFF /* Project object */;
@@ -104,17 +96,6 @@
 				630BDE3124B3B0F30035D8B3 /* Demo watchOS Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		630BDE4B24B3B0F40035D8B3 /* Embed Watch Content */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
-			dstSubfolderSpec = 16;
-			files = (
-				630BDE4324B3B0F40035D8B3 /* Demo watchOS.app in Embed Watch Content */,
-			);
-			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -427,13 +408,11 @@
 				631A7AB0248B376500D86CFF /* Resources */,
 				631A7AEC248B39EE00D86CFF /* Carthage */,
 				630BDE0E24B3ADC60035D8B3 /* Embed App Extensions */,
-				630BDE4B24B3B0F40035D8B3 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				630BDE0924B3ADC60035D8B3 /* PBXTargetDependency */,
-				630BDE4224B3B0F40035D8B3 /* PBXTargetDependency */,
 			);
 			name = "Demo iOS";
 			productName = "Peoplepower Demo";
@@ -649,11 +628,6 @@
 			isa = PBXTargetDependency;
 			target = 630BDE2F24B3B0F30035D8B3 /* Demo watchOS Extension */;
 			targetProxy = 630BDE3224B3B0F30035D8B3 /* PBXContainerItemProxy */;
-		};
-		630BDE4224B3B0F40035D8B3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 630BDE2324B3B0F10035D8B3 /* Demo watchOS */;
-			targetProxy = 630BDE4124B3B0F40035D8B3 /* PBXContainerItemProxy */;
 		};
 		631A7ADA248B376600D86CFF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
