@@ -9,6 +9,7 @@
 #import "PPUserAnalytics.h"
 //#import "Mixpanel.h"
 //#import "PRAppDelegate.h"
+@import UIKit;
 
 @implementation PPUserAnalytics
 

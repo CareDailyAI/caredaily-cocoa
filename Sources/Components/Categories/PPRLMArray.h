@@ -6,7 +6,7 @@
 //  Copyright © 2020 People Power Company. All rights reserved.
 //
 
-@interface PPRLMArray : NSObject
+@interface PPRLMArray : PPBaseModel
 
 + (NSString *)stringArray:(RLMArray *)array componentsJoinedByString:(NSString *)joiningString;
 + (NSArray *)arrayFromArray:(RLMArray *)array;

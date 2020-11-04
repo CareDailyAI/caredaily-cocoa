@@ -25,7 +25,7 @@ RLM_ARRAY_TYPE(PPLocationOccupantsRange)
 RLM_ARRAY_TYPE(PPLocationSize)
 RLM_ARRAY_TYPE(PPLocationSceneEvent)
 RLM_ARRAY_TYPE(PPLocationNarrative)
-RLM_ARRAY_TYPE(PPLocationNarrativeTarget);
+RLM_ARRAY_TYPE(PPLocationNarrativeTarget)
 RLM_ARRAY_TYPE(PPLocationUserSchedule)
 
 // MARK: User
@@ -88,10 +88,10 @@ RLM_ARRAY_TYPE(PPDeviceDataRequest)
 // MARK: Notification
 
 RLM_ARRAY_TYPE(PPNotificationMessage)
-RLM_ARRAY_TYPE(PPNotificationMessageModel);
+RLM_ARRAY_TYPE(PPNotificationMessageModel)
 RLM_ARRAY_TYPE(PPNotificationSubscription)
 RLM_ARRAY_TYPE(PPNotificationPushMessage)
-RLM_ARRAY_TYPE(PPNotificationPushMessageInfo);
+RLM_ARRAY_TYPE(PPNotificationPushMessageInfo)
 RLM_ARRAY_TYPE(PPNotificationEmailMessage)
 RLM_ARRAY_TYPE(PPNotificationEmailMessageAttachment)
 RLM_ARRAY_TYPE(PPNotificationSMSMessage)
@@ -206,7 +206,7 @@ RLM_ARRAY_TYPE(PPDeviceTypeGoal)
 RLM_ARRAY_TYPE(PPDeviceTypeGoalSpaceTypes)
 RLM_ARRAY_TYPE(PPDeviceTypeInstallationInstructions)
 RLM_ARRAY_TYPE(PPDeviceTypeMedia)
-RLM_ARRAY_TYPE(PPDeviceTypeMediaDesc);
+RLM_ARRAY_TYPE(PPDeviceTypeMediaDesc)
 RLM_ARRAY_TYPE(PPDeviceTypeDeviceModel)
 RLM_ARRAY_TYPE(PPDeviceTypeDeviceModelManufacture)
 RLM_ARRAY_TYPE(PPDeviceTypeDeviceModelName)
@@ -257,33 +257,33 @@ RLM_ARRAY_TYPE(PPCircleDevicePictureFrame)
 
 // MARK: - Reports
 
-RLM_ARRAY_TYPE(PPDeviceAlert);
+RLM_ARRAY_TYPE(PPDeviceAlert)
 
 // MARK: - Botengine
 
-RLM_ARRAY_TYPE(PPBotengineApp);
-RLM_ARRAY_TYPE(PPBotengineAppAccess);
-RLM_ARRAY_TYPE(PPBotengineAppCommunications);
-RLM_ARRAY_TYPE(PPBotengineAppDeviceType);
-RLM_ARRAY_TYPE(PPBotengineAppInstance);
-RLM_ARRAY_TYPE(PPBotengineAppMarketing);
-RLM_ARRAY_TYPE(PPBotengineAppRating);
-RLM_ARRAY_TYPE(PPBotengineAppReview);
-RLM_ARRAY_TYPE(PPBotengineAppVersion);
+RLM_ARRAY_TYPE(PPBotengineApp)
+RLM_ARRAY_TYPE(PPBotengineAppAccess)
+RLM_ARRAY_TYPE(PPBotengineAppCommunications)
+RLM_ARRAY_TYPE(PPBotengineAppDeviceType)
+RLM_ARRAY_TYPE(PPBotengineAppInstance)
+RLM_ARRAY_TYPE(PPBotengineAppMarketing)
+RLM_ARRAY_TYPE(PPBotengineAppRating)
+RLM_ARRAY_TYPE(PPBotengineAppReview)
+RLM_ARRAY_TYPE(PPBotengineAppVersion)
 
 // MARK: - Organization
 
 RLM_ARRAY_TYPE(PPOrganization)
-RLM_ARRAY_TYPE(PPOrganizationGroup);
-RLM_ARRAY_TYPE(PPOrganizationObject);
+RLM_ARRAY_TYPE(PPOrganizationGroup)
+RLM_ARRAY_TYPE(PPOrganizationObject)
 
 // MARK: - Networking
 
-RLM_ARRAY_TYPE(PPVersion);
+RLM_ARRAY_TYPE(PPVersion)
 
 // MARK: -
 // MARK: - Categories
 
-RLM_ARRAY_TYPE(PPRLMDictionary);
+RLM_ARRAY_TYPE(PPRLMDictionary)
 
 #endif /* PPRealmTypes_h */
