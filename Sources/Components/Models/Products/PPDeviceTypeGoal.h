@@ -10,6 +10,8 @@
 
 #import "PPBaseModel.h"
 
+@class PPDeviceTypeGoalSpaceTypes;
+
 extern NSString *DEVICE_TYPE_GOAL_CATEGORY_ENERGY;
 extern NSString *DEVICE_TYPE_GOAL_CATEGORY_SECURITY;
 extern NSString *DEVICE_TYPE_GOAL_CATEGORY_CARE;
@@ -55,7 +57,10 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeGoalCategories) {
 /* Suggestioned device names */
 @property (nonatomic, strong) NSArray *suggestions;
 
-- (id)initWithId:(PPDeviceTypeGoalId)goalId name:(NSString *)name desc:(NSString *)desc categories:(PPDeviceTypeGoalCategories)categories deviceUsage:(PPDeviceTypeGoalDeviceUsage)deviceUsage suggestions:(NSArray *)suggestions;
+/* Suggestioned device spaces */
+@property (nonatomic, strong) NSArray *spaces;
+
+- (id)initWithId:(PPDeviceTypeGoalId)goalId name:(NSString *)name desc:(NSString *)desc categories:(PPDeviceTypeGoalCategories)categories deviceUsage:(PPDeviceTypeGoalDeviceUsage)deviceUsage suggestions:(NSArray *)suggestions spaces:(NSArray *)spaces;
 
 + (PPDeviceTypeGoal *)initWithDictionary:(NSDictionary *)goalDict;
 
@@ -65,4 +70,10 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeGoalCategories) {
 
 - (void)sync:(PPDeviceTypeGoal *)goal;
 
+@end
+
+@interface PPDeviceTypeGoalSpaceTypes: NSObject
+@property (nonatomic, strong) NSArray *types;
+- (id)initWithTypes:(NSArray *)types;
++ (PPDeviceTypeGoalSpaceTypes *)initWithArray:(NSArray *)types;
 @end

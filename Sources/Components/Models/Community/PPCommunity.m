@@ -322,6 +322,7 @@
     }
     
     components.queryItems = queryItems;
+    components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
     
     dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.community.UploadFile()", DISPATCH_QUEUE_SERIAL);
     
@@ -465,6 +466,7 @@
     }
     
     components.queryItems = queryItems;
+    components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
     
     dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.community.GetFileURLS()", DISPATCH_QUEUE_SERIAL);
     

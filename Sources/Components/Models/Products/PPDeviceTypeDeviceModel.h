@@ -23,7 +23,8 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeDeviceModelPairingType) {
     PPDeviceTypeDeviceModelPairingTypeOAuth = 4,
     PPDeviceTypeDeviceModelPairingTypeZigBee = 8,
     PPDeviceTypeDeviceModelPairingTypeWiFi = 16,
-    PPDeviceTypeDeviceModelPairingTypeGenerateQR = 32
+    PPDeviceTypeDeviceModelPairingTypeGenerateQR = 32,
+    PPDeviceTypeDeviceModelPairingTypeBluetooth = 64,
 };
 
 typedef NS_OPTIONS(NSInteger, PPDeviceTypeDeviceModelHidden) {

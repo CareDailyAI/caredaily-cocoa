@@ -10,6 +10,7 @@
 @interface PPWebSocket ()
 @property (nonatomic, strong) NSString *connectURL;
 @property (nonatomic, weak, readwrite) NSObject<PPWebSocketDelegate> *delegate;
+@property (nonatomic) PPWebSocketResourceEndpoint resourceEndpoint;
 @end
 
 @implementation PPWebSocket
@@ -17,6 +18,10 @@
 -(id) initWithURL:(NSString*)URL resourceEndpoint:(PPWebSocketResourceEndpoint)resourceEndpoint sessionId:(NSString*)sessionId delegate:(NSObject<PPWebSocketDelegate> *)delegate {
 	self = [super init];
 	if(self) {
+        _resourceEndpoint = resourceEndpoint;
+		_sessionId = sessionId;
+		_delegate = delegate;
+        
         switch (resourceEndpoint) {
             case PPWebSocketResourceEndpointCamera:
                 _connectURL = [NSString stringWithFormat:@"%@/camera", URL];
@@ -26,11 +31,9 @@
                 break;
                 
             default:
-                _connectURL = [NSString stringWithFormat:@"%@/camera", URL];
+                _connectURL = [NSString stringWithFormat:@"%@", URL];
                 break;
         }
-		_sessionId = sessionId;
-		_delegate = delegate;
 	}
 	return self;
 }
@@ -65,12 +68,277 @@
     }
 }
 
+/**
+ * Send a ping to the server
+ */
+-(void)ping {
+    NSString *request;
+
+    switch (_resourceEndpoint) {
+            
+        default:
+            request = @"?";
+            break;
+    }
+    if (_webSocket.readyState == SR_OPEN) {
+        [_webSocket send:request];
+    }
+}
+
+/**
+ * Response to servers request before it times us out
+ */
 -(void)pong {
-	NSString *requestJson = [NSString stringWithFormat:@"{}"];
+    NSString *request;
 	
+    switch (_resourceEndpoint) {
+        case PPWebSocketResourceEndpointCamera:
+        case PPWebSocketResourceEndpointViewer:
+            request = @"{}";
+            break;
+            
+        default:
+            request = @"!";
+            break;
+    }
 	if (_webSocket.readyState == SR_OPEN) {
-		[_webSocket send:requestJson];
+		[_webSocket send:request];
 	}
+}
+
+/**
+ * Every time we connect to the server, we have to declare our connection session ID back to the server.
+ */
+- (void)declareConnected {
+    NSString *uuid;
+    [self declareConnected:&uuid];
+}
+- (void)declareConnected:(NSString * _Nullable __autoreleasing *)uuid {
+    NSDictionary *data;
+    switch (_resourceEndpoint) {
+        case PPWebSocketResourceEndpointCamera:
+        case PPWebSocketResourceEndpointViewer:
+            data = @{
+                @"sessionId": self.sessionId
+            };
+            break;
+            
+        default:
+        {
+            NSUUID *UUID = [NSUUID UUID];
+            *uuid = UUID.UUIDString;
+            data = @{
+                @"id": *uuid,
+                @"key": self.sessionId,
+                @"goal": @(PPWebSocketGoalAuth),
+            };
+            break;
+        }
+    }
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:data options:0 error:&error];
+    if (error) {
+        NSLog(@"%s Invalid format (%@): %@", __PRETTY_FUNCTION__, error, data);
+        return;
+    }
+    NSString *request = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
+#ifdef DEBUG
+    NSLog(@"%s command: %@", __PRETTY_FUNCTION__, request);
+#endif
+    if (_webSocket.readyState == SR_OPEN) {
+        [_webSocket send:request];
+    }
+
+}
+
+/**
+ * The server will return supported subscription types based on the session scope.
+ */
+- (void)requestPresence {
+    NSString *uuid;
+    [self requestPresence:&uuid];
+}
+- (void)requestPresence:(NSString * _Nullable __autoreleasing *)uuid {
+    NSDictionary *data;
+    switch (_resourceEndpoint) {
+        case PPWebSocketResourceEndpointCamera:
+        case PPWebSocketResourceEndpointViewer:
+            data = @{};
+            break;
+            
+        default:
+        {
+            NSUUID *UUID = [NSUUID UUID];
+            *uuid = UUID.UUIDString;
+            data = @{
+                @"id": *uuid,
+                @"goal": @(PPWebSocketGoalPresence),
+            };
+            break;
+        }
+    }
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:data options:0 error:&error];
+    if (error) {
+        NSLog(@"%s Invalid format (%@): %@", __PRETTY_FUNCTION__, error, data);
+        return;
+    }
+    NSString *request = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
+#ifdef DEBUG
+    NSLog(@"%s command: %@", __PRETTY_FUNCTION__, request);
+#endif
+    if (_webSocket.readyState == SR_OPEN) {
+        [_webSocket send:request];
+    }
+}
+
+/**
+ * Status
+ * The server will return current session subscription.
+ */
+- (void)retrieveStatus {
+    NSString *uuid;
+    [self retrieveStatus:&uuid];
+}
+- (void)retrieveStatus:(NSString * _Nullable __autoreleasing *)uuid {
+    NSDictionary *data;
+    switch (_resourceEndpoint) {
+        case PPWebSocketResourceEndpointCamera:
+        case PPWebSocketResourceEndpointViewer:
+            data = @{};
+            break;
+            
+        default:
+        {
+            NSUUID *UUID = [NSUUID UUID];
+            *uuid = UUID.UUIDString;
+            data = @{
+                @"id": *uuid,
+                @"goal": @(PPWebSocketGoalStatus),
+            };
+            break;
+        }
+    }
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:data options:0 error:&error];
+    if (error) {
+        NSLog(@"%s Invalid format (%@): %@", __PRETTY_FUNCTION__, error, data);
+        return;
+    }
+    NSString *request = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
+#ifdef DEBUG
+    NSLog(@"%s command: %@", __PRETTY_FUNCTION__, request);
+#endif
+    if (_webSocket.readyState == SR_OPEN) {
+        [_webSocket send:request];
+    }
+}
+
+/**
+ * Subscribe
+ * Client can subscribe on new data and events coming to the server.
+ * Client can have only one subscription with same parameters.
+ *
+ * To subscribe on a data model, client sends a request with the goal "subscribe" and the subscription options.
+ * After approval, the server starts sending to client the messages containing the data objects that match the subscription options.
+ * A new subscription request can absorb previously created subscriptions if it subscribes to a wider range of data of the same kind.
+ *
+ * Currently supported subscription types:
+ * 1 - narratives
+ * 2 - organization narratives
+ */
+- (void)subscribe:(NSDictionary *)subscription {
+    NSString *uuid;
+    [self subscribe:subscription uuid:&uuid];
+}
+- (void)subscribe:(NSDictionary *)subscription uuid:(NSString * _Nullable __autoreleasing *)uuid {
+    NSDictionary *data;
+    switch (_resourceEndpoint) {
+        case PPWebSocketResourceEndpointCamera:
+        case PPWebSocketResourceEndpointViewer:
+            data = @{};
+            break;
+            
+        default:
+        {
+            NSUUID *UUID = [NSUUID UUID];
+            *uuid = UUID.UUIDString;
+            data = @{
+                @"id": *uuid,
+                @"goal": @(PPWebSocketGoalSubscribe),
+                @"subscription": subscription
+            };
+            break;
+        }
+    }
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:data options:0 error:&error];
+    if (error) {
+        NSLog(@"%s Invalid format (%@): %@", __PRETTY_FUNCTION__, error, data);
+        return;
+    }
+    NSString *request = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
+#ifdef DEBUG
+    NSLog(@"%s command: %@", __PRETTY_FUNCTION__, request);
+#endif
+    if (_webSocket.readyState == SR_OPEN) {
+        [_webSocket send:request];
+    }
+}
+
+/**
+ * Unsubscribe
+ */
+- (void)unsubscribe:(NSInteger)type {
+    NSString *uuid;
+    [self unsubscribe:type uuid:&uuid];
+}
+- (void)unsubscribe:(NSInteger)type uuid:(NSString * _Nullable __autoreleasing *)uuid {
+    NSDictionary *data;
+    switch (_resourceEndpoint) {
+        case PPWebSocketResourceEndpointCamera:
+        case PPWebSocketResourceEndpointViewer:
+            data = @{};
+            break;
+            
+        default:
+        {
+            NSUUID *UUID = [NSUUID UUID];
+            *uuid = UUID.UUIDString;
+            data = @{
+                @"id": *uuid,
+                @"goal": @(PPWebSocketGoalUnsubscribe),
+                @"subscription": @{
+                    @"id": @(type)
+                }
+            };
+            break;
+        }
+    }
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:data options:0 error:&error];
+    if (error) {
+        NSLog(@"%s Invalid format (%@): %@", __PRETTY_FUNCTION__, error, data);
+        return;
+    }
+    NSString *request = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
+#ifdef DEBUG
+    NSLog(@"%s command: %@", __PRETTY_FUNCTION__, request);
+#endif
+    if (_webSocket.readyState == SR_OPEN) {
+        [_webSocket send:request];
+    }
+}
+
+- (void)dealloc {
+    if(_webSocket) {
+        _webSocket.delegate = nil;
+    }
 }
 
 
@@ -82,7 +350,13 @@
 #endif
 	
 	if(self.delegate) {
-		[self declareConnected];
+        switch (_resourceEndpoint) {
+            case PPWebSocketResourceEndpointCamera:
+            case PPWebSocketResourceEndpointViewer:
+                [self declareConnected];
+            default:
+                break;
+        }
 		[_delegate websocketDidConnect:webSocket];
 	}
 	else {
@@ -97,7 +371,12 @@
 	
 	_webSocket.delegate = nil;
 	if(_delegate) {
-		[_delegate websocketBroken];
+        if ([_delegate respondsToSelector:@selector(websocketBroken:reason:)]) {
+            [_delegate websocketBroken:error.code reason:error.description];
+        }
+        else {
+            [_delegate websocketBroken];
+        }
 	}
 }
 
@@ -108,34 +387,22 @@
 	
 	_webSocket.delegate = nil;
 	if(_delegate) {
-		[_delegate websocketBroken];
+        if ([_delegate respondsToSelector:@selector(websocketBroken:reason:)]) {
+            [_delegate websocketBroken:code reason:reason];
+        }
+        else {
+            [_delegate websocketBroken];
+        }
 	}
 }
 
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message {
+#ifdef DEBUG
+    NSLog(@"%s message=%@",__PRETTY_FUNCTION__, message);
+#endif
 	if(_delegate) {
 		[_delegate websocket:webSocket didReceiveMessage:message];
-	}
-}
-
-/**
- * Every time we connect to the server, we have to declare our connection session ID back to the server.
- */
-- (void)declareConnected {
-	NSString *requestJson = [NSString stringWithFormat:@"{\"sessionId\":\"%@\"}", self.sessionId];
-	
-#ifdef DEBUG
-	NSLog(@"%s command: %@", __PRETTY_FUNCTION__, requestJson);
-#endif
-	
-	[_webSocket send:requestJson];
-
-}
-
-- (void)dealloc {
-	if(_webSocket) {
-		_webSocket.delegate = nil;
 	}
 }
 
@@ -182,7 +449,11 @@
             
     }
     
-    return [NSError errorWithDomain:@"StreamingAPI" code:resultCode userInfo:errorDetail];
+    if (argument != nil && ![argument isEqualToString:@""]) {
+        [errorDetail setValue:argument forKey:NSLocalizedRecoverySuggestionErrorKey];
+    }
+    
+    return [NSError errorWithDomain:@"com.peoplepowerco.lib.Peoplepower.websocket" code:resultCode userInfo:errorDetail];
 }
 
 + (NSError *)resultCodeToNSError:(NSInteger)resultCode {
@@ -216,10 +487,13 @@
         return nil;
     }
     
-    NSInteger resultCode = [[responseJson objectForKey:@"resultCode"] integerValue];
+    NSInteger resultCode = 0;
+    if ([responseJson objectForKey:@"resultCode"]) {
+        resultCode = [[responseJson objectForKey:@"resultCode"] integerValue];
+    }
     
     if(resultCode > 0) {
-        *error = [PPWebSocket resultCodeToNSError:resultCode];
+        *error = [PPWebSocket resultCodeToNSError:resultCode argument:[responseJson objectForKey:@"resultCodeMessage"]];
         return nil;
     }
     

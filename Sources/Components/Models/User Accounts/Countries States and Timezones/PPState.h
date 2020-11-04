@@ -15,22 +15,22 @@
 @property (nonatomic) PPStateId stateId;
 
 /* Name of the state */
-@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString * _Nullable name;
 
 /* Default timezone ID of state */
-@property (nonatomic, strong) NSString *timezoneId;
+@property (nonatomic, strong) NSString * _Nullable timezoneId;
 
 /* Abbreviation */
-@property (nonatomic, strong) NSString *abbr;
+@property (nonatomic, strong) NSString * _Nullable abbr;
 
 /* State ANSI code */
-@property (nonatomic, strong) NSString *code;
+@property (nonatomic, strong) NSString * _Nullable code;
 
 /* True for the country or state correlated with the current user IP address */
 @property (nonatomic) PPPreferredState preferred;
 
-- (id)initWithStateId:(PPStateId)stateId name:(NSString *)name timezoneId:(NSString *)timezoneId abbr:(NSString *)abbr code:(NSString *)code preferred:(PPPreferredState)preferred;
+- (id _Nullable )initWithStateId:(PPStateId)stateId name:(NSString * _Nullable )name timezoneId:(NSString * _Nullable )timezoneId abbr:(NSString * _Nullable )abbr code:(NSString * _Nullable )code preferred:(PPPreferredState)preferred;
 
-+ (PPState *)initWithDictionary:(NSDictionary *)stateDict;
++ (PPState * _Nullable )initWithDictionary:(NSDictionary * _Nullable )stateDict;
 
 @end

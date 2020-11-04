@@ -18,6 +18,7 @@
 
 __strong static PPCloudEngine *_sharedDefaultObject = nil;
 __strong static PPCloudEngine *_sharedAppObject = nil;
+__strong static PPCloudEngine *_sharedAppWebsocketObject = nil;
 __strong static PPCloudEngine *_sharedAppStrippedObject = nil;
 __strong static PPCloudEngine *_sharedAdminObject = nil;
 __strong static PPCloudEngine *_sharedProxyObject = nil;
@@ -38,6 +39,14 @@ __strong static PPCloudEngine *_sharedReportObject = nil;
         return _sharedAppObject;
     }
     return _sharedAppObject;
+}
+
++ (PPCloudEngine *)sharedAppWebsocketEngine {
+    if(_sharedAppWebsocketObject == nil || [_sharedAppWebsocketObject getBaseURL].absoluteString == nil || [[_sharedAppWebsocketObject getBaseURL].absoluteString rangeOfString:[PPUrl appWebsocketAPIServerURLString]].location == NSNotFound) {
+        _sharedAppWebsocketObject = [[self alloc] initSingleton:PPCloudEngineTypeAppWebsocket];
+        return _sharedAppWebsocketObject;
+    }
+    return _sharedAppWebsocketObject;
 }
 
 + (PPCloudEngine *)sharedAppStrippedEngine {
@@ -98,6 +107,9 @@ __strong static PPCloudEngine *_sharedReportObject = nil;
     switch (type) {
         case PPCloudEngineTypeApp:
             urlString = [NSString stringWithFormat:@"%@/cloud/json", [PPUrl appAPIServerURLString]];
+            break;
+        case PPCloudEngineTypeAppWebsocket:
+            urlString = [PPUrl appWebsocketAPIServerURLString];
             break;
         case PPCloudEngineTypeAppStripped:
             urlString = [NSString stringWithFormat:@"%@/cloud", [PPUrl appAPIServerURLString]];

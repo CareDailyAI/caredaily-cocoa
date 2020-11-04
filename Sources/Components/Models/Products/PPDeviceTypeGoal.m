@@ -17,7 +17,7 @@ NSString *DEVICE_TYPE_GOAL_CATEGORY_WELLNESS = @"W";
 
 @implementation PPDeviceTypeGoal
 
-- (id)initWithId:(PPDeviceTypeGoalId)goalId name:(NSString *)name desc:(NSString *)desc categories:(PPDeviceTypeGoalCategories)categories deviceUsage:(PPDeviceTypeGoalDeviceUsage)deviceUsage suggestions:(NSArray *)suggestions {
+- (id)initWithId:(PPDeviceTypeGoalId)goalId name:(NSString *)name desc:(NSString *)desc categories:(PPDeviceTypeGoalCategories)categories deviceUsage:(PPDeviceTypeGoalDeviceUsage)deviceUsage suggestions:(NSArray *)suggestions spaces:(NSArray *)spaces {
     self = [super init];
     if(self) {
         self.goalId = goalId;
@@ -26,6 +26,7 @@ NSString *DEVICE_TYPE_GOAL_CATEGORY_WELLNESS = @"W";
         self.categories = categories;
         self.deviceUsage = deviceUsage;
         self.suggestions = suggestions;
+        self.spaces = spaces;
     }
     return self;
 }
@@ -52,8 +53,15 @@ NSString *DEVICE_TYPE_GOAL_CATEGORY_WELLNESS = @"W";
             [suggestions addObject:suggestion];
         }
     }
+    NSMutableArray *spaces;
+    if ([goalDict objectForKey:@"spaces"]) {
+        spaces = [[NSMutableArray alloc] init];
+        for (NSArray *types in [goalDict objectForKey:@"spaces"]) {
+            [spaces addObject:[PPDeviceTypeGoalSpaceTypes initWithArray:types]];
+        }
+    }
     
-    PPDeviceTypeGoal *goal = [[PPDeviceTypeGoal alloc] initWithId:goalId name:name desc:desc categories:categories deviceUsage:deviceUsage suggestions:suggestions];
+    PPDeviceTypeGoal *goal = [[PPDeviceTypeGoal alloc] initWithId:goalId name:name desc:desc categories:categories deviceUsage:deviceUsage suggestions:suggestions spaces:spaces];
     return goal;
 }
 
@@ -88,6 +96,22 @@ NSString *DEVICE_TYPE_GOAL_CATEGORY_WELLNESS = @"W";
     if(goal.deviceUsage != PPDeviceTypeGoalDeviceUsageNone) {
         _deviceUsage = goal.deviceUsage;
     }
+}
+
+@end
+
+@implementation PPDeviceTypeGoalSpaceTypes
+
+- (id)initWithTypes:(NSArray *)types {
+    self = [super init];
+    if (self) {
+        self.types = types;
+    }
+    return self;
+}
+
++ (PPDeviceTypeGoalSpaceTypes *)initWithArray:(NSArray *)types {
+    return [[PPDeviceTypeGoalSpaceTypes alloc] initWithTypes:types];
 }
 
 @end

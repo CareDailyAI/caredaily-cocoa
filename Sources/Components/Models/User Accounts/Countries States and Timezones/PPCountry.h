@@ -14,19 +14,19 @@
 @interface PPCountry : NSObject <NSCopying>
 
 @property (nonatomic) PPCountryId countryId;
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *countryCode;
-@property (nonatomic, strong) NSString *currencyCode;
-@property (nonatomic, strong) NSString *currencySymbol;
-@property (nonatomic, strong) NSString *zipFormat;
-@property (nonatomic, strong) NSString *zipName;
-@property (nonatomic, strong) NSString *stateName;
+@property (nonatomic, strong) NSString * _Nullable name;
+@property (nonatomic, strong) NSString * _Nullable countryCode;
+@property (nonatomic, strong) NSString * _Nullable currencyCode;
+@property (nonatomic, strong) NSString * _Nullable currencySymbol;
+@property (nonatomic, strong) NSString * _Nullable zipFormat;
+@property (nonatomic, strong) NSString * _Nullable zipName;
+@property (nonatomic, strong) NSString * _Nullable stateName;
 @property (nonatomic) PPPreferredCountry preferred;
-@property (nonatomic, strong) NSArray *timezones;
-@property (nonatomic, strong) NSArray *states;
+@property (nonatomic, strong) NSArray * _Nullable timezones;
+@property (nonatomic, strong) NSArray * _Nullable states;
 
-- (id)initWithCountryId:(PPCountryId)countryId name:(NSString *)name countryCode:(NSString *)countryCode currencyCode:(NSString *)currencyCode currencySymbol:(NSString *)currencySymbol zipFormat:(NSString *)zipFormat zipName:(NSString *)zipName stateName:(NSString *)stateName preferred:(PPPreferredCountry)preferred timezones:(NSArray *)timezones states:(NSArray *)states;
+- (id _Nullable )initWithCountryId:(PPCountryId)countryId name:(NSString *_Nullable)name countryCode:(NSString *_Nullable)countryCode currencyCode:(NSString *_Nullable)currencyCode currencySymbol:(NSString *_Nullable)currencySymbol zipFormat:(NSString *_Nullable)zipFormat zipName:(NSString *_Nullable)zipName stateName:(NSString *_Nullable)stateName preferred:(PPPreferredCountry)preferred timezones:(NSArray *_Nullable)timezones states:(NSArray *_Nullable)states;
 
-+ (PPCountry *)initWithDictionary:(NSDictionary *)countryDict;
++ (PPCountry *_Nullable)initWithDictionary:(NSDictionary *_Nullable)countryDict;
 
 @end

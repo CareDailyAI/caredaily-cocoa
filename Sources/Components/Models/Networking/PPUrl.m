@@ -118,6 +118,20 @@
     return serverURLString;
 }
 
++ (NSString *)appWebsocketAPIServerURLString {
+    PPCloudConnectivityServer *server;
+    for(PPCloudConnectivityServer *defaultServer in [PPUrl getCustomCloud].servers) {
+        if([defaultServer.type isEqualToString:CLOUD_CONNECTIVITY_SERVER_TYPE_WS_API]) {
+            server = defaultServer;
+            break;
+        }
+    }
+    
+    NSString *serverURLString = [server URLString];
+    
+    return serverURLString;
+}
+
 + (NSString *)webappServerURLString {
     PPCloudConnectivityServer *webAppServer;
     for(PPCloudConnectivityServer *server in [self getCustomCloud].servers) {

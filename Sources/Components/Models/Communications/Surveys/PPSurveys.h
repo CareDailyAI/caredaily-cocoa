@@ -1,6 +1,6 @@
 //
 //  PPSurveys.h
-//  PPiOSCore
+//  Peoplepower
 //
 //  Created by Destry Teeter on 7/6/20.
 //  Copyright © 2020 People Power Company. All rights reserved.

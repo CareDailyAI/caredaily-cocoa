@@ -126,6 +126,7 @@ __strong static PPUser *_currentUser = nil;
 #endif
 #endif
     NSString *username = [UICKeyChainStore keyChainStore][@"user.username"];
+    NSString *altUsername = [UICKeyChainStore keyChainStore][@"user.altUsername"];
     NSString *sessionKey = [UICKeyChainStore keyChainStore][[NSString stringWithFormat:@"user.sessionKey:%@", username]];
     
     if(sessionKey) {
@@ -138,6 +139,9 @@ __strong static PPUser *_currentUser = nil;
         }
         if(![username isEqualToString:_currentUser.username]) {
             _currentUser.username = username;
+        }
+        if(![altUsername isEqualToString:_currentUser.altUsername]) {
+            _currentUser.altUsername = altUsername;
         }
         
         [PPCloudEngine setUser:_currentUser];
@@ -209,6 +213,7 @@ __strong static PPUser *_currentUser = nil;
     }
     [UICKeyChainStore keyChainStore][[NSString stringWithFormat:@"user.sessionKey:%@", _currentUser.username]] = _currentUser.sessionKey;
     [UICKeyChainStore keyChainStore][@"user.username"] = _currentUser.username;
+    [UICKeyChainStore keyChainStore][@"user.altUsername"] = _currentUser.altUsername;
     
     [PPCloudEngine setUser:_currentUser];
     
@@ -253,6 +258,7 @@ __strong static PPUser *_currentUser = nil;
         [_sharedUsers removeAllObjects];
         [UICKeyChainStore keyChainStore][[NSString stringWithFormat:@"user.sessionKey:%@", _currentUser.username]] = nil;
         [UICKeyChainStore keyChainStore][@"user.username"] = nil;
+        [UICKeyChainStore keyChainStore][@"user.altUsername"] = nil;
         [UICKeyChainStore keyChainStore][@"user.locationId"] = nil;
         _currentUser = nil;
         [PPCloudEngine setUser:nil];
@@ -976,6 +982,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
             [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"phone" value:[[phone stringByReplacingOccurrencesOfString:@" " withString:@""] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]]];
         }
         components.queryItems = queryItems;
+        components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
 
         dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.getUserByEmails()", DISPATCH_QUEUE_SERIAL);
         
@@ -1407,6 +1414,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
         [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"endDate" value:[PPNSDate apiFriendStringFromDate:endDate]]];
     }
     components.queryItems = queryItems;
+    components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
     
     dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.locationSceneHistory()", DISPATCH_QUEUE_SERIAL);
     
@@ -1586,6 +1594,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     }
     [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"username" value:[[username stringByReplacingOccurrencesOfString:@" " withString:@""] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]]];
     components.queryItems = queryItems;
+    components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
     
     dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.recoverPassword()", DISPATCH_QUEUE_SERIAL);
     
@@ -1933,9 +1942,10 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
  * @param name NSString Code name.  Ignored when including locationId.
  * @param deviceId NSString Device ID
  * @param setExpiry PPUserCodeExpiry Expiry in seconds
+ * @param verify PPUserCodeVerified
  * @param callback NSErrorBlock Error callback block
  **/
-+ (void)putUserCode:(PPUserCodeType)type code:(NSString * _Nullable )code locationId:(PPLocationId)locationId name:(NSString * _Nullable )name deviceId:(NSString * _Nullable )deviceId setExpiry:(PPUserCodeExpiry)setExpiry callback:(PPErrorBlock _Nonnull )callback {
++ (void)putUserCode:(PPUserCodeType)type code:(NSString * _Nullable )code locationId:(PPLocationId)locationId name:(NSString * _Nullable )name deviceId:(NSString * _Nullable )deviceId setExpiry:(PPUserCodeExpiry)setExpiry verify:(PPUserCodeVerified)verify callback:(PPErrorBlock _Nonnull)callback {
     NSAssert1(type != -1, @"%s invalid type", __FUNCTION__);
     NSAssert1(code != nil || deviceId != nil, @"%s missing code or device ID", __FUNCTION__);
     NSAssert1(locationId != PPLocationIdNone || name != nil, @"%s missing locationId or name", __FUNCTION__);
@@ -1962,6 +1972,9 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     }
     if (setExpiry != PPUserCodeExpiryNone) {
         data[@"setExpiry"] = @(setExpiry);
+    }
+    if (verify != PPUserCodeVerifiedNone) {
+        data[@"verify"] = @(verify);
     }
     
     NSError *dataError;
@@ -2004,9 +2017,13 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
         });
     }];
 }
++ (void)putUserCode:(PPUserCodeType)type code:(NSString * _Nullable )code locationId:(PPLocationId)locationId name:(NSString * _Nullable )name deviceId:(NSString * _Nullable )deviceId setExpiry:(PPUserCodeExpiry)setExpiry callback:(PPErrorBlock _Nonnull )callback {
+    NSLog(@"%s deprecated, use +putUserCode:code:locationId:name:deviceId:setExpiry:verify:callback:", __FUNCTION__);
+    [PPUserAccounts putUserCode:type code:code locationId:locationId name:name deviceId:deviceId setExpiry:PPUserCodeExpiryNone verify:PPUserCodeVerifiedNone callback:callback];
+}
 + (void)putUserCode:(PPUserCodeType)type code:(NSString * _Nonnull )code locationId:(PPLocationId)locationId name:(NSString * _Nullable )name callback:(PPErrorBlock _Nonnull )callback __attribute__((deprecated)) {
-    NSLog(@"%s deprecated, use +deleteLocationUser:userIds:callback:", __FUNCTION__);
-    [PPUserAccounts putUserCode:type code:code locationId:locationId name:name deviceId:nil setExpiry:PPUserCodeExpiryNone callback:callback];
+    NSLog(@"%s deprecated, use +putUserCode:code:locationId:name:deviceId:setExpiry:verify:callback:", __FUNCTION__);
+    [PPUserAccounts putUserCode:type code:code locationId:locationId name:name deviceId:nil setExpiry:PPUserCodeExpiryNone verify:PPUserCodeVerifiedNone callback:callback];
 }
 
 /**
@@ -2071,7 +2088,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     
     NSURLComponents *components = [NSURLComponents componentsWithURL:[NSURL URLWithString:@"userCodes"] resolvingAgainstBaseURL:NO];
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.deleteTag()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.getUserCodes()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -2702,6 +2719,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
         }
     }
     components.queryItems = queryItems;
+    components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
     
     dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.getNarrative()", DISPATCH_QUEUE_SERIAL);
     
@@ -2778,6 +2796,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
         [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"overwrite" value:(overwrite == PPUserAccountsStateOverwriteTrue) ? @"true" : @"false"]];
     }
     components.queryItems = queryItems;
+    components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
     
     NSError *dataError;
     NSData *body = [NSJSONSerialization dataWithJSONObject:@{@"value": data} options:0 error:&dataError];
@@ -2840,6 +2859,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     NSMutableArray *queryItems = @[].mutableCopy;
     [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"name" value:name]];
     components.queryItems = queryItems;
+    components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
     
     dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.getState()", DISPATCH_QUEUE_SERIAL);
     
@@ -2896,6 +2916,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
         [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"name" value:name]];
     }
     components.queryItems = queryItems;
+    components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
     
     dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.getState()", DISPATCH_QUEUE_SERIAL);
     
@@ -2978,6 +2999,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
         [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"overwrite" value:(overwrite == PPUserAccountsStateOverwriteTrue) ? @"true" : @"false"]];
     }
     components.queryItems = queryItems;
+    components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
     
     NSError *dataError;
     NSData *body = [NSJSONSerialization dataWithJSONObject:@{@"value": data} options:0 error:&dataError];
@@ -3045,6 +3067,7 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
         [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"endDate" value:[PPNSDate apiFriendStringFromDate:endDate]]];
     }
     components.queryItems = queryItems;
+    components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
     
     dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.getTimeStates()", DISPATCH_QUEUE_SERIAL);
     

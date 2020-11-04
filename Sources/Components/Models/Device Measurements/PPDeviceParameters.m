@@ -30,6 +30,7 @@ NSString *SWING_MODE_VALUES = @"swingModeValues";
 
 // Temperature
 NSString *DEG_C = @"degC";
+NSString *INTERNAL_DEG_C = @"internalDegC";
 
 // Humidity
 NSString *RELATIVE_HUMIDITY = @"relativeHumidity";
@@ -58,6 +59,7 @@ NSString *WATER_LEAK = @"waterLeak";
 
 // Lock
 NSString *LOCK_STATUS = @"lockStatus";
+NSString *LOCK_STATUS_ALARM = @"lockStatusAlarm";
 
 // Button
 NSString *BUTTON_STATUS = @"buttonStatus";
@@ -163,12 +165,16 @@ NSString *NOTIFICATION = @"ppc.notification";
     NSString *returnString;
     NSString *value;
     NSInteger deviceTypeId = PPDeviceTypeIdNone;
+    NSString *index;
     if(options) {
         if([options valueForKey:DEVICE_PARAMETER_KEY_VALUE]) {
             value = [options valueForKey:DEVICE_PARAMETER_KEY_VALUE];
         }
         if([options valueForKey:DEVICE_PARAMETER_KEY_DEVICE_TYPE_ID]) {
             deviceTypeId = ((NSString *)[options valueForKey:DEVICE_PARAMETER_KEY_DEVICE_TYPE_ID]).integerValue;
+        }
+        if([options valueForKey:DEVICE_PARAMETER_KEY_INDEX]) {
+            index = [options valueForKey:DEVICE_PARAMETER_KEY_INDEX];
         }
     }
     
@@ -403,6 +409,15 @@ NSString *NOTIFICATION = @"ppc.notification";
             returnString = value;
         }
     }
+    else if([parameter isEqualToString:INTERNAL_DEG_C]) {
+        if(!value) {
+            returnString = NSLocalizedString(@"Internal Temperature", @"Label - Internal Temperature");
+        }
+        else {
+            // Allow controllers to handle setting temperature information
+            returnString = value;
+        }
+    }
     else if([parameter isEqualToString:COOLING_SETPOINT]) {
         if(!value) {
             returnString = NSLocalizedString(@"Cooling Setpoint", @"Label - Cooling Setpoint");
@@ -518,14 +533,46 @@ NSString *NOTIFICATION = @"ppc.notification";
         else {
             PPDeviceParametersLockStatus lockStatus = (PPDeviceParametersLockStatus)value.integerValue;
             switch (lockStatus) {
-                case PPDeviceParametersLockStatusNotFullyLocked:
-                    returnString = NSLocalizedString(@"Not Fully Locked", @"Detail Label - Not Fully Locked");
-                    break;
                 case PPDeviceParametersLockStatusLocked:
                     returnString = NSLocalizedString(@"Locked", @"Detail Label - Locked");
                     break;
                 case PPDeviceParametersLockStatusUnlocked:
                     returnString = NSLocalizedString(@"Unlocked", @"Detail Label - Unlocked");
+                    break;
+                    
+                default:
+                    returnString = @"undefined";
+                    break;
+            }
+        }
+    }
+    else if([parameter isEqualToString:LOCK_STATUS_ALARM]) {
+        if(!value) {
+            returnString = NSLocalizedString(@"Lock Status Alarm", @"Label - Lock Status Alarm");
+        }
+        else {
+            PPDeviceParametersLockStatusAlarm lockStatusAlarm = (PPDeviceParametersLockStatusAlarm)value.integerValue;
+            switch (lockStatusAlarm) {
+                case PPDeviceParametersLockStatusAlarmOK:
+                    returnString = NSLocalizedString(@"OK", @"Detail Label - OK");
+                    break;
+                case PPDeviceParametersLockStatusAlarmDeadboltJammed:
+                    returnString = NSLocalizedString(@"Deadbolt Jammed", @"Detail Label - Deadbolt Jammed");
+                    break;
+                case PPDeviceParametersLockStatusAlarmLockResetFactoryDefaults:
+                    returnString = NSLocalizedString(@"Lock Reset to Factory Defaults", @"Detail Label - Lock Reset to Factory Defaults");
+                    break;
+                case PPDeviceParametersLockStatusAlarmRFModulePowerCycled:
+                    returnString = NSLocalizedString(@"RF Module Power Cycled", @"Detail Label - RF Module Power Cycled");
+                    break;
+                case PPDeviceParametersLockStatusAlarmWrongCodeEntryLimit:
+                    returnString = NSLocalizedString(@"Wrong Code Entry Limit", @"Detail Label - Wrong Code Entry Limit");
+                    break;
+                case PPDeviceParametersLockStatusAlarmFrontEscutcheonRemoved:
+                    returnString = NSLocalizedString(@"Front Escutcheon Removed", @"Detail Label - Front Escutcheon Removed");
+                    break;
+                case PPDeviceParametersLockStatusAlarmDoorForcedOpen:
+                    returnString = NSLocalizedString(@"Door Forced Open", @"Detail Label - Door Forced Open");
                     break;
                     
                 default:
@@ -1767,12 +1814,19 @@ NSString *NOTIFICATION = @"ppc.notification";
 }
 
 + (NSDictionary *)parameterOptionsWithValue:(NSString *)value deviceTypeId:(NSInteger)deviceTypeId {
+    return [PPDeviceParameters parameterOptionsWithValue:value deviceTypeId:deviceTypeId index:nil];
+}
+
++ (NSDictionary *)parameterOptionsWithValue:(NSString *)value deviceTypeId:(NSInteger)deviceTypeId index:(NSString *)index {
     NSMutableDictionary *options = [[NSMutableDictionary alloc] initWithCapacity:2];
     if(value) {
         [options setValue:value forKey:DEVICE_PARAMETER_KEY_VALUE];
     }
     if(deviceTypeId != PPDeviceTypeIdNone) {
         [options setValue:[NSNumber numberWithInteger:deviceTypeId] forKey:DEVICE_PARAMETER_KEY_DEVICE_TYPE_ID];
+    }
+    if(index) {
+        [options setValue:index forKey:DEVICE_PARAMETER_KEY_INDEX];
     }
     return options;
 }
@@ -1810,6 +1864,7 @@ NSString *NOTIFICATION = @"ppc.notification";
     supportsHistoricalMeasurements |= [parameter isEqualToString:COOLING_SETPOINT];
     supportsHistoricalMeasurements |= [parameter isEqualToString:HEATING_SETPOINT];
     supportsHistoricalMeasurements |= [parameter isEqualToString:DEG_C];
+    supportsHistoricalMeasurements |= [parameter isEqualToString:INTERNAL_DEG_C];
     supportsHistoricalMeasurements |= [parameter isEqualToString:RELATIVE_HUMIDITY];
     supportsHistoricalMeasurements |= [parameter isEqualToString:POWER];
     supportsHistoricalMeasurements |= [parameter isEqualToString:ENERGY];

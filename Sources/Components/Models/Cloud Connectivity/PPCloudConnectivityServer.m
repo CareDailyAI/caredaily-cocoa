@@ -13,6 +13,7 @@ NSString *CLOUD_CONNECTIVITY_SERVER_TYPE_DEVICE_IO = @"deviceio";
 NSString *CLOUD_CONNECTIVITY_SERVER_TYPE_DEVICE_WS = @"devicews";
 NSString *CLOUD_CONNECTIVITY_SERVER_TYPE_STREAMING = @"streaming";
 NSString *CLOUD_CONNECTIVITY_SERVER_TYPE_WEB_APP = @"webapp";
+NSString *CLOUD_CONNECTIVITY_SERVER_TYPE_WS_API = @"wsapi";
 
 @implementation PPCloudConnectivityServer
 
@@ -65,6 +66,11 @@ NSString *CLOUD_CONNECTIVITY_SERVER_TYPE_WEB_APP = @"webapp";
 #pragma mark - Helper methods
 
 - (NSString *)URLString {
+    NSString *protocol = @"http";
+    if ([self.type isEqualToString:CLOUD_CONNECTIVITY_SERVER_TYPE_WS_API]) {
+        protocol = @"ws";
+    }
+    
     NSString *serverURLString = [NSString stringWithFormat:@"http%@://%@%@%@", (self.ssl == PPCloudConnectivitySSLTrue) ? @"s": @"", self.host, (self.port) ? [NSString stringWithFormat:@":%li", (long)self.port] : @"", (self.path) ? self.path : @""];
     return serverURLString;
 }

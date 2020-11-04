@@ -6,6 +6,7 @@
 //
 
 #import "PPNetworkUtilities.h"
+#import "PPBaseModel.h"
 
 @implementation PPNetworkUtilities
 

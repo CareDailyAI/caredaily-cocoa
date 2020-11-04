@@ -212,17 +212,21 @@ typedef NS_OPTIONS(NSInteger, PPPaidServicesHiddenPrices) {
 + (void)upgradePurchasedPlan:(PPServicePlanSoftwareSubscriptionUserPlanId)userPlanId targetPlanId:(PPServicePlanId)targetPlanId userId:(PPUserId)userId services:(NSArray * _Nullable )services bots:(NSArray * _Nullable )bots callback:(PPErrorBlock _Nonnull )callback;
 + (void)upgradePurchasedPlan:(PPServicePlanSoftwareSubscriptionUserPlanId)userPlanId targetPlanId:(PPServicePlanId)targetPlanId nonce:(NSString * _Nonnull )nonce callback:(PPErrorBlock _Nonnull )callback __attribute__((deprecated));
 
-#pragma mark - User subscriptions
+#pragma mark - Location Service Plans
 
 /**
- * Get user subscriptions.
- * This API returns all service plans purchased by a user or manually assigned to him.
+ * Get location service plans.
+ * This API returns all service plans on specific location or purchased by a user or manually assigned to him.
+ * Either locationId or userId parameters must be used.
  *
+ * @param locationId PPLocationId Get plan for this location
  * @param status PPServicePlanStatus Service Plan status
- * @param userId PPUserId Used by organization administrators to specify user
+ * @param userPlanId PPServicePlanId Get specific service by plan ID
+ * @param userId PPUserId Ger plan by this user. Used by organization administrators.
  * @param callback PPPaidServicesSubscriptionsCallback Subscriptions callback with list of purchased subscriptions
  **/
-+ (void)getUserSubscriptions:(PPServicePlanStatus)status userId:(PPUserId)userId callback:(PPPaidServicesSubscriptionsCallback _Nonnull )callback;
++ (void)getLocationServicePlans:(PPLocationId)locationId status:(PPServicePlanStatus)status userPlanId:(PPServicePlanId)userPlanId userId:(PPUserId)userId callback:(PPPaidServicesSubscriptionsCallback _Nonnull )callback;
++ (void)getUserSubscriptions:(PPServicePlanStatus)status userId:(PPUserId)userId callback:(PPPaidServicesSubscriptionsCallback _Nonnull )callback __attribute__ ((deprecated));
 
 #pragma mark - Transactions
 

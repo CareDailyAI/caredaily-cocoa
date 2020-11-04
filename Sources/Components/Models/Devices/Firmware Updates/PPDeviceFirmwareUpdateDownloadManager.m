@@ -8,10 +8,20 @@
 
 #import "PPDeviceFirmwareUpdateDownloadManager.h"
 #import "PPDeviceFirmwareUpdateJob.h"
+
+#if !TARGET_OS_WATCH
+#import <AssetsLibrary/ALAsset.h>
+#endif
+
 #import <AVFoundation/AVFoundation.h>
 
 @interface PPDeviceFirmwareUpdateDownloadManager()
 @property (nonatomic, strong) PPHTTPOperation *downloadOperation;
+
+#if !TARGET_OS_WATCH
+@property (nonatomic, strong) AVAssetExportSession *assetExport;
+#endif
+
 @property (nonatomic, strong) NSTimer *exportProgressTimer;
 @end
 

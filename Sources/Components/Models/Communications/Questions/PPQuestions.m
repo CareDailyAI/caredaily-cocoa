@@ -396,6 +396,7 @@ __strong static NSMutableDictionary*_sharedQuestions = nil;
         [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"endDate" value:[PPNSDate apiFriendStringFromDate:endDate]]];
     }
     components.queryItems = queryItems;
+    components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
     
     PPCloudEngine *cloudEngine = [PPCloudEngine sharedAppEngine];
     dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.communications.questions.getQuestions()", DISPATCH_QUEUE_SERIAL);

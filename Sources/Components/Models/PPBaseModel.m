@@ -2,7 +2,7 @@
 //  PPBaseModel.m
 //  Peoplepower
 //
-//  Copyright (c) 2020 People Power. All rights reserved.
+//  Copyright © 2020 People Power Company. All rights reserved.
 //
 
 #import "PPBaseModel.h"
@@ -10,7 +10,15 @@
 
 PPBasicBlock _loginBlock;
 
+static NSString *kTrackingKey = @"com.peoplepowerco.lib.Peoplepower.trackingDisabled";
+
 @implementation PPBaseModel
+
++ (void)disableTracking:(BOOL)disabled {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setBool:disabled forKey:kTrackingKey];
+    [userDefaults synchronize];
+}
 
 + (NSString *)appName:(BOOL)apiFriendly {
     
@@ -48,6 +56,25 @@ PPBasicBlock _loginBlock;
     return [PPBaseModel appName:NO];
 }
 
++ (NSString *)pilotFallbackAppName:(BOOL)apiFriendly {
+    
+    NSString *appName = (NSString *)[PPAppResources getPlistEntry:PP_PLIST_KEY_CONFIG_PILOT_FALLBACK_APP_NAME filename:PP_PLIST_FILE_CONFIG];
+    if(!appName || !apiFriendly) {
+        appName = [PPBaseModel appName:apiFriendly];
+    }
+    
+    return appName;
+}
+
++ (NSString *)pilotFallbackBrandName {
+    NSString *brand = (NSString *)[PPAppResources getPlistEntry:PP_PLIST_KEY_CONFIG_PILOT_FALLBACK_BRAND filename:PP_PLIST_FILE_CONFIG];
+    if(!brand) {
+        brand = [PPBaseModel brandName];
+    }
+    return brand;
+}
+
+
 + (void)setLoginNeededBlock:(PPBasicBlock)loginBlock {
 	_loginBlock = [loginBlock copy];
 }
@@ -72,6 +99,9 @@ PPBasicBlock _loginBlock;
 
 + (NSError *)resultCodeToNSError:(NSInteger)resultCode originatingClass:(NSString *)originatingClass argument:(NSString *)argument {
 	NSMutableDictionary *errorDetail = [NSMutableDictionary dictionary];
+    
+    // Explicitly prevent tracking of some errors
+    BOOL track = ![[NSUserDefaults standardUserDefaults] boolForKey:kTrackingKey];
     
 	switch(resultCode) {
 		case 0:
@@ -122,6 +152,7 @@ PPBasicBlock _loginBlock;
 			[errorDetail setValue:NSLocalizedString(@"Wrong consumer ID", @"Error - Wrong consumer ID") forKey:NSLocalizedDescriptionKey];
 			break;
 		case 16: // User account is locked out
+            track = NO;
 			[errorDetail setValue:NSLocalizedString(@"Account locked", @"Error - Account locked") forKey:NSLocalizedDescriptionKey];
 			break;
 		case 17: // A passcode, which has been sent to the user, is required to sign in
@@ -263,15 +294,19 @@ PPBasicBlock _loginBlock;
 			[errorDetail setValue:NSLocalizedString(@"Having trouble connecting to Bluetooth!", @"Error - Having trouble connecting to Bluetooth!") forKey:NSLocalizedDescriptionKey];
 			break;
 		case 10012:
+            track = NO;
 			[errorDetail setValue:NSLocalizedString(@"This device is too old to support Bluetooth LE", @"Error - This device is too old to support Bluetooth LE") forKey:NSLocalizedDescriptionKey];
 			break;
         case 10013:
+            track = NO;
             [errorDetail setValue:[NSString stringWithFormat:NSLocalizedString(@"Please authorize %@ to access Bluetooth LE", @"Error - Please authorize {App Name} to access Bluetooth LE"), [PPBaseModel appName:NO]] forKey:NSLocalizedDescriptionKey];
 			break;
         case 10014:
+            track = NO;
 			[errorDetail setValue:NSLocalizedString(@"Bluetooth is currently powered off. Please go into your Settings and turn on Bluetooth.", @"Error - Bluetooth is currently powered off. Please go into your Settings and turn on Bluetooth.") forKey:NSLocalizedDescriptionKey];
 			break;
         case 10015:
+            track = NO;
 			[errorDetail setValue:NSLocalizedString(@"Waiting for Bluetooth to power up...", @"Error - Waiting for Bluetooth to power up...") forKey:NSLocalizedDescriptionKey];
 			break;
 		case 10016:
@@ -364,7 +399,7 @@ PPBasicBlock _loginBlock;
             [errorDetail setValue:NSLocalizedString(@"This app requires access to your contacts to function properly. Please visit to the \"Privacy\" section in the iPhone Settings app.", @"Error - This app requires access to your contacts to function properly. Please visit to the \"Privacy\" section in the iPhone Settings app.") forKey:NSLocalizedDescriptionKey];
             break;
         case 20001:
-            [errorDetail setValue:NSLocalizedString(@"There was a problem referencing your Address Book.", @"Error - There was a problem referencing your Address Book.") forKey:NSLocalizedDescriptionKey];
+            [errorDetail setValue:NSLocalizedString(@"Unable to access your address book.", @"Error - Unable to access your address book.") forKey:NSLocalizedDescriptionKey];
             break;
         case 20002:
             [errorDetail setValue:NSLocalizedString(@"An error occurred when attempting to request access to your Address Book.", @"Error - An error occurred when attempting to request access to your Address Book.") forKey:NSLocalizedDescriptionKey];
@@ -373,7 +408,7 @@ PPBasicBlock _loginBlock;
             [errorDetail setValue:NSLocalizedString(@"You can still add friends manually using \"Search email or phone\"", @"Error - You can still add friends manually using \"Search email or phone\"") forKey:NSLocalizedDescriptionKey];
             break;
         case 20004:
-            [errorDetail setValue:NSLocalizedString(@"There was a problem referencing your Address Book, please check your privacy settings.", @"Error - There was a problem referencing your Address Book, please check your privacy settings.") forKey:NSLocalizedDescriptionKey];
+            [errorDetail setValue:NSLocalizedString(@"Unable to access your address book. Please check your privacy settings.", @"Error - Unable to access your address book. Please check your privacy settings.") forKey:NSLocalizedDescriptionKey];
             break;
         case 20005:
             [errorDetail setValue:NSLocalizedString(@"There are no contacts on this device.  Tap 'Search' or 'Scan someone's bar code' to add a friend manually.", @"Error - There are no contacts on this device.  Tap 'Search' or 'Scan someone's bar code' to add a friend manually.") forKey:NSLocalizedDescriptionKey];
@@ -477,6 +512,22 @@ PPBasicBlock _loginBlock;
             [errorDetail setValue:argument forKey:NSLocalizedRecoverySuggestionErrorKey];
         }
     }
+	
+    if(track) {
+        NSMutableDictionary *properties = [[NSMutableDictionary alloc] initWithCapacity:3];
+        [properties setObject:[NSString stringWithFormat:@"%ld", (long)resultCode] forKey:@"Code"];
+        if([errorDetail objectForKey:NSLocalizedDescriptionKey] != nil) {
+            [properties setObject:[errorDetail objectForKey:NSLocalizedDescriptionKey] forKey:@"Description"];
+        }
+        if([errorDetail objectForKey:NSLocalizedRecoverySuggestionErrorKey] != nil) {
+            [properties setObject:[errorDetail objectForKey:NSLocalizedRecoverySuggestionErrorKey] forKey:@"Recovery"];
+        }
+        if (originatingClass) {
+            [properties setObject:originatingClass forKey:@"Location"];
+        }
+        
+        [PPUserAnalytics track:@"error" properties:properties logLevel:ANALYTICS_LEVEL_INFO];
+    }
 
 	return [NSError errorWithDomain:@"com.peoplepowerco.lib.Peoplepower" code:resultCode userInfo:errorDetail];
 }
@@ -515,7 +566,9 @@ PPBasicBlock _loginBlock;
             *error = [PPBaseModel resultCodeToNSError:resultCode originatingClass:originatingClass];
             return parsedObject;
         }
-        else if(resultCode == 19 && [parsedObject objectForKey:@"lockTime"] && [parsedObject objectForKey:@"lockTimeout"]) {
+        else if((resultCode == 19
+                 || resultCode == 44)
+                && [parsedObject objectForKey:@"lockTime"] && [parsedObject objectForKey:@"lockTimeout"]) {
             NSDate *lockTime = [NSDate dateWithTimeIntervalSince1970:[parsedObject[@"lockTime"] integerValue] / 1000];
             NSInteger lockTimeout = [parsedObject[@"lockTimeout"] integerValue] / 1000;
             NSInteger unlockTime = [[lockTime dateByAddingTimeInterval:lockTimeout] timeIntervalSinceNow];
@@ -525,32 +578,38 @@ PPBasicBlock _loginBlock;
             NSMutableArray *timeArray = [[NSMutableArray alloc] initWithCapacity:3];
             
             if(hours > 0) {
-                [timeArray addObject:[NSString stringWithFormat:NSLocalizedString(@"%02li hours", @""), hours]];
+                [timeArray addObject:[NSString stringWithFormat:NSLocalizedString(@"%li %@", @""), (long)hours, (hours == 1) ? NSLocalizedString(@"hour", @"") : NSLocalizedString(@"hours", @"")]];
             }
             if(minutes > 0) {
-                [timeArray addObject:[NSString stringWithFormat:NSLocalizedString(@"%02li minutes", @""), minutes]];
+                [timeArray addObject:[NSString stringWithFormat:NSLocalizedString(@"%li %@", @""), (long)minutes, (minutes == 1) ? NSLocalizedString(@"minute", @"") : NSLocalizedString(@"minutes", @"")]];
             }
             if(seconds > 0) {
-                [timeArray addObject:[NSMutableString stringWithFormat:NSLocalizedString(@"%02li seconds", @""), seconds]];
+                [timeArray addObject:[NSString stringWithFormat:NSLocalizedString(@"%li %@", @""), (long)seconds, (seconds == 1) ? NSLocalizedString(@"second", @"") : NSLocalizedString(@"seconds", @"")]];
             }
             
-            NSMutableString *timeString = [[NSMutableString alloc] initWithCapacity:0];
-            BOOL appendComma = NO;
-            for(NSString *time in timeArray) {
-                
-                if(appendComma) {
-                    [timeString appendString:NSLocalizedString(@", ", @"")];
+            NSString *argument = NSLocalizedString(@"Try again later.", @"");
+            if ([timeArray count] > 0) {
+                NSMutableString *timeString = [[NSMutableString alloc] initWithCapacity:0];
+                BOOL appendComma = NO;
+                for(NSString *time in timeArray) {
+                    
+                    if(appendComma) {
+                        [timeString appendString:NSLocalizedString(@",", @"")];
+                    }
+                    if(time != [timeArray firstObject]) {
+                        [timeString appendString:NSLocalizedString(@" ", @"")];
+                    }
+                    if ([timeArray count] > 1) {
+                        if(time == [timeArray lastObject]) {
+                            [timeString appendString:NSLocalizedString(@"and", @"")];
+                            [timeString appendString:NSLocalizedString(@" ", @"")];
+                        }
+                    }
+                    [timeString appendString:time];
+                    if([timeArray count] > 2) {
+                        appendComma = YES;
+                    }
                 }
-                if(time == [timeArray lastObject]) {
-                    [timeString appendString:NSLocalizedString(@"and ", @"")];
-                }
-                [timeString appendString:time];
-                if([timeArray count] > 2) {
-                    appendComma = YES;
-                }
-            }
-            NSString *argument;
-            if (timeString != nil) {
                 argument = [NSString stringWithFormat:NSLocalizedString(@"Try again in %@", @""), timeString];
             }
             *error = [PPBaseModel resultCodeToNSError:resultCode argument:argument];

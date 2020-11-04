@@ -114,6 +114,7 @@
         }
     }
     components.queryItems = queryItems;
+    components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
     
     dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.deviceMeasurements.getCurrentMeasurements()", DISPATCH_QUEUE_SERIAL);
     
@@ -176,9 +177,10 @@
  * @param locationId Required PPLocationId Device Location ID
  * @param comment NSString Describes why this command was made
  * @param shared PPDeviceShared Send command to a device shared in circle. If true, the location ID is not required
+ * @param commandType PPDeviceMeasurementsCommandType Command type: 0 = set, 4 = get
  * @param callback PPDeviceMeasurementsCommandsBlock Device commands callback block containing array of command responses
  **/
-+ (void)sendCommand:(NSString *)deviceId params:(NSArray *)params commandTimeout:(PPDeviceCommandTimeout)commandTimeout locationId:(PPLocationId)locationId comment:(NSString *)comment shared:(PPDeviceShared)shared callback:(PPDeviceMeasurementsCommandsBlock)callback {
++ (void)sendCommand:(NSString *)deviceId params:(NSArray *)params commandTimeout:(PPDeviceCommandTimeout)commandTimeout locationId:(PPLocationId)locationId comment:(NSString *)comment shared:(PPDeviceShared)shared commandType:(PPDeviceMeasurementsCommandType)commandType callback:(PPDeviceMeasurementsCommandsBlock _Nonnull)callback {
     NSAssert1(locationId != PPLocationIdNone, @"%s missing locationId", __FUNCTION__);
     NSAssert1(deviceId != nil, @"%s missing deviceId", __FUNCTION__);
     NSAssert1(params != nil && [params count] > 0, @"%s missing params", __FUNCTION__);
@@ -209,6 +211,9 @@
     }
     if(comment) {
         data[@"comment"] = comment;
+    }
+    if (commandType != PPDeviceMeasurementsCommandTypeNone) {
+        data[@"commandType"] = @(commandType);
     }
     
     NSError *dataError;
@@ -260,9 +265,13 @@
         });
     }];
 }
++ (void)sendCommand:(NSString *)deviceId params:(NSArray *)params commandTimeout:(PPDeviceCommandTimeout)commandTimeout locationId:(PPLocationId)locationId comment:(NSString *)comment shared:(PPDeviceShared)shared callback:(PPDeviceMeasurementsCommandsBlock)callback {
+    NSLog(@"%s deprecated. Use +sendCommand:deviceId:params:commandTimeout:locationId:comment:shared:commandType:callback:", __FUNCTION__);
+    [PPDeviceMeasurements sendCommand:deviceId params:params commandTimeout:commandTimeout locationId:locationId comment:nil shared:PPDeviceSharedNone commandType:PPDeviceMeasurementsCommandTypeNone callback:callback];
+}
 + (void)sendCommand:(NSString *)deviceId params:(NSArray *)params commandTimeout:(PPDeviceCommandTimeout)commandTimeout locationId:(PPLocationId)locationId callback:(PPDeviceMeasurementsCommandsBlock)callback {
-    NSLog(@"%s deprecated. Use +sendCommand:deviceId:params:commandTimeout:locationId:comment:shared:callback:", __FUNCTION__);
-    [PPDeviceMeasurements sendCommand:deviceId params:params commandTimeout:commandTimeout locationId:locationId comment:nil shared:PPDeviceSharedNone callback:callback];
+    NSLog(@"%s deprecated. Use +sendCommand:deviceId:params:commandTimeout:locationId:comment:shared:commandType:callback:", __FUNCTION__);
+    [PPDeviceMeasurements sendCommand:deviceId params:params commandTimeout:commandTimeout locationId:locationId comment:nil shared:PPDeviceSharedNone commandType:PPDeviceMeasurementsCommandTypeNone callback:callback];
 }
 
 #pragma mark - Multiple Device Parameters
@@ -303,6 +312,7 @@
         }
     }
     components.queryItems = queryItems;
+    components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
     
     dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.deviceMeasurements.getMeasurementsWithSearchTerms()", DISPATCH_QUEUE_SERIAL);
     
@@ -530,6 +540,7 @@
         [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"interval" value:@(interval).stringValue]];
     }
     components.queryItems = queryItems;
+    components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
     
     dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.deviceMeasurements.getHistoryOfMeasurements()", DISPATCH_QUEUE_SERIAL);
     
@@ -623,6 +634,7 @@
         [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"reduceNoise" value:(reduceNoise) ? @"true" : @"false"]];
     }
     components.queryItems = queryItems;
+    components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
               
     dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.deviceMeasurements.getLastNMeasurements()", DISPATCH_QUEUE_SERIAL);
     
@@ -702,9 +714,7 @@
         [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"deviceId" value:deviceId]];
     }
     components.queryItems = queryItems;
-    
-    
-    
+    components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
     
     dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.deviceMeasurements.getHistoryOfAlerts()", DISPATCH_QUEUE_SERIAL);
     
@@ -789,7 +799,7 @@
         data[@"brand"] = brand;
     }
     if (byEmail != PPDeviceMeasurementsDataRequestByEmailNone) {
-        data[@"email"] = (byEmail == PPDeviceMeasurementsDataRequestByEmailTrue) ? @(true) : @(false);
+        data[@"byEmail"] = (byEmail == PPDeviceMeasurementsDataRequestByEmailTrue) ? @(true) : @(false);
     }
     NSMutableArray *dataRequests = [[NSMutableArray alloc] initWithCapacity:requests.count];
     for (PPDeviceDataRequest *request in requests) {

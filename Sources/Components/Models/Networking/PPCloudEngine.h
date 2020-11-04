@@ -12,6 +12,7 @@
 typedef NS_OPTIONS(NSInteger, PPCloudEngineType) {
     PPCloudEngineTypeDefault,
     PPCloudEngineTypeApp,
+    PPCloudEngineTypeAppWebsocket,
     PPCloudEngineTypeAppStripped,
     PPCloudEngineTypeAdmin,
     PPCloudEngineTypeProxy,
@@ -26,6 +27,7 @@ typedef NS_OPTIONS(NSInteger, PPCloudEngineType) {
 
 + (PPCloudEngine *)sharedDefaultEngine;
 + (PPCloudEngine *)sharedAppEngine;
++ (PPCloudEngine *)sharedAppWebsocketEngine;
 + (PPCloudEngine *)sharedAppStrippedEngine;
 + (PPCloudEngine *)sharedAdminEngine;
 + (PPCloudEngine *)sharedProxyEngine;

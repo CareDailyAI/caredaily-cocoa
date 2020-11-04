@@ -73,8 +73,9 @@ NSString *PPDeviceTypeStoryPageStyleCalibrate = @"calibrate";
         }
         NSString *actionStoryId = [pageDict objectForKey:@"actionStoryId"];
         NSString *actionDesc = [pageDict objectForKey:@"actionDesc"];
+        NSString *actionUrl;
         
-        PPDeviceTypeStoryPageAction *action = [[PPDeviceTypeStoryPageAction alloc] initWithIndex:actionIndex type:actionType style:actionStyle storyId:actionStoryId url:nil desc:actionDesc];
+        PPDeviceTypeStoryPageAction *action = [[PPDeviceTypeStoryPageAction alloc] initWithIndex:actionIndex type:actionType style:actionStyle storyId:actionStoryId url:actionUrl desc:actionDesc];
         [actions addObject:action];
     }
     
@@ -196,7 +197,7 @@ NSString *PPDeviceTypeStoryPageStyleCalibrate = @"calibrate";
         [JSONString appendString:@"]"];
         appendComma = YES;
     }
-
+    
     if(page.displayInfo) {
         if(appendComma) {
             [JSONString appendString:@","];

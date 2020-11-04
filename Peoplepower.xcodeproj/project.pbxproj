@@ -452,6 +452,10 @@
 		6351236A213890BB003E7EAA /* PPCircleDeviceCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 63512368213890BB003E7EAA /* PPCircleDeviceCamera.m */; };
 		6351236D21389112003E7EAA /* PPCircleDevicePictureFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 6351236B21389112003E7EAA /* PPCircleDevicePictureFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6351236E21389112003E7EAA /* PPCircleDevicePictureFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6351236C21389112003E7EAA /* PPCircleDevicePictureFrame.m */; };
+		635296B32552439E00ADBC11 /* PPOrganizationObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 635296B12552439E00ADBC11 /* PPOrganizationObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		635296B42552439E00ADBC11 /* PPOrganizationObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 635296B12552439E00ADBC11 /* PPOrganizationObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		635296B52552439E00ADBC11 /* PPOrganizationObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 635296B22552439E00ADBC11 /* PPOrganizationObject.m */; };
+		635296B62552439E00ADBC11 /* PPOrganizationObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 635296B22552439E00ADBC11 /* PPOrganizationObject.m */; };
 		635680E9241863C400EAA1D8 /* PPCommunityFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 635680E7241863C400EAA1D8 /* PPCommunityFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		635680EA241863C400EAA1D8 /* PPCommunityFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 635680E8241863C400EAA1D8 /* PPCommunityFile.m */; };
 		635E3AC322C26BE600C171B0 /* PPDeviceTypeStoryPageAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 635E3AC122C26BE600C171B0 /* PPDeviceTypeStoryPageAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1202,6 +1206,8 @@
 		6351236C21389112003E7EAA /* PPCircleDevicePictureFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPCircleDevicePictureFrame.m; sourceTree = "<group>"; };
 		6352965C2552356D00ADBC11 /* input_watchOS.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = input_watchOS.xcfilelist; sourceTree = "<group>"; };
 		6352965D2552356D00ADBC11 /* output_watchOS.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = output_watchOS.xcfilelist; sourceTree = "<group>"; };
+		635296B12552439E00ADBC11 /* PPOrganizationObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPOrganizationObject.h; sourceTree = "<group>"; };
+		635296B22552439E00ADBC11 /* PPOrganizationObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPOrganizationObject.m; sourceTree = "<group>"; };
 		635680E7241863C400EAA1D8 /* PPCommunityFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPCommunityFile.h; sourceTree = "<group>"; };
 		635680E8241863C400EAA1D8 /* PPCommunityFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPCommunityFile.m; sourceTree = "<group>"; };
 		635E3AC122C26BE600C171B0 /* PPDeviceTypeStoryPageAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPDeviceTypeStoryPageAction.h; sourceTree = "<group>"; };
@@ -2706,6 +2712,8 @@
 				63D39350204F441E00041C1A /* PPOrganization.m */,
 				63D39353204F441F00041C1A /* PPOrganizationGroup.h */,
 				63D39352204F441F00041C1A /* PPOrganizationGroup.m */,
+				635296B12552439E00ADBC11 /* PPOrganizationObject.h */,
+				635296B22552439E00ADBC11 /* PPOrganizationObject.m */,
 			);
 			path = Organization;
 			sourceTree = "<group>";
@@ -3154,6 +3162,7 @@
 				630BDCFA24B3AA630035D8B3 /* PPDevicePictureFrameAlert.h in Headers */,
 				630BDCEC24B3A6FD0035D8B3 /* PPCircleMember.h in Headers */,
 				630BDD8E24B3AAF50035D8B3 /* PPEnergyManagementDeviceUsageAggregated.h in Headers */,
+				635296B42552439E00ADBC11 /* PPOrganizationObject.h in Headers */,
 				630BDD2E24B3AAC20035D8B3 /* PPNotificationEmailMessage.h in Headers */,
 				630BDDF824B3AB250035D8B3 /* PPCloudEngine.h in Headers */,
 				630BDDF424B3AB220035D8B3 /* PPHTTPOperation.h in Headers */,
@@ -3345,6 +3354,7 @@
 				63BECB4520C5D8E600408494 /* PPCloudEngine.h in Headers */,
 				63BECB4620C5D8E600408494 /* PPVersion.h in Headers */,
 				63BECAAC20C5D88400408494 /* PPUserService.h in Headers */,
+				635296B32552439E00ADBC11 /* PPOrganizationObject.h in Headers */,
 				63BECAA220C5D88400408494 /* PPOperationTokenManagement.h in Headers */,
 				63BECAF220C5D8A800408494 /* PPPaidServices.h in Headers */,
 				63BECB4720C5D8E600408494 /* PPBaseModel.h in Headers */,
@@ -4015,6 +4025,7 @@
 				630BDC9A24B3A65C0035D8B3 /* PPLocationUserSchedule.m in Sources */,
 				630BDCA024B3A65C0035D8B3 /* PPUserService.m in Sources */,
 				630BDD0124B3AA770035D8B3 /* PPDeviceCamera.m in Sources */,
+				635296B62552439E00ADBC11 /* PPOrganizationObject.m in Sources */,
 				630BDD5D24B3AADB0035D8B3 /* PPFile.m in Sources */,
 				630BDCA524B3A6790035D8B3 /* PPOrganizations.m in Sources */,
 				630BDD1924B3AABA0035D8B3 /* PPDeviceMeasurement.m in Sources */,
@@ -4215,6 +4226,7 @@
 				63BECA6320C5D6E500408494 /* PPFriendshipDevice.m in Sources */,
 				63BECA1920C5D6A100408494 /* PPSMSSubscriber.m in Sources */,
 				63BECA3920C5D6A100408494 /* PPDynamicUIScreenSectionItem.m in Sources */,
+				635296B52552439E00ADBC11 /* PPOrganizationObject.m in Sources */,
 				63BECA1120C5D6A100408494 /* PPInAppMessage.m in Sources */,
 				63BECA0020C5D67500408494 /* PPDevice.m in Sources */,
 				63BECA1C20C5D6A100408494 /* PPFileManagement.m in Sources */,

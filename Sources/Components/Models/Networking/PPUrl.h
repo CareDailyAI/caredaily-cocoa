@@ -43,6 +43,7 @@
 #pragma mark - Servers
 
 + (NSString *)appAPIServerURLString;
++ (NSString *)appWebsocketAPIServerURLString;
 + (NSString *)webappServerURLString;
 + (NSString *)streamingServerURLString:(PPCloudConnectivityServer *)server;
 + (NSString *)deviceIOServerURLString:(PPCloudConnectivityServer *)server;

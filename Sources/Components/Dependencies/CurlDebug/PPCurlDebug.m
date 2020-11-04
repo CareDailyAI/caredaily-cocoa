@@ -32,7 +32,7 @@
     
     if ([request HTTPBody]) {
         NSString *bodyString = [[NSString alloc] initWithData:[request HTTPBody] encoding:NSUTF8StringEncoding];
-        [displayString appendFormat:@"\n -d \"%@\" \\", bodyString];
+        [displayString appendFormat:@"\n -d '%@' \\", bodyString];
     }
 	
     return displayString;

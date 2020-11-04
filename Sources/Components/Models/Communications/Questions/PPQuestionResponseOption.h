@@ -38,12 +38,15 @@ typedef NS_OPTIONS(NSInteger, PPQuestionDisplayTypeBoolean) {
     PPQuestionDisplayTypeBooleanOnOff = 0, // On/Off Switch, default
     PPQuestionDisplayTypeBooleanYesNo = 1, // Yes/No Switch
     PPQuestionDisplayTypeBooleanYes = 2, // Single 'Yes' button only, the question's default value is applied to the button's text. Used to trigger bot actions from the UI
+    PPQuestionDisplayTypeBooleanPositiveNegativeIcons = 3, // Thumbs UP/DOWN icons.
 };
 
 typedef NS_OPTIONS(NSInteger, PPQuestionDisplayTypeMultipleChoiceSingleSelect) {
     PPQuestionDisplayTypeMultipleChoiceSingleSelectNone = -1,
     PPQuestionDisplayTypeMultipleChoiceSingleSelectRadio = 0, // Radio buttons, default. A list of radio buttons.
-    PPQuestionDisplayTypeMultipleChoiceSingleSelectDropDown = 1 // Drop-down list / picker. A drop down list. Same as radio buttons, but can contain more items.
+    PPQuestionDisplayTypeMultipleChoiceSingleSelectDropDown = 1, // Drop-down list / picker. A drop down list. Same as radio buttons, but can contain more items.
+    PPQuestionDisplayTypeMultipleChoiceSingleSelectSlider = 2, // Slider.
+    PPQuestionDisplayTypeMultipleChoiceSingleSelectAlert = 3, // Alert.
 };
 
 typedef NS_OPTIONS(NSInteger, PPQuestionDisplayTypeMultipleChoiceMultiSelect) {

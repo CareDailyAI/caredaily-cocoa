@@ -34,6 +34,6 @@
 @property (readonly, nonatomic) NSInteger major;
 @property (readonly, nonatomic) NSInteger minor;
 @property (readonly, nonatomic) NSInteger build;
-@property (readonly, nonatomic) NSString * _Nullable commit;
+@property (readonly, nonatomic) NSString *commit;
 
 @end

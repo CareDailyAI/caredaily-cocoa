@@ -349,7 +349,7 @@ __strong static NSMutableDictionary*_sharedProducts = nil;
  * @param hiddenPrices PPPaidServicesHiddenPrices Return hidden prices. It can be useful for testing new features before exposing them to public.
  * @param callback PPPaidServicesServicePlansCallback Service Plans callback block containing list of service plans
  **/
-+ (void)getSoftwareSubscriptions:(PPLocationId)locationId appName:(NSString *)appName userId:(PPUserId)userId organizationId:(PPOrganizationId)organizationId hiddenPrices:(PPPaidServicesHiddenPrices)hiddenPrices callback:(PPPaidServicesServicePlansCallback)callback {
++ (void)getSoftwareSubscriptions:(PPLocationId)locationId appName:(NSString *)appName userId:(PPUserId)userId organizationId:(PPOrganizationId)organizationId hiddenPrices:(PPPaidServicesHiddenPrices)hiddenPrices callback:(PPPaidServicesServicePlansCallback _Nonnull)callback {
     NSAssert1(locationId != PPLocationIdNone, @"%s missing locationId", __FUNCTION__);
     NSMutableString *requestString = [[NSMutableString alloc] initWithFormat:@"servicePlans?"];
     
@@ -926,26 +926,38 @@ __strong static NSMutableDictionary*_sharedProducts = nil;
     NSLog(@"%s deprecated. Use +upgradePurchasedPlan:targetPlanId:nonce:callback:", __FUNCTION__);
     [PPPaidServices upgradePurchasedPlan:userPlanId targetPlanId:targetPlanId userId:PPUserIdNone services:nil bots:nil callback:callback];
 }
-#pragma mark - User subscriptions
+
+#pragma mark - Location Service Plans
 
 /**
- * Get user subscriptions.
- * This API returns all service plans purchased by a user or manually assigned to him.
+ * Get location service plans.
+ * This API returns all service plans on specific location or purchased by a user or manually assigned to him.
+ * Either locationId or userId parameters must be used.
  *
+ * @param locationId PPLocationId Get plan for this location
  * @param status PPServicePlanStatus Service Plan status
- * @param userId PPUserId Used by organization administrators to specify user
+ * @param userPlanId PPServicePlanId Get specific service by plan ID
+ * @param userId PPUserId Ger plan by this user. Used by organization administrators.
  * @param callback PPPaidServicesSubscriptionsCallback Subscriptions callback with list of purchased subscriptions
  **/
-+ (void)getUserSubscriptions:(PPServicePlanStatus)status userId:(PPUserId)userId callback:(PPPaidServicesSubscriptionsCallback)callback {
++ (void)getLocationServicePlans:(PPLocationId)locationId status:(PPServicePlanStatus)status userPlanId:(PPServicePlanId)userPlanId userId:(PPUserId)userId callback:(PPPaidServicesSubscriptionsCallback _Nonnull )callback {
+    NSAssert1(locationId != PPLocationIdNone || userId != PPUserIdNone, @"%s missing locationId or userId", __FUNCTION__);
     NSMutableString *requestString = [[NSMutableString alloc] initWithString:@"userServicePlans?"];
     
+    if(locationId != PPLocationIdNone) {
+        [requestString appendFormat:@"locationId=%li&", (long)locationId];
+    }
+    else if(userId != PPUserIdNone) {
+        [requestString appendFormat:@"userId=%li&", (long)userId];
+    }
     if(status != PPServicePlanStatusNone) {
         [requestString appendFormat:@"status=%li&", (long)status];
     }
-    if(userId != PPUserIdNone) {
-        [requestString appendFormat:@"userId=%li&", (long)userId];
+    if(userPlanId != PPServicePlanIdNone) {
+        [requestString appendFormat:@"userPlanId=%li&", (long)userPlanId];
     }
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.paidservices.getUserSubscriptions()", DISPATCH_QUEUE_SERIAL);
+    
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.paidservices.getLocationServicePlans()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {
@@ -981,6 +993,10 @@ __strong static NSMutableDictionary*_sharedProducts = nil;
             });
         });
     }];
+}
++ (void)getUserSubscriptions:(PPServicePlanStatus)status userId:(PPUserId)userId callback:(PPPaidServicesSubscriptionsCallback)callback {
+    NSLog(@"%s deprecated. Use +getLocationServicePlans:status:userPlanId:userId:callback:", __FUNCTION__);
+    [PPPaidServices getLocationServicePlans:PPLocationIdNone status:status userPlanId:PPServicePlanIdNone userId:userId callback:callback];
 }
 
 #pragma mark - Transactions

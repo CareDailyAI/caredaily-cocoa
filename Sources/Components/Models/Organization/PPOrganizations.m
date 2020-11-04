@@ -46,24 +46,27 @@ __strong static PPOrganizations *_sharedObject = nil;
  * @param callback PPOrganizationsBlock Array of available organizations
  **/
 + (void)getOrganizations:(PPOrganizationId)organizationId domainName:(NSString *)domainName name:(NSString *)name callback:(PPOrganizationsBlock)callback {
-    NSMutableString *request = [NSMutableString stringWithString:@"organizations?"];
+    NSURLComponents *components = [NSURLComponents componentsWithURL:[NSURL URLWithString:@"organizations"] resolvingAgainstBaseURL:NO];
+    
+    NSMutableArray *queryItems = @[].mutableCopy;
     
     if(organizationId != PPOrganizationIdNone) {
-        [request appendFormat:@"organizationId=%li&", (long)organizationId];
+        [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"organizationId" value:@(organizationId).stringValue]];
     }
     if(domainName) {
-        [request appendFormat:@"domainName=%@&", domainName];
+        [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"domainName" value:domainName]];
     }
     if(name) {
-        [request appendFormat:@"name=%@&", name];
+        [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"name" value:name]];
     }
+    components.queryItems = queryItems;
     
     // Create a custom admin cloud engine.  API key is not needed
     PPCloudEngine *adminEngine = [[PPCloudEngine alloc] initSingleton:PPCloudEngineTypeAdmin];
     dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.organizations.getOrganizations()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
-    [adminEngine GET:request success:^(NSData *responseData) {
+    [adminEngine GET:components.string success:^(NSData *responseData) {
         
         dispatch_async(queue, ^{
             
@@ -239,6 +242,56 @@ __strong static PPOrganizations *_sharedObject = nil;
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 callback(PPOrganizationStatusNone, [PPBaseModel resultCodeToNSError:10003 originatingClass:NSStringFromClass([self class]) argument:[NSString stringWithFormat:@"%@", error.userInfo]]);
+            });
+        });
+    }];
+}
+
+/**
+ * List Objects and Properties
+ * Retrieve all large objects and small properties by the organization. Anyone can call it.Private records are turned only for administrators.
+ *
+ * @param organizationId Required Organization ID
+ *
+ * @param callback PPOrganizationsObjectsAndPropertiesBlock Callback block
+ */
++ (void)listObjectsAndProperties:(PPOrganizationId)organizationId callback:(PPOrganizationsObjectsAndPropertiesBlock)callback {
+    NSString *request = [NSString stringWithFormat:@"organizations/%li/objects", (long)organizationId];
+    
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.organizations.listObjectsAndProperties()", DISPATCH_QUEUE_SERIAL);
+    [[PPCloudEngine sharedAdminEngine] setCompleteionQueue:queue];
+    
+    PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
+    [[PPCloudEngine sharedAdminEngine] GET:request success:^(NSData *responseData) {
+        
+        dispatch_async(queue, ^{
+            
+            NSError *error;
+            NSDictionary *root = [PPBaseModel processJSONResponse:responseData originatingClass:NSStringFromClass([self class]) error:&error];
+            
+            NSMutableArray *objectsAndProperties;
+            
+            if(!error) {
+                objectsAndProperties = [[NSMutableArray alloc] init];
+                for(NSDictionary *objectDict in [root objectForKey:@"organizationObjects"]) {
+                    PPOrganizationObject *object = [PPOrganizationObject initWithDictionary:objectDict];
+                    [objectsAndProperties addObject:object];
+                }
+            }
+            
+            PPLogAPI(@"< %s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                callback(objectsAndProperties, error);
+            });
+        });
+    } failure:^(NSError *error) {
+        dispatch_async(queue, ^{
+            
+            PPLogAPI(@"< %s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                callback(nil, [PPBaseModel resultCodeToNSError:10003 originatingClass:NSStringFromClass([self class]) argument:[NSString stringWithFormat:@"%@", error.userInfo]]);
             });
         });
     }];
