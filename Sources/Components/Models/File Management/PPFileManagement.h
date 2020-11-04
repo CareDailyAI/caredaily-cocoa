@@ -16,36 +16,6 @@
 #import "PPFile.h"
 #import "PPFileSummary.h"
 
-typedef void (^PPFileManagementFragmentBlock)(NSString * _Nullable status, PPFile * _Nullable fileFragment, PPFileTotalFileSpace totalFileSpace, PPFileUsedFileSpace usedFileSpace, PPFileTwitterShare twitterShare, NSString * _Nullable twitterAccount, NSString * _Nullable contentUrl, PPFileStoragePolicy storagePolicy, NSDictionary * _Nullable uploadHeaders, NSError * _Nullable error);
-typedef void (^PPFileManagementFilesBlock)(NSArray * _Nullable files, PPFileTotalFileSpace totalFileSpace, PPFileUsedFileSpace usedFileSpace, NSString * _Nullable tempKey, NSDate * _Nullable tempKeyExpire, NSError * _Nullable error);
-typedef void (^PPFileManagementContentBlock)(NSData * _Nullable fileContent, NSString * _Nullable contentType, NSString * _Nullable contentRange, NSString * _Nullable acceptRanges, NSString * _Nullable contentDisposition,NSInteger statusCode, NSError * _Nullable error);
-typedef void (^PPFileManagementDownloadURLBlock)(NSURL * _Nullable contentURL, NSURL * _Nullable thumbnailURL, NSError * _Nullable error);
-typedef void (^PPFileManagementFilesSummaryBlock)(NSArray * _Nullable summaries, PPFileTotalFileSpace totalFileSpace, PPFileUsedFileSpace usedFileSpace, NSDate * _Nullable startDate, NSDate * _Nullable endDate, PPFileCount filesCount, NSError * _Nullable error);
-typedef void (^PPFileManagementFileDevicesBlock)(NSArray * _Nullable devices, NSError * _Nullable error);
-typedef void (^PPFileManagementFileInformationBlock)(PPFile * _Nullable file, NSString * _Nullable tempKey, NSDate * _Nullable tempKeyExpire, NSError * _Nullable error);
-typedef void (^PPFileManagementLastNFilesBlock)(NSArray * _Nullable files, NSString * _Nullable tempKey, NSDate * _Nullable tempKeyExpire, NSError * _Nullable error);
-typedef void (^PPFileManagementProgressBlock)(NSProgress * _Nullable progress);
-
-typedef NS_OPTIONS(NSInteger, PPFileManagementAuthorizationType) {
-    PPFileManagementAuthorizationTypeNone = -1,
-    PPFileManagementAuthorizationTypeDeviceAuthenticationToken = 0,
-    PPFileManagementAuthorizationTypeStreamingSessionId = 1
-};
-
-typedef NS_OPTIONS(NSInteger, PPFileOwners) {
-    PPFileOwnersNone = -1,
-    PPFileOwnersOwnFiles = 1,
-    PPFileOwnersSharedFiles = 2,
-    PPFileOwnersOwnAndSharedFiles = 3,
-    PPFileOwnersOwnDeletedFiles = 4
-};
-
-typedef NS_OPTIONS(NSInteger, PPFileRecover) {
-    PPFileRecoverNone = -1,
-    PPFileRecoverFalse = 0,
-    PPFileRecoverTrue = 1
-};
-
 @interface PPFileManagement : PPBaseModel
 
 

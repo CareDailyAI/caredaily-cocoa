@@ -7,7 +7,6 @@
 //
 
 #import "PPFriends.h"
-#import "PPUserAccounts.h"
 #import "PPCloudEngine.h"
 
 @implementation PPFriends

@@ -10,14 +10,6 @@
 
 @class PPDeviceTypeMediaDesc;
 
-typedef NS_OPTIONS(NSInteger, PPDeviceTypeMediaType) {
-    PPDeviceTypeMediaTypeNone = -1,
-    PPDeviceTypeMediaTypeVideo = 1,
-    PPDeviceTypeMediaTypeImage = 2,
-    PPDeviceTypeMediaTypeAudio = 3,
-    PPDeviceTypeMediaTypeTextDocument = 4
-};
-
 @interface PPDeviceTypeMedia : PPBaseModel
 
 @property (nonatomic, strong) NSString * _Nonnull mediaId;

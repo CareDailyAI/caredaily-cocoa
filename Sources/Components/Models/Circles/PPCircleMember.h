@@ -8,27 +8,6 @@
 
 #import "PPUser.h"
 
-typedef NS_OPTIONS(NSInteger, PPCircleMemberStatus) {
-    PPCircleMemberStatusNone = -1,
-    PPCircleMemberStatusInvited = 0,
-    PPCircleMemberStatusOptIn = 1,
-    PPCircleMemberStatusOptOut = 2
-};
-
-typedef NS_OPTIONS(NSInteger, PPCircleMemberAdmin) {
-    PPCircleMemberAdminNone = -1,
-    PPCircleMemberAdminFalse = 0,
-    PPCircleMemberAdminTrue = 1,
-};
-
-typedef NS_OPTIONS(NSInteger, PPCircleMemberPhoneStatus) {
-    PPCircleMemberPhoneStatusNone = -1,
-    PPCircleMemberPhoneStatusUnknown = 0,
-    PPCircleMemberPhoneStatusVerified = 1, // verification code sent and verified
-    PPCircleMemberPhoneStatusAllowed = 2, // mobile phone number, which can receive SMS, but not verified yet
-    PPCircleMemberPhoneStatusInvalid = 3 // invalid phone number
-};
-
 @interface PPCircleMember : PPUser
 
 @property (nonatomic) PPCircleMemberAdmin admin;

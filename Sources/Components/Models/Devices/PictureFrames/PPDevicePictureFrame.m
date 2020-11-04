@@ -9,16 +9,6 @@
 #import "PPDevicePictureFrame.h"
 #import <AVFoundation/AVFoundation.h>
 
-// PictureFrame parameter refresh interval
-NSInteger PICTURE_FRAME_REFRESH_INTERVAL = 150;
-
-// Streaming connection attemp limit
-NSInteger PICTURE_FRAME_STREAMING_CONNECTION_ATTEMPT_LIMIT = 5;
-
-// Camera output volume
-PPDeviceParametersOutputVolume PICTURE_FRAME_VOLUME_OUTPUT_MAXIMUM = 16;
-PPDeviceParametersOutputVolume PICTURE_FRAME_VOLUME_OUTPUT_DEFAULT = 8;
-
 @interface PPDevicePictureFrame ()
 @property (nonatomic) BOOL settingUpPictureFrameSessionAndPublisher;
 @end

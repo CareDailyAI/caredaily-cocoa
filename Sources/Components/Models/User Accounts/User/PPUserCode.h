@@ -8,24 +8,6 @@
 
 #import "PPBaseModel.h"
 
-typedef NS_OPTIONS(NSInteger, PPUserCodeType) {
-    PPUserCodeTypeManual   = 1,
-    PPUserCodeTypeCard     = 2,
-    PPUserCodeTypeCombined = 3,
-    PPUserCodeTypeKeypad   = 4,
-};
-
-typedef NS_OPTIONS(NSInteger, PPUserCodeExpiry) {
-    PPUserCodeExpiryNone    = -1,
-    PPUserCodeExpiryDefault = 60
-};
-
-typedef NS_OPTIONS(NSInteger, PPUserCodeVerified) {
-    PPUserCodeVerifiedNone    = -1,
-    PPUserCodeVerifiedFalse   = 0,
-    PPUserCodeVerifiedTrue    = 1,
-};
-
 /* User codes are similar to passwords.
  They are not retrievable in any readable form, so a name is provided instead.
  It is up to the user to remember their codes (or delete and recreate). */

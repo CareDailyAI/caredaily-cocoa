@@ -460,6 +460,8 @@
 		631DB29C21077D8900C2F8F1 /* PPCircleDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 631DB29A21077D8900C2F8F1 /* PPCircleDevice.m */; };
 		631F72F223BBC16600F98797 /* PPUserCommunity.h in Headers */ = {isa = PBXBuildFile; fileRef = 631F72F023BBC16600F98797 /* PPUserCommunity.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		631F72F323BBC16600F98797 /* PPUserCommunity.m in Sources */ = {isa = PBXBuildFile; fileRef = 631F72F123BBC16600F98797 /* PPUserCommunity.m */; };
+		63284D6A25532DB6009B0466 /* PPTypeDefinitions.h in Headers */ = {isa = PBXBuildFile; fileRef = 63284D6925532DB6009B0466 /* PPTypeDefinitions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63284D6B25532DB6009B0466 /* PPTypeDefinitions.h in Headers */ = {isa = PBXBuildFile; fileRef = 63284D6925532DB6009B0466 /* PPTypeDefinitions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6351235A2138540C003E7EAA /* PPDevicePictureFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 635123542138540C003E7EAA /* PPDevicePictureFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6351235B2138540C003E7EAA /* PPDevicePictureFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 635123552138540C003E7EAA /* PPDevicePictureFrame.m */; };
 		63512369213890BB003E7EAA /* PPCircleDeviceCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 63512367213890BB003E7EAA /* PPCircleDeviceCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1211,6 +1213,7 @@
 		631F8483206435F30055C512 /* PPCloudConnectivityCloud.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPCloudConnectivityCloud.m; sourceTree = "<group>"; };
 		631F8485206436000055C512 /* PPCloudConnectivityServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPCloudConnectivityServer.h; sourceTree = "<group>"; };
 		631F8486206436000055C512 /* PPCloudConnectivityServer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPCloudConnectivityServer.m; sourceTree = "<group>"; };
+		63284D6925532DB6009B0466 /* PPTypeDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPTypeDefinitions.h; sourceTree = "<group>"; };
 		634360AB206313D800B1DAE2 /* PPDeviceTypeDeviceModelBrand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPDeviceTypeDeviceModelBrand.h; sourceTree = "<group>"; };
 		634360AC206313D800B1DAE2 /* PPDeviceTypeDeviceModelBrand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPDeviceTypeDeviceModelBrand.m; sourceTree = "<group>"; };
 		634360AE2063288D00B1DAE2 /* PPDeviceTypeStoryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPDeviceTypeStoryModel.h; sourceTree = "<group>"; };
@@ -2617,6 +2620,7 @@
 				63B9B141248C0D9B0056E7CE /* PPRealm.h */,
 				63B9B142248C0D9B0056E7CE /* PPRealm.m */,
 				631152DE21E7FB8400DA7755 /* PPTHConstants.h */,
+				63284D6925532DB6009B0466 /* PPTypeDefinitions.h */,
 				63A9525C205C2E9B000E466A /* PPNetworkUtilities.h */,
 				63A9525B205C2E9A000E466A /* PPNetworkUtilities.m */,
 				63D39380204F46B600041C1A /* PPDateUtilities.h */,
@@ -3210,6 +3214,7 @@
 				630BDCC824B3A69C0035D8B3 /* PPDeviceTypeRuleComponentTemplateProduct.h in Headers */,
 				630BDCDC24B3A6AF0035D8B3 /* PPBotengineAppVersion.h in Headers */,
 				630BDCD024B3A6AF0035D8B3 /* PPBotengineAppCommunications.h in Headers */,
+				63284D6B25532DB6009B0466 /* PPTypeDefinitions.h in Headers */,
 				630BDC7924B3A6230035D8B3 /* PPLogout.h in Headers */,
 				630BDCFA24B3AA630035D8B3 /* PPDevicePictureFrameAlert.h in Headers */,
 				630BDCEC24B3A6FD0035D8B3 /* PPCircleMember.h in Headers */,
@@ -3509,6 +3514,7 @@
 				63BECB1420C5D8E600408494 /* PPDeviceType.h in Headers */,
 				63BECADB20C5D8A700408494 /* PPQuestion.h in Headers */,
 				63BECAA320C5D88400408494 /* PPOperationToken.h in Headers */,
+				63284D6A25532DB6009B0466 /* PPTypeDefinitions.h in Headers */,
 				63BECADA20C5D8A700408494 /* PPQuestions.h in Headers */,
 				63BECAA920C5D88400408494 /* PPUserEmail.h in Headers */,
 				63BECB0620C5D8E600408494 /* PPEnergyManagementDeviceUsageAggregated.h in Headers */,

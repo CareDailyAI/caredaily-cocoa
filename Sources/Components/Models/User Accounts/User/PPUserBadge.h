@@ -13,20 +13,6 @@
  * In a normal scenario, the IoT Software Suite will send a push notification to the user's apps to automatically place a badge on top of the app's icon(s). The total badge counts can be manually obtain from the /user GET API. It is the app's responsibility to clear its own local badges, and to alert the server to reset the badge counter when the user finally responds.
  **/
 
-typedef NS_OPTIONS(NSInteger, PPUserBadgeType) {
-    PPUserBadgeTypeNone = 0,
-    PPUserBadgeTypeNewMessage = 1,
-    PPUserBadgeTypeNewChallenge = 2,
-    PPUserBadgeTypeNewVideoAlert = 3,
-    PPUserBadgeTypeNewDeviceRegistered = 4,
-    PPUserBadgeTypeNewFriendOrSharedDevice = 5,
-    PPUserBadgeTypeNewCommunityNotification = 6,
-};
-
-typedef NS_OPTIONS(NSInteger, PPUserBadgeCount) {
-    PPUserBadgeCountNone = -1,
-};
-
 @interface PPUserBadge : PPBaseModel <NSCopying>
 
 @property (nonatomic) PPUserBadgeType type;

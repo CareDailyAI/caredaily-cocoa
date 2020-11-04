@@ -8,10 +8,6 @@
 
 #import "PPBaseModel.h"
 
-typedef NS_OPTIONS(NSInteger, PPDeviceAlertCount) {
-    PPDeviceAlertCountNone = -1,
-};
-
 @interface PPDeviceAlert : PPBaseModel
 
 @property (nonatomic, strong) NSString *alertType;
@@ -22,4 +18,3 @@ typedef NS_OPTIONS(NSInteger, PPDeviceAlertCount) {
 + (PPDeviceAlert *)initWithDictionary:(NSDictionary *)alertDict;
 
 @end
-

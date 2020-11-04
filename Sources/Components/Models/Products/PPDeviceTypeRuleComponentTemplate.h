@@ -11,24 +11,6 @@
 #import "PPRuleComponentParameter.h"
 #import "PPDeviceTypeRuleComponentTemplateProduct.h"
 
-typedef NS_OPTIONS(NSInteger, PPDeviceTypeRuleComponentTemplateId) {
-    PPDeviceTypeRuleComponentTemplateIdNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPDeviceTypeRuleComponentTemplateSourceType) {
-    PPDeviceTypeRuleComponentTemplateSourceTypeNone = -1,
-    PPDeviceTypeRuleComponentTemplateSourceTypeDrools = 0,
-    PPDeviceTypeRuleComponentTemplateSourceTypePython = 1
-};
-
-typedef NS_OPTIONS(NSInteger, PPDeviceTypeRuleComponentTemplateConditionData) {
-    PPDeviceTypeRuleComponentTemplateConditionDataNone = -1,
-    PPDeviceTypeRuleComponentTemplateConditionDataLocationData = 1 << 0, // Location data, like "HOME" and "AWAY" states.
-    PPDeviceTypeRuleComponentTemplateConditionDataDeviceStatus = 1 << 1, // Device status, including the last update date, the last measurement date, the registration date, and whether the device is connected or not.
-    PPDeviceTypeRuleComponentTemplateConditionDataDeviceMeasurements = 1 << 2, // Measurements from the device
-    PPDeviceTypeRuleComponentTemplateConditionDataLastAlertData = 1 << 3 // The last alert information sent from the device is needed to check the condition of this rule phrase.
-};
-
 @interface PPDeviceTypeRuleComponentTemplate : PPBaseModel
 
 /* Template ID. The ID of this specific rule phrase. */

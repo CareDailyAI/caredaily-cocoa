@@ -15,45 +15,12 @@
 //
 
 #import "PPBaseModel.h"
-#import "PPLocation.h"
-#import "PPUser.h"
 #import "PPEnergyManagementUsage.h"
 #import "PPEnergyManagementUtilityBill.h"
 #import "PPEnergyManagementDeviceUsageEnergy.h"
 #import "PPEnergyManagementDeviceUsagePower.h"
 #import "PPEnergyManagementDeviceUsageAggregated.h"
 #import "PPEnergyManagementBillingInfo.h"
-
-typedef void (^PPEnergyManagementUsageBlock)(NSArray * _Nullable usages, NSError * _Nullable error);
-typedef void (^PPEnergyManagementDeviceUsageBlock)(PPEnergyManagementDeviceUsagePower * _Nullable power, PPEnergyManagementDeviceUsageEnergy * _Nullable energy, NSError * _Nullable error);
-typedef void (^PPEnergyManagementAggregatedDeviceUsageBlock)(NSArray * _Nullable usages, NSError * _Nullable error);
-typedef void (^PPEnergyManagementBillingInfoBlock)(PPEnergyManagementBillingInfo * _Nullable billingInfo,  NSError * _Nullable error);
-
-typedef NS_OPTIONS(NSInteger, PPEnergyManagementAggregation) {
-    PPEnergyManagementAggregationNone = -1,
-    PPEnergyManagementAggregationDoNotSplitData = 0,
-    PPEnergyManagementAggregationSplitByHour = 1,
-    PPEnergyManagementAggregationSplitByDay = 2,
-    PPEnergyManagementAggregationSplitByMonth = 3,
-    PPEnergyManagementAggregationSplitOn7DayWeek = 4, // Sunday to Saturday
-    PPEnergyManagementAggregationSplitOn5DayWeek = 5, // Monday to Friday, then 2-day weekend
-    PPEnergyManagementAggregationSplitByUsersUtilityBillingPeriod = 6,
-};
-
-typedef NS_OPTIONS(NSInteger, PPEnergyManagementReducesNoise) {
-    PPEnergyManagementReducesNoiseNone = -1,
-    PPEnergyManagementReducesNoiseFalse = 0,
-    PPEnergyManagementReducesNoiseTrue = 1
-};
-
-typedef NS_OPTIONS(NSInteger, PPEnergyManagementBillingInfoFilter) {
-    PPEnergyManagementBillingInfoFilterNone = -1,
-    PPEnergyManagementBillingInfoFilterGetAllDate = 0,
-    PPEnergyManagementBillingInfoFilterGetDataForBillingDate = 1,
-    PPEnergyManagementBillingInfoFilterGetDataForBudget = 2,
-    PPEnergyManagementBillingInfoFilterGetAllRateInformation = 4,
-    PPEnergyManagementBillingInfoFilterGetCurrentBillingRate = 8
-};
 
 @interface PPEnergyManagement : PPBaseModel
 

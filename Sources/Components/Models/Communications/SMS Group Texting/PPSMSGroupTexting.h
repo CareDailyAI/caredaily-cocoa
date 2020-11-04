@@ -10,9 +10,6 @@
 
 #import "PPBaseModel.h"
 #import "PPSMSSubscriber.h"
-#import "PPUser.h"
-
-typedef void (^PPSMSGroupTextingSubscribersCallback)(NSArray * _Nullable subscribers, NSError * _Nullable error);
 
 @interface PPSMSGroupTexting : PPBaseModel
 

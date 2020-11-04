@@ -8,7 +8,6 @@
 
 #import "PPLogout.h"
 #import "PPCloudEngine.h"
-#import "PPUserAccounts.h"
 
 @implementation PPLogout
 

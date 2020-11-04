@@ -8,13 +8,6 @@
 
 #import "PPLocationSceneEvent.h"
 
-NSString *EVENT_HOME = @"HOME";
-NSString *EVENT_AWAY = @"AWAY";
-NSString *EVENT_VACATION = @"VACATION";
-NSString *EVENT_SLEEP = @"SLEEP";
-NSString *EVENT_STAY = @"STAY";
-NSString *EVENT_TEST = @"TEST";
-
 @implementation PPLocationSceneEvent
 
 + (NSString *)primaryKey {

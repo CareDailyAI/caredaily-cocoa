@@ -8,11 +8,6 @@
 
 #import "PPBaseModel.h"
 
-extern NSString *WEATHER_METADATA_UNIT_ENGLISH;
-extern NSString *WEATHER_METADATA_UNIT_METRIC;
-extern NSString *WEATHER_METADATA_UNIT_HUBRID; // UK
-extern NSString *WEATHER_METADATA_UNIT_METRICSI; // Not available for all APIs
-
 @interface PPWeatherMetadata : PPBaseModel
 
 @property (nonatomic, strong) NSString *language;

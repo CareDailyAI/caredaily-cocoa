@@ -8,28 +8,6 @@
 
 #import "PPBaseModel.h"
 
-
-typedef NS_OPTIONS(NSInteger, PPCloudConnectivityVersion) {
-    PPCloudConnectivityVersionNone = -1,
-};
-
-typedef NS_OPTIONS(NSInteger, PPCloudConnectivityPort) {
-    PPCloudConnectivityPortNone = -1,
-};
-
-typedef NS_OPTIONS(NSInteger, PPCloudConnectivitySSL) {
-    PPCloudConnectivitySSLNone = -1,
-    PPCloudConnectivitySSLFalse = 0,
-    PPCloudConnectivitySSLTrue = 1
-};
-
-extern NSString *CLOUD_CONNECTIVITY_SERVER_TYPE_APP_API;
-extern NSString *CLOUD_CONNECTIVITY_SERVER_TYPE_DEVICE_IO;
-extern NSString *CLOUD_CONNECTIVITY_SERVER_TYPE_DEVICE_WS;
-extern NSString *CLOUD_CONNECTIVITY_SERVER_TYPE_STREAMING;
-extern NSString *CLOUD_CONNECTIVITY_SERVER_TYPE_WEB_APP;
-extern NSString *CLOUD_CONNECTIVITY_SERVER_TYPE_WS_API;
-
 @interface PPCloudConnectivityServer : PPBaseModel
 
 @property (nonatomic, strong) NSString *type;

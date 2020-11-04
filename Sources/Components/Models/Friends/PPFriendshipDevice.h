@@ -8,12 +8,6 @@
 
 #import "PPDevice.h"
 
-typedef NS_OPTIONS(NSInteger, PPFriendshipDeviceMute) {
-    PPFriendshipDeviceMuteNone = -1,
-    PPFriendshipDeviceMuteFalse = 0,
-    PPFriendshipDeviceMuteTrue = 1
-};
-
 @interface PPFriendshipDevice : PPDevice
 
 /* Location event names: when are devices shared? (HOME, AWAY, etc.) */

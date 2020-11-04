@@ -10,28 +10,6 @@
 #import "PPDeviceTypeMedia.h"
 #import "PPDeviceTypeStoryPageAction.h"
 
-typedef NS_OPTIONS(NSInteger, PPDeviceTypeStoryPageIndex) {
-    PPDeviceTypeStoryPageIndexNone = -1,
-};
-
-typedef NS_OPTIONS(NSInteger, PPDeviceTypeStoryPageDismissible) {
-    PPDeviceTypeStoryPageDismissibleNone = -1,
-    PPDeviceTypeStoryPageDismissibleFalse = 0,
-    PPDeviceTypeStoryPageDismissibleTrue = 1
-};
-
-typedef NS_OPTIONS(NSInteger, PPDeviceTypeStoryPageHidden) {
-    PPDeviceTypeStoryPageHiddenNone = -1,
-    PPDeviceTypeStoryPageHiddenFalse = 0,
-    PPDeviceTypeStoryPageHiddenTrue = 1
-};
-
-extern NSString * _Nonnull PPDeviceTypeStoryPageStyleDefault;
-extern NSString * _Nonnull PPDeviceTypeStoryPageStyleInfo;
-extern NSString * _Nonnull PPDeviceTypeStoryPageStyleConnect;
-extern NSString * _Nonnull PPDeviceTypeStoryPageStylePicture;
-extern NSString * _Nonnull PPDeviceTypeStoryPageStyleCalibrate;
-
 @interface PPDeviceTypeStoryPage : PPBaseModel
 
 @property (nonatomic) PPDeviceTypeStoryPageIndex index;

@@ -169,8 +169,12 @@
     }];
 }
 
+- (void)postDataStreamWithBitmask:(PPBotengineAppInstanceDataStreamBitmask)dataStreamType locationId:(PPLocationId)locationId address:(NSString *)address feed:(NSDictionary *)feed callback:(PPErrorBlock)callback {
+    [PPBotengine postDataStream:dataStreamType address:address locationId:locationId organizationId:PPOrganizationIdNone feed:feed appInstanceId:_instanceId callback:callback];
+}
 - (void)postDataStreamWithBitmask:(PPBotengineAppInstanceDataStreamBitmask)dataStreamType address:(NSString *)address feed:(NSDictionary *)feed callback:(PPErrorBlock)callback {
-    [PPBotengine postDataStream:dataStreamType address:address locationId:[[PPUserAccounts currentUser] currentLocation].locationId organizationId:PPOrganizationIdNone feed:feed appInstanceId:_instanceId callback:callback];
+    NSLog(@"%s deprecated. Use +postDataStreamWithBitmask:locationId:address:feed:callback:", __FUNCTION__);
+    [self postDataStreamWithBitmask:dataStreamType locationId:PPLocationIdNone address:address feed:feed callback:callback];
 }
 
 @end

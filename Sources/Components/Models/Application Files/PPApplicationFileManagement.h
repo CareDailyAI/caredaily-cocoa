@@ -9,11 +9,6 @@
 #import "PPBaseModel.h"
 #import "PPApplicationFile.h"
 
-typedef void (^PPApplicationFileManagementUploadFileBlock)(PPApplicationFileId fileId, NSError * _Nullable error);
-typedef void (^PPApplicationFileManagementFilesBlock)(NSArray * _Nullable files, NSString * _Nullable tempKey, NSDate * _Nullable tempKeyExpire, NSError * _Nullable error);
-typedef void (^PPApplicationFileManagementContentBlock)(NSData * _Nullable fileContent, NSString * _Nullable contentType, NSString * _Nullable contentRange, NSString * _Nullable acceptRanges, NSString * _Nullable contentDisposition, NSInteger statusCode, NSError * _Nullable error);
-typedef void (^PPApplicationFileManagementProgressBlock)(NSProgress * _Nullable progress);
-
 @interface PPApplicationFileManagement : PPBaseModel
 
 #pragma mark - Session Management

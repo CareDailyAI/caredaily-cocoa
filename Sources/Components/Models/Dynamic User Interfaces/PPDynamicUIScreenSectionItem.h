@@ -8,10 +8,6 @@
 
 #import "PPBaseModel.h"
 
-typedef NS_OPTIONS(NSInteger, PPDynamicUIScreenSectionItemOrder) {
-    PPDynamicUIScreenSectionItemOrderNone = -1,
-};
-
 @interface PPDynamicUIScreenSectionItem : PPBaseModel
 
 @property (nonatomic, strong) NSString *itemId;

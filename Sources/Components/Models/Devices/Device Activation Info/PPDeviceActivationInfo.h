@@ -8,16 +8,6 @@
 
 #import "PPBaseModel.h"
 
-typedef NS_OPTIONS(NSInteger, PPDeviceActivationInfoPort) {
-    PPDeviceActivationInfoPortNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPDeviceActivationInfoSSL) {
-    PPDeviceActivationInfoSSLNone = -1,
-    PPDeviceActivationInfoSSLFalse = 0,
-    PPDeviceActivationInfoSSLTrue
-};
-
 @interface PPDeviceActivationInfo : PPBaseModel
 
 @property (nonatomic, strong) NSString *deviceActivationKey;

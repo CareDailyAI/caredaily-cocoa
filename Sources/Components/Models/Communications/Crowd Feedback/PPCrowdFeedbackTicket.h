@@ -9,10 +9,6 @@
 #import "PPBaseModel.h"
 #import "PPCrowdFeedback.h"
 
-typedef NS_OPTIONS(NSInteger, PPCrowdFeedbackTicketId) {
-    PPCrowdFeedbackTicketIdNone = -1
-};
-
 @interface PPCrowdFeedbackTicket : PPBaseModel
 
 @property (nonatomic) PPCrowdFeedbackId feedbackId;
@@ -24,4 +20,3 @@ typedef NS_OPTIONS(NSInteger, PPCrowdFeedbackTicketId) {
 + (PPCrowdFeedbackTicket *)initWithDictionary:(NSDictionary *)ticketDict;
 
 @end
-

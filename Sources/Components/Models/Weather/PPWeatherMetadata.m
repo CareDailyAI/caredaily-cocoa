@@ -8,11 +8,6 @@
 
 #import "PPWeatherMetadata.h"
 
-NSString *WEATHER_METADATA_UNIT_ENGLISH = @"e";
-NSString *WEATHER_METADATA_UNIT_METRIC = @"m";
-NSString *WEATHER_METADATA_UNIT_HUBRID = @"h"; // UK
-NSString *WEATHER_METADATA_UNIT_METRICSI = @"s"; // Not available for all APIs
-
 @implementation PPWeatherMetadata
 
 - (id)initWithLanguage:(NSString *)language transactionId:(NSString *)transactionId version:(NSString *)version latitude:(NSNumber *)latitude longitude:(NSNumber *)longitude units:(NSString *)units expireTimeGMT:(NSNumber *)expireTimeGMT statusCode:(NSNumber *)statusCode {

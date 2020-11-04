@@ -5,24 +5,6 @@
 //  Created by Destry Teeter on 7/26/18.
 //
 
-typedef NS_OPTIONS(NSInteger, PPVideoTokenProvider) {
-    PPVideoTokenProviderNone = -1,
-    PPVideoTokenProviderUndefined = 0,
-    PPVideoTokenProviderVidyo = 1,
-    PPVideoTokenProviderTwilio = 2
-};
-
-typedef NS_OPTIONS(NSInteger, PPVideoTokenAuthType) {
-    PPVideoTokenAuthTypeNone = -1,
-    PPVideoTokenAuthTypeDeviceAuthToken = 0,
-    PPVideoTokenAuthTypeStreamingId = 1
-};
-
-typedef NS_OPTIONS(NSInteger, PPVideoTokenExpireTimeInterval) {
-    PPVideoTokenExpireTimeIntervalNone = -1,
-    PPVideoTokenExpireTimeIntervalDefault = 3600
-};
-
 @interface PPVideoToken : PPBaseModel
 
 @property (nonatomic, strong) NSString *token;

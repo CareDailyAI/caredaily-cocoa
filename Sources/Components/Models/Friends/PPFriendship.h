@@ -11,16 +11,6 @@
 #import "PPFriendshipFriend.h"
 #import "PPFriendshipDevice.h"
 
-typedef NS_OPTIONS(NSInteger, PPFriendshipId) {
-    PPFriendshipIdNone = -1,
-};
-
-typedef NS_OPTIONS(NSInteger, PPFriendshipBlocked) {
-    PPFriendshipBlockedNone = -1,
-    PPFriendshipBlockedFalse = 0,
-    PPFriendshipBlockedTrue = 1
-};
-
 @interface PPFriendship : PPBaseModel
 
 /* An ID of the friendship record */

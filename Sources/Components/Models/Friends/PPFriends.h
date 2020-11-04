@@ -9,8 +9,6 @@
 #import "PPBaseModel.h"
 #import "PPFriendship.h"
 
-typedef void (^PPFriendsFriendshipBlock)(NSArray * _Nullable friendships, NSError * _Nullable error);
-
 @interface PPFriends : PPBaseModel
 
 #pragma mark - Session Management

@@ -10,11 +10,6 @@
 
 @class PPNotificationPushMessageInfo;
 
-typedef NS_OPTIONS(NSInteger, PPNotificationPushMessageType) {
-    PPNotificationPushMessageTypeNone = -1,
-    PPNotificationPushMessageTypeDefault = 0
-};
-
 @interface PPNotificationPushMessage : PPNotificationMessage
 
 @property (nonatomic) PPNotificationPushMessageType type;

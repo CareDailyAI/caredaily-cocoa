@@ -12,13 +12,6 @@
 
 @class PPBotengineApp;
 
-typedef void (^PPBotengineAppsBlock)(NSArray * _Nullable apps, NSError * _Nullable error);
-typedef void (^PPBotengineAppObjectBlock)(NSObject * _Nullable appObject, NSError * _Nullable error);
-typedef void (^PPBotengineAppInfoBlock)(PPBotengineApp * _Nullable app, NSError * _Nullable error);
-typedef void (^PPBotengineAppPurchaseBlock)(NSInteger appInstanceId, NSError * _Nullable error);
-typedef void (^PPBotengineAppReviewBlock)(PPBotengineAppRating * _Nullable rating, NSArray * _Nullable reviews, NSError * _Nullable error);
-typedef void (^PPBotengineSummaryBlock)(NSArray * _Nullable dataStreams, NSArray * _Nullable microServices, NSError * _Nullable error);
-
 @interface PPBotengine : PPBaseModel
 
 /**

@@ -23,10 +23,6 @@
 #import "PPNotificationSMSMessage.h"
 #import "PPNotificationToken.h"
 #import "PPNotification.h"
-#import "PPUser.h"
-
-typedef void (^PPNotificationSubscriptionsBlock)(NSArray * _Nullable subscriptions, NSError * _Nullable error);
-typedef void (^PPNotificationHistoryBlock)(NSArray * _Nullable notifications, NSError * _Nullable error);
 
 @interface PPNotifications : PPBaseModel
 

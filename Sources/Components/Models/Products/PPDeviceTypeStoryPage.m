@@ -8,12 +8,6 @@
 
 #import "PPDeviceTypeStoryPage.h"
 
-NSString *PPDeviceTypeStoryPageStyleDefault = @"";
-NSString *PPDeviceTypeStoryPageStyleInfo = @"info";
-NSString *PPDeviceTypeStoryPageStyleConnect = @"connect";
-NSString *PPDeviceTypeStoryPageStylePicture = @"picture";
-NSString *PPDeviceTypeStoryPageStyleCalibrate = @"calibrate";
-
 @implementation PPDeviceTypeStoryPage
 
 - (id)initWithIndex:(PPDeviceTypeStoryPageIndex)index hidden:(PPDeviceTypeStoryPageHidden)hidden dismissible:(PPDeviceTypeStoryPageDismissible)dismissible subtitle:(NSString *)subtitle desc:(NSString *)desc style:(NSString *)style content:(NSString *)content actions:(RLMArray *)actions media:(RLMArray *)media displayInfo:(PPDeviceTypeParameterDisplayInfo *)displayInfo {

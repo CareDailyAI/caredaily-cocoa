@@ -8,12 +8,6 @@
 
 #import "PPBaseModel.h"
 
-typedef NS_OPTIONS(NSInteger, PPNotificationSubscriptionSupportsBadgeIcons) {
-    PPNotificationSubscriptionSupportsBadgeIconsNone = -1,
-    PPNotificationSubscriptionSupportsBadgeIconsFalse = 0,
-    PPNotificationSubscriptionSupportsBadgeIconsTrue = 1
-};
-
 @interface PPNotificationToken : PPBaseModel
 
 @property (nonatomic, strong) NSString *token;

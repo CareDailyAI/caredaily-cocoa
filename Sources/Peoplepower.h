@@ -16,6 +16,7 @@ FOUNDATION_EXPORT const unsigned char PeoplepowerVersionString[];
 
 #pragma mark - Classes -
 
+#import <Peoplepower/PPTypeDefinitions.h>
 #import <Peoplepower/PPNetworkUtilities.h>
 #import <Peoplepower/PPDateUtilities.h>
 #import <Peoplepower/PPAppResources.h>

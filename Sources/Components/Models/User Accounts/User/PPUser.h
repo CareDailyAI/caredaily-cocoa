@@ -14,56 +14,10 @@
 #import "PPUserEmail.h"
 #import "PPOrganization.h"
 #import "PPLocation.h"
-#import "PPLocationCommunity.h"
-#import "PPUserCommunity.h"
 #import "PPUserBadge.h"
 #import "PPUserTag.h"
-
-typedef NS_OPTIONS(NSInteger, PPUserId) {
-    PPUserIdNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPUserPermission) {
-    PPUserPermissionNone = -1,
-    PPUserPermissionAccessAnyObjects = 0, // System admin
-    PPUserPermissionGrantRoles = 1,
-    PPUserPermissionReportsAccess = 2,
-    PPUserPermissionOrganizationAdmin = 3,
-    PPUserPermissionDevicesAndUserAccess = 4,
-    PPUserPermissionPaidServicesAdministrator = 5
-};
-
-typedef NS_OPTIONS(NSInteger, PPUserPhoneType) {
-    PPUserPhoneTypeNone = -1,
-    PPUserPhoneTypeUnknown = 0,
-    PPUserPhoneTypeCell = 1,
-    PPUserPhoneTypeHome = 2,
-    PPUserPhoneTypeWork = 3,
-    PPUserPhoneTypeOffice = 4
-};
-
-typedef NS_OPTIONS(NSInteger, PPUserEmailVerificationType) {
-    PPUserEmailVerificationTypeNone = 1,
-    PPUserEmailVerificationTypeEmail = 0,
-    PPUserEmailVerificationTypeSMS = 2
-};
-
-typedef NS_OPTIONS(NSInteger, PPUserAnonymousType) {
-    PPUserAnonymousTypeNone = -1,
-    PPUserAnonymousTypeNotAnonymous = 0,
-    PPUserAnonymousTypeAnonymous = 1
-};
-typedef NS_OPTIONS(NSInteger, PPUserSMSStatus) {
-    PPUserSMSStatusNone = -1,
-    PPUserSMSStatusUnknown = 0,
-    PPUserSMSStatusVerified = 1,
-    PPUserSMSStatusNotVerified = 2,
-    PPUserSMSStatusInvalid = 3
-};
-
-typedef NS_OPTIONS(NSInteger, PPUserAvatarFileId) {
-    PPUserAvatarFileIdNone = -1,
-};
+#import "PPLocationCommunity.h"
+#import "PPUserCommunity.h"
 
 @interface PPUser : PPBaseModel <NSCopying>
 

@@ -9,25 +9,6 @@
 #import "PPBaseModel.h"
 #import "PPDeviceType.h"
 
-typedef NS_OPTIONS(NSInteger, PPDeviceCommandId) {
-    PPDeviceCommandIdNone = -1,
-};
-
-typedef NS_OPTIONS(NSInteger, PPDeviceCommandResult) {
-    PPDeviceCommandResultNone = -1,
-};
-
-typedef NS_OPTIONS(NSInteger, PPDeviceCommandType) {
-    PPDeviceCommandTypeNone = -1,
-    PPDeviceCommandTypeSet = 0,
-    PPDeviceCommandTypeDelete = 1
-};
-
-typedef NS_OPTIONS(NSInteger, PPDeviceCommandTimeout) {
-    PPDeviceCommandTimeoutNone = -1,
-    PPDeviceCommandTimeoutDefault = 60
-};
-
 @interface PPDeviceCommand : PPBaseModel <NSCopying>
 
 @property (nonatomic) PPDeviceCommandId commandId;

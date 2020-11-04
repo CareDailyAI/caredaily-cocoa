@@ -8,25 +8,6 @@
 
 #import "PPBaseModel.h"
 
-typedef NS_OPTIONS(NSInteger, PPEnergyManagementBillingInfoBillingRateId) {
-    PPEnergyManagementBillingInfoBillingRateIdNone = -1,
-};
-
-typedef NS_OPTIONS(NSInteger, PPEnergyManagementBillingInfoBillingRateType) {
-    PPEnergyManagementBillingInfoBillingRateTypeNone = -3,
-    PPEnergyManagementBillingInfoBillingRateTypeManual = -2,
-    PPEnergyManagementBillingInfoBillingRateTypeUnknown = -1,
-    PPEnergyManagementBillingInfoBillingRateTypeResidentialAndCommercial = 0,
-    PPEnergyManagementBillingInfoBillingRateTypeResidential = 1,
-    PPEnergyManagementBillingInfoBillingRateTypeCommercial = 2
-};
-
-typedef NS_OPTIONS(NSInteger, PPEnergyManagementBillingInfoBillingRateTypical) {
-    PPEnergyManagementBillingInfoBillingRateTypicalNone = -1,
-    PPEnergyManagementBillingInfoBillingRateTypicalFalse = 0,
-    PPEnergyManagementBillingInfoBillingRateTypicalTrue = 1
-};
-
 @interface PPEnergyManagementBillingInfoBillingRate : PPBaseModel
 
 @property (nonatomic) PPEnergyManagementBillingInfoBillingRateId billingRateId;

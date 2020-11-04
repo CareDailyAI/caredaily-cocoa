@@ -8,22 +8,6 @@
 
 #import "PPBaseModel.h"
 
-typedef NS_OPTIONS(NSInteger, PPEnergyManagementBillingInfoBudgetMonth) {
-    PPEnergyManagementBillingInfoBudgetMonthNone = -1,
-    PPEnergyManagementBillingInfoBudgetMonthJanuary = 1,
-    PPEnergyManagementBillingInfoBudgetMonthFebruary = 2,
-    PPEnergyManagementBillingInfoBudgetMonthMarch = 3,
-    PPEnergyManagementBillingInfoBudgetMonthApril = 4,
-    PPEnergyManagementBillingInfoBudgetMonthMay = 5,
-    PPEnergyManagementBillingInfoBudgetMonthJune = 6,
-    PPEnergyManagementBillingInfoBudgetMonthJuly = 7,
-    PPEnergyManagementBillingInfoBudgetMonthAugust = 8,
-    PPEnergyManagementBillingInfoBudgetMonthSeptember = 9,
-    PPEnergyManagementBillingInfoBudgetMonthOctober = 10,
-    PPEnergyManagementBillingInfoBudgetMonthNovember = 11,
-    PPEnergyManagementBillingInfoBudgetMonthDecember = 12
-};
-
 @interface PPEnergyManagementBillingInfoBudget : PPBaseModel
 
 @property (nonatomic) PPEnergyManagementBillingInfoBudgetMonth month;

@@ -14,29 +14,6 @@
 #import "PPRuleComponentAction.h"
 #import "PPRuleCalendar.h"
 
-typedef NS_OPTIONS(NSInteger, PPRuleId) {
-    PPRuleIdNone = -1,
-};
-
-typedef NS_OPTIONS(NSInteger, PPRuleStatus) {
-    PPRuleStatusNone = -1,
-    PPRuleStatusIncomplete = 0,
-    PPRuleStatusActive = 1,
-    PPRuleStatusInactive = 2
-};
-
-typedef NS_OPTIONS(NSInteger, PPRuleHidden) {
-    PPRuleHiddenNone = -1,
-    PPRuleHiddenFalse = 0,
-    PPRuleHiddenTrue = 1,
-};
-
-typedef NS_OPTIONS(NSInteger, PPRuleDefault) {
-    PPRuleDefaultNone = -1,
-    PPRuleDefaultFalse = 0,
-    PPRuleDefaultTrue = 1,
-};
-
 @interface PPRule : PPBaseModel <NSCopying>
 
 @property (nonatomic) PPRuleId ruleId;

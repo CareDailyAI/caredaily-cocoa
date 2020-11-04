@@ -16,20 +16,6 @@
 #import "PPOrganization.h"
 #import "PPBotengineAppInstance.h"
 
-typedef void (^PPQuestionsBlock)(NSArray * _Nullable collections, NSArray * _Nullable questions, NSError * _Nullable error);
-typedef void (^PPQuestionsAnswersBlock)(NSArray * _Nullable questions, NSError * _Nullable error);
-
-typedef NS_OPTIONS(NSInteger, PPQuestionsLimit) {
-    PPQuestionsLimitNone = -1,
-    PPQuestionsLimitUnlimited = 0 // default
-};
-
-typedef NS_OPTIONS(NSInteger, PPQuestionsPublic) {
-    PPQuestionsPublicNone = -1,
-    PPQuestionsPublicFalse = 0,
-    PPQuestionsPublicTrue = 1,
-};
-
 @interface PPQuestions : PPBaseModel
 
 #pragma mark - Session Management

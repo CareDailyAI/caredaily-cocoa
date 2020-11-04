@@ -9,10 +9,6 @@
 #import "PPBaseModel.h"
 #import "PPDynamicUIScreenSection.h"
 
-typedef NS_OPTIONS(NSInteger, PPDynamicUIScreenOrder) {
-    PPDynamicUIScreenOrderNone = -1,
-};
-
 @interface PPDynamicUIScreen : PPBaseModel
 
 @property (nonatomic, strong) NSString *screenId;

@@ -10,27 +10,6 @@
 
 @interface PPUrl : PPBaseModel
 
-
-#ifndef HTTP_TIMEOUT_WITH_ACTIVE_CAMERA
-#define HTTP_TIMEOUT_WITH_ACTIVE_CAMERA 10
-#endif
-
-#ifndef HTTP_VIDEO_TIMEOUT
-#define HTTP_VIDEO_TIMEOUT 10
-#endif
-
-#ifndef HTTP_DEFAULT_TIMEOUT
-#define HTTP_DEFAULT_TIMEOUT 45
-#endif
-
-#ifndef HTTP_DEFAULT_PERSISTENT_CONNECTION_TIMEOUT
-#define HTTP_DEFAULT_PERSISTENT_CONNECTION_TIMEOUT 180
-#endif
-
-#ifndef HTTP_DEFAULT_WEBVIEW_VERSION
-#define HTTP_DEFAULT_WEBVIEW_VERSION 4
-#endif
-
 #pragma mark - Cloud Configuration
 
 + (PPCloudConnectivityCloud *)defaultCloud;

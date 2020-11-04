@@ -10,14 +10,6 @@
 #import "PPCallCenter.h"
 #import "PPDevice.h"
 
-typedef NS_OPTIONS(NSInteger, PPCallCenterAlertSourceType) {
-    PPCallCenterAlertSourceTypeNone = 1,
-    PPCallCenterAlertSourceTypeUnknown = 0, // Unknown
-    PPCallCenterAlertSourceTypeRule = 1, // Raised by a rule
-    PPCallCenterAlertSourceTypeBotengine = 2, // Raised by a botengine app
-    PPCallCenterAlertSourceTypeApp = 3, // Raised by an app API
-};
-
 @interface PPCallCenterAlert : PPBaseModel
 
 @property (nonatomic, strong) NSDate *alertDate;

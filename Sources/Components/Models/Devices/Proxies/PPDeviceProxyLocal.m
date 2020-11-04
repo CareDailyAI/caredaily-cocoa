@@ -11,33 +11,6 @@
 #import <sys/utsname.h>
 #import "PPCloudEngine.h"
 
-float DEVICE_LOCAL_INITIALIZATION_DELAY = 3.0;
-float DEVICE_LOCAL_INITIALIZATION_DELAY_EXTENDED = 30.0;
-
-NSString *WS_PARAMS = @"params";
-NSString *COMMAND_NAME = @"name";
-NSString *COMMAND_INDEX = @"index";
-NSString *COMMAND_SET_VALUE = @"setValue";
-NSString *COMMAND_VALUE = @"value";
-NSString *SESSION_ID = @"sessionId";
-
-float DEVICE_CAMERA_LOCAL_VERIFY_VIEWERS_AFTER_SEC = 10.0;
-float DEVICE_CAMERA_LOCAL_VERIFY_VIEWERS_AFTER_SEC_PERIODICALLY = 15.0;
-
-NSString *STREAM_ERROR = @"streamError";
-NSString *STREAM_STATUS = @"ppc.streamStatus";
-NSString *STREAM_ID = @"streamId";
-NSString *RESULT_CODE = @"resultCode";
-NSString *RECORD_STREAM = @"recordStream";
-
-NSString *VIDEO_CALL_SESSION_DETAILS = @"ppc.videoCallSessionDetails";
-NSString *VIDEO_CALL_ACTIVE_SESSION_ID = @"ppc.videoCallAnswerSessionId";
-NSString *VIDEO_CALL_NOW_STREAMING_SESSION_ID = @"ppc.videoCallNowStreamingSessionId";
-NSString *VIDEO_CALL_HANGUP_WITH_SESSION_ID = @"ppc.videoCallHangUpSessionId";
-NSString *VIDEO_CALL_IS_BUSY = @"ppc.videoCallIsBusy";
-
-NSInteger DEVICE_CAMERA_LOCAL_RESTART_INTERVAL = 86400;
-
 @interface PPDeviceProxyLocal ()
 
 @end

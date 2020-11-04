@@ -7,17 +7,6 @@
 
 #import "PPBaseModel.h"
 
-#ifndef PPVersion_h
-#define PPVersion_h
-#if !TARGET_OS_WATCH
-#define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
-#define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
-#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
-#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
-#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
-#endif
-#endif // PPVersion_h
-
 @interface PPVersion : PPBaseModel
 
 + (PPVersion * _Nonnull )myVersion;
@@ -36,6 +25,6 @@
 @property (readonly, nonatomic) NSInteger major;
 @property (readonly, nonatomic) NSInteger minor;
 @property (readonly, nonatomic) NSInteger build;
-@property (readonly, nonatomic) NSString * _Nullable commit;
+@property (readonly, nonatomic) NSString *commit;
 
 @end

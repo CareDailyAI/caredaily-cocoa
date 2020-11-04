@@ -8,10 +8,6 @@
 
 #import "PPBaseModel.h"
 
-typedef NS_OPTIONS(NSInteger, PPFileTagAppId) {
-    PPFileTagAppIdNone = -1
-};
-
 @interface PPFileTag : PPBaseModel
 
 @property (nonatomic, strong) NSString *tag;

@@ -8,20 +8,6 @@
 
 #import "PPBaseModel.h"
 
-typedef NS_OPTIONS(NSInteger, PPLocationSceneEventSourceType) {
-    PPLocationSceneEventSourceTypeNone = -1,
-    PPLocationSceneEventSourceTypeUserApp = 0,
-    PPLocationSceneEventSourceTypeRule = 1,
-    PPLocationSceneEventSourceTypeBot = 2
-};
-
-extern NSString *EVENT_HOME;
-extern NSString *EVENT_AWAY;
-extern NSString *EVENT_VACATION;
-extern NSString *EVENT_SLEEP;
-extern NSString *EVENT_STAY;
-extern NSString *EVENT_TEST;
-
 @interface PPLocationSceneEvent : PPBaseModel <NSCopying>
 
 @property (nonatomic, strong) NSString *event;

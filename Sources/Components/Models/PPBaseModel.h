@@ -8,18 +8,6 @@
 @import Realm;
 #import "PPRealmTypes.h"
 
-@class PPFile;
-
-typedef void (^PPBasicBlock)(void);
-typedef void (^PPErrorBlock)(NSError * _Nullable error);
-typedef void (^PPBooleanBlock)(BOOL b);
-typedef void (^PPNSIntegerBlock)(NSInteger i);
-typedef void (^PPNSStringBlock)(NSString * _Nullable s);
-typedef void (^PPNSURLBlock)(NSURL * _Nullable u);
-typedef void (^PPNSArrayBlock)(NSArray * _Nullable a);
-typedef void (^PPNSDictionaryBlock)(NSDictionary * _Nullable a);
-typedef void (^PPFileBlock)(PPFile * _Nullable f);
-
 @interface PPBaseModel : RLMObject
 
 + (void)disableTracking:(BOOL)disabled;

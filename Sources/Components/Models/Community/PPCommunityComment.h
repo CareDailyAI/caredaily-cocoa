@@ -8,10 +8,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_OPTIONS(NSInteger, PPCommunityCommentId) {
-    PPCommunityCommentIdNone = -1
-};
-
 @interface PPCommunityComment : PPBaseModel
 
 @property (nonatomic) PPCommunityCommentId commentId;

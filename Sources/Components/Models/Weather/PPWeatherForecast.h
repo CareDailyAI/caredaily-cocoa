@@ -8,14 +8,6 @@
 
 #import "PPBaseModel.h"
 
-typedef NS_OPTIONS(NSInteger, PPWeatherManagementForecastHours) {
-    PPWeatherManagementForecastHoursNone = -1,
-    PPWeatherManagementForecastHours6 = 6,
-    PPWeatherManagementForecastHours12 = 12,
-    PPWeatherManagementForecastHours24 = 24, // default
-    PPWeatherManagementForecastHours48 = 48,
-};
-
 @interface PPWeatherForecast : PPBaseModel
 
 @property (nonatomic, strong) NSString *forecastClass;

@@ -10,13 +10,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_OPTIONS(NSInteger, PPSurveyQuestionId) {
-    PPSurveyQuestionIdNone = -1
-};
-typedef NS_OPTIONS(NSInteger, PPSurveyQuestionSliderValue) {
-    PPSurveyQuestionSliderValueNone = -1
-};
-
 @interface PPSurveyQuestion: PPBaseModel <NSCopying>
 
 @property (nonatomic) PPSurveyQuestionId questionId;

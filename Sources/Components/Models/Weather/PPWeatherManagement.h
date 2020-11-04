@@ -9,11 +9,7 @@
 //
 
 #import "PPBaseModel.h"
-#import "PPLocation.h"
-#import "PPOrganization.h"
 #import "PPWeather.h"
-
-typedef void (^PPWeatherBlock)(PPWeather * _Nullable weather, NSError * _Nullable error);
 
 @interface PPWeatherManagement : PPBaseModel
 

@@ -17,35 +17,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_OPTIONS(NSInteger, PPCommunityPostId) {
-    PPCommunityPostIdNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPCommunityPostType) {
-    PPCommunityPostTypeIndividual = 1,
-    PPCommunityPostTypeLocation = 2,
-    PPCommunityPostTypeCommunity = 3
-};
-
-typedef NS_OPTIONS(NSInteger, PPCommunityPostStatus) {
-    PPCommunityPostStatusNone = -1,
-    PPCommunityPostStatusInactive = 0,
-    PPCommunityPostStatusActive = 1,
-    PPCommunityPostStatusRejected = 2
-};
-
-typedef NS_OPTIONS(NSInteger, PPCommunityModerator) {
-    PPCommunityModeratorNone = -1,
-    PPCommunityModeratorFalse = 0,
-    PPCommunityModeratorTrue = 1
-};
-
-typedef NS_OPTIONS(NSInteger, PPCommunityEventAllDay) {
-    PPCommunityEventAllDayNone = -1,
-    PPCommunityEventAllDayFalse = 0,
-    PPCommunityEventAllDayTrue = 1
-};
-
 @interface PPCommunityPost : PPBaseModel
 
 @property (nonatomic) PPCommunityPostType postType;

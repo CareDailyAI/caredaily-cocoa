@@ -12,33 +12,6 @@
 
 #pragma mark - PPServicePlan
 
-typedef NS_OPTIONS(NSInteger, PPServicePlanId) {
-    PPServicePlanIdNone = -1,
-};
-
-typedef NS_OPTIONS(NSInteger, PPServicePlanAvailable) {
-    PPServicePlanAvailableNone = -1,
-    PPServicePlanAvailableFalse = 0,
-    PPServicePlanAvailableTrue
-};
-
-typedef NS_OPTIONS(NSInteger, PPServicePlanSubscribed) {
-    PPServicePlanSubscribedNone = -1,
-    PPServicePlanSubscribedFalse = 0,
-    PPServicePlanSubscribedTrue
-};
-
-typedef NS_OPTIONS(NSInteger, PPServicePlanStatus) {
-    PPServicePlanStatusNone = -2,
-    PPServicePlanStatusInitial = -1,
-    PPServicePlanStatusActive = 0,
-    PPServicePlanStatusExpiredOrCanceled = 1
-};
-
-typedef NS_OPTIONS(NSInteger, PPServicePlanPriceId) {
-    PPServicePlanPriceIdNone = -1,
-};
-
 @class PPServicePlanSoftwareSubscription;
 
 @class PPServicePlanPrice;
@@ -92,42 +65,6 @@ typedef NS_OPTIONS(NSInteger, PPServicePlanPriceId) {
 @end
 
 #pragma mark - PPServicePlanSoftwareSubscription
-
-typedef NS_OPTIONS(NSInteger, PPServicePlanSoftwareSubscriptionUserPlanId) {
-    PPServicePlanSoftwareSubscriptionUserPlanIdNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPServicePlanSoftwareSubscriptionType) {
-    PPServicePlanSoftwareSubscriptionTypeNone = -1,
-    PPServicePlanSoftwareSubscriptionTypeOneTimePurchase = 1,
-    PPServicePlanSoftwareSubscriptionTypeWeeklySubscription = 2,
-    PPServicePlanSoftwareSubscriptionTypeMonthlySubscription = 3,
-    PPServicePlanSoftwareSubscriptionTypeAnnualSubscription = 4,
-};
-
-typedef NS_OPTIONS(NSInteger, PPServicePlanSoftwareSubscriptionPaymentType) {
-    PPServicePlanSoftwareSubscriptionPaymentTypeNone = 1,
-    PPServicePlanSoftwareSubscriptionPaymentTypeManual = 0,
-    PPServicePlanSoftwareSubscriptionPaymentTypeAppleInAppPurchase = 1,
-    PPServicePlanSoftwareSubscriptionPaymentTypePaypal = 2,
-    PPServicePlanSoftwareSubscriptionPaymentTypeBraintree = 3,
-};
-
-typedef NS_OPTIONS(NSInteger, PPServicePlanSoftwareSubscriptionFree) {
-    PPServicePlanSoftwareSubscriptionFreeNone = -1,
-    PPServicePlanSoftwareSubscriptionFreeFalse = 0,
-    PPServicePlanSoftwareSubscriptionFreeTrue = 1
-};
-
-typedef NS_OPTIONS(NSInteger, PPServicePlanSoftwareSubscriptionDuration) {
-    PPServicePlanSoftwareSubscriptionDurationNone = -1,
-};
-
-typedef NS_OPTIONS(NSInteger, PPServicePlanSoftwareSubscriptionSandbox) {
-    PPServicePlanSoftwareSubscriptionSandboxNone = -1,
-    PPServicePlanSoftwareSubscriptionSandboxFalse = 0,
-    PPServicePlanSoftwareSubscriptionSandboxTrue = 1
-};
 
 @class PPServicePlanTransaction;
 

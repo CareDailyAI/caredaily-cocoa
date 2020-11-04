@@ -11,21 +11,6 @@
 //#import "PPAFHTTPRequestOperationManager.h"
 #import "PPAFHTTPSessionManager.h"
 
-#import "PPUser.h"
-
-NSString *HTTP_HEADER_API_KEY = @"API_KEY";
-NSString *HTTP_HEADER_CIRCLE_KEY = @"CIRCLE_KEY";
-NSString *HTTP_HEADER_PASSWORD = @"PASSWORD";
-NSString *HTTP_HEADER_PASSCODE = @"passcode";
-NSString *HTTP_HEADER_AUTHORIZATION = @"Authorization";
-NSString *HTTP_HEADER_PPC_AUTHORIZATION = @"PPCAuthorization";
-NSString *HTTP_HEADER_CONTENT_TYPE = @"Content-Type";
-NSString *HTTP_HEADER_RANGE = @"Range";
-NSString *HTTP_HEADER_CONTENT_RANGE = @"Content-Range";
-NSString *HTTP_HEADER_ACCEPT_RANGES = @"Accept-Ranges";
-NSString *HTTP_HEADER_CONTENT_DISPOSITION = @"Content-Disposition";
-NSString *HTTP_HEADER_CONTENT_LENGTH = @"Content-Length";
-
 @interface PPAFHTTPBridge ()
 @end
 

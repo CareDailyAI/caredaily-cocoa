@@ -8,10 +8,6 @@
 
 #import "PPBaseModel.h"
 
-typedef NS_OPTIONS(NSInteger, PPUserServiceAmount) {
-    PPUserServiceAmountNone = -1,
-};
-
 @interface PPUserService : PPBaseModel <NSCopying>
 
 @property (nonatomic, strong) NSString *name;

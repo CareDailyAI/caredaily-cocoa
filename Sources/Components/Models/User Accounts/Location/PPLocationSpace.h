@@ -6,30 +6,6 @@
 //  Copyright © 2020 People Power Company. All rights reserved.
 //
 
-typedef NS_OPTIONS(NSInteger, PPLocationSpaceId) {
-    PPLocationSpaceIdNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPLocationSpaceType) {
-    PPLocationSpaceTypeNone         = -1,
-    PPLocationSpaceTypeUndefined    = 0,
-    PPLocationSpaceTypeKitchen      = 1,
-    PPLocationSpaceTypeBedroom      = 2,
-    PPLocationSpaceTypeBathroom     = 3,
-    PPLocationSpaceTypeHallway      = 4,
-    PPLocationSpaceTypeLivingRoom   = 5,
-    PPLocationSpaceTypeDiningRoom   = 6,
-    PPLocationSpaceTypeFamilyRoom   = 7,
-    PPLocationSpaceTypeLaundryRoom  = 8,
-    PPLocationSpaceTypeOffice       = 9,
-    PPLocationSpaceTypeStairs       = 10,
-    PPLocationSpaceTypeGarage       = 11,
-    PPLocationSpaceTypeBasement     = 12,
-    PPLocationSpaceTypeOther        = 13,
-    PPLocationSpaceTypeCouch        = 14,
-    PPLocationSpaceTypeChair        = 15,
-};
-
 @interface PPLocationSpace : PPBaseModel
 
 @property (nonatomic) PPLocationSpaceId spaceId;
@@ -46,4 +22,3 @@ typedef NS_OPTIONS(NSInteger, PPLocationSpaceType) {
 + (NSString *)localizedNameForSpaceType:(PPLocationSpaceType)spaceType;
 
 @end
-

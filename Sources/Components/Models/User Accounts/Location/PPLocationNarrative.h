@@ -12,29 +12,9 @@
 #import "PPRLMDictionary.h"
 #import "PPBotengineAppInstance.h"
 
-@class PPLocationNarrativeTarget;
-
-typedef NS_OPTIONS(NSInteger, PPLocationNarrativeId) {
-    PPLocationNarrativeIdNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPLocationNarrativeTime) {
-    PPLocationNarrativeTimeNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPLocationNarrativePriority) {
-    PPLocationNarrativePriorityNone = -1,
-    PPLocationNarrativePriorityDebug = 0,
-    PPLocationNarrativePriorityInfo = 1,
-    PPLocationNarrativePriorityWarning = 2,
-    PPLocationNarrativePriorityCritical = 3
-};
-
-typedef NS_OPTIONS(NSInteger, PPLocationNarrativeRowCount) {
-    PPLocationNarrativeRowCountNone = -1
-};
-
 NS_ASSUME_NONNULL_BEGIN
+
+@class PPLocationNarrativeTarget;
 
 @interface PPLocationNarrative : PPBaseModel
 

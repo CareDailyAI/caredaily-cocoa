@@ -19,52 +19,6 @@
 #import "PPOrganization.h"
 #import "PPLocationNarrative.h"
 
-@class PPUser;
-@class PPOperationToken;
-
-typedef void (^PPUserAccountsBlock)(PPUser * _Nullable user, NSError * _Nullable error);
-typedef void (^PPUserAccountsServicesBlock)(NSMutableArray * _Nullable services, NSError * _Nullable error);
-typedef void (^PPUserAccountsUsersListBlock)(NSArray * _Nullable users, NSError * _Nullable error);
-typedef void (^PPUserAccountsRegistrationBlock)(NSString * _Nullable userId, NSString * _Nullable locationId, NSString * _Nullable APIKey, NSDate * _Nullable keyExpireDate, NSError * _Nullable error);
-typedef void (^PPUserAccountsLocationSceneBlockBlock)(NSArray * _Nullable sharedDevices, NSArray * _Nullable stopSharingDevices, NSError * _Nullable error);
-typedef void (^PPUserAccountsLocationSceneBlockHistoryBlock)(NSArray * _Nullable events, NSError * _Nullable error);
-typedef void (^PPUserAccountTermsOfServiceBlock)(NSArray * _Nullable termsOfServices, NSError * _Nullable error);
-typedef void (^PPUserAccountCountriesStatesAndTimeszonesBlock)(PPCountriesStatesAndTimezones * _Nullable countriesStatesAndTimezones, NSError * _Nullable error);
-typedef void (^PPUserAccountsLocationSpacesBlock)(NSArray * _Nullable spaces, NSError * _Nullable error);
-typedef void (^PPUserAccountsUpdateLocationSpacesBlock)(PPLocationSpaceId spaceId, NSError * _Nullable error);
-typedef void (^PPUserAccountsPutNarrativeBlock)(PPLocationNarrativeId spaceId, NSError * _Nullable error);
-typedef void (^PPUserAccountsNarrativesBlock)(NSArray * _Nullable narratives, NSString * _Nullable nextMarker, NSError * _Nullable error);
-typedef void (^PPUserAccountsAddLocationBlock)(PPLocationId locationId, NSError * _Nullable error);
-typedef void (^PPUserAccountsLocationPresenceBlock)(NSArray * _Nullable ibeaconUUIDs, NSError * _Nullable error);
-typedef void (^PPUserAccountsLocationIdBlock)(PPLocationId locationId, NSError * _Nullable error);
-typedef void (^PPUserAccountsStateBlock)(NSDictionary * _Nullable data, NSError * _Nullable error);
-typedef void (^PPUserAccountsStatesBlock)(NSArray * _Nullable states, NSError * _Nullable error);
-typedef void (^PPUserAccountsUserCodesBlock)(NSArray * _Nullable userCodes, NSError * _Nullable error);
-
-typedef NS_OPTIONS(NSInteger, PPUserAccountAuthorizationType) {
-    PPUserAccountAuthorizationTypeNone = -1,
-    PPUserAccountAuthorizationTypeDeviceAuthenticationToken = 0,
-    PPUserAccountAuthorizationTypeStreamingSessionId = 1
-};
-
-typedef NS_OPTIONS(NSInteger, PPUserAccountSendAsRequest) {
-    PPUserAccountSendAsRequestNone = -1,
-    PPUserAccountSendAsRequestFalse = 0,
-    PPUserAccountSendAsRequestTrue = 1
-};
-
-typedef NS_OPTIONS(NSInteger, PPUserAccountsMerge) {
-    PPUserAccountsMergeNone = -1,
-    PPUserAccountsMergeFalse = 0,
-    PPUserAccountsMergeTrue = 1
-};
-
-typedef NS_OPTIONS(NSInteger, PPUserAccountsStateOverwrite) {
-    PPUserAccountsStateOverwriteNone = -1,
-    PPUserAccountsStateOverwriteFalse = 0,
-    PPUserAccountsStateOverwriteTrue = 1
-};
-
 @interface PPUserAccounts : PPBaseModel
 
 #pragma mark - Session Management

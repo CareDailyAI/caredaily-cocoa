@@ -9,18 +9,6 @@
 //
 
 #import "PPBaseModel.h"
-#import "PPUser.h"
-
-typedef NS_OPTIONS(NSInteger, PPCircleReactionType) {
-    PPCircleReactionTypeNone = -1,
-    PPCircleReactionTypeRemovePreviousReaction = 0,
-    PPCircleReactionTypeLike = 1,
-    PPCircleReactionTypeLove = 2,
-    PPCircleReactionTypeHaHa = 3,
-    PPCircleReactionTypeWow = 4,
-    PPCircleReactionTypeSad = 5,
-    PPCircleReactionTypeAngry = 6
-};
 
 @interface PPCircleReaction : PPBaseModel
 
@@ -32,4 +20,3 @@ typedef NS_OPTIONS(NSInteger, PPCircleReactionType) {
 + (PPCircleReaction *)initWithDictionary:(NSDictionary *)reactionDict;
 
 @end
-

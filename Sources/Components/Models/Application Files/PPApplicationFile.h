@@ -7,38 +7,8 @@
 //
 
 #import "PPBaseModel.h"
-#import "PPUser.h"
 #import "PPLocation.h"
 #import "PPDevice.h"
-
-typedef NS_OPTIONS(NSInteger, PPApplicationFileId) {
-    PPApplicationFileIdNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPApplicationFileFileType) {
-    PPApplicationFileFileTypeNone = -1,
-    PPApplicationFileFileTypeUserImage = 1,
-    PPApplicationFileFileTypeLocationImage = 2,
-    PPApplicationFileFileTypeDeviceImage = 3,
-    PPApplicationFileFileTypeBitmapMask = 4,
-    PPApplicationFileFileTypeAny = 5
-};
-
-typedef NS_OPTIONS(long long, PPApplicationFileSize) {
-    PPApplicationFileSizeNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPApplicationFilePublicAccess) {
-    PPApplicationFilePublicAccessNone = -1,
-    PPApplicationFilePublicAccessFalse = 0,
-    PPApplicationFilePublicAccessTrue = 1
-};
-
-typedef NS_OPTIONS(NSInteger, PPApplicationFileAttach) {
-    PPApplicationFileAttachNone = -1,
-    PPApplicationFileAttachFalse = 0,
-    PPApplicationFileAttachTrue = 1
-};
 
 @interface PPApplicationFile : PPBaseModel
 

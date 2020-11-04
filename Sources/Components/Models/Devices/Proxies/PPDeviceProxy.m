@@ -7,14 +7,10 @@
 
 #import "PPDeviceProxy.h"
 #import <sys/utsname.h>
-#import "PPUser.h"
 #import "PPCloudEngine.h"
 #import "PPDeviceProxyLocal.h"
 #import "PPUserAccounts.h"
 #import "PPFileManagement.h"
-
-const NSInteger PPDeviceProxyRegisterFailed = 100;
-const NSInteger PPDeviceProxyUnreUngisterFailed = 101;
 
 @interface PPDeviceProxy ()
 - (void)processServerResponse:(NSDictionary *)responseData;

@@ -8,15 +8,6 @@
 
 #import "PPBaseModel.h"
 
-typedef NS_OPTIONS(NSInteger, PPEnergyManagementUsageExternal) {
-    PPEnergyManagementUsageExternalNone = -1,
-    PPEnergyManagementUsageExternalPreferExternallyUploadedData = 0, // Default
-    PPEnergyManagementUsageExternalPreferInternallyGeneratedData = 1,
-    PPEnergyManagementUsageExternalReturnOnlyExternallyUploadedData = 2,
-    PPEnergyManagementUsageExternalReturnOnlyInternallyGeneratedData = 3,
-    PPEnergyManagementUsageExternalReturnBothInternallyAndExternallyGeneratedData = 4
-};
-
 @interface PPEnergyManagementUsage : PPBaseModel
 
 @property (nonatomic, strong) NSDate *startDate;

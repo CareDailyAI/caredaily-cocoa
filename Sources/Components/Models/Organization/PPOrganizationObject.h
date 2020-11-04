@@ -10,18 +10,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_OPTIONS(NSInteger, PPOrganizationObjectPrivateContent) {
-    PPOrganizationObjectPrivateContentNone = -1,
-    PPOrganizationObjectPrivateContentFalse = 0,
-    PPOrganizationObjectPrivateContentTrue = 1,
-};
-
-typedef NS_OPTIONS(NSInteger, PPOrganizationObjectParent) {
-    PPOrganizationObjectParentNone = -1,
-    PPOrganizationObjectParentFalse = 0,
-    PPOrganizationObjectParentTrue = 1,
-};
-
 @interface PPOrganizationObject : PPBaseModel
 
 @property (nonatomic, strong) NSString *name;

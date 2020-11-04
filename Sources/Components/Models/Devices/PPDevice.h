@@ -13,46 +13,6 @@
 #import "PPDeviceMeasurements.h"
 #import "PPDeviceProperty.h"
 #import "PPLocation.h"
-#import "PPUser.h"
-
-extern NSString *DEVICE_NAME;
-extern NSString *DEVICE_CONNECTED;
-extern NSString *DEVICE_RESTRICTED;
-extern NSString *DEVICE_SHARED;
-extern NSString *DEVICE_NEW_DEVICE;
-extern NSString *DEVICE_GOAL_ID;
-extern NSString *DEVICE_LAST_DATA_RECEIVED_DATE;
-extern NSString *DEVICE_LAST_MEASURE_DATE;
-extern NSString *DEVICE_LAST_CONNECTED_DATE;
-extern NSString *DEVICE_ICON;
-extern NSString *DEVICE_LOCATION_ID;
-
-typedef NS_OPTIONS(NSInteger, PPHistoricalMeasurementsAggregation) {
-    PPHistoricalMeasurementsAggregationDefault = 0,
-    PPHistoricalMeasurementsAggregationMinimum = 1,
-    PPHistoricalMeasurementsAggregationMaximum = 2,
-    PPHistoricalMeasurementsAggregationMedian = 3,
-    PPHistoricalMeasurementsAggregationTimeDistributedAverage = 4,
-    PPHistoricalMeasurementsAggregationAverage = 5
-};
-
-typedef NS_OPTIONS(NSInteger, PPDeviceConnected) {
-    PPDeviceConnectedNone = -1,
-    PPDeviceConnectedFalse = 0,
-    PPDeviceConnectedTrue = 1
-};
-
-typedef NS_OPTIONS(NSInteger, PPDeviceNewDevice) {
-    PPDeviceNewDeviceNone = -1,
-    PPDeviceNewDeviceFalse = 0,
-    PPDeviceNewDeviceTrue = 1
-};
-
-typedef NS_OPTIONS(NSInteger, PPDeviceRestricted) {
-    PPDeviceRestrictedNone = -1,
-    PPDeviceRestrictedFalse = 0,
-    PPDeviceRestrictedTrue = 1
-};
 
 @interface PPDevice : PPBaseModel
 

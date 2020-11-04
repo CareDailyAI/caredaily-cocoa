@@ -8,16 +8,6 @@
 
 #import "PPBaseModel.h"
 
-typedef NS_OPTIONS(NSInteger, PPDeviceTypeDeviceModelBrandHidden) {
-    PPDeviceTypeDeviceModelBrandHiddenNone = -1,
-    PPDeviceTypeDeviceModelBrandHiddenFalse = 0,
-    PPDeviceTypeDeviceModelBrandHiddenTrue = 1
-};
-
-typedef NS_OPTIONS(NSInteger, PPDeviceTypeDeviceModelBrandSortId) {
-    PPDeviceTypeDeviceModelBrandSortIdNone = -1,
-};
-
 @class PPDeviceTypeDeviceModelBrandName;
 @class PPDeviceTypeDeviceModelBrandDesc;
 

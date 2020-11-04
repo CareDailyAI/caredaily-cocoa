@@ -8,12 +8,6 @@
 
 #import "PPBaseModel.h"
 
-typedef NS_OPTIONS(NSInteger, PPBotengineAppReviewVote) {
-    PPBotengineAppReviewVoteDown = -1,
-    PPBotengineAppReviewVoteDelete = 0,
-    PPBotengineAppReviewVoteUp = 1
-};
-
 @interface PPBotengineAppReview : PPBaseModel
 
 @property (nonatomic) NSInteger reviewId;
@@ -33,4 +27,3 @@ typedef NS_OPTIONS(NSInteger, PPBotengineAppReviewVote) {
 - (id)initWithReviewId:(NSInteger)reviewId userId:(NSInteger)userId version:(NSString *)version creationDate:(NSDate *)creationDate rating:(NSInteger)rating votesUp:(NSInteger)votesUp votesDown:(NSInteger)votesDown ownVote:(BOOL)ownVote lang:(NSString *)lang nickname:(NSString *)nickname desc:(NSString *)desc;
 
 @end
-

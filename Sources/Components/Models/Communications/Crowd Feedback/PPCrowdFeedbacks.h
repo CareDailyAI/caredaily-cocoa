@@ -13,23 +13,6 @@
 #import "PPCrowdFeedbackSupport.h"
 #import "PPCrowdFeedbackTicket.h"
 
-typedef void (^PPCrowdFeedbacksTicketBlock)(PPCrowdFeedbackTicket * _Nullable ticket, NSError * _Nullable error);
-typedef void (^PPCrowdFeedbacksBlock)(NSArray * _Nullable feedbacks, NSError * _Nullable error);
-
-typedef NS_OPTIONS(NSInteger, PPCrowdFeedbacksStartPosition) {
-    PPCrowdFeedbacksStartPositionNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPCrowdFeedbacksLength) {
-    PPCrowdFeedbacksLengthNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPCrowdFeedbacksDisabled) {
-    PPCrowdFeedbacksDisabledNone = -1,
-    PPCrowdFeedbacksDisabledFalse = 0,
-    PPCrowdFeedbacksDisabledTrue = 1
-};
-
 @interface PPCrowdFeedbacks : PPBaseModel
 
 #pragma mark - Session Management

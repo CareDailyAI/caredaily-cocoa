@@ -15,18 +15,6 @@
 #import "PPCircleDeviceCamera.h"
 #import "PPCircleDevicePictureFrame.h"
 
-typedef void (^PPCircleCreationBlock)(PPCircleId circleId, NSError * _Nullable error);
-typedef void (^PPCirclesBlock)(NSArray * _Nullable circles, NSError * _Nullable error);
-typedef void (^PPCircleFileUploadBlock)(PPFileId fileId, PPFileThumbnail thumbnail, PPCircleData monthlyDataIn, PPCircleData monthlyDataMax, NSError * _Nullable error);
-typedef void (^PPCircleFileUploadFragmentBlock)(PPFileThumbnail thumbnail, NSError * _Nullable error);
-typedef void (^PPCircleFilesBlock)(NSArray * _Nullable files, NSString * _Nullable tempKey, NSDate * _Nullable tempKeyExpire, PPCircleData monthlyDataIn, PPCircleData monthlyDataMax, NSError * _Nullable error);
-typedef void (^PPCircleFileContentBlock)(NSData * _Nullable fileData, NSString * _Nullable contentType, NSString * _Nullable contentRange, NSString * _Nullable acceptRanges, NSString * _Nullable contentDisposition,NSInteger statusCode, NSError * _Nullable error);
-typedef void (^PPCircleFileDownloadURLBlock)(NSURL * _Nullable contentURL, NSURL * _Nullable thumbnailURL, NSURL * _Nullable m3u8URL, NSError * _Nullable error);
-typedef void (^PPCirclePostMakeBlock)(PPCirclePostId postId, NSError * _Nullable error);
-typedef void (^PPCirclePostsBlock)(NSArray * _Nullable posts, NSError * _Nullable error);
-typedef void (^PPCircleDevicesBlock)(NSArray * _Nullable devices, NSError * _Nullable error);
-typedef void (^PPCircleFileProgressBlock)(NSProgress * _Nullable progress);
-
 @interface PPCircles : PPBaseModel
 
 #pragma mark - Session Management

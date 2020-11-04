@@ -11,65 +11,6 @@
 #import "PPQuestionResponseOption.h"
 #import "PPQuestionAnswer.h"
 
-typedef NS_OPTIONS(NSInteger, PPQuestionId) {
-    PPQuestionIdNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPQuestionAggregatePublicly) {
-    PPQuestionAggregatePubliclyNone = -1,
-    PPQuestionAggregatePubliclyFalse = 0,
-    PPQuestionAggregatePubliclyTrue = 1
-};
-
-typedef NS_OPTIONS(NSInteger, PPQuestionUrgent) {
-    PPQuestionUrgentNone = -1,
-    PPQuestionUrgentFalse = 0,
-    PPQuestionUrgentTrue = 1
-};
-
-typedef NS_OPTIONS(NSInteger, PPQuestionFront) {
-    PPQuestionFrontNone = -1,
-    PPQuestionFrontFalse = 0,
-    PPQuestionFrontTrue = 1
-};
-
-typedef NS_OPTIONS(NSInteger, PPQuestionEditable) {
-    PPQuestionEditableNone = -1,
-    PPQuestionEditableFalse = 0,
-    PPQuestionEditableTrue = 1
-};
-
-typedef NS_OPTIONS(NSInteger, PPQuestionTotalResponses) {
-    PPQuestionTotalResponsesNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPQuestionSliderMin) {
-    PPQuestionSliderMinNone = -1,
-    PPQuestionSliderMinDefault = 0
-};
-
-typedef NS_OPTIONS(NSInteger, PPQuestionSliderMax) {
-    PPQuestionSliderMaxNone = -1,
-    PPQuestionSliderMaxDefault = 100
-};
-
-typedef NS_OPTIONS(NSInteger, PPQuestionSliderInc) {
-    PPQuestionSliderIncNone = -1,
-    PPQuestionSliderIncDefault = 1
-};
-
-typedef NS_OPTIONS(NSInteger, PPQuestionSectionId) {
-    PPQuestionSectionIdNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPQuestionWeight) {
-    PPQuestionWeightNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPQuestionPoints) {
-    PPQuestionPointsNone = -1
-};
-
 @interface PPQuestion : PPBaseModel
 
 /* Question ID assigned by the system */

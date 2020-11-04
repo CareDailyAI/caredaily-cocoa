@@ -16,11 +16,6 @@
 #import "PPCloudsIntegrationClient.h"
 #import "PPCloudsIntegrationHost.h"
 #import "PPCloudsIntegrationHostAccessToken.h"
-#import "PPUser.h"
-
-typedef void (^PPCloudsIntegrationCloudsCallback)(NSMutableArray * _Nullable clouds, NSError * _Nullable error);
-typedef void (^PPCloudsIntegrationHostAccessTokenBlock)(PPCloudsIntegrationHostAccessToken * _Nullable accessToken, NSError * _Nullable error);
-typedef void (^PPCloudsIntegrationMicroServiceVersionsCallback)(NSMutableArray * _Nullable versions, NSError * _Nullable error);
 
 @interface PPCloudsIntegration : PPBaseModel
 

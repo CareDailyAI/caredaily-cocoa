@@ -11,19 +11,7 @@
 //
 
 #import "PPBaseModel.h"
-#import "PPUser.h"
 #import "PPDynamicUIScreen.h"
-
-typedef void (^PPDynamicUIBlock)(NSArray * _Nullable screens, NSError * _Nullable error);
-typedef void (^PPDynamicUILocationTotalsBlock)(NSDictionary * _Nullable userTotals, NSError * _Nullable error);
-
-typedef NS_OPTIONS(NSInteger, PPDynamicUILocationTotalsType) {
-    PPDynamicUILocationTotalsTypeAll = -1,
-    PPDynamicUILocationTotalsTypeDevices = 1 << 0,
-    PPDynamicUILocationTotalsTypeFiles = 1 << 1,
-    PPDynamicUILocationTotalsTypeRules = 1 << 2,
-    PPDynamicUILocationTotalsTypeFriends = 1 << 3
-};
 
 @interface PPDynamicUIs : PPBaseModel
 

@@ -8,24 +8,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_OPTIONS(NSInteger, PPDeviceDataRequestType) {
-    PPDeviceDataRequestTypeParameters = 1, // Device Parameters
-    PPDeviceDataRequestTypeActivities = 2
-};
-
-typedef NS_OPTIONS(NSInteger, PPDeviceDataRequestOdered) {
-    PPDeviceDataRequestOderedNone = -2,
-    PPDeviceDataRequestOderedDesc = -1,
-    PPDeviceDataRequestOderedAsc  = 1
-};
-
-typedef NS_OPTIONS(NSInteger, PPDeviceDataRequestCompression) {
-    PPDeviceDataRequestCompressionNone          = -1,
-    PPDeviceDataRequestCompressionLZ4           = 0, // Default
-    PPDeviceDataRequestCompressionZIP           = 1,
-    PPDeviceDataRequestCompressionNoCompression = 2
-};
-
 @interface PPDeviceDataRequest : PPBaseModel
 
 @property (nonatomic) PPDeviceDataRequestType type;

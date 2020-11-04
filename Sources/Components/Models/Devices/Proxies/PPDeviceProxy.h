@@ -8,31 +8,12 @@
 #import "PPBaseModel.h"
 #import "PPLocation.h"
 //#import "PPDeviceMeasurements.h"
-#import "PPUser.h"
 #import "PPFile.h"
 #import "PPDevices.h"
 #import "PPCloudConnectivityServer.h"
 #import "PPDeviceProxyLocal.h"
 #import "PPDeviceProxyLocalCamera.h"
 #import "PPDeviceProxyLocalPictureFrame.h"
-
-@class PPDeviceProxy;
-
-#define DEFAULT_DEVICE_PROXY_ALERT_ID_LIMIT 1000
-#define PROVIDEO_CACHE_REFRESH_TIME_SECONDS 60
-#define FILE_UPLOAD_ATTEMPT_LIMIT 1
-#define PROXY_DEFAULT_POST_FILE_RETRY_INTERVAL 20
-
-typedef NS_OPTIONS(NSInteger, PPDeviceProxyReliabilityBufferType) {
-    PPDeviceProxyReliabilityBufferTypeCommandResponses,
-    PPDeviceProxyReliabilityBufferTypeMeasurement,
-    PPDeviceProxyReliabilityBufferTypeAlert
-};
-
-typedef void (^PPFileAcknowledgmentBlock)(PPFileId fileId, PPFileFragments totalFragments, PPFileUsedFileSpace usedSpace, PPFileTotalFileSpace totalSpace, PPFileFilesAction action, PPFileThumbnail thumbnail, PPFileTwitterShare twitterShare, NSError * _Nullable error);
-typedef void (^PPProxyRegisterBlock)(PPDeviceProxy * _Nullable device, NSError * _Nullable error);
-typedef NSDictionary * _Nonnull (^PPDeviceProxyDeviceCommandBlock)(NSArray * _Nullable parameters);
-typedef void (^PPUserAccountsBlock)(PPUser * _Nullable user, NSError * _Nullable error);
 
 @protocol PPDeviceProxyDelegate <NSObject>
 

@@ -12,9 +12,6 @@
 #import "PPCallCenter.h"
 #import "PPCallCenterAlert.h"
 
-typedef void (^PPCallCenterBlock)(PPCallCenter * _Nullable callCenter, NSError * _Nullable error);
-typedef void (^PPCallCenterAlertsBlock)(NSArray * _Nullable alerts, NSError * _Nullable error);
-
 @interface PPProfessionalMonitoring : PPBaseModel
 
 #pragma mark - Session Management

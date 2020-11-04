@@ -11,8 +11,6 @@
 #import "PPBotengineAppInstance.h"
 #import "PPCloudEngine.h"
 #import "PPCurlDebug.h"
-#import "PPUser.h"
-#import "PPUserAccounts.h"
 
 @implementation PPBotengine
 

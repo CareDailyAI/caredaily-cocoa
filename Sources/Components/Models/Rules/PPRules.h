@@ -114,21 +114,6 @@
 #import "PPBaseModel.h"
 #import "PPRule.h"
 
-typedef void (^PPRulesComponentsBlock)(NSArray * _Nullable triggers, NSArray * _Nullable states, NSArray * _Nullable actions, NSError * _Nullable error);
-typedef void (^PPRulesCreationBlock)(PPRule * _Nullable rule, NSError * _Nullable error);
-typedef void (^PPRulesListBlock)(NSArray * _Nullable rules, NSError * _Nullable error);
-typedef void (^PPRulesStatusBlock)(NSArray * _Nullable ruleIds, NSError * _Nullable error);
-
-typedef NS_OPTIONS(NSInteger, PPRulesVersion) {
-    PPRulesVersionNone = -1,
-};
-
-typedef NS_OPTIONS(NSInteger, PPRulesDetails) {
-    PPRulesDetailsNone = -1,
-    PPRulesDetailsFalse = 0, // Only return the high level information about the rule, including the id, description text, on/off status, whether the rule is a default rule, and whether the rule is hidden and not editable, default
-    PPRulesDetailsTrue = 1 // Return details for this rule, including all the triggers, states, and actions that compose the rule.
-};
-
 @interface PPRules : PPBaseModel
 
 #pragma mark - Session Management

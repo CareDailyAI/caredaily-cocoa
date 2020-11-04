@@ -10,41 +10,6 @@
 #import "PPVersion.h"
 #import "PPVideoToken.h"
 
-// Camera parameter refresh interval
-extern NSInteger CAMERA_REFRESH_INTERVAL;
-
-// Motion recording duration
-extern PPDeviceParametersRecordSeconds CAMERA_MOTION_RECORDING_DURATION_FREE_MAX;
-extern PPDeviceParametersRecordSeconds CAMERA_MOTION_RECORDING_DURATION_PRO_MAX;
-extern PPDeviceParametersRecordSeconds CAMERA_MOTION_RECORDING_DURATION_MIN;
-extern PPDeviceParametersRecordSeconds CAMERA_MOTION_RECORDING_DURATION_DEFAULT;
-
-// Motion recording thumbnail interval
-extern NSInteger CAMERA_MOTION_RECORDING_THUMBNAIL_INTERVAL;
-
-// Motion detection reset interval
-extern NSInteger CAMERA_MOTION_DETECTION_RESET_INTERVAL;
-
-// Motion detection countdown duration
-extern PPDeviceParametersMotionCountDownTime CAMERA_MOTION_DETECTION_COUNTDOWN_DEFAULT;
-
-// Streaming connection attemp limit
-extern NSInteger CAMERA_STREAMING_CONNECTION_ATTEMPT_LIMIT;
-
-// Motion detection sensitivity
-extern PPDeviceParametersMotionSensitiviy CAMERA_MOTION_DETECTION_SENSITIVITY_DEFAULT;
-
-// Motion recording interval
-extern PPDeviceParametersRapidMotionStatus CAMERA_MOTION_RECORDING_INTERVAL_FREE_MIN;
-extern PPDeviceParametersRapidMotionStatus CAMERA_MOTION_RECORDING_INTERVAL_PRO_MIN;
-extern PPDeviceParametersRapidMotionStatus CAMERA_MOTION_RECORDING_INTERVAL_MAX;
-extern PPDeviceParametersRapidMotionStatus CAMERA_MOTION_RECORDING_INTERVAL_DEFAULT;
-
-// Camera output volume
-extern PPDeviceParametersOutputVolume CAMERA_VOLUME_OUTPUT_MAXIMUM;
-extern PPDeviceParametersOutputVolume CAMERA_VOLUME_OUTPUT_DEFAULT;
-
-
 @interface PPDeviceCamera : PPDevice
 
 // Camera

@@ -8,40 +8,6 @@
 
 #import "PPBaseModel.h"
 
-typedef NS_OPTIONS(NSInteger, PPFileSummaryAggregation) {
-    PPFileSummaryAggregationNone = -1,
-    PPFileSummaryAggregationHour = 1,
-    PPFileSummaryAggregationDay = 2,
-    PPFileSummaryAggregationMonth = 3,
-    PPFileSummaryAggregationWeek = 4 // 7-day week from Sunday to Saturday
-};
-
-typedef NS_OPTIONS(NSInteger, PPFileSummaryDetails) {
-    PPFileSummaryDetailsNone = -1,
-    PPFileSummaryDetailsFalse = 0,
-    PPFileSummaryDetailsTrue = 1
-};
-
-typedef NS_OPTIONS(NSInteger, PPFileSummaryTotal) {
-    PPFileSummaryTotalNone = -1
-};
-
-typedef NS_OPTIONS(long long, PPFileSummarySize) {
-    PPFileSummarySizeNone = -1
-};
-
-typedef NS_OPTIONS(long long, PPFileSummaryDuration) {
-    PPFileSummaryDurationNone = -1
-};
-
-typedef NS_OPTIONS(long long, PPFileSummaryViewed) {
-    PPFileSummaryViewedNone = -1
-};
-
-typedef NS_OPTIONS(long long, PPFileSummaryFavourite) {
-    PPFileSummaryFavouriteNone = -1
-};
-
 @interface PPFileSummary : PPBaseModel
 
 /* File creation date rounded to the beginning of an aggregation period */

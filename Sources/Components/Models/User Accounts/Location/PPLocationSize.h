@@ -8,10 +8,6 @@
 
 #import "PPBaseModel.h"
 
-typedef NS_OPTIONS(NSInteger, PPLocationSizeContent) {
-    PPLocationSizeContentNone = -1
-};
-
 @interface PPLocationSize : PPBaseModel <NSCopying>
 
 @property (nonatomic, strong) NSString *unit;
