@@ -11,6 +11,10 @@
 
 @implementation PPOrganizations
 
++ (NSArray<NSString *> *)ignoredProperties {
+    return @[@"organizations"];
+}
+
 __strong static PPOrganizations *_sharedObject = nil;
 
 /**

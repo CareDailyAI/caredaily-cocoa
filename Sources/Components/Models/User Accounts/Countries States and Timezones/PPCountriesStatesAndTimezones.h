@@ -18,6 +18,6 @@
 - (NSArray *)statesForCountry:(PPCountryId)countryId;
 - (PPCountry *)countryForState:(PPStateId)stateId;
 
-@property (nonatomic, strong) RLMArray<PPCountry *> *countries;
+@property (nonatomic, strong) RLMArray<PPCountry *><PPCountry> *countries;
 
 @end

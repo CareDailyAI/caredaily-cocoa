@@ -17,6 +17,12 @@
 
 @implementation PPOperationToken
 
+
++ (NSArray *)ignoredProperties {
+    return @[@"shouldCancel",
+             @"validityCallback"];
+}
+
 - (id)initWithToken:(NSString *)token type:(PPOperationTokenType)type validFrom:(NSDate *)validFrom expire:(NSDate *)expire {
     self = [super init];
     if(self) {

@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *deviceId;
 @property (nonatomic, strong) NSDate *startDate;
 @property (nonatomic, strong) NSDate *endDate;
-@property (nonatomic, strong) NSArray *paramNames;
+@property (nonatomic, strong) RLMArray<RLMString> *paramNames;
 @property (nonatomic, strong) NSNumber<RLMInt> *index;
 @property (nonatomic) PPDeviceDataRequestOdered ordered;
 @property (nonatomic) PPDeviceDataRequestCompression compression;
