@@ -12,9 +12,6 @@
 
 #pragma mark - PPServicePlan
 
-@class PPServicePlanSoftwareSubscription;
-@class PPServicePlanPrice;
-
 typedef NS_OPTIONS(NSInteger, PPServicePlanId) {
     PPServicePlanIdNone = -1,
 };
@@ -22,13 +19,13 @@ typedef NS_OPTIONS(NSInteger, PPServicePlanId) {
 typedef NS_OPTIONS(NSInteger, PPServicePlanAvailable) {
     PPServicePlanAvailableNone = -1,
     PPServicePlanAvailableFalse = 0,
-    PPServicePlanAvailableTrue = 1
+    PPServicePlanAvailableTrue
 };
 
 typedef NS_OPTIONS(NSInteger, PPServicePlanSubscribed) {
     PPServicePlanSubscribedNone = -1,
     PPServicePlanSubscribedFalse = 0,
-    PPServicePlanSubscribedTrue = 1
+    PPServicePlanSubscribedTrue
 };
 
 typedef NS_OPTIONS(NSInteger, PPServicePlanStatus) {
@@ -37,6 +34,14 @@ typedef NS_OPTIONS(NSInteger, PPServicePlanStatus) {
     PPServicePlanStatusActive = 0,
     PPServicePlanStatusExpiredOrCanceled = 1
 };
+
+typedef NS_OPTIONS(NSInteger, PPServicePlanPriceId) {
+    PPServicePlanPriceIdNone = -1,
+};
+
+@class PPServicePlanSoftwareSubscription;
+
+@class PPServicePlanPrice;
 
 @interface PPServicePlan : PPBaseModel
 
@@ -64,7 +69,17 @@ typedef NS_OPTIONS(NSInteger, PPServicePlanStatus) {
 /* Existing subscriptions owned by the user. */
 @property (nonatomic, strong) RLMArray<PPServicePlanSoftwareSubscription *><PPServicePlanSoftwareSubscription> *subscriptions;
 
-- (id)initWithId:(PPServicePlanId)planId name:(NSString *)name desc:(NSString *)desc available:(PPServicePlanAvailable)available upgradableTo:(RLMArray *)upgradableTo prices:(RLMArray *)prices subscriptions:(RLMArray *)subscriptions;
+/* Services provided with this plan. */
+@property (nonatomic, strong) RLMArray<PPUserService *><PPUserService> *services;
+
+- (id)initWithId:(PPServicePlanId)planId
+            name:(NSString *)name
+            desc:(NSString *)desc
+       available:(PPServicePlanAvailable)available
+    upgradableTo:(RLMArray *)upgradableTo
+          prices:(RLMArray *)prices
+   subscriptions:(RLMArray *)subscriptions
+        services:(RLMArray *)services;
 
 + (PPServicePlan *)initWithDictionary:(NSDictionary *)planDict;
 
@@ -128,6 +143,15 @@ typedef NS_OPTIONS(NSInteger, PPServicePlanSoftwareSubscriptionSandbox) {
 /* Payment type: */
 @property (nonatomic) PPServicePlanSoftwareSubscriptionPaymentType paymentType;
 
+/* Price ID */
+@property (nonatomic) PPServicePlanPriceId priceId;
+
+/* Status */
+@property (nonatomic) PPServicePlanStatus status;
+
+/* Issue Date */
+@property (nonatomic, strong) NSDate *issueDate;
+
 /* Start date of the subscription */
 @property (nonatomic, strong) NSDate *startDate;
 
@@ -146,6 +170,15 @@ typedef NS_OPTIONS(NSInteger, PPServicePlanSoftwareSubscriptionSandbox) {
 /* 'true' if it is a free trial subscription */
 @property (nonatomic) PPServicePlanSoftwareSubscriptionFree free;
 
+/* App Name */
+@property (nonatomic, strong) NSString *appName;
+
+/* Location Id */
+@property (nonatomic) PPLocationId locationId;
+
+/* User Id */
+@property (nonatomic) PPUserId userId;
+
 /* Organization purchased this subscription for the user */
 @property (nonatomic) PPOrganizationId organizationId;
 
@@ -158,19 +191,50 @@ typedef NS_OPTIONS(NSInteger, PPServicePlanSoftwareSubscriptionSandbox) {
 /* Service Plan */
 @property (nonatomic, strong) PPServicePlan *plan;
 
+/* Update Plan */
+@property (nonatomic, strong) PPServicePlan *updatePlan;
+
+/* Transaction */
 @property (nonatomic, strong) PPServicePlanTransaction *transaction;
 
-- (id)initWithId:(PPServicePlanSoftwareSubscriptionUserPlanId)userPlanId type:(PPServicePlanSoftwareSubscriptionType)type paymentType:(PPServicePlanSoftwareSubscriptionPaymentType)paymentType startDate:(NSDate *)startDate endDate:(NSDate *)endDate gatewayId:(NSString *)gatewayId sandbox:(PPServicePlanSoftwareSubscriptionSandbox)sandbox duration:(PPServicePlanSoftwareSubscriptionDuration)duration free:(PPServicePlanSoftwareSubscriptionFree)free organizationId:(PPOrganizationId)organizationId subscriptionId:(NSString *)subscriptionId transactionId:(NSString *)transactionId plan:(PPServicePlan *)plan;
+/* Card Masked Number */
+@property (nonatomic, strong) NSString *cardMaskedNumber;
+
+/* CardExpirationDate */
+@property (nonatomic, strong) NSString *cardExpirationDate;
+
+/* Services provided with this subscription. */
+@property (nonatomic, strong) RLMArray<PPUserService *><PPUserService> *services;
+
+- (id)initWithId:(PPServicePlanSoftwareSubscriptionUserPlanId)userPlanId
+            type:(PPServicePlanSoftwareSubscriptionType)type
+     paymentType:(PPServicePlanSoftwareSubscriptionPaymentType)paymentType
+         priceId:(PPServicePlanPriceId)priceId
+          status:(PPServicePlanStatus)status
+       issueDate:(NSDate *)issueDate
+       startDate:(NSDate *)startDate
+         endDate:(NSDate *)endDate
+       gatewayId:(NSString *)gatewayId
+         sandbox:(PPServicePlanSoftwareSubscriptionSandbox)sandbox
+        duration:(PPServicePlanSoftwareSubscriptionDuration)duration
+            free:(PPServicePlanSoftwareSubscriptionFree)free
+         appName:(NSString *)appName
+      locationId:(PPLocationId)locationId
+          userId:(PPUserId)userId
+  organizationId:(PPOrganizationId)organizationId
+  subscriptionId:(NSString *)subscriptionId
+   transactionId:(NSString *)transactionId
+            plan:(PPServicePlan *)plan
+      updatePlan:(PPServicePlan *)updatePlan
+cardMaskedNumber:(NSString *)cardMaskedNumber
+cardExpirationDate:(NSString *)cardExpirationDate
+        services:(RLMArray *)services;
 
 + (PPServicePlanSoftwareSubscription *)initWithDictionary:(NSDictionary *)subscriptionDict;
 
 @end
 
 #pragma mark - PPServicePlanPrice
-
-typedef NS_OPTIONS(NSInteger, PPServicePlanPriceId) {
-    PPServicePlanPriceIdNone = -1,
-};
 
 @interface PPServicePlanPrice : PPBaseModel
 
@@ -201,7 +265,15 @@ typedef NS_OPTIONS(NSInteger, PPServicePlanPriceId) {
 /* Price amount currency code, symbol and value */
 @property (nonatomic, strong) PPServicePlanPriceAmount *amount;
 
-- (id)initWithId:(PPServicePlanPriceId)priceId type:(PPServicePlanSoftwareSubscriptionType)type paymentType:(PPServicePlanSoftwareSubscriptionPaymentType)paymentType free:(PPServicePlanSoftwareSubscriptionFree)free duration:(PPServicePlanSoftwareSubscriptionDuration)duration gatewayId:(NSString *)gatewayId appleStoreId:(NSString *)appleStoreId gatewaySandboxId:(NSString *)gatewaySandboxId amount:(PPServicePlanPriceAmount *)amount;
+- (id)initWithId:(PPServicePlanPriceId)priceId
+            type:(PPServicePlanSoftwareSubscriptionType)type
+     paymentType:(PPServicePlanSoftwareSubscriptionPaymentType)paymentType
+            free:(PPServicePlanSoftwareSubscriptionFree)free
+        duration:(PPServicePlanSoftwareSubscriptionDuration)duration
+       gatewayId:(NSString *)gatewayId
+    appleStoreId:(NSString *)appleStoreId
+gatewaySandboxId:(NSString *)gatewaySandboxId
+          amount:(PPServicePlanPriceAmount *)amount;
 
 + (PPServicePlanPrice *)initWithDictionary:(NSDictionary *)priceDict;
 

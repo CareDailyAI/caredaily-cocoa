@@ -56,6 +56,12 @@ typedef NS_OPTIONS(NSInteger, PPDeviceMeasurementsDataRequestByEmail) {
     PPDeviceMeasurementsDataRequestByEmailTrue = 1
 };
 
+typedef NS_OPTIONS(NSInteger, PPDeviceMeasurementsCommandType) {
+    PPDeviceMeasurementsCommandTypeNone = -1,
+    PPDeviceMeasurementsCommandTypeSet = 0,
+    PPDeviceMeasurementsCommandTypeGet = 4
+};
+
 @interface PPDeviceMeasurements : PPBaseModel
 
 #pragma mark - Session Management
@@ -129,8 +135,10 @@ typedef NS_OPTIONS(NSInteger, PPDeviceMeasurementsDataRequestByEmail) {
  * @param locationId Required PPLocationId Device Location ID
  * @param comment NSString Describes why this command was made
  * @param shared PPDeviceShared Send command to a device shared in circle. If true, the location ID is not required
+ * @param commandType PPDeviceMeasurementsCommandType Command type: 0 = set, 4 = get
  * @param callback PPDeviceMeasurementsCommandsBlock Device commands callback block containing array of command responses
  **/
++ (void)sendCommand:(NSString * _Nonnull )deviceId params:(NSArray * _Nonnull )params commandTimeout:(PPDeviceCommandTimeout)commandTimeout locationId:(PPLocationId)locationId comment:(NSString * _Nullable )comment shared:(PPDeviceShared)shared commandType:(PPDeviceMeasurementsCommandType)commandType callback:(PPDeviceMeasurementsCommandsBlock _Nonnull )callback;
 + (void)sendCommand:(NSString * _Nonnull )deviceId params:(NSArray * _Nonnull )params commandTimeout:(PPDeviceCommandTimeout)commandTimeout locationId:(PPLocationId)locationId comment:(NSString * _Nullable )comment shared:(PPDeviceShared)shared callback:(PPDeviceMeasurementsCommandsBlock _Nonnull )callback;
 + (void)sendCommand:(NSString * _Nonnull )deviceId params:(NSArray * _Nonnull )params commandTimeout:(PPDeviceCommandTimeout)commandTimeout locationId:(PPLocationId)locationId callback:(PPDeviceMeasurementsCommandsBlock _Nonnull )callback __attribute__((deprecated));
 

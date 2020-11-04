@@ -22,9 +22,9 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeMediaType) {
 
 @property (nonatomic, strong) NSString * _Nonnull mediaId;
 @property (nonatomic) PPDeviceTypeMediaType mediaType;
-@property (nonatomic, strong) NSString *_Nonnull url;
-@property (nonatomic, strong) NSString *_Nonnull contentType;
-@property (nonatomic, strong) PPDeviceTypeMediaDesc *_Nonnull desc;
+@property (nonatomic, strong) NSString * _Nonnull url;
+@property (nonatomic, strong) NSString * _Nonnull contentType;
+@property (nonatomic, strong) PPDeviceTypeMediaDesc * _Nonnull desc;
 
 - (id _Nonnull )initWithId:(NSString * _Nonnull )mediaId
        mediaType:(PPDeviceTypeMediaType)mediaType

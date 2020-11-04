@@ -23,6 +23,8 @@
 #define PP_PLIST_KEY_CONFIG_COMPANY_DESCRIPTION @"PPCompanyDescription"
 #define PP_PLIST_KEY_CONFIG_BRAND @"PPBrand"
 #define PP_PLIST_KEY_CONFIG_CLOUD @"PPCloudConnectivityCloud"
+#define PP_PLIST_KEY_CONFIG_PILOT_FALLBACK_APP_NAME @"PPPilotFallbackAppName"
+#define PP_PLIST_KEY_CONFIG_PILOT_FALLBACK_BRAND @"PPPilotFallbackBrand"
 
 #pragma mark - Attributions
 

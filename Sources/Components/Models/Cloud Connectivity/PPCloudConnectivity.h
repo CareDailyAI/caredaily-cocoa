@@ -14,7 +14,6 @@ typedef void (^PPCloudConnectivityCloudsBlock)(NSArray * _Nullable clouds, NSErr
 typedef void (^PPCloudConnectivityCloudBlock)(PPCloudConnectivityCloud * _Nullable cloud, NSError * _Nullable error);
 typedef void (^PPCloudConnectivityServerBlock)(PPCloudConnectivityServer * _Nullable server, NSError * _Nullable error);
 typedef void (^PPCloudConnectivityServerURLBlock)(NSURL * _Nullable url, NSError * _Nullable error);
-typedef void (^PPCloudConnectivityVersionBlock)(NSString * _Nullable version, NSError * _Nullable error);
 
 typedef NS_OPTIONS(NSInteger, PPCloudConnectivityConnected) {
     PPCloudConnectivityConnectedNone = -1,
@@ -111,14 +110,5 @@ typedef NS_OPTIONS(NSInteger, PPCloudConnectivityConnected) {
  * @param callback PPCloudConnectivityCloudBlock Cloud callback block
  **/
 + (void)getCloudInstance:(NSString * _Nonnull )deviceId callback:(PPCloudConnectivityCloudBlock _Nonnull )callback;
-
-#pragma mark - Version Information
-
-/**
- * Get server version information.
- *
- * @param callback PPCloudConnectivityVersionBlock Version callback block
- **/
-+ (void)getVersionInformation:(PPCloudConnectivityVersionBlock _Nonnull )callback __attribute__((deprecated));
 
 @end

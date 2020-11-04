@@ -41,6 +41,7 @@
         [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"appName" value:appName]];
     }
     components.queryItems = queryItems;
+    components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
     
     NSString *encodedPassword;
     NSString *encodedPasscode;
@@ -80,6 +81,19 @@
                     
                     // Handle returning a localized error description of the lock time
                     [PPOperationTokenManagement isAccountLocked:username error:&error];
+                    
+                    // Explicitly track this error here because it's not tracked inside or PPBaseModel
+                    NSMutableDictionary *properties = [[NSMutableDictionary alloc] initWithCapacity:3];
+                    [properties setObject:[NSString stringWithFormat:@"%ld", (long)error.code] forKey:@"Code"];
+                    if([error.userInfo objectForKey:NSLocalizedDescriptionKey] != nil) {
+                        [properties setObject:[error.userInfo objectForKey:NSLocalizedDescriptionKey] forKey:@"Description"];
+                    }
+                    if([error.userInfo objectForKey:NSLocalizedRecoverySuggestionErrorKey] != nil) {
+                        [properties setObject:[error.userInfo objectForKey:NSLocalizedRecoverySuggestionErrorKey] forKey:@"Recovery"];
+                    }
+                    [properties setObject:NSStringFromClass([self class]) forKey:@"Location"];
+                    
+                    [PPUserAnalytics track:@"error" properties:properties logLevel:ANALYTICS_LEVEL_INFO];
                 }
                 
             }
@@ -151,6 +165,7 @@
         [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"appName" value:appName]];
     }
     components.queryItems = queryItems;
+    components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
     
     dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.login.sendPasscode()", DISPATCH_QUEUE_SERIAL);
     

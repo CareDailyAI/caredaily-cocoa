@@ -203,6 +203,7 @@ RLM_ARRAY_TYPE(PPDeviceTypeParameterDisplayInfo)
 RLM_ARRAY_TYPE(PPDeviceTypeRuleComponentTemplate)
 RLM_ARRAY_TYPE(PPDeviceTypeRuleComponentTemplateProduct)
 RLM_ARRAY_TYPE(PPDeviceTypeGoal)
+RLM_ARRAY_TYPE(PPDeviceTypeGoalSpaceTypes)
 RLM_ARRAY_TYPE(PPDeviceTypeInstallationInstructions)
 RLM_ARRAY_TYPE(PPDeviceTypeMedia)
 RLM_ARRAY_TYPE(PPDeviceTypeMediaDesc);
@@ -274,6 +275,7 @@ RLM_ARRAY_TYPE(PPBotengineAppVersion);
 
 RLM_ARRAY_TYPE(PPOrganization)
 RLM_ARRAY_TYPE(PPOrganizationGroup);
+RLM_ARRAY_TYPE(PPOrganizationObject);
 
 // MARK: - Networking
 

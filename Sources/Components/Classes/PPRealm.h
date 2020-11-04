@@ -1,9 +1,9 @@
 //
 //  PPRealm.h
-//  PPiOSCore-Framework
+//  Peoplepower
 //
 //  Created by Destry Teeter on 6/12/18.
-//  Copyright © 2018 People Power Company. All rights reserved.
+//  Copyright © 2020 People Power Company. All rights reserved.
 //
 
 #import <Realm/Realm.h>

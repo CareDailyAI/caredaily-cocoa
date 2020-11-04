@@ -20,6 +20,12 @@ typedef NS_OPTIONS(NSInteger, PPUserCodeExpiry) {
     PPUserCodeExpiryDefault = 60
 };
 
+typedef NS_OPTIONS(NSInteger, PPUserCodeVerified) {
+    PPUserCodeVerifiedNone    = -1,
+    PPUserCodeVerifiedFalse   = 0,
+    PPUserCodeVerifiedTrue    = 1,
+};
+
 /* User codes are similar to passwords.
  They are not retrievable in any readable form, so a name is provided instead.
  It is up to the user to remember their codes (or delete and recreate). */
@@ -34,8 +40,12 @@ typedef NS_OPTIONS(NSInteger, PPUserCodeExpiry) {
 /* Code - Maintain local reference to the code */
 @property (strong, nonatomic) NSString *code;
 
+/* Verified - The code is verified if it has been used at least one time successfully on the keypad */
+@property (nonatomic) PPUserCodeVerified verified;
+
 - (id)initWithName:(NSString *)name
-              type:(PPUserCodeType)type;
+              type:(PPUserCodeType)type
+          verified:(PPUserCodeVerified)verified;
 
 + (PPUserCode *)initWithDictionary:(NSDictionary *)codeDict;
 

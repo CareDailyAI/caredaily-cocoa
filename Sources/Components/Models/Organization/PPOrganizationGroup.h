@@ -3,7 +3,7 @@
 //  Peoplepower
 //
 //  Created by Destry Teeter on 10/10/17.
-//  Copyright © 2017 People Power. All rights reserved.
+//  Copyright © 2020 People Power Company. All rights reserved.
 //
 
 #import "PPBaseModel.h"

@@ -29,6 +29,8 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeId)  {
     PPDeviceTypeIdPresenceTouchpad = 25,
     PPDeviceTypeIdiOSPictureFrame = 26,
     PPDeviceTypeIdAndroidPictureFrame = 27,
+    PPDeviceTypeIdiOSProxy = 28,
+    PPDeviceTypeIdAppleHealthKit = 29,
     
     PPDeviceTypeIdAIOXGateway = 31,
     PPDeviceTypeIdEWIGGateway = 32,
@@ -90,9 +92,14 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeId)  {
     PPDeviceTypeIdDevelcoButton = 9101,
     PPDeviceTypeIdDevelcoSiren = 9102,
     PPDeviceTypeIdDevelcoKeypad = 9103,
+    PPDeviceTypeIdDevelcoMultiButton = 9106,
+    PPDeviceTypeIdDevelcoAirQualitySensor = 9107,
+    PPDeviceTypeIdDevelcoHeatSensor = 9108,
     PPDeviceTypeIdDevelcoSmokeAlarm = 9112,
     PPDeviceTypeIdDevelcoDoorWindowSensor = 9114,
     PPDeviceTypeIdDevelcoWatarSensor = 9117,
+    PPDeviceTypeIdDevelcoTouchSensor = 9119,
+    PPDeviceTypeIdDevelcoHumiditySensor = 9134,
     PPDeviceTypeIdDevelcoSmartPlug = 9135,
     PPDeviceTypeIdDevelcoMovementSensor = 9138,
     

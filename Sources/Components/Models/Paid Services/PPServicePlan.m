@@ -16,7 +16,14 @@
     return @"planId";
 }
 
-- (id)initWithId:(PPServicePlanId)planId name:(NSString *)name desc:(NSString *)desc available:(PPServicePlanAvailable)available upgradableTo:(RLMArray *)upgradableTo prices:(RLMArray *)prices subscriptions:(RLMArray *)subscriptions {
+- (id)initWithId:(PPServicePlanId)planId
+            name:(NSString *)name
+            desc:(NSString *)desc
+       available:(PPServicePlanAvailable)available
+    upgradableTo:(RLMArray *)upgradableTo
+          prices:(RLMArray *)prices
+   subscriptions:(RLMArray *)subscriptions
+        services:(RLMArray *)services {
     self = [super init];
     if(self) {
         self.planId = planId;
@@ -26,6 +33,7 @@
         self.upgradableTo = (RLMArray<RLMInt> *)upgradableTo;
         self.prices = (RLMArray<PPServicePlanPrice *><PPServicePlanPrice> *)prices;
         self.subscriptions =(RLMArray<PPServicePlanSoftwareSubscription *><PPServicePlanSoftwareSubscription> *) subscriptions;
+        self.services = (RLMArray<PPUserService *><PPUserService> *)services;
     }
     return self;
 }
@@ -61,7 +69,16 @@
         }
     }
     
-    PPServicePlan *servicePlan = [[PPServicePlan alloc] initWithId:planId name:name desc:desc available:available upgradableTo:(RLMArray<RLMInt> *)upgradableTo prices:(RLMArray<PPServicePlanPrice *><PPServicePlanPrice> *)prices subscriptions:(RLMArray<PPServicePlanSoftwareSubscription *><PPServicePlanSoftwareSubscription> *)subscriptions];
+    NSMutableArray *services;
+    if([planDict objectForKey:@"services"]) {
+        services = [[NSMutableArray alloc] initWithCapacity:0];
+        for(NSDictionary *serviceDict in [planDict objectForKey:@"services"]) {
+            PPUserService *service = [PPUserService initWithDictionary:serviceDict];
+            [services addObject:service];
+        }
+    }
+    
+    PPServicePlan *servicePlan = [[PPServicePlan alloc] initWithId:planId name:name desc:desc available:available upgradableTo:(RLMArray<RLMInt> *)upgradableTo prices:(RLMArray<PPServicePlanPrice *><PPServicePlanPrice> *)prices subscriptions:(RLMArray<PPServicePlanSoftwareSubscription *><PPServicePlanSoftwareSubscription> *)subscriptions services:(RLMArray<PPUserService *><PPUserService> *)services];
     return servicePlan;
 }
 
@@ -101,6 +118,9 @@
     if(plan.subscriptions) {
         _subscriptions = plan.subscriptions;
     }
+    if(plan.services) {
+        _services = plan.services;
+    }
 }
 
 @end
@@ -117,22 +137,54 @@
     return [PPServicePlanTransaction objectForPrimaryKey:_transactionId];
 }
 
-- (id)initWithId:(PPServicePlanSoftwareSubscriptionUserPlanId)userPlanId type:(PPServicePlanSoftwareSubscriptionType)type paymentType:(PPServicePlanSoftwareSubscriptionPaymentType)paymentType startDate:(NSDate *)startDate endDate:(NSDate *)endDate gatewayId:(NSString *)gatewayId sandbox:(PPServicePlanSoftwareSubscriptionSandbox)sandbox duration:(PPServicePlanSoftwareSubscriptionDuration)duration free:(PPServicePlanSoftwareSubscriptionFree)free organizationId:(PPOrganizationId)organizationId subscriptionId:(NSString *)subscriptionId transactionId:(NSString *)transactionId plan:(PPServicePlan *)plan {
+- (id)initWithId:(PPServicePlanSoftwareSubscriptionUserPlanId)userPlanId
+            type:(PPServicePlanSoftwareSubscriptionType)type
+     paymentType:(PPServicePlanSoftwareSubscriptionPaymentType)paymentType
+         priceId:(PPServicePlanPriceId)priceId
+          status:(PPServicePlanStatus)status
+       issueDate:(NSDate *)issueDate
+       startDate:(NSDate *)startDate
+         endDate:(NSDate *)endDate
+       gatewayId:(NSString *)gatewayId
+         sandbox:(PPServicePlanSoftwareSubscriptionSandbox)sandbox
+        duration:(PPServicePlanSoftwareSubscriptionDuration)duration
+            free:(PPServicePlanSoftwareSubscriptionFree)free
+         appName:(NSString *)appName
+      locationId:(PPLocationId)locationId
+          userId:(PPUserId)userId
+  organizationId:(PPOrganizationId)organizationId
+  subscriptionId:(NSString *)subscriptionId
+   transactionId:(NSString *)transactionId
+            plan:(PPServicePlan *)plan
+      updatePlan:(PPServicePlan *)updatePlan
+cardMaskedNumber:(NSString *)cardMaskedNumber
+cardExpirationDate:(NSString *)cardExpirationDate
+        services:(RLMArray *)services {
     self = [super init];
     if(self) {
         self.userPlanId = userPlanId;
         self.type = type;
         self.paymentType = paymentType;
+        self.priceId = priceId;
+        self.status = status;
+        self.issueDate = issueDate;
         self.startDate = startDate;
         self.endDate = endDate;
         self.gatewayId = gatewayId;
         self.sandbox = sandbox;
         self.duration = duration;
         self.free = free;
+        self.appName = appName;
+        self.locationId = locationId;
+        self.userId = userId;
         self.organizationId = organizationId;
         self.subscriptionId = subscriptionId;
         self.transactionId = transactionId;
         self.plan = plan;
+        self.updatePlan = updatePlan;
+        self.cardMaskedNumber = cardMaskedNumber;
+        self.cardExpirationDate = cardExpirationDate;
+        self.services = (RLMArray<PPUserService *><PPUserService> *)services;
     }
     return self;
 }
@@ -152,6 +204,22 @@
     PPServicePlanSoftwareSubscriptionPaymentType paymentType = PPServicePlanSoftwareSubscriptionPaymentTypeNone;
     if([subscriptionDict objectForKey:@"paymentType"]) {
         paymentType = (PPServicePlanSoftwareSubscriptionPaymentType)((NSString *)[subscriptionDict objectForKey:@"paymentType"]).integerValue;
+    }
+    PPServicePlanPriceId priceId = PPServicePlanPriceIdNone;
+    if([subscriptionDict objectForKey:@"priceId"]) {
+        priceId = (PPServicePlanPriceId)((NSString *)[subscriptionDict objectForKey:@"priceId"]).integerValue;
+    }
+    PPServicePlanStatus status = PPServicePlanStatusNone;
+    if([subscriptionDict objectForKey:@"status"]) {
+        status = (PPServicePlanStatus)((NSString *)[subscriptionDict objectForKey:@"status"]).integerValue;
+    }
+    
+    NSString *issueDateString = [subscriptionDict objectForKey:@"issueDate"];
+    NSDate *issueDate = [NSDate date];
+    if(issueDateString != nil) {
+        if(![issueDateString isEqualToString:@""]) {
+            issueDate = [PPNSDate parseDateTime:issueDateString];
+        }
     }
     
     NSString *startDateString = [subscriptionDict objectForKey:@"startDate"];
@@ -183,6 +251,15 @@
     if([subscriptionDict objectForKey:@"free"]) {
         free = (PPServicePlanSoftwareSubscriptionFree)((NSString *)[subscriptionDict objectForKey:@"free"]).integerValue;
     }
+    NSString *appName = [subscriptionDict objectForKey:@"appName"];
+    PPLocationId locationId = PPLocationIdNone;
+    if([subscriptionDict objectForKey:@"locationId"]) {
+        locationId = (PPLocationId)((NSString *)[subscriptionDict objectForKey:@"locationId"]).integerValue;
+    }
+    PPUserId userId = PPUserIdNone;
+    if([subscriptionDict objectForKey:@"userId"]) {
+        userId = (PPUserId)((NSString *)[subscriptionDict objectForKey:@"userId"]).integerValue;
+    }
     PPOrganizationId organizationId = PPOrganizationIdNone;
     if([subscriptionDict objectForKey:@"organizationId"]) {
         organizationId = (PPOrganizationId)((NSString *)[subscriptionDict objectForKey:@"organizationId"]).integerValue;
@@ -191,8 +268,43 @@
     NSString *transactionId = [subscriptionDict objectForKey:@"transactionId"];
     
     PPServicePlan *plan = [PPServicePlan initWithDictionary:[subscriptionDict objectForKey:@"plan"]];
+    PPServicePlan *updatePlan = [PPServicePlan initWithDictionary:[subscriptionDict objectForKey:@"updatePlan"]];
     
-    PPServicePlanSoftwareSubscription *softwareSubscription = [[PPServicePlanSoftwareSubscription alloc] initWithId:userPlanId type:type paymentType:paymentType startDate:startDate endDate:endDate gatewayId:gatewayId sandbox:sandbox duration:duration free:free organizationId:organizationId subscriptionId:subscriptionId transactionId:transactionId plan:plan];
+    NSString *cardMaskedNumber = [subscriptionDict objectForKey:@"cardMaskedNumber"];
+    NSString *cardExpirationDate = [subscriptionDict objectForKey:@"cardExpirationDate"];
+    
+    NSMutableArray *services;
+    if([subscriptionDict objectForKey:@"services"]) {
+        services = [[NSMutableArray alloc] initWithCapacity:0];
+        for(NSDictionary *serviceDict in [subscriptionDict objectForKey:@"services"]) {
+            PPUserService *service = [PPUserService initWithDictionary:serviceDict];
+            [services addObject:service];
+        }
+    }
+    
+    PPServicePlanSoftwareSubscription *softwareSubscription = [[PPServicePlanSoftwareSubscription alloc] initWithId:userPlanId
+                                                                                                               type:type
+                                                                                                        paymentType:paymentType
+                                                                                                            priceId:priceId
+                                                                                                             status:status
+                                                                                                          issueDate:issueDate
+                                                                                                          startDate:startDate
+                                                                                                            endDate:endDate
+                                                                                                          gatewayId:gatewayId
+                                                                                                            sandbox:sandbox
+                                                                                                           duration:duration
+                                                                                                               free:free
+                                                                                                            appName:appName
+                                                                                                         locationId:locationId
+                                                                                                             userId:userId
+                                                                                                     organizationId:organizationId
+                                                                                                     subscriptionId:subscriptionId
+                                                                                                      transactionId:transactionId
+                                                                                                               plan:plan
+                                                                                                         updatePlan:updatePlan
+                                                                                                   cardMaskedNumber:cardMaskedNumber
+                                                                                                 cardExpirationDate:cardExpirationDate
+                                                                                                           services:(RLMArray<PPUserService *><PPUserService> *)services];
     return softwareSubscription;
 }
 

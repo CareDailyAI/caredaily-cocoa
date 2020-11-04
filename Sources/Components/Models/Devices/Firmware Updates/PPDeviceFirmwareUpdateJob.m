@@ -3,7 +3,7 @@
 //  Peoplepower
 //
 //  Created by Destry Teeter on 6/17/17.
-//  Copyright © 2017 People Power. All rights reserved.
+//  Copyright © 2020 People Power Company. All rights reserved.
 //
 
 #import "PPDeviceFirmwareUpdateJob.h"

@@ -18,7 +18,7 @@
     return [dateFormatter stringFromDate:date];
 }
 
-+ (NSDate *)parseDateTime:(NSString *)dateString {
++ (NSDate *)parseDateTime:(NSString *)dateString {    
     NSDate *date = [[[NSISO8601DateFormatter alloc] init] dateFromString:dateString];
     if (date == nil) {
         NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
@@ -27,7 +27,7 @@
         dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ";
         date = [dateFormatter dateFromString:dateString];
     }
-    return (date != nil) ? date : [NSDate date];
+    return date;
 }
 
 + (NSDate *)parseDateTime:(NSString *)dateString timeZone:(NSTimeZone *)timeZone {
@@ -42,7 +42,7 @@
         dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ";
         date = [dateFormatter dateFromString:dateString];
     }
-    return (date != nil) ? date : [NSDate date];
+    return date;
 }
 
 /*

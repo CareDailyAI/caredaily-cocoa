@@ -484,9 +484,11 @@ typedef NS_OPTIONS(NSInteger, PPUserAccountsStateOverwrite) {
  * @param name NSString Code name.  Ignored when including locationId.
  * @param deviceId NSString Device ID
  * @param setExpiry PPUserCodeExpiry Expiry in seconds
+ * @param verify PPUserCodeVerified
  * @param callback NSErrorBlock Error callback block
  **/
-+ (void)putUserCode:(PPUserCodeType)type code:(NSString * _Nullable )code locationId:(PPLocationId)locationId name:(NSString * _Nullable )name deviceId:(NSString * _Nullable )deviceId setExpiry:(PPUserCodeExpiry)setExpiry callback:(PPErrorBlock _Nonnull )callback;
++ (void)putUserCode:(PPUserCodeType)type code:(NSString * _Nullable )code locationId:(PPLocationId)locationId name:(NSString * _Nullable )name deviceId:(NSString * _Nullable )deviceId setExpiry:(PPUserCodeExpiry)setExpiry verify:(PPUserCodeVerified)verify callback:(PPErrorBlock _Nonnull )callback;
++ (void)putUserCode:(PPUserCodeType)type code:(NSString * _Nullable )code locationId:(PPLocationId)locationId name:(NSString * _Nullable )name deviceId:(NSString * _Nullable )deviceId setExpiry:(PPUserCodeExpiry)setExpiry callback:(PPErrorBlock _Nonnull )callback __attribute__((deprecated));
 + (void)putUserCode:(PPUserCodeType)type code:(NSString * _Nonnull )code locationId:(PPLocationId)locationId name:(NSString * _Nullable )name callback:(PPErrorBlock _Nonnull )callback __attribute__((deprecated));
 
 /**

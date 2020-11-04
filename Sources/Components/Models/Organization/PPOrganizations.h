@@ -9,11 +9,13 @@
 #import "PPBaseModel.h"
 #import "PPOrganization.h"
 #import "PPOrganizationGroup.h"
+#import "PPOrganizationObject.h"
 #import "PPUser.h"
 
 typedef void (^PPOrganizationsBlock)(NSArray * _Nullable orgs, NSError * _Nullable error);
 typedef void (^PPOrganizationsGroupsBlock)(NSArray * _Nullable groups, NSError * _Nullable error);
 typedef void (^PPOrganizationsUpdateUserBlock)(PPOrganizationStatus status, NSError * _Nullable error);
+typedef void (^PPOrganizationsObjectsAndPropertiesBlock)(NSArray * _Nullable objectsAndProperties, NSError * _Nullable error);
 
 typedef NS_OPTIONS(NSInteger, PPOrganizationUserTotals) {
     PPOrganizationUserTotalsNone = -1,
@@ -76,6 +78,15 @@ typedef NS_OPTIONS(NSInteger, PPOrganizationAverageBills) {
  */
 + (void)joinOrganization:(PPOrganizationId)organizationId groupId:(PPOrganizationGroupId)groupId status:(PPOrganizationStatus)status userId:(PPUserId)userId notes:(NSString * _Nullable )notes callback:(PPOrganizationsUpdateUserBlock _Nonnull )callback;
 
+/**
+ * List Objects and Properties
+ * Retrieve all large objects and small properties by the organization. Anyone can call it.Private records are turned only for administrators.
+ *
+ * @param organizationId Required Organization ID
+ *
+ * @param callback PPOrganizationsObjectsAndPropertiesBlock Callback block
+ */
++ (void)listObjectsAndProperties:(PPOrganizationId)organizationId callback:(PPOrganizationsObjectsAndPropertiesBlock _Nonnull )callback;
 
 @end
 

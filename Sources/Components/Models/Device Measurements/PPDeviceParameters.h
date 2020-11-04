@@ -16,6 +16,10 @@
 #define DEVICE_PARAMETER_KEY_DEVICE_TYPE_ID @"deviceTypeId"
 #endif
 
+#ifndef DEVICE_PARAMETER_KEY_INDEX
+#define DEVICE_PARAMETER_KEY_INDEX @"index"
+#endif
+
 // Climate Control
 extern NSString *FAN_MODE;
 extern NSString *FAN_MODE_SEQUENCE;
@@ -37,6 +41,7 @@ extern NSString *SWING_MODE_VALUES;
 
 // Temperature
 extern NSString *DEG_C;
+extern NSString *INTERNAL_DEG_C;
 
 // Humidity
 extern NSString *RELATIVE_HUMIDITY;
@@ -65,6 +70,7 @@ extern NSString *WATER_LEAK;
 
 // Lock
 extern NSString *LOCK_STATUS;
+extern NSString *LOCK_STATUS_ALARM;
 
 // Button
 extern NSString *BUTTON_STATUS;
@@ -251,9 +257,18 @@ typedef NS_OPTIONS(NSInteger, PPDeviceParametersWaterLeak) {
 };
 
 typedef NS_OPTIONS(NSInteger, PPDeviceParametersLockStatus) {
-    PPDeviceParametersLockStatusNotFullyLocked = 0,
-    PPDeviceParametersLockStatusLocked = 1,
-    PPDeviceParametersLockStatusUnlocked = 2
+    PPDeviceParametersLockStatusUnlocked = 0,
+    PPDeviceParametersLockStatusLocked = 1
+};
+
+typedef NS_OPTIONS(NSInteger, PPDeviceParametersLockStatusAlarm) {
+    PPDeviceParametersLockStatusAlarmOK = 0,
+    PPDeviceParametersLockStatusAlarmDeadboltJammed = 1,
+    PPDeviceParametersLockStatusAlarmLockResetFactoryDefaults = 2,
+    PPDeviceParametersLockStatusAlarmRFModulePowerCycled = 3,
+    PPDeviceParametersLockStatusAlarmWrongCodeEntryLimit = 4,
+    PPDeviceParametersLockStatusAlarmFrontEscutcheonRemoved = 5,
+    PPDeviceParametersLockStatusAlarmDoorForcedOpen = 6,
 };
 
 typedef NS_OPTIONS(NSInteger, PPDeviceParametersButtonStatus) {
@@ -641,6 +656,7 @@ typedef NS_OPTIONS(NSInteger, PPDeviceParametersIlluminance) {
 + (NSDictionary *)fontIconStringForDeviceParameter:(NSString *)parameter options:(NSDictionary *)options __attribute__((deprecated));
 
 + (NSDictionary *)parameterOptionsWithValue:(NSString *)value deviceTypeId:(NSInteger)deviceTypeId;
++ (NSDictionary *)parameterOptionsWithValue:(NSString *)value deviceTypeId:(NSInteger)deviceTypeId index:(NSString *)index;
 
 + (NSArray *)fanModesForSequence:(PPDeviceParametersFanModeSequence)sequence;
 

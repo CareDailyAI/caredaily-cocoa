@@ -1,9 +1,9 @@
 //
 //  RLMObject+PPExtras.h
-//  PPiOSCore
+//  Peoplepower
 //
 //  Created by Destry Teeter on 6/5/18.
-//  Copyright © 2018 People Power Company. All rights reserved.
+//  Copyright © 2020 People Power Company. All rights reserved.
 //
 
 @interface RLMObject (PPExtras)

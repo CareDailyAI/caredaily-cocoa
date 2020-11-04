@@ -6,7 +6,6 @@
 //
 
 #import "PPDateUtilities.h"
-@import UIKit;
 
 @implementation PPDateUtilities
 

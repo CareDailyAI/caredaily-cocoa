@@ -29,4 +29,3 @@
 + (PPCloudConnectivityCloud *)initWithDictionary:(NSDictionary *)cloudDict;
 
 @end
-

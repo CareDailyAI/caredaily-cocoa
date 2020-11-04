@@ -6,7 +6,6 @@
 //  Copyright © 2020 People Power Company. All rights reserved.
 //
 
-@import UIKit;
 #import "PPVersion.h"
 
 @interface PPStorage : NSObject

@@ -383,6 +383,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
         [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"goalId" value:@(goalId).stringValue]];
     }
     components.queryItems = queryItems;
+    components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
     
     NSMutableArray *data = @[].mutableCopy;
     if (properties) {
@@ -603,6 +604,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
         [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"clear" value:(clear) ? @"true" : @"false"]];
     }
     components.queryItems = queryItems;
+    components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
     
     dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.devices.deleteDevices()", DISPATCH_QUEUE_SERIAL);
     
@@ -1086,6 +1088,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
         [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"userId" value:@(userId).stringValue]];
     }
     components.queryItems = queryItems;
+    components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
     
     dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.devices.setDeviceProperty()", DISPATCH_QUEUE_SERIAL);
     
@@ -1212,6 +1215,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
         [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"userId" value:@(userId).stringValue]];
     }
     components.queryItems = queryItems;
+    components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
     
     dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.devices.getDeviceProperties()", DISPATCH_QUEUE_SERIAL);
     
@@ -1280,6 +1284,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
         [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"userId" value:@(userId).stringValue]];
     }
     components.queryItems = queryItems;
+    components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
     
     dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.devices.deleteDeviceProperties()", DISPATCH_QUEUE_SERIAL);
     
@@ -1337,6 +1342,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
         [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"userId" value:@(userId).stringValue]];
     }
     components.queryItems = queryItems;
+    components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
     
     dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.devices.getDeviceFirmwareUpdateJobs()", DISPATCH_QUEUE_SERIAL);
     
@@ -1407,6 +1413,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
         [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"userId" value:@(userId).stringValue]];
     }
     components.queryItems = queryItems;
+    components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
     
     dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.devices.setCurrentFirmwareUpdateStatus()", DISPATCH_QUEUE_SERIAL);
     
@@ -1477,6 +1484,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
         [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"identity" value:identity]];
     }
     components.queryItems = queryItems;
+    components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
     
     NSError *error;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"GET" URLString:[NSURL URLWithString:components.string relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];

@@ -27,7 +27,8 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeDeviceModelPairingType) {
     PPDeviceTypeDeviceModelPairingTypeOAuth = 4,
     PPDeviceTypeDeviceModelPairingTypeZigBee = 8,
     PPDeviceTypeDeviceModelPairingTypeWiFi = 16,
-    PPDeviceTypeDeviceModelPairingTypeGenerateQR = 32
+    PPDeviceTypeDeviceModelPairingTypeGenerateQR = 32,
+    PPDeviceTypeDeviceModelPairingTypeBluetooth = 64,
 };
 
 typedef NS_OPTIONS(NSInteger, PPDeviceTypeDeviceModelHidden) {
@@ -42,9 +43,9 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeDeviceModelSortId) {
 
 @interface PPDeviceTypeDeviceModel : PPBaseModel
 
-@property (nonatomic, strong) NSString * _Nonnull modelId;
-@property (nonatomic, strong) RLMArray<PPDeviceTypeDeviceModelBrand *><PPDeviceTypeDeviceModelBrand> * _Nullable brands;
-@property (nonatomic, strong) PPDeviceTypeDeviceModelManufacture * _Nullable manufacturer;
+@property (nonatomic, strong) NSString *_Nonnull modelId;
+@property (nonatomic, strong) RLMArray<PPDeviceTypeDeviceModelBrand *><PPDeviceTypeDeviceModelBrand> *_Nullable brands;
+@property (nonatomic, strong) PPDeviceTypeDeviceModelManufacture *_Nullable manufacturer;
 @property (nonatomic) PPDeviceTypeDeviceModelPairingType pairingType;
 @property (nonatomic) PPCloudsIntegrationClientApplicationId OAuthAppId;
 @property (nonatomic, strong) RLMArray<RLMInt> * _Nullable dependencyDeviceTypes;

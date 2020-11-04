@@ -2,7 +2,7 @@
 //  PPBaseModel.h
 //  Peoplepower
 //
-//  Copyright (c) 2020 People Power. All rights reserved.
+//  Copyright © 2020 People Power Company. All rights reserved.
 //
 
 @import Realm;
@@ -27,6 +27,10 @@ typedef void (^PPFileBlock)(PPFile * _Nullable f);
 + (NSString * _Nonnull )appName:(BOOL)apiFriendly;
 + (NSString * _Nonnull )brandName;
 + (NSString * _Nonnull )urlScheme;
+
+// Pilot overrides
++ (NSString * _Nonnull )pilotFallbackAppName:(BOOL)apiFriendly;
++ (NSString * _Nonnull )pilotFallbackBrandName;
 
 + (void)setLoginNeededBlock:(PPBasicBlock _Nonnull )loginBlock;
 + (void)throwLoginBlock;

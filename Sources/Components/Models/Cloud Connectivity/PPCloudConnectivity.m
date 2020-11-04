@@ -9,7 +9,6 @@
 #import "PPCloudConnectivity.h"
 #import "PPCloudEngine.h"
 #import "PPCurlDebug.h"
-#import <KissXML/KissXML.h>
 
 static NSTimeInterval kSystemStartTimeInterval = 1262304000; // 2010-01-01T00:00:00Z
 static NSTimeInterval kSystemEndTimeInterval   = 5000000000; // 2128-06-11T08:53:20T
@@ -93,7 +92,8 @@ static NSTimeInterval kSystemEndTimeInterval   = 5000000000; // 2128-06-11T08:53
         [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"version" value:@(version).stringValue]];
     }
     components.queryItems = queryItems;
-    
+    components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
+
     dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.cloud.getConnectionSettings()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
@@ -172,6 +172,7 @@ static NSTimeInterval kSystemEndTimeInterval   = 5000000000; // 2128-06-11T08:53
         [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"appName" value:appName]];
     }
     components.queryItems = queryItems;
+    components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
     
     dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.cloud.getServer()", DISPATCH_QUEUE_SERIAL);
     
@@ -249,6 +250,9 @@ static NSTimeInterval kSystemEndTimeInterval   = 5000000000; // 2128-06-11T08:53
         [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"appName" value:appName]];
     }
     
+    components.queryItems = queryItems;
+    components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
+    
     dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.cloud.getServerURL()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
@@ -296,6 +300,7 @@ static NSTimeInterval kSystemEndTimeInterval   = 5000000000; // 2128-06-11T08:53
     NSAssert1(deviceId != nil, @"%s missing deviceId", __FUNCTION__);
     NSURLComponents *components = [NSURLComponents componentsWithURL:[NSURL URLWithString:@"settingsCloud"] resolvingAgainstBaseURL:NO];
     components.queryItems = @[[[NSURLQueryItem alloc] initWithName:@"deviceId" value:deviceId]];
+    components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
     
     dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.cloud.getCloudInstances()", DISPATCH_QUEUE_SERIAL);
     
@@ -318,65 +323,6 @@ static NSTimeInterval kSystemEndTimeInterval   = 5000000000; // 2128-06-11T08:53
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 callback(cloud, error);
-            });
-        });
-    } failure:^(NSError *error) {
-        
-        dispatch_async(queue, ^{
-            
-            PPLogAPI(@"< %s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                callback(nil, [PPBaseModel resultCodeToNSError:10003 originatingClass:NSStringFromClass([self class]) argument:[NSString stringWithFormat:@"%@",error.userInfo]]);
-            });
-        });
-    }];
-}
-
-#pragma mark - Version Information
-
-/**
- * Get server version information.
- *
- * @param callback PPCloudConnectivityVersionBlock Version callback block
- **/
-+ (void)getVersionInformation:(PPCloudConnectivityVersionBlock)callback {
-    NSURLComponents *components = [NSURLComponents componentsWithString:@"version"];
-    
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.cloud.getVersionInformation()", DISPATCH_QUEUE_SERIAL);
-    
-    PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
-    
-    [[PPCloudEngine sharedDefaultEngine] GET:components.string success:^(NSData *responseData) {
-        
-        dispatch_async(queue, ^{
-            
-            NSString *str = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-            
-            NSError *error = nil;
-            DDXMLElement *modules = [[DDXMLElement alloc] initWithXMLString:str error:&error];
-            DDXMLNode *versionNode = [[modules nodesForXPath:@"espapi/version" error:&error] firstObject];
-            DDXMLNode *revisionNode = [[modules nodesForXPath:@"espapi/revision" error:&error] firstObject];
-            
-            NSMutableString *serverVersion;
-            if (!error) {
-                NSString *version = [versionNode stringValue];
-                NSString *revision = [revisionNode stringValue];
-                
-                serverVersion = @"".mutableCopy;
-                if (version) {
-                    [serverVersion appendString:version];
-                }
-                if (revision) {
-                    [serverVersion appendFormat:@".%@", revision];
-                }
-            }
-            
-            PPLogAPI(@"%@", [PPCurlDebug responseToDescription:@{@"xml":str}]);
-            PPLogAPI(@"< %s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                callback(serverVersion, nil);
             });
         });
     } failure:^(NSError *error) {

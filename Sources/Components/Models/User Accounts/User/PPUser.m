@@ -23,13 +23,18 @@
 
 - (id)initWithCachedUser {
     NSString *cachedUsername = [UICKeyChainStore keyChainStore][@"user.username"];
+    NSString *cachedAltUsername = [UICKeyChainStore keyChainStore][@"user.altUsername"];
     NSString *cachedSessionKey = [UICKeyChainStore keyChainStore][[NSString stringWithFormat:@"user.sessionKey:%@", cachedUsername]];
     
-    return [self initWithSessionKey:cachedSessionKey username:cachedUsername];
+    return [self initWithSessionKey:cachedSessionKey username:cachedUsername altUsername:cachedAltUsername];
 }
 
 - (id)initWithSessionKey:(NSString *)sessionKey username:(NSString *)username {
-    self = [[PPUser alloc] initWithUserId:PPUserIdNone email:[[PPUserEmail alloc] initWithEmail:nil verified:PPUserEmailVerifiedNone status:PPUserEmailStatusNone] username:username altUsername:nil firstName:nil lastName:nil communityName:nil language:nil phone:nil phoneType:PPUserPhoneTypeNone smsStatus:PPUserSMSStatusNone anonymous:PPUserAnonymousTypeNone userPermissions:nil tags:nil locations:nil badges:nil organizations:nil avatarFileId:PPUserAvatarFileIdNone creationDate:nil authClients:nil userCommunities:nil locationCommunities:nil];
+    return [self initWithSessionKey:sessionKey username:username altUsername:nil];
+}
+
+- (id)initWithSessionKey:(NSString *)sessionKey username:(NSString *)username altUsername:(NSString *)altUsername {
+    self = [[PPUser alloc] initWithUserId:PPUserIdNone email:[[PPUserEmail alloc] initWithEmail:nil verified:PPUserEmailVerifiedNone status:PPUserEmailStatusNone] username:username altUsername:altUsername firstName:nil lastName:nil communityName:nil language:nil phone:nil phoneType:PPUserPhoneTypeNone smsStatus:PPUserSMSStatusNone anonymous:PPUserAnonymousTypeNone userPermissions:nil tags:nil locations:nil badges:nil organizations:nil avatarFileId:PPUserAvatarFileIdNone creationDate:nil authClients:nil userCommunities:nil locationCommunities:nil];
     if(self) {
         self.sessionKey = sessionKey;
     }

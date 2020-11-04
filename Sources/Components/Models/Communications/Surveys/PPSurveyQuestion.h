@@ -1,6 +1,6 @@
 //
 //  PPSurveyQuestion.h
-//  PPiOSCore
+//  Peoplepower
 //
 //  Created by Destry Teeter on 7/6/20.
 //  Copyright © 2020 People Power Company. All rights reserved.
@@ -13,7 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 typedef NS_OPTIONS(NSInteger, PPSurveyQuestionId) {
     PPSurveyQuestionIdNone = -1
 };
-
 typedef NS_OPTIONS(NSInteger, PPSurveyQuestionSliderValue) {
     PPSurveyQuestionSliderValueNone = -1
 };

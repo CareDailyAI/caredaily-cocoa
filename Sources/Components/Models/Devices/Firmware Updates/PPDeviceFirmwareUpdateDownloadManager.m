@@ -3,15 +3,25 @@
 //  Peoplepower
 //
 //  Created by Destry Teeter on 6/17/17.
-//  Copyright © 2017 People Power. All rights reserved.
+//  Copyright © 2020 People Power Company. All rights reserved.
 //
 
 #import "PPDeviceFirmwareUpdateDownloadManager.h"
 #import "PPDeviceFirmwareUpdateJob.h"
+
+#if !TARGET_OS_WATCH
+#import <AssetsLibrary/ALAsset.h>
+#endif
+
 #import <AVFoundation/AVFoundation.h>
 
 @interface PPDeviceFirmwareUpdateDownloadManager()
 @property (nonatomic, strong) PPHTTPOperation *downloadOperation;
+
+#if !TARGET_OS_WATCH
+@property (nonatomic, strong) AVAssetExportSession *assetExport;
+#endif
+
 @property (nonatomic, strong) NSTimer *exportProgressTimer;
 @end
 

@@ -387,4 +387,3 @@ typedef NS_OPTIONS(NSInteger, PPLocationCodeType) {
 + (NSDictionary *)JSONData:(PPLocation *)location appName:(NSString *)appName;
 
 @end
-

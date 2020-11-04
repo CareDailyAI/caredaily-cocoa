@@ -1,12 +1,12 @@
 //
 //  PPRLMDictionary.h
-//  PPiOSCore
+//  Peoplepower
 //
 //  Created by Destry Teeter on 6/6/18.
-//  Copyright © 2018 People Power Company. All rights reserved.
+//  Copyright © 2020 People Power Company. All rights reserved.
 //
 
-@interface PPRLMDictionary : RLMObject
+@interface PPRLMDictionary : PPBaseModel
 
 @property (nonatomic, strong) RLMArray<RLMString> *keys;
 @property (nonatomic, strong) RLMArray<RLMString> *values;

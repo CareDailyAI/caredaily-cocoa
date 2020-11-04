@@ -7,7 +7,6 @@
 
 #import <Foundation/Foundation.h>
 #import "PPHTTPOperation.h"
-@import AFNetworking;
 
 @class PPAFHTTPSessionManager;
 //@class PPAFHTTPRequestOperationManager;

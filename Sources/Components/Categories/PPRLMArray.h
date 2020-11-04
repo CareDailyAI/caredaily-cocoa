@@ -1,9 +1,9 @@
 //
 //  PPRLMArray.h
-//  PPiOSCore
+//  Peoplepower
 //
 //  Created by Destry Teeter on 6/6/18.
-//  Copyright © 2018 People Power Company. All rights reserved.
+//  Copyright © 2020 People Power Company. All rights reserved.
 //
 
 @interface PPRLMArray : NSObject

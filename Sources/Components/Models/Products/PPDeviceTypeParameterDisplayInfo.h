@@ -12,7 +12,7 @@
 
 - (id)initWithInfo:(PPRLMDictionary *)info;
 
-+ (PPDeviceTypeParameterDisplayInfo *)initWithDictionary:(NSDictionary *)displayInfoDict;
++ (PPDeviceTypeParameterDisplayInfo *)initWithDictionary:(PPRLMDictionary *)displayInfoDict;
 
 + (NSString *)stringify:(PPDeviceTypeParameterDisplayInfo *)displayInfo;
 

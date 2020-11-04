@@ -17,6 +17,7 @@
 							completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completionHandler {
 	
 	PPLogAPI(@"%@", [PPCurlDebug requestToDescription:request]);
+	
     return [super dataTaskWithRequest:request uploadProgress:^(NSProgress * _Nonnull uploadProgress) {
     } downloadProgress:^(NSProgress * _Nonnull downloadProgress) {
     } completionHandler:completionHandler];

@@ -2,7 +2,7 @@
 //  PPDeviceProxy.m
 //  Peoplepower
 //
-//  Copyright (c) 2020 People Power. All rights reserved.
+//  Copyright © 2020 People Power Company. All rights reserved.
 //
 
 #import "PPDeviceProxy.h"
@@ -516,6 +516,9 @@ __strong static PPDeviceProxy *_currentProxy = nil;
                         return;
                      }
                     
+                    if(!incomplete && !isThumbnail) {
+                        [self trackRecording:totalDuration];
+                    }
                     if(status) {
                         [self processServerResponse:@{@"status": status}];
                     }
@@ -550,6 +553,39 @@ __strong static PPDeviceProxy *_currentProxy = nil;
             }
         });
     });
+}
+
+- (void)trackRecording:(PPFileDuration)totalDuration {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if([defaults objectForKey:@"video_total_recordings"] == nil) {
+        [defaults setObject:@"0" forKey:@"video_total_recordings"];
+        [defaults synchronize];
+    }
+    
+    if([defaults objectForKey:@"video_total_sec"] == nil) {
+        [defaults setObject:@"0" forKey:@"video_total_sec"];
+        [defaults synchronize];
+    }
+    
+    NSInteger totalSecondsEverRecorded = ((NSString *)[defaults objectForKey:@"video_total_sec"]).integerValue;
+    totalSecondsEverRecorded += totalDuration;
+    [defaults setObject:[NSString stringWithFormat:@"%ld", (long)totalSecondsEverRecorded] forKey:@"video_total_sec"];
+    [defaults synchronize];
+    
+    NSInteger totalRecordings = ((NSString *)[defaults objectForKey:@"video_total_recordings"]).integerValue;
+    
+    totalRecordings++;
+    [defaults setObject:[NSString stringWithFormat:@"%ld", (long)totalRecordings] forKey:@"video_total_recordings"];
+    
+    NSMutableDictionary *properties = [[NSMutableDictionary alloc] initWithCapacity:6];
+    [properties setObject:NSStringFromClass([self class]) forKey:@"Location"];
+    [properties setObject:@"Video recorded" forKey:@"Description"];
+    [properties setObject:[NSString stringWithFormat:@"%ld", (long)totalDuration] forKey:@"$video_delta_sec"];
+    [properties setObject:[NSString stringWithFormat:@"%ld", (long)totalSecondsEverRecorded] forKey:@"$video_total_sec"];
+    [properties setObject:@"1" forKey:@"$video_delta_recordings"];
+    [properties setObject:[NSString stringWithFormat:@"%ld", (long)totalRecordings] forKey:@"$video_total_recordings"];
+    [PPUserAnalytics track:@"ioscamera" properties:properties logLevel:ANALYTICS_LEVEL_DEBUG];
 }
 
 /* private */
@@ -659,7 +695,9 @@ __strong static PPDeviceProxy *_currentProxy = nil;
                     
                     [responses addObject:commandDict];
                 }
-                [JSON setValue:responses forKey:@"responses"];
+                if ([responses count] > 0) {
+                    [JSON setValue:responses forKey:@"responses"];
+                }
 				
 				weakSelf.commandResponses = [[NSMutableArray alloc] initWithCapacity:3];
 
@@ -676,6 +714,10 @@ __strong static PPDeviceProxy *_currentProxy = nil;
                             
                             NSMutableDictionary *measurementDict = [[NSMutableDictionary alloc] initWithCapacity:2];
                             [measurementDict setValue:measurement.deviceId forKey:@"deviceId"];
+                            
+                            if (measurement.lastMeasureDate != nil) {
+                                [measurementDict setValue:[NSString stringWithFormat:@"%li", (long)measurement.lastMeasureDate.timeIntervalSince1970 * 1000] forKey:@"timestamp"];
+                            }
                             
                             NSMutableArray *paramsArray = [[NSMutableArray alloc] initWithCapacity:0];
                             
@@ -711,7 +753,9 @@ __strong static PPDeviceProxy *_currentProxy = nil;
                     }
 					break;
 				}
-                [JSON setValue:measurements forKey:@"measures"];
+                if ([measurements count] > 0) {
+                    [JSON setValue:measurements forKey:@"measures"];
+                }
                 
                 NSMutableArray *alerts = [[NSMutableArray alloc] initWithCapacity:0];
                 for(int i = 0; i < [weakSelf.pendingAlerts count]; i++) {
@@ -767,7 +811,9 @@ __strong static PPDeviceProxy *_currentProxy = nil;
                     }
                     break;
                 }
-                [JSON setValue:alerts forKey:@"alerts"];
+                if ([alerts count] > 0) {
+                    [JSON setValue:alerts forKey:@"alerts"];
+                }
 				
 				// Measurements and responses should go through quickly no matter what. Make it happen or die quickly.
 				NSInteger timeout = HTTP_TIMEOUT_WITH_ACTIVE_CAMERA;
@@ -1001,6 +1047,35 @@ __strong static PPDeviceProxy *_currentProxy = nil;
             NSLog(@"%s Could not find a command block for device: %@ (commandId=%li)", __PRETTY_FUNCTION__, command.deviceId, (long)command.commandId);
 #endif
             return;
+        }
+        
+        for(PPDeviceParameter *param in command.parameters) {
+            
+            NSMutableDictionary *properties = [[NSMutableDictionary alloc] initWithCapacity:3];
+            [properties setObject:NSStringFromClass([self class]) forKey:@"Location"];
+            [properties setObject:[NSString stringWithFormat:@"command-%@", (command.type == PPDeviceCommandTypeSet) ? @"set" : @"delete"] forKey:@"Description"];
+            // Stream ID's can be sensitive, so don't track them.
+            if([param.name isEqualToString:STREAM_ID]) {
+                if([param.value isEqualToString:@""]) {
+                    [properties setObject:@"[disconnect]" forKey:@"Value"];
+                }
+                else {
+                    [properties setObject:@"[connect]" forKey:@"Value"];
+                }
+            }
+            else {
+                [properties setObject:param.value forKey:@"Value"];
+            }
+            
+            if(param.name) {
+                [properties setObject:param.name forKey:@"Parameter"];
+            }
+            
+            if(param.index) {
+                [properties setObject:param.index forKey:@"index"];
+            }
+            
+            [PPUserAnalytics track:@"ioscamera" properties:properties logLevel:ANALYTICS_LEVEL_ALERT];
         }
         
         NSDictionary *returnElement = commandBlock([PPRLMArray arrayFromArray:command.parameters]);

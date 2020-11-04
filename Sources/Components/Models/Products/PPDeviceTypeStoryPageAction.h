@@ -36,9 +36,9 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeStoryPageActionStyle) {
 @property (nonatomic) PPDeviceTypeStoryPageActionIndex index;
 @property (nonatomic) PPDeviceTypeStoryPageActionType type;
 @property (nonatomic) PPDeviceTypeStoryPageActionStyle style;
-@property (nonatomic, strong) NSString *_Nullable storyId;
-@property (nonatomic, strong) NSString *_Nullable url;
-@property (nonatomic, strong) NSString *_Nullable desc;
+@property (nonatomic, strong) NSString * _Nullable storyId;
+@property (nonatomic, strong) NSString * _Nullable url;
+@property (nonatomic, strong) NSString * _Nullable desc;
 
 - (id _Nonnull )initWithIndex:(PPDeviceTypeStoryPageActionIndex)index
                type:(PPDeviceTypeStoryPageActionType)type
@@ -48,7 +48,6 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeStoryPageActionStyle) {
                desc:(NSString * _Nullable )desc;
 
 + (PPDeviceTypeStoryPageAction * _Nonnull )initWithDictionary:(NSDictionary * _Nonnull )actionDict;
-
 + (NSString * _Nonnull )stringify:(PPDeviceTypeStoryPageAction * _Nonnull )action;
 
 @end

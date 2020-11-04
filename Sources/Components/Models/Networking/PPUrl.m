@@ -2,7 +2,7 @@
 //  PPUrl.m
 //  Peoplepower
 //
-//  Copyright (c) 2020 People Power. All rights reserved.
+//  Copyright © 2020 People Power Company. All rights reserved.
 //
 
 #import "PPUrl.h"
@@ -110,6 +110,20 @@
     PPCloudConnectivityServer *server;
     for(PPCloudConnectivityServer *defaultServer in [PPUrl getCustomCloud].servers) {
         if([defaultServer.type isEqualToString:CLOUD_CONNECTIVITY_SERVER_TYPE_APP_API]) {
+            server = defaultServer;
+            break;
+        }
+    }
+    
+    NSString *serverURLString = [server URLString];
+    
+    return serverURLString;
+}
+
++ (NSString *)appWebsocketAPIServerURLString {
+    PPCloudConnectivityServer *server;
+    for(PPCloudConnectivityServer *defaultServer in [PPUrl getCustomCloud].servers) {
+        if([defaultServer.type isEqualToString:CLOUD_CONNECTIVITY_SERVER_TYPE_WS_API]) {
             server = defaultServer;
             break;
         }

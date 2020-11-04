@@ -57,7 +57,7 @@
         if(appendComma) {
             [JSONString appendString:@","];
         }
-        [JSONString appendFormat:@"\"value\": \"%@\"", property.content];
+        [JSONString appendFormat:@"\"content\": \"%@\"", property.content];
         appendComma = YES;
     }
     [JSONString appendString:@"}"];

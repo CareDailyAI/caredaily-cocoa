@@ -1,6 +1,6 @@
 //
 //  PPSurveys.m
-//  PPiOSCore
+//  Peoplepower
 //
 //  Created by Destry Teeter on 7/6/20.
 //  Copyright © 2020 People Power Company. All rights reserved.
@@ -28,7 +28,7 @@
     }
     components.queryItems = queryItems;
     
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.communications.surveys.getSurveyQuestions()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.communications.surveys.getSurveyQuestions()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
@@ -97,7 +97,7 @@
     NSError *error;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"PUT" URLString:[NSURL URLWithString:components.string relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     [request setHTTPBody:body];
-    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.ioscore.communications.surveys.answerQuestion()", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.communications.surveys.answerQuestion()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         

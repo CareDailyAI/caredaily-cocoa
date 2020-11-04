@@ -1,6 +1,6 @@
 //
 //  RLMRealm+PPExtras.h
-//  PPiOSCore
+//  Peoplepower
 //
 //  Created by Destry Teeter on 6/22/20.
 //  Copyright © 2020 People Power Company. All rights reserved.
