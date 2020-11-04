@@ -1200,6 +1200,8 @@
 		63512368213890BB003E7EAA /* PPCircleDeviceCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPCircleDeviceCamera.m; sourceTree = "<group>"; };
 		6351236B21389112003E7EAA /* PPCircleDevicePictureFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPCircleDevicePictureFrame.h; sourceTree = "<group>"; };
 		6351236C21389112003E7EAA /* PPCircleDevicePictureFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPCircleDevicePictureFrame.m; sourceTree = "<group>"; };
+		6352965C2552356D00ADBC11 /* input_watchOS.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = input_watchOS.xcfilelist; sourceTree = "<group>"; };
+		6352965D2552356D00ADBC11 /* output_watchOS.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = output_watchOS.xcfilelist; sourceTree = "<group>"; };
 		635680E7241863C400EAA1D8 /* PPCommunityFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPCommunityFile.h; sourceTree = "<group>"; };
 		635680E8241863C400EAA1D8 /* PPCommunityFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPCommunityFile.m; sourceTree = "<group>"; };
 		635E3AC122C26BE600C171B0 /* PPDeviceTypeStoryPageAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPDeviceTypeStoryPageAction.h; sourceTree = "<group>"; };
@@ -1964,6 +1966,8 @@
 				634C1EC924A292570012F715 /* copyFramework.sh */,
 				630BDC4224B389D40035D8B3 /* input.xcfilelist */,
 				630BDC4124B389D40035D8B3 /* output.xcfilelist */,
+				6352965C2552356D00ADBC11 /* input_watchOS.xcfilelist */,
+				6352965D2552356D00ADBC11 /* output_watchOS.xcfilelist */,
 			);
 			name = "Build Utilities";
 			sourceTree = "<group>";
