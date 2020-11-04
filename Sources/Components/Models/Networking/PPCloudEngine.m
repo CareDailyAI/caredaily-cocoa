@@ -6,13 +6,8 @@
 //
 
 #import "PPCloudEngine.h"
-#if !TARGET_OS_WATCH
-#import "PPDeviceProxy.h"
-#import "PPDeviceProxyLocal.h"
-#endif
 #import "PPCurlDebug.h"
 #import "PPAFHTTPBridge.h"
-#import "PPUser.h"
 
 @implementation PPCloudEngine
 
@@ -89,17 +84,10 @@ __strong static PPCloudEngine *_sharedReportObject = nil;
     return _sharedProxyObject;
 }
 
-+ (void)setUser:(PPUser *)user {
-    if(user != nil) {
-        [[PPCloudEngine sharedAppEngine] setValue:user.sessionKey forHTTPHeaderField:HTTP_HEADER_API_KEY];
-        [[PPCloudEngine sharedAppStrippedEngine] setValue:user.sessionKey forHTTPHeaderField:HTTP_HEADER_API_KEY];
-        [[PPCloudEngine sharedAdminEngine] setValue:user.sessionKey forHTTPHeaderField:HTTP_HEADER_API_KEY];
-    }
-    else {
-        [[PPCloudEngine sharedAppEngine] setValue:nil forHTTPHeaderField:HTTP_HEADER_API_KEY];
-        [[PPCloudEngine sharedAppStrippedEngine] setValue:nil forHTTPHeaderField:HTTP_HEADER_API_KEY];
-        [[PPCloudEngine sharedAdminEngine] setValue:nil forHTTPHeaderField:HTTP_HEADER_API_KEY];
-    }
++ (void)setSessionKey:(NSString *)sessionKey {
+    [[PPCloudEngine sharedAppEngine] setValue:sessionKey forHTTPHeaderField:HTTP_HEADER_API_KEY];
+    [[PPCloudEngine sharedAppStrippedEngine] setValue:sessionKey forHTTPHeaderField:HTTP_HEADER_API_KEY];
+    [[PPCloudEngine sharedAdminEngine] setValue:sessionKey forHTTPHeaderField:HTTP_HEADER_API_KEY];
 }
 
 - (id)initSingleton:(PPCloudEngineType)type {
