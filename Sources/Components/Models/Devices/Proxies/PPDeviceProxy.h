@@ -22,7 +22,7 @@
 
 @end;
 
-@interface PPDeviceProxy : PPBaseModel <PPDeviceProxyLocalWebsocketDelegate>
+@interface PPDeviceProxy : NSObject <PPDeviceProxyLocalWebsocketDelegate>
 
 #pragma mark - Session Management
 

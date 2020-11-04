@@ -144,7 +144,7 @@ __strong static PPUser *_currentUser = nil;
             _currentUser.altUsername = altUsername;
         }
         
-        [PPCloudEngine setUser:_currentUser];
+        [PPCloudEngine setSessionKey:_currentUser.sessionKey];
     }
     
 #ifdef DEBUG
@@ -215,7 +215,7 @@ __strong static PPUser *_currentUser = nil;
     [UICKeyChainStore keyChainStore][@"user.username"] = _currentUser.username;
     [UICKeyChainStore keyChainStore][@"user.altUsername"] = _currentUser.altUsername;
     
-    [PPCloudEngine setUser:_currentUser];
+    [PPCloudEngine setSessionKey:_currentUser.sessionKey];
     
     NSData *sharedUserData = [NSKeyedArchiver archivedDataWithRootObject:_sharedUsers];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -261,7 +261,9 @@ __strong static PPUser *_currentUser = nil;
         [UICKeyChainStore keyChainStore][@"user.altUsername"] = nil;
         [UICKeyChainStore keyChainStore][@"user.locationId"] = nil;
         _currentUser = nil;
-        [PPCloudEngine setUser:nil];
+        
+        [PPCloudEngine setSessionKey:nil];
+        
 #if !TARGET_OS_WATCH
         [PPDeviceProxy setProxy:nil];
 #endif

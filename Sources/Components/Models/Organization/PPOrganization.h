@@ -7,6 +7,8 @@
 
 #import "PPBaseModel.h"
 #import "PPOrganizationGroup.h"
+#import "PPState.h"
+#import "PPCountry.h"
 
 @interface PPOrganization : PPBaseModel <NSCopying>
 

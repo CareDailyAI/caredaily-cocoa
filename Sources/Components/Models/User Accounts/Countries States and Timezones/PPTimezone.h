@@ -7,7 +7,6 @@
 //
 
 #import "PPBaseModel.h"
-#import "PPCountriesStatesAndTimezones.h"
 
 @interface PPTimezone : PPBaseModel <NSCopying>
 
