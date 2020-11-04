@@ -8,21 +8,7 @@
 
 #import "PPBaseModel.h"
 
-typedef NS_OPTIONS(NSInteger, PPSMSSubcriberCommunicationCategory) {
-    PPSMSSubcriberCommunicationCategoryNone = -1,
-    PPSMSSubcriberCommunicationCategoryMeOnly = 0,
-    PPSMSSubcriberCommunicationCategoryGeneralFriends = 1,
-    PPSMSSubcriberCommunicationCategoryFamilyCaregivers = 2
-};
-
-typedef NS_OPTIONS(NSInteger, PPSMSSubscriberStatus) {
-    PPSMSSubscriberStatusNone = -1,
-    PPSMSSubscriberStatusSubscribed = 1,
-    PPSMSSubscriberStatusOptOut = 2,
-    PPSMSSubscriberStatusInvalid = 3, // SMS cannot be sent to this number
-};
-
-@interface PPSMSSubscriber : NSObject
+@interface PPSMSSubscriber : PPBaseModel
 
 @property (nonatomic, strong) NSString *phone;
 @property (nonatomic, strong) NSArray *categories;

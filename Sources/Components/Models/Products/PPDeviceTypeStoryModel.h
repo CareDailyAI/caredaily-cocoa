@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPDeviceTypeStoryModel : NSObject
+@interface PPDeviceTypeStoryModel : PPBaseModel
 
 @property (nonatomic, strong) NSString * _Nonnull modelId;
 @property (nonatomic, strong) NSString * _Nonnull brand;

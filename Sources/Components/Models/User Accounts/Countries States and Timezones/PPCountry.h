@@ -11,7 +11,7 @@
 #import "PPState.h"
 #import "PPTimezone.h"
 
-@interface PPCountry : NSObject <NSCopying>
+@interface PPCountry : PPBaseModel <NSCopying>
 
 @property (nonatomic) PPCountryId countryId;
 @property (nonatomic, strong) NSString * _Nullable name;

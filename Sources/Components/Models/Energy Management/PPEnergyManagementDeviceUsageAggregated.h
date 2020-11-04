@@ -10,7 +10,7 @@
 #import "PPEnergyManagementDeviceUsageAggregatedEnergy.h"
 #import "PPEnergyManagementDeviceUsageAggregatedCost.h"
 
-@interface PPEnergyManagementDeviceUsageAggregated : NSObject
+@interface PPEnergyManagementDeviceUsageAggregated : PPBaseModel
 
 @property (nonatomic, strong) NSDate *startDate;
 @property (nonatomic, strong) NSDate *endDate;

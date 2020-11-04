@@ -8,15 +8,7 @@
 
 #import "PPBaseModel.h"
 
-typedef NS_OPTIONS(NSInteger, PPCallCenterContactPhoneType) {
-    PPCallCenterContactPhoneTypeNone = -1,
-    PPCallCenterContactPhoneTypeUnknown = 0,
-    PPCallCenterContactPhoneTypeCell = 1,
-    PPCallCenterContactPhoneTypeHome = 2,
-    PPCallCenterContactPhoneTypeWork = 3,
-    PPCallCenterContactPhoneTypeOffice = 4
-};
-@interface PPCallCenterContact : NSObject
+@interface PPCallCenterContact : PPBaseModel
 
 @property (nonatomic, strong) NSString *firstName;
 @property (nonatomic, strong) NSString *lastName;

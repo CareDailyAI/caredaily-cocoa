@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPBotengineAppMarketing : NSObject
+@interface PPBotengineAppMarketing : PPBaseModel
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *author;

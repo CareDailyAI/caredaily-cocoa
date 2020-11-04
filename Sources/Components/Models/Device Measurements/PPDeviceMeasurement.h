@@ -9,7 +9,7 @@
 #import "PPBaseModel.h"
 #import "PPDeviceParameter.h"
 
-@interface PPDeviceMeasurement : NSObject <NSCopying>
+@interface PPDeviceMeasurement : PPBaseModel <NSCopying>
 
 @property (nonatomic, strong) NSString *deviceId;
 @property (nonatomic, strong) NSDate *lastDataReceivedDate;

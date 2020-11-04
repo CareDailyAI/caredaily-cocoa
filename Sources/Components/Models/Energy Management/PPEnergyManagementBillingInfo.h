@@ -11,12 +11,7 @@
 #import "PPEnergyManagementBillingInfoUtility.h"
 #import "PPEnergyManagementBillingInfoBillingRate.h"
 
-
-typedef NS_OPTIONS(NSInteger, PPEnergyManagementBillingInfoBillingDay) {
-    PPEnergyManagementBillingInfoBillingDayNone = -1,
-};
-
-@interface PPEnergyManagementBillingInfo : NSObject
+@interface PPEnergyManagementBillingInfo : PPBaseModel
 
 @property (nonatomic) PPEnergyManagementBillingInfoBillingDay billingDay;
 @property (nonatomic, strong) NSArray *budgets;

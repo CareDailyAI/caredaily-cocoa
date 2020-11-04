@@ -8,42 +8,7 @@
 
 #import "PPBaseModel.h"
 
-typedef NS_OPTIONS(NSInteger, PPCrowdFeedbackId) {
-    PPCrowdFeedbackIdNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPCrowdFeedbackType) {
-    PPCrowdFeedbackTypeNone = -1,
-    PPCrowdFeedbackTypeNewFeatureRequest = 1,
-    PPCrowdFeedbackTypeNewProblemReport = 2,
-};
-
-typedef NS_OPTIONS(NSInteger, PPCrowdFeedbackProductId) {
-    PPCrowdFeedbackProductIdNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPCrowdFeedbackProductCategory) {
-    PPCrowdFeedbackProductCategoryNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPCrowdFeedbackVotingCount) {
-    PPCrowdFeedbackVotingCountNone = -1,
-    PPCrowdFeedbackVotingCountZero = 0
-};
-
-typedef NS_OPTIONS(NSInteger, PPCrowdFeedbackRank) {
-    PPCrowdFeedbackRankNone = -1,
-    PPCrowdFeedbackRankRemoveVote = 0,
-    PPCrowdFeedbackRankCastVote = 1,
-};
-
-typedef NS_OPTIONS(NSInteger, PPCrowdFeedbackEnabled) {
-    PPCrowdFeedbackEnabledNone = -1,
-    PPCrowdFeedbackEnabledFalse = 0,
-    PPCrowdFeedbackEnabledTrue = 1
-};
-
-@interface PPCrowdFeedback : NSObject
+@interface PPCrowdFeedback : PPBaseModel
 
 @property (nonatomic) PPCrowdFeedbackId feedbackId;
 @property (nonatomic, strong) NSString *appName;

@@ -8,11 +8,7 @@
 
 #import "PPBaseModel.h"
 
-typedef NS_OPTIONS(NSInteger, PPEnergyManagementBillingInfoUtilityId) {
-    PPEnergyManagementBillingInfoUtilityIdNone = -1,
-};
-
-@interface PPEnergyManagementBillingInfoUtility : NSObject
+@interface PPEnergyManagementBillingInfoUtility : PPBaseModel
 
 @property (nonatomic) PPEnergyManagementBillingInfoUtilityId utilityId;
 @property (nonatomic, strong) NSString *name;

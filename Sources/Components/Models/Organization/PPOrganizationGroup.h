@@ -8,25 +8,7 @@
 
 #import "PPBaseModel.h"
 
-typedef NS_OPTIONS(NSInteger, PPOrganizationGroupId) {
-    PPOrganizationGroupIdNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPOrganizationGroupOrganizationId) {
-    PPOrganizationGroupOrganizationIdNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPOrganizationGroupPoints) {
-    PPOrganizationGroupPointsNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPOrganizationGroupType) {
-    PPOrganizationGroupTypeNone = -1,
-    PPOrganizationGroupTypeResidential = 0,
-    PPOrganizationGroupTypeBusiness = 1,
-};
-
-@interface PPOrganizationGroup : NSObject <NSCopying>
+@interface PPOrganizationGroup : PPBaseModel <NSCopying>
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *domainName;

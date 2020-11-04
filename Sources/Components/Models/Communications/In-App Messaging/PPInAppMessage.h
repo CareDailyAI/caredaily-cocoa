@@ -11,50 +11,7 @@
 #import "PPInAppMessageParameters.h"
 #import "PPInAppMessageRecipient.h"
 
-typedef NS_OPTIONS(NSInteger, PPInAppMessageType) {
-    PPInAppMessageTypeNone = -1,
-};
-
-typedef NS_OPTIONS(NSInteger, PPInAppMessageEmail) {
-    PPInAppMessageEmailNone = -1,
-    PPInAppMessageEmailFalse = 0, // Don't deliver this message over email, default
-    PPInAppMessageEmailTrue = 1 // Deliver this message over email
-};
-
-typedef NS_OPTIONS(NSInteger, PPInAppMessagePush) {
-    PPInAppMessagePushNone = -1,
-    PPInAppMessagePushFalse = 0, // Don't deliver this message over push notification, default
-    PPInAppMessagePushTrue = 1 // Deliver this message over push notification
-};
-
-typedef NS_OPTIONS(NSInteger, PPInAppMessageNotReply) {
-    PPInAppMessageNotReplyNone = -1,
-    PPInAppMessageNotReplyFalse = 0, // Allow replies, default
-    PPInAppMessageNotReplyTrue = 1 // Do not allow replies to this thread
-};
-
-typedef NS_OPTIONS(NSInteger, PPInAppMessageChallengeId) {
-    PPInAppMessageChallengeIdNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPInAppMessageChallengeParticipanStatus) {
-    PPInAppMessageChallengeParticipanStatusNone = 0,
-    PPInAppMessageChallengeParticipanStatusNotResponded = 1 << 0,
-    PPInAppMessageChallengeParticipanStatusOptedIn = 1 << 1,
-    PPInAppMessageChallengeParticipanStatusOptedOut = 1 << 2
-};
-
-typedef NS_OPTIONS(NSInteger, PPInAppMessageId) {
-    PPInAppMessageIdNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPInAppMessageMessagesRead) {
-    PPInAppMessageMessagesReadNone = -1,
-    PPInAppMessageMessagesReadFalse = 0,
-    PPInAppMessageMessagesReadTrue = 1
-};
-
-@interface PPInAppMessage : NSObject
+@interface PPInAppMessage : PPBaseModel
 
 /* Subject line of the message */
 @property (nonatomic, strong) NSString *subject;

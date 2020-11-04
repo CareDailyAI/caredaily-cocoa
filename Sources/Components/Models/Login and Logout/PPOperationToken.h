@@ -8,18 +8,6 @@
 
 #import "PPBaseModel.h"
 
-@class PPOperationToken;
-
-typedef void (^PPOperationTokenBlock)(PPOperationToken * _Nullable operationToken, NSError * _Nullable error);
-typedef void (^PPOperationTokenValidityBlock)(BOOL isValid);
-
-/**
- * Opeartion Token types
- */
-typedef enum {
-    PPOperationTokenTypeUserRegistration = 1
-} PPOperationTokenType;
-
 @interface PPOperationToken : PPBaseModel
 
 @property (nonatomic, strong) NSString *token;

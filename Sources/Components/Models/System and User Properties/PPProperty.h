@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPProperty : NSObject
+@interface PPProperty : PPBaseModel
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *value;

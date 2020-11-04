@@ -9,7 +9,7 @@
 #import "PPBaseModel.h"
 #import "PPDeviceType.h"
 
-@interface PPDeviceTypeRuleComponentTemplateProduct : NSObject
+@interface PPDeviceTypeRuleComponentTemplateProduct : PPBaseModel
 
 @property (nonatomic) PPDeviceTypeId typeId;
 @property (nonatomic, strong) NSString *paramName;

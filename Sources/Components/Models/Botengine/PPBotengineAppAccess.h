@@ -8,14 +8,7 @@
 
 #import "PPBaseModel.h"
 
-typedef NS_OPTIONS(NSInteger, PPBotengineAppAccessCategory) {
-    PPBotengineAppAccessCategoryLocations = 1,
-    PPBotengineAppAccessCategoryDeviceFiles = 2,
-    PPBotengineAppAccessCategoryCallCenter = 3,
-    PPBotengineAppAccessCategoryDevices = 4
-};
-
-@interface PPBotengineAppAccess : NSObject
+@interface PPBotengineAppAccess : PPBaseModel
 
 @property (nonatomic) PPBotengineAppAccessCategory category;
 @property (nonatomic, strong) NSString *deviceId;

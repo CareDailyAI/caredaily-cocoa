@@ -9,7 +9,7 @@
 #import "PPBaseModel.h"
 #import "PPCountriesStatesAndTimezones.h"
 
-@interface PPState : NSObject <NSCopying>
+@interface PPState : PPBaseModel <NSCopying>
 
 /* State ID to reference this state in other API calls */
 @property (nonatomic) PPStateId stateId;

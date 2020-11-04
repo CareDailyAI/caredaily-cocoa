@@ -9,7 +9,7 @@
 #import "PPBaseModel.h"
 #import "PPWeatherObservationMetric.h"
 
-@interface PPWeatherObservation : NSObject
+@interface PPWeatherObservation : PPBaseModel
 
 @property (nonatomic, strong) NSString *observationClass;
 @property (nonatomic, strong) NSNumber *expireTimeGMT;

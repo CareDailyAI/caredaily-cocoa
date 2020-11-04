@@ -8,33 +8,7 @@
 
 #import "PPBaseModel.h"
 
-typedef NS_OPTIONS(NSInteger, PPQuestionAnswerStatus) {
-    PPQuestionAnswerStatusNone = -1,
-    PPQuestionAnswerStatusDelayed = 0, // Delayed, the question will be asked in the future
-    PPQuestionAnswerStatusReady = 1, // Ready to be asked, but it is queued
-    PPQuestionAnswerStatusAvailable = 2, // Available
-    PPQuestionAnswerStatusSkipped = 3, // Skipped, the user is going to answer it later
-    PPQuestionAnswerStatusAnswered = 4, // Answered
-    PPQuestionAnswerStatusNoAnswer = 5, // No answer, the user is not going to answer on it
-};
-
-typedef NS_OPTIONS(NSInteger, PPQuestionAnswerValid) {
-    PPQuestionAnswerValidNone = -1,
-    PPQuestionAnswerValidFalse = 0,
-    PPQuestionAnswerValidTrue = 1
-};
-
-typedef NS_OPTIONS(NSInteger, PPQuestionAnswerPoints) {
-    PPQuestionAnswerPointsNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPQuestionAnswerModified) {
-    PPQuestionAnswerModifiedNone = -1,
-    PPQuestionAnswerModifiedFalse = 0,
-    PPQuestionAnswerModifiedTrue = 1
-};
-
-@interface PPQuestionAnswer : NSObject
+@interface PPQuestionAnswer : PPBaseModel
 
 /* Answer Status */
 @property (nonatomic) PPQuestionAnswerStatus status;

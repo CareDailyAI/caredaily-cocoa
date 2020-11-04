@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPEnergyManagementDeviceUsageAggregatedCost : NSObject
+@interface PPEnergyManagementDeviceUsageAggregatedCost : PPBaseModel
 
 @property (nonatomic, strong) NSString *index;
 @property (nonatomic, strong) NSString *value;

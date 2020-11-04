@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PPLocationUserSchedule : NSObject
+@interface PPLocationUserSchedule : PPBaseModel
 
 @property (nonatomic) PPRuleCalendarDaysOfWeek daysOfWeek;
 @property (nonatomic) NSTimeInterval startTime;

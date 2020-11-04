@@ -9,38 +9,7 @@
 #import "PPBaseModel.h"
 #import "PPRuleComponentParameter.h"
 
-typedef NS_OPTIONS(NSInteger, PPRuleComponentId) {
-    PPRuleComponentIdNone = -1,
-};
-
-typedef NS_OPTIONS(NSInteger, PPRuleComponentType) {
-    PPRuleComponentTypeNone = -1,
-};
-
-typedef NS_OPTIONS(NSInteger, PPRuleComponentDisplayType) {
-    PPRuleComponentDisplayTypeNone = -1,
-    PPRuleComponentDisplayTypeTriggerSchedule = 11, // This type of trigger is based on a schedule. For example, "If the time is 8:00 PM on school nights".
-    PPRuleComponentDisplayTypeTriggerEvent = 12, // Location event, such as 'HOME', 'AWAY', etc.
-    PPRuleComponentDisplayTypeTriggerDeviceAlert = 13, // Device alert like "motion detected"
-    PPRuleComponentDisplayTypeTriggerNewDeviceData = 14, // Measurements
-    PPRuleComponentDisplayTypeTriggerCountdown = 15, // Check, if something did not happen in specified period of time
-    PPRuleComponentDisplayTypeStateGeneralCondition = 21, // Type 21 simply means this phrase is a state condition. This is the only 'type' field available for a state.
-    PPRuleComponentDisplayTypeStateLocation = 22, // This phrase is to say "I am home" or "I am away"
-    PPRuleComponentDisplayTypeStateDeviceParameter = 23, // This phrase is to specify a state for a device parameter, such as "temperature is greater than 73 degrees Fahrenheit" for example.
-    PPRuleComponentDisplayTypeActionPushNotification = 31, // Send a push notification to the user
-    PPRuleComponentDisplayTypeActionEmail = 32, // Send an email notification to the user
-    PPRuleComponentDisplayTypeActionSendCommand = 33, // Send a command to a device
-    PPRuleComponentDisplayTypeActionEvent = 34, // Set a new location event, such as 'HOME', 'AWAY', etc.
-    PPRuleComponentDisplayTypeActionCallCenter = 35,
-};
-
-typedef NS_OPTIONS(NSInteger, PPRuleComponentTimezone) {
-    PPRuleComponentTimezoneNone = -1,
-    PPRuleComponentTimezoneFalse = 0,
-    PPRuleComponentTimezoneTrue = 1,
-};
-
-@interface PPRuleComponent : NSObject <NSCopying, NSCoding>
+@interface PPRuleComponent : PPBaseModel <NSCopying, NSCoding>
 
 /* Id of this component */
 @property (nonatomic) PPRuleComponentId componentId;

@@ -8,26 +8,7 @@
 #import "PPBaseModel.h"
 #import "PPOrganizationGroup.h"
 
-typedef NS_OPTIONS(NSInteger, PPOrganizationId) {
-    PPOrganizationIdNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPOrganizationStatus) {
-    PPOrganizationStatusNone = -2,
-    PPOrganizationStatusRejected = -1,
-    PPOrganizationStatusApplied = 0,
-    PPOrganizationStatusAccepted = 1,
-};
-
-typedef NS_OPTIONS(NSInteger, PPOrganizationPoints) {
-    PPOrganizationPointsNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPOrganizationPointsLevel) {
-    PPOrganizationPointsLevelNone = -1
-};
-
-@interface PPOrganization : NSObject <NSCopying>
+@interface PPOrganization : PPBaseModel <NSCopying>
 
 @property (nonatomic) PPOrganizationId organizationId;
 @property (nonatomic) PPOrganizationId parentId;

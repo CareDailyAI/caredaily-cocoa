@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPEnergyManagementDeviceUsagePower : NSObject
+@interface PPEnergyManagementDeviceUsagePower : PPBaseModel
 
 @property (nonatomic, strong) NSString *amountPerHour;
 @property (nonatomic, strong) NSString *watts;

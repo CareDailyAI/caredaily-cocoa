@@ -8,29 +8,7 @@
 
 #import "PPBaseModel.h"
 
-typedef NS_OPTIONS(NSInteger, PPCloudsIntegrationCloudMicroService) {
-    PPCloudsIntegrationCloudMicroServiceNone = -1,
-    PPCloudsIntegrationCloudMicroServiceFalse = 0,
-    PPCloudsIntegrationCloudMicroServiceTrue = 1
-};
-
-typedef NS_OPTIONS(NSInteger, PPCloudsIntegrationCloudMicroServiceRuntime) {
-    PPCloudsIntegrationCloudMicroServiceRuntimePython_2_7 = 1,
-    PPCloudsIntegrationCloudMicroServiceRuntimePython_3_6 = 2,
-    PPCloudsIntegrationCloudMicroServiceRuntimeNodeJS_4_3 = 3
-};
-
-typedef NS_OPTIONS(NSInteger, PPCloudsIntegrationCloudMicroServiceVersionStatus) {
-    PPCloudsIntegrationCloudMicroServiceVersionStatusDevelopment = 1,
-    PPCloudsIntegrationCloudMicroServiceVersionStatusSubmittedForReview = 2,
-    PPCloudsIntegrationCloudMicroServiceVersionStatusUnderReview = 3,
-    PPCloudsIntegrationCloudMicroServiceVersionStatusPublished = 4,
-    PPCloudsIntegrationCloudMicroServiceVersionStatusAdminRejected = 5,
-    PPCloudsIntegrationCloudMicroServiceVersionStatusDeveloperRejected = 6,
-    PPCloudsIntegrationCloudMicroServiceVersionStatusReplacedByNewerVersion = 7
-};
-
-@interface PPCloudsIntegrationCloud : NSObject
+@interface PPCloudsIntegrationCloud : PPBaseModel
 
 // Application ID used in the API to gain access to the cloud/application
 @property (nonatomic) PPCloudsIntegrationClientApplicationId appId;

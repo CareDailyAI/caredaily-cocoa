@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPDeviceTypeAttributeOption : NSObject
+@interface PPDeviceTypeAttributeOption : PPBaseModel
 
 @property (nonatomic, strong) NSString *optionId;
 @property (nonatomic, strong) NSString *value;

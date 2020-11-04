@@ -11,7 +11,7 @@
 
 @class PPDevice;
 
-@interface PPDeviceMeasurementsReading : NSObject
+@interface PPDeviceMeasurementsReading : PPBaseModel
 
 @property (nonatomic, strong) NSString *deviceId;
 @property (nonatomic, strong) NSDate *timeStamp;

@@ -6,7 +6,7 @@
 //  Copyright © 2020 People Power Company. All rights reserved.
 //
 
-@interface PPInAppMessageParameters : NSObject
+@interface PPInAppMessageParameters : PPBaseModel
 
 @property (nonatomic, strong) NSArray *keys;
 @property (nonatomic, strong) NSArray *values;

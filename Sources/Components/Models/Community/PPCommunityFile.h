@@ -8,7 +8,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PPCommunityFile : NSObject
+@interface PPCommunityFile : PPBaseModel
 
 /* The File ID to reference this file later */
 @property (nonatomic) PPFileId fileId;

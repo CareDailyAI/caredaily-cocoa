@@ -10,24 +10,7 @@
 #import "PPOrganization.h"
 #import "PPOrganizationGroup.h"
 #import "PPOrganizationObject.h"
-#import "PPUser.h"
 
-typedef void (^PPOrganizationsBlock)(NSArray * _Nullable orgs, NSError * _Nullable error);
-typedef void (^PPOrganizationsGroupsBlock)(NSArray * _Nullable groups, NSError * _Nullable error);
-typedef void (^PPOrganizationsUpdateUserBlock)(PPOrganizationStatus status, NSError * _Nullable error);
-typedef void (^PPOrganizationsObjectsAndPropertiesBlock)(NSArray * _Nullable objectsAndProperties, NSError * _Nullable error);
-
-typedef NS_OPTIONS(NSInteger, PPOrganizationUserTotals) {
-    PPOrganizationUserTotalsNone = -1,
-    PPOrganizationUserTotalsFalse = 0,
-    PPOrganizationUserTotalsTrue = 1
-};
-
-typedef NS_OPTIONS(NSInteger, PPOrganizationAverageBills) {
-    PPOrganizationAverageBillsNone = -1,
-    PPOrganizationAverageBillsFalse = 0,
-    PPOrganizationAverageBillsTrue = 1
-};
 @interface PPOrganizations : PPBaseModel
 
 @property (nonatomic, strong) NSArray *organizations;

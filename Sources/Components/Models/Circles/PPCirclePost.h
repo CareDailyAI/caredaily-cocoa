@@ -10,25 +10,10 @@
 //
 
 #import "PPBaseModel.h"
-#import "PPUser.h"
 #import "PPCircleFile.h"
 #import "PPCircleReaction.h"
 
-typedef NS_OPTIONS(NSInteger, PPCirclePostId) {
-    PPCirclePostIdNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPCirclePostDeleted) {
-    PPCirclePostDeletedNone = -1,
-    PPCirclePostDeletedFalse = 0,
-    PPCirclePostDeletedTrue = 1
-};
-
-typedef NS_OPTIONS(NSInteger, PPCirclePostDisplayTime) {
-    PPCirclePostDisplayTimeNone = 0
-};
-
-@interface PPCirclePost : NSObject
+@interface PPCirclePost : PPBaseModel
 
 @property (nonatomic) PPCircleId circleId;
 @property (nonatomic) PPCirclePostId postId;

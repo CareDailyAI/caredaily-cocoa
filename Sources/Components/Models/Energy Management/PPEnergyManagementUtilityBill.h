@@ -7,17 +7,8 @@
 //
 
 #import "PPBaseModel.h"
-#import "PPLocation.h"
 
-typedef NS_OPTIONS(NSInteger, PPEnergyManagementUtilityBillId) {
-    PPEnergyManagementUtilityBillIdNone = -1,
-};
-
-typedef NS_OPTIONS(NSInteger, PPEnergyManagementUtilityBillDaysNumber) {
-    PPEnergyManagementUtilityBillDaysNumberNone = -1,
-};
-
-@interface PPEnergyManagementUtilityBill : NSObject
+@interface PPEnergyManagementUtilityBill : PPBaseModel
 
 /* Location ID */
 @property (nonatomic) PPLocationId locationId;

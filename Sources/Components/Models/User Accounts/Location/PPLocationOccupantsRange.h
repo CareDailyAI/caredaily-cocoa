@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPLocationOccupantsRange : NSObject <NSCopying>
+@interface PPLocationOccupantsRange : PPBaseModel <NSCopying>
 
 @property (nonatomic) NSInteger start;
 @property (nonatomic) NSInteger end;

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PPWebSocketConfiguration : NSObject
+@interface PPWebSocketConfiguration : PPBaseModel
 
 @property (nonatomic, strong) NSString *APIServerURL;
 @property (nonatomic, strong) NSString *imageServerURL;

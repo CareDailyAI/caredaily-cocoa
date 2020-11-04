@@ -9,17 +9,6 @@
 #import "PPUrl.h"
 #import "PPAFHTTPBridge.h"
 
-typedef NS_OPTIONS(NSInteger, PPCloudEngineType) {
-    PPCloudEngineTypeDefault,
-    PPCloudEngineTypeApp,
-    PPCloudEngineTypeAppWebsocket,
-    PPCloudEngineTypeAppStripped,
-    PPCloudEngineTypeAdmin,
-    PPCloudEngineTypeProxy,
-    PPCloudEngineTypeStreaming,
-    PPCloudEngineTypeReport
-};
-
 @class PPUser;
 @class PPDeviceProxy;
 

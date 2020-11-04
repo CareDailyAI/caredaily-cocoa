@@ -10,7 +10,7 @@
 #import "PPCloudConnectivityServer.h"
 #import "PPTimezone.h"
 
-@interface PPCloudConnectivityCloud : NSObject
+@interface PPCloudConnectivityCloud : PPBaseModel
 
 @property (nonatomic, strong) NSString *cloud;
 @property (nonatomic, strong) NSString *name;

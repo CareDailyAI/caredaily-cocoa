@@ -8,10 +8,7 @@
 
 #import "PPNotificationMessage.h"
 
-typedef NS_OPTIONS(NSInteger, PPNotificationPushMessageType) {
-    PPNotificationPushMessageTypeNone = -1,
-    PPNotificationPushMessageTypeDefault = 0
-};
+@class PPNotificationPushMessageInfo;
 
 @interface PPNotificationPushMessage : PPNotificationMessage
 

@@ -9,7 +9,7 @@
 #import "PPBaseModel.h"
 #import "PPUserEmail.h"
 
-@interface PPFriendshipFriend : NSObject
+@interface PPFriendshipFriend : PPBaseModel
 
 @property (nonatomic) PPUserId friendId;
 @property (nonatomic, strong) NSString *firstName;

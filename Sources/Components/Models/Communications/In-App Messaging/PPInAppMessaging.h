@@ -11,18 +11,6 @@
 
 #import "PPBaseModel.h"
 #import "PPInAppMessage.h"
-#import "PPUser.h"
-
-typedef void (^PPInAppMessagingBlock)(PPInAppMessageId messageId, NSError * _Nullable error);
-typedef void (^PPInAppMessagesBlock)(NSArray * _Nullable messages, NSError * _Nullable error);
-
-typedef NS_OPTIONS(NSInteger, PPInApMessagingStatus) {
-    PPInApMessagingStatusNone = -1,
-    PPInApMessagingStatusSentMessages = 0,
-    PPInApMessagingStatusInboundUnreadMessages = 1,
-    PPInApMessagingStatusInboundReadMessages = 2,
-    PPInApMessagingStatusAllInboundMessages = 3
-};
 
 @interface PPInAppMessaging : PPBaseModel
 

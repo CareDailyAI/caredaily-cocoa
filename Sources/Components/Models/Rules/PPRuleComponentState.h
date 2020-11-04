@@ -8,16 +8,6 @@
 
 #import "PPRuleComponent.h"
 
-typedef NS_OPTIONS(NSInteger, PPRuleComponentStateType) {
-    PPRuleComponentStateTypeState = 0,
-    PPRuleComponentStateTypeAnd = 1,
-    PPRuleComponentStateTypeOr = 2
-};
-
-extern NSString *RULE_COMPONENT_STATE_SCHEDULE_COMPONENT_NAME;
-extern NSString *RULE_COMPONENT_STATE_SCHEDULE_COMPONENT_PAMAMETER_NAME_1;
-extern NSString *RULE_COMPONENT_STATE_SCHEDULE_COMPONENT_PAMAMETER_NAME_2;
-
 @interface PPRuleComponentState : PPRuleComponent
 
 @property (nonatomic) PPRuleComponentStateType stateType;

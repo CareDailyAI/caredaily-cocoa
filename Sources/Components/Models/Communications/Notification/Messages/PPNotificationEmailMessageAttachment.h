@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPNotificationEmailMessageAttachment : NSObject
+@interface PPNotificationEmailMessageAttachment : PPBaseModel
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *content;

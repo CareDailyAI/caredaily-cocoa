@@ -8,7 +8,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PPCommunityUser : NSObject
+@interface PPCommunityUser : PPBaseModel
 
 @property (nonatomic) PPUserId userId;
 @property (nonatomic, strong) NSString *firstName;

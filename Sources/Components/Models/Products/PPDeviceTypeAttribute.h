@@ -9,13 +9,7 @@
 #import "PPBaseModel.h"
 #import "PPDeviceTypeAttributeOption.h"
 
-typedef NS_OPTIONS(NSInteger, PPDeviceTypeAttributeExtended) {
-    PPDeviceTypeAttributeExtendedNone = -1,
-    PPDeviceTypeAttributeExtendedFalse = 0,
-    PPDeviceTypeAttributeExtendedTrue = 1
-};
-
-@interface PPDeviceTypeAttribute : NSObject
+@interface PPDeviceTypeAttribute : PPBaseModel
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *value;

@@ -6,7 +6,7 @@
 //  Copyright © 2020 People Power Company. All rights reserved.
 //
 
-@interface PPDeviceTypeDeviceModelLookupParam : NSObject
+@interface PPDeviceTypeDeviceModelLookupParam : PPBaseModel
 
 @property (nonatomic) PPDeviceTypeId deviceType;
 @property (nonatomic, strong) NSArray * _Nullable params;

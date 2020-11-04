@@ -8,7 +8,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PPCommunityLocation : NSObject
+@interface PPCommunityLocation : PPBaseModel
 
 @property (nonatomic) PPLocationId locationId;
 @property (nonatomic, strong) NSString *name;

@@ -6,35 +6,9 @@
 //  Copyright © 2020 People Power Company. All rights reserved.
 //
 
-#import "PPUser.h"
 #import "PPNotificationSubscription.h"
 
-typedef NS_OPTIONS(NSInteger, PPNotificationDeliveryType) {
-    PPNotificationDeliveryTypeNone = -1,
-    PPNotificationDeliveryTypePushNotification = 1,
-    PPNotificationDeliveryTypeEmail = 2,
-    PPNotificationDeliveryTypeSMS = 3,
-};
-
-typedef NS_OPTIONS(NSInteger, PPNotificationSourceType) {
-    PPNotificationSourceTypeNone = -1,
-    PPNotificationSourceTypeExternalAPICall = 0,
-    PPNotificationSourceTypeRule = 1,
-    PPNotificationSourceTypeBot = 2,
-    PPNotificationSourceTypeDeviceFirmwareUpdate = 4,
-    PPNotificationSourceTypeInternalSystemLogic = 5,
-    PPNotificationSourceTypeCloudBusinessLogic = 6
-};
-
-typedef NS_OPTIONS(NSInteger, PPNotificationSourceId) {
-    PPNotificationSourceIdNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPNotificationSentCount) {
-    PPNotificationSentCountNone = -1
-};
-
-@interface PPNotification : NSObject
+@interface PPNotification : PPBaseModel
 
 @property (nonatomic, strong) NSDate *sendDate;
 @property (nonatomic) NSInteger sendDateMS;

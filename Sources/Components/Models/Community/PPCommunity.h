@@ -13,18 +13,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void (^PPCommunityPostsBlock)(NSArray * _Nullable posts, NSError * _Nullable error);
-typedef void (^PPCommunityCreatePostBlock)(PPCommunityPostId postId, NSError * _Nullable error);
-typedef void (^PPCommunityCreateCommentBlock)(PPCommunityCommentId commentId, NSError * _Nullable error);
-typedef void (^PPCommunityUploadFileBlock)(PPFileId fileId, NSString * _Nullable contentUrl, NSString * _Nullable thumbnailUrl, NSString * _Nullable m3u8Url, NSDictionary * _Nullable uploadHeaders, NSError * _Nullable error);
-typedef void (^PPCommunityFilesBlock)(NSArray<PPCommunityFile *> * _Nullable files, NSError * _Nullable error);
-
-typedef NS_OPTIONS(NSInteger, PPCommunityFileComplete) {
-    PPCommunityFileCompleteNone = -1,
-    PPCommunityFileCompleteFalse = 0,
-    PPCommunityFileCompleteTrue = 1,
-};
-
 @interface PPCommunity : PPBaseModel
 
 #pragma mark - Community Posts

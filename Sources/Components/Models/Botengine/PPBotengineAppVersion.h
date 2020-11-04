@@ -9,7 +9,7 @@
 #import "PPBaseModel.h"
 #import "PPBotengineAppRating.h"
 
-@interface PPBotengineAppVersion : NSObject
+@interface PPBotengineAppVersion : PPBaseModel
 
 @property (nonatomic, strong) NSString *version;
 @property (nonatomic, strong) NSDate *creationDate;

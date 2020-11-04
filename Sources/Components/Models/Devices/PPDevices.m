@@ -8,7 +8,6 @@
 
 #import "PPDevices.h"
 #import "PPCloudEngine.h"
-#import "PPUserAccounts.h"
 
 @implementation PPDevices
 

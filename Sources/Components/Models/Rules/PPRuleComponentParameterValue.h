@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPRuleComponentParameterValue : NSObject <NSCopying>
+@interface PPRuleComponentParameterValue : PPBaseModel <NSCopying>
 
 @property (nonatomic, strong) NSString *valueId;
 @property (nonatomic, strong) NSString *name;

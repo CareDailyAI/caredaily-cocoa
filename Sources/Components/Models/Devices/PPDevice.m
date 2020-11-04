@@ -7,18 +7,6 @@
 
 #import "PPDevice.h"
 
-NSString *DEVICE_NAME = @"name";
-NSString *DEVICE_CONNECTED = @"connected";
-NSString *DEVICE_RESTRICTED = @"restricted";
-NSString *DEVICE_SHARED = @"shared";
-NSString *DEVICE_NEW_DEVICE = @"newDevice";
-NSString *DEVICE_GOAL_ID = @"goalId";
-NSString *DEVICE_LAST_DATA_RECEIVED_DATE = @"lastDataReceivedDate";
-NSString *DEVICE_LAST_MEASURE_DATE = @"lastMeasureDate";
-NSString *DEVICE_LAST_CONNECTED_DATE = @"lastConnectedDate";
-NSString *DEVICE_ICON = @"icon";
-NSString *DEVICE_LOCATION_ID = @"locationId";
-
 @implementation PPDevice
 
 //@synthesize deviceId;

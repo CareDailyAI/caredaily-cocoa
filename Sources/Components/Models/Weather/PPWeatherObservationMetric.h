@@ -9,7 +9,7 @@
 #import "PPBaseModel.h"
 #import "PPWeatherObservationMetric.h"
 
-@interface PPWeatherObservationMetric : NSObject
+@interface PPWeatherObservationMetric : PPBaseModel
 
 @property (nonatomic, strong) NSNumber *wspd;
 @property (nonatomic, strong) NSNumber *gust;

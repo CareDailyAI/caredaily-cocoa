@@ -9,23 +9,7 @@
 #import "PPBaseModel.h"
 #import "PPDevice.h"
 
-typedef NS_OPTIONS(NSInteger, PPDeviceFirmwareUpdateStatus) {
-    PPDeviceFirmwareUpdateStatusNone = -1,
-    PPDeviceFirmwareUpdateStatusDone = 0,
-    PPDeviceFirmwareUpdateStatusAvailable = 1,
-    PPDeviceFirmwareUpdateStatusApproved = 2,
-    PPDeviceFirmwareUpdateStatusDecline = 3,
-    PPDeviceFirmwareUpdateStatusStarted = 4,
-};
-
-extern NSString *FIRMWARE_UPDATE_INDEX_BLE;
-extern NSString *FIRMWARE_UPDATE_INDEX_MOTOR;
-
-typedef NS_OPTIONS(NSInteger, PPDeviceFirmwareUpdateJobId) {
-    PPDeviceFirmwareUpdateJobIdNone = -1
-};
-
-@interface PPDeviceFirmwareUpdateJob : NSObject
+@interface PPDeviceFirmwareUpdateJob : PPBaseModel
 
 @property (nonatomic) PPDeviceFirmwareUpdateJobId jobId;
 @property (nonatomic, strong) NSString *index;

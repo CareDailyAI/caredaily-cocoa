@@ -8,7 +8,7 @@
 
 #import "PPQuestion.h"
 
-@interface PPDevicePictureFrameAlert : NSObject
+@interface PPDevicePictureFrameAlert : PPBaseModel
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *subTitle;

@@ -9,18 +9,6 @@
 #import "PPBaseModel.h"
 #import "PPCloudConnectivityCloud.h"
 
-typedef void (^PPCloudConnectivityAvailabilityBlock)(NSString * _Nullable status, NSError * _Nullable error);
-typedef void (^PPCloudConnectivityCloudsBlock)(NSArray * _Nullable clouds, NSError * _Nullable error);
-typedef void (^PPCloudConnectivityCloudBlock)(PPCloudConnectivityCloud * _Nullable cloud, NSError * _Nullable error);
-typedef void (^PPCloudConnectivityServerBlock)(PPCloudConnectivityServer * _Nullable server, NSError * _Nullable error);
-typedef void (^PPCloudConnectivityServerURLBlock)(NSURL * _Nullable url, NSError * _Nullable error);
-
-typedef NS_OPTIONS(NSInteger, PPCloudConnectivityConnected) {
-    PPCloudConnectivityConnectedNone = -1,
-    PPCloudConnectivityConnectedFalse = 0,
-    PPCloudConnectivityConnectedTrue = 1
-};
-
 @interface PPCloudConnectivity : PPBaseModel
 
 /**

@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPUserTag : NSObject
+@interface PPUserTag : PPBaseModel
 /* An app can apply and remove tags to mark the user. */
 
 /* User tags */

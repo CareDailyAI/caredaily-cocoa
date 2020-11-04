@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPCrowdFeedbackSupport : NSObject
+@interface PPCrowdFeedbackSupport : PPBaseModel
 
 @property (nonatomic, strong) NSString *firstName;
 @property (nonatomic, strong) NSString *lastName;

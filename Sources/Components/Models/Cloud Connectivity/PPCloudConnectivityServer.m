@@ -8,13 +8,6 @@
 
 #import "PPCloudConnectivityServer.h"
 
-NSString *CLOUD_CONNECTIVITY_SERVER_TYPE_APP_API = @"appapi";
-NSString *CLOUD_CONNECTIVITY_SERVER_TYPE_DEVICE_IO = @"deviceio";
-NSString *CLOUD_CONNECTIVITY_SERVER_TYPE_DEVICE_WS = @"devicews";
-NSString *CLOUD_CONNECTIVITY_SERVER_TYPE_STREAMING = @"streaming";
-NSString *CLOUD_CONNECTIVITY_SERVER_TYPE_WEB_APP = @"webapp";
-NSString *CLOUD_CONNECTIVITY_SERVER_TYPE_WS_API = @"wsapi";
-
 @implementation PPCloudConnectivityServer
 
 - (id)initWithType:(NSString *)type host:(NSString *)host path:(NSString *)path port:(PPCloudConnectivityPort)port altPort:(PPCloudConnectivityPort)altPort ssl:(PPCloudConnectivitySSL)ssl altSsl:(PPCloudConnectivitySSL)altSsl brand:(NSString *)brand {

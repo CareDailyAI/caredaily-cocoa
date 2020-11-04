@@ -9,11 +9,7 @@
 #import "PPBaseModel.h"
 #import "PPDeviceParameter.h"
 
-typedef NS_OPTIONS(NSInteger, PPDeviceMeasurementsAlertId) {
-    PPDeviceMeasurementsAlertIdNone = -1
-};
-
-@interface PPDeviceMeasurementsAlert : NSObject <NSCopying>
+@interface PPDeviceMeasurementsAlert : PPBaseModel <NSCopying>
 
 @property (nonatomic) PPDeviceMeasurementsAlertId alertId;
 @property (nonatomic, strong) NSString *deviceId;

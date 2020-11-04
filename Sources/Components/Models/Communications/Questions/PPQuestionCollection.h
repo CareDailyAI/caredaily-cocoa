@@ -8,21 +8,7 @@
 
 #import "PPBaseModel.h"
 
-typedef NS_OPTIONS(NSInteger, PPQuestionCollectionWeight) {
-    PPQuestionCollectionWeightDefault = 0
-};
-
-typedef NS_OPTIONS(NSInteger, PPQuestionCollectionStatus) {
-    PPQuestionCollectionStatusNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPQuestionCollectionGeneralPublic) {
-    PPQuestionCollectionGeneralPublicNone = -1,
-    PPQuestionCollectionGeneralPublicFalse = 0,
-    PPQuestionCollectionGeneralPublicTrue = 1
-};
-
-@interface PPQuestionCollection : NSObject
+@interface PPQuestionCollection : PPBaseModel
 
 /* A number set by the admin to indicate where this question should appear relative to other questions inside a collection. The higher the order, the lower the question drops to the bottom. */
 @property (nonatomic) PPQuestionCollectionWeight weight;

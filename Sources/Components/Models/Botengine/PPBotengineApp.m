@@ -9,13 +9,6 @@
 #import "PPBotengineApp.h"
 #import "PPDeviceType.h"
 
-NSString *COMPOSER_APP_CATEGORY_ENERGY = @"E";
-NSString *COMPOSER_APP_CATEGORY_SECURITY = @"S";
-NSString *COMPOSER_APP_CATEGORY_CARE = @"C";
-NSString *COMPOSER_APP_CATEGORY_LIFESTYLE = @"L";
-NSString *COMPOSER_APP_CATEGORY_HEALTH = @"H";
-NSString *COMPOSER_APP_CATEGORY_WELLNESS = @"W";
-
 @implementation PPBotengineApp
 
 + (PPBotengineApp *)appFromAppDict:(NSDictionary *)app {

@@ -9,7 +9,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPBotengineAppRating : NSObject
+@interface PPBotengineAppRating : PPBaseModel
 
 @property (nonatomic) NSInteger total;
 @property (nonatomic) float average;

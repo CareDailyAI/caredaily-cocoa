@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPServicePlanPriceAmount : NSObject
+@interface PPServicePlanPriceAmount : PPBaseModel
 
 @property (nonatomic, strong) NSString *currencySymbol;
 @property (nonatomic, strong) NSString *currencyCode;

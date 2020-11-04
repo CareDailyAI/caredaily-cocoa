@@ -6,7 +6,7 @@
 //  Copyright © 2020 People Power Company. All rights reserved.
 //
 
-@interface PPDeviceParameterRobotVantagePoint : NSObject
+@interface PPDeviceParameterRobotVantagePoint : PPBaseModel
 
 @property (nonatomic, strong) NSString *zoomLevel;
 @property (nonatomic, strong) NSString *horizontalRotation;

@@ -10,10 +10,7 @@
 #import "PPOrganization.h"
 #import "PPDynamicUIScreenSectionItem.h"
 
-typedef NS_OPTIONS(NSInteger, PPDynamicUIScreenSectionOrder) {
-    PPDynamicUIScreenSectionOrderNone = -1,
-};
-@interface PPDynamicUIScreenSection : NSObject
+@interface PPDynamicUIScreenSection : PPBaseModel
 
 @property (nonatomic) PPDynamicUIScreenSectionOrder sectionOrder;
 @property (nonatomic, strong) NSString *sectionId;

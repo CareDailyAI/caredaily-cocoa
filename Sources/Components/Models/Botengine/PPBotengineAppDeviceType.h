@@ -10,7 +10,7 @@
 
 @class PPDeviceType;
 
-@interface PPBotengineAppDeviceType : NSObject
+@interface PPBotengineAppDeviceType : PPBaseModel
 
 @property (nonatomic, strong) PPDeviceType *deviceType;
 @property (nonatomic) NSInteger minOccurence;

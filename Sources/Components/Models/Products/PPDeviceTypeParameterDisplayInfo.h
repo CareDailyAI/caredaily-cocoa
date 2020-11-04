@@ -6,7 +6,7 @@
 //  Copyright © 2020 People Power Company. All rights reserved.
 //
 
-@interface PPDeviceTypeParameterDisplayInfo : NSObject
+@interface PPDeviceTypeParameterDisplayInfo : PPBaseModel
 
 @property (nonatomic, strong) NSDictionary *info;
 

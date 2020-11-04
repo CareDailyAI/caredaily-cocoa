@@ -8,13 +8,6 @@
 
 #import "PPDeviceTypeGoal.h"
 
-NSString *DEVICE_TYPE_GOAL_CATEGORY_ENERGY = @"E";
-NSString *DEVICE_TYPE_GOAL_CATEGORY_SECURITY = @"S";
-NSString *DEVICE_TYPE_GOAL_CATEGORY_CARE = @"C";
-NSString *DEVICE_TYPE_GOAL_CATEGORY_LIFESTYLE = @"L";
-NSString *DEVICE_TYPE_GOAL_CATEGORY_HEALTH = @"H";
-NSString *DEVICE_TYPE_GOAL_CATEGORY_WELLNESS = @"W";
-
 @implementation PPDeviceTypeGoal
 
 - (id)initWithId:(PPDeviceTypeGoalId)goalId name:(NSString *)name desc:(NSString *)desc categories:(PPDeviceTypeGoalCategories)categories deviceUsage:(PPDeviceTypeGoalDeviceUsage)deviceUsage suggestions:(NSArray *)suggestions spaces:(NSArray *)spaces {

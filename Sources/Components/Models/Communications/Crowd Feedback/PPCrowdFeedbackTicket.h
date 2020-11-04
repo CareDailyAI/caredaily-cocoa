@@ -9,11 +9,7 @@
 #import "PPBaseModel.h"
 #import "PPCrowdFeedback.h"
 
-typedef NS_OPTIONS(NSInteger, PPCrowdFeedbackTicketId) {
-    PPCrowdFeedbackTicketIdNone = -1
-};
-
-@interface PPCrowdFeedbackTicket : NSObject
+@interface PPCrowdFeedbackTicket : PPBaseModel
 
 @property (nonatomic) PPCrowdFeedbackId feedbackId;
 @property (nonatomic, strong) NSString *brand;

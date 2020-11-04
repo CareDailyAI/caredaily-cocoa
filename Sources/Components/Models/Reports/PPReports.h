@@ -11,8 +11,6 @@
 #import "PPBaseModel.h"
 #import "PPDeviceAlert.h"
 
-typedef void (^PPReportAlertTypesBlock)(NSArray * _Nullable alerts, NSError * _Nullable error);
-
 @interface PPReports : PPBaseModel
 
 #pragma mark - Device Alerts

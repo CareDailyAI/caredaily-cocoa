@@ -9,7 +9,7 @@
 #import "PPBaseModel.h"
 #import "PPServicePlan.h"
 
-@interface PPServicePlanTransaction : NSObject
+@interface PPServicePlanTransaction : PPBaseModel
 
 @property (nonatomic, strong) NSString *transactionId;
 @property (nonatomic, strong) NSString *gatewayId;

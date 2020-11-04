@@ -8,11 +8,7 @@
 
 #import "PPBaseModel.h"
 
-typedef NS_OPTIONS(NSInteger, PPDeviceAlertCount) {
-    PPDeviceAlertCountNone = -1,
-};
-
-@interface PPDeviceAlert : NSObject
+@interface PPDeviceAlert : PPBaseModel
 
 @property (nonatomic, strong) NSString *alertType;
 @property (nonatomic) PPDeviceAlertCount count;

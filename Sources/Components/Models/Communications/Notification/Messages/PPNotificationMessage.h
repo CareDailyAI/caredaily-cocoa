@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPNotificationMessage : NSObject
+@interface PPNotificationMessage : PPBaseModel
 
 @property (nonatomic, strong) NSString *notificationTemplate;
 @property (nonatomic, strong) NSString *content;

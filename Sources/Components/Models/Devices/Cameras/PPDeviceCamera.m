@@ -9,40 +9,6 @@
 #import "PPDeviceCamera.h"
 #import <AVFoundation/AVFoundation.h>
 
-// Camera parameter refresh interval
-NSInteger CAMERA_REFRESH_INTERVAL = 150;
-
-// Motion recording duration
-PPDeviceParametersRecordSeconds CAMERA_MOTION_RECORDING_DURATION_FREE_MAX = 60;
-PPDeviceParametersRecordSeconds CAMERA_MOTION_RECORDING_DURATION_PRO_MAX = 300;
-PPDeviceParametersRecordSeconds CAMERA_MOTION_RECORDING_DURATION_MIN = 5;
-PPDeviceParametersRecordSeconds CAMERA_MOTION_RECORDING_DURATION_DEFAULT = 30;
-
-// Motion recording thumbnail interval
-NSInteger CAMERA_MOTION_RECORDING_THUMBNAIL_INTERVAL = 1;
-
-// Motion detection reset interval
-NSInteger CAMERA_MOTION_DETECTION_RESET_INTERVAL = 5;
-
-// Motion detection countdown duration
-PPDeviceParametersMotionCountDownTime CAMERA_MOTION_DETECTION_COUNTDOWN_DEFAULT = 30;
-
-// Streaming connection attemp limit
-NSInteger CAMERA_STREAMING_CONNECTION_ATTEMPT_LIMIT = 5;
-
-// Motion detection sensitivity
-PPDeviceParametersMotionSensitiviy CAMERA_MOTION_DETECTION_SENSITIVITY_DEFAULT = PPDeviceParametersMotionSensitiviyNormal;
-
-// Motion recording interval
-PPDeviceParametersRapidMotionStatus CAMERA_MOTION_RECORDING_INTERVAL_FREE_MIN = 300;
-PPDeviceParametersRapidMotionStatus CAMERA_MOTION_RECORDING_INTERVAL_PRO_MIN = 60;
-PPDeviceParametersRapidMotionStatus CAMERA_MOTION_RECORDING_INTERVAL_MAX = 3600;
-PPDeviceParametersRapidMotionStatus CAMERA_MOTION_RECORDING_INTERVAL_DEFAULT = 1800;
-
-// Camera output volume
-PPDeviceParametersOutputVolume CAMERA_VOLUME_OUTPUT_MAXIMUM = 16;
-PPDeviceParametersOutputVolume CAMERA_VOLUME_OUTPUT_DEFAULT = 8;
-
 @interface PPDeviceCamera ()
 @property (nonatomic) BOOL settingUpCameraSessionAndPublisher;
 @end

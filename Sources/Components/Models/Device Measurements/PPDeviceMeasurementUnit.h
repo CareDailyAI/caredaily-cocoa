@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPDeviceMeasurementUnit : NSObject
+@interface PPDeviceMeasurementUnit : PPBaseModel
 
 @property (nonatomic, strong) NSString *unit;
 @property (nonatomic, strong) NSString *desc;

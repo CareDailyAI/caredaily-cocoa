@@ -11,7 +11,7 @@
 #import "PPWeatherForecast.h"
 #import "PPWeatherObservation.h"
 
-@interface PPWeather : NSObject
+@interface PPWeather : PPBaseModel
 
 @property (nonatomic, strong) PPWeatherMetadata *metadata;
 @property (nonatomic, strong) NSArray *forecasts;

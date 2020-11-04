@@ -8,24 +8,6 @@
 
 #import "PPBotengineApp.h"
 
-typedef NS_OPTIONS(NSInteger, PPBotengineAppInstanceId) {
-    PPBotengineAppInstanceIdNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPBotengineAppInstanceStatus) {
-    PPBotengineAppInstanceStatusUndefined = -1,
-    PPBotengineAppInstanceStatusIncomplete = 0,
-    PPBotengineAppInstanceStatusActive     = 1,
-    PPBotengineAppInstanceStatusInactive   = 2
-};
-
-typedef NS_OPTIONS(NSInteger, PPBotengineAppInstanceDataStreamBitmask) {
-    PPBotengineAppInstanceDataStreamBitmaskUndefined      = 0,
-    PPBotengineAppInstanceDataStreamBitmaskInvdividual    = 1 << 0,
-    PPBotengineAppInstanceDataStreamBitmaskOrganizational = 1 << 1,
-    PPBotengineAppInstanceDataStreamBitmaskCircle         = 1 << 2
-};
-
 @interface PPBotengineAppInstance : PPBotengineApp
 
 @property (nonatomic) NSInteger instanceId;
@@ -43,6 +25,7 @@ typedef NS_OPTIONS(NSInteger, PPBotengineAppInstanceDataStreamBitmask) {
 - (void)setTimezone:(NSString *)timezone callback:(PPErrorBlock)callback;
 - (void)setAccess:(NSArray *)access callback:(PPErrorBlock)callback;
 - (void)setCommunications:(NSArray *)communications callback:(PPErrorBlock)callback;
-- (void)postDataStreamWithBitmask:(PPBotengineAppInstanceDataStreamBitmask)dataStreamType address:(NSString *)address feed:(NSDictionary *)feed callback:(PPErrorBlock)callback;
+- (void)postDataStreamWithBitmask:(PPBotengineAppInstanceDataStreamBitmask)dataStreamType locationId:(PPLocationId)locationId address:(NSString *)address feed:(NSDictionary *)feed callback:(PPErrorBlock)callback;
+- (void)postDataStreamWithBitmask:(PPBotengineAppInstanceDataStreamBitmask)dataStreamType address:(NSString *)address feed:(NSDictionary *)feed callback:(PPErrorBlock)callback __attribute__((deprecated));
 
 @end

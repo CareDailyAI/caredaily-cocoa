@@ -9,7 +9,7 @@
 #import "PPBaseModel.h"
 #import "PPDeviceParameterRobotVantagePoint.h"
 
-@interface PPDeviceParameter : NSObject <NSCopying>
+@interface PPDeviceParameter : PPBaseModel <NSCopying>
 
 @property (nonatomic, strong) NSString * _Nonnull name;
 @property (nonatomic, strong) NSString * _Nullable index;

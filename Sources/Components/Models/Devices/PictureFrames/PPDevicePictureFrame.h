@@ -11,17 +11,6 @@
 #import "PPVideoToken.h"
 #import "PPQuestion.h"
 
-// PictureFrame parameter refresh interval
-extern NSInteger PICTURE_FRAME_REFRESH_INTERVAL;
-
-// Streaming connection attemp limit
-extern NSInteger PICTURE_FRAME_STREAMING_CONNECTION_ATTEMPT_LIMIT;
-
-// PictureFrame output volume
-extern PPDeviceParametersOutputVolume PICTURE_FRAME_VOLUME_OUTPUT_MAXIMUM;
-extern PPDeviceParametersOutputVolume PICTURE_FRAME_VOLUME_OUTPUT_DEFAULT;
-
-
 @interface PPDevicePictureFrame : PPDevice
 
 // Camera

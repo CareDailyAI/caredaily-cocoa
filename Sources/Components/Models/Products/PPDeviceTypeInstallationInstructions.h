@@ -9,7 +9,7 @@
 #import "PPBaseModel.h"
 #import "PPDeviceTypeGoal.h"
 
-@interface PPDeviceTypeInstallationInstructions : NSObject
+@interface PPDeviceTypeInstallationInstructions : PPBaseModel
 
 @property (nonatomic) PPDeviceTypeGoalId goalId;
 @property (nonatomic, strong) NSString *installation;

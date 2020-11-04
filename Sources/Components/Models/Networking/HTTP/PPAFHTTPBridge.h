@@ -11,19 +11,6 @@
 @class PPAFHTTPSessionManager;
 //@class PPAFHTTPRequestOperationManager;
 
-extern NSString *HTTP_HEADER_API_KEY;
-extern NSString *HTTP_HEADER_CIRCLE_KEY;
-extern NSString *HTTP_HEADER_PASSWORD;
-extern NSString *HTTP_HEADER_PASSCODE;
-extern NSString *HTTP_HEADER_AUTHORIZATION;
-extern NSString *HTTP_HEADER_PPC_AUTHORIZATION;
-extern NSString *HTTP_HEADER_CONTENT_TYPE;
-extern NSString *HTTP_HEADER_RANGE;
-extern NSString *HTTP_HEADER_CONTENT_RANGE;
-extern NSString *HTTP_HEADER_ACCEPT_RANGES;
-extern NSString *HTTP_HEADER_CONTENT_DISPOSITION;
-extern NSString *HTTP_HEADER_CONTENT_LENGTH;
-
 @interface PPAFHTTPBridge : NSObject <NSCopying>
 
 @property (nonatomic, strong) PPAFHTTPSessionManager *ios7Manager;

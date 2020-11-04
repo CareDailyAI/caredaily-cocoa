@@ -8,25 +8,6 @@
 
 #import "PPBaseModel.h"
 
-typedef void (^PPLoginBlock)(NSString * _Nullable APIKey, NSDate * _Nullable expireDate, NSError * _Nullable error);
-
-typedef NS_OPTIONS(NSInteger, PPLoginExpiryType) {
-    PPLoginExpiryTypeNever = -1,
-    PPLoginExpiryTypeNotSet = 0,
-};
-
-typedef NS_OPTIONS(NSInteger, PPLoginNotificationType) {
-    PPLoginNotificationTypeNone = -1,
-    PPLoginNotificationTypeEmail = 1,
-    PPLoginNotificationTypeSMS = 2,
-};
-
-typedef NS_OPTIONS(NSInteger, PPLoginKeyType) {
-    PPLoginKeyTypeDefault = 0,
-    PPLoginKeyTypeTempKey = 1,
-    PPLoginKeyTypeAnalytic = 14
-};
-
 @interface PPLogin : PPBaseModel
 
 #pragma mark - Login

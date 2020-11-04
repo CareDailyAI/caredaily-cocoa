@@ -8,19 +8,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_OPTIONS(NSInteger, PPCommunityReactionType) {
-    PPCommunityReactionTypeNone = -1,
-    PPCommunityReactionTypeRemove = 0,
-    PPCommunityReactionTypeLike = 1,
-    PPCommunityReactionTypeLove = 2,
-    PPCommunityReactionTypeHaha = 3,
-    PPCommunityReactionTypeWow = 4,
-    PPCommunityReactionTypeSad = 5,
-    PPCommunityReactionTypeAngry = 6,
-    PPCommunityReactionTypeFlagged = 7,
-};
-
-@interface PPCommunityReaction : NSObject
+@interface PPCommunityReaction : PPBaseModel
 
 @property (nonatomic, strong) PPCommunityUser *user;
 @property (nonatomic) PPCommunityReactionType reaction;

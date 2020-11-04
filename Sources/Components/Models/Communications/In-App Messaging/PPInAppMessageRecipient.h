@@ -11,7 +11,7 @@
 #import "PPOrganization.h"
 #import "PPOrganizationGroup.h"
 
-@interface PPInAppMessageRecipient : NSObject
+@interface PPInAppMessageRecipient : PPBaseModel
 
 @property (nonatomic, strong) PPOrganization *organization;
 @property (nonatomic, strong) PPUser *user;

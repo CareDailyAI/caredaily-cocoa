@@ -16,28 +16,7 @@
 #import "PPDeviceTypeDeviceModelBrand.h"
 #import "PPDeviceTypeDeviceModelLookupParam.h"
 
-typedef NS_OPTIONS(NSInteger, PPDeviceTypeDeviceModelPairingType) {
-    PPDeviceTypeDeviceModelPairingTypeNone = -1,
-    PPDeviceTypeDeviceModelPairingTypeQR = 1,
-    PPDeviceTypeDeviceModelPairingTypeNative = 2,
-    PPDeviceTypeDeviceModelPairingTypeOAuth = 4,
-    PPDeviceTypeDeviceModelPairingTypeZigBee = 8,
-    PPDeviceTypeDeviceModelPairingTypeWiFi = 16,
-    PPDeviceTypeDeviceModelPairingTypeGenerateQR = 32,
-    PPDeviceTypeDeviceModelPairingTypeBluetooth = 64,
-};
-
-typedef NS_OPTIONS(NSInteger, PPDeviceTypeDeviceModelHidden) {
-    PPDeviceTypeDeviceModelHiddenNone = -1,
-    PPDeviceTypeDeviceModelHiddenFalse = 0,
-    PPDeviceTypeDeviceModelHiddenTrue = 1
-};
-
-typedef NS_OPTIONS(NSInteger, PPDeviceTypeDeviceModelSortId) {
-    PPDeviceTypeDeviceModelSortIdNone = -1,
-};
-
-@interface PPDeviceTypeDeviceModel : NSObject
+@interface PPDeviceTypeDeviceModel : PPBaseModel
 
 @property (nonatomic, strong) NSString * _Nonnull modelId;
 @property (nonatomic, strong) NSArray * _Nullable brands;

@@ -19,36 +19,6 @@
 #import "PPDeviceTypeStoryPage.h"
 #import "PPDeviceTypeMedia.h"
 
-typedef void (^PPDeviceTypesBlock)(NSArray * _Nullable deviceTypes, NSError * _Nullable error);
-typedef void (^PPDeviceTypeAttributesBlock)(NSArray * _Nullable deviceTypeAttributes, NSError * _Nullable error);
-typedef void (^PPDeviceTypeDeviceParamsBlock)(NSArray * _Nullable deviceParams, NSError * _Nullable error);
-typedef void (^PPDeviceTypeRulePhrasesBlock)(NSArray * _Nullable ruleTemplates, NSError * _Nullable error);
-typedef void (^PPDeviceTypeRulePhraseBlock)(PPDeviceTypeRuleComponentTemplate * _Nullable ruleTemplate, NSError * _Nullable error);
-typedef void (^PPDeviceTypeDefaultRulesBlock)(NSArray * _Nullable rules, NSError * _Nullable error);
-typedef void (^PPDeviceTypeGoalsBlock)(NSArray * _Nullable goals, NSError * _Nullable error);
-typedef void (^PPDeviceTypeInstallationInstructionsBlock)(PPDeviceTypeInstallationInstructions * _Nullable installationInstructions, NSError * _Nullable error);
-typedef void (^PPDeviceTypeMediaBlock)(NSArray * _Nullable medias, NSError * _Nullable error);
-typedef void (^PPDeviceTypeDeviceModelsBlock)(NSArray * _Nullable categories, NSError * _Nullable error);
-typedef void (^PPDeviceTypeStoriesBlock)(NSArray * _Nullable stories, NSError * _Nullable error);
-
-typedef NS_OPTIONS(NSInteger, PPDeviceTypesOwn) {
-    PPDeviceTypesOwnNone = -1,
-    PPDeviceTypesOwnFalse = 0,
-    PPDeviceTypesOwnTrue = 1,
-};
-
-typedef NS_OPTIONS(NSInteger, PPDeviceTypesSimple) {
-    PPDeviceTypesSimpleNone = -1,
-    PPDeviceTypesSimpleFalse = 0,
-    PPDeviceTypesSimpleTrue = 1,
-};
-
-typedef NS_OPTIONS(NSInteger, PPDeviceTypesDetails) {
-    PPDeviceTypesDetailsNone = -1,
-    PPDeviceTypesDetailsFalse = 0,
-    PPDeviceTypesDetailsTrue = 1,
-};
-
 @interface PPDeviceTypes : PPBaseModel
 
 

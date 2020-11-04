@@ -8,16 +8,6 @@
 
 #import "PPNotificationMessage.h"
 
-typedef NS_OPTIONS(NSInteger, PPNotificationSMSMessageCategory) {
-    PPNotificationSMSMessageCategoryDefault = 0
-};
-
-typedef NS_OPTIONS(NSInteger, PPNotificationSMSMessageIndividual) {
-    PPNotificationSMSMessageIndividualNone = -1,
-    PPNotificationSMSMessageIndividualFalse = 0,
-    PPNotificationSMSMessageIndividualTrue = 1
-};
-
 @interface PPNotificationSMSMessage : PPNotificationMessage
 
 @property (nonatomic, strong) NSArray *categories;

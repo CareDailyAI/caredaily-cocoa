@@ -8,15 +8,7 @@
 
 #import "PPBaseModel.h"
 
-typedef NS_OPTIONS(NSInteger, PPStoreProductId) {
-    PPStoreProductIdNone = -1,
-};
-
-typedef NS_OPTIONS(NSInteger, PPStoreProductImageHeight) {
-    PPStoreProductImageHeightNone = -1,
-};
-
-@interface PPStoreProduct : NSObject
+@interface PPStoreProduct : PPBaseModel
 
 @property (nonatomic) PPStoreProductId productId;
 @property (nonatomic, strong) NSString *thumbnail;

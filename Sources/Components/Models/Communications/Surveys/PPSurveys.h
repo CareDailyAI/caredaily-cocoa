@@ -12,8 +12,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void (^PPSurveyQuestionsBlock)(NSArray * _Nullable questions, NSError * _Nullable error);
-
 @interface PPSurveys : PPBaseModel
 
 // MARK: - Survey Questions

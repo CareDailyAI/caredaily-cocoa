@@ -9,7 +9,6 @@
 //
 
 #import "PPBaseModel.h"
-#import "PPUser.h"
 #import "PPLocation.h"
 #import "PPDeviceMeasurement.h"
 #import "PPDeviceMeasurementsReading.h"
@@ -17,50 +16,6 @@
 #import "PPDeviceMeasurementUnit.h"
 #import "PPDeviceCommand.h"
 #import "PPDeviceDataRequest.h"
-
-typedef void (^PPDeviceMeasurementsBlock)(NSArray * _Nullable measurements, NSError * _Nullable error);
-typedef void (^PPDeviceMeasurementsCommandsBlock)(NSArray * _Nullable commands, NSError * _Nullable error);
-typedef void (^PPDeviceMeasurementsReadingsBlock)(NSArray * _Nullable readings, NSError * _Nullable error);
-typedef void (^PPDeviceMeasurementsAlertsBlock)(NSArray * _Nullable alerts, NSError * _Nullable error);
-typedef void (^PPDeviceMeasurementsUnitsBlock)(NSArray * _Nullable units, NSError * _Nullable error);
-
-typedef NS_OPTIONS(NSInteger, PPDeviceMeasurementsHistoryInterval) {
-    PPDeviceMeasurementsHistoryIntervalNone = -1
-};
-
-typedef NS_OPTIONS(NSInteger, PPDeviceMeasurementsHistoryAggregation) {
-    PPDeviceMeasurementsHistoryAggregationNone = -1,
-    PPDeviceMeasurementsHistoryAggregationLastValueBeforeIntervalPoint = 0,
-    PPDeviceMeasurementsHistoryAggregationMinimumValue = 1,
-    PPDeviceMeasurementsHistoryAggregationMaximumValue = 2,
-    PPDeviceMeasurementsHistoryAggregationMedianValue = 3,
-    PPDeviceMeasurementsHistoryAggregationTimeDistributedAverageValue = 4,
-    PPDeviceMeasurementsHistoryAggregationAverageValue = 5
-};
-
-typedef NS_OPTIONS(NSInteger, PPDeviceMeasurementsHistoryReduceNoise) {
-    PPDeviceMeasurementsHistoryReduceNoiseNone = -1,
-    PPDeviceMeasurementsHistoryReduceNoiseFalse = 0,
-    PPDeviceMeasurementsHistoryReduceNoiseTrue = 1
-};
-
-typedef NS_OPTIONS(NSInteger, PPDeviceMeasurementsHistoryRowCount) {
-    PPDeviceMeasurementsHistoryRowCountNone = -1,
-    PPDeviceMeasurementsHistoryRowCountMinimum = 1,
-    PPDeviceMeasurementsHistoryRowCountMaximum = 1000
-};
-
-typedef NS_OPTIONS(NSInteger, PPDeviceMeasurementsDataRequestByEmail) {
-    PPDeviceMeasurementsDataRequestByEmailNone = -1,
-    PPDeviceMeasurementsDataRequestByEmailFalse = 0,
-    PPDeviceMeasurementsDataRequestByEmailTrue = 1
-};
-
-typedef NS_OPTIONS(NSInteger, PPDeviceMeasurementsCommandType) {
-    PPDeviceMeasurementsCommandTypeNone = -1,
-    PPDeviceMeasurementsCommandTypeSet = 0,
-    PPDeviceMeasurementsCommandTypeGet = 4
-};
 
 @interface PPDeviceMeasurements : PPBaseModel
 

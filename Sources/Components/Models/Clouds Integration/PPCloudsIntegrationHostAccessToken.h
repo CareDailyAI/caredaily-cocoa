@@ -8,7 +8,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPCloudsIntegrationHostAccessToken : NSObject
+@interface PPCloudsIntegrationHostAccessToken : PPBaseModel
 
 @property (nonatomic, strong) NSString *accessToken;
 @property (nonatomic, strong) NSString *tokenType;

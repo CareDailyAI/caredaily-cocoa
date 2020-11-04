@@ -9,27 +9,7 @@
 #import "PPBaseModel.h"
 #import "PPCircleMember.h"
 
-typedef NS_OPTIONS(NSInteger, PPCircleId) {
-    PPCircleIdNone = -1,
-};
-
-typedef NS_OPTIONS(NSInteger, PPCircleAdmin) {
-    PPCircleAdminNone = -1,
-    PPCircleAdminFalse = 0,
-    PPCircleAdminTrue = 1,
-};
-
-typedef NS_OPTIONS(NSInteger, PPCircleStatus) {
-    PPCircleStatusNone = -1,
-    PPCircleStatusFreeCircle = 1,
-    PPCircleStatusPremiumCircle = 2
-};
-
-typedef NS_OPTIONS(long long, PPCircleData) {
-    PPCircleDataNone = 0,
-};
-
-@interface PPCircle : NSObject
+@interface PPCircle : PPBaseModel
 
 @property (nonatomic) PPCircleId circleId;
 @property (nonatomic, strong) NSString *name;

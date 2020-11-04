@@ -8,15 +8,7 @@
 
 #import "PPBaseModel.h"
 
-typedef NS_OPTIONS(NSInteger, PPBotengineAppCommunicationsCategory) {
-    PPBotengineAppCommunicationsCategoryMeOnly = 0,
-    PPBotengineAppCommunicationsCategoryGeneralFriends = 1,
-    PPBotengineAppCommunicationsCategoryCaregivers = 2,
-    PPBotengineAppCommunicationsCategoryOrganizationGroup = 3,
-    PPBotengineAppCommunicationsCategoryOrganizationAdmins = 4
-};
-
-@interface PPBotengineAppCommunications : NSObject
+@interface PPBotengineAppCommunications : PPBaseModel
 
 @property (nonatomic) PPBotengineAppCommunicationsCategory category;
 @property (nonatomic) BOOL email;

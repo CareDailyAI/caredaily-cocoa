@@ -8,29 +8,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-
-typedef NS_OPTIONS(NSInteger, PPDeviceTypeStoryPageActionIndex) {
-    PPDeviceTypeStoryPageActionIndexActionNone = -1,
-};
-
-typedef NS_OPTIONS(NSInteger, PPDeviceTypeStoryPageActionType) {
-    PPDeviceTypeStoryPageActionTypeNone         = -1,
-    PPDeviceTypeStoryPageActionTypeStoryLink    = 1, // Link to another story
-    PPDeviceTypeStoryPageActionTypeInAppLink    = 2, // In-app link
-    PPDeviceTypeStoryPageActionTypeTakePhoto    = 3, // Make photo
-    PPDeviceTypeStoryPageActionTypeRecordAudio  = 4, // Record audio
-    PPDeviceTypeStoryPageActionTypeOpenContacts = 5, // Open Contacts
-    PPDeviceTypeStoryPageActionTypeWiFiConfig   = 6, // Configure WiFi
-    PPDeviceTypeStoryPageActionTypeSupport      = 7, // Contact Support
-    PPDeviceTypeStoryPageActionTypeScanQR       = 8, // Open QR scanner
-};
-
-typedef NS_OPTIONS(NSInteger, PPDeviceTypeStoryPageActionStyle) {
-    PPDeviceTypeStoryPageActionStyleNone = -1,
-    PPDeviceTypeStoryPageActionStyleButton = 1,
-    PPDeviceTypeStoryPageActionStyleLink = 2,
-};
-
 @interface PPDeviceTypeStoryPageAction : PPBaseModel
 
 @property (nonatomic) PPDeviceTypeStoryPageActionIndex index;

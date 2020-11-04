@@ -11,24 +11,7 @@
 #import "PPBaseModel.h"
 #import "PPCallCenterContact.h"
 
-typedef NS_OPTIONS(NSInteger, PPCallCenterStatus) {
-    PPCallCenterStatusNone = -1,
-    PPCallCenterStatusUnavailable = 0, // The service never purchased
-    PPCallCenterStatusAvailable = 1, // The service purchased, but the user does not have enough information for registration
-    PPCallCenterStatusRegistration = 2, // pending    The registration process has not been completed yet
-    PPCallCenterStatusRegistered = 3, // Registration completed
-    PPCallCenterStatusCancellation = 4, // pending    The cancellation has not been completed yet
-    PPCallCenterStatusCanceled = 5, // Cancellation completed
-};
-
-typedef NS_OPTIONS(NSInteger, PPCallCenterAlertStatus) {
-    PPCallCenterAlertStatusNone = -1,
-    PPCallCenterAlertStatusDefault = 0, // An alert never raised
-    PPCallCenterAlertStatusRaised = 1, // An alert raised, but the call center not contacted yet
-    PPCallCenterAlertStatusReported = 3, // The alert reported to the call center
-};
-
-@interface PPCallCenter : NSObject
+@interface PPCallCenter : PPBaseModel
 
 @property (nonatomic) PPCallCenterStatus status;
 @property (nonatomic) PPUserId userId;

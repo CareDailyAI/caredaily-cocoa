@@ -12,7 +12,7 @@
 #endif
 #import "PPCurlDebug.h"
 #import "PPAFHTTPBridge.h"
-#import "PPUserAccounts.h"
+#import "PPUser.h"
 
 @implementation PPCloudEngine
 

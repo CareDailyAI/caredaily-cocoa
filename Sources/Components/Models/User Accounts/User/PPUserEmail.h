@@ -8,22 +8,7 @@
 
 #import "PPBaseModel.h"
 
-typedef NS_OPTIONS(NSInteger, PPUserEmailStatus) {
-    PPUserEmailStatusNone = -1,
-    PPUserEmailStatusOK = 0,
-    PPUserEmailStatusHardBound = 1,
-    PPUserEmailStatusSpamComplaint = 2,
-    PPUserEmailStatusBadAddress = 3,
-    PPUserEmailStatusSpamNotification = 4,
-};
-
-typedef NS_OPTIONS(NSInteger, PPUserEmailVerified) {
-    PPUserEmailVerifiedNone = -1,
-    PPUserEmailVerifiedFalse = 0,
-    PPUserEmailVerifiedTrue = 1
-};
-
-@interface PPUserEmail : NSObject <NSCopying>
+@interface PPUserEmail : PPBaseModel <NSCopying>
 
 /* An email address is required when registering a new user. */
 @property (nonatomic, strong) NSString *email;

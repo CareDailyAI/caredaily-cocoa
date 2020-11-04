@@ -11,7 +11,7 @@
 
 @class PPDeviceTypeStory;
 
-@interface PPDeviceTypeDeviceModelCategory : NSObject
+@interface PPDeviceTypeDeviceModelCategory : PPBaseModel
 
 @property (nonatomic) NSString * _Nonnull categoryId;
 @property (nonatomic) NSString * _Nullable parentId;

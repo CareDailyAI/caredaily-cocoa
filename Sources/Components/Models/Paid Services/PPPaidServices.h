@@ -14,34 +14,7 @@
 #import "PPServicePlanPrice.h"
 #import "PPServicePlanTransaction.h"
 #import "PPStoreProduct.h"
-#import "PPUser.h"
 #import "PPOrganization.h"
-
-typedef void (^PPPaidServicesServicePlansCallback)(NSArray * _Nullable servicePlans, NSError * _Nullable error);
-typedef void (^PPPaidServicePaypalRedirectCallback)(NSURL * _Nullable authenticationUrl, NSError * _Nullable error);
-typedef void (^PPPaidServicePaymentProviderCallback)(NSString * _Nullable token, NSError * _Nullable error);
-typedef void (^PPPaidServicesSubscriptionsCallback)(NSArray * _Nullable subscriptions, NSError * _Nullable error);
-typedef void (^PPPaidServicesTransactionsCallback)(NSArray * _Nullable transactions, NSError * _Nullable error);
-typedef void (^PPPaidServicesProductsCallback)(NSArray * _Nullable products, NSString * _Nullable affiliateCode, NSError * _Nullable error);
-
-typedef NS_OPTIONS(NSInteger, PPPaidServicesResultCode) {
-    PPPaidServicesResultCodeSuccess = 0,
-    PPPaidServicesResultCodeReceiptNotFound = 6,
-    PPPaidServicesResultCodeReceiptAlreadySubmittedByDifferentUser = 7,
-    PPPaidServicesResultCodeReceiptInvalidOrExpired = 8,
-    PPPaidServicesResultCodeReceiptAlreadySubmitted = 26
-};
-
-typedef NS_OPTIONS(NSInteger, PPPaidServicesServicePaymentType) {
-    PPPaidServicesServicePaymentTypeNone = -1,
-    PPPaidServicesServicePaymentTypeBraintree = 3
-};
-
-typedef NS_OPTIONS(NSInteger, PPPaidServicesHiddenPrices) {
-    PPPaidServicesHiddenPricesNone = -1,
-    PPPaidServicesHiddenPricesFalse = 0,
-    PPPaidServicesHiddenPricesTrue = 1,
-};
 
 @interface PPPaidServices : PPBaseModel
 

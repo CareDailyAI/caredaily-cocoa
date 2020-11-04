@@ -9,12 +9,6 @@
 #import "PPNotificationMessage.h"
 #import "PPNotificationEmailMessageAttachment.h"
 
-typedef NS_OPTIONS(NSInteger, PPNotificationEmailMessageHTML) {
-    PPNotificationEmailMessageHTMLNone = -1,
-    PPNotificationEmailMessageHTMLFalse = 0,
-    PPNotificationEmailMessageHTMLTrue = 1
-};
-
 @interface PPNotificationEmailMessage : PPNotificationMessage
 
 @property (nonatomic, strong) NSString *subject;

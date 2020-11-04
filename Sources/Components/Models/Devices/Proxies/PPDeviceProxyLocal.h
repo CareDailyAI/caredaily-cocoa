@@ -10,73 +10,6 @@
 #import "PPWebSocket.h"
 #import "PPWebSocketConfiguration.h"
 
-extern float DEVICE_LOCAL_INITIALIZATION_DELAY;
-extern float DEVICE_LOCAL_INITIALIZATION_DELAY_EXTENDED;
-
-extern NSString *WS_PARAMS;
-extern NSString *COMMAND_NAME;
-extern NSString *COMMAND_INDEX;
-extern NSString *COMMAND_SET_VALUE;
-extern NSString *COMMAND_VALUE;
-extern NSString *SESSION_ID;
-
-extern float DEVICE_CAMERA_LOCAL_VERIFY_VIEWERS_AFTER_SEC;
-extern float DEVICE_CAMERA_LOCAL_VERIFY_VIEWERS_AFTER_SEC_PERIODICALLY;
-
-extern NSString *STREAM_ERROR;
-extern NSString *STREAM_STATUS;
-extern NSString *STREAM_ID;
-extern NSString *RESULT_CODE;
-extern NSString *RECORD_STREAM;
-
-extern NSString *VIDEO_CALL_SESSION_DETAILS;
-extern NSString *VIDEO_CALL_ACTIVE_SESSION_ID;
-extern NSString *VIDEO_CALL_NOW_STREAMING_SESSION_ID;
-extern NSString *VIDEO_CALL_HANGUP_WITH_SESSION_ID;
-extern NSString *VIDEO_CALL_IS_BUSY;
-
-extern NSInteger DEVICE_CAMERA_LOCAL_RESTART_INTERVAL;
-
-typedef NS_OPTIONS(NSInteger, PPDeviceProxyLocalProgress) {
-    PPDeviceProxyLocalProgressNone                  = -1,
-    PPDeviceProxyLocalProgressDefault               = 0,
-    PPDeviceProxyLocalProgressInitializingProxy     = 10,
-    PPDeviceProxyLocalProgressProxyInitialized      = 20,
-    PPDeviceProxyLocalProgressInitializingWebsocket = 30,
-    PPDeviceProxyLocalProgressGatheringServer       = 40,
-    PPDeviceProxyLocalProgressServerDefined         = 50,
-    PPDeviceProxyLocalProgressWebSocketConnecting   = 60,
-    PPDeviceProxyLocalProgressWebSocketConnected    = 70,
-    PPDeviceProxyLocalProgressWebsocketInitialized  = 80,
-    
-    PPDeviceProxyLocalProgressPlayerOff             = 1,
-    PPDeviceProxyLocalProgressPlayerConfiguration   = 31,
-    PPDeviceProxyLocalProgressPlayerConnecting      = 61,
-    PPDeviceProxyLocalProgressPlayerConnected       = 91,
-    
-    PPDeviceProxyLocalProgressFinished              = 100
-};
-
-typedef NS_OPTIONS(NSInteger, PPDeviceProxyPlayerStatus) {
-    PPDeviceProxyPlayerStatusConnectionErrorNotReachable = 0,
-    PPDeviceProxyPlayerStatusConnectionErrorWWAN = 1,
-    PPDeviceProxyPlayerStatusConnectionErrorWiFi = 2,
-    PPDeviceProxyPlayerStatusVideoDisabled = 3,
-    PPDeviceProxyPlayerStatusDisconnected = 4,
-    PPDeviceProxyPlayerStatusInterrupted = 5
-};
-
-typedef NS_OPTIONS(NSInteger, PPDeviceProxyLocalRegistrationAttempts) {
-    PPDeviceProxyLocalRegistrationAttemptsNone = -1,
-    PPDeviceProxyLocalRegistrationAttemptsMax = 10
-};
-
-typedef NS_OPTIONS(NSInteger, PPDeviceProxyLocalInitializationAttempts) {
-    PPDeviceProxyLocalInitializationAttemptsNone = -1,
-    PPDeviceProxyLocalInitializationAttemptsMax = 9
-};
-
-
 @protocol PPDeviceProxyLocalDelegate <NSObject>
 
 /** Notify delegate of current progress. */
@@ -99,7 +32,7 @@ typedef NS_OPTIONS(NSInteger, PPDeviceProxyLocalInitializationAttempts) {
 
 @end
 
-@interface PPDeviceProxyLocal : NSObject <PPWebSocketDelegate>
+@interface PPDeviceProxyLocal : PPBaseModel <PPWebSocketDelegate>
 
 @property (nonatomic, weak, readwrite) NSObject<PPDeviceProxyLocalDelegate> *delegate;
 @property (nonatomic, weak, readwrite) NSObject<PPDeviceProxyLocalWebsocketDelegate> *proxyDelegate;

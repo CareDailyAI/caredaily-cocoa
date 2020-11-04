@@ -8,15 +8,6 @@
 
 #import "PPCloudsIntegrationHost.h"
 
-NSString *OAUTH_HOST_ERROR_ACCESS_DENIED = @"access_denied";
-NSString *OAUTH_HOST_ERROR_UNSUPPORTED_RESPONSE_TYPE = @"unsupported_response_type";
-NSString *OAUTH_HOST_ERROR_SERVER_ERROR = @"server_error";
-
-NSString *OAUTH_HOST_CLIENT_ID_AMAZON_ECHO = @"AmazonEcho";
-NSString *OAUTH_HOST_CLIENT_ID_GOOGLE_HOME = @"GoogleHome";
-
-NSString *OAUTH_HOST_RESPONSE_TYPE_CODE = @"code";
-
 @implementation PPCloudsIntegrationHost
 
 - (id)initWithUserClient:(NSString *)appName appId:(NSString *)appId autoRefresh:(PPCloudsIntegrationHostAutoRefresh)autoRefresh expiry:(NSDate *)expiry {

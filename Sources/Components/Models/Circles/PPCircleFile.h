@@ -12,14 +12,6 @@
 #import "PPFile.h"
 #import "PPUser.h"
 
-typedef NS_OPTIONS(NSInteger, PPCircleFileWidth) {
-    PPCircleFileWidthNone = -1,
-};
-
-typedef NS_OPTIONS(NSInteger, PPCircleFileHeight) {
-    PPCircleFileHeightNone = -1,
-};
-
 @interface PPCircleFile : PPFile
 
 @property (nonatomic, strong) NSString *ext;
