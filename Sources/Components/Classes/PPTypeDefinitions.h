@@ -3430,6 +3430,7 @@ typedef NS_OPTIONS(NSInteger, PPCloudEngineType) {
 #define SYSTEM_PROPERTY_BRANDS @"brands"
 #define SYSTEM_PROPERTY_PASSCODE_LOWERCASE @"passcode-lowercase" // BOOL
 #define SYSTEM_PROPERTY_COMMUNITY_POST_FILE_CONTENT_LIMIT @"ppc.communityPostFile.contentLimit"
+#define SYSTEM_PROPERTY_MMS_NUMBER @"mms_number"
 
 // MARK: - Rules
 
