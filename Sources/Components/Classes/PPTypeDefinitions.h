@@ -3373,6 +3373,8 @@ typedef NS_OPTIONS(NSInteger, PPCloudEngineType) {
 #define SYSTEM_PROPERTY_TERMS_OF_SERVICE(appName)       [NSString stringWithFormat:@"%@-tos", appName]
 #define SYSTEM_PROPERTY_LOCATION_ACCESS(appName)        [NSString stringWithFormat:@"%@-LocationAccess", appName]
 #define SYSTEM_PROPERTY_END_OF_LIFE_DATE(appName)       [NSString stringWithFormat:@"%@-end_of_life_date", appName]
+#define SYSTEM_PROPERTY_ASK_SMART_HOME(appName)         [NSString stringWithFormat:@"%@-ask_smart_home", appName]
+#define SYSTEM_PROPERTY_AOG_SMART_HOME(appName)         [NSString stringWithFormat:@"%@-aog_smart_home", appName]
 
 #define SYSTEM_PROPERTY_DEFAULT_PASSWORD_REGEX @"^.{8,}$"
 #define SYSTEM_PROPERTY_CALL_CENTER_SUPPORTED_STATE_IDS @"call_center-supported_state_ids"
