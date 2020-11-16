@@ -8,7 +8,8 @@
 
 #import "PPSystemAndUserProperties.h"
 #import "PPCloudEngine.h"
-
+#import "PPCurlDebug.h"
+"
 @implementation PPSystemAndUserProperties
 
 #pragma mark - Session Management
@@ -109,6 +110,7 @@
             [PPBaseModel processJSONResponse:responseData originatingClass:NSStringFromClass([self class]) error:&error];
             
             NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+            PPLogAPI(@"%@", [PPCurlDebug responseToDescription:responseString]);
             
             PPLogAPI(@"< %s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
             
