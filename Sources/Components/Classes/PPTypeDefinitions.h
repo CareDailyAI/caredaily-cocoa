@@ -2378,7 +2378,9 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeId)  {
     PPDeviceTypeIdDoorLock = 9010,
     PPDeviceTypeIdEWIDButton = 9014,
     PPDeviceTypeIdLargeLoadController = 9017,
-
+    
+    PPDeviceTypeIdGEInWallSwitchDimmable = 9018,
+    
     PPDeviceTypeIdDevelcoButton = 9101,
     PPDeviceTypeIdDevelcoSiren = 9102,
     PPDeviceTypeIdDevelcoKeypad = 9103,

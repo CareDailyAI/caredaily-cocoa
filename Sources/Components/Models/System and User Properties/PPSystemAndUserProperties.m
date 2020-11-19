@@ -9,7 +9,7 @@
 #import "PPSystemAndUserProperties.h"
 #import "PPCloudEngine.h"
 #import "PPCurlDebug.h"
-"
+
 @implementation PPSystemAndUserProperties
 
 #pragma mark - Session Management
