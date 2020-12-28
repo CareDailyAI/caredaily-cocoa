@@ -474,6 +474,7 @@
 		635296B62552439E00ADBC11 /* PPOrganizationObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 635296B22552439E00ADBC11 /* PPOrganizationObject.m */; };
 		635680E9241863C400EAA1D8 /* PPCommunityFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 635680E7241863C400EAA1D8 /* PPCommunityFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		635680EA241863C400EAA1D8 /* PPCommunityFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 635680E8241863C400EAA1D8 /* PPCommunityFile.m */; };
+		635C5B9C259AA12700FD3BC5 /* Peoplepower.m in Sources */ = {isa = PBXBuildFile; fileRef = 635C5B9B259AA12700FD3BC5 /* Peoplepower.m */; };
 		635E3AC322C26BE600C171B0 /* PPDeviceTypeStoryPageAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 635E3AC122C26BE600C171B0 /* PPDeviceTypeStoryPageAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		635E3AC422C26BE600C171B0 /* PPDeviceTypeStoryPageAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E3AC222C26BE600C171B0 /* PPDeviceTypeStoryPageAction.m */; };
 		6360FAB821B8520200DB2B6B /* PPCloudsIntegrationCloud.h in Headers */ = {isa = PBXBuildFile; fileRef = 6360FAB621B8520200DB2B6B /* PPCloudsIntegrationCloud.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1239,6 +1240,7 @@
 		635296B22552439E00ADBC11 /* PPOrganizationObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPOrganizationObject.m; sourceTree = "<group>"; };
 		635680E7241863C400EAA1D8 /* PPCommunityFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPCommunityFile.h; sourceTree = "<group>"; };
 		635680E8241863C400EAA1D8 /* PPCommunityFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPCommunityFile.m; sourceTree = "<group>"; };
+		635C5B9B259AA12700FD3BC5 /* Peoplepower.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Peoplepower.m; sourceTree = "<group>"; };
 		635E3AC122C26BE600C171B0 /* PPDeviceTypeStoryPageAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPDeviceTypeStoryPageAction.h; sourceTree = "<group>"; };
 		635E3AC222C26BE600C171B0 /* PPDeviceTypeStoryPageAction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPDeviceTypeStoryPageAction.m; sourceTree = "<group>"; };
 		6360FAB621B8520200DB2B6B /* PPCloudsIntegrationCloud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPCloudsIntegrationCloud.h; sourceTree = "<group>"; };
@@ -2593,6 +2595,7 @@
 			children = (
 				63D392D0204F263000041C1A /* Components */,
 				63D392C0204F21EE00041C1A /* Peoplepower.h */,
+				635C5B9B259AA12700FD3BC5 /* Peoplepower.m */,
 				63D39315204F3A0900041C1A /* Peoplepower-Prefix.pch */,
 				637A632B206C44B000F7876D /* Peoplepower-Config.plist */,
 				63A9524E205AFC15000E466A /* Peoplepower-Info-iOS.plist */,
@@ -4376,6 +4379,7 @@
 				63BECA7F20C5D6E500408494 /* PPVersion.m in Sources */,
 				63BECA8A20C5D74000408494 /* PPNotificationMessage.m in Sources */,
 				638E82FC24412416000B07FD /* PPUserCode.m in Sources */,
+				635C5B9C259AA12700FD3BC5 /* Peoplepower.m in Sources */,
 				63BECA0720C5D67500408494 /* PPDeviceParameters.m in Sources */,
 				63B9B13C248C0D5C0056E7CE /* RLMObject+PPExtras.m in Sources */,
 				63BEC9F920C5D67500408494 /* PPWebSocketViewer.m in Sources */,
@@ -4551,7 +4555,6 @@
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = EAWY6XBUH2;
 				DYLIB_COMPATIBILITY_VERSION = "$(inherited)";
@@ -4566,7 +4569,6 @@
 				INFOPLIST_FILE = "Sources/Peoplepower-Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.iOS;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -4581,7 +4583,6 @@
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = EAWY6XBUH2;
 				DYLIB_COMPATIBILITY_VERSION = "$(inherited)";
@@ -4596,7 +4597,6 @@
 				INFOPLIST_FILE = "Sources/Peoplepower-Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.iOS;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -4696,7 +4696,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = "";
+				CURRENT_PROJECT_VERSION = 0.1.2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -4717,6 +4717,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 0.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = Peoplepower;
@@ -4758,7 +4759,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = "";
+				CURRENT_PROJECT_VERSION = 0.1.2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -4772,6 +4773,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 0.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = Peoplepower;
 				SDKROOT = iphoneos;
