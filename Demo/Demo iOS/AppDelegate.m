@@ -21,16 +21,24 @@
     NSLog(@"" \
           "\n-------------" \
           "\n %@" \
-          "\n v%@" \
+          /*"\n v%@" \*/
           "\n v%@" \
           "\n-------------",
           [PPBaseModel appName:NO],
-          [[PPVersion myVersion] toNSString],
-          @(PeoplepowerVersionNumber)
+          /*[[PPVersion myVersion] toNSString],*/
+          [self version]
           );
     return YES;
 }
 
+- (NSString *)version {
+    NSString *ver = [NSString stringWithUTF8String:(char *)PeoplepowerVersionStringPtr];
+    NSRange range = [ver rangeOfString:@"-"];
+    if (range.location == NSNotFound) {
+        return @"N/A";
+    }
+    return [[[ver componentsSeparatedByString:@"-"] lastObject] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+}
 
 #pragma mark - UISceneSession lifecycle
 

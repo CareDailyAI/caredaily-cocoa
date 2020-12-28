@@ -10,6 +10,7 @@
 
 //! Project version number for PeoplepowerUI.
 FOUNDATION_EXPORT double PeoplepowerVersionNumber;
+extern const unsigned char * PeoplepowerVersionStringPtr;
 
 //! Project version string for PeoplepowerUI.
 FOUNDATION_EXPORT const unsigned char PeoplepowerVersionString[];
