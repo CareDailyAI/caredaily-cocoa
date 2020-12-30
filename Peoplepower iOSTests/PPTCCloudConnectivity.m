@@ -177,20 +177,20 @@ static NSString *moduleName = @"CloudConnectivity";
  *
  * @ param callback PPCloudConnectivityVersionBlock Version callback block
  **/
-- (void)testGetVersionInformation {
-    NSString *methodName = @"GetVersionInformation";
-    XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
-    
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"txt" path:@"/espapi/version" statusCode:200 headers:nil];
-    
-    [PPCloudConnectivity getVersionInformation:^(NSString *version, NSError *error) {
-
-        XCTAssertNil(error);
-        [expectation fulfill];
-        
-    }];
-    [self waitForExpectations:@[expectation] timeout:10.0];
-}
+//- (void)testGetVersionInformation {
+//    NSString *methodName = @"GetVersionInformation";
+//    XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
+//    
+//    [self stubRequestForModule:moduleName methodName:methodName ofType:@"txt" path:@"/espapi/version" statusCode:200 headers:nil];
+//    
+//    [PPCloudConnectivity getVersionInformation:^(NSString *version, NSError *error) {
+//
+//        XCTAssertNil(error);
+//        [expectation fulfill];
+//        
+//    }];
+//    [self waitForExpectations:@[expectation] timeout:10.0];
+//}
 
 @end
 

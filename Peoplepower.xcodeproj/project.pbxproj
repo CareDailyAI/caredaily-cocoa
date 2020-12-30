@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -428,7 +428,6 @@
 		630BDE9624B3E3220035D8B3 /* PPSurveyQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 630BDE8E24B3E3220035D8B3 /* PPSurveyQuestion.m */; };
 		630BDE9924B3E4540035D8B3 /* UserCommunications-GetSurveyQuestions-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 630BDE9724B3E4530035D8B3 /* UserCommunications-GetSurveyQuestions-ResponseData.json */; };
 		630BDE9A24B3E4540035D8B3 /* UserCommunications-AnswerQuestion-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 630BDE9824B3E4530035D8B3 /* UserCommunications-AnswerQuestion-ResponseData.json */; };
-		630BDE9C24B3F0520035D8B3 /* AFNetworking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 630BDE9B24B3F0520035D8B3 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		630BDE9E24B3F6D50035D8B3 /* PPRealmTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 630BDE9D24B3F6D50035D8B3 /* PPRealmTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		630BDE9F24B3F6D50035D8B3 /* PPRealmTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 630BDE9D24B3F6D50035D8B3 /* PPRealmTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		630BDEA024B424E60035D8B3 /* PPRealm.h in Headers */ = {isa = PBXBuildFile; fileRef = 63B9B141248C0D9B0056E7CE /* PPRealm.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -445,12 +444,6 @@
 		630EB9AA24948778002D5614 /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630EB9A524948777002D5614 /* KissXML.framework */; };
 		630EB9AB24948778002D5614 /* SocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630EB9A624948777002D5614 /* SocketRocket.framework */; };
 		630EB9AC24948778002D5614 /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630EB9A724948777002D5614 /* UICKeyChainStore.framework */; };
-		630EB9AE2494878B002D5614 /* KissXML.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 630EB9A524948777002D5614 /* KissXML.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		630EB9AF2494878B002D5614 /* OHHTTPStubs.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 630EB9A324948777002D5614 /* OHHTTPStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		630EB9B02494878B002D5614 /* SocketRocket.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 630EB9A624948777002D5614 /* SocketRocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		630EB9B12494878B002D5614 /* UICKeyChainStore.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 630EB9A724948777002D5614 /* UICKeyChainStore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		630EB9B22494893E002D5614 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B9B14E248C36BA0056E7CE /* Realm.framework */; };
-		630EB9B324948940002D5614 /* Realm.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63B9B14E248C36BA0056E7CE /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		631152E321E817BD00DA7755 /* PPTHConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 631152DE21E7FB8400DA7755 /* PPTHConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		631A7AA3248B151600D86CFF /* UnitTests.plist in Resources */ = {isa = PBXBuildFile; fileRef = 636B47F1248AFA7B00124F6A /* UnitTests.plist */; };
 		631A7AA6248B16DD00D86CFF /* Peoplepower-Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63A9524E205AFC15000E466A /* Peoplepower-Info-iOS.plist */; };
@@ -1163,24 +1156,6 @@
 			remoteInfo = Peoplepower;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		636DCC3F24947CAF000560E8 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				630EB9AE2494878B002D5614 /* KissXML.framework in CopyFiles */,
-				630EB9AF2494878B002D5614 /* OHHTTPStubs.framework in CopyFiles */,
-				630EB9B02494878B002D5614 /* SocketRocket.framework in CopyFiles */,
-				630EB9B12494878B002D5614 /* UICKeyChainStore.framework in CopyFiles */,
-				630EB9B324948940002D5614 /* Realm.framework in CopyFiles */,
-				630BDE9C24B3F0520035D8B3 /* AFNetworking.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6309B75F20E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPDeviceTypeDeviceModelLookupParam.h; sourceTree = "<group>"; };
@@ -3674,7 +3649,7 @@
 				63BEC9B020C5D2AB00408494 /* Sources */,
 				63BEC9B120C5D2AB00408494 /* Frameworks */,
 				63BEC9B220C5D2AB00408494 /* Resources */,
-				636DCC3F24947CAF000560E8 /* CopyFiles */,
+				6348674F259CF72800276E50 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -3989,6 +3964,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6348674F259CF72800276E50 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/input.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = Carthage;
+			outputFileListPaths = (
+				"$(SRCROOT)/output.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		630BDC4724B392400035D8B3 /* Sources */ = {
@@ -4501,7 +4499,11 @@
 				GCC_PREFIX_HEADER = "Sources/Peoplepower-Prefix.pch";
 				INFOPLIST_FILE = "Sources/Peoplepower-Info-watchOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.watchOS;
@@ -4535,12 +4537,17 @@
 				GCC_PREFIX_HEADER = "Sources/Peoplepower-Prefix.pch";
 				INFOPLIST_FILE = "Sources/Peoplepower-Info-watchOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.watchOS;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 6.0;
@@ -4568,7 +4575,11 @@
 				GCC_PREFIX_HEADER = "Sources/Peoplepower-Prefix.pch";
 				INFOPLIST_FILE = "Sources/Peoplepower-Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.iOS;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -4596,7 +4607,11 @@
 				GCC_PREFIX_HEADER = "Sources/Peoplepower-Prefix.pch";
 				INFOPLIST_FILE = "Sources/Peoplepower-Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.iOS;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -4624,7 +4639,11 @@
 				GCC_PREFIX_HEADER = "Sources/Peoplepower-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "Sources/Peoplepower-Info-iOS.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.iOS.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4655,7 +4674,11 @@
 				GCC_PREFIX_HEADER = "Sources/Peoplepower-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "Sources/Peoplepower-Info-iOS.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.iOS.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
