@@ -751,6 +751,7 @@
 		63A56D1020D3161600AC2212 /* PPNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A56D0E20D3161600AC2212 /* PPNotification.m */; };
 		63A69D6D2151B32B0077553F /* PPDevicePictureFrameAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A69D6B2151B32B0077553F /* PPDevicePictureFrameAlert.m */; };
 		63A69D6E2151B32B0077553F /* PPDevicePictureFrameAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 63A69D6C2151B32B0077553F /* PPDevicePictureFrameAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63A712B325ACF8E60009E43D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63A712B525ACF8E60009E43D /* Localizable.strings */; };
 		63AB4A2423AD85580056AE8B /* PPCommunityReaction.h in Headers */ = {isa = PBXBuildFile; fileRef = 63AB4A2223AD85580056AE8B /* PPCommunityReaction.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63AB4A2523AD85580056AE8B /* PPCommunityReaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AB4A2323AD85580056AE8B /* PPCommunityReaction.m */; };
 		63AB4A2823AD856B0056AE8B /* PPCommunityComment.h in Headers */ = {isa = PBXBuildFile; fileRef = 63AB4A2623AD856B0056AE8B /* PPCommunityComment.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1591,6 +1592,7 @@
 		63A56D0E20D3161600AC2212 /* PPNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPNotification.m; sourceTree = "<group>"; };
 		63A69D6B2151B32B0077553F /* PPDevicePictureFrameAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPDevicePictureFrameAlert.m; sourceTree = "<group>"; };
 		63A69D6C2151B32B0077553F /* PPDevicePictureFrameAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPDevicePictureFrameAlert.h; sourceTree = "<group>"; };
+		63A712B425ACF8E60009E43D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		63A95234205AD424000E466A /* PPAppResources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPAppResources.h; sourceTree = "<group>"; };
 		63A9524E205AFC15000E466A /* Peoplepower-Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Peoplepower-Info-iOS.plist"; sourceTree = "<group>"; };
 		63A9525B205C2E9A000E466A /* PPNetworkUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkUtilities.m; sourceTree = "<group>"; };
@@ -2571,6 +2573,7 @@
 				63D392D0204F263000041C1A /* Components */,
 				63D392C0204F21EE00041C1A /* Peoplepower.h */,
 				635C5B9B259AA12700FD3BC5 /* Peoplepower.m */,
+				63A712B525ACF8E60009E43D /* Localizable.strings */,
 				63D39315204F3A0900041C1A /* Peoplepower-Prefix.pch */,
 				637A632B206C44B000F7876D /* Peoplepower-Config.plist */,
 				63A9524E205AFC15000E466A /* Peoplepower-Info-iOS.plist */,
@@ -3722,6 +3725,7 @@
 				630BDC5624B393480035D8B3 /* Peoplepower-Info-watchOS.plist in Resources */,
 				631A7AA8248B171000D86CFF /* Peoplepower-Config.plist in Resources */,
 				63EC62E9219A44AE0054010D /* Peoplepower-Attributions.plist in Resources */,
+				63A712B325ACF8E60009E43D /* Localizable.strings in Resources */,
 				636B4447248AE82A00124F6A /* Cartfile in Resources */,
 				63E62AB7249196B30038A694 /* Peoplepower-Resources.podspec in Resources */,
 				631A7AA3248B151600D86CFF /* UnitTests.plist in Resources */,
@@ -4477,6 +4481,17 @@
 			targetProxy = 631A7A9B248B0AD500D86CFF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		63A712B525ACF8E60009E43D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63A712B425ACF8E60009E43D /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		630BDC5024B392400035D8B3 /* Debug */ = {

@@ -20,10 +20,10 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/destryteeter/Peoplepower.git", :tag => "#{s.version}" }
   
   s.subspec 'iOS' do |ios|
-    ios.resources = "Sources/*.{plist}"
+    ios.resources = "Sources/*.{plist,strings}"
   end
   
   s.subspec 'watchOS' do |watchos|
-    watchos.resources = "Sources/*.{plist}"
+    watchos.resources = "Sources/*.{plist,strings}"
   end
 end
