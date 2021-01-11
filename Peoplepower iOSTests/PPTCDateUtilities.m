@@ -25,6 +25,9 @@
     NSDate *date;
     NSString *timeAgo;
     
+    NSBundle *bundle = [NSBundle bundleWithIdentifier: @"com.peoplepowerco.lib.Peoplepower.iOS"];
+    XCTAssert(bundle != nil);
+    
     // None
     date = [NSDate dateWithTimeIntervalSinceNow:10];
     timeAgo = [PPDateUtilities timeAgo:date];
@@ -33,122 +36,125 @@
     // Just now
     date = [NSDate date];
     timeAgo = [PPDateUtilities timeAgo:date];
-    XCTAssertTrue([timeAgo rangeOfString:@"just now"].location != NSNotFound);
+    XCTAssertTrue([timeAgo rangeOfString:NSLocalizedStringFromTableInBundle(@"just now", nil, bundle, @"")].location != NSNotFound);
     
     // Seconds
     date = [NSDate dateWithTimeIntervalSinceNow:-31];
     timeAgo = [PPDateUtilities timeAgo:date];
-    XCTAssertTrue([timeAgo rangeOfString:@"seconds ago"].location != NSNotFound);
+    XCTAssertTrue([timeAgo rangeOfString:NSLocalizedStringFromTableInBundle(@"seconds ago", nil, bundle, @"")].location != NSNotFound);
     
     // Minute
     date = [NSDate dateWithTimeIntervalSinceNow:-60];
     timeAgo = [PPDateUtilities timeAgo:date];
-    XCTAssertTrue([timeAgo rangeOfString:@"a minute ago"].location != NSNotFound);
+    XCTAssertTrue([timeAgo rangeOfString:NSLocalizedStringFromTableInBundle(@"a minute ago", nil, bundle, @"")].location != NSNotFound);
     
     // Minutes
     date = [NSDate dateWithTimeIntervalSinceNow:-120];
     timeAgo = [PPDateUtilities timeAgo:date];
-    XCTAssertTrue([timeAgo rangeOfString:@"minutes ago"].location != NSNotFound);
+    XCTAssertTrue([timeAgo rangeOfString:NSLocalizedStringFromTableInBundle(@"minutes ago", nil, bundle, @"")].location != NSNotFound);
     
     // Hour
     date = [NSDate dateWithTimeIntervalSinceNow:-3600];
     timeAgo = [PPDateUtilities timeAgo:date];
-    XCTAssertTrue([timeAgo rangeOfString:@"an hour ago"].location != NSNotFound);
+    XCTAssertTrue([timeAgo rangeOfString:NSLocalizedStringFromTableInBundle(@"an hour ago", nil, bundle, @"")].location != NSNotFound);
     
     // Hours
     date = [NSDate dateWithTimeIntervalSinceNow:-7200];
     timeAgo = [PPDateUtilities timeAgo:date];
-    XCTAssertTrue([timeAgo rangeOfString:@"hours ago"].location != NSNotFound);
+    XCTAssertTrue([timeAgo rangeOfString:NSLocalizedStringFromTableInBundle(@"hours ago", nil, bundle, @"")].location != NSNotFound);
     
     // Day
     date = [NSDate dateWithTimeIntervalSinceNow:-86400];
     timeAgo = [PPDateUtilities timeAgo:date];
-    XCTAssertTrue([timeAgo rangeOfString:@"yesterday"].location != NSNotFound);
+    XCTAssertTrue([timeAgo rangeOfString:NSLocalizedStringFromTableInBundle(@"yesterday", nil, bundle, @"")].location != NSNotFound);
     
     // Days
     date = [NSDate dateWithTimeIntervalSinceNow:-172800];
     timeAgo = [PPDateUtilities timeAgo:date];
-    XCTAssertTrue([timeAgo rangeOfString:@"days ago"].location != NSNotFound);
+    XCTAssertTrue([timeAgo rangeOfString:NSLocalizedStringFromTableInBundle(@"days ago", nil, bundle, @"")].location != NSNotFound);
     
     // Week
     date = [NSDate dateWithTimeIntervalSinceNow:-604800];
     timeAgo = [PPDateUtilities timeAgo:date];
-    XCTAssertTrue([timeAgo rangeOfString:@"a week ago"].location != NSNotFound);
+    XCTAssertTrue([timeAgo rangeOfString:NSLocalizedStringFromTableInBundle(@"a week ago", nil, bundle, @"")].location != NSNotFound);
     
     // Weeks
     date = [NSDate dateWithTimeIntervalSinceNow:-1209600];
     timeAgo = [PPDateUtilities timeAgo:date];
-    XCTAssertTrue([timeAgo rangeOfString:@"weeks ago"].location != NSNotFound);
+    XCTAssertTrue([timeAgo rangeOfString:NSLocalizedStringFromTableInBundle(@"weeks ago", nil, bundle, @"")].location != NSNotFound);
     
     // Month
     date = [NSDate dateWithTimeIntervalSinceNow:-2419200];
     timeAgo = [PPDateUtilities timeAgo:date];
-    XCTAssertTrue([timeAgo rangeOfString:@"a month ago"].location != NSNotFound);
+    XCTAssertTrue([timeAgo rangeOfString:NSLocalizedStringFromTableInBundle(@"a month ago", nil, bundle, @"")].location != NSNotFound);
     
     // Months
     date = [NSDate dateWithTimeIntervalSinceNow:-4838400];
     timeAgo = [PPDateUtilities timeAgo:date];
-    XCTAssertTrue([timeAgo rangeOfString:@"months ago"].location != NSNotFound);
+    XCTAssertTrue([timeAgo rangeOfString:NSLocalizedStringFromTableInBundle(@"months ago", nil, bundle, @"")].location != NSNotFound);
     
     // Year
     date = [NSDate dateWithTimeIntervalSinceNow:-29030400];
     timeAgo = [PPDateUtilities timeAgo:date];
-    XCTAssertTrue([timeAgo rangeOfString:@"last year"].location != NSNotFound);
+    XCTAssertTrue([timeAgo rangeOfString:NSLocalizedStringFromTableInBundle(@"last year", nil, bundle, @"")].location != NSNotFound);
     
     // Years
     date = [NSDate dateWithTimeIntervalSinceNow:-58060800];
     timeAgo = [PPDateUtilities timeAgo:date];
-    XCTAssertTrue([timeAgo rangeOfString:@"years ago"].location != NSNotFound);
+    XCTAssertTrue([timeAgo rangeOfString:NSLocalizedStringFromTableInBundle(@"years ago", nil, bundle, @"")].location != NSNotFound);
 }
 
 - (void)testTimeAgoOlderThanToday {
     NSDate *date;
     NSString *timeAgo;
     
+    NSBundle *bundle = [NSBundle bundleWithIdentifier: @"com.peoplepowerco.lib.Peoplepower.iOS"];
+    XCTAssert(bundle != nil);
+    
     // Today
     date = [NSDate date];
     timeAgo = [PPDateUtilities timeAgoOlderThanToday:date];
-    XCTAssertTrue([timeAgo rangeOfString:@"today"].location != NSNotFound);
+    XCTAssertTrue([timeAgo rangeOfString:NSLocalizedStringFromTableInBundle(@"today", nil, bundle, @"")].location != NSNotFound);
     
     // Yesterday
     date = [NSDate dateWithTimeIntervalSinceNow:-86400];
     timeAgo = [PPDateUtilities timeAgoOlderThanToday:date];
-    XCTAssertTrue([timeAgo rangeOfString:@"yesterday"].location != NSNotFound);
+    XCTAssertTrue([timeAgo rangeOfString:NSLocalizedStringFromTableInBundle(@"yesterday", nil, bundle, @"")].location != NSNotFound);
     
     // Days
     date = [NSDate dateWithTimeIntervalSinceNow:-172800];
     timeAgo = [PPDateUtilities timeAgoOlderThanToday:date];
-    XCTAssertTrue([timeAgo rangeOfString:@"days ago"].location != NSNotFound);
+    XCTAssertTrue([timeAgo rangeOfString:NSLocalizedStringFromTableInBundle(@"days ago", nil, bundle, @"")].location != NSNotFound);
     
     // Week
     date = [NSDate dateWithTimeIntervalSinceNow:-604800];
     timeAgo = [PPDateUtilities timeAgoOlderThanToday:date];
-    XCTAssertTrue([timeAgo rangeOfString:@"a week ago"].location != NSNotFound);
+    XCTAssertTrue([timeAgo rangeOfString:NSLocalizedStringFromTableInBundle(@"a week ago", nil, bundle, @"")].location != NSNotFound);
     
     // Weeks
     date = [NSDate dateWithTimeIntervalSinceNow:-1209600];
     timeAgo = [PPDateUtilities timeAgoOlderThanToday:date];
-    XCTAssertTrue([timeAgo rangeOfString:@"weeks ago"].location != NSNotFound);
+    XCTAssertTrue([timeAgo rangeOfString:NSLocalizedStringFromTableInBundle(@"weeks ago", nil, bundle, @"")].location != NSNotFound);
     
     // Month
     date = [NSDate dateWithTimeIntervalSinceNow:-2419200];
     timeAgo = [PPDateUtilities timeAgoOlderThanToday:date];
-    XCTAssertTrue([timeAgo rangeOfString:@"a month ago"].location != NSNotFound);
+    XCTAssertTrue([timeAgo rangeOfString:NSLocalizedStringFromTableInBundle(@"a month ago", nil, bundle, @"")].location != NSNotFound);
     
     // Months
     date = [NSDate dateWithTimeIntervalSinceNow:-4838400];
     timeAgo = [PPDateUtilities timeAgoOlderThanToday:date];
-    XCTAssertTrue([timeAgo rangeOfString:@"months ago"].location != NSNotFound);
+    XCTAssertTrue([timeAgo rangeOfString:NSLocalizedStringFromTableInBundle(@"months ago", nil, bundle, @"")].location != NSNotFound);
     
     // Year
     date = [NSDate dateWithTimeIntervalSinceNow:-29030400];
     timeAgo = [PPDateUtilities timeAgoOlderThanToday:date];
-    XCTAssertTrue([timeAgo rangeOfString:@"last year"].location != NSNotFound);
+    XCTAssertTrue([timeAgo rangeOfString:NSLocalizedStringFromTableInBundle(@"last year", nil, bundle, @"")].location != NSNotFound);
     
     // Years
     date = [NSDate dateWithTimeIntervalSinceNow:-58060800];
     timeAgo = [PPDateUtilities timeAgoOlderThanToday:date];
-    XCTAssertTrue([timeAgo rangeOfString:@"years ago"].location != NSNotFound);
+    XCTAssertTrue([timeAgo rangeOfString:NSLocalizedStringFromTableInBundle(@"years ago", nil, bundle, @"")].location != NSNotFound);
 }
 
 - (void)testDateInTimeZone {

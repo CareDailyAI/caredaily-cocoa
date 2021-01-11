@@ -21,9 +21,16 @@ Pod::Spec.new do |s|
   
   s.subspec 'iOS' do |ios|
     ios.resources = "Sources/*.{plist,strings}"
+    ios.resource_bundles = {
+      'Peoplepower' => ['Sources/**/*.lproj']
+    }
+
   end
   
   s.subspec 'watchOS' do |watchos|
     watchos.resources = "Sources/*.{plist,strings}"
+    ios.resource_bundles = {
+      'Peoplepower' => ['Sources/**/*.lproj']
+    }
   end
 end

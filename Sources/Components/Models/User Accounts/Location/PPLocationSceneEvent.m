@@ -73,26 +73,26 @@
     NSString *localizedEventString;;
     
     if([[event uppercaseString] rangeOfString:EVENT_HOME].location != NSNotFound) {
-        localizedEventString = NSLocalizedString(@"Home", @"Mode - Home");
+        localizedEventString = NSLocalizedStringFromTableInBundle(@"Home", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Mode - Home");
     }
     else if([[event uppercaseString] rangeOfString:EVENT_AWAY].location != NSNotFound) {
-        localizedEventString = NSLocalizedString(@"Away", @"Mode - Away");
+        localizedEventString = NSLocalizedStringFromTableInBundle(@"Away", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Mode - Away");
     }
     else if([[event uppercaseString] rangeOfString:EVENT_VACATION].location != NSNotFound) {
-        localizedEventString = NSLocalizedString(@"Vacation", @"Mode - Vacation");
+        localizedEventString = NSLocalizedStringFromTableInBundle(@"Vacation", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Mode - Vacation");
     }
     else if([[event uppercaseString] rangeOfString:EVENT_SLEEP].location != NSNotFound) {
-        localizedEventString = NSLocalizedString(@"Sleep", @"Mode - Sleep");
+        localizedEventString = NSLocalizedStringFromTableInBundle(@"Sleep", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Mode - Sleep");
     }
     else if([[event uppercaseString] rangeOfString:EVENT_TEST].location != NSNotFound) {
-        localizedEventString = NSLocalizedString(@"Test", @"Mode - Test");
+        localizedEventString = NSLocalizedStringFromTableInBundle(@"Test", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Mode - Test");
     }
     else if([[event uppercaseString] rangeOfString:EVENT_STAY].location != NSNotFound) {
-        localizedEventString = NSLocalizedString(@"Stay", @"Mode - Stay");
+        localizedEventString = NSLocalizedStringFromTableInBundle(@"Stay", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Mode - Stay");
     }
     else {
         // In the case of a translation failure, default to "Home" mode.
-        localizedEventString = NSLocalizedString(@"Home", @"Mode - Home");
+        localizedEventString = NSLocalizedStringFromTableInBundle(@"Home", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Mode - Home");
     }
     
     return localizedEventString;
@@ -100,22 +100,22 @@
 
 + (NSString *)nonLocalizedEventString:(NSString *)event {
     NSString *nonLocalizedEventString = event;
-    if([[event uppercaseString] rangeOfString:[NSLocalizedString(@"Home", @"Mode - Home") uppercaseString]].location != NSNotFound) {
+    if([[event uppercaseString] rangeOfString:[NSLocalizedStringFromTableInBundle(@"Home", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Mode - Home") uppercaseString]].location != NSNotFound) {
         nonLocalizedEventString = EVENT_HOME;
     }
-    else if([[event uppercaseString] rangeOfString:[NSLocalizedString(@"Away", @"Mode - Away") uppercaseString]].location != NSNotFound) {
+    else if([[event uppercaseString] rangeOfString:[NSLocalizedStringFromTableInBundle(@"Away", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Mode - Away") uppercaseString]].location != NSNotFound) {
         nonLocalizedEventString = EVENT_AWAY;
     }
-    else if([[event uppercaseString] rangeOfString:[NSLocalizedString(@"Vacation", @"Mode - Vacation") uppercaseString]].location != NSNotFound) {
+    else if([[event uppercaseString] rangeOfString:[NSLocalizedStringFromTableInBundle(@"Vacation", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Mode - Vacation") uppercaseString]].location != NSNotFound) {
         nonLocalizedEventString = EVENT_VACATION;
     }
-    else if([[event uppercaseString] rangeOfString:[NSLocalizedString(@"Sleep", @"Mode - Sleep") uppercaseString]].location != NSNotFound) {
+    else if([[event uppercaseString] rangeOfString:[NSLocalizedStringFromTableInBundle(@"Sleep", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Mode - Sleep") uppercaseString]].location != NSNotFound) {
         nonLocalizedEventString = EVENT_SLEEP;
     }
-    else if([[event uppercaseString] rangeOfString:[NSLocalizedString(@"Test", @"Mode - Test") uppercaseString]].location != NSNotFound) {
+    else if([[event uppercaseString] rangeOfString:[NSLocalizedStringFromTableInBundle(@"Test", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Mode - Test") uppercaseString]].location != NSNotFound) {
         nonLocalizedEventString = EVENT_TEST;
     }
-    else if([[event uppercaseString] rangeOfString:[NSLocalizedString(@"Stay", @"Mode - Stay") uppercaseString]].location != NSNotFound) {
+    else if([[event uppercaseString] rangeOfString:[NSLocalizedStringFromTableInBundle(@"Stay", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Mode - Stay") uppercaseString]].location != NSNotFound) {
         nonLocalizedEventString = EVENT_STAY;
     }
     
