@@ -177,7 +177,7 @@ static NSString *kTrackingKey = @"com.peoplepowerco.lib.Peoplepower.trackingDisa
 			[errorDetail setValue:NSLocalizedString(@"That device belongs to someone else", @"Error - That device belongs to someone else") forKey:NSLocalizedDescriptionKey];
 			break;
 		case 23: // Rule generation error
-			[errorDetail setValue:NSLocalizedString(@"Well that's strange, we had a problem saving that rule. Sorry about this!\n\nIf you have time, please contact support@peoplepowerco.com and describe the rule you were trying to create so we can fix it.", @"Error - Well that's strange, we had a problem saving that rule. Sorry about this!\n\nIf you have time, please contact support@peoplepowerco.com and describe the rule you were trying to create so we can fix it.") forKey:NSLocalizedDescriptionKey];
+			[errorDetail setValue:NSLocalizedString(@"Well that's strange, we had a problem saving that rule. Sorry about this!\n\nIf you have time, please contact support and describe the rule you were trying to create so we can fix it.", @"Error - Well that's strange, we had a problem saving that rule. Sorry about this!\n\nIf you have time, please contact support and describe the rule you were trying to create so we can fix it.") forKey:NSLocalizedDescriptionKey];
 			break;
 		case 24:
 			[errorDetail setValue:NSLocalizedString(@"Wrong device registration code", @"Error - Wrong device registration code") forKey:NSLocalizedDescriptionKey];
