@@ -71,51 +71,51 @@
 + (NSString *)localizedNameForSpaceType:(PPLocationSpaceType)spaceType {
     switch (spaceType) {
         case PPLocationSpaceTypeUndefined:
-            return NSLocalizedString(@"Undefined", @"Label - Undefined (Space Name)");
+            return NSLocalizedStringFromTableInBundle(@"Undefined", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Undefined (Space Name)");
             break;
         case PPLocationSpaceTypeKitchen:
-            return NSLocalizedString(@"Kitchen", @"Label - Kitchen (Space Name)");
+            return NSLocalizedStringFromTableInBundle(@"Kitchen", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Kitchen (Space Name)");
             break;
         case PPLocationSpaceTypeBedroom:
-            return NSLocalizedString(@"Bedroom", @"Label - Bedroom (Space Name)");
+            return NSLocalizedStringFromTableInBundle(@"Bedroom", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Bedroom (Space Name)");
             break;
         case PPLocationSpaceTypeBathroom:
-            return NSLocalizedString(@"Bathroom", @"Label - Bathroom (Space Name)");
+            return NSLocalizedStringFromTableInBundle(@"Bathroom", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Bathroom (Space Name)");
             break;
         case PPLocationSpaceTypeHallway:
-            return NSLocalizedString(@"Hallway", @"Label - Hallway (Space Name)");
+            return NSLocalizedStringFromTableInBundle(@"Hallway", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Hallway (Space Name)");
             break;
         case PPLocationSpaceTypeLivingRoom:
-            return NSLocalizedString(@"Living Room", @"Label - Room (Space Name)");
+            return NSLocalizedStringFromTableInBundle(@"Living Room", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Room (Space Name)");
             break;
         case PPLocationSpaceTypeDiningRoom:
-            return NSLocalizedString(@"Dining Room", @"Label - Room (Space Name)");
+            return NSLocalizedStringFromTableInBundle(@"Dining Room", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Room (Space Name)");
             break;
         case PPLocationSpaceTypeFamilyRoom:
-            return NSLocalizedString(@"Family Room", @"Label - Room (Space Name)");
+            return NSLocalizedStringFromTableInBundle(@"Family Room", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Room (Space Name)");
             break;
         case PPLocationSpaceTypeLaundryRoom:
-            return NSLocalizedString(@"Laundry Room", @"Label - Room (Space Name)");
+            return NSLocalizedStringFromTableInBundle(@"Laundry Room", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Room (Space Name)");
             break;
         case PPLocationSpaceTypeOffice:
-            return NSLocalizedString(@"Office", @"Label - Office (Space Name)");
+            return NSLocalizedStringFromTableInBundle(@"Office", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Office (Space Name)");
             break;
         case PPLocationSpaceTypeStairs:
-            return NSLocalizedString(@"Stairs", @"Label - Stairs (Space Name)");
+            return NSLocalizedStringFromTableInBundle(@"Stairs", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Stairs (Space Name)");
             break;
         case PPLocationSpaceTypeGarage:
-            return NSLocalizedString(@"Garage", @"Label - Garage (Space Name)");
+            return NSLocalizedStringFromTableInBundle(@"Garage", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Garage (Space Name)");
             break;
         case PPLocationSpaceTypeBasement:
-            return NSLocalizedString(@"Basement", @"Label - Basement (Space Name)");
+            return NSLocalizedStringFromTableInBundle(@"Basement", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Basement (Space Name)");
             break;
         case PPLocationSpaceTypeNone:
         case PPLocationSpaceTypeOther:
-            return NSLocalizedString(@"Other", @"Label - Other (Space Name)");
+            return NSLocalizedStringFromTableInBundle(@"Other", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Other (Space Name)");
             break;
             
         default:
-            return NSLocalizedString(@"None", @"Label - None (Space Name)");
+            return NSLocalizedStringFromTableInBundle(@"None", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - None (Space Name)");
             break;
     }
     return nil;

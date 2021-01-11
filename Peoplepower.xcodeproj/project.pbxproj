@@ -738,6 +738,7 @@
 		63A69D6D2151B32B0077553F /* PPDevicePictureFrameAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A69D6B2151B32B0077553F /* PPDevicePictureFrameAlert.m */; };
 		63A69D6E2151B32B0077553F /* PPDevicePictureFrameAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 63A69D6C2151B32B0077553F /* PPDevicePictureFrameAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63A712B325ACF8E60009E43D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63A712B525ACF8E60009E43D /* Localizable.strings */; };
+		63A7143F25AD00510009E43D /* PPTCLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A7143E25AD00510009E43D /* PPTCLocalization.swift */; };
 		63AB4A2423AD85580056AE8B /* PPCommunityReaction.h in Headers */ = {isa = PBXBuildFile; fileRef = 63AB4A2223AD85580056AE8B /* PPCommunityReaction.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63AB4A2523AD85580056AE8B /* PPCommunityReaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AB4A2323AD85580056AE8B /* PPCommunityReaction.m */; };
 		63AB4A2823AD856B0056AE8B /* PPCommunityComment.h in Headers */ = {isa = PBXBuildFile; fileRef = 63AB4A2623AD856B0056AE8B /* PPCommunityComment.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1568,6 +1569,7 @@
 		63A69D6B2151B32B0077553F /* PPDevicePictureFrameAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPDevicePictureFrameAlert.m; sourceTree = "<group>"; };
 		63A69D6C2151B32B0077553F /* PPDevicePictureFrameAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPDevicePictureFrameAlert.h; sourceTree = "<group>"; };
 		63A712B425ACF8E60009E43D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		63A7143E25AD00510009E43D /* PPTCLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPTCLocalization.swift; sourceTree = "<group>"; };
 		63A95234205AD424000E466A /* PPAppResources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPAppResources.h; sourceTree = "<group>"; };
 		63A9524E205AFC15000E466A /* Peoplepower-Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Peoplepower-Info-iOS.plist"; sourceTree = "<group>"; };
 		63A9525B205C2E9A000E466A /* PPNetworkUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkUtilities.m; sourceTree = "<group>"; };
@@ -2216,6 +2218,7 @@
 				636B4627248AF7A300124F6A /* Data */,
 				636DCC0E2493F9BA000560E8 /* Peoplepower-Tests-Bridging-Header.h */,
 				636DCC042493E4B8000560E8 /* PPTCAppResources.h */,
+				63A7143E25AD00510009E43D /* PPTCLocalization.swift */,
 				636B47F1248AFA7B00124F6A /* UnitTests.plist */,
 			);
 			name = Resources;
@@ -4374,6 +4377,7 @@
 				636B4940248AFBCE00124F6A /* PPTCLogout.m in Sources */,
 				636DCC102493F9BA000560E8 /* PPTCVersion.swift in Sources */,
 				636B493C248AFBCE00124F6A /* PPTCCopying.m in Sources */,
+				63A7143F25AD00510009E43D /* PPTCLocalization.swift in Sources */,
 				636B4952248AFBCE00124F6A /* PPTCCircles.m in Sources */,
 				636B4956248AFBCE00124F6A /* PPTCSystemAndUserProperties.m in Sources */,
 				636B493B248AFBCE00124F6A /* PPTCProducts.m in Sources */,

@@ -1,1145 +1,1145 @@
 /* No comment provided by engineer. */
-" " = "";
+" " = " ";
 
 /* Label - $time1 and $time2 */
-"$time1 and $time2" = "";
+"$time1 and $time2" = "$time1 and $time2";
 
 /* Label - {AppName} 360 */
-"%@ 360" = "";
+"%@ 360" = "%@ 360";
 
 /* Label - {number} hours */
-"%d hr" = "";
+"%d hr" = "%d hr";
 
 /* Label - {number} minutes */
-"%d min" = "";
+"%d min" = "%d min";
 
 /* Label - {number} minutes {number} seconds */
-"%d min %d sec" = "";
+"%d min %d sec" = "%d min %d sec";
 
 /* Label - {number} seconds */
-"%d sec" = "";
+"%d sec" = "%d sec";
 
 /* Label - {number} days ago */
-"%ld days ago" = "";
+"%ld days ago" = "%ld days ago";
 
 /* Label - {number} hours ago */
-"%ld hours ago" = "";
+"%ld hours ago" = "%ld hours ago";
 
 /* Label - {number} minutes ago */
-"%ld minutes ago" = "";
+"%ld minutes ago" = "%ld minutes ago";
 
 /* Label - {number} months ago */
-"%ld months ago" = "";
+"%ld months ago" = "%ld months ago";
 
 /* Label - {number} seconds ago */
-"%ld seconds ago" = "";
+"%ld seconds ago" = "%ld seconds ago";
 
 /* Label - {number} weeks ago */
-"%ld weeks ago" = "";
+"%ld weeks ago" = "%ld weeks ago";
 
 /* Label - {number} years ago */
-"%ld years ago" = "";
+"%ld years ago" = "%ld years ago";
 
 /* No comment provided by engineer. */
-"%li %@" = "";
+"%li %@" = "%li %@";
 
 /* No comment provided by engineer. */
-"," = "";
+"," = ",";
 
 /* Error - {name} seems to already be viewing this camera. Press the reconnect button to take over. */
-"\"%@\" seems to already be viewing this camera. Press the reconnect button to take over." = "";
+"\"%@\" seems to already be viewing this camera. Press the reconnect button to take over." = "\"%@\" seems to already be viewing this camera. Press the reconnect button to take over.";
 
 /* Error - \"Geofencing\" is not available for this mode. */
-"\"Geofencing\" is not available for this mode." = "";
+"\"Geofencing\" is not available for this mode." = "\"Geofencing\" is not available for this mode.";
 
 /* Label - a minute ago */
-"a minute ago" = "";
+"a minute ago" = "a minute ago";
 
 /* Label - a month ago */
-"a month ago" = "";
+"a month ago" = "a month ago";
 
 /* Label - a week ago */
-"a week ago" = "";
+"a week ago" = "a week ago";
 
 /* Error - Access denied */
-"Access denied" = "";
+"Access denied" = "Access denied";
 
 /* Error - Camera - Privacy - Denied */
-"Access to your \"Camera\" was previously denied.  Please check the iOS > Settings > Privacy menu." = "";
+"Access to your \"Camera\" was previously denied.  Please check the iOS > Settings > Privacy menu." = "Access to your \"Camera\" was previously denied.  Please check the iOS > Settings > Privacy menu.";
 
 /* Error - Microphone - Privacy - Denied */
-"Access to your \"Microphone\" was previously denied.  Please check the iOS > Settings > Privacy menu." = "";
+"Access to your \"Microphone\" was previously denied.  Please check the iOS > Settings > Privacy menu." = "Access to your \"Microphone\" was previously denied.  Please check the iOS > Settings > Privacy menu.";
 
 /* Error - Photo Data - Privacy - Denied */
-"Access to your \"Photo Data\" was previously denied.  Please check the iOS > Settings > Privacy menu." = "";
+"Access to your \"Photo Data\" was previously denied.  Please check the iOS > Settings > Privacy menu." = "Access to your \"Photo Data\" was previously denied.  Please check the iOS > Settings > Privacy menu.";
 
 /* Error - Push Notifications - Privacy - Denied */
-"Access to your \"Push Notifications\" was previously denied.  Please check the iOS > Settings > Privacy menu." = "";
+"Access to your \"Push Notifications\" was previously denied.  Please check the iOS > Settings > Privacy menu." = "Access to your \"Push Notifications\" was previously denied.  Please check the iOS > Settings > Privacy menu.";
 
 /* Error - Account is locked until {lockTime} */
-"Account is locked until %@" = "";
+"Account is locked until %@" = "Account is locked until %@";
 
 /* Error - Account locked */
-"Account locked" = "";
+"Account locked" = "Account locked";
 
 /* Detail Label - Active */
-"Active" = "";
+"Active" = "Active";
 
 /* Detail Label - Alarm */
-"Alarm" = "";
+"Alarm" = "Alarm";
 
 /* Label - Alarm Duration */
-"Alarm Duration" = "";
+"Alarm Duration" = "Alarm Duration";
 
 /* Label - Alarm is active */
-"Alarm is active" = "";
+"Alarm is active" = "Alarm is active";
 
 /* Label - Alarm is off */
-"Alarm is off" = "";
+"Alarm is off" = "Alarm is off";
 
 /* Label - Alarm Squawk */
-"Alarm Squawk" = "";
+"Alarm Squawk" = "Alarm Squawk";
 
 /* Label - Alarm Status */
-"Alarm Status" = "";
+"Alarm Status" = "Alarm Status";
 
 /* Label - Alarm Strobe */
-"Alarm Strobe" = "";
+"Alarm Strobe" = "Alarm Strobe";
 
 /* Label - Alarm Warn */
-"Alarm Warn" = "";
+"Alarm Warn" = "Alarm Warn";
 
 /* Label - Alarm will beep %@ times */
-"Alarm will beep %i times" = "";
+"Alarm will beep %i times" = "Alarm will beep %i times";
 
 /* Error - An email has been sent to you with instructions on how to add this device to your {App Name} account. */
-"An email has been sent to you with instructions on how to add this device to your %@ account." = "";
+"An email has been sent to you with instructions on how to add this device to your %@ account." = "An email has been sent to you with instructions on how to add this device to your %@ account.";
 
 /* Error - An error occurred when attempting to request access to your Address Book. */
-"An error occurred when attempting to request access to your Address Book." = "";
+"An error occurred when attempting to request access to your Address Book." = "An error occurred when attempting to request access to your Address Book.";
 
 /* Label - an hour ago */
-"an hour ago" = "";
+"an hour ago" = "an hour ago";
 
 /* No comment provided by engineer. */
-"and" = "";
+"and" = "and";
 
 /* Firmware Update - Approved */
-"Approved" = "";
+"Approved" = "Approved";
 
 /* Label - As fast as possible */
-"As fast as possible" = "";
+"As fast as possible" = "As fast as possible";
 
 /* Label - at */
-"at" = "";
+"at" = "at";
 
 /* Label - Audio streaming disabled */
-"Audio streaming disabled" = "";
+"Audio streaming disabled" = "Audio streaming disabled";
 
 /* Label - Audio streaming enabled */
-"Audio streaming enabled" = "";
+"Audio streaming enabled" = "Audio streaming enabled";
 
 /* Label - Auto */
-"Auto" = "";
+"Auto" = "Auto";
 
 /* Label - Auxiliary Heat */
-"Auxiliary Heat" = "";
+"Auxiliary Heat" = "Auxiliary Heat";
 
 /* Firmware Update - Available */
-"Available" = "";
+"Available" = "Available";
 
 /* Mode - Away */
-"Away" = "";
+"Away" = "Away";
 
 /* Label - Basement (Space Name) */
-"Basement" = "";
+"Basement" = "Basement";
 
 /* Label - Bathroom (Space Name) */
-"Bathroom" = "";
+"Bathroom" = "Bathroom";
 
 /* Label - Bedroom (Space Name) */
-"Bedroom" = "";
+"Bedroom" = "Bedroom";
 
 /* Detail Label - Beep */
-"Beep" = "";
+"Beep" = "Beep";
 
 /* Label - Beep 2 times when motion is detected */
-"Beep %@ times when motion is detected" = "";
+"Beep %@ times when motion is detected" = "Beep %@ times when motion is detected";
 
 /* Label - Beep 1 time when motion is detected */
-"Beep 1 time when motion is detected" = "";
+"Beep 1 time when motion is detected" = "Beep 1 time when motion is detected";
 
 /* Detail Label - BeepBeep */
-"BeepBeep" = "";
+"BeepBeep" = "BeepBeep";
 
 /* Detail Label - BeepBeepWelcome */
-"BeepBeepWelcome" = "";
+"BeepBeepWelcome" = "BeepBeepWelcome";
 
 /* Detail Label - BeepWelcome */
-"BeepWelcome" = "";
+"BeepWelcome" = "BeepWelcome";
 
 /* Label - between $time1 and $time2 */
-"between $time1 and $time2" = "";
+"between $time1 and $time2" = "between $time1 and $time2";
 
 /* Detail Label - Bird */
-"Bird" = "";
+"Bird" = "Bird";
 
 /* Label - Blackout disabled */
-"Blackout disabled" = "";
+"Blackout disabled" = "Blackout disabled";
 
 /* Label - Blackout enabled */
-"Blackout enabled" = "";
+"Blackout enabled" = "Blackout enabled";
 
 /* Detail Label - Bling */
-"Bling" = "";
+"Bling" = "Bling";
 
 /* Detail Label - LintAlert Blocked */
-"Blocked" = "";
+"Blocked" = "Blocked";
 
 /* Error - Bluetooth is currently powered off. Please go into your Settings and turn on Bluetooth. */
-"Bluetooth is currently powered off. Please go into your Settings and turn on Bluetooth." = "";
+"Bluetooth is currently powered off. Please go into your Settings and turn on Bluetooth." = "Bluetooth is currently powered off. Please go into your Settings and turn on Bluetooth.";
 
 /* Label - Brightness */
-"Brightness" = "";
+"Brightness" = "Brightness";
 
 /* Detail Label - Burglar */
-"Burglar" = "";
+"Burglar" = "Burglar";
 
 /* Detail Label - Burglar alarm */
-"Burglar alarm" = "";
+"Burglar alarm" = "Burglar alarm";
 
 /* Label - Button Status */
-"Button Status" = "";
+"Button Status" = "Button Status";
 
 /* Label - Camera speaker volume is at {number}{percent %} */
-"Camera speaker volume is at %.0f%%." = "";
+"Camera speaker volume is at %.0f%%." = "Camera speaker volume is at %.0f%%.";
 
 /* Camera - Label describing this camera's volume is maxed */
-"Camera speaker volume is maxed." = "";
+"Camera speaker volume is maxed." = "Camera speaker volume is maxed.";
 
 /* Camera - Label describing this camera is muted */
-"Camera speaker volume is muted." = "";
+"Camera speaker volume is muted." = "Camera speaker volume is muted.";
 
 /* Error - Can't play this video! Did you delete it remotely? Do you have a good connection? */
-"Can't play this video! Did you delete it remotely? Do you have a good connection?" = "";
+"Can't play this video! Did you delete it remotely? Do you have a good connection?" = "Can't play this video! Did you delete it remotely? Do you have a good connection?";
 
 /* Error - Can't save the video! Please grant {App Name} access to your Photos and Videos folder in iOS Settings > Privacy > Photos, then try your download again. */
-"Can't save the video! Please grant %@ access to your Photos and Videos folder in iOS Settings > Privacy > Photos, then try your download again." = "";
+"Can't save the video! Please grant %@ access to your Photos and Videos folder in iOS Settings > Privacy > Photos, then try your download again." = "Can't save the video! Please grant %@ access to your Photos and Videos folder in iOS Settings > Privacy > Photos, then try your download again.";
 
 /* Error - 37 */
-"Cannot authorize user on external resource or cloud" = "";
+"Cannot authorize user on external resource or cloud" = "Cannot authorize user on external resource or cloud";
 
 /* Error - 42 */
-"Cannot connect to an external resource" = "";
+"Cannot connect to an external resource" = "Cannot connect to an external resource";
 
 /* Error - Cannot modify external resources */
-"Cannot modify external resources" = "";
+"Cannot modify external resources" = "Cannot modify external resources";
 
 /* Label - Charging */
-"Charging" = "";
+"Charging" = "Charging";
 
 /* Detail Label - Chinese1 */
-"Chinese1" = "";
+"Chinese1" = "Chinese1";
 
 /* Detail Label - Chinese2 */
-"Chinese2" = "";
+"Chinese2" = "Chinese2";
 
 /* Detail Label - Chinese3 */
-"Chinese3" = "";
+"Chinese3" = "Chinese3";
 
 /* Detail Label - Chinese4 */
-"Chinese4" = "";
+"Chinese4" = "Chinese4";
 
 /* Detail Label - Chinese5 */
-"Chinese5" = "";
+"Chinese5" = "Chinese5";
 
 /* Detail Label - Chinese6 */
-"Chinese6" = "";
+"Chinese6" = "Chinese6";
 
 /* Detail Label - Chinese7 */
-"Chinese7" = "";
+"Chinese7" = "Chinese7";
 
 /* Detail Label - Chinese8 */
-"Chinese8" = "";
+"Chinese8" = "Chinese8";
 
 /* Detail Label - Click once */
-"Click once" = "";
+"Click once" = "Click once";
 
 /* Detail Label - Closed */
-"Closed" = "";
+"Closed" = "Closed";
 
 /* Label - Configure vantage point {vantage point index} */
-"Configure vantage point %@" = "";
+"Configure vantage point %@" = "Configure vantage point %@";
 
 /* Label - Continue recording even after motion goes away */
-"Continue recording even after motion goes away" = "";
+"Continue recording even after motion goes away" = "Continue recording even after motion goes away";
 
 /* Label - Cool */
-"Cool" = "";
+"Cool" = "Cool";
 
 /* Label - Cooling Setpoint */
-"Cooling Setpoint" = "";
+"Cooling Setpoint" = "Cooling Setpoint";
 
 /* Error - Corrupted video file! */
-"Corrupted video file!" = "";
+"Corrupted video file!" = "Corrupted video file!";
 
 /* Error - Unable to verify IP Camera */
-"Could not verify IP Camera" = "";
+"Could not verify IP Camera" = "Could not verify IP Camera";
 
 /* Error - Couldn't contact Blue Line. */
-"Couldn't contact Blue Line." = "";
+"Couldn't contact Blue Line." = "Couldn't contact Blue Line.";
 
 /* Error - Couldn't save this video to your album! */
-"Couldn't save this video to your album!" = "";
+"Couldn't save this video to your album!" = "Couldn't save this video to your album!";
 
 /* Detail Label - Deadbolt Jammed */
-"Deadbolt Jammed" = "";
+"Deadbolt Jammed" = "Deadbolt Jammed";
 
 /* Firmware Update - Declined */
-"Declined" = "";
+"Declined" = "Declined";
 
 /* Label - Detect huge movements */
-"Detect huge movements" = "";
+"Detect huge movements" = "Detect huge movements";
 
 /* Label - Detect huge sounds */
-"Detect huge sounds" = "";
+"Detect huge sounds" = "Detect huge sounds";
 
 /* Label - Detect large movements */
-"Detect large movements" = "";
+"Detect large movements" = "Detect large movements";
 
 /* Label - Detect large sounds */
-"Detect large sounds" = "";
+"Detect large sounds" = "Detect large sounds";
 
 /* Label - Detect normal movements */
-"Detect normal movements" = "";
+"Detect normal movements" = "Detect normal movements";
 
 /* Label - Detect normal sounds */
-"Detect normal sounds" = "";
+"Detect normal sounds" = "Detect normal sounds";
 
 /* Label - Detect small movements */
-"Detect small movements" = "";
+"Detect small movements" = "Detect small movements";
 
 /* Label - Detect small sounds */
-"Detect small sounds" = "";
+"Detect small sounds" = "Detect small sounds";
 
 /* Label - Detect tiny sounds */
-"Detect tiny aounds" = "";
+"Detect tiny aounds" = "Detect tiny aounds";
 
 /* Label - Detect tiny movements */
-"Detect tiny movements" = "";
+"Detect tiny movements" = "Detect tiny movements";
 
 /* Label - Detecting Audio */
-"Detecting Audio" = "";
+"Detecting Audio" = "Detecting Audio";
 
 /* Label - Detecting Motion */
-"Detecting Motion" = "";
+"Detecting Motion" = "Detecting Motion";
 
 /* Error - Device command proxy (gateway) has not been found */
-"Device command proxy (gateway) has not been found" = "";
+"Device command proxy (gateway) has not been found" = "Device command proxy (gateway) has not been found";
 
 /* Error - Device is not linked to any location */
-"Device is not linked to any location" = "";
+"Device is not linked to any location" = "Device is not linked to any location";
 
 /* Error - Device is offline or disconnected */
-"Device is offline or disconnected" = "";
+"Device is offline or disconnected" = "Device is offline or disconnected";
 
 /* Error - 39 */
-"Device not found on external cloud" = "";
+"Device not found on external cloud" = "Device not found on external cloud";
 
 /* Label - Room (Space Name) */
-"Dining Room" = "";
+"Dining Room" = "Dining Room";
 
 /* Label - Disabled */
-"Disabled" = "";
+"Disabled" = "Disabled";
 
 /* Detail Label - Dog */
-"Dog" = "";
+"Dog" = "Dog";
 
 /* Detail Label - Door Forced Open */
-"Door Forced Open" = "";
+"Door Forced Open" = "Door Forced Open";
 
 /* Label - Door Status */
-"Door Status" = "";
+"Door Status" = "Door Status";
 
 /* Detail Label - Doorbel */
-"Doorbel" = "";
+"Doorbel" = "Doorbel";
 
 /* Detail Label - Doorbell */
-"Doorbell" = "";
+"Doorbell" = "Doorbell";
 
 /* Detail Label - Droid */
-"Droid" = "";
+"Droid" = "Droid";
 
 /* Detail Label - Dry
    Label - Dry */
-"Dry" = "";
+"Dry" = "Dry";
 
 /* Label - LintAlert Dryer Off */
-"Dryer Off" = "";
+"Dryer Off" = "Dryer Off";
 
 /* Label - LintAlert Dryer On */
-"Dryer On" = "";
+"Dryer On" = "Dryer On";
 
 /* Error - Duplicate entity or property */
-"Duplicate entity or property" = "";
+"Duplicate entity or property" = "Duplicate entity or property";
 
 /* Error - Duplicate state change for region. */
-"Duplicate state change for region." = "";
+"Duplicate state change for region." = "Duplicate state change for region.";
 
 /* Error - Duplicate user name */
-"Duplicate user name" = "";
+"Duplicate user name" = "Duplicate user name";
 
 /* Detail Label - Emergency */
-"Emergency" = "";
+"Emergency" = "Emergency";
 
 /* Detail Label - Emergency alarm */
-"Emergency alarm" = "";
+"Emergency alarm" = "Emergency alarm";
 
 /* Label - Emergency Heat */
-"Emergency Heat" = "";
+"Emergency Heat" = "Emergency Heat";
 
 /* Language Code: 'en', 'zh', etc... */
-"en" = "";
+"en" = "en";
 
 /* Error - Error in parsing of input data */
-"Error in parsing of input data" = "";
+"Error in parsing of input data" = "Error in parsing of input data";
 
 /* Error - Error uploading */
-"Error uploading" = "";
+"Error uploading" = "Error uploading";
 
 /* Error - External application error response */
-"External application error response" = "";
+"External application error response" = "External application error response";
 
 /* Error - Failed to register for location services. */
-"Failed to register for location services." = "";
+"Failed to register for location services." = "Failed to register for location services.";
 
 /* Label - Netatmo Health Coath stauts - Fair */
-"Fair" = "";
+"Fair" = "Fair";
 
 /* Label - Room (Space Name) */
-"Family Room" = "";
+"Family Room" = "Family Room";
 
 /* Label - Fan Mode */
-"Fan Mode" = "";
+"Fan Mode" = "Fan Mode";
 
 /* Label - Fan Only */
-"Fan Only" = "";
+"Fan Only" = "Fan Only";
 
 /* Label - Far */
-"Far" = "";
+"Far" = "Far";
 
 /* Label - Netatmo Health Coath stauts - Fine */
-"Fine" = "";
+"Fine" = "Fine";
 
 /* Detail Label - Fire */
-"Fire" = "";
+"Fire" = "Fire";
 
 /* Detail Label - Fire alarm */
-"Fire alarm" = "";
+"Fire alarm" = "Fire alarm";
 
 /* Label - Fixed */
-"Fixed" = "";
+"Fixed" = "Fixed";
 
 /* Label - Flash off */
-"Flash off" = "";
+"Flash off" = "Flash off";
 
 /* Label - Flash off */
-"Flash on" = "";
+"Flash on" = "Flash on";
 
 /* Label - Flip vertical */
-"Flip vertical" = "";
+"Flip vertical" = "Flip vertical";
 
 /* Label - Focused */
-"Focused" = "";
+"Focused" = "Focused";
 
 /* Label - Focusing */
-"Focusing" = "";
+"Focusing" = "Focusing";
 
 /* Label - Front camera */
-"Front camera" = "";
+"Front camera" = "Front camera";
 
 /* Detail Label - Front Escutcheon Removed */
-"Front Escutcheon Removed" = "";
+"Front Escutcheon Removed" = "Front Escutcheon Removed";
 
 /* Label - Galileo */
-"Galileo" = "";
+"Galileo" = "Galileo";
 
 /* Label - Galileo BT */
-"Galileo BT" = "";
+"Galileo BT" = "Galileo BT";
 
 /* Label - Garage (Space Name) */
-"Garage" = "";
+"Garage" = "Garage";
 
 /* Detail Label - GunCock */
-"GunCock" = "";
+"GunCock" = "GunCock";
 
 /* Detail Label - GunShot */
-"GunShot" = "";
+"GunShot" = "GunShot";
 
 /* Label - Hallway (Space Name) */
-"Hallway" = "";
+"Hallway" = "Hallway";
 
 /* Label - Hard Reset */
-"Hard Reset" = "";
+"Hard Reset" = "Hard Reset";
 
 /* Error - Having trouble connecting to Bluetooth! */
-"Having trouble connecting to Bluetooth!" = "";
+"Having trouble connecting to Bluetooth!" = "Having trouble connecting to Bluetooth!";
 
 /* Error - Having trouble connecting. If you're not viewing your camera from somewhere else, please try connecting again. */
-"Having trouble connecting. If you're not viewing your camera from somewhere else, please try connecting again." = "";
+"Having trouble connecting. If you're not viewing your camera from somewhere else, please try connecting again." = "Having trouble connecting. If you're not viewing your camera from somewhere else, please try connecting again.";
 
 /* Label - HD Status disabled */
-"HD Status disabled" = "";
+"HD Status disabled" = "HD Status disabled";
 
 /* Label - HD Status enabled */
-"HD Status enabled" = "";
+"HD Status enabled" = "HD Status enabled";
 
 /* Label - Netatmo Health Coath stauts - Healthy */
-"Healthy" = "";
+"Healthy" = "Healthy";
 
 /* Label - Heat */
-"Heat" = "";
+"Heat" = "Heat";
 
 /* Label - Heating Setpoint */
-"Heating Setpoint" = "";
+"Heating Setpoint" = "Heating Setpoint";
 
 /* Label - High */
-"High" = "";
+"High" = "High";
 
 /* Mode - Home */
-"Home" = "";
+"Home" = "Home";
 
 /* No comment provided by engineer. */
-"hour" = "";
+"hour" = "hour";
 
 /* No comment provided by engineer. */
-"hours" = "";
+"hours" = "hours";
 
 /* Label - iBeacon Proximity */
-"iBeacon Proximity" = "";
+"iBeacon Proximity" = "iBeacon Proximity";
 
 /* Label - iBeacon Status */
-"iBeacon Status" = "";
+"iBeacon Status" = "iBeacon Status";
 
 /* Label - Immediate */
-"Immediate" = "";
+"Immediate" = "Immediate";
 
 /* Detail Label - Inactive */
-"Inactive" = "";
+"Inactive" = "Inactive";
 
 /* Label - Internal Temperature */
-"Internal Temperature" = "";
+"Internal Temperature" = "Internal Temperature";
 
 /* Error - Unable to configure IP Camera - No IP or DDNS address */
-"IP Camera configuration requires either an IP or a DDNS address." = "";
+"IP Camera configuration requires either an IP or a DDNS address." = "IP Camera configuration requires either an IP or a DDNS address.";
 
 /* Label - just now */
-"just now" = "";
+"just now" = "just now";
 
 /* Label - Kitchen (Space Name) */
-"Kitchen" = "";
+"Kitchen" = "Kitchen";
 
 /* Label - KUBI */
-"KUBI" = "";
+"KUBI" = "KUBI";
 
 /* Label - last year */
-"last year" = "";
+"last year" = "last year";
 
 /* Label - Room (Space Name) */
-"Laundry Room" = "";
+"Laundry Room" = "Laundry Room";
 
 /* Label - LintAlert Current LED */
-"LintAlert Current LED" = "";
+"LintAlert Current LED" = "LintAlert Current LED";
 
 /* Label - LintAlert Status */
-"LintAlert Status" = "";
+"LintAlert Status" = "LintAlert Status";
 
 /* Label - Room (Space Name) */
-"Living Room" = "";
+"Living Room" = "Living Room";
 
 /* Detail Label - Lock */
-"Lock" = "";
+"Lock" = "Lock";
 
 /* Detail Label - Lock Reset to Factory Defaults */
-"Lock Reset to Factory Defaults" = "";
+"Lock Reset to Factory Defaults" = "Lock Reset to Factory Defaults";
 
 /* Label - Lock Status */
-"Lock Status" = "";
+"Lock Status" = "Lock Status";
 
 /* Label - Lock Status Alarm */
-"Lock Status Alarm" = "";
+"Lock Status Alarm" = "Lock Status Alarm";
 
 /* Detail Label - Locked */
-"Locked" = "";
+"Locked" = "Locked";
 
 /* Error - Lost the connection with the camera. Is your camera's WiFi strong enough? */
-"Lost the connection with the camera. Is your camera's WiFi strong enough?" = "";
+"Lost the connection with the camera. Is your camera's WiFi strong enough?" = "Lost the connection with the camera. Is your camera's WiFi strong enough?";
 
 /* Label - Low */
-"Low" = "";
+"Low" = "Low";
 
 /* Error - Maximum reached */
-"Maximum reached" = "";
+"Maximum reached" = "Maximum reached";
 
 /* Label - Medium */
-"Medium" = "";
+"Medium" = "Medium";
 
 /* No comment provided by engineer. */
-"minute" = "";
+"minute" = "minute";
 
 /* No comment provided by engineer. */
-"minutes" = "";
+"minutes" = "minutes";
 
 /* Detail Label - Motion */
-"Motion" = "";
+"Motion" = "Motion";
 
 /* Label - Motion Status */
-"Motion Status" = "";
+"Motion Status" = "Motion Status";
 
 /* Detail Label - Moved */
-"Moved" = "";
+"Moved" = "Moved";
 
 /* Detail Label - Multiple clicks */
-"Mulitple clicks" = "";
+"Mulitple clicks" = "Mulitple clicks";
 
 /* Label - Near */
-"Near" = "";
+"Near" = "Near";
 
 /* Label - Netatmo Health Coach Status */
-"Netatmo Health Coach Status" = "";
+"Netatmo Health Coach Status" = "Netatmo Health Coach Status";
 
 /* Error - No available device resources to complete operation */
-"No available device resources to complete operation" = "";
+"No available device resources to complete operation" = "No available device resources to complete operation";
 
 /* Label - No Flash */
-"No Flash" = "";
+"No Flash" = "No Flash";
 
 /* Detail Label - No Motion */
-"No Motion" = "";
+"No Motion" = "No Motion";
 
 /* Label - No robot connected */
-"No robot connected" = "";
+"No robot connected" = "No robot connected";
 
 /* Detail Label - No sound */
-"No sound" = "";
+"No sound" = "No sound";
 
 /* Label - None (Space Name) */
-"None" = "";
+"None" = "None";
 
 /* Error - Not activated. */
-"Not activated." = "";
+"Not activated." = "Not activated.";
 
 /* Label - Not charging */
-"Not charging" = "";
+"Not charging" = "Not charging";
 
 /* Label - Not detecting audio */
-"Not detecting audio" = "";
+"Not detecting audio" = "Not detecting audio";
 
 /* Label - Not detecting motion */
-"Not detecting motion" = "";
+"Not detecting motion" = "Not detecting motion";
 
 /* Label - Not recording */
-"Not recording" = "";
+"Not recording" = "Not recording";
 
 /* Error - Number of pending device types for this user is more than allowed */
-"Number of pending device types for this user is more than allowed" = "";
+"Number of pending device types for this user is more than allowed" = "Number of pending device types for this user is more than allowed";
 
 /* Label - Off */
-"Off" = "";
+"Off" = "Off";
 
 /* Label - Office (Space Name) */
-"Office" = "";
+"Office" = "Office";
 
 /* Detail Label - LintAlert OK
    Detail Label - OK */
-"OK" = "";
+"OK" = "OK";
 
 /* Label - On */
-"On" = "";
+"On" = "On";
 
 /* Error - Default */
-"Oops, something went wrong.  Please contact support. (%li)" = "";
+"Oops, something went wrong.  Please contact support. (%li)" = "Oops, something went wrong.  Please contact support. (%li)";
 
 /* Error - Oops, you typed in something wrong there */
-"Oops, you typed in something wrong there" = "";
+"Oops, you typed in something wrong there" = "Oops, you typed in something wrong there";
 
 /* Detail Label - Open */
-"Open" = "";
+"Open" = "Open";
 
 /* Error - Operation canceled */
-"Operation canceled" = "";
+"Operation canceled" = "Operation canceled";
 
 /* Label - Other (Space Name) */
-"Other" = "";
+"Other" = "Other";
 
 /* Label - Outlet Status */
-"Outlet Status" = "";
+"Outlet Status" = "Outlet Status";
 
 /* Detail Label - PanicE */
-"PanicE" = "";
+"PanicE" = "PanicE";
 
 /* Detail Label - PanicF */
-"PanicF" = "";
+"PanicF" = "PanicF";
 
 /* Detail Label - PanicP */
-"PanicP" = "";
+"PanicP" = "PanicP";
 
 /* Detail Label - Phaser */
-"Phaser" = "";
+"Phaser" = "Phaser";
 
 /* Detail Label - Play for {n} seconds */
-"Play for %i seconds" = "";
+"Play for %i seconds" = "Play for %i seconds";
 
 /* Detail Label - Play once */
-"Play once" = "";
+"Play once" = "Play once";
 
 /* Error - Please authorize {App Name} to access Bluetooth LE */
-"Please authorize %@ to access Bluetooth LE" = "";
+"Please authorize %@ to access Bluetooth LE" = "Please authorize %@ to access Bluetooth LE";
 
 /* Error - Please fill in all required fields */
-"Please fill in all required fields" = "";
+"Please fill in all required fields" = "Please fill in all required fields";
 
 /* Error - Please name this device */
-"Please name this device" = "";
+"Please name this device" = "Please name this device";
 
 /* Error - Please select at least one day this rule should repeat. */
-"Please select at least one day this rule should repeat." = "";
+"Please select at least one day this rule should repeat." = "Please select at least one day this rule should repeat.";
 
 /* Label - Netatmo Health Coath stauts - Poor */
-"Poor" = "";
+"Poor" = "Poor";
 
 /* Label - Power */
-"Power" = "";
+"Power" = "Power";
 
 /* Label - Power Status */
-"Power Status" = "";
+"Power Status" = "Power Status";
 
 /* Label - Precooling */
-"Precooling" = "";
+"Precooling" = "Precooling";
 
 /* Detail Label - Pressed */
-"Pressed" = "";
+"Pressed" = "Pressed";
 
 /* Label - Range */
-"Range" = "";
+"Range" = "Range";
 
 /* Label - Ready */
-"Ready" = "";
+"Ready" = "Ready";
 
 /* Label - Rear camera */
-"Rear camera" = "";
+"Rear camera" = "Rear camera";
 
 /* Label - Reboot motor control board */
-"Reboot motor control board" = "";
+"Reboot motor control board" = "Reboot motor control board";
 
 /* Label - Recording */
-"Recording" = "";
+"Recording" = "Recording";
 
 /* Label - Relative Humidity */
-"Relative Humidity" = "";
+"Relative Humidity" = "Relative Humidity";
 
 /* Detail Label - Released */
-"Released" = "";
+"Released" = "Released";
 
 /* Label - Remote control disabled */
-"Remote control disabled" = "";
+"Remote control disabled" = "Remote control disabled";
 
 /* Label - Recording */
-"Remote control enabled" = "";
+"Remote control enabled" = "Remote control enabled";
 
 /* Error - 41 */
-"Request has not been completed. It is not an error, just nothing to do." = "";
+"Request has not been completed. It is not an error, just nothing to do." = "Request has not been completed. It is not an error, just nothing to do.";
 
 /* Error - 40 */
-"Request not allowed in the current state of the resource" = "";
+"Request not allowed in the current state of the resource" = "Request not allowed in the current state of the resource";
 
 /* Error - Requested API method not found */
-"Requested API method not found" = "";
+"Requested API method not found" = "Requested API method not found";
 
 /* Label - Reset UART */
-"Reset UART" = "";
+"Reset UART" = "Reset UART";
 
 /* Label - Reset UART queue */
-"Reset UART queue" = "";
+"Reset UART queue" = "Reset UART queue";
 
 /* Detail Label - RF Module Power Cycled */
-"RF Module Power Cycled" = "";
+"RF Module Power Cycled" = "RF Module Power Cycled";
 
 /* Label - Romo */
-"Romo" = "";
+"Romo" = "Romo";
 
 /* No comment provided by engineer. */
-"second" = "";
+"second" = "second";
 
 /* No comment provided by engineer. */
-"seconds" = "";
+"seconds" = "seconds";
 
 /* Detail Label - Security Drill */
-"Security Drill" = "";
+"Security Drill" = "Security Drill";
 
 /* Error - Service is temporarily unavailable */
-"Service is temporarily unavailable" = "";
+"Service is temporarily unavailable" = "Service is temporarily unavailable";
 
 /* Detail Label - Silence */
-"Silence" = "";
+"Silence" = "Silence";
 
 /* Mode - Sleep */
-"Sleep" = "";
+"Sleep" = "Sleep";
 
 /* Label - Smart */
-"Smart" = "";
+"Smart" = "Smart";
 
 /* Label - Sound alarm when motion is detected */
-"Sound alarm when motion is detected" = "";
+"Sound alarm when motion is detected" = "Sound alarm when motion is detected";
 
 /* Detail Label - Squawk sarmed */
-"Squawk armed" = "";
+"Squawk armed" = "Squawk armed";
 
 /* Detail Label - Squawk disarmed */
-"Squawk disarmed" = "";
+"Squawk disarmed" = "Squawk disarmed";
 
 /* Label - Stairs (Space Name) */
-"Stairs" = "";
+"Stairs" = "Stairs";
 
 /* Firmware Update - Started */
-"Started" = "";
+"Started" = "Started";
 
 /* Label - State */
-"State" = "";
+"State" = "State";
 
 /* Mode - Stay */
-"Stay" = "";
+"Stay" = "Stay";
 
 /* Detail Label - Still */
-"Still" = "";
+"Still" = "Still";
 
 /* Detail Label - Stop */
-"Stop" = "";
+"Stop" = "Stop";
 
 /* Detail Label - Stop alarm */
-"Stop alarm" = "";
+"Stop alarm" = "Stop alarm";
 
 /* Label - Stop recording after motion goes away */
-"Stop recording after motion goes away" = "";
+"Stop recording after motion goes away" = "Stop recording after motion goes away";
 
 /* Label - Stopped */
-"Stopped" = "";
+"Stopped" = "Stopped";
 
 /* Detail Label - Strobe off */
-"Strobe off" = "";
+"Strobe off" = "Strobe off";
 
 /* Detail Label - Strobe on */
-"Strobe on" = "";
+"Strobe on" = "Strobe on";
 
 /* Label - Swing Mode */
-"Swing Mode" = "";
+"Swing Mode" = "Swing Mode";
 
 /* Detail Label - Switch */
-"Switch" = "";
+"Switch" = "Switch";
 
 /* Label - System Mode */
-"System Mode" = "";
+"System Mode" = "System Mode";
 
 /* Label - System Mode Status */
-"System Mode Status" = "";
+"System Mode Status" = "System Mode Status";
 
 /* Error - TED is not activated properly. */
-"TED is not activated properly." = "";
+"TED is not activated properly." = "TED is not activated properly.";
 
 /* Label - Temperature */
-"Temperature" = "";
+"Temperature" = "Temperature";
 
 /* Mode - Test */
-"Test" = "";
+"Test" = "Test";
 
 /* Error - Thank you, our team will look into this. */
-"Thank you, our team will look into this." = "";
+"Thank you, our team will look into this." = "Thank you, our team will look into this.";
 
 /* Error - That barcode is corrupted. */
-"That barcode is corrupted." = "";
+"That barcode is corrupted." = "That barcode is corrupted.";
 
 /* Error - That device belongs to someone else */
-"That device belongs to someone else" = "";
+"That device belongs to someone else" = "That device belongs to someone else";
 
 /* Error - That device is no longer in your account */
-"That device is no longer in your account" = "";
+"That device is no longer in your account" = "That device is no longer in your account";
 
 /* Error - That type of product isn't supported on this server. */
-"That type of product isn't supported on this server." = "";
+"That type of product isn't supported on this server." = "That type of product isn't supported on this server.";
 
 /* Error - That wasn't the barcode you were looking for. */
-"That wasn't the barcode you were looking for." = "";
+"That wasn't the barcode you were looking for." = "That wasn't the barcode you were looking for.";
 
 /* Error - The {App Name} app had trouble connecting. Is your internet connection ok? */
-"The %@ app had trouble connecting. Is your internet connection ok?" = "";
+"The %@ app had trouble connecting. Is your internet connection ok?" = "The %@ app had trouble connecting. Is your internet connection ok?";
 
 /* Error - 45 */
-"The communication channel is not authenticated" = "";
+"The communication channel is not authenticated" = "The communication channel is not authenticated";
 
 /* Error - The username or password you entered is incorrect */
-"The username or password you entered is incorrect" = "";
+"The username or password you entered is incorrect" = "The username or password you entered is incorrect";
 
 /* Error - There are no contacts on this device.  Tap 'Search' or 'Scan someone's bar code' to add a friend manually. */
-"There are no contacts on this device.  Tap 'Search' or 'Scan someone's bar code' to add a friend manually." = "";
+"There are no contacts on this device.  Tap 'Search' or 'Scan someone's bar code' to add a friend manually." = "There are no contacts on this device.  Tap 'Search' or 'Scan someone's bar code' to add a friend manually.";
 
 /* Error - There was an error creating the camera, please try again later. */
-"There was an error creating the camera, please try again later." = "";
+"There was an error creating the camera, please try again later." = "There was an error creating the camera, please try again later.";
 
 /* Error - This action is temporarily locked */
-"This action is temporarily locked" = "";
+"This action is temporarily locked" = "This action is temporarily locked";
 
 /* Error - Camera - Privacy - Not Determined */
-"This app needs access to your \"Camera\" in order for you to capture new videos and pictures.  You may allow this in the iOS > Settings > Privacy menu." = "";
+"This app needs access to your \"Camera\" in order for you to capture new videos and pictures.  You may allow this in the iOS > Settings > Privacy menu." = "This app needs access to your \"Camera\" in order for you to capture new videos and pictures.  You may allow this in the iOS > Settings > Privacy menu.";
 
 /* Error - Microphone - Privacy - Not Determined */
-"This app needs access to your \"Microphone\" in order for you to capture audio.  You may allow this in the iOS > Settings > Privacy menu." = "";
+"This app needs access to your \"Microphone\" in order for you to capture audio.  You may allow this in the iOS > Settings > Privacy menu." = "This app needs access to your \"Microphone\" in order for you to capture audio.  You may allow this in the iOS > Settings > Privacy menu.";
 
 /* Error - Photo Data - Privacy - Not Determined */
-"This app needs access to your \"Photo Data\" in order for you to upload images and videos you've already taken on this device.  You may allow this in the iOS > Settings > Privacy menu." = "";
+"This app needs access to your \"Photo Data\" in order for you to upload images and videos you've already taken on this device.  You may allow this in the iOS > Settings > Privacy menu." = "This app needs access to your \"Photo Data\" in order for you to upload images and videos you've already taken on this device.  You may allow this in the iOS > Settings > Privacy menu.";
 
 /* Error - Push Notifications - Privacy - Not Determined */
-"This app needs access to your \"Push Notifications\" in order for you to receive push notifications.  You may allow this in the iOS > Settings > Privacy menu." = "";
+"This app needs access to your \"Push Notifications\" in order for you to receive push notifications.  You may allow this in the iOS > Settings > Privacy menu." = "This app needs access to your \"Push Notifications\" in order for you to receive push notifications.  You may allow this in the iOS > Settings > Privacy menu.";
 
 /* Error - This app requires access to your contacts to function properly. Please visit to the \"Privacy\" section in the iPhone Settings app. */
-"This app requires access to your contacts to function properly. Please visit to the \"Privacy\" section in the iPhone Settings app." = "";
+"This app requires access to your contacts to function properly. Please visit to the \"Privacy\" section in the iPhone Settings app." = "This app requires access to your contacts to function properly. Please visit to the \"Privacy\" section in the iPhone Settings app.";
 
 /* Error - Camera - Privacy - Restricted */
-"This application is not able to access your \"Camera\" due to some restrictions.  Please check the iOS > Settings > Privacy menu." = "";
+"This application is not able to access your \"Camera\" due to some restrictions.  Please check the iOS > Settings > Privacy menu." = "This application is not able to access your \"Camera\" due to some restrictions.  Please check the iOS > Settings > Privacy menu.";
 
 /* Error - Microphone - Privacy - Restricted */
-"This application is not able to access your \"Microphone\" due to some restrictions.  Please check the iOS > Settings > Privacy menu." = "";
+"This application is not able to access your \"Microphone\" due to some restrictions.  Please check the iOS > Settings > Privacy menu." = "This application is not able to access your \"Microphone\" due to some restrictions.  Please check the iOS > Settings > Privacy menu.";
 
 /* Error - Photo Data - Privacy - Restricted */
-"This application is not able to access your \"Photo Data\" due to some restrictions.  Please check the iOS > Settings > Privacy menu." = "";
+"This application is not able to access your \"Photo Data\" due to some restrictions.  Please check the iOS > Settings > Privacy menu." = "This application is not able to access your \"Photo Data\" due to some restrictions.  Please check the iOS > Settings > Privacy menu.";
 
 /* Error - This camera detected some motion and is currently recording, try again in a few moments. */
-"This camera detected some motion and is currently recording, try again in a few moments." = "";
+"This camera detected some motion and is currently recording, try again in a few moments." = "This camera detected some motion and is currently recording, try again in a few moments.";
 
 /* Error - This camera is currently not available. Make sure it is up and running remotely. */
-"This camera is currently not available. Make sure it is up and running remotely." = "";
+"This camera is currently not available. Make sure it is up and running remotely." = "This camera is currently not available. Make sure it is up and running remotely.";
 
 /* Error - This device is too old to support Bluetooth LE */
-"This device is too old to support Bluetooth LE" = "";
+"This device is too old to support Bluetooth LE" = "This device is too old to support Bluetooth LE";
 
 /* Error - Timeout in device communication */
-"Timeout in device communication" = "";
+"Timeout in device communication" = "Timeout in device communication";
 
 /* Label - today */
-"today" = "";
+"today" = "today";
 
 /* Error - Too many registration attempts. Please try again in a few minutes. */
-"Too many registration attempts. Please try again in a few minutes." = "";
+"Too many registration attempts. Please try again in a few minutes." = "Too many registration attempts. Please try again in a few minutes.";
 
 /* Error - 44 */
-"Too often API calls" = "";
+"Too often API calls" = "Too often API calls";
 
 /* Detail Label - Trumpet */
-"Trumpet" = "";
+"Trumpet" = "Trumpet";
 
 /* No comment provided by engineer. */
-"Try again in %@" = "";
+"Try again in %@" = "Try again in %@";
 
 /* No comment provided by engineer. */
-"Try again later." = "";
+"Try again later." = "Try again later.";
 
 /* Label - Twitter auto-sharing disabled */
-"Twitter auto-sharing disabled" = "";
+"Twitter auto-sharing disabled" = "Twitter auto-sharing disabled";
 
 /* Label - Twitter auto-sharing enabled */
-"Twitter auto-sharing enabled" = "";
+"Twitter auto-sharing enabled" = "Twitter auto-sharing enabled";
 
 /* Label - Twitter disabled */
-"Twitter disabled" = "";
+"Twitter disabled" = "Twitter disabled";
 
 /* Label - Twitter enabled */
-"Twitter enabled" = "";
+"Twitter enabled" = "Twitter enabled";
 
 /* Label - Twitter reminder disabled */
-"Twitter reminder disabled" = "";
+"Twitter reminder disabled" = "Twitter reminder disabled";
 
 /* Label - Twitter reminder enabled */
-"Twitter reminder enabled" = "";
+"Twitter reminder enabled" = "Twitter reminder enabled";
 
 /* Error - Unable to access your address book. */
-"Unable to access your address book." = "";
+"Unable to access your address book." = "Unable to access your address book.";
 
 /* Error - Unable to access your address book. Please check your privacy settings. */
-"Unable to access your address book. Please check your privacy settings." = "";
+"Unable to access your address book. Please check your privacy settings." = "Unable to access your address book. Please check your privacy settings.";
 
 /* Error - Unable to change camera name */
-"Unable to change camera name" = "";
+"Unable to change camera name" = "Unable to change camera name";
 
 /* Error - Unable to change DDNS */
-"Unable to change DDNS" = "";
+"Unable to change DDNS" = "Unable to change DDNS";
 
 /* Error - Unable to configure default admin user */
-"Unable to configure default admin user" = "";
+"Unable to configure default admin user" = "Unable to configure default admin user";
 
 /* Error - Unable to connect Galileo 30-pin */
-"Unable to connect Galileo 30-pin" = "";
+"Unable to connect Galileo 30-pin" = "Unable to connect Galileo 30-pin";
 
 /* Error - Unable to download firmware! */
-"Unable to download firmware!" = "";
+"Unable to download firmware!" = "Unable to download firmware!";
 
 /* Error - Unable to enable IP Camera UPnP */
-"Unable to enable IP Camera UPnP" = "";
+"Unable to enable IP Camera UPnP" = "Unable to enable IP Camera UPnP";
 
 /* Error - Unable to get camera name */
-"Unable to get camera name" = "";
+"Unable to get camera name" = "Unable to get camera name";
 
 /* Error - Unable to get DDNS */
-"Unable to get DDNS" = "";
+"Unable to get DDNS" = "Unable to get DDNS";
 
 /* Error - Unable to get register IP Camera */
-"Unable to register an IP Camera with this device type.  Please ensure that your camera is online and that you chose the correct device to add." = "";
+"Unable to register an IP Camera with this device type.  Please ensure that your camera is online and that you chose the correct device to add." = "Unable to register an IP Camera with this device type.  Please ensure that your camera is online and that you chose the correct device to add.";
 
 /* Error - Unable to start up your camera! Please contact support. */
-"Unable to start up your camera! Please contact support." = "";
+"Unable to start up your camera! Please contact support." = "Unable to start up your camera! Please contact support.";
 
 /* Error - Unable to upload file! */
-"Unable to upload file!" = "";
+"Unable to upload file!" = "Unable to upload file!";
 
 /* Label - Undefined (Space Name) */
-"Undefined" = "";
+"Undefined" = "Undefined";
 
 /* Label - Netatmo Health Coath stauts - Unhealthy */
-"Unhealthy" = "";
+"Unhealthy" = "Unhealthy";
 
 /* Label - Unknown */
-"Unknown" = "";
+"Unknown" = "Unknown";
 
 /* Error - Unknown OAuth client */
-"Unknown OAuth client" = "";
+"Unknown OAuth client" = "Unknown OAuth client";
 
 /* Label - Unknown robot */
-"Unknown robot" = "";
+"Unknown robot" = "Unknown robot";
 
 /* Detail Label - Unlocked */
-"Unlocked" = "";
+"Unlocked" = "Unlocked";
 
 /* Mode - Vacation */
-"Vacation" = "";
+"Vacation" = "Vacation";
 
 /* Label - Vibration Status */
-"Vibration Status" = "";
+"Vibration Status" = "Vibration Status";
 
 /* Label - Video calling not supported */
-"Video calling not supported" = "";
+"Video calling not supported" = "Video calling not supported";
 
 /* Label - Video calling supported */
-"Video calling supported" = "";
+"Video calling supported" = "Video calling supported";
 
 /* Label - Video streaming disabled */
-"Video streaming disabled" = "";
+"Video streaming disabled" = "Video streaming disabled";
 
 /* Label - Video streaming enabled */
-"Video streaming enabled" = "";
+"Video streaming enabled" = "Video streaming enabled";
 
 /* Error - Waiting for Bluetooth to power up... */
-"Waiting for Bluetooth to power up..." = "";
+"Waiting for Bluetooth to power up..." = "Waiting for Bluetooth to power up...";
 
 /* Label - Warm Reset */
-"Warm Reset" = "";
+"Warm Reset" = "Warm Reset";
 
 /* Detail Label - LintAlert Warning
    Detail Label - Warning */
-"Warning" = "";
+"Warning" = "Warning";
 
 /* Label - Warning status disabled */
-"Warning status disabled" = "";
+"Warning status disabled" = "Warning status disabled";
 
 /* Label - Warning status enabled */
-"Warning status enabled" = "";
+"Warning status enabled" = "Warning status enabled";
 
 /* Label - Water Leak */
-"Water Leak" = "";
+"Water Leak" = "Water Leak";
 
 /* Error - We believe there is a firewall blocking access to the {App Name} camera. */
-"We believe there is a firewall blocking access to the %@ camera." = "";
+"We believe there is a firewall blocking access to the %@ camera." = "We believe there is a firewall blocking access to the %@ camera.";
 
 /* Error - Unable to connect the LintAlert */
-"We couldn't contact the LintAlert Pro Plus. Press and release the Circle RESET button, then hold the Square CONFIG button for 3 seconds. Reconnect to the LintAlert's Wi-Fi network in your iOS Wi-Fi Settings, then try again." = "";
+"We couldn't contact the LintAlert Pro Plus. Press and release the Circle RESET button, then hold the Square CONFIG button for 3 seconds. Reconnect to the LintAlert's Wi-Fi network in your iOS Wi-Fi Settings, then try again." = "We couldn't contact the LintAlert Pro Plus. Press and release the Circle RESET button, then hold the Square CONFIG button for 3 seconds. Reconnect to the LintAlert's Wi-Fi network in your iOS Wi-Fi Settings, then try again.";
 
 /* Error - We're having trouble connecting to the camera. Are you and your camera on a good connection? Please try it again. */
-"We're having trouble connecting to the camera. Are you and your camera on a good connection? Please try it again." = "";
+"We're having trouble connecting to the camera. Are you and your camera on a good connection? Please try it again." = "We're having trouble connecting to the camera. Are you and your camera on a good connection? Please try it again.";
 
 /* Error - Well that's strange, we had a problem saving that rule. Sorry about this!\n\nIf you have time, please contact support and describe the rule you were trying to create so we can fix it. */
-"Well that's strange, we had a problem saving that rule. Sorry about this!\n\nIf you have time, please contact support and describe the rule you were trying to create so we can fix it." = "";
+"Well that's strange, we had a problem saving that rule. Sorry about this!\n\nIf you have time, please contact support and describe the rule you were trying to create so we can fix it." = "Well that's strange, we had a problem saving that rule. Sorry about this!\n\nIf you have time, please contact support and describe the rule you were trying to create so we can fix it.";
 
 /* Detail Label - Wet */
-"Wet" = "";
+"Wet" = "Wet";
 
 /* Label - What is the start time, and on which days? */
-"What is the start time, and on which days?" = "";
+"What is the start time, and on which days?" = "What is the start time, and on which days?";
 
 /* Label - What time should it end each day? */
-"What time should it end each day?" = "";
+"What time should it end each day?" = "What time should it end each day?";
 
 /* Detail Label - Whistle */
-"Whistle" = "";
+"Whistle" = "Whistle";
 
 /* Error - Wrong activation key */
-"Wrong activation key" = "";
+"Wrong activation key" = "Wrong activation key";
 
 /* Detail Label - Wrong Code Entry Limit */
-"Wrong Code Entry Limit" = "";
+"Wrong Code Entry Limit" = "Wrong Code Entry Limit";
 
 /* Error - Wrong consumer ID */
-"Wrong consumer ID" = "";
+"Wrong consumer ID" = "Wrong consumer ID";
 
 /* Error - Wrong device registration code */
-"Wrong device registration code" = "";
+"Wrong device registration code" = "Wrong device registration code";
 
 /* Error - Wrong index value */
-"Wrong index value" = "";
+"Wrong index value" = "Wrong index value";
 
 /* Error - Wrong location ID or location is not related to the user */
-"Wrong location ID or location is not related to the user" = "";
+"Wrong location ID or location is not related to the user" = "Wrong location ID or location is not related to the user";
 
 /* Error - Wrong operation token */
-"Wrong operation token" = "";
+"Wrong operation token" = "Wrong operation token";
 
 /* Error - Wrong phone number */
-"Wrong phone number" = "";
+"Wrong phone number" = "Wrong phone number";
 
 /* Error - Wrong rule schedule format */
-"Wrong rule schedule format" = "";
+"Wrong rule schedule format" = "Wrong rule schedule format";
 
 /* Label - yesterday */
-"yesterday" = "";
+"yesterday" = "yesterday";
 
 /* Error - You are already viewing this camera from somewhere else. */
-"You are already viewing this camera from somewhere else." = "";
+"You are already viewing this camera from somewhere else." = "You are already viewing this camera from somewhere else.";
 
 /* Error - Push Notifications - Privacy - Provisional */
-"You are currently testing out \"Push Notifications\", with some restrictions.  Please check the iOS > Settings > Privacy menu." = "";
+"You are currently testing out \"Push Notifications\", with some restrictions.  Please check the iOS > Settings > Privacy menu." = "You are currently testing out \"Push Notifications\", with some restrictions.  Please check the iOS > Settings > Privacy menu.";
 
 /* Error - You are no longer signed in */
-"You are no longer signed in" = "";
+"You are no longer signed in" = "You are no longer signed in";
 
 /* Error - You can still add friends manually using \"Search email or phone\" */
-"You can still add friends manually using \"Search email or phone\"" = "";
+"You can still add friends manually using \"Search email or phone\"" = "You can still add friends manually using \"Search email or phone\"";
 
 /* Error - Photo Data - Privacy - Denied */
-"You've chosen to not allow this application access to your \"Camera\".  You will be asked for permission again the next time you access this feature." = "";
+"You've chosen to not allow this application access to your \"Camera\".  You will be asked for permission again the next time you access this feature." = "You've chosen to not allow this application access to your \"Camera\".  You will be asked for permission again the next time you access this feature.";
 
 /* Error - Photo Data - Privacy - Denied */
-"You've chosen to not allow this application access to your \"Microphone\".  You will be asked for permission again the next time you access this feature." = "";
+"You've chosen to not allow this application access to your \"Microphone\".  You will be asked for permission again the next time you access this feature." = "You've chosen to not allow this application access to your \"Microphone\".  You will be asked for permission again the next time you access this feature.";
 
 /* Error - Photo Data - Privacy - Denied */
-"You've chosen to not allow this application access to your \"Photo Data\".  You will be asked for permission again the next time you access this feature." = "";
+"You've chosen to not allow this application access to your \"Photo Data\".  You will be asked for permission again the next time you access this feature." = "You've chosen to not allow this application access to your \"Photo Data\".  You will be asked for permission again the next time you access this feature.";
 
 /* Error - Push Notifications - Privacy - Denied */
-"You've chosen to not allow this application access to your \"Push Notifications\".  You can change your app settings in your profile page." = "";
+"You've chosen to not allow this application access to your \"Push Notifications\".  You can change your app settings in your profile page." = "You've chosen to not allow this application access to your \"Push Notifications\".  You can change your app settings in your profile page.";
 
 /* Error - Your location is already set this mode. */
-"Your location is already set this mode." = "";
+"Your location is already set this mode." = "Your location is already set this mode.";
 
 /* Error - SMS Subscriber - Error updating phone number */
-"Your new phone number cannot receive SMS messages." = "";
+"Your new phone number cannot receive SMS messages." = "Your new phone number cannot receive SMS messages.";
 
 /* Error - Your password must be at least 8 characters long. */
-"Your password must be at least 8 characters long." = "";
+"Your password must be at least 8 characters long." = "Your password must be at least 8 characters long.";
 
 /* Error - Invalid phone number */
-"Your phone number cannot receive SMS messages.  Please use a phone number that can receive SMS messages." = "";
+"Your phone number cannot receive SMS messages.  Please use a phone number that can receive SMS messages." = "Your phone number cannot receive SMS messages.  Please use a phone number that can receive SMS messages.";

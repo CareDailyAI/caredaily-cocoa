@@ -207,7 +207,7 @@
 #pragma mark - Webapp Language
 
 + (NSString *)languageCode {
-    return NSLocalizedString(@"en", @"Language Code: 'en', 'zh', etc...");
+    return NSLocalizedStringFromTableInBundle(@"en", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Language Code: 'en', 'zh', etc...");
 }
 
 #pragma mark - Developer Server
