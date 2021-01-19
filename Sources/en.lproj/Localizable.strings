@@ -43,6 +43,9 @@
 /* No comment provided by engineer. */
 "%li %@" = "%li %@";
 
+/* Character - Ampersand */
+"&" = "&";
+
 /* No comment provided by engineer. */
 "," = ",";
 
@@ -292,6 +295,9 @@
 /* Error - Couldn't save this video to your album! */
 "Couldn't save this video to your album!" = "Couldn't save this video to your album!";
 
+/* No comment provided by engineer. */
+"days ago" = "days ago";
+
 /* Detail Label - Deadbolt Jammed */
 "Deadbolt Jammed" = "Deadbolt Jammed";
 
@@ -515,6 +521,9 @@
 /* No comment provided by engineer. */
 "hours" = "hours";
 
+/* No comment provided by engineer. */
+"hours ago" = "hours ago";
+
 /* Label - iBeacon Proximity */
 "iBeacon Proximity" = "iBeacon Proximity";
 
@@ -589,6 +598,12 @@
 
 /* No comment provided by engineer. */
 "minutes" = "minutes";
+
+/* No comment provided by engineer. */
+"minutes ago" = "minutes ago";
+
+/* No comment provided by engineer. */
+"months ago" = "months ago";
 
 /* Detail Label - Motion */
 "Motion" = "Motion";
@@ -773,6 +788,9 @@
 
 /* No comment provided by engineer. */
 "seconds" = "seconds";
+
+/* No comment provided by engineer. */
+"seconds ago" = "seconds ago";
 
 /* Detail Label - Security Drill */
 "Security Drill" = "Security Drill";
@@ -1063,6 +1081,9 @@
 /* Error - We're having trouble connecting to the camera. Are you and your camera on a good connection? Please try it again. */
 "We're having trouble connecting to the camera. Are you and your camera on a good connection? Please try it again." = "We're having trouble connecting to the camera. Are you and your camera on a good connection? Please try it again.";
 
+/* No comment provided by engineer. */
+"weeks ago" = "weeks ago";
+
 /* Error - Well that's strange, we had a problem saving that rule. Sorry about this!\n\nIf you have time, please contact support and describe the rule you were trying to create so we can fix it. */
 "Well that's strange, we had a problem saving that rule. Sorry about this!\n\nIf you have time, please contact support and describe the rule you were trying to create so we can fix it." = "Well that's strange, we had a problem saving that rule. Sorry about this!\n\nIf you have time, please contact support and describe the rule you were trying to create so we can fix it.";
 
@@ -1104,6 +1125,9 @@
 
 /* Error - Wrong rule schedule format */
 "Wrong rule schedule format" = "Wrong rule schedule format";
+
+/* No comment provided by engineer. */
+"years ago" = "years ago";
 
 /* Label - yesterday */
 "yesterday" = "yesterday";

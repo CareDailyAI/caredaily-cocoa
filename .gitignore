@@ -12,3 +12,8 @@ Carthage/Checkouts
 
 # Log files
 Logs
+.gitsecret/keys/random_seed
+!*.secret
+
+# Localization
+.bartycrouch.toml

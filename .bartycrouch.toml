@@ -1,5 +1,5 @@
 [update]
-tasks = ["code", "normalize"]
+tasks = ["code", "normalize", "translate"]
 
 [update.interfaces]
 paths = ["."]
@@ -33,3 +33,8 @@ sortByKeys = true
 paths = ["."]
 duplicateKeys = true
 emptyValues = true
+
+[update.translate]
+paths = "."
+secret = "9ed2c53bce874e1db04c6c2d98b233f3"
+sourceLocale = "en"
