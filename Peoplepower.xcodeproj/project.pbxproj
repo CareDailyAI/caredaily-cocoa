@@ -1570,6 +1570,7 @@
 		63A69D6C2151B32B0077553F /* PPDevicePictureFrameAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPDevicePictureFrameAlert.h; sourceTree = "<group>"; };
 		63A712B425ACF8E60009E43D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		63A7143E25AD00510009E43D /* PPTCLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPTCLocalization.swift; sourceTree = "<group>"; };
+		63A721B925B770AB0009E43D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		63A95234205AD424000E466A /* PPAppResources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPAppResources.h; sourceTree = "<group>"; };
 		63A9524E205AFC15000E466A /* Peoplepower-Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Peoplepower-Info-iOS.plist"; sourceTree = "<group>"; };
 		63A9525B205C2E9A000E466A /* PPNetworkUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkUtilities.m; sourceTree = "<group>"; };
@@ -3641,6 +3642,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 63D392B4204F21EE00041C1A;
 			productRefGroup = 63D392BE204F21EE00041C1A /* Products */;
@@ -4422,6 +4424,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				63A712B425ACF8E60009E43D /* en */,
+				63A721B925B770AB0009E43D /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

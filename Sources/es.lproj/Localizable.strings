@@ -1,0 +1,1169 @@
+/* No comment provided by engineer. */
+" " = " ";
+
+/* Label - $time1 and $time2 */
+"$time1 and $time2" = "$time1 y $time2";
+
+/* Label - {AppName} 360 */
+"%@ 360" = "%@ 360";
+
+/* Label - {number} hours */
+"%d hr" = "%d hr";
+
+/* Label - {number} minutes */
+"%d min" = "%d min";
+
+/* Label - {number} minutes {number} seconds */
+"%d min %d sec" = "%d min %d sec";
+
+/* Label - {number} seconds */
+"%d sec" = "%d seg";
+
+/* Label - {number} days ago */
+"%ld days ago" = "%ld días atrás";
+
+/* Label - {number} hours ago */
+"%ld hours ago" = "%ld horas atrás";
+
+/* Label - {number} minutes ago */
+"%ld minutes ago" = "%ld hace unos minutos";
+
+/* Label - {number} months ago */
+"%ld months ago" = "%ld meses atrás";
+
+/* Label - {number} seconds ago */
+"%ld seconds ago" = "%ld segundos atrás";
+
+/* Label - {number} weeks ago */
+"%ld weeks ago" = "%ld semanas atrás";
+
+/* Label - {number} years ago */
+"%ld years ago" = "%ld años atrás";
+
+/* No comment provided by engineer. */
+"%li %@" = "%li %@";
+
+/* Character - Ampersand */
+"&" = "&";
+
+/* No comment provided by engineer. */
+"," = ",";
+
+/* Error - {name} seems to already be viewing this camera. Press the reconnect button to take over. */
+"\"%@\" seems to already be viewing this camera. Press the reconnect button to take over." = "\"%@\" parece que ya está viendo esta cámara. Pulse el botón de reconexión para tomar el control.";
+
+/* Error - \"Geofencing\" is not available for this mode. */
+"\"Geofencing\" is not available for this mode." = "\"Geofencing\" no está disponible para este modo.";
+
+/* Label - a minute ago */
+"a minute ago" = "hace un minuto";
+
+/* Label - a month ago */
+"a month ago" = "hace un mes";
+
+/* Label - a week ago */
+"a week ago" = "hace una semana";
+
+/* Error - Access denied */
+"Access denied" = "Acceso denegado";
+
+/* Error - Camera - Privacy - Denied */
+"Access to your \"Camera\" was previously denied.  Please check the iOS > Settings > Privacy menu." = "Se ha denegado previamente el acceso a la \"Cámara\".  Consulta el menú Configuración de > de iOS > privacidad.";
+
+/* Error - Microphone - Privacy - Denied */
+"Access to your \"Microphone\" was previously denied.  Please check the iOS > Settings > Privacy menu." = "Se ha denegado previamente el acceso a su \"Micrófono\".  Consulta el menú Configuración de > de iOS > privacidad.";
+
+/* Error - Photo Data - Privacy - Denied */
+"Access to your \"Photo Data\" was previously denied.  Please check the iOS > Settings > Privacy menu." = "Se ha denegado previamente el acceso a los datos de la foto.  Consulta el menú Configuración de > de iOS > privacidad.";
+
+/* Error - Push Notifications - Privacy - Denied */
+"Access to your \"Push Notifications\" was previously denied.  Please check the iOS > Settings > Privacy menu." = "Se ha denegado previamente el acceso a las \"Notificaciones push\".  Consulta el menú Configuración de > de iOS > privacidad.";
+
+/* Error - Account is locked until {lockTime} */
+"Account is locked until %@" = "La cuenta está bloqueada hasta que %@";
+
+/* Error - Account locked */
+"Account locked" = "Cuenta bloqueada";
+
+/* Detail Label - Active */
+"Active" = "Activo";
+
+/* Detail Label - Alarm */
+"Alarm" = "Alarma";
+
+/* Label - Alarm Duration */
+"Alarm Duration" = "Duración de la alarma";
+
+/* Label - Alarm is active */
+"Alarm is active" = "La alarma está activa";
+
+/* Label - Alarm is off */
+"Alarm is off" = "La alarma está apagada";
+
+/* Label - Alarm Squawk */
+"Alarm Squawk" = "Alarma Squawk";
+
+/* Label - Alarm Status */
+"Alarm Status" = "Estado de alarma";
+
+/* Label - Alarm Strobe */
+"Alarm Strobe" = "Alarm Strobe";
+
+/* Label - Alarm Warn */
+"Alarm Warn" = "Advertencia de alarma";
+
+/* Label - Alarm will beep %@ times */
+"Alarm will beep %i times" = "La alarma será un pitido %i veces";
+
+/* Error - An email has been sent to you with instructions on how to add this device to your {App Name} account. */
+"An email has been sent to you with instructions on how to add this device to your %@ account." = "Se le ha enviado un correo electrónico con instrucciones sobre cómo agregar este dispositivo a su cuenta %@.";
+
+/* Error - An error occurred when attempting to request access to your Address Book. */
+"An error occurred when attempting to request access to your Address Book." = "Se ha producido un error al intentar solicitar acceso a la libreta de direcciones.";
+
+/* Label - an hour ago */
+"an hour ago" = "hace una hora";
+
+/* No comment provided by engineer. */
+"and" = "Y";
+
+/* Firmware Update - Approved */
+"Approved" = "Aprobado";
+
+/* Label - As fast as possible */
+"As fast as possible" = "Lo más rápido posible";
+
+/* Label - at */
+"at" = "En";
+
+/* Label - Audio streaming disabled */
+"Audio streaming disabled" = "Transmisión de audio desactivada";
+
+/* Label - Audio streaming enabled */
+"Audio streaming enabled" = "Transmisión de audio habilitada";
+
+/* Label - Auto */
+"Auto" = "Automático";
+
+/* Label - Auxiliary Heat */
+"Auxiliary Heat" = "Calor auxiliar";
+
+/* Firmware Update - Available */
+"Available" = "Disponible";
+
+/* Mode - Away */
+"Away" = "Lejos";
+
+/* Label - Basement (Space Name) */
+"Basement" = "Sótano";
+
+/* Label - Bathroom (Space Name) */
+"Bathroom" = "Baño";
+
+/* Label - Bedroom (Space Name) */
+"Bedroom" = "Dormitorio";
+
+/* Detail Label - Beep */
+"Beep" = "Señal sonora";
+
+/* Label - Beep 2 times when motion is detected */
+"Beep %@ times when motion is detected" = "El pitido %@ veces cuando se detecta movimiento";
+
+/* Label - Beep 1 time when motion is detected */
+"Beep 1 time when motion is detected" = "Pitido 1 vez cuando se detecta movimiento";
+
+/* Detail Label - BeepBeep */
+"BeepBeep" = "BeepBeep";
+
+/* Detail Label - BeepBeepWelcome */
+"BeepBeepWelcome" = "BeepBeepWelcome";
+
+/* Detail Label - BeepWelcome */
+"BeepWelcome" = "BeepWelcome";
+
+/* Label - between $time1 and $time2 */
+"between $time1 and $time2" = "entre $time 1 y $time 2";
+
+/* Detail Label - Bird */
+"Bird" = "Pájaro";
+
+/* Label - Blackout disabled */
+"Blackout disabled" = "Apagón desactivado";
+
+/* Label - Blackout enabled */
+"Blackout enabled" = "Apagón activado";
+
+/* Detail Label - Bling */
+"Bling" = "Bling";
+
+/* Detail Label - LintAlert Blocked */
+"Blocked" = "Bloqueado";
+
+/* Error - Bluetooth is currently powered off. Please go into your Settings and turn on Bluetooth. */
+"Bluetooth is currently powered off. Please go into your Settings and turn on Bluetooth." = "Bluetooth está apagado actualmente. Por favor, vaya a la configuración y active Bluetooth.";
+
+/* Label - Brightness */
+"Brightness" = "Brillo";
+
+/* Detail Label - Burglar */
+"Burglar" = "Ladrón";
+
+/* Detail Label - Burglar alarm */
+"Burglar alarm" = "Alarma antirrobo";
+
+/* Label - Button Status */
+"Button Status" = "Estado del botón";
+
+/* Label - Camera speaker volume is at {number}{percent %} */
+"Camera speaker volume is at %.0f%%." = "El volumen del altavoz de la cámara es %.0f%%.";
+
+/* Camera - Label describing this camera's volume is maxed */
+"Camera speaker volume is maxed." = "El volumen del altavoz de la cámara es máximo.";
+
+/* Camera - Label describing this camera is muted */
+"Camera speaker volume is muted." = "El volumen del altavoz de la cámara está silenciado.";
+
+/* Error - Can't play this video! Did you delete it remotely? Do you have a good connection? */
+"Can't play this video! Did you delete it remotely? Do you have a good connection?" = "¡No puedo reproducir este video! ¿Lo eliminó de forma remota? ¿Tienes una buena conexión?";
+
+/* Error - Can't save the video! Please grant {App Name} access to your Photos and Videos folder in iOS Settings > Privacy > Photos, then try your download again. */
+"Can't save the video! Please grant %@ access to your Photos and Videos folder in iOS Settings > Privacy > Photos, then try your download again." = "¡No puedo guardar el video! Por favor, conceda acceso %@ a su carpeta Fotos y Vídeos en Configuración de iOS > Privacidad > Fotos y, a continuación, vuelva a intentar la descarga.";
+
+/* Error - 37 */
+"Cannot authorize user on external resource or cloud" = "No se puede autorizar al usuario en un recurso externo o en la nube";
+
+/* Error - 42 */
+"Cannot connect to an external resource" = "No se puede conectar a un recurso externo";
+
+/* Error - Cannot modify external resources */
+"Cannot modify external resources" = "No se pueden modificar los recursos externos";
+
+/* Label - Charging */
+"Charging" = "Carga";
+
+/* Detail Label - Chinese1 */
+"Chinese1" = "Chino1";
+
+/* Detail Label - Chinese2 */
+"Chinese2" = "Chino2";
+
+/* Detail Label - Chinese3 */
+"Chinese3" = "Chino3";
+
+/* Detail Label - Chinese4 */
+"Chinese4" = "Chino4";
+
+/* Detail Label - Chinese5 */
+"Chinese5" = "Chino5";
+
+/* Detail Label - Chinese6 */
+"Chinese6" = "Chino6";
+
+/* Detail Label - Chinese7 */
+"Chinese7" = "Chino7";
+
+/* Detail Label - Chinese8 */
+"Chinese8" = "Chino8";
+
+/* Detail Label - Click once */
+"Click once" = "Haga clic una vez";
+
+/* Detail Label - Closed */
+"Closed" = "Cerrado";
+
+/* Label - Configure vantage point {vantage point index} */
+"Configure vantage point %@" = "Configurar el punto de vista %@";
+
+/* Label - Continue recording even after motion goes away */
+"Continue recording even after motion goes away" = "Continuar grabando incluso después de que el movimiento desaparece";
+
+/* Label - Cool */
+"Cool" = "Fresco";
+
+/* Label - Cooling Setpoint */
+"Cooling Setpoint" = "Punto de ajuste de refrigeración";
+
+/* Error - Corrupted video file! */
+"Corrupted video file!" = "¡Archivo de vídeo dañado!";
+
+/* Error - Unable to verify IP Camera */
+"Could not verify IP Camera" = "No se pudo verificar la cámara IP";
+
+/* Error - Couldn't contact Blue Line. */
+"Couldn't contact Blue Line." = "No podía contactar a Blue Line.";
+
+/* Error - Couldn't save this video to your album! */
+"Couldn't save this video to your album!" = "¡No se pudo guardar este video en tu álbum!";
+
+/* No comment provided by engineer. */
+"days ago" = "días atrás";
+
+/* Detail Label - Deadbolt Jammed */
+"Deadbolt Jammed" = "Deadbolt Jammed";
+
+/* Firmware Update - Declined */
+"Declined" = "Disminuido";
+
+/* Label - Detect huge movements */
+"Detect huge movements" = "Detectar movimientos enormes";
+
+/* Label - Detect huge sounds */
+"Detect huge sounds" = "Detectar sonidos enormes";
+
+/* Label - Detect large movements */
+"Detect large movements" = "Detectar grandes movimientos";
+
+/* Label - Detect large sounds */
+"Detect large sounds" = "Detectar sonidos grandes";
+
+/* Label - Detect normal movements */
+"Detect normal movements" = "Detectar movimientos normales";
+
+/* Label - Detect normal sounds */
+"Detect normal sounds" = "Detectar sonidos normales";
+
+/* Label - Detect small movements */
+"Detect small movements" = "Detectar pequeños movimientos";
+
+/* Label - Detect small sounds */
+"Detect small sounds" = "Detectar sonidos pequeños";
+
+/* Label - Detect tiny sounds */
+"Detect tiny aounds" = "Detectar pequeños aunds";
+
+/* Label - Detect tiny movements */
+"Detect tiny movements" = "Detectar movimientos diminutos";
+
+/* Label - Detecting Audio */
+"Detecting Audio" = "Detección de audio";
+
+/* Label - Detecting Motion */
+"Detecting Motion" = "Detectar movimiento";
+
+/* Error - Device command proxy (gateway) has not been found */
+"Device command proxy (gateway) has not been found" = "No se ha encontrado el proxy de comando de dispositivo (puerta de enlace)";
+
+/* Error - Device is not linked to any location */
+"Device is not linked to any location" = "El dispositivo no está vinculado a ninguna ubicación";
+
+/* Error - Device is offline or disconnected */
+"Device is offline or disconnected" = "El dispositivo está desconectado o desconectado";
+
+/* Error - 39 */
+"Device not found on external cloud" = "Dispositivo no encontrado en la nube externa";
+
+/* Label - Room (Space Name) */
+"Dining Room" = "Comedor";
+
+/* Label - Disabled */
+"Disabled" = "Deshabilitado";
+
+/* Detail Label - Dog */
+"Dog" = "Perro";
+
+/* Detail Label - Door Forced Open */
+"Door Forced Open" = "Puerta forzada abierta";
+
+/* Label - Door Status */
+"Door Status" = "Estado de la puerta";
+
+/* Detail Label - Doorbel */
+"Doorbel" = "Doorbel";
+
+/* Detail Label - Doorbell */
+"Doorbell" = "Timbre";
+
+/* Detail Label - Droid */
+"Droid" = "Droide";
+
+/* Detail Label - Dry
+   Label - Dry */
+"Dry" = "Seco";
+
+/* Label - LintAlert Dryer Off */
+"Dryer Off" = "Secador apagado";
+
+/* Label - LintAlert Dryer On */
+"Dryer On" = "Secadora activada";
+
+/* Error - Duplicate entity or property */
+"Duplicate entity or property" = "Duplicar entidad o propiedad";
+
+/* Error - Duplicate state change for region. */
+"Duplicate state change for region." = "Duplicar el cambio de estado para la región.";
+
+/* Error - Duplicate user name */
+"Duplicate user name" = "Nombre de usuario duplicado";
+
+/* Detail Label - Emergency */
+"Emergency" = "Emergencia";
+
+/* Detail Label - Emergency alarm */
+"Emergency alarm" = "Alarma de emergencia";
+
+/* Label - Emergency Heat */
+"Emergency Heat" = "Calor de emergencia";
+
+/* Language Code: 'en', 'zh', etc... */
+"en" = "es";
+
+/* Error - Error in parsing of input data */
+"Error in parsing of input data" = "Error al analizar los datos de entrada";
+
+/* Error - Error uploading */
+"Error uploading" = "Error al cargar";
+
+/* Error - External application error response */
+"External application error response" = "Respuesta de error de aplicación externa";
+
+/* Error - Failed to register for location services. */
+"Failed to register for location services." = "No se pudo registrar para los servicios de ubicación.";
+
+/* Label - Netatmo Health Coath stauts - Fair */
+"Fair" = "Justo";
+
+/* Label - Room (Space Name) */
+"Family Room" = "Habitación Familiar";
+
+/* Label - Fan Mode */
+"Fan Mode" = "Modo Ventilador";
+
+/* Label - Fan Only */
+"Fan Only" = "Solo ventilador";
+
+/* Label - Far */
+"Far" = "Lejos";
+
+/* Label - Netatmo Health Coath stauts - Fine */
+"Fine" = "Bien";
+
+/* Detail Label - Fire */
+"Fire" = "Fuego";
+
+/* Detail Label - Fire alarm */
+"Fire alarm" = "Alarma de incendio";
+
+/* Label - Fixed */
+"Fixed" = "Fijo";
+
+/* Label - Flash off */
+"Flash off" = "Destello apagado";
+
+/* Label - Flash off */
+"Flash on" = "Flash encendido";
+
+/* Label - Flip vertical */
+"Flip vertical" = "Voltear vertical";
+
+/* Label - Focused */
+"Focused" = "Enfocado";
+
+/* Label - Focusing */
+"Focusing" = "Enfoque";
+
+/* Label - Front camera */
+"Front camera" = "Cámara frontal";
+
+/* Detail Label - Front Escutcheon Removed */
+"Front Escutcheon Removed" = "Front Escutcheon Eliminado";
+
+/* Label - Galileo */
+"Galileo" = "Galileo";
+
+/* Label - Galileo BT */
+"Galileo BT" = "Galileo BT";
+
+/* Label - Garage (Space Name) */
+"Garage" = "Garaje";
+
+/* Detail Label - GunCock */
+"GunCock" = "GunCock";
+
+/* Detail Label - GunShot */
+"GunShot" = "Disparo";
+
+/* Label - Hallway (Space Name) */
+"Hallway" = "Pasillo";
+
+/* Label - Hard Reset */
+"Hard Reset" = "Hard Reset";
+
+/* Error - Having trouble connecting to Bluetooth! */
+"Having trouble connecting to Bluetooth!" = "Tener problemas para conectarse a Bluetooth!";
+
+/* Error - Having trouble connecting. If you're not viewing your camera from somewhere else, please try connecting again. */
+"Having trouble connecting. If you're not viewing your camera from somewhere else, please try connecting again." = "Tener problemas para conectarse. Si no estás viendo tu cámara desde otro lugar, intenta conectarte de nuevo.";
+
+/* Label - HD Status disabled */
+"HD Status disabled" = "Estado HD desactivado";
+
+/* Label - HD Status enabled */
+"HD Status enabled" = "Estado HD habilitado";
+
+/* Label - Netatmo Health Coath stauts - Healthy */
+"Healthy" = "Sano";
+
+/* Label - Heat */
+"Heat" = "Calor";
+
+/* Label - Heating Setpoint */
+"Heating Setpoint" = "Setpoint de calefacción";
+
+/* Label - High */
+"High" = "Alto";
+
+/* Mode - Home */
+"Home" = "Casa";
+
+/* No comment provided by engineer. */
+"hour" = "Hora";
+
+/* No comment provided by engineer. */
+"hours" = "Horas";
+
+/* No comment provided by engineer. */
+"hours ago" = "hace horas";
+
+/* Label - iBeacon Proximity */
+"iBeacon Proximity" = "iBeacon Proximity";
+
+/* Label - iBeacon Status */
+"iBeacon Status" = "Estado iBeacon";
+
+/* Label - Immediate */
+"Immediate" = "Inmediata";
+
+/* Detail Label - Inactive */
+"Inactive" = "Inactivo";
+
+/* Label - Internal Temperature */
+"Internal Temperature" = "Temperatura interna";
+
+/* Error - Unable to configure IP Camera - No IP or DDNS address */
+"IP Camera configuration requires either an IP or a DDNS address." = "La configuración de la cámara IP requiere una dirección IP o una dirección DDNS.";
+
+/* Label - just now */
+"just now" = "justo ahora";
+
+/* Label - Kitchen (Space Name) */
+"Kitchen" = "Cocina";
+
+/* Label - KUBI */
+"KUBI" = "Kubi";
+
+/* Label - last year */
+"last year" = "el año pasado";
+
+/* Label - Room (Space Name) */
+"Laundry Room" = "Lavadero";
+
+/* Label - LintAlert Current LED */
+"LintAlert Current LED" = "LED de corriente LintAlert";
+
+/* Label - LintAlert Status */
+"LintAlert Status" = "Estado de LintAlert";
+
+/* Label - Room (Space Name) */
+"Living Room" = "Salón";
+
+/* Detail Label - Lock */
+"Lock" = "Cerradura";
+
+/* Detail Label - Lock Reset to Factory Defaults */
+"Lock Reset to Factory Defaults" = "Restablecer el bloqueo a los valores predeterminados de fábrica";
+
+/* Label - Lock Status */
+"Lock Status" = "Estado de bloqueo";
+
+/* Label - Lock Status Alarm */
+"Lock Status Alarm" = "Alarma de estado de bloqueo";
+
+/* Detail Label - Locked */
+"Locked" = "Bloqueado";
+
+/* Error - Lost the connection with the camera. Is your camera's WiFi strong enough? */
+"Lost the connection with the camera. Is your camera's WiFi strong enough?" = "Perdió la conexión con la cámara. ¿La conexión WiFi de tu cámara es lo suficientemente fuerte?";
+
+/* Label - Low */
+"Low" = "Bajo";
+
+/* Error - Maximum reached */
+"Maximum reached" = "Máximo alcanzado";
+
+/* Label - Medium */
+"Medium" = "Medio";
+
+/* No comment provided by engineer. */
+"minute" = "Minuto";
+
+/* No comment provided by engineer. */
+"minutes" = "Minutos";
+
+/* No comment provided by engineer. */
+"minutes ago" = "hace unos minutos";
+
+/* No comment provided by engineer. */
+"months ago" = "hace meses";
+
+/* Detail Label - Motion */
+"Motion" = "Movimiento";
+
+/* Label - Motion Status */
+"Motion Status" = "Estado de movimiento";
+
+/* Detail Label - Moved */
+"Moved" = "Movido";
+
+/* Detail Label - Multiple clicks */
+"Mulitple clicks" = "Clics mulitple";
+
+/* Label - Near */
+"Near" = "Cerca";
+
+/* Label - Netatmo Health Coach Status */
+"Netatmo Health Coach Status" = "Estado del entrenador de Netatmo Health";
+
+/* Error - No available device resources to complete operation */
+"No available device resources to complete operation" = "No hay recursos de dispositivo disponibles para completar el funcionamiento";
+
+/* Label - No Flash */
+"No Flash" = "Sin Flash";
+
+/* Detail Label - No Motion */
+"No Motion" = "Sin movimiento";
+
+/* Label - No robot connected */
+"No robot connected" = "No hay robot conectado";
+
+/* Detail Label - No sound */
+"No sound" = "Sin sonido";
+
+/* Label - None (Space Name) */
+"None" = "Ninguno";
+
+/* Error - Not activated. */
+"Not activated." = "No activado.";
+
+/* Label - Not charging */
+"Not charging" = "No cargar";
+
+/* Label - Not detecting audio */
+"Not detecting audio" = "No detectar audio";
+
+/* Label - Not detecting motion */
+"Not detecting motion" = "No detectar movimiento";
+
+/* Label - Not recording */
+"Not recording" = "No grabar";
+
+/* Error - Number of pending device types for this user is more than allowed */
+"Number of pending device types for this user is more than allowed" = "El número de tipos de dispositivos pendientes para este usuario es más que permitido";
+
+/* Label - Off */
+"Off" = "Desactivado";
+
+/* Label - Office (Space Name) */
+"Office" = "Oficina";
+
+/* Detail Label - LintAlert OK
+   Detail Label - OK */
+"OK" = "De acuerdo";
+
+/* Label - On */
+"On" = "En";
+
+/* Error - Default */
+"Oops, something went wrong.  Please contact support. (%li)" = "Vaya, algo salió mal.  Póngase en contacto con el soporte técnico. (%li)";
+
+/* Error - Oops, you typed in something wrong there */
+"Oops, you typed in something wrong there" = "Oops, escribiste algo mal allí";
+
+/* Detail Label - Open */
+"Open" = "Abierto";
+
+/* Error - Operation canceled */
+"Operation canceled" = "Operación cancelada";
+
+/* Label - Other (Space Name) */
+"Other" = "Otro";
+
+/* Label - Outlet Status */
+"Outlet Status" = "Estado de salida";
+
+/* Detail Label - PanicE */
+"PanicE" = "Panice";
+
+/* Detail Label - PanicF */
+"PanicF" = "Panicf";
+
+/* Detail Label - PanicP */
+"PanicP" = "Panicp";
+
+/* Detail Label - Phaser */
+"Phaser" = "Phaser";
+
+/* Detail Label - Play for {n} seconds */
+"Play for %i seconds" = "Reproducir durante %i segundos";
+
+/* Detail Label - Play once */
+"Play once" = "Juega una vez";
+
+/* Error - Please authorize {App Name} to access Bluetooth LE */
+"Please authorize %@ to access Bluetooth LE" = "Por favor, autorice %@ a acceder a Bluetooth LE";
+
+/* Error - Please fill in all required fields */
+"Please fill in all required fields" = "Por favor, rellene todos los campos requeridos";
+
+/* Error - Please name this device */
+"Please name this device" = "Por favor, nombre este dispositivo";
+
+/* Error - Please select at least one day this rule should repeat. */
+"Please select at least one day this rule should repeat." = "Seleccione al menos un día que esta regla debe repetirse.";
+
+/* Label - Netatmo Health Coath stauts - Poor */
+"Poor" = "Pobre";
+
+/* Label - Power */
+"Power" = "Poder";
+
+/* Label - Power Status */
+"Power Status" = "Estado de potencia";
+
+/* Label - Precooling */
+"Precooling" = "Prerefrigeración";
+
+/* Detail Label - Pressed */
+"Pressed" = "Presionado";
+
+/* Label - Range */
+"Range" = "Gama";
+
+/* Label - Ready */
+"Ready" = "Listo";
+
+/* Label - Rear camera */
+"Rear camera" = "Cámara trasera";
+
+/* Label - Reboot motor control board */
+"Reboot motor control board" = "Reinicie la placa de control del motor";
+
+/* Label - Recording */
+"Recording" = "Grabación";
+
+/* Label - Relative Humidity */
+"Relative Humidity" = "Humedad relativa";
+
+/* Detail Label - Released */
+"Released" = "Liberado";
+
+/* Label - Remote control disabled */
+"Remote control disabled" = "Control remoto desactivado";
+
+/* Label - Recording */
+"Remote control enabled" = "Control remoto habilitado";
+
+/* Error - 41 */
+"Request has not been completed. It is not an error, just nothing to do." = "La solicitud no se ha completado. No es un error, sólo nada que hacer.";
+
+/* Error - 40 */
+"Request not allowed in the current state of the resource" = "Solicitud no permitida en el estado actual del recurso";
+
+/* Error - Requested API method not found */
+"Requested API method not found" = "Método API solicitado no encontrado";
+
+/* Label - Reset UART */
+"Reset UART" = "Restablecer UART";
+
+/* Label - Reset UART queue */
+"Reset UART queue" = "Restablecer cola UART";
+
+/* Detail Label - RF Module Power Cycled */
+"RF Module Power Cycled" = "Módulo RF Power Cycled";
+
+/* Label - Romo */
+"Romo" = "Romo";
+
+/* No comment provided by engineer. */
+"second" = "Segundo";
+
+/* No comment provided by engineer. */
+"seconds" = "Segundos";
+
+/* No comment provided by engineer. */
+"seconds ago" = "segundos atrás";
+
+/* Detail Label - Security Drill */
+"Security Drill" = "Simulacro de seguridad";
+
+/* Error - Service is temporarily unavailable */
+"Service is temporarily unavailable" = "El servicio no está disponible temporalmente";
+
+/* Detail Label - Silence */
+"Silence" = "Silencio";
+
+/* Mode - Sleep */
+"Sleep" = "Dormir";
+
+/* Label - Smart */
+"Smart" = "Inteligente";
+
+/* Label - Sound alarm when motion is detected */
+"Sound alarm when motion is detected" = "Alarma sonora cuando se detecta movimiento";
+
+/* Detail Label - Squawk sarmed */
+"Squawk armed" = "Squawk armado";
+
+/* Detail Label - Squawk disarmed */
+"Squawk disarmed" = "Squawk desarmado";
+
+/* Label - Stairs (Space Name) */
+"Stairs" = "Escaleras";
+
+/* Firmware Update - Started */
+"Started" = "Comenzó";
+
+/* Label - State */
+"State" = "Estado";
+
+/* Mode - Stay */
+"Stay" = "Quedarse";
+
+/* Detail Label - Still */
+"Still" = "Todavía";
+
+/* Detail Label - Stop */
+"Stop" = "Parada";
+
+/* Detail Label - Stop alarm */
+"Stop alarm" = "Detener alarma";
+
+/* Label - Stop recording after motion goes away */
+"Stop recording after motion goes away" = "Detener la grabación después de que el movimiento desaparece";
+
+/* Label - Stopped */
+"Stopped" = "Detenido";
+
+/* Detail Label - Strobe off */
+"Strobe off" = "Strobe apagado";
+
+/* Detail Label - Strobe on */
+"Strobe on" = "Strobe on";
+
+/* Label - Swing Mode */
+"Swing Mode" = "Modo Swing";
+
+/* Detail Label - Switch */
+"Switch" = "Interruptor";
+
+/* Label - System Mode */
+"System Mode" = "Modo sistema";
+
+/* Label - System Mode Status */
+"System Mode Status" = "Estado del modo del sistema";
+
+/* Error - TED is not activated properly. */
+"TED is not activated properly." = "TED no se activa correctamente.";
+
+/* Label - Temperature */
+"Temperature" = "Temperatura";
+
+/* Mode - Test */
+"Test" = "Prueba";
+
+/* Error - Thank you, our team will look into this. */
+"Thank you, our team will look into this." = "Gracias, nuestro equipo investigará esto.";
+
+/* Error - That barcode is corrupted. */
+"That barcode is corrupted." = "Ese código de barras está dañado.";
+
+/* Error - That device belongs to someone else */
+"That device belongs to someone else" = "Ese dispositivo pertenece a otra persona";
+
+/* Error - That device is no longer in your account */
+"That device is no longer in your account" = "Ese dispositivo ya no está en tu cuenta";
+
+/* Error - That type of product isn't supported on this server. */
+"That type of product isn't supported on this server." = "Ese tipo de producto no es compatible con este servidor.";
+
+/* Error - That wasn't the barcode you were looking for. */
+"That wasn't the barcode you were looking for." = "Ese no era el código de barras que estabas buscando.";
+
+/* Error - The {App Name} app had trouble connecting. Is your internet connection ok? */
+"The %@ app had trouble connecting. Is your internet connection ok?" = "La aplicación %@ tenía problemas para conectarse. ¿Está bien su conexión a Internet?";
+
+/* Error - 45 */
+"The communication channel is not authenticated" = "El canal de comunicación no está autenticado";
+
+/* Error - The username or password you entered is incorrect */
+"The username or password you entered is incorrect" = "El nombre de usuario o contraseña que ha introducido es incorrecto";
+
+/* Error - There are no contacts on this device.  Tap 'Search' or 'Scan someone's bar code' to add a friend manually. */
+"There are no contacts on this device.  Tap 'Search' or 'Scan someone's bar code' to add a friend manually." = "No hay contactos en este dispositivo.  Toca 'Buscar' o 'Escanear el código de barras de alguien' para añadir un amigo manualmente.";
+
+/* Error - There was an error creating the camera, please try again later. */
+"There was an error creating the camera, please try again later." = "Se ha producido un error al crear la cámara, inténtelo de nuevo más tarde.";
+
+/* Error - This action is temporarily locked */
+"This action is temporarily locked" = "Esta acción está bloqueada temporalmente";
+
+/* Error - Camera - Privacy - Not Determined */
+"This app needs access to your \"Camera\" in order for you to capture new videos and pictures.  You may allow this in the iOS > Settings > Privacy menu." = "Esta aplicación necesita acceso a su \"Cámara\" con el fin de que pueda capturar nuevos videos e imágenes.  Puede permitir esto en el menú Configuración de > de iOS > Privacidad.";
+
+/* Error - Microphone - Privacy - Not Determined */
+"This app needs access to your \"Microphone\" in order for you to capture audio.  You may allow this in the iOS > Settings > Privacy menu." = "Esta aplicación necesita acceso a su \"Micrófono\" con el fin de que pueda capturar audio.  Puede permitir esto en el menú Configuración de > de iOS > Privacidad.";
+
+/* Error - Photo Data - Privacy - Not Determined */
+"This app needs access to your \"Photo Data\" in order for you to upload images and videos you've already taken on this device.  You may allow this in the iOS > Settings > Privacy menu." = "Esta aplicación necesita acceso a su \"Datos de la foto\" con el fin de que usted pueda subir imágenes y videos que ya ha tomado en este dispositivo.  Puede permitir esto en el menú Configuración de > de iOS > Privacidad.";
+
+/* Error - Push Notifications - Privacy - Not Determined */
+"This app needs access to your \"Push Notifications\" in order for you to receive push notifications.  You may allow this in the iOS > Settings > Privacy menu." = "Esta aplicación necesita acceso a su \"Notificaciones Push\" con el fin de que pueda recibir notificaciones push.  Puede permitir esto en el menú Configuración de > de iOS > Privacidad.";
+
+/* Error - This app requires access to your contacts to function properly. Please visit to the \"Privacy\" section in the iPhone Settings app. */
+"This app requires access to your contacts to function properly. Please visit to the \"Privacy\" section in the iPhone Settings app." = "Esta aplicación requiere acceso a sus contactos para funcionar correctamente. Por favor, visita la sección \"Privacidad\" en la aplicación Configuración del iPhone.";
+
+/* Error - Camera - Privacy - Restricted */
+"This application is not able to access your \"Camera\" due to some restrictions.  Please check the iOS > Settings > Privacy menu." = "Esta aplicación no es capaz de acceder a su \"Cámara\" debido a algunas restricciones.  Consulta el menú Configuración de > de iOS > privacidad.";
+
+/* Error - Microphone - Privacy - Restricted */
+"This application is not able to access your \"Microphone\" due to some restrictions.  Please check the iOS > Settings > Privacy menu." = "Esta aplicación no es capaz de acceder a su \"Micrófono\" debido a algunas restricciones.  Consulta el menú Configuración de > de iOS > privacidad.";
+
+/* Error - Photo Data - Privacy - Restricted */
+"This application is not able to access your \"Photo Data\" due to some restrictions.  Please check the iOS > Settings > Privacy menu." = "Esta aplicación no es capaz de acceder a su \"Datos de la foto\" debido a algunas restricciones.  Consulta el menú Configuración de > de iOS > privacidad.";
+
+/* Error - This camera detected some motion and is currently recording, try again in a few moments. */
+"This camera detected some motion and is currently recording, try again in a few moments." = "Esta cámara detectó algo de movimiento y está grabando, inténtelo de nuevo en unos momentos.";
+
+/* Error - This camera is currently not available. Make sure it is up and running remotely. */
+"This camera is currently not available. Make sure it is up and running remotely." = "Esta cámara no está disponible actualmente. Asegúrese de que esté en funcionamiento de forma remota.";
+
+/* Error - This device is too old to support Bluetooth LE */
+"This device is too old to support Bluetooth LE" = "Este dispositivo es demasiado viejo para admitir Bluetooth LE";
+
+/* Error - Timeout in device communication */
+"Timeout in device communication" = "Tiempo de espera en la comunicación del dispositivo";
+
+/* Label - today */
+"today" = "Hoy";
+
+/* Error - Too many registration attempts. Please try again in a few minutes. */
+"Too many registration attempts. Please try again in a few minutes." = "Demasiados intentos de registro. Inténtelo de nuevo en unos minutos.";
+
+/* Error - 44 */
+"Too often API calls" = "Con demasiada frecuencia, las llamadas a la API";
+
+/* Detail Label - Trumpet */
+"Trumpet" = "Trompeta";
+
+/* No comment provided by engineer. */
+"Try again in %@" = "Inténtelo de nuevo en %@";
+
+/* No comment provided by engineer. */
+"Try again later." = "Inténtalo de nuevo más tarde.";
+
+/* Label - Twitter auto-sharing disabled */
+"Twitter auto-sharing disabled" = "El uso compartido automático de Twitter está desactivado";
+
+/* Label - Twitter auto-sharing enabled */
+"Twitter auto-sharing enabled" = "Compartir automáticamente de Twitter habilitado";
+
+/* Label - Twitter disabled */
+"Twitter disabled" = "Twitter desactivado";
+
+/* Label - Twitter enabled */
+"Twitter enabled" = "Twitter habilitado";
+
+/* Label - Twitter reminder disabled */
+"Twitter reminder disabled" = "Recordatorio de Twitter desactivado";
+
+/* Label - Twitter reminder enabled */
+"Twitter reminder enabled" = "Recordatorio de Twitter activado";
+
+/* Error - Unable to access your address book. */
+"Unable to access your address book." = "No se puede acceder a su libreta de direcciones.";
+
+/* Error - Unable to access your address book. Please check your privacy settings. */
+"Unable to access your address book. Please check your privacy settings." = "No se puede acceder a su libreta de direcciones. Compruebe la configuración de privacidad.";
+
+/* Error - Unable to change camera name */
+"Unable to change camera name" = "No se puede cambiar el nombre de la cámara";
+
+/* Error - Unable to change DDNS */
+"Unable to change DDNS" = "No se puede cambiar DDNS";
+
+/* Error - Unable to configure default admin user */
+"Unable to configure default admin user" = "No se puede configurar el usuario administrador predeterminado";
+
+/* Error - Unable to connect Galileo 30-pin */
+"Unable to connect Galileo 30-pin" = "No se puede conectar Galileo de 30 pines";
+
+/* Error - Unable to download firmware! */
+"Unable to download firmware!" = "¡No se puede descargar el firmware!";
+
+/* Error - Unable to enable IP Camera UPnP */
+"Unable to enable IP Camera UPnP" = "No se puede activar la cámara IP UPnP";
+
+/* Error - Unable to get camera name */
+"Unable to get camera name" = "No se puede obtener el nombre de la cámara";
+
+/* Error - Unable to get DDNS */
+"Unable to get DDNS" = "Incapaz de obtener DDNS";
+
+/* Error - Unable to get register IP Camera */
+"Unable to register an IP Camera with this device type.  Please ensure that your camera is online and that you chose the correct device to add." = "No se puede registrar una cámara IP con este tipo de dispositivo.  Asegúrese de que su cámara está en línea y de que ha elegido el dispositivo correcto para agregar.";
+
+/* Error - Unable to start up your camera! Please contact support. */
+"Unable to start up your camera! Please contact support." = "¡No se puede poner en marcha la cámara! Póngase en contacto con el soporte técnico.";
+
+/* Error - Unable to upload file! */
+"Unable to upload file!" = "¡No se puede cargar el archivo!";
+
+/* Label - Undefined (Space Name) */
+"Undefined" = "Indefinido";
+
+/* Label - Netatmo Health Coath stauts - Unhealthy */
+"Unhealthy" = "Insalubre";
+
+/* Label - Unknown */
+"Unknown" = "Desconocido";
+
+/* Error - Unknown OAuth client */
+"Unknown OAuth client" = "Cliente OAuth desconocido";
+
+/* Label - Unknown robot */
+"Unknown robot" = "Robot desconocido";
+
+/* Detail Label - Unlocked */
+"Unlocked" = "Desbloqueado";
+
+/* Mode - Vacation */
+"Vacation" = "Vacaciones";
+
+/* Label - Vibration Status */
+"Vibration Status" = "Estado de vibración";
+
+/* Label - Video calling not supported */
+"Video calling not supported" = "No se admiten videollamadas";
+
+/* Label - Video calling supported */
+"Video calling supported" = "Videollamadas compatibles";
+
+/* Label - Video streaming disabled */
+"Video streaming disabled" = "Transmisión de vídeo desactivada";
+
+/* Label - Video streaming enabled */
+"Video streaming enabled" = "Transmisión de vídeo habilitada";
+
+/* Error - Waiting for Bluetooth to power up... */
+"Waiting for Bluetooth to power up..." = "Esperando a que Bluetooth se encienda...";
+
+/* Label - Warm Reset */
+"Warm Reset" = "Reinicio cálido";
+
+/* Detail Label - LintAlert Warning
+   Detail Label - Warning */
+"Warning" = "Advertencia";
+
+/* Label - Warning status disabled */
+"Warning status disabled" = "Estado de advertencia desactivado";
+
+/* Label - Warning status enabled */
+"Warning status enabled" = "Estado de advertencia habilitado";
+
+/* Label - Water Leak */
+"Water Leak" = "Fuga de agua";
+
+/* Error - We believe there is a firewall blocking access to the {App Name} camera. */
+"We believe there is a firewall blocking access to the %@ camera." = "Creemos que hay un cortafuegos que bloquea el acceso a la cámara %@.";
+
+/* Error - Unable to connect the LintAlert */
+"We couldn't contact the LintAlert Pro Plus. Press and release the Circle RESET button, then hold the Square CONFIG button for 3 seconds. Reconnect to the LintAlert's Wi-Fi network in your iOS Wi-Fi Settings, then try again." = "No pudimos contactar con el LintAlert Pro Plus. Presione y suelte el botón Circle RESET y, a continuación, mantenga pulsado el botón Square CONFIG durante 3 segundos. Vuelve a conectarte a la red Wi-Fi de LintAlert en la configuración de Wi-Fi de iOS y vuelve a intentarlo.";
+
+/* Error - We're having trouble connecting to the camera. Are you and your camera on a good connection? Please try it again. */
+"We're having trouble connecting to the camera. Are you and your camera on a good connection? Please try it again." = "Tenemos problemas para conectarnos a la cámara. ¿Están usted y su cámara en una buena conexión? Por favor, inténtelo de nuevo.";
+
+/* No comment provided by engineer. */
+"weeks ago" = "semanas atrás";
+
+/* Error - Well that's strange, we had a problem saving that rule. Sorry about this!\n\nIf you have time, please contact support and describe the rule you were trying to create so we can fix it. */
+"Well that's strange, we had a problem saving that rule. Sorry about this!\n\nIf you have time, please contact support and describe the rule you were trying to create so we can fix it." = "Bueno, eso es extraño, tuvimos un problema para salvar esa regla. Lo siento por esto!";
+
+/* Detail Label - Wet */
+"Wet" = "Mojado";
+
+/* Label - What is the start time, and on which days? */
+"What is the start time, and on which days?" = "¿Cuál es la hora de inicio y en qué días?";
+
+/* Label - What time should it end each day? */
+"What time should it end each day?" = "¿A qué hora debe terminar cada día?";
+
+/* Detail Label - Whistle */
+"Whistle" = "Silbato";
+
+/* Error - Wrong activation key */
+"Wrong activation key" = "Clave de activación incorrecta";
+
+/* Detail Label - Wrong Code Entry Limit */
+"Wrong Code Entry Limit" = "Límite de entrada de código incorrecto";
+
+/* Error - Wrong consumer ID */
+"Wrong consumer ID" = "Id. de consumidor incorrecto";
+
+/* Error - Wrong device registration code */
+"Wrong device registration code" = "Código de registro del dispositivo incorrecto";
+
+/* Error - Wrong index value */
+"Wrong index value" = "Valor de índice incorrecto";
+
+/* Error - Wrong location ID or location is not related to the user */
+"Wrong location ID or location is not related to the user" = "El ID de ubicación o la ubicación incorrectos no están relacionados con el usuario";
+
+/* Error - Wrong operation token */
+"Wrong operation token" = "Símbolo de operación incorrecto";
+
+/* Error - Wrong phone number */
+"Wrong phone number" = "Número de teléfono incorrecto";
+
+/* Error - Wrong rule schedule format */
+"Wrong rule schedule format" = "Formato de programación de reglas incorrecto";
+
+/* No comment provided by engineer. */
+"years ago" = "hace años";
+
+/* Label - yesterday */
+"yesterday" = "Ayer";
+
+/* Error - You are already viewing this camera from somewhere else. */
+"You are already viewing this camera from somewhere else." = "Ya estás viendo esta cámara desde otro lugar.";
+
+/* Error - Push Notifications - Privacy - Provisional */
+"You are currently testing out \"Push Notifications\", with some restrictions.  Please check the iOS > Settings > Privacy menu." = "Actualmente está probando \"Notificaciones push\", con algunas restricciones.  Consulta el menú Configuración de > de iOS > privacidad.";
+
+/* Error - You are no longer signed in */
+"You are no longer signed in" = "Ya no ha iniciado sesión";
+
+/* Error - You can still add friends manually using \"Search email or phone\" */
+"You can still add friends manually using \"Search email or phone\"" = "Todavía puede agregar amigos manualmente usando \"Buscar correo electrónico o teléfono\"";
+
+/* Error - Photo Data - Privacy - Denied */
+"You've chosen to not allow this application access to your \"Camera\".  You will be asked for permission again the next time you access this feature." = "Ha elegido no permitir el acceso de esta aplicación a su \"Cámara\".  Se le pedirá permiso de nuevo la próxima vez que acceda a esta función.";
+
+/* Error - Photo Data - Privacy - Denied */
+"You've chosen to not allow this application access to your \"Microphone\".  You will be asked for permission again the next time you access this feature." = "Ha elegido no permitir el acceso de esta aplicación a su \"Micrófono\".  Se le pedirá permiso de nuevo la próxima vez que acceda a esta función.";
+
+/* Error - Photo Data - Privacy - Denied */
+"You've chosen to not allow this application access to your \"Photo Data\".  You will be asked for permission again the next time you access this feature." = "Ha elegido no permitir el acceso de esta aplicación a su \"Datos de fotos\".  Se le pedirá permiso de nuevo la próxima vez que acceda a esta función.";
+
+/* Error - Push Notifications - Privacy - Denied */
+"You've chosen to not allow this application access to your \"Push Notifications\".  You can change your app settings in your profile page." = "Ha elegido no permitir el acceso de esta aplicación a su \"Notificaciones push\".  Puedes cambiar la configuración de la aplicación en la página de perfil.";
+
+/* Error - Your location is already set this mode. */
+"Your location is already set this mode." = "Su ubicación ya ha establecido este modo.";
+
+/* Error - SMS Subscriber - Error updating phone number */
+"Your new phone number cannot receive SMS messages." = "Su nuevo número de teléfono no puede recibir mensajes SMS.";
+
+/* Error - Your password must be at least 8 characters long. */
+"Your password must be at least 8 characters long." = "La contraseña debe tener al menos 8 caracteres.";
+
+/* Error - Invalid phone number */
+"Your phone number cannot receive SMS messages.  Please use a phone number that can receive SMS messages." = "Su número de teléfono no puede recibir mensajes SMS.  Utilice un número de teléfono que pueda recibir mensajes SMS.";
