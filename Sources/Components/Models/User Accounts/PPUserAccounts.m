@@ -3256,5 +3256,54 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     }];
 }
 
+#pragma mark - Add Location
+
+/**
+ * Add Location
+ *
+ * Add a location to an organization
+ * An end user with administrative location access (30) can use this API
+ *
+ * @param organizationId Required NSString Organization ID or domain name
+ * @param locationId Required PPLocationId Location ID
+ * @param callback PPErrorBlock Error callback block
+ */
++ (void)addLocationToOrganization:(NSString * _Nonnull )organizationId locationId:(PPLocationId)locationId callback:(PPErrorBlock _Nonnull)callback {
+    NSAssert1(organizationId != nil, @"%s missing organizationId or domain name", __FUNCTION__);
+    NSAssert1(locationId != PPLocationIdNone, @"%s missing locationId", __FUNCTION__);
+    
+    NSURLComponents *components = [NSURLComponents componentsWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"organizations/%@/locationStatus/%@", organizationId, @(locationId)]] resolvingAgainstBaseURL:NO];
+    
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.organization.addLocationToOrganization()", DISPATCH_QUEUE_SERIAL);
+    
+    PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
+    
+    [[PPCloudEngine sharedAdminEngine] PUT:components.string success:^(NSData *responseData) {
+        
+        dispatch_async(queue, ^{
+            
+            NSError *error = nil;
+            [PPBaseModel processJSONResponse:responseData originatingClass:NSStringFromClass([self class]) error:&error];
+            
+            PPLogAPI(@"< %s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                callback(error);
+            });
+        });
+        
+    } failure:^(NSError *error) {
+        
+        dispatch_async(queue, ^{
+            
+            PPLogAPI(@"< %s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                callback([PPBaseModel resultCodeToNSError:10003 originatingClass:NSStringFromClass([self class]) argument:[NSString stringWithFormat:@"Error domain:%@, code:%ld, userInfo:%@", error.domain, (long)error.code, error.userInfo]]);
+            });
+        });
+    }];
+}
+
 @end
 

@@ -719,6 +719,7 @@
 		636DCC1624940463000560E8 /* PPTCAppResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636DCC1524940463000560E8 /* PPTCAppResources.swift */; };
 		6372B66521349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 6372B66321349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6372B66621349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6372B66421349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.m */; };
+		63797D3825B8AF6B00447324 /* UserAccounts-AddLocationToOrganization-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63797D3725B8AF6B00447324 /* UserAccounts-AddLocationToOrganization-ResponseData.json */; };
 		637D0F2320C761A2003710AF /* PPDeviceParameterRobotVantagePoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 637D0F2120C761A2003710AF /* PPDeviceParameterRobotVantagePoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		637D0F2520C761A2003710AF /* PPDeviceParameterRobotVantagePoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 637D0F2220C761A2003710AF /* PPDeviceParameterRobotVantagePoint.m */; };
 		637D0F3220C85CFE003710AF /* PPInAppMessageParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 637D0F3020C85CFE003710AF /* PPInAppMessageParameters.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1547,6 +1548,7 @@
 		6370D11F22611D34000C3B70 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6372B66321349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPDeviceTypeParameterDisplayInfo.h; sourceTree = "<group>"; };
 		6372B66421349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPDeviceTypeParameterDisplayInfo.m; sourceTree = "<group>"; };
+		63797D3725B8AF6B00447324 /* UserAccounts-AddLocationToOrganization-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "UserAccounts-AddLocationToOrganization-ResponseData.json"; sourceTree = "<group>"; };
 		637A632B206C44B000F7876D /* Peoplepower-Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Peoplepower-Config.plist"; sourceTree = "<group>"; };
 		637D0F2120C761A2003710AF /* PPDeviceParameterRobotVantagePoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPDeviceParameterRobotVantagePoint.h; sourceTree = "<group>"; };
 		637D0F2220C761A2003710AF /* PPDeviceParameterRobotVantagePoint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPDeviceParameterRobotVantagePoint.m; sourceTree = "<group>"; };
@@ -2145,6 +2147,7 @@
 				636B463B248AF7C600124F6A /* testImage.jpeg */,
 				636B4656248AF7C900124F6A /* testVideo.mp4 */,
 				636B46CA248AF7DE00124F6A /* UserAccounts-AddLocationUsers-ResponseData.json */,
+				63797D3725B8AF6B00447324 /* UserAccounts-AddLocationToOrganization-ResponseData.json */,
 				636B46B8248AF7DB00124F6A /* UserAccounts-AddNewLocationToExistingUser-ResponseData.json */,
 				636B46D5248AF7E000124F6A /* UserAccounts-ApplyTag-ResponseData.json */,
 				636B469C248AF7D700124F6A /* UserAccounts-AuthorizeAccess-ResponseData.json */,
@@ -3690,6 +3693,7 @@
 				636B4970248AFBD900124F6A /* CloudConnectivity-CheckAvailability-ResponseData.txt in Resources */,
 				636B497E248AFBDA00124F6A /* Community-DeleteFile-ResponseData.json in Resources */,
 				636B4A00248AFBE300124F6A /* UserAccounts-DeleteNarrative-ResponseData.json in Resources */,
+				63797D3825B8AF6B00447324 /* UserAccounts-AddLocationToOrganization-ResponseData.json in Resources */,
 				636B495D248AFBD700124F6A /* Circles-AddMembers-ResponseData.json in Resources */,
 				636B49E4248AFBE100124F6A /* Reports-GetTotalDeviceAlerts-ResponseData.json in Resources */,
 				636B49F6248AFBE200124F6A /* testImage.jpeg in Resources */,

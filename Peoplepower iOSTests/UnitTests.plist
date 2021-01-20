@@ -352,6 +352,51 @@
 			<key>fileUploadPolicy</key>
 			<string>0</string>
 		</dict>
+		<key>PPTCUserAccountsTestOrganization</key>
+		<dict>
+			<key>id</key>
+			<integer>123</integer>
+			<key>name</key>
+			<string>People Power Co</string>
+			<key>domainName</key>
+			<string>PPC</string>
+			<key>brand</key>
+			<string>presence</string>
+			<key>updateDate</key>
+			<string>2016-04-12T23:30:15Z</string>
+			<key>updateDateMs</key>
+			<integer>1460503815000</integer>
+			<key>organizationAdmin</key>
+			<false/>
+			<key>parentAdmin</key>
+			<false/>
+			<key>organizationEditor</key>
+			<false/>
+			<key>features</key>
+			<string>g,p,m,c</string>
+			<key>deviceTypes</key>
+			<string>123,124,125</string>
+			<key>termOfService</key>
+			<string>PPC.2016</string>
+			<key>addrStreet1</key>
+			<string>123 Prospect St, Apt. 456</string>
+			<key>addrStreet2</key>
+			<string></string>
+			<key>addrCity</key>
+			<string>Palo Alto</string>
+			<key>state</key>
+			<dict>
+				<key>id</key>
+				<string>1</string>
+			</dict>
+			<key>country</key>
+			<dict>
+				<key>id</key>
+				<string>1</string>
+			</dict>
+			<key>zip</key>
+			<string>12345</string>
+		</dict>
 		<key>PPTCUserAccountsTestUser</key>
 		<dict>
 			<key>username</key>
