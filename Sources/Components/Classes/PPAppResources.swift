@@ -15,20 +15,19 @@ extension PPAppResources {
         
         var value: NSObject?
         
-        let bundle = Bundle(for: self)
-        if let filePath = bundle.path(forResource: filename, ofType: "plist"),
-            let plist = NSDictionary(contentsOfFile: filePath) {
-            
-            // Retreive overrides
-            let appBundle = Bundle.main
-            if let overrideFilePath = appBundle.path(forResource: "\(filename)-Override", ofType: "plist"),
-                let overridePlist = NSDictionary(contentsOfFile: overrideFilePath) {
-                    value = PPAppResources.plistEntry(key: key, inPlist: overridePlist)
-            }
-
-            // Fallback to original settings
-            if value == nil {
-                value = PPAppResources.plistEntry(key: key, inPlist: plist)
+        let configurations: [[Bundle : String]] = [
+            [Bundle(for: self): filename],
+            [Bundle.main: filename],
+            [Bundle.main: "\(filename)-Override"],
+        ]
+        
+        for (configuration) in configurations {
+            for (bundle, filename) in configuration {
+                if let filePath = bundle.path(forResource: filename, ofType: "plist"),
+                    let plist = NSDictionary(contentsOfFile: filePath),
+                    let _value = PPAppResources.plistEntry(key: key, inPlist: plist) {
+                    value = _value
+                }
             }
         }
         
