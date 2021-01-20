@@ -20,6 +20,7 @@ static NSString *moduleName = @"UserAccounts";
 @property (strong, nonatomic) PPUser *user;
 @property (strong, nonatomic) NSString *userPassword;
 @property (strong, nonatomic) PPLocation *location;
+@property (strong, nonatomic) PPOrganization *organization;
 @property (strong, nonatomic) PPLocationNarrative *narrative;
 @property (strong, nonatomic) PPLocationSpace *space;
 
@@ -33,6 +34,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *appName = (NSString *)[PPAppResources getPlistEntry:PLIST_KEY_TEST_APP_NAME filename:PLIST_FILE_UNIT_TESTS];
     NSDictionary *userDict = (NSDictionary *)[PPAppResources getPlistEntry:PLIST_KEY_TEST_USER_ACCOUNTS_TEST_USER filename:PLIST_FILE_UNIT_TESTS];
     NSDictionary *locationDict = (NSDictionary *)[PPAppResources getPlistEntry:PLIST_KEY_TEST_USER_ACCOUNTS_TEST_LOCATION filename:PLIST_FILE_UNIT_TESTS];
+    NSDictionary *organizationDict = (NSDictionary *)[PPAppResources getPlistEntry:PLIST_KEY_TEST_USER_ACCOUNTS_TEST_ORGANIZATION filename:PLIST_FILE_UNIT_TESTS];
     NSDictionary *narrativeDict = (NSDictionary *)[PPAppResources getPlistEntry:PLIST_KEY_TEST_USER_ACCOUNTS_NARRATIVE filename:PLIST_FILE_UNIT_TESTS];
     NSDictionary *spaceDict = (NSDictionary *)[PPAppResources getPlistEntry:PLIST_KEY_TEST_USER_ACCOUNTS_LOCATION_SPACE filename:PLIST_FILE_UNIT_TESTS];
     
@@ -40,6 +42,7 @@ static NSString *moduleName = @"UserAccounts";
     self.user = [PPUser initWithDictionary:userDict];
     self.userPassword = [userDict objectForKey:@"password"];
     self.location = [PPLocation initWithDictionary:locationDict];
+    self.organization = [PPOrganization initWithDictionary:organizationDict];
     self.narrative = [PPLocationNarrative initWithDictionary:narrativeDict];
     self.space = [PPLocationSpace initWithDictionary:spaceDict];
 }
@@ -1102,4 +1105,29 @@ static NSString *moduleName = @"UserAccounts";
     [self waitForExpectations:@[expectation] timeout:10.0];
 }
 
+/**
+ * Add Location
+ *
+ * Add a location to an organization
+ * An end user with administrative location access (30) can use this API
+ *
+ * @ param organizationId Required NSString Organization ID or domain name
+ * @ param locationId Required PPLocationId Location ID
+ * @ param callback PPErrorBlock Error callback block
+ */
+- (void)testAddLocationToOrganization {
+    NSString *methodName = @"AddLocationToOrganization";
+    XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
+
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/admin/json/organizations/%@/locationStatus/%@", @(self.organization.organizationId), @(self.location.locationId)] statusCode:200 headers:nil];
+        
+    [PPUserAccounts addLocationToOrganization:@(self.organization.organizationId).stringValue locationId:self.location.locationId callback:^(NSError * _Nullable error) {
+
+        XCTAssertNil(error);
+        [expectation fulfill];
+    }];
+    
+    [self waitForExpectations:@[expectation] timeout:10.0];
+}
+    
 @end

@@ -733,6 +733,7 @@
 		6372B66621349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6372B66421349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.m */; };
 		637931F224A14F8B0007D70C /* RLMRealm+PPExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 637931F024A14F8B0007D70C /* RLMRealm+PPExtras.m */; };
 		637931F324A14F8B0007D70C /* RLMRealm+PPExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = 637931F124A14F8B0007D70C /* RLMRealm+PPExtras.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63797D3825B8AF6B00447324 /* UserAccounts-AddLocationToOrganization-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63797D3725B8AF6B00447324 /* UserAccounts-AddLocationToOrganization-ResponseData.json */; };
 		637D0F2320C761A2003710AF /* PPDeviceParameterRobotVantagePoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 637D0F2120C761A2003710AF /* PPDeviceParameterRobotVantagePoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		637D0F2520C761A2003710AF /* PPDeviceParameterRobotVantagePoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 637D0F2220C761A2003710AF /* PPDeviceParameterRobotVantagePoint.m */; };
 		637D0F3220C85CFE003710AF /* PPInAppMessageParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 637D0F3020C85CFE003710AF /* PPInAppMessageParameters.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1572,6 +1573,7 @@
 		6372B66421349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPDeviceTypeParameterDisplayInfo.m; sourceTree = "<group>"; };
 		637931F024A14F8B0007D70C /* RLMRealm+PPExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RLMRealm+PPExtras.m"; sourceTree = "<group>"; };
 		637931F124A14F8B0007D70C /* RLMRealm+PPExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RLMRealm+PPExtras.h"; sourceTree = "<group>"; };
+		63797D3725B8AF6B00447324 /* UserAccounts-AddLocationToOrganization-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "UserAccounts-AddLocationToOrganization-ResponseData.json"; sourceTree = "<group>"; };
 		637A632B206C44B000F7876D /* Peoplepower-Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Peoplepower-Config.plist"; sourceTree = "<group>"; };
 		637D0F2120C761A2003710AF /* PPDeviceParameterRobotVantagePoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPDeviceParameterRobotVantagePoint.h; sourceTree = "<group>"; };
 		637D0F2220C761A2003710AF /* PPDeviceParameterRobotVantagePoint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPDeviceParameterRobotVantagePoint.m; sourceTree = "<group>"; };
@@ -2182,6 +2184,7 @@
 				636B463B248AF7C600124F6A /* testImage.jpeg */,
 				636B4656248AF7C900124F6A /* testVideo.mp4 */,
 				636B46CA248AF7DE00124F6A /* UserAccounts-AddLocationUsers-ResponseData.json */,
+				63797D3725B8AF6B00447324 /* UserAccounts-AddLocationToOrganization-ResponseData.json */,
 				636B46B8248AF7DB00124F6A /* UserAccounts-AddNewLocationToExistingUser-ResponseData.json */,
 				636B46D5248AF7E000124F6A /* UserAccounts-ApplyTag-ResponseData.json */,
 				636B469C248AF7D700124F6A /* UserAccounts-AuthorizeAccess-ResponseData.json */,
@@ -3749,6 +3752,7 @@
 				636B4970248AFBD900124F6A /* CloudConnectivity-CheckAvailability-ResponseData.txt in Resources */,
 				636B497E248AFBDA00124F6A /* Community-DeleteFile-ResponseData.json in Resources */,
 				636B4A00248AFBE300124F6A /* UserAccounts-DeleteNarrative-ResponseData.json in Resources */,
+				63797D3825B8AF6B00447324 /* UserAccounts-AddLocationToOrganization-ResponseData.json in Resources */,
 				636B495D248AFBD700124F6A /* Circles-AddMembers-ResponseData.json in Resources */,
 				636B49E4248AFBE100124F6A /* Reports-GetTotalDeviceAlerts-ResponseData.json in Resources */,
 				636B49F6248AFBE200124F6A /* testImage.jpeg in Resources */,
@@ -4741,7 +4745,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 0.1.4;
+				CURRENT_PROJECT_VERSION = 0.1.5;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -4804,7 +4808,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 0.1.4;
+				CURRENT_PROJECT_VERSION = 0.1.5;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
