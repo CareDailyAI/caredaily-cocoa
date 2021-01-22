@@ -1111,7 +1111,7 @@ static NSString *moduleName = @"UserAccounts";
  * Add a location to an organization
  * An end user with administrative location access (30) can use this API
  *
- * @ param organizationId Required NSString Organization ID or domain name
+ * @ param domainName Required NSString Organization domain name
  * @ param locationId Required PPLocationId Location ID
  * @ param callback PPErrorBlock Error callback block
  */
@@ -1119,9 +1119,9 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"AddLocationToOrganization";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
 
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/admin/json/organizations/%@/locationStatus/%@", @(self.organization.organizationId), @(self.location.locationId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/admin/json/organizations/%@/locationStatus/%@", self.organization.domainName, @(self.location.locationId)] statusCode:200 headers:nil];
         
-    [PPUserAccounts addLocationToOrganization:@(self.organization.organizationId).stringValue locationId:self.location.locationId callback:^(NSError * _Nullable error) {
+    [PPUserAccounts addLocationToOrganization:self.organization.domainName locationId:self.location.locationId callback:^(NSError * _Nullable error) {
 
         XCTAssertNil(error);
         [expectation fulfill];

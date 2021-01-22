@@ -683,10 +683,10 @@
  * Add a location to an organization
  * An end user with administrative location access (30) can use this API
  *
- * @param organizationId Required NSString Organization ID or domain name
+ * @param domainName Required NSString Organization domain name
  * @param locationId Required PPLocationId Location ID
  * @param callback PPErrorBlock Error callback block
  */
-+ (void)addLocationToOrganization:(NSString * _Nonnull )organizationId locationId:(PPLocationId)locationId callback:(PPErrorBlock _Nonnull)callback;
++ (void)addLocationToOrganization:(NSString * _Nonnull )domainName locationId:(PPLocationId)locationId callback:(PPErrorBlock _Nonnull)callback;
 
 @end

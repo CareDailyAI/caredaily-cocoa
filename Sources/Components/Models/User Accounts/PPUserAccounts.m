@@ -3264,15 +3264,15 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
  * Add a location to an organization
  * An end user with administrative location access (30) can use this API
  *
- * @param organizationId Required NSString Organization ID or domain name
+ * @param domainName Required NSString Organization domain name
  * @param locationId Required PPLocationId Location ID
  * @param callback PPErrorBlock Error callback block
  */
-+ (void)addLocationToOrganization:(NSString * _Nonnull )organizationId locationId:(PPLocationId)locationId callback:(PPErrorBlock _Nonnull)callback {
-    NSAssert1(organizationId != nil, @"%s missing organizationId or domain name", __FUNCTION__);
++ (void)addLocationToOrganization:(NSString * _Nonnull )domainName locationId:(PPLocationId)locationId callback:(PPErrorBlock _Nonnull)callback {
+    NSAssert1(domainName != nil, @"%s missing domain name", __FUNCTION__);
     NSAssert1(locationId != PPLocationIdNone, @"%s missing locationId", __FUNCTION__);
     
-    NSURLComponents *components = [NSURLComponents componentsWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"organizations/%@/locationStatus/%@", organizationId, @(locationId)]] resolvingAgainstBaseURL:NO];
+    NSURLComponents *components = [NSURLComponents componentsWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"organizations/%@/locationStatus/%@", domainName, @(locationId)]] resolvingAgainstBaseURL:NO];
     
     dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.organization.addLocationToOrganization()", DISPATCH_QUEUE_SERIAL);
     
