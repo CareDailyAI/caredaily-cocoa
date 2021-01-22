@@ -594,7 +594,7 @@
 		636B49BE248AFBDE00124F6A /* PaidServices-GetSoftwareSubscriptions-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 636B46B2248AF7DA00124F6A /* PaidServices-GetSoftwareSubscriptions-ResponseData.json */; };
 		636B49BF248AFBDE00124F6A /* PaidServices-GetStoreProducts-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 636B46F3248AF7E500124F6A /* PaidServices-GetStoreProducts-ResponseData.json */; };
 		636B49C0248AFBDE00124F6A /* PaidServices-GetTransactions-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 636B46EC248AF7E400124F6A /* PaidServices-GetTransactions-ResponseData.json */; };
-		636B49C1248AFBDE00124F6A /* PaidServices-GetUserSubscriptions-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 636B4668248AF7CB00124F6A /* PaidServices-GetUserSubscriptions-ResponseData.json */; };
+		636B49C1248AFBDE00124F6A /* PaidServices-GetLocationServicePlans-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 636B4668248AF7CB00124F6A /* PaidServices-GetLocationServicePlans-ResponseData.json */; };
 		636B49C2248AFBDF00124F6A /* PaidServices-ProvideNewPurchaseInfo-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 636B4669248AF7CC00124F6A /* PaidServices-ProvideNewPurchaseInfo-ResponseData.json */; };
 		636B49C3248AFBDF00124F6A /* PaidServices-SubmitApplePurchaseReceipt-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 636B4633248AF7C400124F6A /* PaidServices-SubmitApplePurchaseReceipt-ResponseData.json */; };
 		636B49C4248AFBDF00124F6A /* PaidServices-UpdatePurchaseInfo-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 636B46FB248AF7E700124F6A /* PaidServices-UpdatePurchaseInfo-ResponseData.json */; };
@@ -1265,7 +1265,7 @@
 		636B4665248AF7CB00124F6A /* FilesManagement-GetDownloadUrls-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FilesManagement-GetDownloadUrls-ResponseData.json"; sourceTree = "<group>"; };
 		636B4666248AF7CB00124F6A /* UserAccounts-GetServicesByDevice-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "UserAccounts-GetServicesByDevice-ResponseData.json"; sourceTree = "<group>"; };
 		636B4667248AF7CB00124F6A /* UserAccounts-NewPassword-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "UserAccounts-NewPassword-ResponseData.json"; sourceTree = "<group>"; };
-		636B4668248AF7CB00124F6A /* PaidServices-GetUserSubscriptions-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "PaidServices-GetUserSubscriptions-ResponseData.json"; sourceTree = "<group>"; };
+		636B4668248AF7CB00124F6A /* PaidServices-GetLocationServicePlans-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "PaidServices-GetLocationServicePlans-ResponseData.json"; sourceTree = "<group>"; };
 		636B4669248AF7CC00124F6A /* PaidServices-ProvideNewPurchaseInfo-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "PaidServices-ProvideNewPurchaseInfo-ResponseData.json"; sourceTree = "<group>"; };
 		636B466A248AF7CC00124F6A /* Community-UpdatePost-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Community-UpdatePost-ResponseData.json"; sourceTree = "<group>"; };
 		636B466B248AF7CC00124F6A /* PaidServices-UpgradePurchasedPlan-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "PaidServices-UpgradePurchasedPlan-ResponseData.json"; sourceTree = "<group>"; };
@@ -2091,7 +2091,7 @@
 				636B46B2248AF7DA00124F6A /* PaidServices-GetSoftwareSubscriptions-ResponseData.json */,
 				636B46F3248AF7E500124F6A /* PaidServices-GetStoreProducts-ResponseData.json */,
 				636B46EC248AF7E400124F6A /* PaidServices-GetTransactions-ResponseData.json */,
-				636B4668248AF7CB00124F6A /* PaidServices-GetUserSubscriptions-ResponseData.json */,
+				636B4668248AF7CB00124F6A /* PaidServices-GetLocationServicePlans-ResponseData.json */,
 				636B4669248AF7CC00124F6A /* PaidServices-ProvideNewPurchaseInfo-ResponseData.json */,
 				636B4633248AF7C400124F6A /* PaidServices-SubmitApplePurchaseReceipt-ResponseData.json */,
 				636B46FB248AF7E700124F6A /* PaidServices-UpdatePurchaseInfo-ResponseData.json */,
@@ -3709,7 +3709,7 @@
 				636B49E7248AFBE100124F6A /* Rules-DeleteRule-ResponseData.json in Resources */,
 				636B497F248AFBDA00124F6A /* Community-DeletePost-ResponseData.json in Resources */,
 				636B49F2248AFBE200124F6A /* SystemAndUserProperties-GetUserProperty-ResponseData.json in Resources */,
-				636B49C1248AFBDE00124F6A /* PaidServices-GetUserSubscriptions-ResponseData.json in Resources */,
+				636B49C1248AFBDE00124F6A /* PaidServices-GetLocationServicePlans-ResponseData.json in Resources */,
 				636B498A248AFBDA00124F6A /* DeviceMeasurements-GetLastNMeasurements-ResponseData.json in Resources */,
 				636B4963248AFBD800124F6A /* Circles-GetCircles-ResponseData.json in Resources */,
 				636B49AD248AFBDD00124F6A /* FilesManagement-GetDownloadUrls-ResponseData.json in Resources */,
