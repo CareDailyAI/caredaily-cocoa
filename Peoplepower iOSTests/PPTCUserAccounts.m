@@ -1119,7 +1119,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"AddLocationToOrganization";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
 
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/admin/json/organizations/%@/locationStatus/%@", self.organization.domainName, @(self.location.locationId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/location/%@/organization/%@", @(self.location.locationId), self.organization.domainName] statusCode:200 headers:nil];
         
     [PPUserAccounts addLocationToOrganization:self.organization.domainName locationId:self.location.locationId callback:^(NSError * _Nullable error) {
 
