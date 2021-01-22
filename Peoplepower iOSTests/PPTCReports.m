@@ -41,7 +41,7 @@ static NSString *moduleName = @"Reports";
     NSString *methodName = @"GetTotalDeviceAlerts";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/totalDeviceAlerts" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/reports/json/totalDeviceAlerts" statusCode:200 headers:nil];
     
     [PPReports getTotalDeviceAlerts:nil callback:^(NSArray *alerts, NSError *error) {
 
