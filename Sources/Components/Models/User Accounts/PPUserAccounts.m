@@ -3235,13 +3235,13 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     NSAssert1(domainName != nil, @"%s missing domain name", __FUNCTION__);
     NSAssert1(locationId != PPLocationIdNone, @"%s missing locationId", __FUNCTION__);
     
-    NSURLComponents *components = [NSURLComponents componentsWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"organizations/%@/locationStatus/%@", domainName, @(locationId)]] resolvingAgainstBaseURL:NO];
+    NSURLComponents *components = [NSURLComponents componentsWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"location/%@/organization/%@", @(locationId), domainName]] resolvingAgainstBaseURL:NO];
     
     dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.organization.addLocationToOrganization()", DISPATCH_QUEUE_SERIAL);
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
     
-    [[PPCloudEngine sharedAdminEngine] PUT:components.string success:^(NSData *responseData) {
+    [[PPCloudEngine sharedAppEngine] PUT:components.string success:^(NSData *responseData) {
         
         dispatch_async(queue, ^{
             
