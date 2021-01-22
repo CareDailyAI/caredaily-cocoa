@@ -257,23 +257,26 @@ static NSString *moduleName = @"PaidServices";
     [self waitForExpectations:@[expectation] timeout:20.0];
 }
 
-#pragma mark - User subscriptions
+#pragma mark - Location Service Plans
 
 /**
- * Get user subscriptions.
- * This API returns all service plans purchased by a user or manually assigned to him.
+ * Get location service plans.
+ * This API returns all service plans on specific location or purchased by a user or manually assigned to him.
+ * Either locationId or userId parameters must be used.
  *
+ * @ param locationId PPLocationId Get plan for this location
  * @ param status PPServicePlanStatus Service Plan status
- * @ param userId PPUserId Used by organization administrators to specify user
+ * @ param userPlanId PPServicePlanId Get specific service by plan ID
+ * @ param userId PPUserId Ger plan by this user. Used by organization administrators.
  * @ param callback PPPaidServicesSubscriptionsCallback Subscriptions callback with list of purchased subscriptions
  **/
-- (void)testGetUserSubscriptions {
-    NSString *methodName = @"GetUserSubscriptions";
+- (void)testGetLocationServicePlans {
+    NSString *methodName = @"GetLocationServicePlans";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
     [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/userServicePlans" statusCode:200 headers:nil];
     
-    [PPPaidServices getUserSubscriptions:PPServicePlanStatusNone userId:PPUserIdNone callback:^(NSArray *subscriptions, NSError *error) {
+    [PPPaidServices getLocationServicePlans:self.location.locationId status:PPServicePlanStatusNone userPlanId:PPServicePlanIdNone userId:PPUserIdNone callback:^(NSArray * _Nullable subscriptions, NSError * _Nullable error) {
         
         XCTAssertNil(error);
         [expectation fulfill];

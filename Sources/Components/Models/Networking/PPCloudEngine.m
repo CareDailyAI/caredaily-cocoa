@@ -112,7 +112,7 @@ __strong static PPCloudEngine *_sharedReportObject = nil;
             urlString = [PPUrl streamingServerURLString:nil];
             break;
         case PPCloudEngineTypeReport:
-            urlString = [NSString stringWithFormat:@"%@/report/json", [PPUrl appAPIServerURLString]];
+            urlString = [NSString stringWithFormat:@"%@/reports/json", [PPUrl appAPIServerURLString]];
             break;
         default:
             urlString = [PPUrl appAPIServerURLString];
