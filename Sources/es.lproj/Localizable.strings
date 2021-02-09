@@ -1,23 +1,17 @@
-/* No comment provided by engineer. */
-" " = " ";
+/* Character - Comma */
+"," = ",";
 
-/* Label - $time1 and $time2 */
-"$time1 and $time2" = "$time1 y $time2";
+/* Error - {name} seems to already be viewing this camera. Press the reconnect button to take over. */
+"\"%@\" seems to already be viewing this camera. Press the reconnect button to take over." = "\"%@\" parece que ya está viendo esta cámara. Pulse el botón de reconexión para tomar el control.";
+
+/* Error - \"Geofencing\" is not available for this mode. */
+"\"Geofencing\" is not available for this mode." = "\"Geofencing\" no está disponible para este modo.";
+
+/* Character - Ampersand */
+"&" = "&";
 
 /* Label - {AppName} 360 */
 "%@ 360" = "%@ 360";
-
-/* Label - {number} hours */
-"%d hr" = "%d hr";
-
-/* Label - {number} minutes */
-"%d min" = "%d min";
-
-/* Label - {number} minutes {number} seconds */
-"%d min %d sec" = "%d min %d sec";
-
-/* Label - {number} seconds */
-"%d sec" = "%d seg";
 
 /* Label - {number} days ago */
 "%ld days ago" = "%ld días atrás";
@@ -43,17 +37,8 @@
 /* No comment provided by engineer. */
 "%li %@" = "%li %@";
 
-/* Character - Ampersand */
-"&" = "&";
-
-/* No comment provided by engineer. */
-"," = ",";
-
-/* Error - {name} seems to already be viewing this camera. Press the reconnect button to take over. */
-"\"%@\" seems to already be viewing this camera. Press the reconnect button to take over." = "\"%@\" parece que ya está viendo esta cámara. Pulse el botón de reconexión para tomar el control.";
-
-/* Error - \"Geofencing\" is not available for this mode. */
-"\"Geofencing\" is not available for this mode." = "\"Geofencing\" no está disponible para este modo.";
+/* Label - $time1 and $time2 */
+"$time1 and $time2" = "$time1 y $time2";
 
 /* Label - a minute ago */
 "a minute ago" = "hace un minuto";
@@ -111,9 +96,6 @@
 
 /* Label - Alarm Warn */
 "Alarm Warn" = "Advertencia de alarma";
-
-/* Label - Alarm will beep %@ times */
-"Alarm will beep %i times" = "La alarma será un pitido %i veces";
 
 /* Error - An email has been sent to you with instructions on how to add this device to your {App Name} account. */
 "An email has been sent to you with instructions on how to add this device to your %@ account." = "Se le ha enviado un correo electrónico con instrucciones sobre cómo agregar este dispositivo a su cuenta %@.";
@@ -702,9 +684,6 @@
 /* Detail Label - Phaser */
 "Phaser" = "Phaser";
 
-/* Detail Label - Play for {n} seconds */
-"Play for %i seconds" = "Reproducir durante %i segundos";
-
 /* Detail Label - Play once */
 "Play once" = "Juega una vez";
 
@@ -954,7 +933,7 @@
 /* Detail Label - Trumpet */
 "Trumpet" = "Trompeta";
 
-/* No comment provided by engineer. */
+/* Error - Try again in {time} */
 "Try again in %@" = "Inténtelo de nuevo en %@";
 
 /* No comment provided by engineer. */
@@ -1084,9 +1063,6 @@
 /* No comment provided by engineer. */
 "weeks ago" = "semanas atrás";
 
-/* Error - Well that's strange, we had a problem saving that rule. Sorry about this!\n\nIf you have time, please contact support and describe the rule you were trying to create so we can fix it. */
-"Well that's strange, we had a problem saving that rule. Sorry about this!\n\nIf you have time, please contact support and describe the rule you were trying to create so we can fix it." = "Bueno, eso es extraño, tuvimos un problema para salvar esa regla. Lo siento por esto!";
-
 /* Detail Label - Wet */
 "Wet" = "Mojado";
 
@@ -1167,3 +1143,4 @@
 
 /* Error - Invalid phone number */
 "Your phone number cannot receive SMS messages.  Please use a phone number that can receive SMS messages." = "Su número de teléfono no puede recibir mensajes SMS.  Utilice un número de teléfono que pueda recibir mensajes SMS.";
+

@@ -1,471 +1,453 @@
-/* No comment provided by engineer. */
-" " = " ";
+/* Character - Comma */
+"," = ",";
 
-/* Label - $time1 and $time2 */
-"$time1 and $time2" = "$time1 and $time2";
+/* Error - {name} seems to already be viewing this camera. Press the reconnect button to take over. */
+"\"%@\" seems to already be viewing this camera. Press the reconnect button to take over." = "\"%@\" verkar redan vara tittar på den här kameran. Tryck på knappen för återanslutning för att ta över.";
 
-/* Label - {AppName} 360 */
-"%@ 360" = "%@ 360";
-
-/* Label - {number} hours */
-"%d hr" = "%d hr";
-
-/* Label - {number} minutes */
-"%d min" = "%d min";
-
-/* Label - {number} minutes {number} seconds */
-"%d min %d sec" = "%d min %d sec";
-
-/* Label - {number} seconds */
-"%d sec" = "%d sec";
-
-/* Label - {number} days ago */
-"%ld days ago" = "%ld days ago";
-
-/* Label - {number} hours ago */
-"%ld hours ago" = "%ld hours ago";
-
-/* Label - {number} minutes ago */
-"%ld minutes ago" = "%ld minutes ago";
-
-/* Label - {number} months ago */
-"%ld months ago" = "%ld months ago";
-
-/* Label - {number} seconds ago */
-"%ld seconds ago" = "%ld seconds ago";
-
-/* Label - {number} weeks ago */
-"%ld weeks ago" = "%ld weeks ago";
-
-/* Label - {number} years ago */
-"%ld years ago" = "%ld years ago";
-
-/* No comment provided by engineer. */
-"%li %@" = "%li %@";
+/* Error - \"Geofencing\" is not available for this mode. */
+"\"Geofencing\" is not available for this mode." = "\"Geofencing\" är inte tillgängligt för det här läget.";
 
 /* Character - Ampersand */
 "&" = "&";
 
+/* Label - {AppName} 360 */
+"%@ 360" = "%@ 360";
+
+/* Label - {number} days ago */
+"%ld days ago" = "%ld dagar sedan";
+
+/* Label - {number} hours ago */
+"%ld hours ago" = "%ld timmar sedan";
+
+/* Label - {number} minutes ago */
+"%ld minutes ago" = "%ld minuter sedan";
+
+/* Label - {number} months ago */
+"%ld months ago" = "%ld månader sedan";
+
+/* Label - {number} seconds ago */
+"%ld seconds ago" = "%ld sekunder sedan";
+
+/* Label - {number} weeks ago */
+"%ld weeks ago" = "%ld veckor sedan";
+
+/* Label - {number} years ago */
+"%ld years ago" = "%ld år sedan";
+
 /* No comment provided by engineer. */
-"," = ",";
+"%li %@" = "%li %@";
 
-/* Error - {name} seems to already be viewing this camera. Press the reconnect button to take over. */
-"\"%@\" seems to already be viewing this camera. Press the reconnect button to take over." = "\"%@\" seems to already be viewing this camera. Press the reconnect button to take over.";
-
-/* Error - \"Geofencing\" is not available for this mode. */
-"\"Geofencing\" is not available for this mode." = "\"Geofencing\" is not available for this mode.";
+/* Label - $time1 and $time2 */
+"$time1 and $time2" = "$time1 och $time2";
 
 /* Label - a minute ago */
-"a minute ago" = "a minute ago";
+"a minute ago" = "en minut sedan";
 
 /* Label - a month ago */
-"a month ago" = "a month ago";
+"a month ago" = "för en månad sedan";
 
 /* Label - a week ago */
-"a week ago" = "a week ago";
+"a week ago" = "för en vecka sedan";
 
 /* Error - Access denied */
-"Access denied" = "Access denied";
+"Access denied" = "Åtkomst nekad";
 
 /* Error - Camera - Privacy - Denied */
-"Access to your \"Camera\" was previously denied.  Please check the iOS > Settings > Privacy menu." = "Access to your \"Camera\" was previously denied.  Please check the iOS > Settings > Privacy menu.";
+"Access to your \"Camera\" was previously denied.  Please check the iOS > Settings > Privacy menu." = "Åtkomst till din \"Kamera\" nekades tidigare.  Vänligen kontrollera iOS > inställningar > Sekretess-menyn.";
 
 /* Error - Microphone - Privacy - Denied */
-"Access to your \"Microphone\" was previously denied.  Please check the iOS > Settings > Privacy menu." = "Access to your \"Microphone\" was previously denied.  Please check the iOS > Settings > Privacy menu.";
+"Access to your \"Microphone\" was previously denied.  Please check the iOS > Settings > Privacy menu." = "Åtkomst till din \"Mikrofon\" nekades tidigare.  Vänligen kontrollera iOS > inställningar > Sekretess-menyn.";
 
 /* Error - Photo Data - Privacy - Denied */
-"Access to your \"Photo Data\" was previously denied.  Please check the iOS > Settings > Privacy menu." = "Access to your \"Photo Data\" was previously denied.  Please check the iOS > Settings > Privacy menu.";
+"Access to your \"Photo Data\" was previously denied.  Please check the iOS > Settings > Privacy menu." = "Åtkomst till din \"Photo Data\" nekades tidigare.  Vänligen kontrollera iOS > inställningar > Sekretess-menyn.";
 
 /* Error - Push Notifications - Privacy - Denied */
-"Access to your \"Push Notifications\" was previously denied.  Please check the iOS > Settings > Privacy menu." = "Access to your \"Push Notifications\" was previously denied.  Please check the iOS > Settings > Privacy menu.";
+"Access to your \"Push Notifications\" was previously denied.  Please check the iOS > Settings > Privacy menu." = "Åtkomst till dina \"Push-meddelanden\" nekades tidigare.  Vänligen kontrollera iOS > inställningar > Sekretess-menyn.";
 
 /* Error - Account is locked until {lockTime} */
-"Account is locked until %@" = "Account is locked until %@";
+"Account is locked until %@" = "Kontot är låst till %@";
 
 /* Error - Account locked */
-"Account locked" = "Account locked";
+"Account locked" = "Konto låst";
 
 /* Detail Label - Active */
-"Active" = "Active";
+"Active" = "Aktiva";
 
 /* Detail Label - Alarm */
-"Alarm" = "Alarm";
+"Alarm" = "Larm";
 
 /* Label - Alarm Duration */
-"Alarm Duration" = "Alarm Duration";
+"Alarm Duration" = "Alarm Varaktighet";
 
 /* Label - Alarm is active */
-"Alarm is active" = "Alarm is active";
+"Alarm is active" = "Larmet är aktivt";
 
 /* Label - Alarm is off */
-"Alarm is off" = "Alarm is off";
+"Alarm is off" = "Larmet är släckt";
 
 /* Label - Alarm Squawk */
-"Alarm Squawk" = "Alarm Squawk";
+"Alarm Squawk" = "Larm Squawk";
 
 /* Label - Alarm Status */
-"Alarm Status" = "Alarm Status";
+"Alarm Status" = "Larm Status";
 
 /* Label - Alarm Strobe */
-"Alarm Strobe" = "Alarm Strobe";
+"Alarm Strobe" = "Larm Strobe";
 
 /* Label - Alarm Warn */
-"Alarm Warn" = "Alarm Warn";
-
-/* Label - Alarm will beep %@ times */
-"Alarm will beep %i times" = "Alarm will beep %i times";
+"Alarm Warn" = "Larm Varna";
 
 /* Error - An email has been sent to you with instructions on how to add this device to your {App Name} account. */
-"An email has been sent to you with instructions on how to add this device to your %@ account." = "An email has been sent to you with instructions on how to add this device to your %@ account.";
+"An email has been sent to you with instructions on how to add this device to your %@ account." = "Ett e-postmeddelande har skickats till dig med instruktioner om hur du lägger till den här enheten i ditt %@ -konto.";
 
 /* Error - An error occurred when attempting to request access to your Address Book. */
-"An error occurred when attempting to request access to your Address Book." = "An error occurred when attempting to request access to your Address Book.";
+"An error occurred when attempting to request access to your Address Book." = "Ett fel uppstod vid försök att begära åtkomst till din adressbok.";
 
 /* Label - an hour ago */
-"an hour ago" = "an hour ago";
+"an hour ago" = "en timme sedan";
 
 /* No comment provided by engineer. */
-"and" = "and";
+"and" = "Och";
 
 /* Firmware Update - Approved */
-"Approved" = "Approved";
+"Approved" = "Godkända";
 
 /* Label - As fast as possible */
-"As fast as possible" = "As fast as possible";
+"As fast as possible" = "Så fort som möjligt";
 
 /* Label - at */
-"at" = "at";
+"at" = "På";
 
 /* Label - Audio streaming disabled */
-"Audio streaming disabled" = "Audio streaming disabled";
+"Audio streaming disabled" = "Ljudströmning inaktiverad";
 
 /* Label - Audio streaming enabled */
-"Audio streaming enabled" = "Audio streaming enabled";
+"Audio streaming enabled" = "Ljudströmning aktiverad";
 
 /* Label - Auto */
 "Auto" = "Auto";
 
 /* Label - Auxiliary Heat */
-"Auxiliary Heat" = "Auxiliary Heat";
+"Auxiliary Heat" = "Hjälpvärme";
 
 /* Firmware Update - Available */
-"Available" = "Available";
+"Available" = "Tillgängliga";
 
 /* Mode - Away */
-"Away" = "Away";
+"Away" = "Bort";
 
 /* Label - Basement (Space Name) */
-"Basement" = "Basement";
+"Basement" = "Källaren";
 
 /* Label - Bathroom (Space Name) */
-"Bathroom" = "Bathroom";
+"Bathroom" = "Badrum";
 
 /* Label - Bedroom (Space Name) */
-"Bedroom" = "Bedroom";
+"Bedroom" = "Sovrum";
 
 /* Detail Label - Beep */
 "Beep" = "Beep";
 
 /* Label - Beep 2 times when motion is detected */
-"Beep %@ times when motion is detected" = "Beep %@ times when motion is detected";
+"Beep %@ times when motion is detected" = "Pip %@ gånger när rörelse upptäcks";
 
 /* Label - Beep 1 time when motion is detected */
-"Beep 1 time when motion is detected" = "Beep 1 time when motion is detected";
+"Beep 1 time when motion is detected" = "Pip 1 gång när rörelse upptäcks";
 
 /* Detail Label - BeepBeep */
 "BeepBeep" = "BeepBeep";
 
 /* Detail Label - BeepBeepWelcome */
-"BeepBeepWelcome" = "BeepBeepWelcome";
+"BeepBeepWelcome" = "BeepBeepVälkommen";
 
 /* Detail Label - BeepWelcome */
-"BeepWelcome" = "BeepWelcome";
+"BeepWelcome" = "BeepVälkommen";
 
 /* Label - between $time1 and $time2 */
-"between $time1 and $time2" = "between $time1 and $time2";
+"between $time1 and $time2" = "mellan $time1 och $time2";
 
 /* Detail Label - Bird */
-"Bird" = "Bird";
+"Bird" = "Fågel";
 
 /* Label - Blackout disabled */
-"Blackout disabled" = "Blackout disabled";
+"Blackout disabled" = "Blackout funktionshindrade";
 
 /* Label - Blackout enabled */
-"Blackout enabled" = "Blackout enabled";
+"Blackout enabled" = "Blackout aktiverat";
 
 /* Detail Label - Bling */
 "Bling" = "Bling";
 
 /* Detail Label - LintAlert Blocked */
-"Blocked" = "Blocked";
+"Blocked" = "Blockerade";
 
 /* Error - Bluetooth is currently powered off. Please go into your Settings and turn on Bluetooth. */
-"Bluetooth is currently powered off. Please go into your Settings and turn on Bluetooth." = "Bluetooth is currently powered off. Please go into your Settings and turn on Bluetooth.";
+"Bluetooth is currently powered off. Please go into your Settings and turn on Bluetooth." = "Bluetooth är för närvarande avstängd. Vänligen gå in i dina Inställningar och slå på Bluetooth.";
 
 /* Label - Brightness */
-"Brightness" = "Brightness";
+"Brightness" = "Ljusstyrka";
 
 /* Detail Label - Burglar */
-"Burglar" = "Burglar";
+"Burglar" = "Inbrottstjuv";
 
 /* Detail Label - Burglar alarm */
-"Burglar alarm" = "Burglar alarm";
+"Burglar alarm" = "Inbrottslarm";
 
 /* Label - Button Status */
-"Button Status" = "Button Status";
+"Button Status" = "Knappstatus";
 
 /* Label - Camera speaker volume is at {number}{percent %} */
-"Camera speaker volume is at %.0f%%." = "Camera speaker volume is at %.0f%%.";
+"Camera speaker volume is at %.0f%%." = "Kamerahögtalarvolymen är på %.0f%%.";
 
 /* Camera - Label describing this camera's volume is maxed */
-"Camera speaker volume is maxed." = "Camera speaker volume is maxed.";
+"Camera speaker volume is maxed." = "Kamerahögtalarvolymen är maxad.";
 
 /* Camera - Label describing this camera is muted */
-"Camera speaker volume is muted." = "Camera speaker volume is muted.";
+"Camera speaker volume is muted." = "Kamerans högtalarvolym är avstängd.";
 
 /* Error - Can't play this video! Did you delete it remotely? Do you have a good connection? */
-"Can't play this video! Did you delete it remotely? Do you have a good connection?" = "Can't play this video! Did you delete it remotely? Do you have a good connection?";
+"Can't play this video! Did you delete it remotely? Do you have a good connection?" = "Kan inte spela den här videon! Har du radera den på distans? Har du en bra kontakt?";
 
 /* Error - Can't save the video! Please grant {App Name} access to your Photos and Videos folder in iOS Settings > Privacy > Photos, then try your download again. */
-"Can't save the video! Please grant %@ access to your Photos and Videos folder in iOS Settings > Privacy > Photos, then try your download again." = "Can't save the video! Please grant %@ access to your Photos and Videos folder in iOS Settings > Privacy > Photos, then try your download again.";
+"Can't save the video! Please grant %@ access to your Photos and Videos folder in iOS Settings > Privacy > Photos, then try your download again." = "Kan inte spara videon! Vänligen bevilja %@ tillgång till din foto och videos-mapp i iOS-inställningar > Privacy > Photos, försök sedan din nedladdning igen.";
 
 /* Error - 37 */
-"Cannot authorize user on external resource or cloud" = "Cannot authorize user on external resource or cloud";
+"Cannot authorize user on external resource or cloud" = "Det går inte att auktorisera användare på extern resurs eller i molnet";
 
 /* Error - 42 */
-"Cannot connect to an external resource" = "Cannot connect to an external resource";
+"Cannot connect to an external resource" = "Det går inte att ansluta till en extern resurs";
 
 /* Error - Cannot modify external resources */
-"Cannot modify external resources" = "Cannot modify external resources";
+"Cannot modify external resources" = "Det går inte att ändra externa resurser";
 
 /* Label - Charging */
-"Charging" = "Charging";
+"Charging" = "Laddning";
 
 /* Detail Label - Chinese1 */
-"Chinese1" = "Chinese1";
+"Chinese1" = "Kinesiska1";
 
 /* Detail Label - Chinese2 */
-"Chinese2" = "Chinese2";
+"Chinese2" = "Kinesiska2";
 
 /* Detail Label - Chinese3 */
-"Chinese3" = "Chinese3";
+"Chinese3" = "Kinesiska3";
 
 /* Detail Label - Chinese4 */
-"Chinese4" = "Chinese4";
+"Chinese4" = "Kinesiska4";
 
 /* Detail Label - Chinese5 */
-"Chinese5" = "Chinese5";
+"Chinese5" = "Kinesiska5";
 
 /* Detail Label - Chinese6 */
-"Chinese6" = "Chinese6";
+"Chinese6" = "Kinesiska6";
 
 /* Detail Label - Chinese7 */
-"Chinese7" = "Chinese7";
+"Chinese7" = "Kinesiska7";
 
 /* Detail Label - Chinese8 */
-"Chinese8" = "Chinese8";
+"Chinese8" = "Kinesiska8";
 
 /* Detail Label - Click once */
-"Click once" = "Click once";
+"Click once" = "Klicka en gång";
 
 /* Detail Label - Closed */
-"Closed" = "Closed";
+"Closed" = "Stängt";
 
 /* Label - Configure vantage point {vantage point index} */
-"Configure vantage point %@" = "Configure vantage point %@";
+"Configure vantage point %@" = "Konfigurera utsiktspunkt %@";
 
 /* Label - Continue recording even after motion goes away */
-"Continue recording even after motion goes away" = "Continue recording even after motion goes away";
+"Continue recording even after motion goes away" = "Fortsätt inspelningen även efter rörelse går bort";
 
 /* Label - Cool */
 "Cool" = "Cool";
 
 /* Label - Cooling Setpoint */
-"Cooling Setpoint" = "Cooling Setpoint";
+"Cooling Setpoint" = "Kyl-setpunkt";
 
 /* Error - Corrupted video file! */
-"Corrupted video file!" = "Corrupted video file!";
+"Corrupted video file!" = "Skadad videofil!";
 
 /* Error - Unable to verify IP Camera */
-"Could not verify IP Camera" = "Could not verify IP Camera";
+"Could not verify IP Camera" = "Det gick inte att verifiera IP Camera";
 
 /* Error - Couldn't contact Blue Line. */
-"Couldn't contact Blue Line." = "Couldn't contact Blue Line.";
+"Couldn't contact Blue Line." = "Kunde inte kontakta Blue Line.";
 
 /* Error - Couldn't save this video to your album! */
-"Couldn't save this video to your album!" = "Couldn't save this video to your album!";
+"Couldn't save this video to your album!" = "Kunde inte spara den här videon till ditt album!";
 
 /* No comment provided by engineer. */
-"days ago" = "days ago";
+"days ago" = "dagar sedan";
 
 /* Detail Label - Deadbolt Jammed */
-"Deadbolt Jammed" = "Deadbolt Jammed";
+"Deadbolt Jammed" = "Deadbolt fastnat";
 
 /* Firmware Update - Declined */
-"Declined" = "Declined";
+"Declined" = "Minskade";
 
 /* Label - Detect huge movements */
-"Detect huge movements" = "Detect huge movements";
+"Detect huge movements" = "Upptäck enorma rörelser";
 
 /* Label - Detect huge sounds */
-"Detect huge sounds" = "Detect huge sounds";
+"Detect huge sounds" = "Upptäcka enorma ljud";
 
 /* Label - Detect large movements */
-"Detect large movements" = "Detect large movements";
+"Detect large movements" = "Upptäcka stora rörelser";
 
 /* Label - Detect large sounds */
-"Detect large sounds" = "Detect large sounds";
+"Detect large sounds" = "Upptäcka stora ljud";
 
 /* Label - Detect normal movements */
-"Detect normal movements" = "Detect normal movements";
+"Detect normal movements" = "Upptäcka normala rörelser";
 
 /* Label - Detect normal sounds */
-"Detect normal sounds" = "Detect normal sounds";
+"Detect normal sounds" = "Upptäcka normala ljud";
 
 /* Label - Detect small movements */
-"Detect small movements" = "Detect small movements";
+"Detect small movements" = "Upptäcka små rörelser";
 
 /* Label - Detect small sounds */
-"Detect small sounds" = "Detect small sounds";
+"Detect small sounds" = "Upptäcka små ljud";
 
 /* Label - Detect tiny sounds */
-"Detect tiny aounds" = "Detect tiny aounds";
+"Detect tiny aounds" = "Upptäck små aounds";
 
 /* Label - Detect tiny movements */
-"Detect tiny movements" = "Detect tiny movements";
+"Detect tiny movements" = "Upptäck små rörelser";
 
 /* Label - Detecting Audio */
-"Detecting Audio" = "Detecting Audio";
+"Detecting Audio" = "Upptäcka ljud";
 
 /* Label - Detecting Motion */
-"Detecting Motion" = "Detecting Motion";
+"Detecting Motion" = "Upptäcka rörelse";
 
 /* Error - Device command proxy (gateway) has not been found */
-"Device command proxy (gateway) has not been found" = "Device command proxy (gateway) has not been found";
+"Device command proxy (gateway) has not been found" = "Enhetskommandoproxy (gateway) har inte hittats";
 
 /* Error - Device is not linked to any location */
-"Device is not linked to any location" = "Device is not linked to any location";
+"Device is not linked to any location" = "Enheten är inte länkad till någon plats";
 
 /* Error - Device is offline or disconnected */
-"Device is offline or disconnected" = "Device is offline or disconnected";
+"Device is offline or disconnected" = "Enheten är offline eller frånkopplad";
 
 /* Error - 39 */
-"Device not found on external cloud" = "Device not found on external cloud";
+"Device not found on external cloud" = "Enheten hittades inte i externt moln";
 
 /* Label - Room (Space Name) */
-"Dining Room" = "Dining Room";
+"Dining Room" = "Matsal";
 
 /* Label - Disabled */
-"Disabled" = "Disabled";
+"Disabled" = "Inaktiverad";
 
 /* Detail Label - Dog */
-"Dog" = "Dog";
+"Dog" = "Hund";
 
 /* Detail Label - Door Forced Open */
-"Door Forced Open" = "Door Forced Open";
+"Door Forced Open" = "Dörr Tvingas Öppna";
 
 /* Label - Door Status */
-"Door Status" = "Door Status";
+"Door Status" = "Dörr Status";
 
 /* Detail Label - Doorbel */
-"Doorbel" = "Doorbel";
+"Doorbel" = "Dörrbel";
 
 /* Detail Label - Doorbell */
-"Doorbell" = "Doorbell";
+"Doorbell" = "Dörrklockan";
 
 /* Detail Label - Droid */
 "Droid" = "Droid";
 
 /* Detail Label - Dry
    Label - Dry */
-"Dry" = "Dry";
+"Dry" = "Torr";
 
 /* Label - LintAlert Dryer Off */
-"Dryer Off" = "Dryer Off";
+"Dryer Off" = "Torktumlare Av";
 
 /* Label - LintAlert Dryer On */
-"Dryer On" = "Dryer On";
+"Dryer On" = "Torktumlare På";
 
 /* Error - Duplicate entity or property */
-"Duplicate entity or property" = "Duplicate entity or property";
+"Duplicate entity or property" = "Duplicerad entitet eller egendom";
 
 /* Error - Duplicate state change for region. */
-"Duplicate state change for region." = "Duplicate state change for region.";
+"Duplicate state change for region." = "Ändring av dubbletter av tillstånd för region.";
 
 /* Error - Duplicate user name */
-"Duplicate user name" = "Duplicate user name";
+"Duplicate user name" = "Dubblett användarnamn";
 
 /* Detail Label - Emergency */
-"Emergency" = "Emergency";
+"Emergency" = "Nöd";
 
 /* Detail Label - Emergency alarm */
-"Emergency alarm" = "Emergency alarm";
+"Emergency alarm" = "Nödlarm";
 
 /* Label - Emergency Heat */
-"Emergency Heat" = "Emergency Heat";
+"Emergency Heat" = "Akut Värme";
 
 /* Language Code: 'en', 'zh', etc... */
-"en" = "en";
+"en" = "sv";
 
 /* Error - Error in parsing of input data */
-"Error in parsing of input data" = "Error in parsing of input data";
+"Error in parsing of input data" = "Fel vid tolkning av indata";
 
 /* Error - Error uploading */
-"Error uploading" = "Error uploading";
+"Error uploading" = "Fel vid uppladdning";
 
 /* Error - External application error response */
-"External application error response" = "External application error response";
+"External application error response" = "Svar för externt programfel";
 
 /* Error - Failed to register for location services. */
-"Failed to register for location services." = "Failed to register for location services.";
+"Failed to register for location services." = "Det gick inte att registrera för platstjänster.";
 
 /* Label - Netatmo Health Coath stauts - Fair */
-"Fair" = "Fair";
+"Fair" = "Rättvis";
 
 /* Label - Room (Space Name) */
-"Family Room" = "Family Room";
+"Family Room" = "Familjerum";
 
 /* Label - Fan Mode */
-"Fan Mode" = "Fan Mode";
+"Fan Mode" = "Fläktläge";
 
 /* Label - Fan Only */
-"Fan Only" = "Fan Only";
+"Fan Only" = "Endast fläkt";
 
 /* Label - Far */
-"Far" = "Far";
+"Far" = "Långt";
 
 /* Label - Netatmo Health Coath stauts - Fine */
-"Fine" = "Fine";
+"Fine" = "Bra";
 
 /* Detail Label - Fire */
-"Fire" = "Fire";
+"Fire" = "Eld";
 
 /* Detail Label - Fire alarm */
-"Fire alarm" = "Fire alarm";
+"Fire alarm" = "Brandlarm";
 
 /* Label - Fixed */
-"Fixed" = "Fixed";
+"Fixed" = "Fast";
 
 /* Label - Flash off */
-"Flash off" = "Flash off";
+"Flash off" = "Blixt av";
 
 /* Label - Flash off */
-"Flash on" = "Flash on";
+"Flash on" = "Blixt på";
 
 /* Label - Flip vertical */
-"Flip vertical" = "Flip vertical";
+"Flip vertical" = "Vänd lodrätt";
 
 /* Label - Focused */
-"Focused" = "Focused";
+"Focused" = "Fokuserade";
 
 /* Label - Focusing */
-"Focusing" = "Focusing";
+"Focusing" = "Fokus";
 
 /* Label - Front camera */
-"Front camera" = "Front camera";
+"Front camera" = "Främre kamera";
 
 /* Detail Label - Front Escutcheon Removed */
-"Front Escutcheon Removed" = "Front Escutcheon Removed";
+"Front Escutcheon Removed" = "Främre Escutcheon bort";
 
 /* Label - Galileo */
 "Galileo" = "Galileo";
@@ -480,690 +462,685 @@
 "GunCock" = "GunCock";
 
 /* Detail Label - GunShot */
-"GunShot" = "GunShot";
+"GunShot" = "Pistolskott";
 
 /* Label - Hallway (Space Name) */
-"Hallway" = "Hallway";
+"Hallway" = "Hallen";
 
 /* Label - Hard Reset */
-"Hard Reset" = "Hard Reset";
+"Hard Reset" = "Hård Återställning";
 
 /* Error - Having trouble connecting to Bluetooth! */
-"Having trouble connecting to Bluetooth!" = "Having trouble connecting to Bluetooth!";
+"Having trouble connecting to Bluetooth!" = "Har problem med att ansluta till Bluetooth!";
 
 /* Error - Having trouble connecting. If you're not viewing your camera from somewhere else, please try connecting again. */
-"Having trouble connecting. If you're not viewing your camera from somewhere else, please try connecting again." = "Having trouble connecting. If you're not viewing your camera from somewhere else, please try connecting again.";
+"Having trouble connecting. If you're not viewing your camera from somewhere else, please try connecting again." = "Har problem med att ansluta. Om du inte tittar på kameran från någon annanstans, försök ansluta igen.";
 
 /* Label - HD Status disabled */
-"HD Status disabled" = "HD Status disabled";
+"HD Status disabled" = "HD-status inaktiverad";
 
 /* Label - HD Status enabled */
-"HD Status enabled" = "HD Status enabled";
+"HD Status enabled" = "HD-status aktiverad";
 
 /* Label - Netatmo Health Coath stauts - Healthy */
-"Healthy" = "Healthy";
+"Healthy" = "Friska";
 
 /* Label - Heat */
-"Heat" = "Heat";
+"Heat" = "Värme";
 
 /* Label - Heating Setpoint */
-"Heating Setpoint" = "Heating Setpoint";
+"Heating Setpoint" = "Uppvärmning Setpoint";
 
 /* Label - High */
-"High" = "High";
+"High" = "Hög";
 
 /* Mode - Home */
-"Home" = "Home";
+"Home" = "Hem";
 
 /* No comment provided by engineer. */
-"hour" = "hour";
+"hour" = "Timme";
 
 /* No comment provided by engineer. */
-"hours" = "hours";
+"hours" = "Timmar";
 
 /* No comment provided by engineer. */
-"hours ago" = "hours ago";
+"hours ago" = "timmar sedan";
 
 /* Label - iBeacon Proximity */
-"iBeacon Proximity" = "iBeacon Proximity";
+"iBeacon Proximity" = "iBeacon Närhet";
 
 /* Label - iBeacon Status */
 "iBeacon Status" = "iBeacon Status";
 
 /* Label - Immediate */
-"Immediate" = "Immediate";
+"Immediate" = "Omedelbar";
 
 /* Detail Label - Inactive */
-"Inactive" = "Inactive";
+"Inactive" = "Inaktiva";
 
 /* Label - Internal Temperature */
-"Internal Temperature" = "Internal Temperature";
+"Internal Temperature" = "Inre temperatur";
 
 /* Error - Unable to configure IP Camera - No IP or DDNS address */
-"IP Camera configuration requires either an IP or a DDNS address." = "IP Camera configuration requires either an IP or a DDNS address.";
+"IP Camera configuration requires either an IP or a DDNS address." = "IP Camera-konfiguration kräver antingen en IP- eller en DDNS-adress.";
 
 /* Label - just now */
-"just now" = "just now";
+"just now" = "just nu";
 
 /* Label - Kitchen (Space Name) */
-"Kitchen" = "Kitchen";
+"Kitchen" = "Kök";
 
 /* Label - KUBI */
-"KUBI" = "KUBI";
+"KUBI" = "Kubi";
 
 /* Label - last year */
-"last year" = "last year";
+"last year" = "förra året";
 
 /* Label - Room (Space Name) */
-"Laundry Room" = "Laundry Room";
+"Laundry Room" = "Tvättstuga";
 
 /* Label - LintAlert Current LED */
-"LintAlert Current LED" = "LintAlert Current LED";
+"LintAlert Current LED" = "LintAlert Ström LED";
 
 /* Label - LintAlert Status */
-"LintAlert Status" = "LintAlert Status";
+"LintAlert Status" = "LintAlert-status";
 
 /* Label - Room (Space Name) */
-"Living Room" = "Living Room";
+"Living Room" = "Vardagsrum";
 
 /* Detail Label - Lock */
-"Lock" = "Lock";
+"Lock" = "Låsa";
 
 /* Detail Label - Lock Reset to Factory Defaults */
-"Lock Reset to Factory Defaults" = "Lock Reset to Factory Defaults";
+"Lock Reset to Factory Defaults" = "Lås återställ till fabriksstandard";
 
 /* Label - Lock Status */
-"Lock Status" = "Lock Status";
+"Lock Status" = "Lås status";
 
 /* Label - Lock Status Alarm */
-"Lock Status Alarm" = "Lock Status Alarm";
+"Lock Status Alarm" = "Lås status larm";
 
 /* Detail Label - Locked */
-"Locked" = "Locked";
+"Locked" = "Låst";
 
 /* Error - Lost the connection with the camera. Is your camera's WiFi strong enough? */
-"Lost the connection with the camera. Is your camera's WiFi strong enough?" = "Lost the connection with the camera. Is your camera's WiFi strong enough?";
+"Lost the connection with the camera. Is your camera's WiFi strong enough?" = "Förlorade anslutningen med kameran. Är din kameras WiFi tillräckligt stark?";
 
 /* Label - Low */
-"Low" = "Low";
+"Low" = "Låg";
 
 /* Error - Maximum reached */
-"Maximum reached" = "Maximum reached";
+"Maximum reached" = "Maximalt uppnådd";
 
 /* Label - Medium */
 "Medium" = "Medium";
 
 /* No comment provided by engineer. */
-"minute" = "minute";
+"minute" = "Minuters";
 
 /* No comment provided by engineer. */
-"minutes" = "minutes";
+"minutes" = "Minuter";
 
 /* No comment provided by engineer. */
-"minutes ago" = "minutes ago";
+"minutes ago" = "minuter sedan";
 
 /* No comment provided by engineer. */
-"months ago" = "months ago";
+"months ago" = "månader sedan";
 
 /* Detail Label - Motion */
-"Motion" = "Motion";
+"Motion" = "Rörelse";
 
 /* Label - Motion Status */
-"Motion Status" = "Motion Status";
+"Motion Status" = "Rörelsestatus";
 
 /* Detail Label - Moved */
-"Moved" = "Moved";
+"Moved" = "Flyttade";
 
 /* Detail Label - Multiple clicks */
-"Mulitple clicks" = "Mulitple clicks";
+"Mulitple clicks" = "Mulitple klick";
 
 /* Label - Near */
-"Near" = "Near";
+"Near" = "Nära";
 
 /* Label - Netatmo Health Coach Status */
-"Netatmo Health Coach Status" = "Netatmo Health Coach Status";
+"Netatmo Health Coach Status" = "Netatmo Hälsa Coach Status";
 
 /* Error - No available device resources to complete operation */
-"No available device resources to complete operation" = "No available device resources to complete operation";
+"No available device resources to complete operation" = "Inga tillgängliga enhetsresurser för att slutföra driften";
 
 /* Label - No Flash */
-"No Flash" = "No Flash";
+"No Flash" = "Ingen Blixt";
 
 /* Detail Label - No Motion */
-"No Motion" = "No Motion";
+"No Motion" = "Ingen rörelse";
 
 /* Label - No robot connected */
-"No robot connected" = "No robot connected";
+"No robot connected" = "Ingen robot ansluten";
 
 /* Detail Label - No sound */
-"No sound" = "No sound";
+"No sound" = "Inget ljud";
 
 /* Label - None (Space Name) */
-"None" = "None";
+"None" = "Ingen";
 
 /* Error - Not activated. */
-"Not activated." = "Not activated.";
+"Not activated." = "Inte aktiverad.";
 
 /* Label - Not charging */
-"Not charging" = "Not charging";
+"Not charging" = "Laddar inte";
 
 /* Label - Not detecting audio */
-"Not detecting audio" = "Not detecting audio";
+"Not detecting audio" = "Inte upptäcka ljud";
 
 /* Label - Not detecting motion */
-"Not detecting motion" = "Not detecting motion";
+"Not detecting motion" = "Inte upptäcka rörelse";
 
 /* Label - Not recording */
-"Not recording" = "Not recording";
+"Not recording" = "Inte inspelning";
 
 /* Error - Number of pending device types for this user is more than allowed */
-"Number of pending device types for this user is more than allowed" = "Number of pending device types for this user is more than allowed";
+"Number of pending device types for this user is more than allowed" = "Antal väntande enhetstyper för den här användaren är mer än tillåtet";
 
 /* Label - Off */
-"Off" = "Off";
+"Off" = "Av";
 
 /* Label - Office (Space Name) */
 "Office" = "Office";
 
 /* Detail Label - LintAlert OK
    Detail Label - OK */
-"OK" = "OK";
+"OK" = "Okej";
 
 /* Label - On */
-"On" = "On";
+"On" = "På";
 
 /* Error - Default */
-"Oops, something went wrong.  Please contact support. (%li)" = "Oops, something went wrong.  Please contact support. (%li)";
+"Oops, something went wrong.  Please contact support. (%li)" = "Oj, något gick fel.  Kontakta gärna supporten. (%li)";
 
 /* Error - Oops, you typed in something wrong there */
-"Oops, you typed in something wrong there" = "Oops, you typed in something wrong there";
+"Oops, you typed in something wrong there" = "Oj, du skrev in något fel där";
 
 /* Detail Label - Open */
-"Open" = "Open";
+"Open" = "Öppna";
 
 /* Error - Operation canceled */
-"Operation canceled" = "Operation canceled";
+"Operation canceled" = "Åtgärden avbröts";
 
 /* Label - Other (Space Name) */
-"Other" = "Other";
+"Other" = "Andra";
 
 /* Label - Outlet Status */
-"Outlet Status" = "Outlet Status";
+"Outlet Status" = "Uttagsstatus";
 
 /* Detail Label - PanicE */
-"PanicE" = "PanicE";
+"PanicE" = "Panik";
 
 /* Detail Label - PanicF */
-"PanicF" = "PanicF";
+"PanicF" = "PanikF";
 
 /* Detail Label - PanicP */
-"PanicP" = "PanicP";
+"PanicP" = "Panik";
 
 /* Detail Label - Phaser */
 "Phaser" = "Phaser";
 
-/* Detail Label - Play for {n} seconds */
-"Play for %i seconds" = "Play for %i seconds";
-
 /* Detail Label - Play once */
-"Play once" = "Play once";
+"Play once" = "Spela en gång";
 
 /* Error - Please authorize {App Name} to access Bluetooth LE */
-"Please authorize %@ to access Bluetooth LE" = "Please authorize %@ to access Bluetooth LE";
+"Please authorize %@ to access Bluetooth LE" = "Vänligen auktorisera %@ för att komma åt Bluetooth LE";
 
 /* Error - Please fill in all required fields */
-"Please fill in all required fields" = "Please fill in all required fields";
+"Please fill in all required fields" = "Fyll i alla obligatoriska fält";
 
 /* Error - Please name this device */
-"Please name this device" = "Please name this device";
+"Please name this device" = "Vänligen namnge den här enheten";
 
 /* Error - Please select at least one day this rule should repeat. */
-"Please select at least one day this rule should repeat." = "Please select at least one day this rule should repeat.";
+"Please select at least one day this rule should repeat." = "Vänligen välj minst en dag denna regel bör upprepa.";
 
 /* Label - Netatmo Health Coath stauts - Poor */
-"Poor" = "Poor";
+"Poor" = "Fattiga";
 
 /* Label - Power */
-"Power" = "Power";
+"Power" = "Makt";
 
 /* Label - Power Status */
-"Power Status" = "Power Status";
+"Power Status" = "Effektstatus";
 
 /* Label - Precooling */
-"Precooling" = "Precooling";
+"Precooling" = "Förkylning";
 
 /* Detail Label - Pressed */
-"Pressed" = "Pressed";
+"Pressed" = "Pressade";
 
 /* Label - Range */
-"Range" = "Range";
+"Range" = "Utbud";
 
 /* Label - Ready */
-"Ready" = "Ready";
+"Ready" = "Redo";
 
 /* Label - Rear camera */
-"Rear camera" = "Rear camera";
+"Rear camera" = "Bakre kamera";
 
 /* Label - Reboot motor control board */
-"Reboot motor control board" = "Reboot motor control board";
+"Reboot motor control board" = "Starta om motorstyrbräda";
 
 /* Label - Recording */
-"Recording" = "Recording";
+"Recording" = "Inspelning";
 
 /* Label - Relative Humidity */
-"Relative Humidity" = "Relative Humidity";
+"Relative Humidity" = "Relativ luftfuktighet";
 
 /* Detail Label - Released */
-"Released" = "Released";
+"Released" = "Släppt";
 
 /* Label - Remote control disabled */
-"Remote control disabled" = "Remote control disabled";
+"Remote control disabled" = "Fjärrkontrollen är inaktiverad";
 
 /* Label - Recording */
-"Remote control enabled" = "Remote control enabled";
+"Remote control enabled" = "Fjärrstyrning aktiverad";
 
 /* Error - 41 */
-"Request has not been completed. It is not an error, just nothing to do." = "Request has not been completed. It is not an error, just nothing to do.";
+"Request has not been completed. It is not an error, just nothing to do." = "Begäran har inte slutförts. Det är inte ett fel, bara ingenting att göra.";
 
 /* Error - 40 */
-"Request not allowed in the current state of the resource" = "Request not allowed in the current state of the resource";
+"Request not allowed in the current state of the resource" = "Begäran tillåts inte i resursens aktuella tillstånd";
 
 /* Error - Requested API method not found */
-"Requested API method not found" = "Requested API method not found";
+"Requested API method not found" = "Det gick inte att hitta begärd API-metod";
 
 /* Label - Reset UART */
-"Reset UART" = "Reset UART";
+"Reset UART" = "Återställ UART";
 
 /* Label - Reset UART queue */
-"Reset UART queue" = "Reset UART queue";
+"Reset UART queue" = "Återställ UART-kön";
 
 /* Detail Label - RF Module Power Cycled */
-"RF Module Power Cycled" = "RF Module Power Cycled";
+"RF Module Power Cycled" = "RF-modul Power Cyklade";
 
 /* Label - Romo */
 "Romo" = "Romo";
 
 /* No comment provided by engineer. */
-"second" = "second";
+"second" = "Andra";
 
 /* No comment provided by engineer. */
-"seconds" = "seconds";
+"seconds" = "Sekunder";
 
 /* No comment provided by engineer. */
-"seconds ago" = "seconds ago";
+"seconds ago" = "sekunder sedan";
 
 /* Detail Label - Security Drill */
-"Security Drill" = "Security Drill";
+"Security Drill" = "Säkerhetsborr";
 
 /* Error - Service is temporarily unavailable */
-"Service is temporarily unavailable" = "Service is temporarily unavailable";
+"Service is temporarily unavailable" = "Tjänsten är inte tillgänglig för tillfället";
 
 /* Detail Label - Silence */
-"Silence" = "Silence";
+"Silence" = "Tystnad";
 
 /* Mode - Sleep */
-"Sleep" = "Sleep";
+"Sleep" = "Sömn";
 
 /* Label - Smart */
 "Smart" = "Smart";
 
 /* Label - Sound alarm when motion is detected */
-"Sound alarm when motion is detected" = "Sound alarm when motion is detected";
+"Sound alarm when motion is detected" = "Ljudlarm när rörelse upptäcks";
 
 /* Detail Label - Squawk sarmed */
-"Squawk armed" = "Squawk armed";
+"Squawk armed" = "Squawk beväpnade";
 
 /* Detail Label - Squawk disarmed */
-"Squawk disarmed" = "Squawk disarmed";
+"Squawk disarmed" = "Squawk avväpnas";
 
 /* Label - Stairs (Space Name) */
-"Stairs" = "Stairs";
+"Stairs" = "Trappor";
 
 /* Firmware Update - Started */
-"Started" = "Started";
+"Started" = "Startat";
 
 /* Label - State */
-"State" = "State";
+"State" = "Statligt";
 
 /* Mode - Stay */
-"Stay" = "Stay";
+"Stay" = "Bo";
 
 /* Detail Label - Still */
-"Still" = "Still";
+"Still" = "Fortfarande";
 
 /* Detail Label - Stop */
-"Stop" = "Stop";
+"Stop" = "Stanna";
 
 /* Detail Label - Stop alarm */
-"Stop alarm" = "Stop alarm";
+"Stop alarm" = "Stoppa larm";
 
 /* Label - Stop recording after motion goes away */
-"Stop recording after motion goes away" = "Stop recording after motion goes away";
+"Stop recording after motion goes away" = "Stoppa inspelningen efter rörelse försvinner";
 
 /* Label - Stopped */
-"Stopped" = "Stopped";
+"Stopped" = "Stoppat";
 
 /* Detail Label - Strobe off */
-"Strobe off" = "Strobe off";
+"Strobe off" = "Strobe av";
 
 /* Detail Label - Strobe on */
-"Strobe on" = "Strobe on";
+"Strobe on" = "Strobe på";
 
 /* Label - Swing Mode */
-"Swing Mode" = "Swing Mode";
+"Swing Mode" = "Swing-läge";
 
 /* Detail Label - Switch */
-"Switch" = "Switch";
+"Switch" = "Växla";
 
 /* Label - System Mode */
-"System Mode" = "System Mode";
+"System Mode" = "Systemläge";
 
 /* Label - System Mode Status */
-"System Mode Status" = "System Mode Status";
+"System Mode Status" = "Status för systemläge";
 
 /* Error - TED is not activated properly. */
-"TED is not activated properly." = "TED is not activated properly.";
+"TED is not activated properly." = "TED aktiveras inte på rätt sätt.";
 
 /* Label - Temperature */
-"Temperature" = "Temperature";
+"Temperature" = "Temperatur";
 
 /* Mode - Test */
 "Test" = "Test";
 
 /* Error - Thank you, our team will look into this. */
-"Thank you, our team will look into this." = "Thank you, our team will look into this.";
+"Thank you, our team will look into this." = "Tack, vårt team kommer att undersöka detta.";
 
 /* Error - That barcode is corrupted. */
-"That barcode is corrupted." = "That barcode is corrupted.";
+"That barcode is corrupted." = "Den streckkoden är skadad.";
 
 /* Error - That device belongs to someone else */
-"That device belongs to someone else" = "That device belongs to someone else";
+"That device belongs to someone else" = "Den enheten tillhör någon annan";
 
 /* Error - That device is no longer in your account */
-"That device is no longer in your account" = "That device is no longer in your account";
+"That device is no longer in your account" = "Den enheten finns inte längre i ditt konto";
 
 /* Error - That type of product isn't supported on this server. */
-"That type of product isn't supported on this server." = "That type of product isn't supported on this server.";
+"That type of product isn't supported on this server." = "Den typen av produkter stöds inte på den här servern.";
 
 /* Error - That wasn't the barcode you were looking for. */
-"That wasn't the barcode you were looking for." = "That wasn't the barcode you were looking for.";
+"That wasn't the barcode you were looking for." = "Det var inte streckkoden du letade efter.";
 
 /* Error - The {App Name} app had trouble connecting. Is your internet connection ok? */
-"The %@ app had trouble connecting. Is your internet connection ok?" = "The %@ app had trouble connecting. Is your internet connection ok?";
+"The %@ app had trouble connecting. Is your internet connection ok?" = "Appen %@ hade problem med att ansluta. Är din internetuppkoppling ok?";
 
 /* Error - 45 */
-"The communication channel is not authenticated" = "The communication channel is not authenticated";
+"The communication channel is not authenticated" = "Kommunikationskanalen är inte autentiserad";
 
 /* Error - The username or password you entered is incorrect */
-"The username or password you entered is incorrect" = "The username or password you entered is incorrect";
+"The username or password you entered is incorrect" = "Användarnamnet eller lösenordet du angav är felaktigt";
 
 /* Error - There are no contacts on this device.  Tap 'Search' or 'Scan someone's bar code' to add a friend manually. */
-"There are no contacts on this device.  Tap 'Search' or 'Scan someone's bar code' to add a friend manually." = "There are no contacts on this device.  Tap 'Search' or 'Scan someone's bar code' to add a friend manually.";
+"There are no contacts on this device.  Tap 'Search' or 'Scan someone's bar code' to add a friend manually." = "Det finns inga kontakter på den här enheten.  Tryck på 'Sök' eller 'Skanna någons streckkod' för att lägga till en vän manuellt.";
 
 /* Error - There was an error creating the camera, please try again later. */
-"There was an error creating the camera, please try again later." = "There was an error creating the camera, please try again later.";
+"There was an error creating the camera, please try again later." = "Det uppstod ett fel när kameran skulle skapas, försök igen senare.";
 
 /* Error - This action is temporarily locked */
-"This action is temporarily locked" = "This action is temporarily locked";
+"This action is temporarily locked" = "Den här åtgärden är tillfälligt låst";
 
 /* Error - Camera - Privacy - Not Determined */
-"This app needs access to your \"Camera\" in order for you to capture new videos and pictures.  You may allow this in the iOS > Settings > Privacy menu." = "This app needs access to your \"Camera\" in order for you to capture new videos and pictures.  You may allow this in the iOS > Settings > Privacy menu.";
+"This app needs access to your \"Camera\" in order for you to capture new videos and pictures.  You may allow this in the iOS > Settings > Privacy menu." = "Denna app behöver tillgång till din \"Kamera\" för att du ska kunna fånga nya videor och bilder.  Du kan tillåta detta i iOS > inställningar > Sekretess-menyn.";
 
 /* Error - Microphone - Privacy - Not Determined */
-"This app needs access to your \"Microphone\" in order for you to capture audio.  You may allow this in the iOS > Settings > Privacy menu." = "This app needs access to your \"Microphone\" in order for you to capture audio.  You may allow this in the iOS > Settings > Privacy menu.";
+"This app needs access to your \"Microphone\" in order for you to capture audio.  You may allow this in the iOS > Settings > Privacy menu." = "Denna app behöver tillgång till din \"Mikrofon\" för att du ska kunna fånga ljud.  Du kan tillåta detta i iOS > inställningar > Sekretess-menyn.";
 
 /* Error - Photo Data - Privacy - Not Determined */
-"This app needs access to your \"Photo Data\" in order for you to upload images and videos you've already taken on this device.  You may allow this in the iOS > Settings > Privacy menu." = "This app needs access to your \"Photo Data\" in order for you to upload images and videos you've already taken on this device.  You may allow this in the iOS > Settings > Privacy menu.";
+"This app needs access to your \"Photo Data\" in order for you to upload images and videos you've already taken on this device.  You may allow this in the iOS > Settings > Privacy menu." = "Denna app behöver tillgång till din \"Fotodata\" för att du ska kunna ladda upp bilder och videor som du redan har tagit på den här enheten.  Du kan tillåta detta i iOS > inställningar > Sekretess-menyn.";
 
 /* Error - Push Notifications - Privacy - Not Determined */
-"This app needs access to your \"Push Notifications\" in order for you to receive push notifications.  You may allow this in the iOS > Settings > Privacy menu." = "This app needs access to your \"Push Notifications\" in order for you to receive push notifications.  You may allow this in the iOS > Settings > Privacy menu.";
+"This app needs access to your \"Push Notifications\" in order for you to receive push notifications.  You may allow this in the iOS > Settings > Privacy menu." = "Den här appen behöver åtkomst till dina \"Push-meddelanden\" för att du ska kunna få push-meddelanden.  Du kan tillåta detta i iOS > inställningar > Sekretess-menyn.";
 
 /* Error - This app requires access to your contacts to function properly. Please visit to the \"Privacy\" section in the iPhone Settings app. */
-"This app requires access to your contacts to function properly. Please visit to the \"Privacy\" section in the iPhone Settings app." = "This app requires access to your contacts to function properly. Please visit to the \"Privacy\" section in the iPhone Settings app.";
+"This app requires access to your contacts to function properly. Please visit to the \"Privacy\" section in the iPhone Settings app." = "Den här appen kräver åtkomst till dina kontakter för att fungera korrekt. Besök gärna avsnittet \"Sekretess\" i appen iPhone-inställningar.";
 
 /* Error - Camera - Privacy - Restricted */
-"This application is not able to access your \"Camera\" due to some restrictions.  Please check the iOS > Settings > Privacy menu." = "This application is not able to access your \"Camera\" due to some restrictions.  Please check the iOS > Settings > Privacy menu.";
+"This application is not able to access your \"Camera\" due to some restrictions.  Please check the iOS > Settings > Privacy menu." = "Det här programmet har inte möjlighet att komma åt din \"Kamera\" på grund av vissa begränsningar.  Vänligen kontrollera iOS > inställningar > Sekretess-menyn.";
 
 /* Error - Microphone - Privacy - Restricted */
-"This application is not able to access your \"Microphone\" due to some restrictions.  Please check the iOS > Settings > Privacy menu." = "This application is not able to access your \"Microphone\" due to some restrictions.  Please check the iOS > Settings > Privacy menu.";
+"This application is not able to access your \"Microphone\" due to some restrictions.  Please check the iOS > Settings > Privacy menu." = "Det här programmet har inte möjlighet att komma åt din \"Mikrofon\" på grund av vissa begränsningar.  Vänligen kontrollera iOS > inställningar > Sekretess-menyn.";
 
 /* Error - Photo Data - Privacy - Restricted */
-"This application is not able to access your \"Photo Data\" due to some restrictions.  Please check the iOS > Settings > Privacy menu." = "This application is not able to access your \"Photo Data\" due to some restrictions.  Please check the iOS > Settings > Privacy menu.";
+"This application is not able to access your \"Photo Data\" due to some restrictions.  Please check the iOS > Settings > Privacy menu." = "Denna ansökan är inte kunna komma åt din \"Foto Data\" på grund av vissa begränsningar.  Vänligen kontrollera iOS > inställningar > Sekretess-menyn.";
 
 /* Error - This camera detected some motion and is currently recording, try again in a few moments. */
-"This camera detected some motion and is currently recording, try again in a few moments." = "This camera detected some motion and is currently recording, try again in a few moments.";
+"This camera detected some motion and is currently recording, try again in a few moments." = "Denna kamera upptäckte en del rörelse och är för närvarande inspelning, försök igen i en liten stund.";
 
 /* Error - This camera is currently not available. Make sure it is up and running remotely. */
-"This camera is currently not available. Make sure it is up and running remotely." = "This camera is currently not available. Make sure it is up and running remotely.";
+"This camera is currently not available. Make sure it is up and running remotely." = "Den här kameran är inte tillgänglig för närvarande. Kontrollera att den är igång på distans.";
 
 /* Error - This device is too old to support Bluetooth LE */
-"This device is too old to support Bluetooth LE" = "This device is too old to support Bluetooth LE";
+"This device is too old to support Bluetooth LE" = "Den här enheten är för gammal för att stödja Bluetooth LE";
 
 /* Error - Timeout in device communication */
-"Timeout in device communication" = "Timeout in device communication";
+"Timeout in device communication" = "Timeout i enhetskommunikation";
 
 /* Label - today */
-"today" = "today";
+"today" = "I dag";
 
 /* Error - Too many registration attempts. Please try again in a few minutes. */
-"Too many registration attempts. Please try again in a few minutes." = "Too many registration attempts. Please try again in a few minutes.";
+"Too many registration attempts. Please try again in a few minutes." = "För många registreringsförsök. Försök igen om några minuter.";
 
 /* Error - 44 */
-"Too often API calls" = "Too often API calls";
+"Too often API calls" = "Alltför ofta API-anrop";
 
 /* Detail Label - Trumpet */
 "Trumpet" = "Trumpet";
 
-/* No comment provided by engineer. */
-"Try again in %@" = "Try again in %@";
+/* Error - Try again in {time} */
+"Try again in %@" = "Försök igen i %@";
 
 /* No comment provided by engineer. */
-"Try again later." = "Try again later.";
+"Try again later." = "Försök igen senare.";
 
 /* Label - Twitter auto-sharing disabled */
-"Twitter auto-sharing disabled" = "Twitter auto-sharing disabled";
+"Twitter auto-sharing disabled" = "Twitter auto-sharing funktionshindrade";
 
 /* Label - Twitter auto-sharing enabled */
-"Twitter auto-sharing enabled" = "Twitter auto-sharing enabled";
+"Twitter auto-sharing enabled" = "Automatisk delning av Twitter aktiverat";
 
 /* Label - Twitter disabled */
-"Twitter disabled" = "Twitter disabled";
+"Twitter disabled" = "Twitter inaktiverad";
 
 /* Label - Twitter enabled */
-"Twitter enabled" = "Twitter enabled";
+"Twitter enabled" = "Twitter aktiverat";
 
 /* Label - Twitter reminder disabled */
-"Twitter reminder disabled" = "Twitter reminder disabled";
+"Twitter reminder disabled" = "Twitter påminnelse inaktiverad";
 
 /* Label - Twitter reminder enabled */
-"Twitter reminder enabled" = "Twitter reminder enabled";
+"Twitter reminder enabled" = "Twitter påminnelse aktiverad";
 
 /* Error - Unable to access your address book. */
-"Unable to access your address book." = "Unable to access your address book.";
+"Unable to access your address book." = "Det går inte att komma åt din adressbok.";
 
 /* Error - Unable to access your address book. Please check your privacy settings. */
-"Unable to access your address book. Please check your privacy settings." = "Unable to access your address book. Please check your privacy settings.";
+"Unable to access your address book. Please check your privacy settings." = "Det går inte att komma åt din adressbok. Vänligen kontrollera dina sekretessinställningar.";
 
 /* Error - Unable to change camera name */
-"Unable to change camera name" = "Unable to change camera name";
+"Unable to change camera name" = "Det går inte att ändra kameranamn";
 
 /* Error - Unable to change DDNS */
-"Unable to change DDNS" = "Unable to change DDNS";
+"Unable to change DDNS" = "Det går inte att ändra DDNS";
 
 /* Error - Unable to configure default admin user */
-"Unable to configure default admin user" = "Unable to configure default admin user";
+"Unable to configure default admin user" = "Det går inte att konfigurera standardadministratörsanvändare";
 
 /* Error - Unable to connect Galileo 30-pin */
-"Unable to connect Galileo 30-pin" = "Unable to connect Galileo 30-pin";
+"Unable to connect Galileo 30-pin" = "Det går inte att ansluta Galileo 30-pin";
 
 /* Error - Unable to download firmware! */
-"Unable to download firmware!" = "Unable to download firmware!";
+"Unable to download firmware!" = "Det går inte att ladda ner firmware!";
 
 /* Error - Unable to enable IP Camera UPnP */
-"Unable to enable IP Camera UPnP" = "Unable to enable IP Camera UPnP";
+"Unable to enable IP Camera UPnP" = "Det går inte att aktivera IP-kamera UPnP";
 
 /* Error - Unable to get camera name */
-"Unable to get camera name" = "Unable to get camera name";
+"Unable to get camera name" = "Det gick inte att hämta kameranamn";
 
 /* Error - Unable to get DDNS */
-"Unable to get DDNS" = "Unable to get DDNS";
+"Unable to get DDNS" = "Det gick inte att hämta DDNS";
 
 /* Error - Unable to get register IP Camera */
-"Unable to register an IP Camera with this device type.  Please ensure that your camera is online and that you chose the correct device to add." = "Unable to register an IP Camera with this device type.  Please ensure that your camera is online and that you chose the correct device to add.";
+"Unable to register an IP Camera with this device type.  Please ensure that your camera is online and that you chose the correct device to add." = "Det gick inte att registrera en IP-kamera med den här enhetstypen.  Vänligen se till att din kamera är online och att du valde rätt enhet att lägga till.";
 
 /* Error - Unable to start up your camera! Please contact support. */
-"Unable to start up your camera! Please contact support." = "Unable to start up your camera! Please contact support.";
+"Unable to start up your camera! Please contact support." = "Det går inte att starta upp din kamera! Kontakta gärna supporten.";
 
 /* Error - Unable to upload file! */
-"Unable to upload file!" = "Unable to upload file!";
+"Unable to upload file!" = "Det går inte att ladda upp fil!";
 
 /* Label - Undefined (Space Name) */
-"Undefined" = "Undefined";
+"Undefined" = "Odefinierad";
 
 /* Label - Netatmo Health Coath stauts - Unhealthy */
-"Unhealthy" = "Unhealthy";
+"Unhealthy" = "Ohälsosamma";
 
 /* Label - Unknown */
-"Unknown" = "Unknown";
+"Unknown" = "Okänd";
 
 /* Error - Unknown OAuth client */
-"Unknown OAuth client" = "Unknown OAuth client";
+"Unknown OAuth client" = "Okänd OAuth-klient";
 
 /* Label - Unknown robot */
-"Unknown robot" = "Unknown robot";
+"Unknown robot" = "Okänd robot";
 
 /* Detail Label - Unlocked */
-"Unlocked" = "Unlocked";
+"Unlocked" = "Olåst";
 
 /* Mode - Vacation */
-"Vacation" = "Vacation";
+"Vacation" = "Semester";
 
 /* Label - Vibration Status */
-"Vibration Status" = "Vibration Status";
+"Vibration Status" = "Vibrationsstatus";
 
 /* Label - Video calling not supported */
-"Video calling not supported" = "Video calling not supported";
+"Video calling not supported" = "Videosamtal stöds inte";
 
 /* Label - Video calling supported */
-"Video calling supported" = "Video calling supported";
+"Video calling supported" = "Videosamtal stöds";
 
 /* Label - Video streaming disabled */
-"Video streaming disabled" = "Video streaming disabled";
+"Video streaming disabled" = "Videoströmning inaktiverad";
 
 /* Label - Video streaming enabled */
-"Video streaming enabled" = "Video streaming enabled";
+"Video streaming enabled" = "Videoströmning aktiverad";
 
 /* Error - Waiting for Bluetooth to power up... */
-"Waiting for Bluetooth to power up..." = "Waiting for Bluetooth to power up...";
+"Waiting for Bluetooth to power up..." = "Väntar på Att Bluetooth ska driva upp...";
 
 /* Label - Warm Reset */
-"Warm Reset" = "Warm Reset";
+"Warm Reset" = "Varm Återställning";
 
 /* Detail Label - LintAlert Warning
    Detail Label - Warning */
-"Warning" = "Warning";
+"Warning" = "Varning";
 
 /* Label - Warning status disabled */
-"Warning status disabled" = "Warning status disabled";
+"Warning status disabled" = "Varningsstatus inaktiverad";
 
 /* Label - Warning status enabled */
-"Warning status enabled" = "Warning status enabled";
+"Warning status enabled" = "Varningsstatus aktiverad";
 
 /* Label - Water Leak */
-"Water Leak" = "Water Leak";
+"Water Leak" = "Vatten Läcka";
 
 /* Error - We believe there is a firewall blocking access to the {App Name} camera. */
-"We believe there is a firewall blocking access to the %@ camera." = "We believe there is a firewall blocking access to the %@ camera.";
+"We believe there is a firewall blocking access to the %@ camera." = "Vi tror att det finns en brandvägg som blockerar åtkomsten till %@ kameran.";
 
 /* Error - Unable to connect the LintAlert */
-"We couldn't contact the LintAlert Pro Plus. Press and release the Circle RESET button, then hold the Square CONFIG button for 3 seconds. Reconnect to the LintAlert's Wi-Fi network in your iOS Wi-Fi Settings, then try again." = "We couldn't contact the LintAlert Pro Plus. Press and release the Circle RESET button, then hold the Square CONFIG button for 3 seconds. Reconnect to the LintAlert's Wi-Fi network in your iOS Wi-Fi Settings, then try again.";
+"We couldn't contact the LintAlert Pro Plus. Press and release the Circle RESET button, then hold the Square CONFIG button for 3 seconds. Reconnect to the LintAlert's Wi-Fi network in your iOS Wi-Fi Settings, then try again." = "Vi kunde inte kontakta LintAlert Pro Plus. Tryck på och släpp circle RESET-knappen och håll sedan in knappen Square CONFIG i 3 sekunder. Anslut på nytt till LintAlerts Wi-Fi-nätverk i dina wi-fi-inställningar i iOS och försök sedan igen.";
 
 /* Error - We're having trouble connecting to the camera. Are you and your camera on a good connection? Please try it again. */
-"We're having trouble connecting to the camera. Are you and your camera on a good connection? Please try it again." = "We're having trouble connecting to the camera. Are you and your camera on a good connection? Please try it again.";
+"We're having trouble connecting to the camera. Are you and your camera on a good connection? Please try it again." = "Vi har problem med att ansluta till kameran. Är du och din kamera på en bra anslutning? Snälla, prova det igen.";
 
 /* No comment provided by engineer. */
-"weeks ago" = "weeks ago";
-
-/* Error - Well that's strange, we had a problem saving that rule. Sorry about this!\n\nIf you have time, please contact support and describe the rule you were trying to create so we can fix it. */
-"Well that's strange, we had a problem saving that rule. Sorry about this!\n\nIf you have time, please contact support and describe the rule you were trying to create so we can fix it." = "Well that's strange, we had a problem saving that rule. Sorry about this!\n\nIf you have time, please contact support and describe the rule you were trying to create so we can fix it.";
+"weeks ago" = "veckor sedan";
 
 /* Detail Label - Wet */
-"Wet" = "Wet";
+"Wet" = "Våt";
 
 /* Label - What is the start time, and on which days? */
-"What is the start time, and on which days?" = "What is the start time, and on which days?";
+"What is the start time, and on which days?" = "Vad är starttiden, och på vilka dagar?";
 
 /* Label - What time should it end each day? */
-"What time should it end each day?" = "What time should it end each day?";
+"What time should it end each day?" = "Vilken tid ska det sluta varje dag?";
 
 /* Detail Label - Whistle */
-"Whistle" = "Whistle";
+"Whistle" = "Visselpipa";
 
 /* Error - Wrong activation key */
-"Wrong activation key" = "Wrong activation key";
+"Wrong activation key" = "Fel aktiveringsnyckel";
 
 /* Detail Label - Wrong Code Entry Limit */
-"Wrong Code Entry Limit" = "Wrong Code Entry Limit";
+"Wrong Code Entry Limit" = "Fel gräns för kodinträde";
 
 /* Error - Wrong consumer ID */
-"Wrong consumer ID" = "Wrong consumer ID";
+"Wrong consumer ID" = "Fel konsument-ID";
 
 /* Error - Wrong device registration code */
-"Wrong device registration code" = "Wrong device registration code";
+"Wrong device registration code" = "Fel enhetsregistreringskod";
 
 /* Error - Wrong index value */
-"Wrong index value" = "Wrong index value";
+"Wrong index value" = "Fel indexvärde";
 
 /* Error - Wrong location ID or location is not related to the user */
-"Wrong location ID or location is not related to the user" = "Wrong location ID or location is not related to the user";
+"Wrong location ID or location is not related to the user" = "Fel plats-ID eller plats är inte relaterat till användaren";
 
 /* Error - Wrong operation token */
-"Wrong operation token" = "Wrong operation token";
+"Wrong operation token" = "Fel operationstoken";
 
 /* Error - Wrong phone number */
-"Wrong phone number" = "Wrong phone number";
+"Wrong phone number" = "Fel telefonnummer";
 
 /* Error - Wrong rule schedule format */
-"Wrong rule schedule format" = "Wrong rule schedule format";
+"Wrong rule schedule format" = "Fel format för regelschema";
 
 /* No comment provided by engineer. */
-"years ago" = "years ago";
+"years ago" = "år sedan";
 
 /* Label - yesterday */
-"yesterday" = "yesterday";
+"yesterday" = "Igår";
 
 /* Error - You are already viewing this camera from somewhere else. */
-"You are already viewing this camera from somewhere else." = "You are already viewing this camera from somewhere else.";
+"You are already viewing this camera from somewhere else." = "Du tittar redan på den här kameran från någon annanstans.";
 
 /* Error - Push Notifications - Privacy - Provisional */
-"You are currently testing out \"Push Notifications\", with some restrictions.  Please check the iOS > Settings > Privacy menu." = "You are currently testing out \"Push Notifications\", with some restrictions.  Please check the iOS > Settings > Privacy menu.";
+"You are currently testing out \"Push Notifications\", with some restrictions.  Please check the iOS > Settings > Privacy menu." = "Du testar för närvarande ut \"Push Notifications\", med vissa begränsningar.  Vänligen kontrollera iOS > inställningar > Sekretess-menyn.";
 
 /* Error - You are no longer signed in */
-"You are no longer signed in" = "You are no longer signed in";
+"You are no longer signed in" = "Du är inte längre inloggad";
 
 /* Error - You can still add friends manually using \"Search email or phone\" */
-"You can still add friends manually using \"Search email or phone\"" = "You can still add friends manually using \"Search email or phone\"";
+"You can still add friends manually using \"Search email or phone\"" = "Du kan fortfarande lägga till vänner manuellt med hjälp av \"Sök e-post eller telefon\"";
 
 /* Error - Photo Data - Privacy - Denied */
-"You've chosen to not allow this application access to your \"Camera\".  You will be asked for permission again the next time you access this feature." = "You've chosen to not allow this application access to your \"Camera\".  You will be asked for permission again the next time you access this feature.";
+"You've chosen to not allow this application access to your \"Camera\".  You will be asked for permission again the next time you access this feature." = "Du har valt att inte tillåta den här programåtkomsten till din \"Kamera\".  Du kommer att bli tillfrågad om tillstånd igen nästa gång du kommer åt den här funktionen.";
 
 /* Error - Photo Data - Privacy - Denied */
-"You've chosen to not allow this application access to your \"Microphone\".  You will be asked for permission again the next time you access this feature." = "You've chosen to not allow this application access to your \"Microphone\".  You will be asked for permission again the next time you access this feature.";
+"You've chosen to not allow this application access to your \"Microphone\".  You will be asked for permission again the next time you access this feature." = "Du har valt att inte tillåta det här programmet åtkomst till din \"Mikrofon\".  Du kommer att bli tillfrågad om tillstånd igen nästa gång du kommer åt den här funktionen.";
 
 /* Error - Photo Data - Privacy - Denied */
-"You've chosen to not allow this application access to your \"Photo Data\".  You will be asked for permission again the next time you access this feature." = "You've chosen to not allow this application access to your \"Photo Data\".  You will be asked for permission again the next time you access this feature.";
+"You've chosen to not allow this application access to your \"Photo Data\".  You will be asked for permission again the next time you access this feature." = "Du har valt att inte tillåta den här applikationen åtkomst till dina \"Fotodata\".  Du kommer att bli tillfrågad om tillstånd igen nästa gång du kommer åt den här funktionen.";
 
 /* Error - Push Notifications - Privacy - Denied */
-"You've chosen to not allow this application access to your \"Push Notifications\".  You can change your app settings in your profile page." = "You've chosen to not allow this application access to your \"Push Notifications\".  You can change your app settings in your profile page.";
+"You've chosen to not allow this application access to your \"Push Notifications\".  You can change your app settings in your profile page." = "Du har valt att inte tillåta det här programmet åtkomst till dina \"Push-meddelanden\".  Du kan ändra dina appinställningar i din profilsida.";
 
 /* Error - Your location is already set this mode. */
-"Your location is already set this mode." = "Your location is already set this mode.";
+"Your location is already set this mode." = "Din plats är redan inställd detta läge.";
 
 /* Error - SMS Subscriber - Error updating phone number */
-"Your new phone number cannot receive SMS messages." = "Your new phone number cannot receive SMS messages.";
+"Your new phone number cannot receive SMS messages." = "Ditt nya telefonnummer kan inte ta emot SMS-meddelanden.";
 
 /* Error - Your password must be at least 8 characters long. */
-"Your password must be at least 8 characters long." = "Your password must be at least 8 characters long.";
+"Your password must be at least 8 characters long." = "Ditt lösenord måste vara minst 8 tecken långt.";
 
 /* Error - Invalid phone number */
-"Your phone number cannot receive SMS messages.  Please use a phone number that can receive SMS messages." = "Your phone number cannot receive SMS messages.  Please use a phone number that can receive SMS messages.";
+"Your phone number cannot receive SMS messages.  Please use a phone number that can receive SMS messages." = "Ditt telefonnummer kan inte ta emot SMS-meddelanden.  Använd ett telefonnummer som kan ta emot SMS-meddelanden.";
+
