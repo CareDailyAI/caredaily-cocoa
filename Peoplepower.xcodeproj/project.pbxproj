@@ -1147,6 +1147,7 @@
 		63DC1D10215A98EF0091FB2D /* PPLocationNarrative.h in Headers */ = {isa = PBXBuildFile; fileRef = 63DC1D0E215A98EF0091FB2D /* PPLocationNarrative.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63DC1D11215A98EF0091FB2D /* PPLocationNarrative.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DC1D0F215A98EF0091FB2D /* PPLocationNarrative.m */; };
 		63E62AB7249196B30038A694 /* Peoplepower-Resources.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 63E62AB6249196B30038A694 /* Peoplepower-Resources.podspec */; };
+		63EB2A6925D254D500BE55F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63EB2A6725D254D500BE55F6 /* InfoPlist.strings */; };
 		63EC62E9219A44AE0054010D /* Peoplepower-Attributions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63EC62E8219A44AE0054010D /* Peoplepower-Attributions.plist */; };
 /* End PBXBuildFile section */
 
@@ -1182,6 +1183,7 @@
 		631152DE21E7FB8400DA7755 /* PPTHConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPTHConstants.h; sourceTree = "<group>"; };
 		6313EBF420655DC90017EF74 /* PPNotificationToken.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPNotificationToken.h; sourceTree = "<group>"; };
 		6313EBF520655DC90017EF74 /* PPNotificationToken.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPNotificationToken.m; sourceTree = "<group>"; };
+		63175EC525D224F400690433 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
 		631DB29921077D8900C2F8F1 /* PPCircleDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPCircleDevice.h; sourceTree = "<group>"; };
 		631DB29A21077D8900C2F8F1 /* PPCircleDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPCircleDevice.m; sourceTree = "<group>"; };
 		631F72F023BBC16600F98797 /* PPUserCommunity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPUserCommunity.h; sourceTree = "<group>"; };
@@ -1895,7 +1897,9 @@
 		63DC1D0E215A98EF0091FB2D /* PPLocationNarrative.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPLocationNarrative.h; sourceTree = "<group>"; };
 		63DC1D0F215A98EF0091FB2D /* PPLocationNarrative.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPLocationNarrative.m; sourceTree = "<group>"; };
 		63E62AB6249196B30038A694 /* Peoplepower-Resources.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Peoplepower-Resources.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		63EB2A6825D254D500BE55F6 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		63EC62E8219A44AE0054010D /* Peoplepower-Attributions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Peoplepower-Attributions.plist"; sourceTree = "<group>"; };
+		63F7E6D025D254D800A25F03 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		63FAAF97209B609F0062638A /* PPDeviceProxyLocalCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPDeviceProxyLocalCamera.h; sourceTree = "<group>"; };
 		63FAAF98209B609F0062638A /* PPDeviceProxyLocalCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPDeviceProxyLocalCamera.m; sourceTree = "<group>"; };
 		63FAAFD6209B7CA90062638A /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -2584,6 +2588,7 @@
 				63D39315204F3A0900041C1A /* Peoplepower-Prefix.pch */,
 				637A632B206C44B000F7876D /* Peoplepower-Config.plist */,
 				63A9524E205AFC15000E466A /* Peoplepower-Info-iOS.plist */,
+				63EB2A6725D254D500BE55F6 /* InfoPlist.strings */,
 				630BDC5524B393480035D8B3 /* Peoplepower-Info-watchOS.plist */,
 				63BEC9AF20C5D2AB00408494 /* Peoplepower-Framework-Info.plist */,
 				63EC62E8219A44AE0054010D /* Peoplepower-Attributions.plist */,
@@ -3705,6 +3710,7 @@
 				en,
 				Base,
 				es,
+				sv,
 			);
 			mainGroup = 63D392B4204F21EE00041C1A;
 			productRefGroup = 63D392BE204F21EE00041C1A /* Products */;
@@ -3739,6 +3745,7 @@
 				631A7AA3248B151600D86CFF /* UnitTests.plist in Resources */,
 				631A7AA6248B16DD00D86CFF /* Peoplepower-Info-iOS.plist in Resources */,
 				631A7AA7248B16E000D86CFF /* Peoplepower-Framework-Info.plist in Resources */,
+				63EB2A6925D254D500BE55F6 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4498,8 +4505,18 @@
 			children = (
 				63A712B425ACF8E60009E43D /* en */,
 				63A721B925B770AB0009E43D /* es */,
+				63175EC525D224F400690433 /* sv */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		63EB2A6725D254D500BE55F6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63EB2A6825D254D500BE55F6 /* es */,
+				63F7E6D025D254D800A25F03 /* sv */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -4745,7 +4762,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 0.1.7;
+				CURRENT_PROJECT_VERSION = 0.1.8;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -4808,7 +4825,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 0.1.7;
+				CURRENT_PROJECT_VERSION = 0.1.8;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
