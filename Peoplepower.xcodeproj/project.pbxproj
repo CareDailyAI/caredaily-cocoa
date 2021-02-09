@@ -1159,6 +1159,7 @@
 		631152DE21E7FB8400DA7755 /* PPTHConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPTHConstants.h; sourceTree = "<group>"; };
 		6313EBF420655DC90017EF74 /* PPNotificationToken.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPNotificationToken.h; sourceTree = "<group>"; };
 		6313EBF520655DC90017EF74 /* PPNotificationToken.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPNotificationToken.m; sourceTree = "<group>"; };
+		63175EC525D224F400690433 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
 		631DB29921077D8900C2F8F1 /* PPCircleDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPCircleDevice.h; sourceTree = "<group>"; };
 		631DB29A21077D8900C2F8F1 /* PPCircleDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPCircleDevice.m; sourceTree = "<group>"; };
 		631F72F023BBC16600F98797 /* PPUserCommunity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPUserCommunity.h; sourceTree = "<group>"; };
@@ -3646,6 +3647,7 @@
 				en,
 				Base,
 				es,
+				sv,
 			);
 			mainGroup = 63D392B4204F21EE00041C1A;
 			productRefGroup = 63D392BE204F21EE00041C1A /* Products */;
@@ -4429,6 +4431,7 @@
 			children = (
 				63A712B425ACF8E60009E43D /* en */,
 				63A721B925B770AB0009E43D /* es */,
+				63175EC525D224F400690433 /* sv */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
