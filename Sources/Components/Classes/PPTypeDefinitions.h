@@ -2652,7 +2652,9 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeStoryType) {
     PPDeviceTypeStoryTypeMDTAC                              = 44,
     PPDeviceTypeStoryTypeConsentToParticipate               = 45,
     PPDeviceTypeStoryTypeHipaaStatemenet                    = 46,
-    PPDeviceTypeStoryTypeAbout                              = 50,
+    PPDeviceTypeStoryTypeOnboardingApp                      = 50,
+    PPDeviceTypeStoryTypeOnboardingPaywall                  = 51,
+    PPDeviceTypeStoryTypeOnboardingFeature                  = 52,
 };
 
 typedef NS_OPTIONS(NSInteger, PPDeviceTypeStorySortId) {
