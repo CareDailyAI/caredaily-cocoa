@@ -33,12 +33,12 @@
         min = (PPQuestionSliderMin)((NSString *)[sliderDict objectForKey:@"min"]).integerValue;
     }
     PPQuestionSliderMax max = PPQuestionSliderMaxNone;
-    if([sliderDict objectForKey:@"sliderMax"]) {
-        max = (PPQuestionSliderMax)((NSString *)[sliderDict objectForKey:@"sliderMax"]).integerValue;
+    if([sliderDict objectForKey:@"max"]) {
+        max = (PPQuestionSliderMax)((NSString *)[sliderDict objectForKey:@"max"]).integerValue;
     }
     PPQuestionSliderInc inc = PPQuestionSliderIncNone;
-    if([sliderDict objectForKey:@"sliderInc"]) {
-        inc = (PPQuestionSliderInc)((NSString *)[sliderDict objectForKey:@"sliderInc"]).integerValue;
+    if([sliderDict objectForKey:@"inc"]) {
+        inc = (PPQuestionSliderInc)((NSString *)[sliderDict objectForKey:@"inc"]).integerValue;
     }
     NSString *minDesc = [sliderDict objectForKey:@"minDesc"];
     NSString *maxDesc = [sliderDict objectForKey:@"maxDesc"];
