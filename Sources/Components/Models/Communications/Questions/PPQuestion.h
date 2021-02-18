@@ -7,6 +7,7 @@
 //
 
 #import "PPBaseModel.h"
+#import "PPQuestionSlider.h"
 #import "PPQuestionCollection.h"
 #import "PPQuestionResponseOption.h"
 #import "PPQuestionAnswer.h"
@@ -76,6 +77,9 @@
 /* Slider question incremental slider value */
 @property (nonatomic) PPQuestionSliderInc sliderInc;
 
+/* Slider question object */
+@property (nonatomic) PPQuestionSlider *slider;
+
 /* The title of a group of questions */
 @property (nonatomic, strong) NSString *sectionTitle;
 
@@ -112,6 +116,7 @@ aggregatePublicly:(PPQuestionAggregatePublicly)aggregatePublicly
        sliderMin:(PPQuestionSliderMin)sliderMin
        sliderMax:(PPQuestionSliderMax)sliderMax
        sliderInc:(PPQuestionSliderInc)sliderInc
+          slider:(PPQuestionSlider *)slider
     sectionTitle:(NSString *)sectionTitle
        sectionId:(PPQuestionSectionId)sectionId
   questionWeight:(PPQuestionWeight)questionWeight

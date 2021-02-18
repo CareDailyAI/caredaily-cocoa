@@ -748,6 +748,10 @@
 		638E82FC24412416000B07FD /* PPUserCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 638E82FA24412416000B07FD /* PPUserCode.m */; };
 		6390F2FD23AB441E00426CCC /* PPLocationCommunity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6390F2FC23AB441E00426CCC /* PPLocationCommunity.m */; };
 		6390F2FE23AB443800426CCC /* PPLocationCommunity.h in Headers */ = {isa = PBXBuildFile; fileRef = 6390F2FB23AB441E00426CCC /* PPLocationCommunity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		639D8DFC25DDDCDA003376E7 /* PPQuestionSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 639D8DFA25DDDCDA003376E7 /* PPQuestionSlider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		639D8DFD25DDDCDA003376E7 /* PPQuestionSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 639D8DFA25DDDCDA003376E7 /* PPQuestionSlider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		639D8DFE25DDDCDA003376E7 /* PPQuestionSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 639D8DFB25DDDCDA003376E7 /* PPQuestionSlider.m */; };
+		639D8DFF25DDDCDA003376E7 /* PPQuestionSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 639D8DFB25DDDCDA003376E7 /* PPQuestionSlider.m */; };
 		63A56D0F20D3161600AC2212 /* PPNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = 63A56D0D20D3161600AC2212 /* PPNotification.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63A56D1020D3161600AC2212 /* PPNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A56D0E20D3161600AC2212 /* PPNotification.m */; };
 		63A69D6D2151B32B0077553F /* PPDevicePictureFrameAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A69D6B2151B32B0077553F /* PPDevicePictureFrameAlert.m */; };
@@ -1593,6 +1597,8 @@
 		638E82FA24412416000B07FD /* PPUserCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPUserCode.m; sourceTree = "<group>"; };
 		6390F2FB23AB441E00426CCC /* PPLocationCommunity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPLocationCommunity.h; sourceTree = "<group>"; };
 		6390F2FC23AB441E00426CCC /* PPLocationCommunity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPLocationCommunity.m; sourceTree = "<group>"; };
+		639D8DFA25DDDCDA003376E7 /* PPQuestionSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPQuestionSlider.h; sourceTree = "<group>"; };
+		639D8DFB25DDDCDA003376E7 /* PPQuestionSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPQuestionSlider.m; sourceTree = "<group>"; };
 		63A56D0D20D3161600AC2212 /* PPNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPNotification.h; sourceTree = "<group>"; };
 		63A56D0E20D3161600AC2212 /* PPNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPNotification.m; sourceTree = "<group>"; };
 		63A69D6B2151B32B0077553F /* PPDevicePictureFrameAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPDevicePictureFrameAlert.m; sourceTree = "<group>"; };
@@ -3013,6 +3019,8 @@
 				63D394992053074800041C1A /* PPQuestions.m */,
 				63D3949B2053075100041C1A /* PPQuestion.h */,
 				63D3949C2053075100041C1A /* PPQuestion.m */,
+				639D8DFA25DDDCDA003376E7 /* PPQuestionSlider.h */,
+				639D8DFB25DDDCDA003376E7 /* PPQuestionSlider.m */,
 				63D3949E2053076E00041C1A /* PPQuestionCollection.h */,
 				63D3949F2053076E00041C1A /* PPQuestionCollection.m */,
 				63D394A12053078D00041C1A /* PPQuestionResponseOption.h */,
@@ -3257,6 +3265,7 @@
 				630BDDB824B3AAFF0035D8B3 /* PPDeviceTypeMedia.h in Headers */,
 				630BDDCC24B3AB080035D8B3 /* PPCommunityPost.h in Headers */,
 				630BDD6424B3AAE00035D8B3 /* PPApplicationFile.h in Headers */,
+				639D8DFD25DDDCDA003376E7 /* PPQuestionSlider.h in Headers */,
 				630BDDF624B3AB250035D8B3 /* PPUrl.h in Headers */,
 				630BDDBE24B3AAFF0035D8B3 /* PPDeviceTypeDeviceModelBrand.h in Headers */,
 				630BDD4424B3AACB0035D8B3 /* PPInAppMessaging.h in Headers */,
@@ -3566,6 +3575,7 @@
 				63AD0B1A237CC77900F4900B /* PPCommunityLocation.h in Headers */,
 				637F1D012125E321001DB910 /* PPStorage.h in Headers */,
 				6372B66521349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.h in Headers */,
+				639D8DFC25DDDCDA003376E7 /* PPQuestionSlider.h in Headers */,
 				631DB29B21077D8900C2F8F1 /* PPCircleDevice.h in Headers */,
 				63872B462135AE99003EE488 /* PPLocationSpace.h in Headers */,
 				6360FAB821B8520200DB2B6B /* PPCloudsIntegrationCloud.h in Headers */,
@@ -4082,6 +4092,7 @@
 				630BDCE124B3A6C20035D8B3 /* PPNSDate.m in Sources */,
 				630BDDF124B3AB220035D8B3 /* PPAFHTTPRequestOperationManager.m in Sources */,
 				630BDC6B24B3A5D60035D8B3 /* PPCloudConnectivityCloud.m in Sources */,
+				639D8DFF25DDDCDA003376E7 /* PPQuestionSlider.m in Sources */,
 				630BDCA124B3A65C0035D8B3 /* PPUserCommunity.m in Sources */,
 				630BDCDF24B3A6C20035D8B3 /* PPNSString.m in Sources */,
 				630BDD6D24B3AAE90035D8B3 /* PPServicePlanPriceAmount.m in Sources */,
@@ -4377,6 +4388,7 @@
 				63BECA3120C5D6A100408494 /* PPStoreProduct.m in Sources */,
 				63BEC9F720C5D67500408494 /* PPWebSocketConfiguration.m in Sources */,
 				63B9B144248C0D9C0056E7CE /* PPRealm.m in Sources */,
+				639D8DFE25DDDCDA003376E7 /* PPQuestionSlider.m in Sources */,
 				63BECA5D20C5D6E500408494 /* PPCloudsIntegrationClient.m in Sources */,
 				63BECA4D20C5D6C300408494 /* PPDeviceType.m in Sources */,
 				63BECA4220C5D6C300408494 /* PPEnergyManagementBillingInfo.m in Sources */,
@@ -4762,7 +4774,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 0.1.9;
+				CURRENT_PROJECT_VERSION = 0.1.10;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -4825,7 +4837,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 0.1.9;
+				CURRENT_PROJECT_VERSION = 0.1.10;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;

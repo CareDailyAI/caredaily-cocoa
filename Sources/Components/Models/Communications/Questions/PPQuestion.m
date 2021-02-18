@@ -35,6 +35,7 @@ aggregatePublicly:(PPQuestionAggregatePublicly)aggregatePublicly
        sliderMin:(PPQuestionSliderMin)sliderMin
        sliderMax:(PPQuestionSliderMax)sliderMax
        sliderInc:(PPQuestionSliderInc)sliderInc
+          slider:(PPQuestionSlider *)slider
     sectionTitle:(NSString *)sectionTitle
        sectionId:(PPQuestionSectionId)sectionId
   questionWeight:(PPQuestionWeight)questionWeight
@@ -63,6 +64,7 @@ aggregatePublicly:(PPQuestionAggregatePublicly)aggregatePublicly
         self.sliderMin = sliderMin;
         self.sliderMax = sliderMax;
         self.sliderInc = sliderInc;
+        self.slider = slider;
         self.sectionTitle = sectionTitle;
         self.sectionId = sectionId;
         self.questionWeight = questionWeight;
@@ -146,6 +148,7 @@ aggregatePublicly:(PPQuestionAggregatePublicly)aggregatePublicly
     if([questionDict objectForKey:@"sliderInc"]) {
         sliderInc = (PPQuestionSliderInc)((NSString *)[questionDict objectForKey:@"sliderInc"]).integerValue;
     }
+    PPQuestionSlider *slider = [PPQuestionSlider initWithDictionary:[questionDict objectForKey:@"slider"]];
     NSString *sectionTitle = [questionDict objectForKey:@"sectionTitle"];
     PPQuestionSectionId sectionId = PPQuestionSectionIdNone;
     if([questionDict objectForKey:@"sectionId"]) {
@@ -182,6 +185,7 @@ aggregatePublicly:(PPQuestionAggregatePublicly)aggregatePublicly
                                                 sliderMin:sliderMin
                                                 sliderMax:sliderMax
                                                 sliderInc:sliderInc
+                                                   slider:slider
                                              sectionTitle:sectionTitle
                                                 sectionId:sectionId
                                            questionWeight:questionWeight
