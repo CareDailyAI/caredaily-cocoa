@@ -20,6 +20,7 @@
     if (self) {
         self.max = max;
         self.min = min;
+        self.inc = inc;
         self.minDesc = minDesc;
         self.maxDesc = maxDesc;
         self.unitsDesc = unitsDesc;
