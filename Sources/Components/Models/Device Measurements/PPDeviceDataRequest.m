@@ -52,7 +52,7 @@ static NSString *kCompression = @"compression";
     [dict setValue:@(round(parameter.endDate.timeIntervalSince1970 * 1000)) forKey:kEndTime];
     
     if (parameter.paramNames != nil) {
-        [dict setValue:parameter.paramNames forKey:kParamNames];
+        [dict setValue:[PPRLMArray arrayFromArray:parameter.paramNames] forKey:kParamNames];
     }
     if (parameter.index != nil) {
         [dict setValue:parameter.index.stringValue forKey:kIndex];
