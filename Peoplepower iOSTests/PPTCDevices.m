@@ -227,12 +227,13 @@ static NSString *moduleName = @"Devices";
  * The startDate field declares when the device was moved. By default, this is set to the current time when the API call is made. With this field, it's possible to retroactively declare that the device was at a different location in the past.
  *
  * @ param deviceId Required NSString Device ID to update
- * @ param currentLocationId Required PPLocationId Location ID that contains the device
+ * @ param locationId Required PPLocationId Location ID that contains the device
  * @ param desc NSString Description / Name of the device
  * @ param goalId PPDeviceTypeGoalId Goal id of this device
  * @ param newDevice PPDeviceNewDevice New device tag for this device.  Set to False to stop OOBE.
- * @ param locationId PPLocationId New location to move this device to
+ * @ param newLocationId PPLocationId New location to move this device to
  * @ param startDate NSDate Retroactively declare when this device was moved/added to a location
+ * @ param modelId NSString New Model ID
  * @ param callback PPErrorBlock Error callback block
  **/
 - (void)testUpdateDeviceAtLocation {
@@ -242,7 +243,7 @@ static NSString *moduleName = @"Devices";
     [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/locations/%@/devices/%@", @(self.location.locationId), self.device.deviceId] statusCode:200 headers:nil];
 
         
-    [PPDevices updateDevice:self.device.deviceId locationId:self.device.locationId desc:self.device.name goalId:self.device.goalId newDevice:self.device.newDevice newLocationId:self.location.locationId startDate:[NSDate date] callback:^(NSError *error) {
+    [PPDevices updateDevice:self.device.deviceId locationId:self.device.locationId desc:self.device.name goalId:self.device.goalId newDevice:self.device.newDevice newLocationId:self.location.locationId startDate:[NSDate date] modelId:self.device.modelId callback:^(NSError *error) {
          
        XCTAssertNil(error);
        [expectation fulfill];
