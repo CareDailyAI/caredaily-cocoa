@@ -2369,6 +2369,7 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeId)  {
     PPDeviceTypeIdIndoorCamera = 7000,
     PPDeviceTypeIdFoscamIPCamera = 7001,
     PPDeviceTypeIdAMTKIPCamera = 7002,
+    PPDeviceTypeIdNabtoCamera = 7007,
     
     PPDeviceTypeIdGEInWallSwitch = 9001,
     PPDeviceTypeIdSmartenitSiren = 9002,
