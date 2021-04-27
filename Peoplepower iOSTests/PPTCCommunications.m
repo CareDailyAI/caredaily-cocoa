@@ -21,6 +21,7 @@
 #import <Peoplepower/PPInAppMessaging.h>
 #import <Peoplepower/PPSMSGroupTexting.h>
 #import <Peoplepower/PPSurveys.h>
+#import <Peoplepower/PPSupportTickets.h>
 
 static NSString *moduleName = @"UserCommunications";
 
@@ -39,6 +40,7 @@ static NSString *moduleName = @"UserCommunications";
 @property (strong, nonatomic) NSArray *questions;
 @property (strong, nonatomic) PPSMSSubscriber *smsSubscriber;
 @property (strong, nonatomic) PPSurveyQuestion *surveyQuestion;
+@property (strong, nonatomic) PPSupportTicket *supportTicket;
 @end
 
 @implementation PPTCCommunications
@@ -59,6 +61,7 @@ static NSString *moduleName = @"UserCommunications";
     NSArray *questionsArray = (NSArray *)[PPAppResources getPlistEntry:PLIST_KEY_TEST_QUESTIONS filename:PLIST_FILE_UNIT_TESTS];
     NSDictionary *subscriberDict = (NSDictionary *)[PPAppResources getPlistEntry:PLIST_KEY_TEST_SMS_GROUP_TEXTING_SUBSCRIBER filename:PLIST_FILE_UNIT_TESTS];
     NSDictionary *surveyQuestionDict = (NSDictionary *)[PPAppResources getPlistEntry:PLIST_KEY_TEST_SURVEY_QUESTION filename:PLIST_FILE_UNIT_TESTS];
+    NSDictionary *supportTicketDict = (NSDictionary *)[PPAppResources getPlistEntry:PLIST_KEY_TEST_SUPPORT_TICKET filename:PLIST_FILE_UNIT_TESTS];
 
     
     self.appName = appName;
@@ -84,6 +87,8 @@ static NSString *moduleName = @"UserCommunications";
     self.questions = questions;
     self.smsSubscriber = [PPSMSSubscriber initWithDictionary:subscriberDict];
     self.surveyQuestion = [PPSurveyQuestion initWithDictionary:surveyQuestionDict];
+    self.supportTicket = [PPSupportTicket initWithDictionary:supportTicketDict];
+    
 }
 
 - (void)tearDown {
@@ -724,6 +729,32 @@ static NSString *moduleName = @"UserCommunications";
 
     [self waitForExpectations:@[expectation] timeout:10.0];
 
+}
+
+// MARK: - Support Tickets
+
+/**
+ * Support Ticket
+ * Create a support ticket.
+ *
+ * @ param supportTicket PPSupportTicket Required Support ticket
+ * @ param userId PPUserId Request support for this user by an administrator
+ * @ param callback PPErrorBlock Error callback block
+ */
+- (void)testSupportTicket {
+    NSString *methodName = @"PostSupportTicket";
+    XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
+    
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/ticket" statusCode:200 headers:nil];
+
+    [PPSupportTickets postSupportTicket:self.supportTicket userId:PPUserIdNone callback:^(NSError * _Nullable error) {
+        
+        XCTAssertNil(error);
+        [expectation fulfill];
+
+    }];
+
+    [self waitForExpectations:@[expectation] timeout:10.0];
 }
 
 @end

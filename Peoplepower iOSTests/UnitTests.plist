@@ -896,6 +896,17 @@
 			<key>answer</key>
 			<string>This is some text input</string>
 		</dict>
+		<key>PPTCSupportTicket</key>
+		<dict>
+			<key>type</key>
+			<string>1</string>
+			<key>priority</key>
+			<string>1</string>
+			<key>subject</key>
+			<string>Help me!</string>
+			<key>comment</key>
+			<real>0</real>
+		</dict>
 	</dict>
 	<key>System and User Properties</key>
 	<dict>

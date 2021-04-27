@@ -58,6 +58,10 @@
 #define PLIST_KEY_TEST_NOTIFICATION_EMAIL_MESSAGE @"PPTCNotificationEmailMessage"
 #define PLIST_KEY_TEST_NOTIFICATION_SMS_MESSAGE @"PPTCNotificationSMSMessage"
 
+// MARK: Support Ticket
+
+#define PLIST_KEY_TEST_SUPPORT_TICKET @"PPTCSupportTicket"
+
 // MARK: Crowd Feedback
 
 #define PLIST_KEY_TEST_CROWD_FEEDBACK_FEEDBACK @"PPTCCrowdFeedbacksFeedback"
