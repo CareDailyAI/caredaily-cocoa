@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63044565263779E000CDDAAF /* PPSupportTickets.h in Headers */ = {isa = PBXBuildFile; fileRef = 63044563263779E000CDDAAF /* PPSupportTickets.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63044566263779E000CDDAAF /* PPSupportTickets.m in Sources */ = {isa = PBXBuildFile; fileRef = 63044564263779E000CDDAAF /* PPSupportTickets.m */; };
+		6304456F263779EC00CDDAAF /* PPSupportTicket.h in Headers */ = {isa = PBXBuildFile; fileRef = 6304456D263779EC00CDDAAF /* PPSupportTicket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63044570263779EC00CDDAAF /* PPSupportTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6304456E263779EC00CDDAAF /* PPSupportTicket.m */; };
+		63044577263779FF00CDDAAF /* PPSupportTickets.m in Sources */ = {isa = PBXBuildFile; fileRef = 63044564263779E000CDDAAF /* PPSupportTickets.m */; };
+		63044578263779FF00CDDAAF /* PPSupportTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6304456E263779EC00CDDAAF /* PPSupportTicket.m */; };
+		6304457C26377A0500CDDAAF /* PPSupportTickets.h in Headers */ = {isa = PBXBuildFile; fileRef = 63044563263779E000CDDAAF /* PPSupportTickets.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6304457D26377A0500CDDAAF /* PPSupportTicket.h in Headers */ = {isa = PBXBuildFile; fileRef = 6304456D263779EC00CDDAAF /* PPSupportTicket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630445A926377F1100CDDAAF /* UserCommunications-PostSupportTicket-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 630445A826377F1000CDDAAF /* UserCommunications-PostSupportTicket-ResponseData.json */; };
 		6309B76120E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.h in Headers */ = {isa = PBXBuildFile; fileRef = 6309B75F20E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6309B76220E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 6309B76020E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.m */; };
 		630BDC5624B393480035D8B3 /* Peoplepower-Info-watchOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 630BDC5524B393480035D8B3 /* Peoplepower-Info-watchOS.plist */; };
@@ -1144,6 +1153,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		63044563263779E000CDDAAF /* PPSupportTickets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPSupportTickets.h; sourceTree = "<group>"; };
+		63044564263779E000CDDAAF /* PPSupportTickets.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPSupportTickets.m; sourceTree = "<group>"; };
+		6304456D263779EC00CDDAAF /* PPSupportTicket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPSupportTicket.h; sourceTree = "<group>"; };
+		6304456E263779EC00CDDAAF /* PPSupportTicket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPSupportTicket.m; sourceTree = "<group>"; };
+		630445A826377F1000CDDAAF /* UserCommunications-PostSupportTicket-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "UserCommunications-PostSupportTicket-ResponseData.json"; sourceTree = "<group>"; };
 		6309B75F20E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPDeviceTypeDeviceModelLookupParam.h; sourceTree = "<group>"; };
 		6309B76020E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPDeviceTypeDeviceModelLookupParam.m; sourceTree = "<group>"; };
 		630BDC4124B389D40035D8B3 /* output.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = output.xcfilelist; sourceTree = "<group>"; };
@@ -1911,6 +1925,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		630445622637799D00CDDAAF /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				63044563263779E000CDDAAF /* PPSupportTickets.h */,
+				63044564263779E000CDDAAF /* PPSupportTickets.m */,
+				6304456D263779EC00CDDAAF /* PPSupportTicket.h */,
+				6304456E263779EC00CDDAAF /* PPSupportTicket.m */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		630BDC3F24B386470035D8B3 /* Metadata */ = {
 			isa = PBXGroup;
 			children = (
@@ -2218,6 +2243,7 @@
 				636B4675248AF7CE00124F6A /* UserCommunications-VoteForFeedback-ResponseData.json */,
 				630BDE9824B3E4530035D8B3 /* UserCommunications-AnswerQuestion-ResponseData.json */,
 				630BDE9724B3E4530035D8B3 /* UserCommunications-GetSurveyQuestions-ResponseData.json */,
+				630445A826377F1000CDDAAF /* UserCommunications-PostSupportTicket-ResponseData.json */,
 				636B467D248AF7D100124F6A /* Weather-GetCurrentWeatherByGeocode-ResponseData.json */,
 				636B4631248AF7C400124F6A /* Weather-GetCurrentWeatherByLocation-ResponseData.json */,
 				636B4641248AF7C600124F6A /* Weather-GetForecastByGeocode-ResponseData.json */,
@@ -2892,6 +2918,7 @@
 		63D394682052E04600041C1A /* Communications */ = {
 			isa = PBXGroup;
 			children = (
+				630445622637799D00CDDAAF /* Support */,
 				63D3946F2052E5AA00041C1A /* Notification */,
 				63D394802052EDDC00041C1A /* Crowd Feedback */,
 				63D3948D2052FA8C00041C1A /* In-App Messaging */,
@@ -3138,6 +3165,7 @@
 				630BDCAE24B3A6890035D8B3 /* PPCloudsIntegrationClient.h in Headers */,
 				630BDC6624B3A5B50035D8B3 /* PPCurlDebug.h in Headers */,
 				630BDC8C24B3A6460035D8B3 /* PPUserTag.h in Headers */,
+				6304457D26377A0500CDDAAF /* PPSupportTicket.h in Headers */,
 				630BDC9124B3A6460035D8B3 /* PPUserAnalytics.h in Headers */,
 				630BDCDA24B3A6AF0035D8B3 /* PPBotengineAppReview.h in Headers */,
 				630BDC6824B3A5D60035D8B3 /* PPCloudConnectivity.h in Headers */,
@@ -3280,6 +3308,7 @@
 				630BDDBA24B3AAFF0035D8B3 /* PPDeviceTypeDeviceModel.h in Headers */,
 				630BDD8624B3AAF50035D8B3 /* PPEnergyManagementUsage.h in Headers */,
 				630BDD9824B3AAF50035D8B3 /* PPEnergyManagementBillingInfoUtility.h in Headers */,
+				6304457C26377A0500CDDAAF /* PPSupportTickets.h in Headers */,
 				630BDDA224B3AAF90035D8B3 /* PPWeatherForecast.h in Headers */,
 				630BDDEC24B3AB160035D8B3 /* PPDeviceAlert.h in Headers */,
 				630BDD9A24B3AAF50035D8B3 /* PPEnergyManagementBillingInfoBillingRate.h in Headers */,
@@ -3363,6 +3392,7 @@
 				63BECB1D20C5D8E600408494 /* PPDeviceTypeDeviceModel.h in Headers */,
 				63BECB4520C5D8E600408494 /* PPCloudEngine.h in Headers */,
 				63BECB4620C5D8E600408494 /* PPVersion.h in Headers */,
+				63044565263779E000CDDAAF /* PPSupportTickets.h in Headers */,
 				63BECAAC20C5D88400408494 /* PPUserService.h in Headers */,
 				635296B32552439E00ADBC11 /* PPOrganizationObject.h in Headers */,
 				63BECAA220C5D88400408494 /* PPOperationTokenManagement.h in Headers */,
@@ -3514,6 +3544,7 @@
 				63BECAD220C5D88400408494 /* PPNotificationToken.h in Headers */,
 				63BECB3C20C5D8E600408494 /* PPBotengineAppVersion.h in Headers */,
 				63BECB2A20C5D8E600408494 /* PPFriendshipDevice.h in Headers */,
+				6304456F263779EC00CDDAAF /* PPSupportTicket.h in Headers */,
 				63BECAC820C5D88400408494 /* PPDeviceParameter.h in Headers */,
 				63AD0B0C237C97CA00F4900B /* PPCommunityPost.h in Headers */,
 				6351235A2138540C003E7EAA /* PPDevicePictureFrame.h in Headers */,
@@ -3796,6 +3827,7 @@
 				636B497C248AFBD900124F6A /* Community-CreatePost-ResponseData.json in Resources */,
 				636B49B3248AFBDD00124F6A /* FilesManagement-UpdateFileAttribute-ResponseData.json in Resources */,
 				636B4A0E248AFBE400124F6A /* UserAccounts-GetStates-ResponseData.json in Resources */,
+				630445A926377F1100CDDAAF /* UserCommunications-PostSupportTicket-ResponseData.json in Resources */,
 				636B4A10248AFBE400124F6A /* UserAccounts-GetUserByEmailOrPhone-ResponseData.json in Resources */,
 				636B4975248AFBD900124F6A /* CloudConnectivity-GetVersionInformation-ResponseData.txt in Resources */,
 				636B49CE248AFBDF00124F6A /* Products-DeleteRulePhrase-ResponseData.json in Resources */,
@@ -4021,6 +4053,7 @@
 				630BDDC924B3AAFF0035D8B3 /* PPDeviceTypeStoryModel.m in Sources */,
 				630BDCD724B3A6AF0035D8B3 /* PPBotengineAppMarketing.m in Sources */,
 				630BDCAD24B3A6890035D8B3 /* PPCloudsIntegrationCloud.m in Sources */,
+				63044578263779FF00CDDAAF /* PPSupportTicket.m in Sources */,
 				630BDC9624B3A65C0035D8B3 /* PPLocationSize.m in Sources */,
 				630BDD3724B3AAC20035D8B3 /* PPNotificationSubscription.m in Sources */,
 				630BDC6524B3A58A0035D8B3 /* PPVersion.m in Sources */,
@@ -4075,6 +4108,7 @@
 				630BDDDB24B3AB080035D8B3 /* PPAddress.m in Sources */,
 				630BDD4724B3AACB0035D8B3 /* PPInAppMessage.m in Sources */,
 				630BDD4524B3AACB0035D8B3 /* PPInAppMessaging.m in Sources */,
+				63044577263779FF00CDDAAF /* PPSupportTickets.m in Sources */,
 				630BDD4D24B3AACF0035D8B3 /* PPQuestions.m in Sources */,
 				630BDD9324B3AAF50035D8B3 /* PPEnergyManagementDeviceUsageAggregatedCost.m in Sources */,
 				630BDD7D24B3AAF10035D8B3 /* PPDynamicUIs.m in Sources */,
@@ -4191,6 +4225,7 @@
 				63BEC9E020C5D67500408494 /* PPOperationTokenManagement.m in Sources */,
 				63BEC9DF20C5D67500408494 /* PPLogout.m in Sources */,
 				63AB4A2523AD85580056AE8B /* PPCommunityReaction.m in Sources */,
+				63044566263779E000CDDAAF /* PPSupportTickets.m in Sources */,
 				63BEC9EB20C5D67500408494 /* PPCountriesStatesAndTimezones.m in Sources */,
 				63BECA7220C5D6E500408494 /* PPBotengineAppMarketing.m in Sources */,
 				63BECA3D20C5D6C300408494 /* PPEnergyManagementDeviceUsageEnergy.m in Sources */,
@@ -4212,6 +4247,7 @@
 				63BECA8920C5D6E500408494 /* PPNSData.m in Sources */,
 				631F72F323BBC16600F98797 /* PPUserCommunity.m in Sources */,
 				6351236A213890BB003E7EAA /* PPCircleDeviceCamera.m in Sources */,
+				63044570263779EC00CDDAAF /* PPSupportTicket.m in Sources */,
 				63BECA5620C5D6C300408494 /* PPDeviceTypeDeviceModel.m in Sources */,
 				63BECA6120C5D6E500408494 /* PPFriendship.m in Sources */,
 				63BECA7920C5D6E500408494 /* PPAFHTTPBridge.m in Sources */,

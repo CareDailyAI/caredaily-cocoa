@@ -1350,6 +1350,22 @@ typedef NS_OPTIONS(NSInteger, PPNotificationSMSMessageIndividual) {
     PPNotificationSMSMessageIndividualTrue = 1
 };
 
+// MARK: Support Ticket
+
+typedef NS_OPTIONS(NSInteger, PPSupportTicketType) {
+    PPSupportTicketTypeProblem      = 1,
+    PPSupportTicketTypeIncident     = 2,
+    PPSupportTicketTypeQuestion     = 3,
+    PPSupportTicketTypeTask         = 4,
+};
+
+typedef NS_OPTIONS(NSInteger, PPSupportTicketPriority) {
+    PPSupportTicketPriorityLow          = 1,
+    PPSupportTicketPriorityMedium       = 2,
+    PPSupportTicketPriorityHigh         = 3,
+    PPSupportTicketPriorityUrgent       = 4,
+};
+
 // MARK: Crowd Feedback
 
 typedef NS_OPTIONS(NSInteger, PPCrowdFeedbacksStartPosition) {
