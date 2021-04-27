@@ -80,6 +80,8 @@ Use it to:
 
 For examples, please refer to the Demo project provided.
 
+For a complete definition of People Power's models and APIs, please refer to [IOT Apps](https://iotapps.docs.apiary.io/) on Apiary.
+
 ### Installation
 
 This project uses both [Cocoapods](https://cocoapods.org) and [Carthage](https://github.com/Carthage/Carthage) for distribution. See each dependency management solution for detailed steps on how to incorporate this project into an application.
