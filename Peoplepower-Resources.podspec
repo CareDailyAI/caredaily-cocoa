@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.description  = "Utility for retrieving Peoplepower Resources."
   s.homepage     = "http://www.peoplepowerco.com"
   
-  s.license      = "Copyright © 2020 People Power Company. All rights reserved."
+  s.license      = "Copyright © 2021 People Power Company. All rights reserved."
   
   s.author             = { "Destry Teeter" => "destry.teeter@gmail.com" }
   s.social_media_url   = "http://twitter.com/DestryTeeter"
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 #  s.osx.deployment_target = "10.9"
 #  s.tvos.deployment_target = "9.0"
   
-  s.source       = { :git => "https://github.com/destryteeter/Peoplepower.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/peoplepower/mobile-ios.git", :tag => "#{s.version}" }
   
   s.subspec 'iOS' do |ios|
     ios.resources = "Sources/*.{plist,strings}"
