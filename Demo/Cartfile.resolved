@@ -1,4 +1,4 @@
-git "/Users/destry/Developer/PPC/iOS/peoplepower-cocoa" "df60c669f6e5113e920c63f5e0f9c6960d928d29"
+git "/Users/destry/Developer/PPC/iOS/peoplepower-cocoa" "7ccd75c35bc8ff9e406a584e43e548f9d6e906d9"
 github "AFNetworking/AFNetworking" "4.0.1"
 github "AliSoftware/OHHTTPStubs" "9.1.0"
 github "facebook/SocketRocket" "0.4.2"
