@@ -1974,6 +1974,7 @@
 		63475E3B2069CFCF009BCDED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				630BDE9B24B3F0520035D8B3 /* AFNetworking.framework */,
 				630EB9A524948777002D5614 /* KissXML.framework */,
 				630EB9A324948777002D5614 /* OHHTTPStubs.framework */,
 				630EB9A624948777002D5614 /* SocketRocket.framework */,
@@ -2556,7 +2557,6 @@
 		63D392B4204F21EE00041C1A = {
 			isa = PBXGroup;
 			children = (
-				630BDE9B24B3F0520035D8B3 /* AFNetworking.framework */,
 				634C1EC824A292450012F715 /* Build Utilities */,
 				630BDC3F24B386470035D8B3 /* Metadata */,
 				63D392BF204F21EE00041C1A /* Sources */,
