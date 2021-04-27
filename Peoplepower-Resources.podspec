@@ -10,14 +10,14 @@ Pod::Spec.new do |s|
   s.author             = { "Destry Teeter" => "destry.teeter@gmail.com" }
   s.social_media_url   = "http://twitter.com/DestryTeeter"
   
-  s.version      = "0.1.13"
+  s.version      = "0.2.0"
   
   s.ios.deployment_target = "11.0"
   s.watchos.deployment_target = "6.0"
 #  s.osx.deployment_target = "10.9"
 #  s.tvos.deployment_target = "9.0"
   
-  s.source       = { :git => "https://github.com/peoplepower/mobile-ios.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/peoplepower/peoplepower-cocoa.git", :tag => "#{s.version}" }
   
   s.subspec 'iOS' do |ios|
     ios.resources = "Sources/*.{plist,strings}"
