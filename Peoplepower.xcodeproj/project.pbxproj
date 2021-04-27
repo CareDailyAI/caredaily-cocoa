@@ -1158,6 +1158,7 @@
 		6304456D263779EC00CDDAAF /* PPSupportTicket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPSupportTicket.h; sourceTree = "<group>"; };
 		6304456E263779EC00CDDAAF /* PPSupportTicket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPSupportTicket.m; sourceTree = "<group>"; };
 		630445A826377F1000CDDAAF /* UserCommunications-PostSupportTicket-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "UserCommunications-PostSupportTicket-ResponseData.json"; sourceTree = "<group>"; };
+		63044734263898AE00CDDAAF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6309B75F20E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPDeviceTypeDeviceModelLookupParam.h; sourceTree = "<group>"; };
 		6309B76020E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPDeviceTypeDeviceModelLookupParam.m; sourceTree = "<group>"; };
 		630BDC4124B389D40035D8B3 /* output.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = output.xcfilelist; sourceTree = "<group>"; };
@@ -1939,6 +1940,7 @@
 		630BDC3F24B386470035D8B3 /* Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				63044734263898AE00CDDAAF /* README.md */,
 				63E62AB6249196B30038A694 /* Peoplepower-Resources.podspec */,
 				63FAAFD6209B7CA90062638A /* LICENSE */,
 			);
@@ -2580,14 +2582,14 @@
 				63D392D0204F263000041C1A /* Components */,
 				63D392C0204F21EE00041C1A /* Peoplepower.h */,
 				635C5B9B259AA12700FD3BC5 /* Peoplepower.m */,
-				63A712B525ACF8E60009E43D /* Localizable.strings */,
 				63D39315204F3A0900041C1A /* Peoplepower-Prefix.pch */,
 				637A632B206C44B000F7876D /* Peoplepower-Config.plist */,
 				63A9524E205AFC15000E466A /* Peoplepower-Info-iOS.plist */,
-				63EB2A6725D254D500BE55F6 /* InfoPlist.strings */,
 				630BDC5524B393480035D8B3 /* Peoplepower-Info-watchOS.plist */,
 				63BEC9AF20C5D2AB00408494 /* Peoplepower-Framework-Info.plist */,
 				63EC62E8219A44AE0054010D /* Peoplepower-Attributions.plist */,
+				63A712B525ACF8E60009E43D /* Localizable.strings */,
+				63EB2A6725D254D500BE55F6 /* InfoPlist.strings */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
