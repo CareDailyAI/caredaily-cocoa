@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Update Carfile path
-FRAMEWORK_PATH=`find \`pwd\` -name Peoplepower | head -n 1`
+FRAMEWORK_PATH=`find \`pwd\` -name peoplepower-cocoa | head -n 1`
 echo 'git "'$FRAMEWORK_PATH'" "rlm"' > Demo/Cartfile
 
 cd Demo
