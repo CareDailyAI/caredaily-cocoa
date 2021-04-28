@@ -15,9 +15,9 @@
 	<key>PPCloudConnectivityCloud</key>
 	<dict>
 		<key>name</key>
-		<string>sbox</string>
+		<string>Production</string>
 		<key>currentTime</key>
-		<string>2018-03-25T19:31:27Z</string>
+		<string>2021-04-27T20:51:30Z</string>
 		<key>defaultTimezone</key>
 		<dict>
 			<key>id</key>
@@ -35,9 +35,7 @@
 				<key>type</key>
 				<string>appapi</string>
 				<key>host</key>
-				<string>sboxall.presencepro.com</string>
-				<key>path</key>
-				<string>/espapi</string>
+				<string>app.peoplepowerco.com</string>
 				<key>port</key>
 				<integer>443</integer>
 				<key>ssl</key>
@@ -51,7 +49,7 @@
 				<key>type</key>
 				<string>webapp</string>
 				<key>host</key>
-				<string>sboxall.presencepro.com</string>
+				<string>app.peoplepowerco.com</string>
 				<key>port</key>
 				<integer>443</integer>
 				<key>ssl</key>
@@ -61,13 +59,13 @@
 				<key>altSsl</key>
 				<false/>
 				<key>brand</key>
-				<string>presence</string>
+				<string>peoplepower</string>
 			</dict>
 			<dict>
 				<key>type</key>
 				<string>deviceio</string>
 				<key>host</key>
-				<string>sbox2.presencepro.com</string>
+				<string>esp.peoplepowerco.com</string>
 				<key>path</key>
 				<string>/deviceio</string>
 				<key>port</key>
@@ -83,7 +81,7 @@
 				<key>type</key>
 				<string>streaming</string>
 				<key>host</key>
-				<string>sbox1.presencepro.com</string>
+				<string>esp.peoplepowerco.com</string>
 				<key>path</key>
 				<string>/streaming</string>
 				<key>port</key>
