@@ -18,7 +18,7 @@
 #define PLIST_KEY_TEST_APP_NAME @"PPTCAppName"
 #define PLIST_KEY_TEST_BRAND @"PPTCBrand"
 #define PLIST_KEY_TEST_CLOUD @"PPTCCloudConnectivityCloud"
-#define PLIST_KEY_TEST_SERVER_URL @"https://sbox.presencepro.com"
+#define PLIST_KEY_TEST_SERVER_URL @"https://sboxall.peoplepowerco.com"
 
 // MARK: - User Accounts
 
