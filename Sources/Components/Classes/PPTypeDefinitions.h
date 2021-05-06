@@ -2362,6 +2362,8 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeId)  {
     PPDeviceTypeIdTedGateway1004 = 1004,
     PPDeviceTypeIdBlueLine = 1100,
     
+    PPDeviceTypeIdVayyarHome = 2000,
+    
     PPDeviceTypeIdMonsterThreeSocketMonitorControl = 2013,
     PPDeviceTypeIdMonsterOneSocketMonitorControl = 2012,
     PPDeviceTypeIdMonsterOneSocketMonitor = 2014,
