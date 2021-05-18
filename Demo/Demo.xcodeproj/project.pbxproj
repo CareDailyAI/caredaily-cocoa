@@ -52,6 +52,7 @@
 		63E4CCDEA594A618AB4832E0 /* libPods-Demo iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98415DAA7137D771996564E8 /* libPods-Demo iOS.a */; };
 		63E62B572492A1A60038A694 /* Peoplepower-Config-Override.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63E62B562492A1A60038A694 /* Peoplepower-Config-Override.plist */; };
 		91BFE0A07118670DBB002CBC /* libPods-Demo watchOS Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4FFD1545CF41F8DC7E636C /* libPods-Demo watchOS Extension.a */; };
+		B2BC55B11FA9F48460F4EDEB /* libPods-Demo iOSUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1BA2E1AF453E71BF0A1704 /* libPods-Demo iOSUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,9 +105,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1C3F805A411A851FEF2C35CC /* Pods-Demo iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Demo iOSUITests/Pods-Demo iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		24EE40DAFA58BB18D6D09B84 /* Pods-Demo iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo iOS.debug.xcconfig"; path = "Target Support Files/Pods-Demo iOS/Pods-Demo iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		2DD8F3EB74DAA422E41A6232 /* Pods-Demo iOS Today.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo iOS Today.release.xcconfig"; path = "Target Support Files/Pods-Demo iOS Today/Pods-Demo iOS Today.release.xcconfig"; sourceTree = "<group>"; };
 		2E4FFD1545CF41F8DC7E636C /* libPods-Demo watchOS Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo watchOS Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E1BA2E1AF453E71BF0A1704 /* libPods-Demo iOSUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo iOSUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		630BDC4324B389E50035D8B3 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		630BDC4424B389E50035D8B3 /* output.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = output.xcfilelist; sourceTree = "<group>"; };
 		630BDC4524B389E60035D8B3 /* input.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = input.xcfilelist; sourceTree = "<group>"; };
@@ -147,7 +150,7 @@
 		631A7AC4248B376600D86CFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		631A7AC6248B376600D86CFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		631A7AC7248B376600D86CFF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		631A7AD8248B376600D86CFF /* Peoplepower iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Peoplepower iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		631A7AD8248B376600D86CFF /* Demo iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Demo iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		631A7ADC248B376600D86CFF /* Peoplepower_DemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Peoplepower_DemoUITests.m; sourceTree = "<group>"; };
 		631A7ADE248B376600D86CFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		631A7AEA248B377D00D86CFF /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
@@ -164,6 +167,7 @@
 		BBC86F7F55002A1A5A82249B /* libPods-Demo iOS Today.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo iOS Today.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D40FEF05E5500A20A3CB25C0 /* Pods-Demo watchOS Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo watchOS Extension.release.xcconfig"; path = "Target Support Files/Pods-Demo watchOS Extension/Pods-Demo watchOS Extension.release.xcconfig"; sourceTree = "<group>"; };
 		F86951745137503589B95F11 /* Pods-Demo iOS Today.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo iOS Today.debug.xcconfig"; path = "Target Support Files/Pods-Demo iOS Today/Pods-Demo iOS Today.debug.xcconfig"; sourceTree = "<group>"; };
+		F991DCA70CF86ECDDF0B66CB /* Pods-Demo iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-Demo iOSUITests/Pods-Demo iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +216,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2BC55B11FA9F48460F4EDEB /* libPods-Demo iOSUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				631A7AB2248B376500D86CFF /* Demo iOS.app */,
-				631A7AD8248B376600D86CFF /* Peoplepower iOSUITests.xctest */,
+				631A7AD8248B376600D86CFF /* Demo iOSUITests.xctest */,
 				630BDDFE24B3ADC60035D8B3 /* Demo iOS Today.appex */,
 				630BDE2424B3B0F10035D8B3 /* Demo watchOS.app */,
 				630BDE3024B3B0F30035D8B3 /* Demo watchOS Extension.appex */,
@@ -350,6 +355,7 @@
 				98415DAA7137D771996564E8 /* libPods-Demo iOS.a */,
 				BBC86F7F55002A1A5A82249B /* libPods-Demo iOS Today.a */,
 				2E4FFD1545CF41F8DC7E636C /* libPods-Demo watchOS Extension.a */,
+				4E1BA2E1AF453E71BF0A1704 /* libPods-Demo iOSUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -363,6 +369,8 @@
 				2DD8F3EB74DAA422E41A6232 /* Pods-Demo iOS Today.release.xcconfig */,
 				A9DC04652A13EA3A71A76675 /* Pods-Demo watchOS Extension.debug.xcconfig */,
 				D40FEF05E5500A20A3CB25C0 /* Pods-Demo watchOS Extension.release.xcconfig */,
+				F991DCA70CF86ECDDF0B66CB /* Pods-Demo iOSUITests.debug.xcconfig */,
+				1C3F805A411A851FEF2C35CC /* Pods-Demo iOSUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -449,22 +457,24 @@
 			productReference = 631A7AB2248B376500D86CFF /* Demo iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		631A7AD7248B376600D86CFF /* Peoplepower iOSUITests */ = {
+		631A7AD7248B376600D86CFF /* Demo iOSUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 631A7AE7248B376600D86CFF /* Build configuration list for PBXNativeTarget "Peoplepower iOSUITests" */;
+			buildConfigurationList = 631A7AE7248B376600D86CFF /* Build configuration list for PBXNativeTarget "Demo iOSUITests" */;
 			buildPhases = (
+				DB63F7A9215455B1E3BB61A8 /* [CP] Check Pods Manifest.lock */,
 				631A7AD4248B376600D86CFF /* Sources */,
 				631A7AD5248B376600D86CFF /* Frameworks */,
 				631A7AD6248B376600D86CFF /* Resources */,
+				8133FF69EFA0A41244C6A61C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				631A7ADA248B376600D86CFF /* PBXTargetDependency */,
 			);
-			name = "Peoplepower iOSUITests";
+			name = "Demo iOSUITests";
 			productName = "Peoplepower DemoUITests";
-			productReference = 631A7AD8248B376600D86CFF /* Peoplepower iOSUITests.xctest */;
+			productReference = 631A7AD8248B376600D86CFF /* Demo iOSUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -510,7 +520,7 @@
 			targets = (
 				631A7AB1248B376500D86CFF /* Demo iOS */,
 				630BDDFD24B3ADC60035D8B3 /* Demo iOS Today */,
-				631A7AD7248B376600D86CFF /* Peoplepower iOSUITests */,
+				631A7AD7248B376600D86CFF /* Demo iOSUITests */,
 				630BDE2324B3B0F10035D8B3 /* Demo watchOS */,
 				630BDE2F24B3B0F30035D8B3 /* Demo watchOS Extension */,
 			);
@@ -683,6 +693,23 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
+		8133FF69EFA0A41244C6A61C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Demo iOSUITests/Pods-Demo iOSUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Demo iOSUITests/Pods-Demo iOSUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Demo iOSUITests/Pods-Demo iOSUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A4C0391CB82F503B2D3F1F22 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -720,6 +747,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Demo iOS Today/Pods-Demo iOS Today-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB63F7A9215455B1E3BB61A8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Demo iOSUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1154,6 +1203,7 @@
 		};
 		631A7AE8248B376600D86CFF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F991DCA70CF86ECDDF0B66CB /* Pods-Demo iOSUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EAWY6XBUH2;
@@ -1173,6 +1223,7 @@
 		};
 		631A7AE9248B376600D86CFF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C3F805A411A851FEF2C35CC /* Pods-Demo iOSUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EAWY6XBUH2;
@@ -1238,7 +1289,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		631A7AE7248B376600D86CFF /* Build configuration list for PBXNativeTarget "Peoplepower iOSUITests" */ = {
+		631A7AE7248B376600D86CFF /* Build configuration list for PBXNativeTarget "Demo iOSUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				631A7AE8248B376600D86CFF /* Debug */,

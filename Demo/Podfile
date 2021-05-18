@@ -16,6 +16,14 @@ target 'Demo iOS' do
   peoplepower_ios
 end
 
+target 'Demo iOSUITests' do
+    project 'Demo.xcodeproj'
+    platform :ios, '11'
+    inherit! :search_paths
+    
+    pod 'Peoplepower-Resources/Tests', :path => '../Peoplepower-Resources.podspec'
+end
+
 target 'Demo iOS Today' do
   project 'Demo.xcodeproj'
   platform :ios, '11'
