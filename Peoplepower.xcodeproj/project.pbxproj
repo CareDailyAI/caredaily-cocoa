@@ -1502,7 +1502,7 @@
 		636D0F56210A1DF1005B9111 /* PPVideoToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPVideoToken.m; sourceTree = "<group>"; };
 		636DCC042493E4B8000560E8 /* PPTCAppResources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPTCAppResources.h; sourceTree = "<group>"; };
 		636DCC052493E7C1000560E8 /* PPAppResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPAppResources.swift; sourceTree = "<group>"; };
-		636DCC0E2493F9BA000560E8 /* Peoplepower-Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Peoplepower-Tests-Bridging-Header.h"; sourceTree = "<group>"; };
+		636DCC0E2493F9BA000560E8 /* Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Bridging-Header.h"; sourceTree = "<group>"; };
 		636DCC0F2493F9BA000560E8 /* PPTCVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPTCVersion.swift; sourceTree = "<group>"; };
 		636DCC1524940463000560E8 /* PPTCAppResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPTCAppResources.swift; sourceTree = "<group>"; };
 		636EC3D520582983001ED811 /* PPEnergyManagementUsage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPEnergyManagementUsage.h; sourceTree = "<group>"; };
@@ -1658,7 +1658,7 @@
 		63B9B14E248C36BA0056E7CE /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		63BEC9AC20C5D2AA00408494 /* Peoplepower.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Peoplepower.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BEC9AF20C5D2AB00408494 /* Peoplepower-Framework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Peoplepower-Framework-Info.plist"; sourceTree = "<group>"; };
-		63BEC9B420C5D2AB00408494 /* Peoplepower iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Peoplepower iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63BEC9B420C5D2AB00408494 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C7C9FD2098015D00967C4C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		63C7C9FF2098016700967C4C /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		63C7CA012098017800967C4C /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
@@ -2295,7 +2295,7 @@
 			isa = PBXGroup;
 			children = (
 				636B4627248AF7A300124F6A /* Data */,
-				636DCC0E2493F9BA000560E8 /* Peoplepower-Tests-Bridging-Header.h */,
+				636DCC0E2493F9BA000560E8 /* Tests-Bridging-Header.h */,
 				636DCC042493E4B8000560E8 /* PPTCAppResources.h */,
 				63A7143E25AD00510009E43D /* PPTCLocalization.swift */,
 				636B47F1248AFA7B00124F6A /* UnitTests.plist */,
@@ -2576,7 +2576,7 @@
 			path = Cameras;
 			sourceTree = "<group>";
 		};
-		63C8A0AA2059FCEA00256F37 /* Peoplepower iOSTests */ = {
+		63C8A0AA2059FCEA00256F37 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				636DCC0D2493F945000560E8 /* Categories */,
@@ -2587,7 +2587,7 @@
 				636B47F9248AFA7C00124F6A /* PPBaseTestCase.h */,
 				636B47F2248AFA7B00124F6A /* PPBaseTestCase.m */,
 			);
-			path = "Peoplepower iOSTests";
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		63D392B4204F21EE00041C1A = {
@@ -2596,7 +2596,7 @@
 				634C1EC824A292450012F715 /* Build Utilities */,
 				630BDC3F24B386470035D8B3 /* Metadata */,
 				63D392BF204F21EE00041C1A /* Sources */,
-				63C8A0AA2059FCEA00256F37 /* Peoplepower iOSTests */,
+				63C8A0AA2059FCEA00256F37 /* Tests */,
 				63D392BE204F21EE00041C1A /* Products */,
 				63475E3B2069CFCF009BCDED /* Frameworks */,
 			);
@@ -2606,7 +2606,7 @@
 			isa = PBXGroup;
 			children = (
 				63BEC9AC20C5D2AA00408494 /* Peoplepower.framework */,
-				63BEC9B420C5D2AB00408494 /* Peoplepower iOSTests.xctest */,
+				63BEC9B420C5D2AB00408494 /* Tests.xctest */,
 				630BDC4B24B392400035D8B3 /* Peoplepower.framework */,
 			);
 			name = Products;
@@ -3700,9 +3700,9 @@
 			productReference = 63BEC9AC20C5D2AA00408494 /* Peoplepower.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		63BEC9B320C5D2AB00408494 /* Peoplepower iOSTests */ = {
+		63BEC9B320C5D2AB00408494 /* Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 63BEC9C720C5D2AB00408494 /* Build configuration list for PBXNativeTarget "Peoplepower iOSTests" */;
+			buildConfigurationList = 63BEC9C720C5D2AB00408494 /* Build configuration list for PBXNativeTarget "Tests" */;
 			buildPhases = (
 				63BEC9B020C5D2AB00408494 /* Sources */,
 				63BEC9B120C5D2AB00408494 /* Frameworks */,
@@ -3714,9 +3714,9 @@
 			dependencies = (
 				631A7A9C248B0AD500D86CFF /* PBXTargetDependency */,
 			);
-			name = "Peoplepower iOSTests";
+			name = Tests;
 			productName = "PPiOSCore-FrameworkTests";
-			productReference = 63BEC9B420C5D2AB00408494 /* Peoplepower iOSTests.xctest */;
+			productReference = 63BEC9B420C5D2AB00408494 /* Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -3762,7 +3762,7 @@
 			targets = (
 				63BEC9AB20C5D2AA00408494 /* Peoplepower iOS */,
 				630BDC4A24B392400035D8B3 /* Peoplepower watchOS */,
-				63BEC9B320C5D2AB00408494 /* Peoplepower iOSTests */,
+				63BEC9B320C5D2AB00408494 /* Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -4740,7 +4740,7 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.iOS.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Peoplepower iOSTests/Peoplepower-Tests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tests/Tests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -4775,7 +4775,7 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.iOS.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Peoplepower iOSTests/Peoplepower-Tests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tests/Tests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -4920,7 +4920,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		63BEC9C720C5D2AB00408494 /* Build configuration list for PBXNativeTarget "Peoplepower iOSTests" */ = {
+		63BEC9C720C5D2AB00408494 /* Build configuration list for PBXNativeTarget "Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				63BEC9C820C5D2AB00408494 /* Debug */,

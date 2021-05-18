@@ -1,6 +1,6 @@
 //
 //  PPTCLocalization.swift
-//  Peoplepower iOSTests
+//  Tests
 //
 //  Created by Destry Teeter on 1/11/21.
 //  Copyright © 2021 People Power Company. All rights reserved.
