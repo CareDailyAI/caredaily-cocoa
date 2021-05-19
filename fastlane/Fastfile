@@ -84,7 +84,7 @@ private_lane :pp_make_release do |options|
 
 
     # Stamp release
-    tag = "#{product_version}"
+    tag = "#{product_version}_rlm"
     if options[:ignore_tag] != true
         # Tag
         add_git_tag(
