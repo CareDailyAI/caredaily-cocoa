@@ -1,7 +1,7 @@
 PODS:
-  - Peoplepower-Resources/iOS (0.2.1)
-  - Peoplepower-Resources/Tests (0.2.1)
-  - Peoplepower-Resources/watchOS (0.2.1)
+  - Peoplepower-Resources/iOS (0.2.2)
+  - Peoplepower-Resources/Tests (0.2.2)
+  - Peoplepower-Resources/watchOS (0.2.2)
 
 DEPENDENCIES:
   - Peoplepower-Resources/iOS (from `../Peoplepower-Resources.podspec`)
@@ -13,7 +13,7 @@ EXTERNAL SOURCES:
     :path: "../Peoplepower-Resources.podspec"
 
 SPEC CHECKSUMS:
-  Peoplepower-Resources: 8d0eac0ce8aca25890e2d9f73e38695f1380b8c4
+  Peoplepower-Resources: c6aa59a73e43f36facbf0201fa69d8c96f9273ca
 
 PODFILE CHECKSUM: 7c9dd4c554e4df7254caf3045696cd760afc3c4f
 

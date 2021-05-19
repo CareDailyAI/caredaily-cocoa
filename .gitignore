@@ -17,3 +17,8 @@ Logs
 
 # Localization
 .bartycrouch.toml
+
+# Fastlane
+fastlane/report.xml
+fastlane/.env.default
+fastlane/test_output/*

@@ -1198,6 +1198,11 @@
 		63475D6C20685D72009BCDED /* PPDeviceCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPDeviceCommand.h; sourceTree = "<group>"; };
 		63475D6D20685D72009BCDED /* PPDeviceCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPDeviceCommand.m; sourceTree = "<group>"; };
 		63475E3C2069CFCF009BCDED /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		6348372F26559061006A5382 /* Appfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Appfile; path = fastlane/Appfile; sourceTree = "<group>"; };
+		6348373126559070006A5382 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = fastlane/README.md; sourceTree = "<group>"; };
+		6348373226559070006A5382 /* report.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = report.xml; path = fastlane/report.xml; sourceTree = "<group>"; };
+		6348373326559071006A5382 /* Scanfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Scanfile; path = fastlane/Scanfile; sourceTree = "<group>"; };
+		6348373426559071006A5382 /* Fastfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Fastfile; path = fastlane/Fastfile; sourceTree = "<group>"; };
 		634C1EC924A292570012F715 /* copyFramework.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = copyFramework.sh; sourceTree = "<group>"; };
 		634C1ECA24A292580012F715 /* build.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
 		635123522138540B003E7EAA /* PPDeviceProxyLocalPictureFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPDeviceProxyLocalPictureFrame.m; sourceTree = "<group>"; };
@@ -1992,6 +1997,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6348373026559064006A5382 /* fastlane */ = {
+			isa = PBXGroup;
+			children = (
+				6348372F26559061006A5382 /* Appfile */,
+				6348373426559071006A5382 /* Fastfile */,
+				6348373126559070006A5382 /* README.md */,
+				6348373226559070006A5382 /* report.xml */,
+				6348373326559071006A5382 /* Scanfile */,
+			);
+			name = fastlane;
+			sourceTree = "<group>";
+		};
 		634C1EC824A292450012F715 /* Build Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -2561,6 +2578,7 @@
 				630BDC3F24B386470035D8B3 /* Metadata */,
 				63D392BF204F21EE00041C1A /* Sources */,
 				63C8A0AA2059FCEA00256F37 /* Tests */,
+				6348373026559064006A5382 /* fastlane */,
 				63D392BE204F21EE00041C1A /* Products */,
 				63475E3B2069CFCF009BCDED /* Frameworks */,
 			);

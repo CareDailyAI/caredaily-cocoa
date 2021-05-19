@@ -1,0 +1,101 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+
+  	desc "Run Tests"
+  	lane :tests do
+  		run_tests(
+  			scheme: "Peoplepower iOS"
+  		)
+  	end
+   
+    desc "Patch Release"
+    lane :patch do
+        pp_patch_product_version()
+        pp_make_release()
+    end
+end
+
+desc "Retrieve product version and build"
+private_lane :pp_product_version do |options|
+    if ENV['PRODUCT_VERSION'] == nil || options[:force_refresh]
+        ENV['PRODUCT_VERSION'] = get_build_number(
+            xcodeproj: ENV['PROJECT'],
+        )
+    end
+
+    "#{ENV['PRODUCT_VERSION']}"
+end
+
+desc "Patch product version"
+private_lane :pp_patch_product_version do |options|
+    version_bump_podspec()
+
+    product_version = pp_product_version()
+    semantic_version = product_version.split(".")
+    ENV['PRODUCT_VERSION'] = "#{semantic_version[0]}.#{semantic_version[1]}.#{Integer(semantic_version[2]) + 1}"
+
+    increment_build_number(
+        xcodeproj: ENV['PROJECT'],
+        skip_info_plist: true,
+        build_number: ENV['PRODUCT_VERSION']
+    )
+end
+
+desc <<~EOF
+Commit, and tag build
+
+- param ignore_commit true to not commit and push
+- param ignore_tag true to not tag and push tag
+EOF
+private_lane :pp_make_release do |options|
+
+    product_version = pp_product_version()
+
+    # Commit
+    commit_message = "#{product_version}"
+    if options[:ignore_commit] != true
+        commit_version_bump(
+            message: commit_message,
+            xcodeproj: "#{ENV['PROJECT']}",
+            include: [ENV['PODSPEC_PATH']]
+        )
+
+        # Push changes
+        push_to_git_remote()
+    else
+        puts "[ignore_commit] message: #{commit_message}"
+    end
+
+
+    # Stamp release
+    tag = "#{product_version}"
+    if options[:ignore_tag] != true
+        # Tag
+        add_git_tag(
+            tag: tag
+        )
+
+        # Push tag
+        push_git_tags(
+            tag: tag
+        )
+    else
+        puts "[ignore_tag] tag: #{tag}"
+    end
+end
