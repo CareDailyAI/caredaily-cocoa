@@ -2339,7 +2339,7 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeId)  {
     PPDeviceTypeIdAppleHealthKit = 29,
     
     PPDeviceTypeIdAIOXGateway = 31,
-    PPDeviceTypeIdDevelcoX5Gateway = 32,
+    PPDeviceTypeIdDevelcoGatewayDP4X = 32,
     PPDeviceTypeIdAWSIOTGateway = 34,
     PPDeviceTypeIdDevelcoGatewayDP0X = 36,
     PPDeviceTypeIdDevelcoGatewayDP2X = 37,
