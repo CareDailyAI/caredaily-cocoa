@@ -722,9 +722,11 @@ typedef NS_OPTIONS(NSInteger, PPDeviceMeasurementsDataRequestByEmail) {
 };
 
 typedef NS_OPTIONS(NSInteger, PPDeviceMeasurementsCommandType) {
-    PPDeviceMeasurementsCommandTypeNone = -1,
-    PPDeviceMeasurementsCommandTypeSet = 0,
-    PPDeviceMeasurementsCommandTypeGet = 4
+    PPDeviceMeasurementsCommandTypeNone     = -1,
+    PPDeviceMeasurementsCommandTypeSet      = 0,
+    PPDeviceMeasurementsCommandTypeGet      = 4,
+    PPDeviceMeasurementsCommandTypeUpdate   = 5,
+    PPDeviceMeasurementsCommandTypeDelete   = 6,
 };
 
 typedef NS_OPTIONS(NSInteger, PPDeviceMeasurementsAlertId) {
