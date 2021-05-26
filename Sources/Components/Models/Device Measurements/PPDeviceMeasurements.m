@@ -177,7 +177,7 @@
  * @param locationId Required PPLocationId Device Location ID
  * @param comment NSString Describes why this command was made
  * @param shared PPDeviceShared Send command to a device shared in circle. If true, the location ID is not required
- * @param commandType PPDeviceMeasurementsCommandType Command type: 0 = set, 4 = get
+ * @param commandType PPDeviceMeasurementsCommandType Command type: 0 = set, 4 = get, 5 = update, 6 = delete
  * @param callback PPDeviceMeasurementsCommandsBlock Device commands callback block containing array of command responses
  **/
 + (void)sendCommand:(NSString *)deviceId params:(NSArray *)params commandTimeout:(PPDeviceCommandTimeout)commandTimeout locationId:(PPLocationId)locationId comment:(NSString *)comment shared:(PPDeviceShared)shared commandType:(PPDeviceMeasurementsCommandType)commandType callback:(PPDeviceMeasurementsCommandsBlock _Nonnull)callback {
