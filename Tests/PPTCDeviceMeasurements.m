@@ -63,7 +63,7 @@ static NSString *moduleName = @"DeviceMeasurements";
     NSString *methodName = @"GetCurrentMeasurements";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/devices/%@/parameters", self.device.deviceId] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/devices/%@/parameters", self.device.deviceId] statusCode:200 headers:nil];
     
     [PPDeviceMeasurements getCurrentMeasurements:self.device.deviceId locationId:self.device.locationId userId:PPUserIdNone paramNames:nil shared:PPDeviceSharedNone callback:^(NSArray *measurements, NSError *error) {
         
@@ -91,7 +91,7 @@ static NSString *moduleName = @"DeviceMeasurements";
     NSString *methodName = @"SendCommand";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/devices/%@/parameters", self.device.deviceId] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/devices/%@/parameters", self.device.deviceId] statusCode:200 headers:nil];
     
     [PPDeviceMeasurements sendCommand:self.device.deviceId params:self.parameters commandTimeout:PPDeviceCommandTimeoutDefault locationId:self.device.locationId comment:nil shared:PPDeviceSharedNone callback:^(NSArray *commands, NSError *error) {
         
@@ -118,7 +118,7 @@ static NSString *moduleName = @"DeviceMeasurements";
     NSString *methodName = @"GetMeasurementsWithSearchTerms";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/parameters" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/parameters" statusCode:200 headers:nil];
     
     [PPDeviceMeasurements getMeasurementsWithSearchTerms:self.device.locationId userId:PPUserIdNone deviceId:nil paramNames:self.parameterNames shared:PPDeviceSharedNone callback:^(NSArray *measurements, NSError *error) {
         
@@ -144,7 +144,7 @@ static NSString *moduleName = @"DeviceMeasurements";
     NSString *methodName = @"SendSetCommands";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/devices/%@/parameters", self.device.deviceId] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/devices/%@/parameters", self.device.deviceId] statusCode:200 headers:nil];
     
     [PPDeviceMeasurements sendSetCommands:self.commands locationId:self.device.locationId shared:PPDeviceSharedNone callback:^(NSArray * _Nullable commands, NSError * _Nullable error) {
         
@@ -177,7 +177,7 @@ static NSString *moduleName = @"DeviceMeasurements";
     NSString *methodName = @"GetHistoryOfMeasurements";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/devices/%@/parametersByDate/%@", self.device.deviceId, [PPNSDate apiFriendStringFromDate:[NSDate dateWithTimeIntervalSince1970:0]]] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/devices/%@/parametersByDate/%@", self.device.deviceId, [PPNSDate apiFriendStringFromDate:[NSDate dateWithTimeIntervalSince1970:0]]] statusCode:200 headers:nil];
     
     [PPDeviceMeasurements getHistoryOfMeasurements:self.device.deviceId startDate:[NSDate dateWithTimeIntervalSince1970:0] endDate:nil locationId:self.device.locationId userId:PPUserIdNone paramNames:self.parameterNames index:nil interval:PPDeviceMeasurementsHistoryIntervalNone aggregation:PPDeviceMeasurementsHistoryAggregationNone reduceNoise:PPDeviceMeasurementsHistoryReduceNoiseNone callback:^(NSArray *readings, NSError *error) {
         
@@ -210,7 +210,7 @@ static NSString *moduleName = @"DeviceMeasurements";
     NSString *methodName = @"GetLastNMeasurements";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/devices/%@/parametersByCount/%@", self.device.deviceId, @(PPDeviceMeasurementsHistoryRowCountMinimum)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/devices/%@/parametersByCount/%@", self.device.deviceId, @(PPDeviceMeasurementsHistoryRowCountMinimum)] statusCode:200 headers:nil];
     
     
     [PPDeviceMeasurements getlastNMeasurements:self.device.deviceId rowCount:PPDeviceMeasurementsHistoryRowCountMinimum startDate:[NSDate dateWithTimeIntervalSince1970:0] endDate:nil locationId:self.device.locationId userId:PPUserIdNone paramNames:self.parameterNames index:nil reduceNoise:PPDeviceMeasurementsHistoryReduceNoiseNone callback:^(NSArray *readings, NSError *error) {
@@ -240,7 +240,7 @@ static NSString *moduleName = @"DeviceMeasurements";
     NSString *methodName = @"GetHistoryOfAlerts";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/alerts" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/alerts" statusCode:200 headers:nil];
     
     [PPDeviceMeasurements getHistoryOfAlerts:nil alertType:nil startDate:[NSDate dateWithTimeIntervalSince1970:0] endDate:nil locationId:self.device.locationId userId:PPUserIdNone callback:^(NSArray *alerts, NSError *error) {
         
@@ -293,7 +293,7 @@ static NSString *moduleName = @"DeviceMeasurements";
     NSString *methodName = @"SubmitDataRequest";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/dataRequests" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/dataRequests" statusCode:200 headers:nil];
     
     PPDeviceDataRequest *paramRequest = [[PPDeviceDataRequest alloc] initWithType:PPDeviceDataRequestTypeParameters key:nil deviceId:self.device.deviceId startDate:[NSDate dateWithTimeIntervalSince1970:0] endDate:[NSDate date] paramNames:nil index:nil ordered:PPDeviceDataRequestOderedNone compression:PPDeviceDataRequestCompressionZIP];
     PPDeviceDataRequest *activitiesRequest = [[PPDeviceDataRequest alloc] initWithType:PPDeviceDataRequestTypeActivities key:nil deviceId:self.device.deviceId startDate:[NSDate dateWithTimeIntervalSince1970:0] endDate:[NSDate date] paramNames:nil index:nil ordered:PPDeviceDataRequestOderedNone compression:PPDeviceDataRequestCompressionZIP];
@@ -319,7 +319,7 @@ static NSString *moduleName = @"DeviceMeasurements";
     NSString *methodName = @"GetUnitsOfMeasurement";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/units" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/units" statusCode:200 headers:nil];
     
     [PPDeviceMeasurements getUnitsOfMeasurement:^(NSArray *units, NSError *error) {
         

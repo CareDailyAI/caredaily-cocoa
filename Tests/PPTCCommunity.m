@@ -47,7 +47,7 @@ static NSString *moduleName = @"Community";
     NSString *methodName = @"CreatePost";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/communityPosts" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/communityPosts" statusCode:200 headers:nil];
     
     [PPCommunity createPost:self.post callback:^(PPCommunityPostId postId, NSError * _Nonnull error) {
 
@@ -63,7 +63,7 @@ static NSString *moduleName = @"Community";
     NSString *methodName = @"UpdatePost";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/communityPosts" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/communityPosts" statusCode:200 headers:nil];
     
     [PPCommunity updatePost:self.post.postId post:self.post callback:^(NSError *error) {
         
@@ -79,7 +79,7 @@ static NSString *moduleName = @"Community";
     NSString *methodName = @"GetPosts";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/communityPosts" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/communityPosts" statusCode:200 headers:nil];
     
     [PPCommunity getPosts:PPCommunityPostIdNone postTypes:nil locationId:PPLocationIdNone communityId:PPCommunityIdNone communityLocationId:PPLocationIdNone startDate:nil endDate:nil status:PPCommunityPostStatusNone callback:^(NSArray * _Nonnull posts, NSError * _Nonnull error) {
         
@@ -95,7 +95,7 @@ static NSString *moduleName = @"Community";
     NSString *methodName = @"DeletePost";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/communityPosts" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/communityPosts" statusCode:200 headers:nil];
     
     [PPCommunity deletePost:self.post.postId callback:^(NSError *error) {
         
@@ -111,7 +111,7 @@ static NSString *moduleName = @"Community";
     NSString *methodName = @"Comment";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/communityPostComments" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/communityPostComments" statusCode:200 headers:nil];
      
     [PPCommunity comment:self.post.postId commentId:PPCommunityCommentIdNone replyCommentId:PPCommunityCommentIdNone comment:self.comment.commentText callback:^(PPCommunityCommentId commentId, NSError * _Nullable error) {
 
@@ -127,7 +127,7 @@ static NSString *moduleName = @"Community";
     NSString *methodName = @"DeleteComment";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/communityPostComments" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/communityPostComments" statusCode:200 headers:nil];
      
     [PPCommunity deleteComment:self.post.postId commentId:self.comment.commentId callback:^(NSError * _Nullable error) {
 
@@ -143,7 +143,7 @@ static NSString *moduleName = @"Community";
     NSString *methodName = @"Reaction";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/communityPostReaction" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/communityPostReaction" statusCode:200 headers:nil];
      
     [PPCommunity reaction:self.post.postId commentId:PPCommunityCommentIdNone reaction:PPCommunityReactionTypeLike callback:^(NSError * _Nullable error) {
         
@@ -159,7 +159,7 @@ static NSString *moduleName = @"Community";
     NSString *methodName = @"UploadFile";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:[NSString stringWithFormat:@"%@-video", methodName]];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/communityPosts/%@/files", @(_post.postId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/communityPosts/%@/files", @(_post.postId)] statusCode:200 headers:nil];
      
     [PPCommunity uploadFile:_post.postId type:_file_video.type contentType:_file_video.contentType ext:_file_video.ext duration:_file_video.duration rotate:_file_video.rotate size:_file_video.size thumbnail:_file_video.thumbnail m3u8:_file_video.m3u8 expiration:-1 callback:^(NSInteger fileId, NSString * _Nullable contentUrl, NSString * _Nullable thumbnailUrl, NSString * _Nullable m3u8Url, NSDictionary * _Nullable uploadHeaders, NSError * _Nullable error) {
         
@@ -175,7 +175,7 @@ static NSString *moduleName = @"Community";
     NSString *methodName = @"UploadFile";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:[NSString stringWithFormat:@"%@-image", methodName]];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/communityPosts/%@/files", @(_post.postId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/communityPosts/%@/files", @(_post.postId)] statusCode:200 headers:nil];
      
     [PPCommunity uploadFile:_post.postId type:_file_image.type contentType:_file_image.contentType ext:_file_image.ext duration:_file_image.duration rotate:_file_image.rotate size:_file_image.size thumbnail:_file_image.thumbnail m3u8:_file_image.m3u8 expiration:-1 callback:^(NSInteger fileId, NSString * _Nullable contentUrl, NSString * _Nullable thumbnailUrl, NSString * _Nullable m3u8Url, NSDictionary * _Nullable uploadHeaders, NSError * _Nullable error) {
         
@@ -191,7 +191,7 @@ static NSString *moduleName = @"Community";
     NSString *methodName = @"UploadFile";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:[NSString stringWithFormat:@"%@-audio", methodName]];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/communityPosts/%@/files", @(_post.postId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/communityPosts/%@/files", @(_post.postId)] statusCode:200 headers:nil];
      
     [PPCommunity uploadFile:_post.postId type:_file_audio.type contentType:_file_audio.contentType ext:_file_audio.ext duration:_file_audio.duration rotate:_file_audio.rotate size:_file_audio.size thumbnail:_file_audio.thumbnail m3u8:_file_audio.m3u8 expiration:-1 callback:^(NSInteger fileId, NSString * _Nullable contentUrl, NSString * _Nullable thumbnailUrl, NSString * _Nullable m3u8Url, NSDictionary * _Nullable uploadHeaders, NSError * _Nullable error) {
         
@@ -207,7 +207,7 @@ static NSString *moduleName = @"Community";
     NSString *methodName = @"UpdateFile";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/communityPosts/%@/files", @(_post.postId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/communityPosts/%@/files", @(_post.postId)] statusCode:200 headers:nil];
      
     [PPCommunity updateFile:_post.postId fileId:_file_video.fileId complete:PPCommunityFileCompleteTrue callback:^(NSError * _Nullable error) {
         
@@ -223,7 +223,7 @@ static NSString *moduleName = @"Community";
     NSString *methodName = @"GetFileURLs";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/communityPosts/%@/files", @(_post.postId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/communityPosts/%@/files", @(_post.postId)] statusCode:200 headers:nil];
      
     [PPCommunity getFileURLs:_post.postId fileId:_file_video.fileId content:1 thumbnail:1 m3u8:1 expiration:-1 callback:^(NSArray<PPCommunityFile *> * _Nullable files, NSError * _Nullable error) {
         
@@ -239,7 +239,7 @@ static NSString *moduleName = @"Community";
     NSString *methodName = @"DeleteFile";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/communityPosts/%@/files", @(_post.postId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/communityPosts/%@/files", @(_post.postId)] statusCode:200 headers:nil];
      
     [PPCommunity deleteFile:_post.postId fileId:_file_video.fileId callback:^(NSError * _Nullable error) {
         

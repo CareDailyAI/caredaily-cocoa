@@ -57,7 +57,7 @@ static NSString *moduleName = @"CloudsIntegration";
     NSString *methodName = @"GetThirdPartyClouds";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/authorize" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/authorize" statusCode:200 headers:nil];
     
     [PPCloudsIntegration getThirdPartyClouds:^(NSMutableArray *applications, NSError *error) {
         
@@ -105,7 +105,7 @@ static NSString *moduleName = @"CloudsIntegration";
     NSString *methodName = @"RevokeAccessToThirdPartyCloud";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/authorize/%@", @(self.clientApplicationId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/authorize/%@", @(self.clientApplicationId)] statusCode:200 headers:nil];
     
     [PPCloudsIntegration revokeAccessToThirdPartyCloud:self.clientApplicationId locationId:self.location.locationId userId:PPUserIdNone callback:^(NSError *error) {
         
@@ -199,7 +199,7 @@ static NSString *moduleName = @"CloudsIntegration";
     NSString *methodName = @"GetAccessToken";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/oauth/token" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/oauth/token" statusCode:200 headers:nil];
     
     [PPCloudsIntegration getAccessToken:nil refreshToken:nil clientId:self.clientId clientSecret:nil grantType:nil callback:^(PPCloudsIntegrationHostAccessToken *accessToken, NSError *error) {
         
@@ -224,7 +224,7 @@ static NSString *moduleName = @"CloudsIntegration";
     NSString *methodName = @"UpdateOAuthClient";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/authClient" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/authClient" statusCode:200 headers:nil];
     
     [PPCloudsIntegration updateOAuthClient:self.clientId locationId:self.location.locationId deviceIds:@[self.device.deviceId] callback:^(NSError * _Nullable error) {
         
@@ -248,7 +248,7 @@ static NSString *moduleName = @"CloudsIntegration";
     NSString *methodName = @"RevokeOAuthClient";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/authClient" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/authClient" statusCode:200 headers:nil];
     
     [PPCloudsIntegration revokeOAuthClient:self.clientId userId:PPUserIdNone callback:^(NSError *error) {
         

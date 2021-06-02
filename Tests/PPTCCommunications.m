@@ -108,7 +108,7 @@ static NSString *moduleName = @"UserCommunications";
     NSString *methodName = @"GetNotificationSubscriptions";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/notificationSubscriptions" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/notificationSubscriptions" statusCode:200 headers:nil];
 
     [PPNotifications getNotificationSubscriptions:^(NSArray *subscriptions, NSError *error) {
 
@@ -138,7 +138,7 @@ static NSString *moduleName = @"UserCommunications";
     NSString *methodName = @"SetNotificationSubscriptions";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/notificationSubscriptions/%@", @(PPNotificationSubscriptionTypeAll)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/notificationSubscriptions/%@", @(PPNotificationSubscriptionTypeAll)] statusCode:200 headers:nil];
 
     [PPNotifications setNotificationSubscription:PPNotificationSubscriptionTypeAll email:PPNotificationSubscriptionEmailEnabledTrue push:PPNotificationSubscriptionPushEnabledTrue sms:PPNotificationSubscriptionSMSEnabledTrue emailPeriod:PPNotificationSubscriptionEmailPeriodAllTheTime pushPeriod:PPNotificationSubscriptionPushPeriodAllTheTime smsPeriod:PPNotificationSubscriptionSMSPeriodAllTheTime callback:^(NSError *error) {
 
@@ -164,7 +164,7 @@ static NSString *moduleName = @"UserCommunications";
     NSString *methodName = @"RegisterAnAppForPushNotifications";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/notificationToken/%@/%@", self.appName, self.token] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/notificationToken/%@/%@", self.appName, self.token] statusCode:200 headers:nil];
 
     [PPNotifications registerAnAppForPushNotifications:self.appName notificationToken:self.token badge:PPNotificationSubscriptionSupportsBadgeIconsTrue callback:^(NSError *error) {
 
@@ -188,7 +188,7 @@ static NSString *moduleName = @"UserCommunications";
     NSString *methodName = @"UnregisterAnAppForPushNotifications";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/notificationToken/%@", self.token] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/notificationToken/%@", self.token] statusCode:200 headers:nil];
 
     [PPNotifications unregisterAnAppForPushNotifications:self.token callback:^(NSError *error) {
 
@@ -220,7 +220,7 @@ static NSString *moduleName = @"UserCommunications";
     NSString *methodName = @"SendNotification";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/notifications" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/notifications" statusCode:200 headers:nil];
 
     [PPNotifications sendNotification:PPUserIdNone organizationId:PPOrganizationIdNone brand:self.brand emailMessage:self.emailMessage pushMessage:self.pushMessage smsMessage:self.smsMessage callback:^(NSError *error) {
 
@@ -245,7 +245,7 @@ static NSString *moduleName = @"UserCommunications";
     NSString *methodName = @"GetNotifications";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/notifications" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/notifications" statusCode:200 headers:nil];
 
     [PPNotifications getNotifications:PPUserIdNone startDate:[NSDate dateWithTimeIntervalSince1970:0] endDate:nil callback:^(NSArray *notifications, NSError *error) {
 
@@ -270,7 +270,7 @@ static NSString *moduleName = @"UserCommunications";
     NSString *methodName = @"PostCrowdFeedback";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/feedback" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/feedback" statusCode:200 headers:nil];
 
     [PPCrowdFeedbacks postCrowdFeedback:self.feedback callback:^(PPCrowdFeedbackTicket *ticket, NSError *error) {
 
@@ -300,7 +300,7 @@ static NSString *moduleName = @"UserCommunications";
     NSString *methodName = @"GetCrowdFeedbackBySearching";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/feedback/%@/%@", self.appName, @(PPCrowdFeedbackTypeNewFeatureRequest)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/feedback/%@/%@", self.appName, @(PPCrowdFeedbackTypeNewFeatureRequest)] statusCode:200 headers:nil];
 
     [PPCrowdFeedbacks getCrowdFeedbackBySearching:self.appName type:PPCrowdFeedbackTypeNewFeatureRequest startPosition:0 length:10 productIds:nil productCategories:nil disabled:PPCrowdFeedbacksDisabledNone callback:^(NSArray *feedbacks, NSError *error) {
 
@@ -325,7 +325,7 @@ static NSString *moduleName = @"UserCommunications";
     NSString *methodName = @"GetSpecificCrowdFeedback";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/feedback/%@", @(self.feedback.feedbackId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/feedback/%@", @(self.feedback.feedbackId)] statusCode:200 headers:nil];
 
     [PPCrowdFeedbacks getSpecificCrowdFeedback:self.feedback.feedbackId callback:^(NSArray *feedbacks, NSError *error) {
 
@@ -351,7 +351,7 @@ static NSString *moduleName = @"UserCommunications";
     NSString *methodName = @"UpdateFeedback";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/feedback/%@", @(self.feedback.feedbackId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/feedback/%@", @(self.feedback.feedbackId)] statusCode:200 headers:nil];
 
     [PPCrowdFeedbacks updateFeedback:self.feedback.feedbackId feedback:self.feedback callback:^(NSError *error) {
 
@@ -376,7 +376,7 @@ static NSString *moduleName = @"UserCommunications";
     NSString *methodName = @"VoteForFeedback";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/feedback/%@/%@", @(self.feedback.feedbackId), @(PPCrowdFeedbackRankCastVote)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/feedback/%@/%@", @(self.feedback.feedbackId), @(PPCrowdFeedbackRankCastVote)] statusCode:200 headers:nil];
 
     [PPCrowdFeedbacks voteForFeedback:self.feedback.feedbackId rank:PPCrowdFeedbackRankCastVote callback:^(NSError *error) {
 
@@ -402,7 +402,7 @@ static NSString *moduleName = @"UserCommunications";
     NSString *methodName = @"RequestSupport";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/support" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/support" statusCode:200 headers:nil];
 
     [PPCrowdFeedbacks requestSupport:self.appName feedbackSupport:self.feedbackSupport callback:^(PPCrowdFeedbackTicket *ticket, NSError *error) {
 
@@ -426,7 +426,7 @@ static NSString *moduleName = @"UserCommunications";
     NSString *methodName = @"SendMessage";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/messages" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/messages" statusCode:200 headers:nil];
 
     [PPInAppMessaging sendMessage:self.message callback:^(PPInAppMessageId messageId, NSError *error) {
 
@@ -454,7 +454,7 @@ static NSString *moduleName = @"UserCommunications";
     NSString *methodName = @"ReceiveMessages";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/messages" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/messages" statusCode:200 headers:nil];
 
     [PPInAppMessaging recieveMessages:PPInAppMessageChallengeParticipanStatusNone messageId:PPInAppMessageIdNone userId:PPUserIdNone type:PPInAppMessageTypeNone challengeId:PPInAppMessageChallengeIdNone searchBy:nil callback:^(NSArray *messages, NSError *error) {
 
@@ -483,7 +483,7 @@ static NSString *moduleName = @"UserCommunications";
     NSString *methodName = @"UpdateMessageAttributions";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/messages/%@", @(self.message.messageId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/messages/%@", @(self.message.messageId)] statusCode:200 headers:nil];
     
     [PPInAppMessaging updateMessageAttributions:self.message.messageId read:PPInAppMessageMessagesReadTrue subject:nil text:nil parameters:nil callback:^(NSError *error) {
 
@@ -505,7 +505,7 @@ static NSString *moduleName = @"UserCommunications";
     NSString *methodName = @"DeleteMessage";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/messages/%@", @(self.message.messageId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/messages/%@", @(self.message.messageId)] statusCode:200 headers:nil];
     
     [PPInAppMessaging deleteMessage:self.message.messageId callback:^(NSError *error) {
 
@@ -531,7 +531,7 @@ static NSString *moduleName = @"UserCommunications";
     NSString *methodName = @"ReplyToMessage";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/messages/%@", @(self.message.messageId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/messages/%@", @(self.message.messageId)] statusCode:200 headers:nil];
 
     [PPInAppMessaging replyToMessage:self.message.messageId text:self.message.text email:self.message.email push:self.message.push callback:^(NSError *error) {
 
@@ -566,7 +566,7 @@ static NSString *moduleName = @"UserCommunications";
     NSString *methodName = @"GetQuestions";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/questions" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/questions" statusCode:200 headers:nil];
 
     [PPQuestions getQuestions:self.location.locationId answerStatuses:self.answerStatuses editable:PPQuestionEditableNone organizationId:PPOrganizationIdNone collectionName:nil generalPublic:PPQuestionCollectionGeneralPublicNone questionId:PPQuestionIdNone appInstanceId:PPBotengineAppInstanceIdNone lang:nil limit:PPQuestionsLimitNone startDate:[NSDate dateWithTimeIntervalSince1970:0] endDate:[NSDate date] userId:PPUserIdNone callback:^(NSArray *collections, NSArray *questions, NSError *error) {
 
@@ -595,7 +595,7 @@ static NSString *moduleName = @"UserCommunications";
     NSString *methodName = @"AnswerQuestions";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/questions" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/questions" statusCode:200 headers:nil];
 
     [PPQuestions answerQuestions:self.location.locationId questions:self.questions userId:PPUserIdNone callback:^(NSArray *questions, NSError *error) {
 
@@ -622,7 +622,7 @@ static NSString *moduleName = @"UserCommunications";
     NSString *methodName = @"GetSMSSubscribers";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/smsSubscribers" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/smsSubscribers" statusCode:200 headers:nil];
 
     [PPSMSGroupTexting getSMSSubscribers:nil userId:PPUserIdNone callback:^(NSArray *subscribers, NSError *error) {
 
@@ -646,7 +646,7 @@ static NSString *moduleName = @"UserCommunications";
     NSString *methodName = @"GetSMSSubscribers";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/smsSubscribers" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/smsSubscribers" statusCode:200 headers:nil];
 
     [PPSMSGroupTexting updateSubscriber:PPUserIdNone subscriber:self.smsSubscriber callback:^(NSError *error) {
 
@@ -670,7 +670,7 @@ static NSString *moduleName = @"UserCommunications";
     NSString *methodName = @"DeleteSMSSubscribers";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/smsSubscribers" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/smsSubscribers" statusCode:200 headers:nil];
 
     [PPSMSGroupTexting deleteSubscriber:self.smsSubscriber.phone userId:PPUserIdNone callback:^(NSError *error) {
 
@@ -694,7 +694,7 @@ static NSString *moduleName = @"UserCommunications";
     NSString *methodName = @"GetSurveyQuestions";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/surveys" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/surveys" statusCode:200 headers:nil];
 
     [PPSurveys getSurveyQuestions:nil callback:^(NSArray * _Nullable questions, NSError * _Nullable error) {
         
@@ -718,7 +718,7 @@ static NSString *moduleName = @"UserCommunications";
     NSString *methodName = @"AnswerQuestion";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/surveys" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/surveys" statusCode:200 headers:nil];
 
     [PPSurveys answerQuestion:self.surveyQuestion.questionId slider:1 answerText:@"Some Answer" callback:^(NSError * _Nullable error) {
         
@@ -745,7 +745,7 @@ static NSString *moduleName = @"UserCommunications";
     NSString *methodName = @"PostSupportTicket";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/ticket" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/ticket" statusCode:200 headers:nil];
 
     [PPSupportTickets postSupportTicket:self.supportTicket userId:PPUserIdNone callback:^(NSError * _Nullable error) {
         

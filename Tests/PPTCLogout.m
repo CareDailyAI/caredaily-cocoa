@@ -34,7 +34,7 @@ static NSString *moduleName = @"Logout";
     NSString *methodName = @"Logout";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/logout" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/logout" statusCode:200 headers:nil];
     
     [PPLogout logoutcallback:^(NSError *error) {
         XCTAssertNil(error);

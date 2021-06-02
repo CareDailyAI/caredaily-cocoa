@@ -68,7 +68,7 @@ static NSString *moduleName = @"Devices";
     NSString *methodName = @"RegisterDevice";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/devices" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/devices" statusCode:200 headers:nil];
     
     [PPDevices registerDevice:self.device.deviceId locationId:self.location.locationId deviceTypeId:self.device.typeId authToken:PPDevicesAuthTokenNoAuthenticationTokenNeeded startDate:[NSDate date] desc:self.device.name goalId:self.device.goalId properties:self.device.properties proxyId:nil callback:^(NSString *deviceId, NSString *authToken, PPDeviceTypeId deviceTypeId, PPDevicesExist exist, NSString *host, PPDevicesPort port, PPDevicesUseSSL useSsl, NSError *error) {
                          
@@ -96,7 +96,7 @@ static NSString *moduleName = @"Devices";
     NSString *methodName = @"GetListOfDevices";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/devices" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/devices" statusCode:200 headers:nil];
     
     [PPDevices getListOfDevicesForLocationId:self.location.locationId userId:PPUserIdNone checkPersistent:PPDevicesCheckPersistentTrue callback:^(NSArray *devices, NSError *error) {
         
@@ -122,7 +122,7 @@ static NSString *moduleName = @"Devices";
     NSString *methodName = @"DeleteDevices";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/devices" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/devices" statusCode:200 headers:nil];
     
     [PPDevices deleteDevices:self.location.locationId deviceIds:@[self.device.deviceId] keepOnAccount:PPDevicesKeepOnAccountNone keepSlave:PPDevicesKeepSlaveNone keepSlaveOnGateway:PPDevicesKeepSlaveOnGatewayNone clear:PPDevicesClearNone callback:^(NSError *error) {
     
@@ -152,7 +152,7 @@ static NSString *moduleName = @"Devices";
     NSString *methodName = @"GetDeviceById";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/devices/%@", self.device.deviceId] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/devices/%@", self.device.deviceId] statusCode:200 headers:nil];
     
     [PPDevices getDevice:self.device.deviceId checkConnected:PPDeviceConnectedNone locationId:self.location.locationId userId:PPUserIdNone callback:^(PPDevice *device, PPLocation *location, NSError *error) {
         
@@ -180,7 +180,7 @@ static NSString *moduleName = @"Devices";
     NSString *methodName = @"UpdateDevice";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/locations/%@/devices/%@", @(self.location.locationId), self.device.deviceId] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/locations/%@/devices/%@", @(self.location.locationId), self.device.deviceId] statusCode:200 headers:nil];
     
     [PPDevices updateDevice:self.device.deviceId locationId:self.location.locationId desc:self.device.name goalId:self.device.goalId newDevice:PPDeviceNewDeviceTrue newLocationId:PPLocationIdNone startDate:nil callback:^(NSError *error) {
         
@@ -207,7 +207,7 @@ static NSString *moduleName = @"Devices";
     NSString *methodName = @"DeleteDeviceAtLocation";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/locations/%@/devices/%@", @(self.location.locationId), self.device.deviceId] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/locations/%@/devices/%@", @(self.location.locationId), self.device.deviceId] statusCode:200 headers:nil];
     
     [PPDevices deleteDevice:self.device.deviceId locationId:self.location.locationId keepOnAccount:PPDevicesKeepOnAccountNone keepSlave:PPDevicesKeepSlaveNone keepSlaveOnGateway:PPDevicesKeepSlaveOnGatewayNone clear:PPDevicesClearNone callback:^(NSError *error) {
         
@@ -240,7 +240,7 @@ static NSString *moduleName = @"Devices";
     NSString *methodName = @"UpdateDeviceAtLocation";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
         
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/locations/%@/devices/%@", @(self.location.locationId), self.device.deviceId] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/locations/%@/devices/%@", @(self.location.locationId), self.device.deviceId] statusCode:200 headers:nil];
 
         
     [PPDevices updateDevice:self.device.deviceId locationId:self.device.locationId desc:self.device.name goalId:self.device.goalId newDevice:self.device.newDevice newLocationId:self.location.locationId startDate:[NSDate date] modelId:self.device.modelId callback:^(NSError *error) {
@@ -266,7 +266,7 @@ static NSString *moduleName = @"Devices";
     NSString *methodName = @"GetDeviceActivationInfo";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/deviceActivation/%@", @(self.device.typeId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/deviceActivation/%@", @(self.device.typeId)] statusCode:200 headers:nil];
     
     [PPDevices getDeviceActivationInfo:self.device.typeId sendEmail:PPDeviceActivationSendEmailNone callback:^(PPDeviceActivationInfo *deviceActivationInfo, NSError *error) {
         
@@ -294,7 +294,7 @@ static NSString *moduleName = @"Devices";
     NSString *methodName = @"GetDeviceActivationInfoAtLocation";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/locations/%@/deviceActivation/%@", @(self.location.locationId), @(self.device.typeId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/locations/%@/deviceActivation/%@", @(self.location.locationId), @(self.device.typeId)] statusCode:200 headers:nil];
     
     [PPDevices getDeviceActivationInfo:self.location.locationId deviceTypeId:self.device.typeId sendEmail:PPDeviceActivationSendEmailNone callback:^(PPDeviceActivationInfo *deviceActivationInfo, NSError *error) {
         
@@ -324,7 +324,7 @@ static NSString *moduleName = @"Devices";
     NSString *methodName = @"SetDeviceProperty";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/devices/%@/properties", self.device.deviceId] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/devices/%@/properties", self.device.deviceId] statusCode:200 headers:nil];
     
     [PPDevices setDeviceProperty:self.device.deviceId name:self.properties[0].name value:self.properties[0].content index:self.properties[0].index userId:PPUserIdNone locationId:self.location.locationId callback:^(NSError *error) {
         
@@ -349,7 +349,7 @@ static NSString *moduleName = @"Devices";
     NSString *methodName = @"SetDeviceProperties";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/devices/%@/properties", self.device.deviceId] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/devices/%@/properties", self.device.deviceId] statusCode:200 headers:nil];
     
     [PPDevices setDeviceProperties:self.device.deviceId properties:self.properties userId:PPUserIdNone locationId:self.location.locationId callback:^(NSError *error) {
         
@@ -375,7 +375,7 @@ static NSString *moduleName = @"Devices";
     NSString *methodName = @"GetDeviceProperties";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/devices/%@/properties", self.device.deviceId] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/devices/%@/properties", self.device.deviceId] statusCode:200 headers:nil];
     
     [PPDevices getDeviceProperties:self.device.deviceId name:self.properties[0].name index:self.properties[0].index userId:PPUserIdNone locationId:self.location.locationId callback:^(NSArray *properties, NSError *error) {
         
@@ -401,7 +401,7 @@ static NSString *moduleName = @"Devices";
     NSString *methodName = @"DeleteDeviceProperty";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/devices/%@/properties", self.device.deviceId] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/devices/%@/properties", self.device.deviceId] statusCode:200 headers:nil];
     
     [PPDevices deleteDeviceProperties:self.device.deviceId name:self.properties[0].name index:self.properties[0].index userId:PPUserIdNone locationId:self.location.locationId callback:^(NSError *error) {
         
@@ -428,7 +428,7 @@ static NSString *moduleName = @"Devices";
     NSString *methodName = @"GetDeviceFirmwareJobs";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/fwupdate"] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/fwupdate"] statusCode:200 headers:nil];
     
     [PPDevices getDeviceFirmwareJobsDeviceId:self.device.deviceId index:nil userId:PPUserIdNone callback:^(NSMutableArray *jobs, NSError *error) {
         
@@ -455,7 +455,7 @@ static NSString *moduleName = @"Devices";
     NSString *methodName = @"SetCurrentFirmwareUpdateStatus";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/fwupdate"] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/fwupdate"] statusCode:200 headers:nil];
     
     [PPDevices setCurrentFirmwareUpdateStatus:self.device.deviceId status:PPDeviceFirmwareUpdateStatusDone index:nil startDate:nil userId:PPUserIdNone callback:^(NSError *error) {
         
@@ -482,7 +482,7 @@ static NSString *moduleName = @"Devices";
     NSString *methodName = @"LinkSpace";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/locations/%@/devices/%@/spaces/%@", @(self.location.locationId), self.device.deviceId, @(self.space.spaceId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/locations/%@/devices/%@/spaces/%@", @(self.location.locationId), self.device.deviceId, @(self.space.spaceId)] statusCode:200 headers:nil];
     
     [PPDevices linkSpace:self.location.locationId deviceId:self.device.deviceId spaceId:self.space.spaceId callback:^(NSError *error) {
         
@@ -506,7 +506,7 @@ static NSString *moduleName = @"Devices";
     NSString *methodName = @"UnlinkSpace";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/locations/%@/devices/%@/spaces/%@", @(self.location.locationId), self.device.deviceId, @(self.space.spaceId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/locations/%@/devices/%@/spaces/%@", @(self.location.locationId), self.device.deviceId, @(self.space.spaceId)] statusCode:200 headers:nil];
     
     [PPDevices unlinkSpace:self.location.locationId deviceId:self.device.deviceId spaceId:self.space.spaceId callback:^(NSError *error) {
         
