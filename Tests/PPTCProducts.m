@@ -78,7 +78,7 @@ static NSString *moduleName = @"Products";
     NSString *methodName = @"GetSupportedProducts";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/deviceTypes" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/deviceTypes" statusCode:200 headers:nil];
     
     [PPDeviceTypes getSupportedProducts:PPDeviceTypeIdNone attrName:nil attrValue:nil own:PPDeviceTypesOwnNone simple:PPDeviceTypesSimpleNone organizationId:PPOrganizationIdNone callback:^(NSArray *deviceTypes, NSError *error) {
         
@@ -103,7 +103,7 @@ static NSString *moduleName = @"Products";
     NSString *methodName = @"GetSupportedProductAttributes";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/deviceTypeAttrs" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/deviceTypeAttrs" statusCode:200 headers:nil];
     
     [PPDeviceTypes getSupportedProductAttributes:^(NSArray *deviceTypeAttributes, NSError *error) {
         
@@ -129,7 +129,7 @@ static NSString *moduleName = @"Products";
     NSString *methodName = @"CreateProduct";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/deviceType" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/deviceType" statusCode:200 headers:nil];
     
     [PPDeviceTypes createProduct:self.deviceType callback:^(NSError *error) {
         
@@ -155,7 +155,7 @@ static NSString *moduleName = @"Products";
     NSString *methodName = @"UpdateProduct";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/deviceType/%@", @(self.deviceType.typeId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/deviceType/%@", @(self.deviceType.typeId)] statusCode:200 headers:nil];
     
     [PPDeviceTypes updateProduct:self.deviceType.typeId deviceType:self.deviceType callback:^(NSError *error) {
         
@@ -180,7 +180,7 @@ static NSString *moduleName = @"Products";
     NSString *methodName = @"GetParameters";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/deviceParameters" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/deviceParameters" statusCode:200 headers:nil];
     
     [PPDeviceTypes getParameters:nil callback:^(NSArray *deviceParams, NSError *error) {
         
@@ -204,7 +204,7 @@ static NSString *moduleName = @"Products";
     NSString *methodName = @"CreateAndUpdateParameter";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/deviceParameters" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/deviceParameters" statusCode:200 headers:nil];
     
     [PPDeviceTypes createAndUpdateParameter:self.parameter callback:^(NSError *error) {
         
@@ -230,7 +230,7 @@ static NSString *moduleName = @"Products";
     NSString *methodName = @"DeleteParameter";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/deviceParameters/%@", self.parameter.name] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/deviceParameters/%@", self.parameter.name] statusCode:200 headers:nil];
     
     [PPDeviceTypes deleteParameter:self.parameter.name callback:^(NSError *error) {
         
@@ -254,7 +254,7 @@ static NSString *moduleName = @"Products";
     NSString *methodName = @"GetExistingRulePhrases";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/ruleTemplates" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/ruleTemplates" statusCode:200 headers:nil];
     
     [PPDeviceTypes getExistingRulePhrases:^(NSArray *ruleTemplates, NSError *error) {
         
@@ -277,7 +277,7 @@ static NSString *moduleName = @"Products";
     NSString *methodName = @"CreateRulePhrase";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/ruleTemplates" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/ruleTemplates" statusCode:200 headers:nil];
     
     [PPDeviceTypes createRulePhrase:self.ruleTemplate callback:^(PPDeviceTypeRuleComponentTemplate *ruleTemplate, NSError *error) {
         
@@ -302,7 +302,7 @@ static NSString *moduleName = @"Products";
     NSString *methodName = @"GetRulePhraseById";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/ruleTemplates/%@", @(self.ruleTemplate.templateId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/ruleTemplates/%@", @(self.ruleTemplate.templateId)] statusCode:200 headers:nil];
     
     [PPDeviceTypes getRulePhraseById:self.ruleTemplate.templateId callback:^(PPDeviceTypeRuleComponentTemplate *ruleTemplate, NSError *error) {
         
@@ -326,7 +326,7 @@ static NSString *moduleName = @"Products";
     NSString *methodName = @"UpdateRulePhrase";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/ruleTemplates/%@", @(self.ruleTemplate.templateId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/ruleTemplates/%@", @(self.ruleTemplate.templateId)] statusCode:200 headers:nil];
     
     [PPDeviceTypes updateRulePhrase:self.ruleTemplate.templateId rulePhrase:self.ruleTemplate callback:^(PPDeviceTypeRuleComponentTemplate *ruleTemplate, NSError *error) {
         
@@ -349,7 +349,7 @@ static NSString *moduleName = @"Products";
     NSString *methodName = @"DeleteRulePhrase";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/ruleTemplates/%@", @(self.ruleTemplate.templateId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/ruleTemplates/%@", @(self.ruleTemplate.templateId)] statusCode:200 headers:nil];
     
     [PPDeviceTypes deleteRulePhrase:self.ruleTemplate.templateId callback:^(NSError *error) {
         
@@ -376,7 +376,7 @@ static NSString *moduleName = @"Products";
     NSString *methodName = @"GetProductDefaultRules";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/deviceType/%@/rules", @(self.deviceType.typeId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/deviceType/%@/rules", @(self.deviceType.typeId)] statusCode:200 headers:nil];
     
     [PPDeviceTypes getProductDefaultRules:self.deviceType.typeId details:PPDeviceTypesDetailsNone callback:^(NSArray *rules, NSError *error) {
         
@@ -405,7 +405,7 @@ static NSString *moduleName = @"Products";
     NSString *methodName = @"AddDefaultRule";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/deviceType/%@/rules/%@", @(self.deviceType.typeId), @(self.rule.ruleId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/deviceType/%@/rules/%@", @(self.deviceType.typeId), @(self.rule.ruleId)] statusCode:200 headers:nil];
     
     [PPDeviceTypes addDefaultRule:self.deviceType.typeId ruleId:self.rule.ruleId hidden:PPRuleHiddenNone callback:^(NSError *error) {
         
@@ -430,7 +430,7 @@ static NSString *moduleName = @"Products";
     NSString *methodName = @"DeleteDefaultRule";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/deviceType/%@/rules/%@", @(self.deviceType.typeId), @(self.rule.ruleId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/deviceType/%@/rules/%@", @(self.deviceType.typeId), @(self.rule.ruleId)] statusCode:200 headers:nil];
     
     [PPDeviceTypes deleteDefaultRule:self.deviceType.typeId ruleId:self.rule.ruleId callback:^(NSError *error) {
         
@@ -457,7 +457,7 @@ static NSString *moduleName = @"Products";
     NSString *methodName = @"GetDeviceGoalsByType";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/deviceTypes/%@/goals", @(self.deviceType.typeId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/deviceTypes/%@/goals", @(self.deviceType.typeId)] statusCode:200 headers:nil];
     
     [PPDeviceTypes getDeviceGoalsByType:self.deviceType.typeId appName:self.appName callback:^(NSArray *goals, NSError *error) {
         
@@ -483,7 +483,7 @@ static NSString *moduleName = @"Products";
     NSString *methodName = @"GetInstallationInstructions";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/goals/%@/installation", @(self.goal.goalId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/goals/%@/installation", @(self.goal.goalId)] statusCode:200 headers:nil];
     
     [PPDeviceTypes getInstallationInstructions:self.goal.goalId callback:^(PPDeviceTypeInstallationInstructions *installationInstructions, NSError *error) {
         
@@ -509,7 +509,7 @@ static NSString *moduleName = @"Products";
     NSString *methodName = @"GetMedia";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/media" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/media" statusCode:200 headers:nil];
     
     [PPDeviceTypes getMedia:nil callback:^(NSArray *medias, NSError *error) {
         
@@ -533,7 +533,7 @@ static NSString *moduleName = @"Products";
     NSString *methodName = @"PutMedia";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/media" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/media" statusCode:200 headers:nil];
     
     [PPDeviceTypes putMedias:@[self.media] callback:^(NSError *error) {
         
@@ -557,7 +557,7 @@ static NSString *moduleName = @"Products";
     NSString *methodName = @"DeleteMedia";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/media" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/media" statusCode:200 headers:nil];
     
     [PPDeviceTypes deleteMedias:@[self.media] callback:^(NSError *error) {
         
@@ -589,7 +589,7 @@ static NSString *moduleName = @"Products";
     NSString *methodName = @"GetDeviceModels";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/devicemodels" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/devicemodels" statusCode:200 headers:nil];
     
     [PPDeviceTypes getDeviceModels:nil lang:nil hidden:PPDeviceTypeDeviceModelHiddenNone searchBy:nil includingPairingType:PPDeviceTypeDeviceModelPairingTypeNone excludePairingType:PPDeviceTypeDeviceModelPairingTypeNone modelId:nil callback:^(NSArray *categories, NSError *error) {
         
@@ -615,7 +615,7 @@ static NSString *moduleName = @"Products";
     NSString *methodName = @"UploadDeviceModels";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/devicemodels" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/devicemodels" statusCode:200 headers:nil];
     
     [PPDeviceTypes uploadDeviceModels:@[self.category] models:@[self.model] callback:^(NSError *error) {
         
@@ -642,7 +642,7 @@ static NSString *moduleName = @"Products";
     NSString *methodName = @"DeleteDeviceModels";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/devicemodels" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/devicemodels" statusCode:200 headers:nil];
     
     [PPDeviceTypes deleteDeviceModels:self.model.modelId categoryId:nil brand:nil callback:^(NSError *error) {
         
@@ -667,7 +667,7 @@ static NSString *moduleName = @"Products";
     NSString *methodName = @"PutStories";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/stories" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/stories" statusCode:200 headers:nil];
     
     [PPDeviceTypes putStories:@[self.story] callback:^(NSError *error) {
         
@@ -696,7 +696,7 @@ static NSString *moduleName = @"Products";
     NSString *methodName = @"GetStories";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/stories" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/stories" statusCode:200 headers:nil];
     
     [PPDeviceTypes getStories:nil modelId:nil brand:nil storyType:PPDeviceTypeStoryTypeNone searchBy:nil hidden:PPDeviceTypeStoryPageHiddenNone lang:nil callback:^(NSArray *stories, NSError *error) {
         
@@ -720,7 +720,7 @@ static NSString *moduleName = @"Products";
     NSString *methodName = @"DeleteStory";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/stories" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/stories" statusCode:200 headers:nil];
     
     [PPDeviceTypes deleteStory:self.story.storyId callback:^(NSError *error) {
         

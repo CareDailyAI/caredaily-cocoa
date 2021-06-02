@@ -38,7 +38,7 @@ static NSString *moduleName = @"CloudConnectivity";
     NSString *methodName = @"CheckAvailability";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"txt" path:@"/espapi/watch" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"txt" path:@"/watch" statusCode:200 headers:nil];
     
     [PPCloudConnectivity checkAvailability:^(NSString *status, NSError *error) {
         
@@ -68,7 +68,7 @@ static NSString *moduleName = @"CloudConnectivity";
     NSString *methodName = @"GetConnectionSettings";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/settings" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/settings" statusCode:200 headers:nil];
     
     [PPCloudConnectivity getConnectionSettings:@"myDevice" connected:PPCloudConnectivityConnectedTrue version:1 callback:^(NSArray *clouds, NSError *error) {
         
@@ -101,7 +101,7 @@ static NSString *moduleName = @"CloudConnectivity";
     NSString *methodName = @"GetServer";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/settingsServer/%@", CLOUD_CONNECTIVITY_SERVER_TYPE_DEVICE_IO] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/settingsServer/%@", CLOUD_CONNECTIVITY_SERVER_TYPE_DEVICE_IO] statusCode:200 headers:nil];
     
     [PPCloudConnectivity getServer:CLOUD_CONNECTIVITY_SERVER_TYPE_DEVICE_IO deviceId:nil connected:PPCloudConnectivityConnectedNone version:PPCloudConnectivityVersionNone brand:nil appName:nil callback:^(PPCloudConnectivityServer *server, NSError *error) {
         
@@ -132,7 +132,7 @@ static NSString *moduleName = @"CloudConnectivity";
     NSString *methodName = @"GetServerURL";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"txt" path:@"/espapi/cloud/json/settingsServer" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"txt" path:@"/cloud/json/settingsServer" statusCode:200 headers:nil];
     
     [PPCloudConnectivity getServerURL:CLOUD_CONNECTIVITY_SERVER_TYPE_APP_API deviceId:nil connected:PPCloudConnectivityConnectedNone ssl:PPCloudConnectivitySSLTrue version:PPCloudConnectivityVersionNone brand:nil appName:nil callback:^(NSURL *url, NSError *error) {
         
@@ -158,7 +158,7 @@ static NSString *moduleName = @"CloudConnectivity";
     NSString *methodName = @"GetCloudInstance";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/settingsCloud" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/settingsCloud" statusCode:200 headers:nil];
     
     [PPCloudConnectivity getCloudInstance:@"__DEVICE_ID__" callback:^(PPCloudConnectivityCloud *cloud, NSError *error) {
 

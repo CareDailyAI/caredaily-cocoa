@@ -68,7 +68,7 @@ static NSString *moduleName = @"PaidServices";
     NSString *methodName = @"GetSoftwareSubscriptions";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/servicePlans" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/servicePlans" statusCode:200 headers:nil];
     
     [PPPaidServices getSoftwareSubscriptions:self.location.locationId appName:nil userId:PPUserIdNone organizationId:PPOrganizationIdNone hiddenPrices:PPPaidServicesHiddenPricesNone callback:^(NSArray *servicePlans, NSError *error) {
         
@@ -100,7 +100,7 @@ static NSString *moduleName = @"PaidServices";
     NSString *methodName = @"SubmitApplePurchaseReceipt";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/receipt/apple" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/receipt/apple" statusCode:200 headers:nil];
     
     [PPPaidServices submitApplePurchaseReceipt:self.location.locationId appName:self.appName transactionReceiptData:self.transactionReceiptData callback:^(NSError *error) {
         
@@ -137,7 +137,7 @@ static NSString *moduleName = @"PaidServices";
     NSString *methodName = @"RedirectUserToPaypalWebsite";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/paypalpurchase/%@", @(self.planPriceId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/paypalpurchase/%@", @(self.planPriceId)] statusCode:200 headers:nil];
     
     [PPPaidServices redirectUserToPaypalWebsite:self.planPriceId tempKey:self.tempKey sandbox:PPServicePlanSoftwareSubscriptionSandboxTrue callback:^(NSURL *authenticationUrl, NSError *error) {
         
@@ -165,7 +165,7 @@ static NSString *moduleName = @"PaidServices";
     NSString *methodName = @"GetPaymentProviderToken";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/paymentToken/%@", @(PPPaidServicesServicePaymentTypeBraintree)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/paymentToken/%@", @(PPPaidServicesServicePaymentTypeBraintree)] statusCode:200 headers:nil];
     
     [PPPaidServices getPaymentProviderToken:PPPaidServicesServicePaymentTypeBraintree appName:self.appName sandbox:PPServicePlanSoftwareSubscriptionSandboxTrue callback:^(NSString *token, NSError *error) {
         
@@ -194,7 +194,7 @@ static NSString *moduleName = @"PaidServices";
     NSString *methodName = @"ProvideNewPurchaseInfo";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/purchase" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/purchase" statusCode:200 headers:nil];
     
     [PPPaidServices provideNewPurchaseInfo:self.location.locationId priceId:self.planPriceId sandbox:PPServicePlanSoftwareSubscriptionSandboxTrue userId:PPUserIdNone paymentType:PPServicePlanSoftwareSubscriptionPaymentTypeBraintree subscriptionId:nil nonce:self.nonce services:nil bots:nil callback:^(NSError *error) {
         
@@ -218,7 +218,7 @@ static NSString *moduleName = @"PaidServices";
     NSString *methodName = @"UpdatePurchaseInfo";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/purchase" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/purchase" statusCode:200 headers:nil];
     
     [PPPaidServices updatePurchaseInfo:self.userPlanId nonce:self.nonce callback:^(NSError *error) {
         
@@ -245,7 +245,7 @@ static NSString *moduleName = @"PaidServices";
     NSString *methodName = @"UpgradePurchasedPlan";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/purchase/upgrade" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/purchase/upgrade" statusCode:200 headers:nil];
     
     [PPPaidServices upgradePurchasedPlan:self.userPlanId targetPlanId:self.targetPlanId userId:PPUserIdNone services:nil bots:nil callback:^(NSError *error) {
         
@@ -274,7 +274,7 @@ static NSString *moduleName = @"PaidServices";
     NSString *methodName = @"GetLocationServicePlans";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/userServicePlans" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/userServicePlans" statusCode:200 headers:nil];
     
     [PPPaidServices getLocationServicePlans:self.location.locationId status:PPServicePlanStatusNone userPlanId:PPServicePlanIdNone userId:PPUserIdNone callback:^(NSArray * _Nullable subscriptions, NSError * _Nullable error) {
         
@@ -300,7 +300,7 @@ static NSString *moduleName = @"PaidServices";
     NSString *methodName = @"GetTransactions";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/userServicePlanTransactions/%@", @(self.targetPlanId)]  statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/userServicePlanTransactions/%@", @(self.targetPlanId)]  statusCode:200 headers:nil];
     
     [PPPaidServices getTransactions:self.targetPlanId userId:PPUserIdNone callback:^(NSArray *transactions, NSError *error) {
         
@@ -329,7 +329,7 @@ static NSString *moduleName = @"PaidServices";
     NSString *methodName = @"AssignServicesToUser";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/userServicePlans/%@", @(self.targetPlanId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/userServicePlans/%@", @(self.targetPlanId)] statusCode:200 headers:nil];
     
     [PPPaidServices assignServicesToUser:self.location.locationId servicePlanId:self.targetPlanId userIds:@[@(self.user.userId).stringValue] organizationId:PPOrganizationIdNone username:nil endDate:nil callback:^(NSError *error) {
         
@@ -354,7 +354,7 @@ static NSString *moduleName = @"PaidServices";
     NSString *methodName = @"CancelSubscription";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/userServicePlans/%@", @(self.userPlanId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/userServicePlans/%@", @(self.userPlanId)] statusCode:200 headers:nil];
     
     [PPPaidServices cancelSubscription:self.userPlanId userId:self.user.userId organizationId:PPOrganizationIdNone callback:^(NSError *error) {
         
@@ -379,7 +379,7 @@ static NSString *moduleName = @"PaidServices";
     NSString *methodName = @"GetStoreProducts";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/market" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/market" statusCode:200 headers:nil];
     
     [PPPaidServices getStoreProducts:nil callback:^(NSArray *products, NSString *affiliateCode, NSError *error) {
         

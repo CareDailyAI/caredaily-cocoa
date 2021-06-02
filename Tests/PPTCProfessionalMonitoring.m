@@ -65,7 +65,7 @@ static NSString *moduleName = @"ProfessionalMonitoring";
     NSString *methodName = @"GetCallCenter";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/callCenter" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/callCenter" statusCode:200 headers:nil];
     
     [PPProfessionalMonitoring getCallCenter:self.location.locationId userId:PPUserIdNone callback:^(PPCallCenter *callCenter, NSError *error) {
         
@@ -92,7 +92,7 @@ static NSString *moduleName = @"ProfessionalMonitoring";
     NSString *methodName = @"UpdateCallCenter";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/callCenter" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/callCenter" statusCode:200 headers:nil];
     
     [PPProfessionalMonitoring updateCallCenter:self.location.locationId userId:self.user.userId alertStatus:self.callCenter.alertStatus contacts:self.callCenter.contacts codeword:self.callCenter.codeword permit:self.callCenter.permit callback:^(PPCallCenter *callCenter, NSError *error) {
         
@@ -116,7 +116,7 @@ static NSString *moduleName = @"ProfessionalMonitoring";
     NSString *methodName = @"CancelCallCenter";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/callCenter" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/callCenter" statusCode:200 headers:nil];
     
     [PPProfessionalMonitoring cancelCallCenter:self.location.locationId callback:^(NSError *error) {
         
@@ -145,7 +145,7 @@ static NSString *moduleName = @"ProfessionalMonitoring";
     NSString *methodName = @"GetCallCenterAlerts";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/callCenterAlerts" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/callCenterAlerts" statusCode:200 headers:nil];
     
     [PPProfessionalMonitoring getCallCenterAlerts:self.location.locationId callback:^(NSArray *alerts, NSError *error) {
         

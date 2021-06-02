@@ -49,7 +49,7 @@ static NSString *moduleName = @"Weather";
     NSString *methodName = @"GetForecastByGeocode";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/weather/forecast/geocode/%f/%f", self.location.latitude.floatValue, self.location.longitude.floatValue] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/weather/forecast/geocode/%f/%f", self.location.latitude.floatValue, self.location.longitude.floatValue] statusCode:200 headers:nil];
     
     [PPWeatherManagement getForecastByGeocode:self.location.latitude.floatValue longitude:self.location.longitude.floatValue units:nil hours:PPWeatherManagementForecastHoursNone organizationId:-1 callback:^(PPWeather *weather, NSError *error) {
         
@@ -77,7 +77,7 @@ static NSString *moduleName = @"Weather";
     NSString *methodName = @"GetForecastByLocation";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/weather/forecast/location/%@", @(self.location.locationId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/weather/forecast/location/%@", @(self.location.locationId)] statusCode:200 headers:nil];
     
     [PPWeatherManagement getForecastByLocation:self.location.locationId units:nil hours:PPWeatherManagementForecastHoursNone callback:^(PPWeather *weather, NSError *error) {
         
@@ -106,7 +106,7 @@ static NSString *moduleName = @"Weather";
     NSString *methodName = @"GetCurrentWeatherByGeocode";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/weather/current/geocode/%f/%f", self.location.latitude.floatValue, self.location.longitude.floatValue] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/weather/current/geocode/%f/%f", self.location.latitude.floatValue, self.location.longitude.floatValue] statusCode:200 headers:nil];
     
     [PPWeatherManagement getCurrentWeatherByGeocode:self.location.latitude.floatValue longitude:self.location.longitude.floatValue units:nil organizationId:-1 callback:^(PPWeather *weather, NSError *error) {
         
@@ -133,7 +133,7 @@ static NSString *moduleName = @"Weather";
     NSString *methodName = @"GetCurrentWeatherByLocation";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/weather/current/location/%@", @(self.location.locationId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/weather/current/location/%@", @(self.location.locationId)] statusCode:200 headers:nil];
     
     [PPWeatherManagement getCurrentWeatherByLocation:self.location.locationId units:nil callback:^(PPWeather *weather, NSError *error) {
         

@@ -29,7 +29,7 @@ static NSString *moduleName = @"OperationToken";
     NSString *methodName = @"GetOperationToken";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/token" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/token" statusCode:200 headers:nil];
     
     [PPOperationTokenManagement getOperationToken:PPOperationTokenTypeUserRegistration callback:^(PPOperationToken *operationToken, NSError *error) {
         

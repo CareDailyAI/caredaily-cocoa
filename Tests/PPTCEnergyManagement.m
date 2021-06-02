@@ -59,7 +59,7 @@ static NSString *moduleName = @"EnergyManagement";
     
     NSDate *startDate = [NSDate dateWithTimeIntervalSinceNow:-(60 * 60 * 24 * 10)];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/locations/%@/energyUsage/%@/%@", @(self.location.locationId), @(PPEnergyManagementAggregationSplitByDay), [PPNSDate apiFriendStringFromDate:startDate]] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/locations/%@/energyUsage/%@/%@", @(self.location.locationId), @(PPEnergyManagementAggregationSplitByDay), [PPNSDate apiFriendStringFromDate:startDate]] statusCode:200 headers:nil];
     
     [PPEnergyManagement getEnergyUsageForLocation:self.location.locationId aggregation:PPEnergyManagementAggregationSplitByDay startDate:startDate endDate:nil external:PPEnergyManagementUsageExternalNone callback:^(NSArray *usages, NSError *error) {
         
@@ -85,7 +85,7 @@ static NSString *moduleName = @"EnergyManagement";
     NSString *methodName = @"UploadUtilityBillsForLocation";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/locations/%@/billData", @(self.location.locationId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/locations/%@/billData", @(self.location.locationId)] statusCode:200 headers:nil];
     
     [PPEnergyManagement uploadUtilityBillsForLocation:self.location.locationId billData:@[self.utilityBill] callback:^(NSError *error) {
         
@@ -111,7 +111,7 @@ static NSString *moduleName = @"EnergyManagement";
     NSString *methodName = @"UploadUtilityBillsForLocation";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/locations/%@/bills/%@", @(self.location.locationId), @(self.utilityBill.billId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/locations/%@/bills/%@", @(self.location.locationId), @(self.utilityBill.billId)] statusCode:200 headers:nil];
     
     [PPEnergyManagement deleteUtilityBill:self.location.locationId billId:self.utilityBill.billId callback:^(NSError *error) {
         
@@ -142,7 +142,7 @@ static NSString *moduleName = @"EnergyManagement";
     NSString *methodName = @"GetDeviceEnergyUsage";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/devices/%@/currentEnergyUsage", self.device.deviceId] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/devices/%@/currentEnergyUsage", self.device.deviceId] statusCode:200 headers:nil];
     
     [PPEnergyManagement getDeviceEnergyUsage:self.device.deviceId index:nil locationId:self.location.locationId userId:PPUserIdNone callback:^(PPEnergyManagementDeviceUsagePower *power, PPEnergyManagementDeviceUsageEnergy *energy, NSError *error) {
         
@@ -176,7 +176,7 @@ static NSString *moduleName = @"EnergyManagement";
     
     NSDate *startDate = [NSDate dateWithTimeIntervalSinceNow:-(60 * 60 * 24 * 10)];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/devices/%@/energyUsage/%@/%@", self.device.deviceId, @(PPEnergyManagementAggregationSplitByDay), [PPNSDate apiFriendStringFromDate:startDate]] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/devices/%@/energyUsage/%@/%@", self.device.deviceId, @(PPEnergyManagementAggregationSplitByDay), [PPNSDate apiFriendStringFromDate:startDate]] statusCode:200 headers:nil];
     
     [PPEnergyManagement getAggregatedEnergyUsageForDevice:self.device.deviceId aggregation:PPEnergyManagementAggregationSplitByDay startDate:startDate endDate:nil reduceNoise:PPEnergyManagementReducesNoiseNone locationId:self.location.locationId userId:PPUserIdNone callback:^(NSArray *usages, NSError *error) {
         
@@ -203,7 +203,7 @@ static NSString *moduleName = @"EnergyManagement";
     NSString *methodName = @"GetBillingInformation";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/locations/%@/billing/%@", @(self.location.locationId), @(PPEnergyManagementBillingInfoFilterGetAllDate)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/locations/%@/billing/%@", @(self.location.locationId), @(PPEnergyManagementBillingInfoFilterGetAllDate)] statusCode:200 headers:nil];
     
     [PPEnergyManagement getBillingInformation:self.location.locationId filter:PPEnergyManagementBillingInfoFilterGetAllDate callback:^(PPEnergyManagementBillingInfo *billingInfo, NSError *error) {
         
@@ -229,7 +229,7 @@ static NSString *moduleName = @"EnergyManagement";
     NSString *methodName = @"UpdateBillingInformation";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/locations/%@/billing", @(self.location.locationId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/locations/%@/billing", @(self.location.locationId)] statusCode:200 headers:nil];
     
     [PPEnergyManagement updateBillingInformation:self.location.locationId billingInfo:self.billingInfo callback:^(NSError *error) {
         

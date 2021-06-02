@@ -62,7 +62,7 @@ static NSString *moduleName = @"Circles";
     NSString *methodName = @"CreateCircle";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/circles" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/circles" statusCode:200 headers:nil];
     
     [PPCircles createCircle:self.circle.name callback:^(PPCircleId circleId, NSError *error) {
         
@@ -84,7 +84,7 @@ static NSString *moduleName = @"Circles";
     NSString *methodName = @"GetCircles";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/circles" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/circles" statusCode:200 headers:nil];
     
     [PPCircles getCirclesWithCircleIds:nil callback:^(NSArray *circles, NSError *error) {
         
@@ -108,7 +108,7 @@ static NSString *moduleName = @"Circles";
     NSString *methodName = @"ModifyCircle";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/circles" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/circles" statusCode:200 headers:nil];
     
     [PPCircles modifyCircle:self.circle.circleId name:self.circle.name callback:^(NSError *error) {
         
@@ -131,7 +131,7 @@ static NSString *moduleName = @"Circles";
     NSString *methodName = @"DeleteCircle";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/circles" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/circles" statusCode:200 headers:nil];
     
     [PPCircles deleteCircle:self.circle.circleId callback:^(NSError *error) {
         
@@ -158,7 +158,7 @@ static NSString *moduleName = @"Circles";
     NSString *methodName = @"AddMembers";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/circles/%@/members", @(self.circle.circleId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/circles/%@/members", @(self.circle.circleId)] statusCode:200 headers:nil];
     
     [PPCircles addMembers:self.circle.circleId members:@[self.circleMember] callback:^(NSError *error) {
         
@@ -185,7 +185,7 @@ static NSString *moduleName = @"Circles";
     NSString *methodName = @"UpdateMemberStatus";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/circles/%@/members", @(self.circle.circleId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/circles/%@/members", @(self.circle.circleId)] statusCode:200 headers:nil];
     
     [PPCircles updateMemberStatus:nil circleUserId:nil circleId:self.circle.circleId status:self.circleMember.status nickname:self.circleMember.nickname admin:PPCircleMemberAdminNone userId:PPUserIdNone callback:^(NSError *error) {
         
@@ -210,7 +210,7 @@ static NSString *moduleName = @"Circles";
     NSString *methodName = @"RemoveMembers";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/circles/%@/members", @(self.circle.circleId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/circles/%@/members", @(self.circle.circleId)] statusCode:200 headers:nil];
     
     [PPCircles removeMembers:self.circle.circleId userId:PPUserIdNone circleUserId:self.circleMember.circleUserId callback:^(NSError *error) {
         
@@ -246,7 +246,7 @@ static NSString *moduleName = @"Circles";
     NSString *methodName = @"UploadFile";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/circles/%@/files", @(self.circle.circleId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/circles/%@/files", @(self.circle.circleId)] statusCode:200 headers:nil];
     
     [PPCircles uploadFile:self.circle.circleId type:self.file.type fileExtension:@"jpeg" duration:self.file.duration rotate:self.file.rotate thumbanil:self.file.thumbnail expectedSize:self.file.size incomplete:PPFileIncompleteFalse contentType:@"image/jpeg" data:self.file.data progressBlock:^(NSProgress *progress) {
         
@@ -276,7 +276,7 @@ static NSString *moduleName = @"Circles";
     NSString *methodName = @"GetFiles";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/circles/%@/files", @(self.circle.circleId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/circles/%@/files", @(self.circle.circleId)] statusCode:200 headers:nil];
     
     [PPCircles getFiles:self.circle.circleId fileId:PPFileIdNone type:PPFileFileTypeNone ownerId:PPUserIdNone startDate:nil endDate:nil callback:^(NSArray *files, NSString *tempKey, NSDate *tempKeyExpire, PPCircleData monthlyDataIn, PPCircleData monthlyDataMax, NSError *error) {
         
@@ -308,7 +308,7 @@ static NSString *moduleName = @"Circles";
     NSString *methodName = @"UploadFileFragment";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/circles/%@/files/%@", @(self.circle.circleId), @(self.file.fileId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/circles/%@/files/%@", @(self.circle.circleId), @(self.file.fileId)] statusCode:200 headers:nil];
         
     [PPCircles uploadFileFragment:self.circle.circleId fileId:self.file.fileId thumbnail:PPFileThumbnailTrue incomplete:PPFileIncompleteFalse index:0 contentType:@"image/jpeg" data:self.file.data progressBlock:^(NSProgress *progress) {
 
@@ -354,7 +354,7 @@ static NSString *moduleName = @"Circles";
     NSString *methodName = @"DownloadFile";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"data" path:[NSString stringWithFormat:@"/espapi/cloud/json/circles/%@/files/%@", @(self.circle.circleId), @(self.file.fileId)] statusCode:200 headers:@{
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"data" path:[NSString stringWithFormat:@"/cloud/json/circles/%@/files/%@", @(self.circle.circleId), @(self.file.fileId)] statusCode:200 headers:@{
         @"Content-Type": @"img/png",
         @"Content-Range": @"bytes 21010-47021/47022",
         @"Accept-Ranges": @"0-47022",
@@ -387,7 +387,7 @@ static NSString *moduleName = @"Circles";
     NSString *methodName = @"GetDownloadUrls";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/circles/%@/files/%@", @(self.circle.circleId), @(self.file.fileId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/circles/%@/files/%@", @(self.circle.circleId), @(self.file.fileId)] statusCode:200 headers:nil];
         
     [PPCircles getDownloadURL:self.circle.circleId fileId:self.file.fileId content:PPFileContentNone thumbnail:PPFileThumbnailNone m3u8:PPFileM3U8None expiration:PPFileURLExpirationNone callback:^(NSURL * _Nullable contentURL, NSURL * _Nullable thumbnailURL, NSURL * _Nullable m3u8URL, NSError * _Nullable error) {
         
@@ -411,7 +411,7 @@ static NSString *moduleName = @"Circles";
     NSString *methodName = @"DeleteFile";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/circles/%@/files/%@", @(self.circle.circleId), @(self.file.fileId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/circles/%@/files/%@", @(self.circle.circleId), @(self.file.fileId)] statusCode:200 headers:nil];
     
     [PPCircles deleteFile:self.circle.circleId fileId:self.file.fileId callback:^(NSError *error) {
         
@@ -441,7 +441,7 @@ static NSString *moduleName = @"Circles";
     NSString *methodName = @"MakePost";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/circles/%@/posts", @(self.circle.circleId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/circles/%@/posts", @(self.circle.circleId)] statusCode:200 headers:nil];
     
     [PPCircles makePost:self.circle.circleId originalPostId:PPCirclePostIdNone postId:PPCirclePostIdNone text:self.post.text fileId:PPFileIdNone displayAt:self.post.displayAt displayDuration:self.post.displayDuration callback:^(PPCirclePostId postId, NSError *error) {
         
@@ -468,7 +468,7 @@ static NSString *moduleName = @"Circles";
     NSString *methodName = @"GetPosts";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/circlePosts" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/circlePosts" statusCode:200 headers:nil];
     
     [PPCircles getPostsForCircles:@[@(self.circle.circleId)] postId:PPCirclePostIdNone authorId:PPUserIdNone startDate:nil endDate:nil searchText:nil callback:^(NSArray *posts, NSError *error) {
         
@@ -493,7 +493,7 @@ static NSString *moduleName = @"Circles";
     NSString *methodName = @"DeletePost";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/circles/%@/posts", @(self.circle.circleId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/circles/%@/posts", @(self.circle.circleId)] statusCode:200 headers:nil];
     
     [PPCircles deletePost:self.circle.circleId postId:self.post.postId callback:^(NSError *error) {
         
@@ -519,7 +519,7 @@ static NSString *moduleName = @"Circles";
     NSString *methodName = @"React";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/circles/%@/posts/%@/reactions/%@", @(self.circle.circleId), @(self.post.postId), @(PPCommunityReactionTypeLike)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/circles/%@/posts/%@/reactions/%@", @(self.circle.circleId), @(self.post.postId), @(PPCommunityReactionTypeLike)] statusCode:200 headers:nil];
     
     [PPCircles react:self.circle.circleId postId:self.post.postId type:PPCircleReactionTypeLike callback:^(NSError *error) {
         
@@ -542,7 +542,7 @@ static NSString *moduleName = @"Circles";
     NSString *methodName = @"GetDevices";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/circles/%@/devices", @(self.circle.circleId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/circles/%@/devices", @(self.circle.circleId)] statusCode:200 headers:nil];
     
     [PPCircles getDevices:self.circle.circleId callback:^(NSArray *devices, NSError *error) {
         

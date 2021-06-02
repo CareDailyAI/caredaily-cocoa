@@ -80,7 +80,7 @@ static NSString *moduleName = @"SystemAndUserProperties";
     NSString *methodName = @"GetUserProperties";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/userProperties" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/userProperties" statusCode:200 headers:nil];
     
     [PPSystemAndUserProperties getUserProperties:nil userId:PPUserIdNone callback:^(NSArray *properties, NSError *error) {
         
@@ -104,7 +104,7 @@ static NSString *moduleName = @"SystemAndUserProperties";
     NSString *methodName = @"UpdateMultipleUserProperties";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/userProperties" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/userProperties" statusCode:200 headers:nil];
     
     [PPSystemAndUserProperties updateMultipleUserProperties:PPUserIdNone properties:self.properties callback:^(NSError *error) {
         
@@ -135,7 +135,7 @@ static NSString *moduleName = @"SystemAndUserProperties";
     NSString *methodName = @"GetUserProperty";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/userProperty/%@", USER_PROPERTY_DEFAULT_USER_CURRENCY] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/userProperty/%@", USER_PROPERTY_DEFAULT_USER_CURRENCY] statusCode:200 headers:nil];
     
     [PPSystemAndUserProperties getUserProperty:USER_PROPERTY_DEFAULT_USER_CURRENCY userId:PPUserIdNone isPublic:PPSystemPropertyPublicTrue callback:^(PPProperty *property, NSError *error) {
         
@@ -162,7 +162,7 @@ static NSString *moduleName = @"SystemAndUserProperties";
     NSString *methodName = @"UpdateSingleUserProperty";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/userProperty/%@", self.properties[0].name] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/userProperty/%@", self.properties[0].name] statusCode:200 headers:nil];
     
     [PPSystemAndUserProperties updateSingleUserProperty:self.properties[0].name value:self.properties[0].value userId:PPUserIdNone callback:^(NSError *error) {
         

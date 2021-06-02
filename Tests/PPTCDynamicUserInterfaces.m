@@ -48,7 +48,7 @@ static NSString *moduleName = @"DynamicUIs";
     NSString *methodName = @"GetDynamicUI";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/uiscreens/%@", self.appName] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/uiscreens/%@", self.appName] statusCode:200 headers:nil];
 
     [PPDynamicUIs getDynamicUI:self.appName version:nil callback:^(NSArray *screens, NSError *error) {
 
@@ -76,7 +76,7 @@ static NSString *moduleName = @"DynamicUIs";
     NSString *methodName = @"GetLocationTotals";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/userTotals" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/userTotals" statusCode:200 headers:nil];
     
     [PPDynamicUIs getLocationTotals:self.location.locationId type:PPDynamicUILocationTotalsTypeAll userId:PPUserIdNone callback:^(NSDictionary *userTotals, NSError *error) {
 

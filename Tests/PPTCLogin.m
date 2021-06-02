@@ -56,7 +56,7 @@ static NSString *moduleName = @"Login";
     NSString *methodName = @"LoginWithUsername";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/login" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/login" statusCode:200 headers:nil];
     
     [PPLogin loginWithUsername:self.user.username password:self.password passcode:nil expiry:PPLoginExpiryTypeNever appName:self.appName callback:^(NSString *APIKey, NSDate *expireDate, NSError *error) {
         
@@ -82,7 +82,7 @@ static NSString *moduleName = @"Login";
     NSString *methodName = @"SendPasscode";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/passcode" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/passcode" statusCode:200 headers:nil];
     
     [PPLogin sendPasscodeWithUsername:self.user.username type:PPLoginNotificationTypeSMS brand:self.brand appName:self.appName callback:^(NSError *error) {
         XCTAssertNil(error);
@@ -107,7 +107,7 @@ static NSString *moduleName = @"Login";
     NSString *methodName = @"LoginWithUsernameAndPasscode";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/login" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/login" statusCode:200 headers:nil];
     
     [PPLogin loginWithUsername:self.user.username password:nil passcode:@"PASSCD" expiry:PPLoginExpiryTypeNever appName:self.appName callback:^(NSString *APIKey, NSDate *expireDate, NSError *error) {
         
@@ -136,7 +136,7 @@ static NSString *moduleName = @"Login";
     NSString *methodName = @"LoginWithKey";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/loginByKey" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/loginByKey" statusCode:200 headers:nil];
        
     [PPLogin loginWithKey:self.user.sessionKey keyType:PPLoginKeyTypeTempKey expiry:PPLoginExpiryTypeNever clientId:nil cloudName:nil callback:^(NSString *APIKey, NSDate *expireDate, NSError *error) {
         

@@ -51,7 +51,7 @@ static NSString *moduleName = @"Rules";
     NSString *methodName = @"GetRuleComponents";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/ruleConditions" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/ruleConditions" statusCode:200 headers:nil];
     
     [PPRules getRuleComponents:self.location.locationId version:PPRulesVersionNone userId:PPUserIdNone callback:^(NSArray *triggers, NSArray *states, NSArray *actions, NSError *error) {
         
@@ -80,7 +80,7 @@ static NSString *moduleName = @"Rules";
     NSString *methodName = @"CreatRule";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/rules" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/rules" statusCode:200 headers:nil];
     
     [PPRules createRule:self.location.locationId userId:PPUserIdNone rule:self.rule callback:^(PPRule *rule, NSError *error) {
         
@@ -105,7 +105,7 @@ static NSString *moduleName = @"Rules";
     NSString *methodName = @"GetRules";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/rules" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/rules" statusCode:200 headers:nil];
     
     [PPRules getRules:self.location.locationId deviceId:nil details:PPRulesDetailsNone userId:PPUserIdNone callback:^(NSArray *rules, NSError *error) {
         
@@ -134,7 +134,7 @@ static NSString *moduleName = @"Rules";
     NSString *methodName = @"DeleteRulesByCriteria";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/rules" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/rules" statusCode:200 headers:nil];
     
     [PPRules deleteRulesByCriteria:self.location.locationId ruleIds:@[@(self.rule.ruleId)] status:PPRuleStatusNone deviceTypes:nil deviceIds:nil defaultRule:PPRuleDefaultNone hidden:PPRuleHiddenNone userId:PPUserIdNone callback:^(NSError *error) {
         
@@ -160,7 +160,7 @@ static NSString *moduleName = @"Rules";
     NSString *methodName = @"GetRule";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/rules/%@", @(self.rule.ruleId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/rules/%@", @(self.rule.ruleId)] statusCode:200 headers:nil];
 
     [PPRules getRule:self.rule.ruleId locationId:self.location.locationId details:PPRulesDetailsTrue userId:PPUserIdNone callback:^(NSArray *rules, NSError *error) {
         
@@ -183,7 +183,7 @@ static NSString *moduleName = @"Rules";
     NSString *methodName = @"UpdateRule";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/rules/%@", @(self.rule.ruleId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/rules/%@", @(self.rule.ruleId)] statusCode:200 headers:nil];
     
     [PPRules updateRule:self.rule locationId:self.location.locationId userId:PPUserIdNone callback:^(NSError *error) {
         
@@ -206,7 +206,7 @@ static NSString *moduleName = @"Rules";
     NSString *methodName = @"DeleteRule";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/rules/%@", @(self.rule.ruleId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/rules/%@", @(self.rule.ruleId)] statusCode:200 headers:nil];
     
     [PPRules deleteRule:self.rule.ruleId locationId:self.location.locationId userId:PPUserIdNone callback:^(NSError *error) {
         
@@ -233,7 +233,7 @@ static NSString *moduleName = @"Rules";
     NSString *methodName = @"UpdateRuleAttribute";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/rules/%@/attrs", @(self.rule.ruleId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/rules/%@/attrs", @(self.rule.ruleId)] statusCode:200 headers:nil];
         
     [PPRules updateRuleAttribute:self.rule.ruleId locationId:self.location.locationId status:PPRuleStatusNone name:nil userId:PPUserIdNone callback:^(NSError *error) {
         
@@ -265,7 +265,7 @@ static NSString *moduleName = @"Rules";
     NSString *methodName = @"UpdateRuleStatus";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/rulesStatus/%@", @(PPRuleStatusActive)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/rulesStatus/%@", @(PPRuleStatusActive)] statusCode:200 headers:nil];
     
     [PPRules updateRuleStatus:PPRuleStatusActive locationId:self.location.locationId ruleIds:@[@(self.rule.ruleId)] deviceTypes:nil deviceIds:nil defaultRule:PPRuleDefaultNone hidden:PPRuleHiddenNone userId:PPUserIdNone callback:^(NSArray *ruleIds, NSError *error) {
         
@@ -292,7 +292,7 @@ static NSString *moduleName = @"Rules";
     NSString *methodName = @"CreateDefaultRulesForDevice";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/rulesCreateDefault" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/rulesCreateDefault" statusCode:200 headers:nil];
     
     [PPRules createDefaultRulesForDevice:self.location.locationId deviceId:self.device.deviceId userId:PPUserIdNone callback:^(NSError *error) {
         

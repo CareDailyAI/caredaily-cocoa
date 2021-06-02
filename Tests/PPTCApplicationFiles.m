@@ -54,7 +54,7 @@ static NSString *moduleName = @"ApplicationFiles";
     NSString *methodName = @"UploadFile";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/appfiles" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/appfiles" statusCode:200 headers:nil];
     
     [PPApplicationFileManagement uploadFile:self.file.fileId type:PPApplicationFileFileTypeUserImage userId:PPUserIdNone locationId:PPLocationIdNone deviceId:nil name:nil publicAccess:PPApplicationFilePublicAccessNone contentType:@"image/jpeg" data:self.file.data progressBlock:^(NSProgress *progress) {
         
@@ -85,7 +85,7 @@ static NSString *moduleName = @"ApplicationFiles";
     NSString *methodName = @"GetFiles";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/appfiles" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/appfiles" statusCode:200 headers:nil];
     
     [PPApplicationFileManagement getFiles:PPApplicationFileIdNone type:PPApplicationFileFileTypeNone userId:PPUserIdNone locationId:PPLocationIdNone deviceId:nil name:nil isPublic:PPApplicationFilePublicAccessNone callback:^(NSArray *files, NSString *tempKey, NSDate *tempKeyExpire, NSError *error) {
         
@@ -124,7 +124,7 @@ static NSString *moduleName = @"ApplicationFiles";
     NSString *methodName = @"DownloadFile";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"data" path:[NSString stringWithFormat:@"/espapi/cloud/json/appfiles/%@", @(self.file.fileId)] statusCode:200 headers:@{
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"data" path:[NSString stringWithFormat:@"/cloud/json/appfiles/%@", @(self.file.fileId)] statusCode:200 headers:@{
         @"Content-Type": @"img/png",
         @"Content-Range": @"bytes 21010-47021/47022",
         @"Accept-Ranges": @"0-47022",
@@ -153,7 +153,7 @@ static NSString *moduleName = @"ApplicationFiles";
     NSString *methodName = @"DeleteFile";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/appfiles/%@", @(self.file.fileId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/appfiles/%@", @(self.file.fileId)] statusCode:200 headers:nil];
     
     [PPApplicationFileManagement deleteFile:self.file.fileId apiKey:nil userId:PPUserIdNone locationId:PPLocationIdNone callback:^(NSError *error) {
         

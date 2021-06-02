@@ -80,7 +80,7 @@ static NSString *moduleName = @"UserAccounts";
 
     PPOperationToken *operationToken = [[PPOperationToken alloc] initWithToken:@"__OP_TOKEN__" type:PPOperationTokenTypeUserRegistration validFrom:[NSDate date] expire:[NSDate dateWithTimeIntervalSinceNow:300]];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/user" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/user" statusCode:200 headers:nil];
     
     [PPUserAccounts registerWithUsername:self.user.username altUsername:nil password:self.userPassword firstName:self.user.firstName lastName:self.user.lastName email:self.user.email.email appName:self.appName language:self.user.language phone:self.user.phone phoneType:self.user.phoneType anonymous:self.user.anonymous location:self.location operationToken:operationToken callback:^(NSString *userId, NSString *locationId, NSString *APIKey, NSDate *keyExpireDate, NSError *error) {
                                                                    
@@ -104,7 +104,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"GetUserInformation";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/user" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/user" statusCode:200 headers:nil];
         
     [PPUserAccounts getUserInformationUserId:PPUserIdNone organizationId:PPOrganizationIdNone callback:^(PPUser *user, NSError *error) {
                                         
@@ -137,7 +137,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"UpdateUser";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/user" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/user" statusCode:200 headers:nil];
     
     [PPUserAccounts updateUsername:self.user.username altUsername:nil password:nil firstName:self.user.firstName lastName:self.user.lastName communityName:nil email:self.user.email.email emailResetStatus:PPUserEmailStatusNone language:self.user.language phone:self.user.phone phoneType:self.user.phoneType anonymous:self.user.anonymous userId:PPUserIdNone callback:^(NSError *error) {
                               
@@ -160,7 +160,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"DeleteUser";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/user" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/user" statusCode:200 headers:nil];
             
     [PPUserAccounts deleteUser:PPUserIdNone merge:PPUserAccountsMergeNone mergeUserId:PPUserIdNone mergeUserApiKey:nil callback:^(NSError * _Nullable error) {
         
@@ -176,7 +176,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"MergeUser";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/user" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/user" statusCode:200 headers:nil];
     
     [PPUserAccounts deleteUser:PPUserIdNone merge:PPUserAccountsMergeTrue mergeUserId:self.user.userId mergeUserApiKey:@"__MERGE_API_KEY__" callback:^(NSError *error) {
         
@@ -205,7 +205,7 @@ static NSString *moduleName = @"UserAccounts";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
     NSString *deviceId = @"__DEVICE_ID__";
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/devices/%@/services", deviceId] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/devices/%@/services", deviceId] statusCode:200 headers:nil];
     
     [PPUserAccounts getServicesByDevice:deviceId authorizationType:PPUserAccountAuthorizationTypeDeviceAuthenticationToken token:@"__AUTH_TOKEN__" sessionId:nil callback:^(NSMutableArray *services, NSError *error) {
         XCTAssertNil(error);
@@ -229,7 +229,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"GetUserByEmailOrPhone";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/users" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/users" statusCode:200 headers:nil];
     
     [PPUserAccounts getUsersByEmails:@[@"test@peoplepowerco.com"] phones:@[@"15555555555"] sendAsRequest:PPUserAccountSendAsRequestNone callback:^(NSArray *users, NSError *error) {
     
@@ -276,7 +276,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"AddNewLocationToExistingUser";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/location" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/location" statusCode:200 headers:nil];
         
     [PPUserAccounts addNewLocationToExistingUser:self.location.name type:self.location.type utilityAccountNo:self.location.utilityAccountNo timezone:self.location.timezone addrStreet1:self.location.addrStreet1 addrStreet2:self.location.addrStreet2 addrCity:self.location.addrCity state:self.location.state country:self.location.country zip:self.location.zip latitude:self.location.latitude longitude:self.location.longitude size:self.location.size storiesNumber:self.location.storiesNumber roomsNumber:self.location.roomsNumber bathroomsNumber:self.location.bathroomsNumber occupantsNumber:self.location.occupantsNumber occupantsRanges:self.location.occupantsRanges usagePeriod:self.location.usagePeriod heatingType:self.location.heatingType coolingType:self.location.coolingType waterHeaterType:self.location.waterHeaterType thermostatType:self.location.thermostatType fileUploadPolicy:self.location.fileUploadPolicy userId:PPUserIdNone appName:self.appName locationCallback:^(PPLocationId locationId, NSError *error) {
         
@@ -325,7 +325,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"EditLocation";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/location/%@", @(self.location.locationId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/location/%@", @(self.location.locationId)] statusCode:200 headers:nil];
     
     [PPUserAccounts editLocation:self.location.locationId name:self.location.name type:self.location.type utilityAccountNo:self.location.utilityAccountNo timezone:self.location.timezone addrStreet1:self.location.addrStreet1 addrStreet2:self.location.addrStreet2 addrCity:self.location.addrCity state:self.location.state country:self.location.country zip:self.location.zip latitude:self.location.latitude longitude:self.location.longitude size:self.location.size storiesNumber:self.location.storiesNumber roomsNumber:self.location.roomsNumber bathroomsNumber:self.location.bathroomsNumber occupantsNumber:self.location.occupantsNumber occupantsRanges:self.location.occupantsRanges usagePeriod:self.location.usagePeriod heatingType:self.location.heatingType coolingType:self.location.coolingType waterHeaterType:self.location.waterHeaterType thermostatType:self.location.thermostatType fileUploadPolicy:self.location.fileUploadPolicy callback:^(NSError *error) {
     
@@ -348,7 +348,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"DeleteLocation";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/location/%@", @(self.location.locationId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/location/%@", @(self.location.locationId)] statusCode:200 headers:nil];
         
     [PPUserAccounts deleteLocation:self.location.locationId callback:^(NSError *error) {
         XCTAssertNil(error);
@@ -376,7 +376,7 @@ static NSString *moduleName = @"UserAccounts";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
     NSString *eventName = @"__EVENT_NAME__";
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/location/%@/event/%@", @(self.location.locationId), eventName] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/location/%@/event/%@", @(self.location.locationId), eventName] statusCode:200 headers:nil];
         
     [PPUserAccounts changeSceneAtLocation:self.location.locationId eventName:eventName comment:@"Some Comment" callback:^(NSArray *sharedDevices, NSArray *stopSharingDevices, NSError *error) {
 
@@ -403,7 +403,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"LocationScenesHistory";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/location/%@/events", @(self.location.locationId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/location/%@/events", @(self.location.locationId)] statusCode:200 headers:nil];
         
     [PPUserAccounts locationScenesHistory:self.location.locationId startDate:nil endDate:nil callback:^(NSArray *events, NSError *error) {
         
@@ -431,7 +431,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"SendAVerificationMessage";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/emailVerificationMessage" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/emailVerificationMessage" statusCode:200 headers:nil];
     
     [PPUserAccounts sendAVerificationMessage:nil appName:nil type:PPUserEmailVerificationTypeEmail callback:^(NSError *error) {
         
@@ -458,7 +458,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"RecoverPassword";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/newPassword" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/newPassword" statusCode:200 headers:nil];
     
     [PPUserAccounts recoverPassword:self.user.username brand:nil appName:nil callback:^(NSError *error) {
         
@@ -484,7 +484,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"NewPassword";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/newPassword" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/newPassword" statusCode:200 headers:nil];
     
     
     [PPUserAccounts putNewPassword:@"__NEW_PASSWORD__" oldPassword:@"__OLD_PASSWORD__" passcode:nil tempKey:nil brand:nil appName:nil callback:^(NSError *error) {
@@ -509,7 +509,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"ResetBadges";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/badges" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/badges" statusCode:200 headers:nil];
     
     [PPUserAccounts resetBadges:PPUserBadgeTypeNone callback:^(NSError *error) {
         
@@ -535,7 +535,7 @@ static NSString *moduleName = @"UserAccounts";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
     NSString *signatureId = @"tos-123";
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/termsOfServices/%@", signatureId] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/termsOfServices/%@", signatureId] statusCode:200 headers:nil];
     
     [PPUserAccounts signTermsOfService:signatureId callback:^(NSError *error) {
     
@@ -558,7 +558,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"GetSignatures";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/termsOfServices" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/termsOfServices" statusCode:200 headers:nil];
     
     [PPUserAccounts getSignatures:^(NSArray *termsOfServices, NSError *error) {
         
@@ -583,7 +583,7 @@ static NSString *moduleName = @"UserAccounts";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
     NSString *tag = @"__TAG__";
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/usertags/%@", tag] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/usertags/%@", tag] statusCode:200 headers:nil];
     
     [PPUserAccounts applyTag:tag callback:^(NSError *error) {
         
@@ -606,7 +606,7 @@ static NSString *moduleName = @"UserAccounts";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
     NSString *tag = @"__TAG__";
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/usertags/%@", tag] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/usertags/%@", tag] statusCode:200 headers:nil];
     
     [PPUserAccounts deleteTag:tag callback:^(NSError *error) {
         
@@ -633,7 +633,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"PutUserCode";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/userCodes" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/userCodes" statusCode:200 headers:nil];
     
     [PPUserAccounts putUserCode:PPUserCodeTypeManual code:@"12345" locationId:PPLocationIdNone name:@"__MY_CODE__" callback:^(NSError * _Nullable error) {
         
@@ -657,7 +657,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"DeleteUserCode";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/userCodes" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/userCodes" statusCode:200 headers:nil];
     
     [PPUserAccounts deleteUserCode:@"12345" locationId:PPLocationIdNone callback:^(NSError * _Nullable error) {
         
@@ -678,7 +678,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"GetUserCodes";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/userCodes" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/userCodes" statusCode:200 headers:nil];
     
     [PPUserAccounts getUserCodes:^(NSArray * _Nullable userCodes, NSError * _Nullable error) {
         
@@ -705,7 +705,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"GetCountries";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/countries" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/countries" statusCode:200 headers:nil];
     
     [PPUserAccounts getCountries:PPOrganizationIdNone countryCode:nil lang:nil callback:^(PPCountriesStatesAndTimezones *countriesStatesAndTimezones, NSError *error) {
         
@@ -730,7 +730,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"GetLocationUsers";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/location/%@/users", @(self.location.locationId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/location/%@/users", @(self.location.locationId)] statusCode:200 headers:nil];
     
     [PPUserAccounts getLocationUsers:self.location.locationId callback:^(NSArray *users, NSError *error) {
         XCTAssertNil(error);
@@ -752,7 +752,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"AddLocationUsers";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/location/%@/users", @(self.location.locationId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/location/%@/users", @(self.location.locationId)] statusCode:200 headers:nil];
     
     NSDictionary *userDict = @{@"id": @(456), @"locationAccess": @(PPLocationAccessAdmin), @"schedules": @[@{@"daysOfWeek": @(PPRuleCalendarDaysOfWeekMonday), @"startTime": @(0), @"endTime": @(24 * 3660)}]};
     
@@ -776,7 +776,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"DeleteLocationUsers";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/location/%@/users", @(self.location.locationId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/location/%@/users", @(self.location.locationId)] statusCode:200 headers:nil];
     
     [PPUserAccounts deleteLocationUser:self.location.locationId userIds:@[@(456)] callback:^(NSError *error) {
         XCTAssertNil(error);
@@ -800,7 +800,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"GetSpaces";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/location/%@/spaces", @(self.location.locationId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/location/%@/spaces", @(self.location.locationId)] statusCode:200 headers:nil];
     
     [PPUserAccounts getLocationSpaces:self.location.locationId callback:^(NSArray *spaces, NSError *error) {
         
@@ -824,7 +824,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"UpdateSpace";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/location/%@/spaces", @(self.location.locationId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/location/%@/spaces", @(self.location.locationId)] statusCode:200 headers:nil];
     
     [PPUserAccounts updateLocationSpace:self.location.locationId space:self.space callback:^(PPLocationSpaceId spaceId, NSError *error) {
         XCTAssertNil(error);
@@ -846,7 +846,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"DeleteSpace";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/location/%@/spaces", @(self.location.locationId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/location/%@/spaces", @(self.location.locationId)] statusCode:200 headers:nil];
     
     [PPUserAccounts deleteLocationSpace:self.location.locationId spaceId:self.space.spaceId callback:^(NSError *error) {
         
@@ -875,7 +875,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"CreateNarrative";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/locations/%@/narratives", @(self.location.locationId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/locations/%@/narratives", @(self.location.locationId)] statusCode:200 headers:nil];
     
     [PPUserAccounts createOrUpdateNarrative:self.location.locationId narrativeId:PPLocationNarrativeIdNone narrativeTime:PPLocationNarrativeTimeNone narrative:self.narrative analyticAPIKey:@"__ANALYTIC_API_KEY__" callback:^(PPLocationNarrativeId spaceId, NSError *error) {
         XCTAssertNil(error);
@@ -898,7 +898,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"CreateNarrative";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/locations/%@/narratives", @(self.location.locationId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/locations/%@/narratives", @(self.location.locationId)] statusCode:200 headers:nil];
         
     [PPUserAccounts deleteNarrative:self.location.locationId narrativeId:self.narrative.narrativeId analyticAPIKey:@"__ANALYTIC_API_KEY__" callback:^(NSError *error) {
         XCTAssertNil(error);
@@ -926,7 +926,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"GetNarratives";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/locations/%@/narratives", @(self.location.locationId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/locations/%@/narratives", @(self.location.locationId)] statusCode:200 headers:nil];
     
     [PPUserAccounts getNarrative:self.location.locationId narrativeId:PPLocationNarrativeIdNone priority:PPLocationNarrativePriorityNone toPriority:PPLocationNarrativePriorityNone searchBy:nil startDate:nil endDate:nil rowCount:(PPLocationNarrativeRowCount)1 pageMarker:nil analyticAPIKey:nil sortOptions:nil callback:^(NSArray *narratives, NSString *nextMarker, NSError *error) {
         XCTAssertNil(error);
@@ -952,7 +952,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"GetPresenceIDs";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/presence" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/presence" statusCode:200 headers:nil];
     
     [PPUserAccounts getPresenceIDs:^(NSArray *ibeaconUUIDs, NSError *error) {
         XCTAssertNil(error);
@@ -976,7 +976,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"AuthorizeAccess";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/espapi/cloud/json/presence" statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/presence" statusCode:200 headers:nil];
     
     [PPUserAccounts authorizeAccess:@"ABC123" major:@"123" minor:@"123" callback:^(PPLocationId locationId, NSError *error) {
         
@@ -1004,7 +1004,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"SetState";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
 
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/locations/%@/state", @(self.location.locationId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/locations/%@/state", @(self.location.locationId)] statusCode:200 headers:nil];
     
     [PPUserAccounts setState:self.location.locationId name:@"test_state" data:@{@"key": @"value"} overwrite:PPUserAccountsStateOverwriteNone callback:^(NSError *error) {
         XCTAssertNil(error);
@@ -1025,7 +1025,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"GetState";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
 
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/locations/%@/state", @(self.location.locationId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/locations/%@/state", @(self.location.locationId)] statusCode:200 headers:nil];
     
     [PPUserAccounts getState:self.location.locationId name:@"test_state" callback:^(NSDictionary *data, NSError *error) {
         XCTAssertNil(error);
@@ -1046,7 +1046,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"GetStates";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
 
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/locations/%@/state", @(self.location.locationId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/locations/%@/state", @(self.location.locationId)] statusCode:200 headers:nil];
     
     [PPUserAccounts getStates:self.location.locationId names:@[@"test_state"] callback:^(NSArray *states, NSError *error) {
         XCTAssertNil(error);
@@ -1070,7 +1070,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"SetTimeState";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
 
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/locations/%@/timeStates", @(self.location.locationId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/locations/%@/timeStates", @(self.location.locationId)] statusCode:200 headers:nil];
         
     [PPUserAccounts setTimeState:self.location.locationId date:[PPNSDate parseDateTime:@"2019-12-01T00:00:00Z"] name:@"test_state" data:@{@"key": @"value"} overwrite:PPUserAccountsStateOverwriteNone callback:^(NSError *error) {
         
@@ -1094,7 +1094,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"GetTimeStates";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
 
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/locations/%@/timeStates", @(self.location.locationId)] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/locations/%@/timeStates", @(self.location.locationId)] statusCode:200 headers:nil];
         
     [PPUserAccounts getTimeStates:self.location.locationId startDate:[PPNSDate parseDateTime:@"2019-12-01T00:00:00Z"] endDate:nil names:@[@"test_state"] callback:^(NSArray *states, NSError *error) {
 
@@ -1119,7 +1119,7 @@ static NSString *moduleName = @"UserAccounts";
     NSString *methodName = @"AddLocationToOrganization";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
 
-    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/espapi/cloud/json/location/%@/organization/%@", @(self.location.locationId), self.organization.domainName] statusCode:200 headers:nil];
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/location/%@/organization/%@", @(self.location.locationId), self.organization.domainName] statusCode:200 headers:nil];
         
     [PPUserAccounts addLocationToOrganization:self.organization.domainName locationId:self.location.locationId callback:^(NSError * _Nullable error) {
 
