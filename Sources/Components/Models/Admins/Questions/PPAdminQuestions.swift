@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc open class PPAdminQuestions : PPBaseModel {
+@objc open class PPAdminQuestions : NSObject {
     
     // MARK: - Questions
     /**
@@ -116,7 +116,7 @@ import Foundation
                                           callback: @escaping ((NSNumber?, Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.questions.setCollection()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(nil, resultCode(toNSError: 29))
+        callback(nil, PPBaseModel.resultCode(toNSError: 29))
     }
 
     /**
@@ -128,7 +128,7 @@ import Foundation
                                            callback: @escaping (([Dictionary<String, Any>]?, Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.questions.getCollections()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(nil, resultCode(toNSError: 29))
+        callback(nil, PPBaseModel.resultCode(toNSError: 29))
     }
 
     // MARK: - Questions
@@ -144,7 +144,7 @@ import Foundation
                                          callback: @escaping ((Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.questions.askAQuestion()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(resultCode(toNSError: 29))
+        callback(PPBaseModel.resultCode(toNSError: 29))
     }
 
     /**
@@ -159,7 +159,7 @@ import Foundation
                                          callback: @escaping (([PPQuestion]?, Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.questions.getQuestions()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(nil, resultCode(toNSError: 29))
+        callback(nil, PPBaseModel.resultCode(toNSError: 29))
     }
 
     /**
@@ -172,7 +172,7 @@ import Foundation
                                             callback: @escaping ((Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.questions.updateAQuestion()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(resultCode(toNSError: 29))
+        callback(PPBaseModel.resultCode(toNSError: 29))
     }
 
     /**
@@ -185,7 +185,7 @@ import Foundation
                                             callback: @escaping ((Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.questions.deleteAQuestion()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(resultCode(toNSError: 29))
+        callback(PPBaseModel.resultCode(toNSError: 29))
     }
 
     // MARK: - Questions Answer
@@ -200,7 +200,7 @@ import Foundation
                                          callback: @escaping ((NSNumber?, Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.questions.updateAnswer()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(nil, resultCode(toNSError: 29))
+        callback(nil, PPBaseModel.resultCode(toNSError: 29))
     }
 
     // MARK: - Manage Collection Questions
@@ -217,7 +217,7 @@ import Foundation
                                                     callback: @escaping ((Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.questions.addQuestionToCollection()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(resultCode(toNSError: 29))
+        callback(PPBaseModel.resultCode(toNSError: 29))
     }
 
     /**
@@ -231,7 +231,7 @@ import Foundation
                                                          callback: @escaping ((Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.questions.deleteQuestionFromCollection()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(resultCode(toNSError: 29))
+        callback(PPBaseModel.resultCode(toNSError: 29))
     }
     
 }

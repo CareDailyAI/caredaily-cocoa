@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc open class PPAdminOrganizations : PPBaseModel {
+@objc open class PPAdminOrganizations : NSObject {
     // MARK: - Organizations
     /**
      The IoT Software Suite is a role-based access control system.
@@ -95,7 +95,7 @@ import Foundation
                                                  callback: @escaping ((Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organization.screateAnOrganization()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(resultCode(toNSError: 29))
+        callback(PPBaseModel.resultCode(toNSError: 29))
     }
 
     /**
@@ -107,7 +107,7 @@ import Foundation
                                                callback: @escaping ((Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organization.supdateOrganization()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(resultCode(toNSError: 29))
+        callback(PPBaseModel.resultCode(toNSError: 29))
     }
 
     /**
@@ -118,7 +118,7 @@ import Foundation
                                                callback: @escaping ((Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organization.sdeleteOrganization()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(resultCode(toNSError: 29))
+        callback(PPBaseModel.resultCode(toNSError: 29))
     }
 
     // MARK: - Organization Large Objects
@@ -139,7 +139,7 @@ import Foundation
                                               callback: @escaping ((Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organization.suploadLargeObject()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(resultCode(toNSError: 29))
+        callback(PPBaseModel.resultCode(toNSError: 29))
     }
 
     /**
@@ -152,7 +152,7 @@ import Foundation
                                              callback: @escaping ((Data?, Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organization.sgetObjectContent()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(nil, resultCode(toNSError: 29))
+        callback(nil, PPBaseModel.resultCode(toNSError: 29))
     }
 
     /**
@@ -164,7 +164,7 @@ import Foundation
                                           callback: @escaping ((Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organization.sdeleteContent()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(resultCode(toNSError: 29))
+        callback(PPBaseModel.resultCode(toNSError: 29))
     }
 
     // MARK: - Organization Objects and Properties
@@ -178,7 +178,7 @@ import Foundation
                                                      callback: @escaping (([PPOrganizationObject]?, Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organization.slistObjectsAndProperties()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(nil, resultCode(toNSError: 29))
+        callback(nil, PPBaseModel.resultCode(toNSError: 29))
     }
 
     /**
@@ -191,7 +191,7 @@ import Foundation
                                           callback: @escaping ((Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organization.ssetProperties()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(resultCode(toNSError: 29))
+        callback(PPBaseModel.resultCode(toNSError: 29))
     }
 
     // MARK: - Get Organization Administrators
@@ -204,7 +204,7 @@ import Foundation
                                               callback: @escaping (([PPUser]?, Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organization.sgetAdministrators()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(nil, resultCode(toNSError: 29))
+        callback(nil, PPBaseModel.resultCode(toNSError: 29))
     }
 
     // MARK: - Manage Organization Administrators
@@ -219,7 +219,7 @@ import Foundation
                                                callback: @escaping (( Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organization.saddAnAdministrator()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(resultCode(toNSError: 29))
+        callback(PPBaseModel.resultCode(toNSError: 29))
     }
 
     /**
@@ -231,7 +231,7 @@ import Foundation
                                                 callback: @escaping (( Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organization.sremoveAdministrator()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(resultCode(toNSError: 29))
+        callback(PPBaseModel.resultCode(toNSError: 29))
     }
 
     // MARK: - Organization Totals
@@ -259,7 +259,7 @@ import Foundation
                                                   callback: @escaping (([Dictionary<String, Any>]?, Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organization.sgetOrganizationTotals()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(nil, resultCode(toNSError: 29))
+        callback(nil, PPBaseModel.resultCode(toNSError: 29))
     }
 
 }
