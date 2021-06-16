@@ -1,0 +1,13 @@
+{
+  "resultCode": 0,
+  "versions": [
+    {
+      "id": 123,
+      "deviceType": 31,
+      "firmware": "Sensor_1.2.0",
+      "url": "https://fw.peoplepowerco.com/sensor_1_2_0",
+      "checkSum": "311da722d53e1e3654094f500428cec29159986576598df4b23d26357b5140b0",
+      "index": "0"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "resultCode": 0,
+  "devices": [
+    {
+      "id": "470FF274-8700-44AB-A273-A70691A3C140::4",
+      "type": 24,
+      "typeCategory": 6,
+      "goalId": 123,
+      "locationId": 5,
+      "desc": "iPhone 6",
+      "connected": true,
+      "lastDataReceivedDate": "2014-05-08T02:22:02-07:00",
+      "lastDataReceivedDateMs": 1399540922000,
+      "lastMeasureDate": "2014-05-08T02:22:02-07:00",
+      "lastMeasureDateMs": 1399540922000,
+      "location": {
+        "id": 456,
+        "name": "Factory",
+        "parentId": 123,
+        "timezone": {
+          "id": "US/Eastern",
+          "offset": -300,
+          "dst": true,
+          "name": "Eastern Time"
+        },
+        "type": 1
+      },
+      "tags": [
+        {
+          "tag": "hvac",
+          "organizationId": 123,
+          "organizationName": "PPC"
+        },
+        {
+          "tag": "efficient",
+          "appId": 45,
+          "appName": "HVac monitor"
+        }
+      ]
+    },
+    {
+      "id": "virtualpsm-6-4e7",
+      "type": 6,
+      "typeCategory": 11000,
+      "proxyId": "virtualhub-4-4D4",
+      "goalId": 124,
+      "locationId": 5,
+      "desc": "Light",
+      "connected": false,
+      "lastDataReceivedDate": "2014-05-08T02:22:02-07:00",
+      "lastDataReceivedDateMs": 1399540922000,
+      "lastMeasureDate": "2014-05-08T02:22:02-07:00",
+      "lastMeasureDateMs": 1399540922000,
+      "location": {
+        "id": 456,
+        "name": "Factory",
+        "parentId": 123,
+        "timezone": {
+          "id": "US/Eastern",
+          "offset": -300,
+          "dst": true,
+          "name": "Eastern Time"
+        },
+        "type": 1
+      }
+    }
+  ]
+}

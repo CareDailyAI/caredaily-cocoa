@@ -1,0 +1,53 @@
+{
+  "resultCode": 0,
+  "challenges": [
+    {
+      "challengeId": 90,
+      "template": false,
+      "parentId": 50,
+      "name": "DR event",
+      "startDate": "2014-08-14T22:23:10-04:00",
+      "startDateMs": 1408069390000,
+      "challengeType": 4,
+      "recurring": 0,
+      "participantType": 1,
+      "status": 1,
+      "invitational": true,
+      "deviceTypes": [
+        10,
+        20,
+        30
+      ],
+      "deviceTypeExistance": 2,
+      "participantTag": "auto-opt-in",
+      "excludeDeviceTypes": [
+        40
+      ],
+      "excludeParticipantTag": "inactive",
+      "participantsIn": 60,
+      "participantsOut": 20,
+      "participantsNoResponse": 10,
+      "parameters": {
+        "name1": "value1",
+        "name2": "value2"
+      }
+    },
+    {
+      "challengeId": 127,
+      "name": "template",
+      "startDate": "2014-06-30T14:30:00-04:00",
+      "startDateMs": 1404153000000,
+      "endDate": "2014-07-31T14:29:59-04:00",
+      "endDateMs": 1406831399000,
+      "challengeType": 4,
+      "recurring": 0,
+      "participantType": 0,
+      "status": 2,
+      "template": true,
+      "parameters": {
+        "lowTemperature": "64F",
+        "highTemperature": "71F"
+      }
+    }
+  ]
+}

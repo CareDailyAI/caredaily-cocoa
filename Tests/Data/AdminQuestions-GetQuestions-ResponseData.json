@@ -1,0 +1,126 @@
+{
+  "resultCode": 0,
+  "questions": [
+    {
+      "id": 50234,
+      "creationDate": "2016-03-04T12:12:12-07:00",
+      "creationDateMs": 1446537712000,
+      "key": "optional unique key",
+      "status": 1,
+      "askDate": "2016-03-04T12:12:12-07:00",
+      "askDateMs": 1446537712000,
+      "urgent": false,
+      "front": true,
+      "push": true,
+      "sms": false,
+      "email": true,
+      "editable": true,
+      "aggregatePublicly": true,
+      "collections": [
+        {
+          "id": 1,
+          "order": 3
+        }
+      ],
+      "question": {
+        "en": "What do you think of this question?",
+        "fr": "Que pensez-vous de cette question?"
+      },
+      "placeholder": {
+        "en": "Some hint",
+        "fr": "Espace reserve"
+      },
+      "totalResponses": 121,
+      "responseType": 2,
+      "displayType": 0,
+      "defaultAnswer": "1000",
+      "validAnswer": "1100",
+      "answerFormat": "^\\d{4}$",
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "sliderInc": 5,
+      "sectionTitle": {
+        "en": "Main questions",
+        "fr": "Questions principales"
+      },
+      "sectionId": 2,
+      "questionWeight": 3,
+      "tags": [
+        "likesOurQuestion"
+      ],
+      "responseOptions": [
+        {
+          "id": 0,
+          "total": 57,
+          "text": {
+            "en": "I really like it",
+            "fr": "J'aime vraiment ca"
+          },
+          "tags": [
+            "powerUser",
+            "likesOurQuestion"
+          ]
+        },
+        {
+          "id": 1,
+          "total": 35,
+          "text": {
+            "en": "I kind of like it",
+            "fr": "Je sorte de aime"
+          },
+          "tags": [
+            "likesOurQuestion"
+          ]
+        },
+        {
+          "id": 2,
+          "total": 4,
+          "text": {
+            "en": "I don't like it",
+            "fr": "Je ne l'aime pas"
+          },
+          "tags": [
+            "doesntLikeOurQuestion"
+          ]
+        },
+        {
+          "id": 3,
+          "total": 60,
+          "text": {
+            "en": "I hate it",
+            "fr": "Je deteste ca"
+          },
+          "tags": [
+            "needsAttention",
+            "doesntLikeOurQuestion"
+          ]
+        }
+      ],
+      "recipients": [
+        {
+          "groupId": 12
+        },
+        {
+          "userId": 1234
+        },
+        {
+          "userTag": "mother"
+        },
+        {
+          "userTag": "female"
+        },
+        {
+          "deviceTag": "refrigerator"
+        }
+      ],
+      "answerStatus": 4,
+      "answer": "This is some text input",
+      "notificationDate": "2016-03-04T12:12:12-07:00",
+      "notificationDateMs": 1446537712000,
+      "answerDate": "2016-03-04T12:12:12-07:00",
+      "answerDateMs": 1446539712000,
+      "answerValid": true,
+      "answerModified": false
+    }
+  ]
+}

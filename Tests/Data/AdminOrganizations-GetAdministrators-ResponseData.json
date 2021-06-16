@@ -1,0 +1,22 @@
+{
+  "resultCode": 0,
+  "users": [
+    {
+      "id": 123,
+      "userName": "john.smith@gmail.com",
+      "altUsername": "1234567890",
+      "firstName": "John",
+      "lastName": "Smith",
+      "email": {
+        "email": "john.smith@gmail.com",
+        "verified": true,
+        "status": 0
+      },
+      "role": {
+        "id": 5,
+        "name": "Organization administrator",
+        "description": "Role description"
+      }
+    }
+  ]
+}

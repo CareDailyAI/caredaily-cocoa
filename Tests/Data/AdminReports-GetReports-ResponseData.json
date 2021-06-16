@@ -1,0 +1,72 @@
+{
+  "resultCode": 0,
+  "reports": [
+    {
+      "id": 1,
+      "analytic": true,
+      "name": "Active Users Report",
+      "desc": "The number of users who logged in during the specified period, optionally grouped by application",
+      "params": [
+        {
+          "id": "byAppName",
+          "name": "Group By AppName",
+          "desc": "Determines whether to group by application name",
+          "type": 5,
+          "required": false
+        },
+        {
+          "id": "fromDate",
+          "name": "From Date",
+          "type": 3,
+          "required": true
+        },
+        {
+          "id": "organizationId",
+          "name": "Organization ID",
+          "type": 2,
+          "required": false
+        },
+        {
+          "id": "toDate",
+          "name": "To Date",
+          "type": 3,
+          "required": true
+        }
+      ],
+      "fields": [
+        {
+          "id": "appName",
+          "name": "App Name",
+          "desc": "Application name",
+          "type": 1,
+          "index": 1
+        },
+        {
+          "id": "count",
+          "name": "Count",
+          "desc": "Count of active users",
+          "type": 2,
+          "index": 2
+        }
+      ],
+      "reportGroups": [
+        {
+          "id": 1,
+          "name": "Analytic reports",
+          "description": "Analytic reports, which run by schedule",
+          "dashboard": "care",
+          "dashboardName": "Care Dashboard",
+          "organizationStatus": 1,
+          "organizationId": 123,
+          "startDate": "2020-09-15T19:44:51+03:00",
+          "startDateMs": 1600188291000,
+          "parameters": {
+            "fromDate": "{now}-7d",
+            "toDate": "{now}"
+          },
+          "schedule": "0 0 8 ? * FRI"
+        }
+      ]
+    }
+  ]
+}

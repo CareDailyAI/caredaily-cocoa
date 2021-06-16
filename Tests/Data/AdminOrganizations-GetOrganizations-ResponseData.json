@@ -1,0 +1,60 @@
+{
+  "resultCode": 0,
+  "organizations": [
+    {
+      "id": 1,
+      "name": "People Power Co",
+      "domainName": "PPC",
+      "brand": "presence",
+      "updateDate": "2016-04-12T23:30:15Z",
+      "updateDateMs": 1460503815000,
+      "organizationAdmin": true,
+      "parentAdmin": false,
+      "organizationEditor": false,
+      "features": "g,p,m,c",
+      "deviceTypes": "123,124,125",
+      "termOfService": "PPC.2016",
+      "addrStreet1": "123 Prospect St, Apt. 456",
+      "addrStreet2": "",
+      "addrCity": "Palo Alto",
+      "state": {
+        "id": 1,
+        "name": "California",
+        "timezoneId": "US/Pacific",
+        "abbr": "CA"
+      },
+      "country": {
+        "id": 1,
+        "name": "United States"
+      },
+      "zip": "12345"
+    },
+    {
+      "id": 2,
+      "name": "YAHOO",
+      "domainName": "yahoo.com",
+      "parentId": 1,
+      "updateDate": "2016-04-12T23:30:15Z",
+      "updateDateMs": 1460503815000,
+      "organizationAdmin": true,
+      "parentAdmin": true,
+      "organizationEditor": false,
+      "features": "g,p,m",
+      "deviceTypes": "123,124,125",
+      "addrStreet1": "Test address",
+      "addrStreet2": "Test Address",
+      "addrCity": "",
+      "state": {
+        "id": 5,
+        "name": "California",
+        "timezoneId": "US/Pacific",
+        "abbr": "CA"
+      },
+      "country": {
+        "id": 1,
+        "name": "United States"
+      },
+      "zip": "31300"
+    }
+  ]
+}
