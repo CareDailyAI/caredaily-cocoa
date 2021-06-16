@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc open class PPAdminFirmware : PPBaseModel {
+@objc open class PPAdminFirmware : NSObject {
     
     // MARK: - Firmware
 
@@ -28,7 +28,7 @@ import Foundation
                                                   callback: @escaping ((NSNumber?, Error?) -> (Void))) {
        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.usersandlocations.uploadFirmwareVersion()")
        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-       callback(nil, resultCode(toNSError: 29))
+       callback(nil, PPBaseModel.resultCode(toNSError: 29))
     }
 
     /**
@@ -40,7 +40,7 @@ import Foundation
                                                 callback: @escaping (([Dictionary<String, Any>]?, Error?) -> (Void))) {
        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.usersandlocations.getFirmwareVersions()")
        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-       callback(nil, resultCode(toNSError: 29))
+       callback(nil, PPBaseModel.resultCode(toNSError: 29))
     }
 
     /**
@@ -52,7 +52,7 @@ import Foundation
                                                    callback: @escaping ((Error?) -> (Void))) {
        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.usersandlocations.deleteFirmwareVersions()")
        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-       callback(resultCode(toNSError: 29))
+       callback(PPBaseModel.resultCode(toNSError: 29))
     }
 
     // MARK: - Firmware Update Jobs
@@ -67,7 +67,7 @@ import Foundation
                                             callback: @escaping ((PPDeviceFirmwareUpdateJobId, Error?) -> (Void))) {
        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.usersandlocations.createUpdateJob()")
        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(.none, resultCode(toNSError: 29))
+        callback(.none, PPBaseModel.resultCode(toNSError: 29))
     }
 
     /**
@@ -80,7 +80,7 @@ import Foundation
                                             callback: @escaping (([PPDeviceFirmwareUpdateJob]?, Error?) -> (Void))) {
        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.usersandlocations.getUpdateJobs()")
        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(nil, resultCode(toNSError: 29))
+        callback(nil, PPBaseModel.resultCode(toNSError: 29))
     }
 
     /**
@@ -92,7 +92,7 @@ import Foundation
                                             callback: @escaping ((Error?) -> (Void))) {
        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.usersandlocations.deleteUpdateJob()")
        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(resultCode(toNSError: 29))
+        callback(PPBaseModel.resultCode(toNSError: 29))
     }
 
     // MARK: - Firmware Group
@@ -106,6 +106,6 @@ import Foundation
                                                          callback: @escaping ((Error?) -> (Void))) {
        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.usersandlocations.updateFirmwareGroupForDevice()")
        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(resultCode(toNSError: 29))
+        callback(PPBaseModel.resultCode(toNSError: 29))
     }
 }

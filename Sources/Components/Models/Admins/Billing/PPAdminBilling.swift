@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc open class PPAdminBilling : PPBaseModel {
+@objc open class PPAdminBilling : NSObject {
     
     // MARK: - Billing
 
@@ -24,7 +24,7 @@ import Foundation
                                          callback: @escaping ((String?, Dictionary<String, Any>?, Dictionary<String, Any>?, Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.billing.generateBill()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(nil, nil, nil, resultCode(toNSError: 29))
+        callback(nil, nil, nil, PPBaseModel.resultCode(toNSError: 29))
     }
 
     /**
@@ -38,7 +38,7 @@ import Foundation
                                     callback: @escaping (([Dictionary<String, Any>]?, Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.billing.getBills()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(nil, resultCode(toNSError: 29))
+        callback(nil, PPBaseModel.resultCode(toNSError: 29))
     }
 
     /**
@@ -50,6 +50,6 @@ import Foundation
                                              callback: @escaping ((Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.billing.removeBillingBot()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(resultCode(toNSError: 29))
+        callback(PPBaseModel.resultCode(toNSError: 29))
     }
 }

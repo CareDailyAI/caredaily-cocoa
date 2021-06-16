@@ -8,7 +8,8 @@
 
 import Foundation
 
-@objc open class PPAdminChallenges : PPBaseModel {
+@objc open class PPAdminChallenges : NSObject {
+    
     // MARK: - Challenges
 
     // MARK: - Manage Challenges
@@ -44,7 +45,7 @@ import Foundation
                                              callback: @escaping ((NSNumber?, Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.usersandlocations.deleteUpdateJob()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(nil, resultCode(toNSError: 29))
+        callback(nil, PPBaseModel.resultCode(toNSError: 29))
     }
 
 
@@ -62,7 +63,7 @@ import Foundation
                                              callback: @escaping (([Dictionary<String, Any>]?, Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.usersandlocations.deleteUpdateJob()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(nil, resultCode(toNSError: 29))
+        callback(nil, PPBaseModel.resultCode(toNSError: 29))
     }
 
     // MARK: - Modify Challenges
@@ -78,7 +79,7 @@ import Foundation
                                              callback: @escaping ((Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.usersandlocations.deleteUpdateJob()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(resultCode(toNSError: 29))
+        callback(PPBaseModel.resultCode(toNSError: 29))
     }
 
     /**
@@ -90,7 +91,7 @@ import Foundation
                                              callback: @escaping ((Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.usersandlocations.deleteUpdateJob()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(resultCode(toNSError: 29))
+        callback(PPBaseModel.resultCode(toNSError: 29))
     }
 
     // MARK: - Update Challenge Status
@@ -105,7 +106,7 @@ import Foundation
                                                   callback: @escaping ((Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.usersandlocations.deleteUpdateJob()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(resultCode(toNSError: 29))
+        callback(PPBaseModel.resultCode(toNSError: 29))
     }
 
     // MARK: - Challenge Participants
@@ -127,7 +128,7 @@ import Foundation
                                             callback: @escaping (([Dictionary<String, Any>]?, Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.usersandlocations.deleteUpdateJob()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(nil, resultCode(toNSError: 29))
+        callback(nil, PPBaseModel.resultCode(toNSError: 29))
     }
 
     /**
@@ -142,7 +143,7 @@ import Foundation
                                          callback: @escaping ((Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.usersandlocations.deleteUpdateJob()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(resultCode(toNSError: 29))
+        callback(PPBaseModel.resultCode(toNSError: 29))
     }
 
     // MARK: - Challenge Energy Usage
@@ -158,6 +159,6 @@ import Foundation
                                            callback: @escaping (([Dictionary<String, Any>]?, Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.usersandlocations.deleteUpdateJob()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(nil, resultCode(toNSError: 29))
+        callback(nil, PPBaseModel.resultCode(toNSError: 29))
     }
 }

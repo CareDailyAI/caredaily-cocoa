@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc open class PPAdminUsersAndLocations : PPBaseModel {
+@objc open class PPAdminUsersAndLocations : NSObject {
 
     // MARK: - Users and Locations
     /**
@@ -37,7 +37,7 @@ import Foundation
                                      callback: @escaping (([PPUser]?, Error?) -> (Void))) {
        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.usersandlocations.getUsers()")
        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-       callback(nil, resultCode(toNSError: 29))
+       callback(nil, PPBaseModel.resultCode(toNSError: 29))
     }
 
     // MARK: - Locations in an Organization
@@ -67,7 +67,7 @@ import Foundation
                                          callback: @escaping (([PPLocation]?, Error?) -> (Void))) {
        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.usersandlocations.getLocations()")
        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-       callback(nil, resultCode(toNSError: 29))
+       callback(nil, PPBaseModel.resultCode(toNSError: 29))
     }
 
     /**
@@ -82,7 +82,7 @@ import Foundation
                                            callback: @escaping ((Error?) -> (Void))) {
        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.usersandlocations.createLocation()")
        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-       callback(resultCode(toNSError: 29))
+       callback(PPBaseModel.resultCode(toNSError: 29))
     }
 
     /**
@@ -94,7 +94,7 @@ import Foundation
                                          callback: @escaping ((Error?) -> (Void))) {
        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.usersandlocations.editLocation()")
        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-       callback(resultCode(toNSError: 29))
+       callback(PPBaseModel.resultCode(toNSError: 29))
     }
 
     /**
@@ -106,7 +106,7 @@ import Foundation
                                            callback: @escaping ((Error?) -> (Void))) {
        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.usersandlocations.deleteLocation()")
        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-       callback(resultCode(toNSError: 29))
+       callback(PPBaseModel.resultCode(toNSError: 29))
     }
 
     // MARK: - Manage Locations
@@ -123,7 +123,7 @@ import Foundation
                                                          callback: @escaping (([PPLocationNarrative]?, Error?) -> (Void))) {
        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.usersandlocations.addOrUpdateOrRemoveLocations()")
        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-       callback(nil, resultCode(toNSError: 29))
+       callback(nil, PPBaseModel.resultCode(toNSError: 29))
     }
 
     // MARK: - Narratives
@@ -151,7 +151,7 @@ import Foundation
                                                       callback: @escaping (([PPLocationNarrative]?, String?, Error?) -> (Void))) {
        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.usersandlocations.getOrganizationNarratives()")
        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-       callback(nil, nil, resultCode(toNSError: 29))
+       callback(nil, nil, PPBaseModel.resultCode(toNSError: 29))
     }
 
     // MARK: - Invite Users
@@ -170,7 +170,7 @@ import Foundation
                                             callback: @escaping ((Error?) -> (Void))) {
        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.usersandlocations.postInvitiation()")
        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-       callback(resultCode(toNSError: 29))
+       callback(PPBaseModel.resultCode(toNSError: 29))
     }
 
     // MARK: - Groups of Locations
@@ -194,7 +194,7 @@ import Foundation
                                          callback: @escaping ((Error?) -> (Void))) {
        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.usersandlocations.createAGroup()")
        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-       callback(resultCode(toNSError: 29))
+       callback(PPBaseModel.resultCode(toNSError: 29))
     }
 
     /**
@@ -210,7 +210,7 @@ import Foundation
                                       callback: @escaping (([PPOrganizationGroup]?, Error?) -> (Void))) {
        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.usersandlocations.getGroups()")
        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-       callback(nil, resultCode(toNSError: 29))
+       callback(nil, PPBaseModel.resultCode(toNSError: 29))
     }
 
     // MARK: - Manage Groups
@@ -227,7 +227,7 @@ import Foundation
                                          callback: @escaping ((Error?) -> (Void))) {
        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.usersandlocations.updateAGroup()")
        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-       callback(resultCode(toNSError: 29))
+       callback(PPBaseModel.resultCode(toNSError: 29))
     }
 
     /**
@@ -239,7 +239,7 @@ import Foundation
                                          callback: @escaping ((Error?) -> (Void))) {
        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.usersandlocations.deleteAGroup()")
        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-       callback(resultCode(toNSError: 29))
+       callback(PPBaseModel.resultCode(toNSError: 29))
     }
 
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc open class PPAdminReports : PPBaseModel {
+@objc open class PPAdminReports : NSObject {
     
     // MARK: - Reports
     /**
@@ -33,7 +33,7 @@ import Foundation
                                       callback: @escaping (([Dictionary<String, Any>]?, Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.reports.getGroups()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(nil, resultCode(toNSError: 29))
+        callback(nil, PPBaseModel.resultCode(toNSError: 29))
     }
     
     /**
@@ -46,7 +46,7 @@ import Foundation
                                                        callback: @escaping ((Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.reports.putGroupOrganizationStatus()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(resultCode(toNSError: 29))
+        callback(PPBaseModel.resultCode(toNSError: 29))
     }
 
     // MARK: - Reports
@@ -86,7 +86,7 @@ import Foundation
                                        callback: @escaping (([Dictionary<String, Any>]?, Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.reports.getReports()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(nil, resultCode(toNSError: 29))
+        callback(nil, PPBaseModel.resultCode(toNSError: 29))
     }
 
     // MARK: - Generate Report
@@ -105,7 +105,7 @@ import Foundation
                                             callback: @escaping ((String?, Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.reports.generateReports()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(nil, resultCode(toNSError: 29))
+        callback(nil, PPBaseModel.resultCode(toNSError: 29))
     }
 
     // MARK: - Report Execution Data
@@ -125,6 +125,6 @@ import Foundation
                                                    callback: @escaping (([Dictionary<String, Any>]?, Error?) -> (Void))) {
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.reports.getReportExecutionData()")
         PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(nil, resultCode(toNSError: 29))
+        callback(nil, PPBaseModel.resultCode(toNSError: 29))
     }
 }

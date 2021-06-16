@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc open class PPAdminDevices : PPBaseModel {
+@objc open class PPAdminDevices : NSObject {
     
     
     // MARK: - Devices
@@ -38,6 +38,6 @@ import Foundation
                                      callback: @escaping (([PPDevice]?, Error?) -> (Void))) {
        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.usersandlocations.getUsers()")
        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-       callback(nil, resultCode(toNSError: 29))
+       callback(nil, PPBaseModel.resultCode(toNSError: 29))
     }
 }

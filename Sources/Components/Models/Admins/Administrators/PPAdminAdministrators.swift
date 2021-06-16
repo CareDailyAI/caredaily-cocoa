@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc open class PPAdminAdministrators : PPBaseModel {
+@objc open class PPAdminAdministrators : NSObject {
     // MARK: - Administrators
     /**
      The IoT Software Suite is a role-based access control system.
