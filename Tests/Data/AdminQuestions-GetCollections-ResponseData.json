@@ -1,0 +1,15 @@
+{
+  "resultCode": 0,
+  "collections": [
+    {
+      "id": 1,
+      "name": "Reviews",
+      "description": {
+        "en": "Reviews",
+        "ab": "The word 'Reviews' in some other language"
+      },
+      "status": 1,
+      "generalPublic": true
+    }
+  ]
+}

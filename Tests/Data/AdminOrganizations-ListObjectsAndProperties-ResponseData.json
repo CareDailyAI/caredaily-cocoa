@@ -1,0 +1,17 @@
+{
+  "resultCode": 0,
+  "organizationObjects": [
+    {
+      "name": "logo",
+      "contentType": "image/png",
+      "privateContent": false,
+      "parent": false
+    },
+    {
+      "name": "backgroundColour",
+      "privateContent": false,
+      "value": "777",
+      "parent": true
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "resultCode": 0,
+  "groups": [
+    {
+      "id": 123,
+      "organizationId": 45,
+      "type": 0,
+      "hidden": false,
+      "name": "Group name",
+      "locationsNumber": 100
+    }
+  ]
+}

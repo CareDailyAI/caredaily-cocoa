@@ -75,6 +75,9 @@
             </BuildableReference>
             <SkippedTests>
                <Test
+                  Identifier = "PPTCDeviceProxy">
+               </Test>
+               <Test
                   Identifier = "PPTCFriends">
                </Test>
             </SkippedTests>

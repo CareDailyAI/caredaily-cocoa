@@ -1,0 +1,85 @@
+{
+  "resultCode": 0,
+  "executions": [
+    {
+      "reportId": 201,
+      "executionDateMs": 1600778491000,
+      "executionDate": "2020-09-22T12:41:31Z",
+      "url": "https://s3.amazonaws.com/sbox.reports/R1G2O15T17445a81125?response-content-disposition=attachment%3B%20filename%3D%22R1G2O15T1598896476000.zip%22&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20200831T181046Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=AKIAJPAZDO6JTXZ6FQSQ%2F20200831%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=31eaca10bf564638cc9cc35e4c467317f83d44a42d3860805c9c1479e8d032bc",
+      "data": [
+        {
+          "id": 0,
+          "value": 0
+        },
+        {
+          "id": 24,
+          "value": 5
+        },
+        {
+          "id": 18,
+          "value": 72
+        },
+        {
+          "id": 19,
+          "value": 7
+        },
+        {
+          "id": 22,
+          "value": 7
+        }
+      ]
+    }
+  ],
+  "dictionary": [
+    {
+      "id": 3,
+      "name": "Pro Video",
+      "description": "Pro Video service and 5 GB disk space"
+    },
+    {
+      "id": 5,
+      "name": "Pro Energy",
+      "description": "Pro Energy services"
+    },
+    {
+      "id": 17,
+      "name": "Care",
+      "description": "Care"
+    },
+    {
+      "id": 18,
+      "name": "Family Trial",
+      "description": "Family free trial"
+    },
+    {
+      "id": 19,
+      "name": "Trusted Circle Monitoring",
+      "description": "Family Trusted Circle Monitoring"
+    },
+    {
+      "id": 20,
+      "name": "Caregiver Treatment",
+      "description": "Family Caregiver Treatment"
+    },
+    {
+      "id": 22,
+      "name": "Professional Monitoring",
+      "description": "Family Professional Monitoring"
+    },
+    {
+      "id": 23,
+      "name": "com.consumers.ProEnergy",
+      "description": "Consumers Pro Energy"
+    },
+    {
+      "id": 24,
+      "name": "Professional Monitoring Org",
+      "description": "Professional Monitoring for organizations"
+    },
+    {
+      "id": 0,
+      "name": "No Subscription",
+      "description": "Number of locations without subscriptions"
+    }
+  ]
+}

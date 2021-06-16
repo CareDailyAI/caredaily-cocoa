@@ -1,0 +1,49 @@
+{
+  "resultCode": 0,
+  "billingPeriod": "2021-04",
+  "input": {
+    "usersCount": 1891,
+    "adminsCount": 8,
+    "locationsCount": 1907,
+    "deviceTotals": [
+      {
+        "deviceType": 0,
+        "devicesCount": 4,
+        "locationsCount": 1,
+        "startDate": 1404980775000,
+        "endDate": 1893474000000,
+        "hours": 2880
+      }
+    ],
+    "paidPlanTotals": [
+      {
+        "planId": 13,
+        "appName": "myplace",
+        "paymentType": 0,
+        "subscriptionType": 0,
+        "price": null,
+        "locationsCount": 3,
+        "quantity": 3,
+        "startDate": 1504586419000,
+        "endDate": 1893474000000,
+        "hours": 2160
+      }
+    ]
+  },
+  "bill": {
+    "startDate": "2021-04-01",
+    "endDate": "2021-05-01",
+    "totalCost": 100,
+    "creationDate": "2021-05-10T13:13:57Z",
+    "creationDateMs": 1620652437000,
+    "items": [
+      {
+        "itemType": 1,
+        "description": "type 1",
+        "quantity": 1,
+        "price": 100,
+        "cost": 100
+      }
+    ]
+  }
+}

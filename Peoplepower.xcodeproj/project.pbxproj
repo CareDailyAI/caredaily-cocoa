@@ -767,6 +767,90 @@
 		63AD0B17237CC76100F4900B /* PPCommunityUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AD0B15237CC76100F4900B /* PPCommunityUser.m */; };
 		63AD0B1A237CC77900F4900B /* PPCommunityLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 63AD0B18237CC77900F4900B /* PPCommunityLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63AD0B1B237CC77900F4900B /* PPCommunityLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AD0B19237CC77900F4900B /* PPCommunityLocation.m */; };
+		63B5272D2679534F007EA64B /* PPAdminAdministrators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B5272C2679534F007EA64B /* PPAdminAdministrators.swift */; };
+		63B5272F26795A4E007EA64B /* PPLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B5272E26795A4E007EA64B /* PPLog.swift */; };
+		63B5273126796228007EA64B /* PPTCAdminAdministrators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B5273026796228007EA64B /* PPTCAdminAdministrators.swift */; };
+		63B5273326796330007EA64B /* AdminAdministrators-GetRoles-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B5273226796330007EA64B /* AdminAdministrators-GetRoles-ResponseData.json */; };
+		63B5273726796451007EA64B /* AdminAdministrators-RevokeAdministrativeRoles-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B5273626796451007EA64B /* AdminAdministrators-RevokeAdministrativeRoles-ResponseData.json */; };
+		63B527392679648F007EA64B /* AdminAdministrators-GrantAdministrativeRoles-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B527382679648F007EA64B /* AdminAdministrators-GrantAdministrativeRoles-ResponseData.json */; };
+		63B5273E26796CE4007EA64B /* PPAdminUsersAndLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B5273C26796CE1007EA64B /* PPAdminUsersAndLocations.swift */; };
+		63B5273F26796CE8007EA64B /* PPAdminOrganizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B5273A267967FD007EA64B /* PPAdminOrganizations.swift */; };
+		63B5274826798B12007EA64B /* PPAdminDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B5274326798A3C007EA64B /* PPAdminDevices.swift */; };
+		63B5274926798B12007EA64B /* PPAdminFirmware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B5274626798B0E007EA64B /* PPAdminFirmware.swift */; };
+		63B5274B26798D68007EA64B /* PPAdminChallenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B5274A26798D68007EA64B /* PPAdminChallenges.swift */; };
+		63B5274D26798FAE007EA64B /* PPAdminTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B5274C26798FAE007EA64B /* PPAdminTags.swift */; };
+		63B5274F2679A00F007EA64B /* PPAdminQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B5274E2679A00F007EA64B /* PPAdminQuestions.swift */; };
+		63B527522679A2BE007EA64B /* PPAdminReports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B527512679A2BE007EA64B /* PPAdminReports.swift */; };
+		63B527542679A8D4007EA64B /* PPAdminBilling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B527532679A8D4007EA64B /* PPAdminBilling.swift */; };
+		63B52793267A6C33007EA64B /* AdminBilling-RemoveBillingBot-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52757267A6C2B007EA64B /* AdminBilling-RemoveBillingBot-ResponseData.json */; };
+		63B52794267A6C33007EA64B /* AdminReports-PutGroupOrganizationStatus-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52758267A6C2B007EA64B /* AdminReports-PutGroupOrganizationStatus-ResponseData.json */; };
+		63B52795267A6C33007EA64B /* AdminOrganizations-SetProperties-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52759267A6C2C007EA64B /* AdminOrganizations-SetProperties-ResponseData.json */; };
+		63B52796267A6C33007EA64B /* AdminFirmware-GetUpdateJobs-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B5275A267A6C2C007EA64B /* AdminFirmware-GetUpdateJobs-ResponseData.json */; };
+		63B52797267A6C33007EA64B /* AdminChallenges-DeleteTags-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B5275B267A6C2C007EA64B /* AdminChallenges-DeleteTags-ResponseData.json */; };
+		63B52798267A6C33007EA64B /* AdminChallenges-GetEnergyUsage-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B5275C267A6C2C007EA64B /* AdminChallenges-GetEnergyUsage-ResponseData.json */; };
+		63B52799267A6C33007EA64B /* AdminQuestions-UpdateAQuestion-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B5275D267A6C2C007EA64B /* AdminQuestions-UpdateAQuestion-ResponseData.json */; };
+		63B5279A267A6C33007EA64B /* AdminFirmware-DeleteUpdateJob-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B5275E267A6C2C007EA64B /* AdminFirmware-DeleteUpdateJob-ResponseData.json */; };
+		63B5279B267A6C33007EA64B /* AdminUsersAndLocations-GetGroups-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B5275F267A6C2C007EA64B /* AdminUsersAndLocations-GetGroups-ResponseData.json */; };
+		63B5279C267A6C33007EA64B /* AdminOrganizations-UploadLargeObject-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52760267A6C2C007EA64B /* AdminOrganizations-UploadLargeObject-ResponseData.json */; };
+		63B5279D267A6C33007EA64B /* AdminQuestions-UpdateAnswer-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52761267A6C2D007EA64B /* AdminQuestions-UpdateAnswer-ResponseData.json */; };
+		63B5279E267A6C33007EA64B /* AdminUsersAndLocations-PostInvitation-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52762267A6C2D007EA64B /* AdminUsersAndLocations-PostInvitation-ResponseData.json */; };
+		63B5279F267A6C33007EA64B /* AdminUsersAndLocations-UpdateAGroup-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52763267A6C2D007EA64B /* AdminUsersAndLocations-UpdateAGroup-ResponseData.json */; };
+		63B527A0267A6C33007EA64B /* AdminQuestions-AddQuestionToCollection-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52764267A6C2D007EA64B /* AdminQuestions-AddQuestionToCollection-ResponseData.json */; };
+		63B527A1267A6C33007EA64B /* AdminChallenges-GetParticipants-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52765267A6C2D007EA64B /* AdminChallenges-GetParticipants-ResponseData.json */; };
+		63B527A2267A6C33007EA64B /* AdminReports-GetGroups-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52766267A6C2D007EA64B /* AdminReports-GetGroups-ResponseData.json */; };
+		63B527A3267A6C33007EA64B /* AdminUsersAndLocations-GetUsers-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52767267A6C2D007EA64B /* AdminUsersAndLocations-GetUsers-ResponseData.json */; };
+		63B527A4267A6C33007EA64B /* AdminOrganizations-AddAdministrators-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52768267A6C2D007EA64B /* AdminOrganizations-AddAdministrators-ResponseData.json */; };
+		63B527A5267A6C33007EA64B /* AdminOrganizations-GetAdministrators-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52769267A6C2E007EA64B /* AdminOrganizations-GetAdministrators-ResponseData.json */; };
+		63B527A6267A6C33007EA64B /* AdminBilling-GenerateBill-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B5276A267A6C2E007EA64B /* AdminBilling-GenerateBill-ResponseData.json */; };
+		63B527A7267A6C33007EA64B /* AdminReports-GetReports-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B5276B267A6C2E007EA64B /* AdminReports-GetReports-ResponseData.json */; };
+		63B527A8267A6C33007EA64B /* AdminChallenges-UpdateAChallenge-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B5276C267A6C2E007EA64B /* AdminChallenges-UpdateAChallenge-ResponseData.json */; };
+		63B527A9267A6C33007EA64B /* AdminUsersAndLocations-DeleteAGroup-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B5276D267A6C2E007EA64B /* AdminUsersAndLocations-DeleteAGroup-ResponseData.json */; };
+		63B527AA267A6C33007EA64B /* AdminQuestions-AskAQuestion-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B5276E267A6C2E007EA64B /* AdminQuestions-AskAQuestion-ResponseData.json */; };
+		63B527AB267A6C33007EA64B /* AdminQuestions-SetCollection-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B5276F267A6C2F007EA64B /* AdminQuestions-SetCollection-ResponseData.json */; };
+		63B527AC267A6C33007EA64B /* AdminOrganizations-GetOrganizationTotals-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52770267A6C2F007EA64B /* AdminOrganizations-GetOrganizationTotals-ResponseData.json */; };
+		63B527AD267A6C33007EA64B /* AdminQuestions-GetQuestions-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52771267A6C2F007EA64B /* AdminQuestions-GetQuestions-ResponseData.json */; };
+		63B527AE267A6C33007EA64B /* AdminUsersAndLocations-GetOrganizationNarratives-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52772267A6C2F007EA64B /* AdminUsersAndLocations-GetOrganizationNarratives-ResponseData.json */; };
+		63B527AF267A6C33007EA64B /* AdminUsersAndLocations-DeleteLocation-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52773267A6C2F007EA64B /* AdminUsersAndLocations-DeleteLocation-ResponseData.json */; };
+		63B527B0267A6C33007EA64B /* AdminChallenges-DeleteAChallenge-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52774267A6C2F007EA64B /* AdminChallenges-DeleteAChallenge-ResponseData.json */; };
+		63B527B1267A6C33007EA64B /* AdminFirmware-UploadFirmwareVersion-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52775267A6C2F007EA64B /* AdminFirmware-UploadFirmwareVersion-ResponseData.json */; };
+		63B527B2267A6C33007EA64B /* AdminQuestions-DeleteAQuestion-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52776267A6C2F007EA64B /* AdminQuestions-DeleteAQuestion-ResponseData.json */; };
+		63B527B3267A6C33007EA64B /* AdminDevices-GetDevices-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52777267A6C30007EA64B /* AdminDevices-GetDevices-ResponseData.json */; };
+		63B527B4267A6C33007EA64B /* AdminFirmware-DeleteFirmwareVersions-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52778267A6C30007EA64B /* AdminFirmware-DeleteFirmwareVersions-ResponseData.json */; };
+		63B527B5267A6C33007EA64B /* AdminOrganizations-DeleteOrganization-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52779267A6C30007EA64B /* AdminOrganizations-DeleteOrganization-ResponseData.json */; };
+		63B527B6267A6C33007EA64B /* AdminOrganizations-UpdateOrganization-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B5277A267A6C30007EA64B /* AdminOrganizations-UpdateOrganization-ResponseData.json */; };
+		63B527B7267A6C33007EA64B /* AdminFirmware-UpdateFirmwareGroupForDevices-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B5277B267A6C30007EA64B /* AdminFirmware-UpdateFirmwareGroupForDevices-ResponseData.json */; };
+		63B527B8267A6C33007EA64B /* AdminOrganizations-ListObjectsAndProperties-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B5277C267A6C30007EA64B /* AdminOrganizations-ListObjectsAndProperties-ResponseData.json */; };
+		63B527B9267A6C33007EA64B /* AdminReports-GetReportExecutionData-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B5277D267A6C30007EA64B /* AdminReports-GetReportExecutionData-ResponseData.json */; };
+		63B527BA267A6C33007EA64B /* AdminChallenges-CreateAChallenge-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B5277E267A6C30007EA64B /* AdminChallenges-CreateAChallenge-ResponseData.json */; };
+		63B527BB267A6C33007EA64B /* AdminUsersAndLocations-EditLocation-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B5277F267A6C30007EA64B /* AdminUsersAndLocations-EditLocation-ResponseData.json */; };
+		63B527BC267A6C33007EA64B /* AdminFirmware-GetFirmwareVersions-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52780267A6C31007EA64B /* AdminFirmware-GetFirmwareVersions-ResponseData.json */; };
+		63B527BD267A6C33007EA64B /* AdminOrganizations-DeleteObject-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52781267A6C31007EA64B /* AdminOrganizations-DeleteObject-ResponseData.json */; };
+		63B527BE267A6C33007EA64B /* AdminUsersAndLocations-CreateLocation-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52782267A6C31007EA64B /* AdminUsersAndLocations-CreateLocation-ResponseData.json */; };
+		63B527BF267A6C33007EA64B /* AdminReports-GenerateReport-ResponseData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 63B52783267A6C31007EA64B /* AdminReports-GenerateReport-ResponseData.txt */; };
+		63B527C0267A6C33007EA64B /* AdminUsersAndLocations-CreateAGroup-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52784267A6C31007EA64B /* AdminUsersAndLocations-CreateAGroup-ResponseData.json */; };
+		63B527C1267A6C33007EA64B /* AdminChallenges-ApplyTags-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52785267A6C31007EA64B /* AdminChallenges-ApplyTags-ResponseData.json */; };
+		63B527C2267A6C33007EA64B /* AdminChallenges-PopularTags-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52786267A6C31007EA64B /* AdminChallenges-PopularTags-ResponseData.json */; };
+		63B527C3267A6C33007EA64B /* AdminUsersAndLocations-AddOrUpdateOrRemoveLocations-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52787267A6C31007EA64B /* AdminUsersAndLocations-AddOrUpdateOrRemoveLocations-ResponseData.json */; };
+		63B527C4267A6C33007EA64B /* AdminQuestions-GetCollections-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52788267A6C31007EA64B /* AdminQuestions-GetCollections-ResponseData.json */; };
+		63B527C5267A6C33007EA64B /* AdminOrganizations-CreateAnOrganization-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52789267A6C32007EA64B /* AdminOrganizations-CreateAnOrganization-ResponseData.json */; };
+		63B527C6267A6C33007EA64B /* AdminUsersAndLocations-GetLocations-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B5278A267A6C32007EA64B /* AdminUsersAndLocations-GetLocations-ResponseData.json */; };
+		63B527C7267A6C33007EA64B /* AdminChallenges-UpdateChallengeStatus-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B5278B267A6C32007EA64B /* AdminChallenges-UpdateChallengeStatus-ResponseData.json */; };
+		63B527C8267A6C33007EA64B /* AdminOrganizations-GetOrganizations-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B5278C267A6C32007EA64B /* AdminOrganizations-GetOrganizations-ResponseData.json */; };
+		63B527C9267A6C33007EA64B /* AdminQuestions-DeleteQuestionFromCollection-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B5278D267A6C32007EA64B /* AdminQuestions-DeleteQuestionFromCollection-ResponseData.json */; };
+		63B527CA267A6C33007EA64B /* AdminChallenges-UpdateStatus-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B5278E267A6C32007EA64B /* AdminChallenges-UpdateStatus-ResponseData.json */; };
+		63B527CB267A6C33007EA64B /* AdminOrganizations-RemoveAdministrators-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B5278F267A6C32007EA64B /* AdminOrganizations-RemoveAdministrators-ResponseData.json */; };
+		63B527CC267A6C33007EA64B /* AdminFirmware-CreateUpdateJob-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52790267A6C32007EA64B /* AdminFirmware-CreateUpdateJob-ResponseData.json */; };
+		63B527CD267A6C33007EA64B /* AdminBilling-GetBills-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52791267A6C32007EA64B /* AdminBilling-GetBills-ResponseData.json */; };
+		63B527CE267A6C33007EA64B /* AdminChallenges-GetChallenges-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63B52792267A6C33007EA64B /* AdminChallenges-GetChallenges-ResponseData.json */; };
+		63B527D8267A6EC7007EA64B /* PPTCAdminOrganizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B527CF267A6EC5007EA64B /* PPTCAdminOrganizations.swift */; };
+		63B527D9267A6EC7007EA64B /* PPTCAdminQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B527D0267A6EC5007EA64B /* PPTCAdminQuestions.swift */; };
+		63B527DA267A6EC7007EA64B /* PPTCAdminFirmware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B527D1267A6EC6007EA64B /* PPTCAdminFirmware.swift */; };
+		63B527DB267A6EC7007EA64B /* PPTCAdminBilling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B527D2267A6EC6007EA64B /* PPTCAdminBilling.swift */; };
+		63B527DC267A6EC7007EA64B /* PPTCAdminUsersAndLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B527D3267A6EC6007EA64B /* PPTCAdminUsersAndLocations.swift */; };
+		63B527DD267A6EC7007EA64B /* PPTCAdminChallenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B527D4267A6EC7007EA64B /* PPTCAdminChallenges.swift */; };
+		63B527DE267A6EC7007EA64B /* PPTCAdminDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B527D5267A6EC7007EA64B /* PPTCAdminDevices.swift */; };
+		63B527DF267A6EC7007EA64B /* PPTCAdminTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B527D6267A6EC7007EA64B /* PPTCAdminTags.swift */; };
+		63B527E0267A6EC7007EA64B /* PPTCAdminReports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B527D7267A6EC7007EA64B /* PPTCAdminReports.swift */; };
 		63BEC9CA20C5D67500408494 /* PPNetworkUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A9525B205C2E9A000E466A /* PPNetworkUtilities.m */; };
 		63BEC9CC20C5D67500408494 /* PPDateUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3937F204F46B600041C1A /* PPDateUtilities.m */; };
 		63BEC9D120C5D67500408494 /* PPCurlDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D39305204F287800041C1A /* PPCurlDebug.m */; };
@@ -1627,6 +1711,90 @@
 		63AD0B15237CC76100F4900B /* PPCommunityUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPCommunityUser.m; sourceTree = "<group>"; };
 		63AD0B18237CC77900F4900B /* PPCommunityLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPCommunityLocation.h; sourceTree = "<group>"; };
 		63AD0B19237CC77900F4900B /* PPCommunityLocation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPCommunityLocation.m; sourceTree = "<group>"; };
+		63B5272C2679534F007EA64B /* PPAdminAdministrators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPAdminAdministrators.swift; sourceTree = "<group>"; };
+		63B5272E26795A4E007EA64B /* PPLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLog.swift; sourceTree = "<group>"; };
+		63B5273026796228007EA64B /* PPTCAdminAdministrators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPTCAdminAdministrators.swift; sourceTree = "<group>"; };
+		63B5273226796330007EA64B /* AdminAdministrators-GetRoles-ResponseData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "AdminAdministrators-GetRoles-ResponseData.json"; sourceTree = "<group>"; };
+		63B5273626796451007EA64B /* AdminAdministrators-RevokeAdministrativeRoles-ResponseData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "AdminAdministrators-RevokeAdministrativeRoles-ResponseData.json"; sourceTree = "<group>"; };
+		63B527382679648F007EA64B /* AdminAdministrators-GrantAdministrativeRoles-ResponseData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "AdminAdministrators-GrantAdministrativeRoles-ResponseData.json"; sourceTree = "<group>"; };
+		63B5273A267967FD007EA64B /* PPAdminOrganizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPAdminOrganizations.swift; sourceTree = "<group>"; };
+		63B5273C26796CE1007EA64B /* PPAdminUsersAndLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPAdminUsersAndLocations.swift; sourceTree = "<group>"; };
+		63B5274326798A3C007EA64B /* PPAdminDevices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPAdminDevices.swift; sourceTree = "<group>"; };
+		63B5274626798B0E007EA64B /* PPAdminFirmware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPAdminFirmware.swift; sourceTree = "<group>"; };
+		63B5274A26798D68007EA64B /* PPAdminChallenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPAdminChallenges.swift; sourceTree = "<group>"; };
+		63B5274C26798FAE007EA64B /* PPAdminTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPAdminTags.swift; sourceTree = "<group>"; };
+		63B5274E2679A00F007EA64B /* PPAdminQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPAdminQuestions.swift; sourceTree = "<group>"; };
+		63B527512679A2BE007EA64B /* PPAdminReports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPAdminReports.swift; sourceTree = "<group>"; };
+		63B527532679A8D4007EA64B /* PPAdminBilling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPAdminBilling.swift; sourceTree = "<group>"; };
+		63B52757267A6C2B007EA64B /* AdminBilling-RemoveBillingBot-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminBilling-RemoveBillingBot-ResponseData.json"; sourceTree = "<group>"; };
+		63B52758267A6C2B007EA64B /* AdminReports-PutGroupOrganizationStatus-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminReports-PutGroupOrganizationStatus-ResponseData.json"; sourceTree = "<group>"; };
+		63B52759267A6C2C007EA64B /* AdminOrganizations-SetProperties-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminOrganizations-SetProperties-ResponseData.json"; sourceTree = "<group>"; };
+		63B5275A267A6C2C007EA64B /* AdminFirmware-GetUpdateJobs-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminFirmware-GetUpdateJobs-ResponseData.json"; sourceTree = "<group>"; };
+		63B5275B267A6C2C007EA64B /* AdminChallenges-DeleteTags-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminChallenges-DeleteTags-ResponseData.json"; sourceTree = "<group>"; };
+		63B5275C267A6C2C007EA64B /* AdminChallenges-GetEnergyUsage-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminChallenges-GetEnergyUsage-ResponseData.json"; sourceTree = "<group>"; };
+		63B5275D267A6C2C007EA64B /* AdminQuestions-UpdateAQuestion-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminQuestions-UpdateAQuestion-ResponseData.json"; sourceTree = "<group>"; };
+		63B5275E267A6C2C007EA64B /* AdminFirmware-DeleteUpdateJob-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminFirmware-DeleteUpdateJob-ResponseData.json"; sourceTree = "<group>"; };
+		63B5275F267A6C2C007EA64B /* AdminUsersAndLocations-GetGroups-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminUsersAndLocations-GetGroups-ResponseData.json"; sourceTree = "<group>"; };
+		63B52760267A6C2C007EA64B /* AdminOrganizations-UploadLargeObject-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminOrganizations-UploadLargeObject-ResponseData.json"; sourceTree = "<group>"; };
+		63B52761267A6C2D007EA64B /* AdminQuestions-UpdateAnswer-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminQuestions-UpdateAnswer-ResponseData.json"; sourceTree = "<group>"; };
+		63B52762267A6C2D007EA64B /* AdminUsersAndLocations-PostInvitation-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminUsersAndLocations-PostInvitation-ResponseData.json"; sourceTree = "<group>"; };
+		63B52763267A6C2D007EA64B /* AdminUsersAndLocations-UpdateAGroup-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminUsersAndLocations-UpdateAGroup-ResponseData.json"; sourceTree = "<group>"; };
+		63B52764267A6C2D007EA64B /* AdminQuestions-AddQuestionToCollection-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminQuestions-AddQuestionToCollection-ResponseData.json"; sourceTree = "<group>"; };
+		63B52765267A6C2D007EA64B /* AdminChallenges-GetParticipants-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminChallenges-GetParticipants-ResponseData.json"; sourceTree = "<group>"; };
+		63B52766267A6C2D007EA64B /* AdminReports-GetGroups-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminReports-GetGroups-ResponseData.json"; sourceTree = "<group>"; };
+		63B52767267A6C2D007EA64B /* AdminUsersAndLocations-GetUsers-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminUsersAndLocations-GetUsers-ResponseData.json"; sourceTree = "<group>"; };
+		63B52768267A6C2D007EA64B /* AdminOrganizations-AddAdministrators-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminOrganizations-AddAdministrators-ResponseData.json"; sourceTree = "<group>"; };
+		63B52769267A6C2E007EA64B /* AdminOrganizations-GetAdministrators-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminOrganizations-GetAdministrators-ResponseData.json"; sourceTree = "<group>"; };
+		63B5276A267A6C2E007EA64B /* AdminBilling-GenerateBill-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminBilling-GenerateBill-ResponseData.json"; sourceTree = "<group>"; };
+		63B5276B267A6C2E007EA64B /* AdminReports-GetReports-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminReports-GetReports-ResponseData.json"; sourceTree = "<group>"; };
+		63B5276C267A6C2E007EA64B /* AdminChallenges-UpdateAChallenge-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminChallenges-UpdateAChallenge-ResponseData.json"; sourceTree = "<group>"; };
+		63B5276D267A6C2E007EA64B /* AdminUsersAndLocations-DeleteAGroup-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminUsersAndLocations-DeleteAGroup-ResponseData.json"; sourceTree = "<group>"; };
+		63B5276E267A6C2E007EA64B /* AdminQuestions-AskAQuestion-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminQuestions-AskAQuestion-ResponseData.json"; sourceTree = "<group>"; };
+		63B5276F267A6C2F007EA64B /* AdminQuestions-SetCollection-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminQuestions-SetCollection-ResponseData.json"; sourceTree = "<group>"; };
+		63B52770267A6C2F007EA64B /* AdminOrganizations-GetOrganizationTotals-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminOrganizations-GetOrganizationTotals-ResponseData.json"; sourceTree = "<group>"; };
+		63B52771267A6C2F007EA64B /* AdminQuestions-GetQuestions-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminQuestions-GetQuestions-ResponseData.json"; sourceTree = "<group>"; };
+		63B52772267A6C2F007EA64B /* AdminUsersAndLocations-GetOrganizationNarratives-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminUsersAndLocations-GetOrganizationNarratives-ResponseData.json"; sourceTree = "<group>"; };
+		63B52773267A6C2F007EA64B /* AdminUsersAndLocations-DeleteLocation-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminUsersAndLocations-DeleteLocation-ResponseData.json"; sourceTree = "<group>"; };
+		63B52774267A6C2F007EA64B /* AdminChallenges-DeleteAChallenge-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminChallenges-DeleteAChallenge-ResponseData.json"; sourceTree = "<group>"; };
+		63B52775267A6C2F007EA64B /* AdminFirmware-UploadFirmwareVersion-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminFirmware-UploadFirmwareVersion-ResponseData.json"; sourceTree = "<group>"; };
+		63B52776267A6C2F007EA64B /* AdminQuestions-DeleteAQuestion-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminQuestions-DeleteAQuestion-ResponseData.json"; sourceTree = "<group>"; };
+		63B52777267A6C30007EA64B /* AdminDevices-GetDevices-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminDevices-GetDevices-ResponseData.json"; sourceTree = "<group>"; };
+		63B52778267A6C30007EA64B /* AdminFirmware-DeleteFirmwareVersions-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminFirmware-DeleteFirmwareVersions-ResponseData.json"; sourceTree = "<group>"; };
+		63B52779267A6C30007EA64B /* AdminOrganizations-DeleteOrganization-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminOrganizations-DeleteOrganization-ResponseData.json"; sourceTree = "<group>"; };
+		63B5277A267A6C30007EA64B /* AdminOrganizations-UpdateOrganization-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminOrganizations-UpdateOrganization-ResponseData.json"; sourceTree = "<group>"; };
+		63B5277B267A6C30007EA64B /* AdminFirmware-UpdateFirmwareGroupForDevices-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminFirmware-UpdateFirmwareGroupForDevices-ResponseData.json"; sourceTree = "<group>"; };
+		63B5277C267A6C30007EA64B /* AdminOrganizations-ListObjectsAndProperties-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminOrganizations-ListObjectsAndProperties-ResponseData.json"; sourceTree = "<group>"; };
+		63B5277D267A6C30007EA64B /* AdminReports-GetReportExecutionData-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminReports-GetReportExecutionData-ResponseData.json"; sourceTree = "<group>"; };
+		63B5277E267A6C30007EA64B /* AdminChallenges-CreateAChallenge-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminChallenges-CreateAChallenge-ResponseData.json"; sourceTree = "<group>"; };
+		63B5277F267A6C30007EA64B /* AdminUsersAndLocations-EditLocation-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminUsersAndLocations-EditLocation-ResponseData.json"; sourceTree = "<group>"; };
+		63B52780267A6C31007EA64B /* AdminFirmware-GetFirmwareVersions-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminFirmware-GetFirmwareVersions-ResponseData.json"; sourceTree = "<group>"; };
+		63B52781267A6C31007EA64B /* AdminOrganizations-DeleteObject-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminOrganizations-DeleteObject-ResponseData.json"; sourceTree = "<group>"; };
+		63B52782267A6C31007EA64B /* AdminUsersAndLocations-CreateLocation-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminUsersAndLocations-CreateLocation-ResponseData.json"; sourceTree = "<group>"; };
+		63B52783267A6C31007EA64B /* AdminReports-GenerateReport-ResponseData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "AdminReports-GenerateReport-ResponseData.txt"; sourceTree = "<group>"; };
+		63B52784267A6C31007EA64B /* AdminUsersAndLocations-CreateAGroup-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminUsersAndLocations-CreateAGroup-ResponseData.json"; sourceTree = "<group>"; };
+		63B52785267A6C31007EA64B /* AdminChallenges-ApplyTags-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminChallenges-ApplyTags-ResponseData.json"; sourceTree = "<group>"; };
+		63B52786267A6C31007EA64B /* AdminChallenges-PopularTags-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminChallenges-PopularTags-ResponseData.json"; sourceTree = "<group>"; };
+		63B52787267A6C31007EA64B /* AdminUsersAndLocations-AddOrUpdateOrRemoveLocations-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminUsersAndLocations-AddOrUpdateOrRemoveLocations-ResponseData.json"; sourceTree = "<group>"; };
+		63B52788267A6C31007EA64B /* AdminQuestions-GetCollections-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminQuestions-GetCollections-ResponseData.json"; sourceTree = "<group>"; };
+		63B52789267A6C32007EA64B /* AdminOrganizations-CreateAnOrganization-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminOrganizations-CreateAnOrganization-ResponseData.json"; sourceTree = "<group>"; };
+		63B5278A267A6C32007EA64B /* AdminUsersAndLocations-GetLocations-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminUsersAndLocations-GetLocations-ResponseData.json"; sourceTree = "<group>"; };
+		63B5278B267A6C32007EA64B /* AdminChallenges-UpdateChallengeStatus-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminChallenges-UpdateChallengeStatus-ResponseData.json"; sourceTree = "<group>"; };
+		63B5278C267A6C32007EA64B /* AdminOrganizations-GetOrganizations-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminOrganizations-GetOrganizations-ResponseData.json"; sourceTree = "<group>"; };
+		63B5278D267A6C32007EA64B /* AdminQuestions-DeleteQuestionFromCollection-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminQuestions-DeleteQuestionFromCollection-ResponseData.json"; sourceTree = "<group>"; };
+		63B5278E267A6C32007EA64B /* AdminChallenges-UpdateStatus-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminChallenges-UpdateStatus-ResponseData.json"; sourceTree = "<group>"; };
+		63B5278F267A6C32007EA64B /* AdminOrganizations-RemoveAdministrators-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminOrganizations-RemoveAdministrators-ResponseData.json"; sourceTree = "<group>"; };
+		63B52790267A6C32007EA64B /* AdminFirmware-CreateUpdateJob-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminFirmware-CreateUpdateJob-ResponseData.json"; sourceTree = "<group>"; };
+		63B52791267A6C32007EA64B /* AdminBilling-GetBills-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminBilling-GetBills-ResponseData.json"; sourceTree = "<group>"; };
+		63B52792267A6C33007EA64B /* AdminChallenges-GetChallenges-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "AdminChallenges-GetChallenges-ResponseData.json"; sourceTree = "<group>"; };
+		63B527CF267A6EC5007EA64B /* PPTCAdminOrganizations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPTCAdminOrganizations.swift; sourceTree = "<group>"; };
+		63B527D0267A6EC5007EA64B /* PPTCAdminQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPTCAdminQuestions.swift; sourceTree = "<group>"; };
+		63B527D1267A6EC6007EA64B /* PPTCAdminFirmware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPTCAdminFirmware.swift; sourceTree = "<group>"; };
+		63B527D2267A6EC6007EA64B /* PPTCAdminBilling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPTCAdminBilling.swift; sourceTree = "<group>"; };
+		63B527D3267A6EC6007EA64B /* PPTCAdminUsersAndLocations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPTCAdminUsersAndLocations.swift; sourceTree = "<group>"; };
+		63B527D4267A6EC7007EA64B /* PPTCAdminChallenges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPTCAdminChallenges.swift; sourceTree = "<group>"; };
+		63B527D5267A6EC7007EA64B /* PPTCAdminDevices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPTCAdminDevices.swift; sourceTree = "<group>"; };
+		63B527D6267A6EC7007EA64B /* PPTCAdminTags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPTCAdminTags.swift; sourceTree = "<group>"; };
+		63B527D7267A6EC7007EA64B /* PPTCAdminReports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPTCAdminReports.swift; sourceTree = "<group>"; };
 		63BEC9AC20C5D2AA00408494 /* Peoplepower.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Peoplepower.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BEC9AF20C5D2AB00408494 /* Peoplepower-Framework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Peoplepower-Framework-Info.plist"; sourceTree = "<group>"; };
 		63BEC9B420C5D2AB00408494 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2041,6 +2209,7 @@
 		636B4627248AF7A300124F6A /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				63B527552679AA80007EA64B /* Admin */,
 				636B46D4248AF7E000124F6A /* ApplicationFiles-DeleteFile-ResponseData.json */,
 				636B4644248AF7C700124F6A /* ApplicationFiles-DownloadFile-ResponseData.data */,
 				636B464B248AF7C800124F6A /* ApplicationFiles-GetDownloadUrl-ResponseData.json */,
@@ -2287,6 +2456,7 @@
 		636DCC092493F8F1000560E8 /* APIs */ = {
 			isa = PBXGroup;
 			children = (
+				63B527E1267A6F17007EA64B /* Admin */,
 				636B4802248AFA7D00124F6A /* PPTCCircles.m */,
 				636B4809248AFA7F00124F6A /* PPTCCloudConnectivity.m */,
 				636B47FD248AFA7D00124F6A /* PPTCCloudsIntegration.m */,
@@ -2527,6 +2697,190 @@
 			path = Community;
 			sourceTree = "<group>";
 		};
+		63B526F92679468B007EA64B /* Admins */ = {
+			isa = PBXGroup;
+			children = (
+				63B527032679470F007EA64B /* Administrators */,
+				63B52702267946FD007EA64B /* Organizations */,
+				63B52701267946F5007EA64B /* Users and Locations */,
+				63B52700267946F0007EA64B /* Devices */,
+				63B526FF267946EB007EA64B /* Firmware */,
+				63B526FE267946E7007EA64B /* Challenges */,
+				63B526FD267946E2007EA64B /* Tags */,
+				63B526FC267946DD007EA64B /* Questions */,
+				63B526FA267946BA007EA64B /* Reports */,
+				63B526FB267946C3007EA64B /* Billing */,
+			);
+			path = Admins;
+			sourceTree = "<group>";
+		};
+		63B526FA267946BA007EA64B /* Reports */ = {
+			isa = PBXGroup;
+			children = (
+				63B527512679A2BE007EA64B /* PPAdminReports.swift */,
+			);
+			path = Reports;
+			sourceTree = "<group>";
+		};
+		63B526FB267946C3007EA64B /* Billing */ = {
+			isa = PBXGroup;
+			children = (
+				63B527532679A8D4007EA64B /* PPAdminBilling.swift */,
+			);
+			path = Billing;
+			sourceTree = "<group>";
+		};
+		63B526FC267946DD007EA64B /* Questions */ = {
+			isa = PBXGroup;
+			children = (
+				63B5274E2679A00F007EA64B /* PPAdminQuestions.swift */,
+			);
+			path = Questions;
+			sourceTree = "<group>";
+		};
+		63B526FD267946E2007EA64B /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				63B5274C26798FAE007EA64B /* PPAdminTags.swift */,
+			);
+			path = Tags;
+			sourceTree = "<group>";
+		};
+		63B526FE267946E7007EA64B /* Challenges */ = {
+			isa = PBXGroup;
+			children = (
+				63B5274A26798D68007EA64B /* PPAdminChallenges.swift */,
+			);
+			path = Challenges;
+			sourceTree = "<group>";
+		};
+		63B526FF267946EB007EA64B /* Firmware */ = {
+			isa = PBXGroup;
+			children = (
+				63B5274626798B0E007EA64B /* PPAdminFirmware.swift */,
+			);
+			path = Firmware;
+			sourceTree = "<group>";
+		};
+		63B52700267946F0007EA64B /* Devices */ = {
+			isa = PBXGroup;
+			children = (
+				63B5274326798A3C007EA64B /* PPAdminDevices.swift */,
+			);
+			path = Devices;
+			sourceTree = "<group>";
+		};
+		63B52701267946F5007EA64B /* Users and Locations */ = {
+			isa = PBXGroup;
+			children = (
+				63B5273C26796CE1007EA64B /* PPAdminUsersAndLocations.swift */,
+			);
+			path = "Users and Locations";
+			sourceTree = "<group>";
+		};
+		63B52702267946FD007EA64B /* Organizations */ = {
+			isa = PBXGroup;
+			children = (
+				63B5273A267967FD007EA64B /* PPAdminOrganizations.swift */,
+			);
+			path = Organizations;
+			sourceTree = "<group>";
+		};
+		63B527032679470F007EA64B /* Administrators */ = {
+			isa = PBXGroup;
+			children = (
+				63B5272C2679534F007EA64B /* PPAdminAdministrators.swift */,
+			);
+			path = Administrators;
+			sourceTree = "<group>";
+		};
+		63B527552679AA80007EA64B /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				63B5273226796330007EA64B /* AdminAdministrators-GetRoles-ResponseData.json */,
+				63B527382679648F007EA64B /* AdminAdministrators-GrantAdministrativeRoles-ResponseData.json */,
+				63B5273626796451007EA64B /* AdminAdministrators-RevokeAdministrativeRoles-ResponseData.json */,
+				63B5276A267A6C2E007EA64B /* AdminBilling-GenerateBill-ResponseData.json */,
+				63B52791267A6C32007EA64B /* AdminBilling-GetBills-ResponseData.json */,
+				63B52757267A6C2B007EA64B /* AdminBilling-RemoveBillingBot-ResponseData.json */,
+				63B52785267A6C31007EA64B /* AdminChallenges-ApplyTags-ResponseData.json */,
+				63B5277E267A6C30007EA64B /* AdminChallenges-CreateAChallenge-ResponseData.json */,
+				63B52774267A6C2F007EA64B /* AdminChallenges-DeleteAChallenge-ResponseData.json */,
+				63B5275B267A6C2C007EA64B /* AdminChallenges-DeleteTags-ResponseData.json */,
+				63B52792267A6C33007EA64B /* AdminChallenges-GetChallenges-ResponseData.json */,
+				63B5275C267A6C2C007EA64B /* AdminChallenges-GetEnergyUsage-ResponseData.json */,
+				63B52765267A6C2D007EA64B /* AdminChallenges-GetParticipants-ResponseData.json */,
+				63B52786267A6C31007EA64B /* AdminChallenges-PopularTags-ResponseData.json */,
+				63B5276C267A6C2E007EA64B /* AdminChallenges-UpdateAChallenge-ResponseData.json */,
+				63B5278B267A6C32007EA64B /* AdminChallenges-UpdateChallengeStatus-ResponseData.json */,
+				63B5278E267A6C32007EA64B /* AdminChallenges-UpdateStatus-ResponseData.json */,
+				63B52777267A6C30007EA64B /* AdminDevices-GetDevices-ResponseData.json */,
+				63B52790267A6C32007EA64B /* AdminFirmware-CreateUpdateJob-ResponseData.json */,
+				63B52778267A6C30007EA64B /* AdminFirmware-DeleteFirmwareVersions-ResponseData.json */,
+				63B5275E267A6C2C007EA64B /* AdminFirmware-DeleteUpdateJob-ResponseData.json */,
+				63B52780267A6C31007EA64B /* AdminFirmware-GetFirmwareVersions-ResponseData.json */,
+				63B5275A267A6C2C007EA64B /* AdminFirmware-GetUpdateJobs-ResponseData.json */,
+				63B5277B267A6C30007EA64B /* AdminFirmware-UpdateFirmwareGroupForDevices-ResponseData.json */,
+				63B52775267A6C2F007EA64B /* AdminFirmware-UploadFirmwareVersion-ResponseData.json */,
+				63B52768267A6C2D007EA64B /* AdminOrganizations-AddAdministrators-ResponseData.json */,
+				63B52789267A6C32007EA64B /* AdminOrganizations-CreateAnOrganization-ResponseData.json */,
+				63B52781267A6C31007EA64B /* AdminOrganizations-DeleteObject-ResponseData.json */,
+				63B52779267A6C30007EA64B /* AdminOrganizations-DeleteOrganization-ResponseData.json */,
+				63B52769267A6C2E007EA64B /* AdminOrganizations-GetAdministrators-ResponseData.json */,
+				63B5278C267A6C32007EA64B /* AdminOrganizations-GetOrganizations-ResponseData.json */,
+				63B52770267A6C2F007EA64B /* AdminOrganizations-GetOrganizationTotals-ResponseData.json */,
+				63B5277C267A6C30007EA64B /* AdminOrganizations-ListObjectsAndProperties-ResponseData.json */,
+				63B5278F267A6C32007EA64B /* AdminOrganizations-RemoveAdministrators-ResponseData.json */,
+				63B52759267A6C2C007EA64B /* AdminOrganizations-SetProperties-ResponseData.json */,
+				63B5277A267A6C30007EA64B /* AdminOrganizations-UpdateOrganization-ResponseData.json */,
+				63B52760267A6C2C007EA64B /* AdminOrganizations-UploadLargeObject-ResponseData.json */,
+				63B52764267A6C2D007EA64B /* AdminQuestions-AddQuestionToCollection-ResponseData.json */,
+				63B5276E267A6C2E007EA64B /* AdminQuestions-AskAQuestion-ResponseData.json */,
+				63B52776267A6C2F007EA64B /* AdminQuestions-DeleteAQuestion-ResponseData.json */,
+				63B5278D267A6C32007EA64B /* AdminQuestions-DeleteQuestionFromCollection-ResponseData.json */,
+				63B52788267A6C31007EA64B /* AdminQuestions-GetCollections-ResponseData.json */,
+				63B52771267A6C2F007EA64B /* AdminQuestions-GetQuestions-ResponseData.json */,
+				63B5276F267A6C2F007EA64B /* AdminQuestions-SetCollection-ResponseData.json */,
+				63B52761267A6C2D007EA64B /* AdminQuestions-UpdateAnswer-ResponseData.json */,
+				63B5275D267A6C2C007EA64B /* AdminQuestions-UpdateAQuestion-ResponseData.json */,
+				63B52783267A6C31007EA64B /* AdminReports-GenerateReport-ResponseData.txt */,
+				63B52766267A6C2D007EA64B /* AdminReports-GetGroups-ResponseData.json */,
+				63B5277D267A6C30007EA64B /* AdminReports-GetReportExecutionData-ResponseData.json */,
+				63B5276B267A6C2E007EA64B /* AdminReports-GetReports-ResponseData.json */,
+				63B52758267A6C2B007EA64B /* AdminReports-PutGroupOrganizationStatus-ResponseData.json */,
+				63B52787267A6C31007EA64B /* AdminUsersAndLocations-AddOrUpdateOrRemoveLocations-ResponseData.json */,
+				63B52784267A6C31007EA64B /* AdminUsersAndLocations-CreateAGroup-ResponseData.json */,
+				63B52782267A6C31007EA64B /* AdminUsersAndLocations-CreateLocation-ResponseData.json */,
+				63B5276D267A6C2E007EA64B /* AdminUsersAndLocations-DeleteAGroup-ResponseData.json */,
+				63B52773267A6C2F007EA64B /* AdminUsersAndLocations-DeleteLocation-ResponseData.json */,
+				63B5277F267A6C30007EA64B /* AdminUsersAndLocations-EditLocation-ResponseData.json */,
+				63B5275F267A6C2C007EA64B /* AdminUsersAndLocations-GetGroups-ResponseData.json */,
+				63B5278A267A6C32007EA64B /* AdminUsersAndLocations-GetLocations-ResponseData.json */,
+				63B52772267A6C2F007EA64B /* AdminUsersAndLocations-GetOrganizationNarratives-ResponseData.json */,
+				63B52767267A6C2D007EA64B /* AdminUsersAndLocations-GetUsers-ResponseData.json */,
+				63B52762267A6C2D007EA64B /* AdminUsersAndLocations-PostInvitation-ResponseData.json */,
+				63B52763267A6C2D007EA64B /* AdminUsersAndLocations-UpdateAGroup-ResponseData.json */,
+			);
+			name = Admin;
+			sourceTree = "<group>";
+		};
+		63B527E1267A6F17007EA64B /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				63B5273026796228007EA64B /* PPTCAdminAdministrators.swift */,
+				63B527D2267A6EC6007EA64B /* PPTCAdminBilling.swift */,
+				63B527D4267A6EC7007EA64B /* PPTCAdminChallenges.swift */,
+				63B527D5267A6EC7007EA64B /* PPTCAdminDevices.swift */,
+				63B527D1267A6EC6007EA64B /* PPTCAdminFirmware.swift */,
+				63B527CF267A6EC5007EA64B /* PPTCAdminOrganizations.swift */,
+				63B527D0267A6EC5007EA64B /* PPTCAdminQuestions.swift */,
+				63B527D7267A6EC7007EA64B /* PPTCAdminReports.swift */,
+				63B527D6267A6EC7007EA64B /* PPTCAdminTags.swift */,
+				63B527D3267A6EC6007EA64B /* PPTCAdminUsersAndLocations.swift */,
+			);
+			name = Admin;
+			sourceTree = "<group>";
+		};
 		63C7CA092098DF1100967C4C /* Websocket */ = {
 			isa = PBXGroup;
 			children = (
@@ -2636,6 +2990,7 @@
 				636DCC052493E7C1000560E8 /* PPAppResources.swift */,
 				637F1CFF2125E321001DB910 /* PPStorage.h */,
 				637F1D002125E321001DB910 /* PPStorage.m */,
+				63B5272E26795A4E007EA64B /* PPLog.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -2651,6 +3006,7 @@
 		63D392D3204F263000041C1A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				63B526F92679468B007EA64B /* Admins */,
 				631F847E2064326F0055C512 /* Cloud Connectivity */,
 				636EC45120588E19001ED811 /* Login and Logout */,
 				63D39335204F414E00041C1A /* User Accounts */,
@@ -3758,42 +4114,60 @@
 				636B49F1248AFBE200124F6A /* SystemAndUserProperties-GetUserProperties-ResponseData.json in Resources */,
 				636B4A01248AFBE300124F6A /* UserAccounts-DeleteSpace-ResponseData.json in Resources */,
 				636B4A2D248AFBE600124F6A /* UserCommunications-SendNotification-ResponseData.json in Resources */,
+				63B527C7267A6C33007EA64B /* AdminChallenges-UpdateChallengeStatus-ResponseData.json in Resources */,
 				636B4970248AFBD900124F6A /* CloudConnectivity-CheckAvailability-ResponseData.txt in Resources */,
 				636B497E248AFBDA00124F6A /* Community-DeleteFile-ResponseData.json in Resources */,
 				636B4A00248AFBE300124F6A /* UserAccounts-DeleteNarrative-ResponseData.json in Resources */,
 				63797D3825B8AF6B00447324 /* UserAccounts-AddLocationToOrganization-ResponseData.json in Resources */,
+				63B52794267A6C33007EA64B /* AdminReports-PutGroupOrganizationStatus-ResponseData.json in Resources */,
 				636B495D248AFBD700124F6A /* Circles-AddMembers-ResponseData.json in Resources */,
 				636B49E4248AFBE100124F6A /* Reports-GetTotalDeviceAlerts-ResponseData.json in Resources */,
 				636B49F6248AFBE200124F6A /* testImage.jpeg in Resources */,
+				63B527C4267A6C33007EA64B /* AdminQuestions-GetCollections-ResponseData.json in Resources */,
+				63B527B3267A6C33007EA64B /* AdminDevices-GetDevices-ResponseData.json in Resources */,
 				636B4A20248AFBE500124F6A /* UserCommunications-AnswerQuestions-ResponseData.json in Resources */,
 				636B49A9248AFBDD00124F6A /* FilesManagement-DeleteAllFiles-ResponseData.json in Resources */,
 				636B49DB248AFBE000124F6A /* Products-PutMedia-ResponseData.json in Resources */,
+				63B527B8267A6C33007EA64B /* AdminOrganizations-ListObjectsAndProperties-ResponseData.json in Resources */,
+				63B527C6267A6C33007EA64B /* AdminUsersAndLocations-GetLocations-ResponseData.json in Resources */,
 				636B49D3248AFBE000124F6A /* Products-GetInstallationInstructions-ResponseData.json in Resources */,
 				636B4A1F248AFBE500124F6A /* UserAccounts-UpdateUser-ResponseData.json in Resources */,
 				636B49A8248AFBDD00124F6A /* FilesManagement-ApplyTag-ResponseData.json in Resources */,
 				636B49A2248AFBDC00124F6A /* DynamicUIs-GetLocationTotals-ResponseData.json in Resources */,
 				636B4A1C248AFBE500124F6A /* UserAccounts-SetTimeState-ResponseData.json in Resources */,
+				63B5273326796330007EA64B /* AdminAdministrators-GetRoles-ResponseData.json in Resources */,
 				636B49FE248AFBE300124F6A /* UserAccounts-DeleteLocation-ResponseData.json in Resources */,
 				636B49E7248AFBE100124F6A /* Rules-DeleteRule-ResponseData.json in Resources */,
 				636B497F248AFBDA00124F6A /* Community-DeletePost-ResponseData.json in Resources */,
+				63B5279B267A6C33007EA64B /* AdminUsersAndLocations-GetGroups-ResponseData.json in Resources */,
 				636B49F2248AFBE200124F6A /* SystemAndUserProperties-GetUserProperty-ResponseData.json in Resources */,
+				63B527CD267A6C33007EA64B /* AdminBilling-GetBills-ResponseData.json in Resources */,
 				636B49C1248AFBDE00124F6A /* PaidServices-GetLocationServicePlans-ResponseData.json in Resources */,
 				636B498A248AFBDA00124F6A /* DeviceMeasurements-GetLastNMeasurements-ResponseData.json in Resources */,
 				636B4963248AFBD800124F6A /* Circles-GetCircles-ResponseData.json in Resources */,
+				63B527B0267A6C33007EA64B /* AdminChallenges-DeleteAChallenge-ResponseData.json in Resources */,
 				636B49AD248AFBDD00124F6A /* FilesManagement-GetDownloadUrls-ResponseData.json in Resources */,
 				636B4A0C248AFBE400124F6A /* UserAccounts-GetSpaces-ResponseData.json in Resources */,
+				63B527BA267A6C33007EA64B /* AdminChallenges-CreateAChallenge-ResponseData.json in Resources */,
 				636B4A24248AFBE500124F6A /* UserCommunications-GetNotificationSubscriptions-ResponseData.json in Resources */,
 				636B4A28248AFBE600124F6A /* UserCommunications-ReceiveMessages-ResponseData.json in Resources */,
 				636B49A4248AFBDC00124F6A /* EnergyManagement-GetBillingInformation-ResponseData.json in Resources */,
 				636B4A32248AFBE600124F6A /* UserCommunications-VoteForFeedback-ResponseData.json in Resources */,
+				63B527AA267A6C33007EA64B /* AdminQuestions-AskAQuestion-ResponseData.json in Resources */,
 				636B49EB248AFBE100124F6A /* Rules-GetRules-ResponseData.json in Resources */,
 				636B4978248AFBD900124F6A /* CloudsIntegration-RevokeAccessToThirdPartyCloud-ResponseData.json in Resources */,
+				63B527BB267A6C33007EA64B /* AdminUsersAndLocations-EditLocation-ResponseData.json in Resources */,
+				63B527AB267A6C33007EA64B /* AdminQuestions-SetCollection-ResponseData.json in Resources */,
 				636B49D0248AFBE000124F6A /* Products-GetDeviceGoalsByType-ResponseData.json in Resources */,
+				63B527A1267A6C33007EA64B /* AdminChallenges-GetParticipants-ResponseData.json in Resources */,
+				63B527A5267A6C33007EA64B /* AdminOrganizations-GetAdministrators-ResponseData.json in Resources */,
 				636B4971248AFBD900124F6A /* CloudConnectivity-GetCloudInstance-ResponseData.json in Resources */,
 				636B4984248AFBDA00124F6A /* Community-UpdatePost-ResponseData.json in Resources */,
 				636B49FF248AFBE300124F6A /* UserAccounts-DeleteLocationUsers-ResponseData.json in Resources */,
 				636B4980248AFBDA00124F6A /* Community-GetFileURLs-ResponseData.json in Resources */,
+				63B527B5267A6C33007EA64B /* AdminOrganizations-DeleteOrganization-ResponseData.json in Resources */,
 				636B4A0D248AFBE400124F6A /* UserAccounts-GetState-ResponseData.json in Resources */,
+				63B527CB267A6C33007EA64B /* AdminOrganizations-RemoveAdministrators-ResponseData.json in Resources */,
 				636B49C2248AFBDF00124F6A /* PaidServices-ProvideNewPurchaseInfo-ResponseData.json in Resources */,
 				636B497A248AFBD900124F6A /* CloudsIntegration-UpdateOAuthClient-ResponseData.json in Resources */,
 				636B49B4248AFBDE00124F6A /* FilesManagement-UploadFileFragment-ResponseData.json in Resources */,
@@ -3802,8 +4176,10 @@
 				636B4993248AFBDB00124F6A /* Devices-GetDeviceActivationInfo-ResponseData.json in Resources */,
 				636B49E6248AFBE100124F6A /* Rules-CreatRule-ResponseData.json in Resources */,
 				636B4986248AFBDA00124F6A /* DeviceMeasurements-GetCurrentMeasurements-ResponseData.json in Resources */,
+				63B527B7267A6C33007EA64B /* AdminFirmware-UpdateFirmwareGroupForDevices-ResponseData.json in Resources */,
 				636B4973248AFBD900124F6A /* CloudConnectivity-GetServer-ResponseData.json in Resources */,
 				636B4A07248AFBE300124F6A /* UserAccounts-GetLocationUsers-ResponseData.json in Resources */,
+				63B5279A267A6C33007EA64B /* AdminFirmware-DeleteUpdateJob-ResponseData.json in Resources */,
 				636B49BA248AFBDE00124F6A /* Logout-Logout-ResponseData.json in Resources */,
 				636B4A05248AFBE300124F6A /* UserAccounts-EditLocation-ResponseData.json in Resources */,
 				636B49FA248AFBE300124F6A /* UserAccounts-ApplyTag-ResponseData.json in Resources */,
@@ -3812,6 +4188,11 @@
 				636B49D4248AFBE000124F6A /* Products-GetMedia-ResponseData.json in Resources */,
 				636B49F9248AFBE200124F6A /* UserAccounts-AddNewLocationToExistingUser-ResponseData.json in Resources */,
 				636B49E5248AFBE100124F6A /* Rules-CreateDefaultRulesForDevice-ResponseData.json in Resources */,
+				63B527BF267A6C33007EA64B /* AdminReports-GenerateReport-ResponseData.txt in Resources */,
+				63B5279E267A6C33007EA64B /* AdminUsersAndLocations-PostInvitation-ResponseData.json in Resources */,
+				63B527C3267A6C33007EA64B /* AdminUsersAndLocations-AddOrUpdateOrRemoveLocations-ResponseData.json in Resources */,
+				63B527AC267A6C33007EA64B /* AdminOrganizations-GetOrganizationTotals-ResponseData.json in Resources */,
+				63B527A8267A6C33007EA64B /* AdminChallenges-UpdateAChallenge-ResponseData.json in Resources */,
 				636B496F248AFBD800124F6A /* Circles-UploadFileFragment-ResponseData.json in Resources */,
 				636B496A248AFBD800124F6A /* Circles-React-ResponseData.json in Resources */,
 				636B49AA248AFBDD00124F6A /* FilesManagement-DeleteFile-ResponseData.json in Resources */,
@@ -3819,12 +4200,15 @@
 				636B49D1248AFBE000124F6A /* Products-GetDeviceModels-ResponseData.json in Resources */,
 				636B4998248AFBDB00124F6A /* Devices-GetListOfDevices-ResponseData.json in Resources */,
 				636B495F248AFBD700124F6A /* Circles-DeleteCircle-ResponseData.json in Resources */,
+				63B527AD267A6C33007EA64B /* AdminQuestions-GetQuestions-ResponseData.json in Resources */,
+				63B527BC267A6C33007EA64B /* AdminFirmware-GetFirmwareVersions-ResponseData.json in Resources */,
 				636B49F7248AFBE200124F6A /* testVideo.mp4 in Resources */,
 				636B49C4248AFBDF00124F6A /* PaidServices-UpdatePurchaseInfo-ResponseData.json in Resources */,
 				636B4A11248AFBE400124F6A /* UserAccounts-GetUserCodes-ResponseData.json in Resources */,
 				636B49E2248AFBE100124F6A /* ProfessionalMonitoring-GetCallCenterAlerts-ResponseData.json in Resources */,
 				636B49AB248AFBDD00124F6A /* FilesManagement-DeleteTag-ResponseData.json in Resources */,
 				636B49BE248AFBDE00124F6A /* PaidServices-GetSoftwareSubscriptions-ResponseData.json in Resources */,
+				63B527C9267A6C33007EA64B /* AdminQuestions-DeleteQuestionFromCollection-ResponseData.json in Resources */,
 				636B49E1248AFBE100124F6A /* ProfessionalMonitoring-GetCallCenter-ResponseData.json in Resources */,
 				636B4958248AFBD700124F6A /* ApplicationFiles-DeleteFile-ResponseData.json in Resources */,
 				636B49AE248AFBDD00124F6A /* FilesManagement-GetFileInformation-ResponseData.json in Resources */,
@@ -3838,9 +4222,11 @@
 				636B4959248AFBD700124F6A /* ApplicationFiles-DownloadFile-ResponseData.data in Resources */,
 				636B4A1A248AFBE500124F6A /* UserAccounts-SendAVerificationMessage-ResponseData.json in Resources */,
 				636B49AC248AFBDD00124F6A /* FilesManagement-GetAggregatedListOfFiles-ResponseData.json in Resources */,
+				63B527C1267A6C33007EA64B /* AdminChallenges-ApplyTags-ResponseData.json in Resources */,
 				636B49A5248AFBDC00124F6A /* EnergyManagement-GetDeviceEnergyUsage-ResponseData.json in Resources */,
 				636B4A0B248AFBE400124F6A /* UserAccounts-GetSignatures-ResponseData.json in Resources */,
 				636B4990248AFBDB00124F6A /* Devices-DeleteDeviceAtLocation-ResponseData.json in Resources */,
+				63B527CA267A6C33007EA64B /* AdminChallenges-UpdateStatus-ResponseData.json in Resources */,
 				636B4A27248AFBE600124F6A /* UserCommunications-PostCrowdFeedback-ResponseData.json in Resources */,
 				636B49B6248AFBDE00124F6A /* Login-LoginWithKey-ResponseData.json in Resources */,
 				636B4A1B248AFBE500124F6A /* UserAccounts-SetState-ResponseData.json in Resources */,
@@ -3872,12 +4258,17 @@
 				636B4960248AFBD700124F6A /* Circles-DeleteFile-ResponseData.json in Resources */,
 				636B498C248AFBDB00124F6A /* DeviceMeasurements-GetUnitsOfMeasurement-ResponseData.json in Resources */,
 				636B49BF248AFBDE00124F6A /* PaidServices-GetStoreProducts-ResponseData.json in Resources */,
+				63B527B6267A6C33007EA64B /* AdminOrganizations-UpdateOrganization-ResponseData.json in Resources */,
 				636B49D7248AFBE000124F6A /* Products-GetRulePhraseById-ResponseData.json in Resources */,
 				636B4A12248AFBE400124F6A /* UserAccounts-GetUserInformation-ResponseData.json in Resources */,
+				63B5279D267A6C33007EA64B /* AdminQuestions-UpdateAnswer-ResponseData.json in Resources */,
 				636B4962248AFBD800124F6A /* Circles-DownloadFile-ResponseData.data in Resources */,
 				636B499F248AFBDC00124F6A /* Devices-UpdateDevice-ResponseData.json in Resources */,
 				636B4A2B248AFBE600124F6A /* UserCommunications-RequestSupport-ResponseData.json in Resources */,
+				63B527AE267A6C33007EA64B /* AdminUsersAndLocations-GetOrganizationNarratives-ResponseData.json in Resources */,
 				636B4A16248AFBE400124F6A /* UserAccounts-PutUserCode-ResponseData.json in Resources */,
+				63B527BE267A6C33007EA64B /* AdminUsersAndLocations-CreateLocation-ResponseData.json in Resources */,
+				63B527C0267A6C33007EA64B /* AdminUsersAndLocations-CreateAGroup-ResponseData.json in Resources */,
 				636B49C5248AFBDF00124F6A /* PaidServices-UpgradePurchasedPlan-ResponseData.json in Resources */,
 				636B4967248AFBD800124F6A /* Circles-GetPosts-ResponseData.json in Resources */,
 				636B49FB248AFBE300124F6A /* UserAccounts-AuthorizeAccess-ResponseData.json in Resources */,
@@ -3889,23 +4280,32 @@
 				636B497D248AFBDA00124F6A /* Community-DeleteComment-ResponseData.json in Resources */,
 				636B4A09248AFBE400124F6A /* UserAccounts-GetPresenceIDs-ResponseData.json in Resources */,
 				636B49CF248AFBE000124F6A /* Products-DeleteStory-ResponseData.json in Resources */,
+				63B527AF267A6C33007EA64B /* AdminUsersAndLocations-DeleteLocation-ResponseData.json in Resources */,
 				636B4979248AFBD900124F6A /* CloudsIntegration-RevokeOAuthClient-ResponseData.json in Resources */,
 				636B4982248AFBDA00124F6A /* Community-Reaction-ResponseData.json in Resources */,
 				636B4A1D248AFBE500124F6A /* UserAccounts-SignTermsOfService-ResponseData.json in Resources */,
 				636B4991248AFBDB00124F6A /* Devices-DeleteDeviceProperty-ResponseData.json in Resources */,
+				63B527B1267A6C33007EA64B /* AdminFirmware-UploadFirmwareVersion-ResponseData.json in Resources */,
 				636B49ED248AFBE200124F6A /* Rules-UpdateRuleAttribute-ResponseData.json in Resources */,
+				63B527A0267A6C33007EA64B /* AdminQuestions-AddQuestionToCollection-ResponseData.json in Resources */,
 				636B4985248AFBDA00124F6A /* Community-UploadFile-ResponseData.json in Resources */,
+				63B52798267A6C33007EA64B /* AdminChallenges-GetEnergyUsage-ResponseData.json in Resources */,
 				636B4992248AFBDB00124F6A /* Devices-DeleteDevices-ResponseData.json in Resources */,
+				63B527A7267A6C33007EA64B /* AdminReports-GetReports-ResponseData.json in Resources */,
+				63B52796267A6C33007EA64B /* AdminFirmware-GetUpdateJobs-ResponseData.json in Resources */,
 				636B495E248AFBD700124F6A /* Circles-CreateCircle-ResponseData.json in Resources */,
 				636B4A14248AFBE400124F6A /* UserAccounts-MergeUser-ResponseData.json in Resources */,
 				636B4974248AFBD900124F6A /* CloudConnectivity-GetServerURL-ResponseData.txt in Resources */,
+				63B527A9267A6C33007EA64B /* AdminUsersAndLocations-DeleteAGroup-ResponseData.json in Resources */,
 				636B4A03248AFBE300124F6A /* UserAccounts-DeleteUser-ResponseData.json in Resources */,
 				636B4A22248AFBE500124F6A /* UserCommunications-GetCrowdFeedbackBySearching-ResponseData.json in Resources */,
 				636B4A23248AFBE500124F6A /* UserCommunications-GetNotifications-ResponseData.json in Resources */,
+				63B527CE267A6C33007EA64B /* AdminChallenges-GetChallenges-ResponseData.json in Resources */,
 				636B49B9248AFBDE00124F6A /* Login-SendPasscode-ResponseData.json in Resources */,
 				636B49C9248AFBDF00124F6A /* Products-CreateRulePhrase-ResponseData.json in Resources */,
 				636B4A19248AFBE500124F6A /* UserAccounts-ResetBadges-ResponseData.json in Resources */,
 				636B4995248AFBDB00124F6A /* Devices-GetDeviceById-ResponseData.json in Resources */,
+				63B527A2267A6C33007EA64B /* AdminReports-GetGroups-ResponseData.json in Resources */,
 				636B4A0A248AFBE400124F6A /* UserAccounts-GetServicesByDevice-ResponseData.json in Resources */,
 				636B498B248AFBDB00124F6A /* DeviceMeasurements-GetMeasurementsWithSearchTerms-ResponseData.json in Resources */,
 				636B4A31248AFBE600124F6A /* UserCommunications-UpdateMessageAttributions-ResponseData.json in Resources */,
@@ -3917,46 +4317,60 @@
 				636B4981248AFBDA00124F6A /* Community-GetPosts-ResponseData.json in Resources */,
 				636B4A17248AFBE500124F6A /* UserAccounts-RecoverPassword-ResponseData.json in Resources */,
 				636B4A29248AFBE600124F6A /* UserCommunications-RegisterAnAppForPushNotifications-ResponseData.json in Resources */,
+				63B5279C267A6C33007EA64B /* AdminOrganizations-UploadLargeObject-ResponseData.json in Resources */,
 				636B4999248AFBDC00124F6A /* Devices-LinkSpace-ResponseData.json in Resources */,
+				63B527B2267A6C33007EA64B /* AdminQuestions-DeleteAQuestion-ResponseData.json in Resources */,
+				63B5273726796451007EA64B /* AdminAdministrators-RevokeAdministrativeRoles-ResponseData.json in Resources */,
 				636B4972248AFBD900124F6A /* CloudConnectivity-GetConnectionSettings-ResponseData.json in Resources */,
 				636B49C8248AFBDF00124F6A /* Products-CreateProduct-ResponseData.json in Resources */,
 				636B4A15248AFBE400124F6A /* UserAccounts-NewPassword-ResponseData.json in Resources */,
+				63B527C8267A6C33007EA64B /* AdminOrganizations-GetOrganizations-ResponseData.json in Resources */,
 				636B49C7248AFBDF00124F6A /* Products-CreateAndUpdateParameter-ResponseData.json in Resources */,
 				636B4A13248AFBE400124F6A /* UserAccounts-LocationScenesHistory-ResponseData.json in Resources */,
+				63B527B4267A6C33007EA64B /* AdminFirmware-DeleteFirmwareVersions-ResponseData.json in Resources */,
 				636B4997248AFBDB00124F6A /* Devices-GetDeviceProperties-ResponseData.json in Resources */,
 				636B49E9248AFBE100124F6A /* Rules-GetRule-ResponseData.json in Resources */,
 				636B4961248AFBD800124F6A /* Circles-DeletePost-ResponseData.json in Resources */,
+				63B527A3267A6C33007EA64B /* AdminUsersAndLocations-GetUsers-ResponseData.json in Resources */,
 				636B49E3248AFBE100124F6A /* ProfessionalMonitoring-UpdateCallCenter-ResponseData.json in Resources */,
 				636B4987248AFBDA00124F6A /* DeviceMeasurements-GetData-ResponseData.json in Resources */,
 				636B49D9248AFBE000124F6A /* Products-GetSupportedProductAttributes-ResponseData.json in Resources */,
 				636B49D6248AFBE000124F6A /* Products-GetProductDefaultRules-ResponseData.json in Resources */,
 				636B4988248AFBDA00124F6A /* DeviceMeasurements-GetHistoryOfAlerts-ResponseData.json in Resources */,
+				63B52795267A6C33007EA64B /* AdminOrganizations-SetProperties-ResponseData.json in Resources */,
 				636B49DE248AFBE100124F6A /* Products-UpdateRulePhrase-ResponseData.json in Resources */,
 				636B49A7248AFBDD00124F6A /* EnergyManagement-UpdateBillingInformation-ResponseData.json in Resources */,
 				636B49BB248AFBDE00124F6A /* OperationToken-GetOperationToken-ResponseData.json in Resources */,
 				636B496E248AFBD800124F6A /* Circles-UploadFile-ResponseData.json in Resources */,
 				636B49DC248AFBE000124F6A /* Products-PutStories-ResponseData.json in Resources */,
 				636B497B248AFBD900124F6A /* Community-Comment-ResponseData.json in Resources */,
+				63B52793267A6C33007EA64B /* AdminBilling-RemoveBillingBot-ResponseData.json in Resources */,
 				636B49BC248AFBDE00124F6A /* PaidServices-AssignServicesToUser-ResponseData.json in Resources */,
 				636B4A1E248AFBE500124F6A /* UserAccounts-UpdateSpace-ResponseData.json in Resources */,
 				636B4A36248AFBE700124F6A /* Weather-GetForecastByLocation-ResponseData.json in Resources */,
+				63B527BD267A6C33007EA64B /* AdminOrganizations-DeleteObject-ResponseData.json in Resources */,
 				636B49B8248AFBDE00124F6A /* Login-LoginWithUsernameAndPasscode-ResponseData.json in Resources */,
 				636B49FD248AFBE300124F6A /* UserAccounts-CreateNarrative-ResponseData.json in Resources */,
 				636B49F8248AFBE200124F6A /* UserAccounts-AddLocationUsers-ResponseData.json in Resources */,
 				636B495A248AFBD700124F6A /* ApplicationFiles-GetDownloadUrl-ResponseData.json in Resources */,
+				63B527A4267A6C33007EA64B /* AdminOrganizations-AddAdministrators-ResponseData.json in Resources */,
 				636B49CD248AFBDF00124F6A /* Products-DeleteParameter-ResponseData.json in Resources */,
+				63B527B9267A6C33007EA64B /* AdminReports-GetReportExecutionData-ResponseData.json in Resources */,
 				636B49B0248AFBDD00124F6A /* FilesManagement-GetLastNFiles-ResponseData.json in Resources */,
 				636B49C6248AFBDF00124F6A /* Products-AddDefaultRule-ResponseData.json in Resources */,
 				636B4964248AFBD800124F6A /* Circles-GetDevices-ResponseData.json in Resources */,
 				636B49CA248AFBDF00124F6A /* Products-DeleteDefaultRule-ResponseData.json in Resources */,
+				63B527C2267A6C33007EA64B /* AdminChallenges-PopularTags-ResponseData.json in Resources */,
 				636B4A2A248AFBE600124F6A /* UserCommunications-ReplyToMessage-ResponseData.json in Resources */,
 				636B49E8248AFBE100124F6A /* Rules-DeleteRulesByCriteria-ResponseData.json in Resources */,
 				636B4A34248AFBE700124F6A /* Weather-GetCurrentWeatherByLocation-ResponseData.json in Resources */,
 				636B496D248AFBD800124F6A /* Circles-UpdateMemberStatus-ResponseData.json in Resources */,
+				63B52797267A6C33007EA64B /* AdminChallenges-DeleteTags-ResponseData.json in Resources */,
 				636B4A04248AFBE300124F6A /* UserAccounts-DeleteUserCode-ResponseData.json in Resources */,
 				636B49C3248AFBDF00124F6A /* PaidServices-SubmitApplePurchaseReceipt-ResponseData.json in Resources */,
 				636B49E0248AFBE100124F6A /* ProfessionalMonitoring-CancelCallCenter-ResponseData.json in Resources */,
 				636B49D2248AFBE000124F6A /* Products-GetExistingRulePhrases-ResponseData.json in Resources */,
+				63B5279F267A6C33007EA64B /* AdminUsersAndLocations-UpdateAGroup-ResponseData.json in Resources */,
 				636B49B1248AFBDD00124F6A /* FilesManagement-GetListOfFileDevices-ResponseData.json in Resources */,
 				636B4A21248AFBE500124F6A /* UserCommunications-DeleteMessage-ResponseData.json in Resources */,
 				636B499B248AFBDC00124F6A /* Devices-SetCurrentFirmwareUpdateStatus-ResponseData.json in Resources */,
@@ -3966,10 +4380,14 @@
 				636B4996248AFBDB00124F6A /* Devices-GetDeviceFirmwareJobs-ResponseData.json in Resources */,
 				636B4A02248AFBE300124F6A /* UserAccounts-DeleteTag-ResponseData.json in Resources */,
 				636B49DF248AFBE100124F6A /* Products-UploadDeviceModels-ResponseData.json in Resources */,
+				63B527CC267A6C33007EA64B /* AdminFirmware-CreateUpdateJob-ResponseData.json in Resources */,
+				63B52799267A6C33007EA64B /* AdminQuestions-UpdateAQuestion-ResponseData.json in Resources */,
 				636B495C248AFBD700124F6A /* ApplicationFiles-UploadFile-ResponseData.json in Resources */,
+				63B527392679648F007EA64B /* AdminAdministrators-GrantAdministrativeRoles-ResponseData.json in Resources */,
 				636B4968248AFBD800124F6A /* Circles-MakePost-ResponseData.json in Resources */,
 				636B499C248AFBDC00124F6A /* Devices-SetDeviceProperties-ResponseData.json in Resources */,
 				636B49C0248AFBDE00124F6A /* PaidServices-GetTransactions-ResponseData.json in Resources */,
+				63B527C5267A6C33007EA64B /* AdminOrganizations-CreateAnOrganization-ResponseData.json in Resources */,
 				636B49DA248AFBE000124F6A /* Products-GetSupportedProducts-ResponseData.json in Resources */,
 				636B49F0248AFBE200124F6A /* SystemAndUserProperties-GetUserOrSystemProperty-ResponseData.txt in Resources */,
 				636B4A2E248AFBE600124F6A /* UserCommunications-SetNotificationSubscriptions-ResponseData.json in Resources */,
@@ -3981,6 +4399,7 @@
 				636B49A0248AFBDC00124F6A /* Devices-UpdateDeviceAtLocation-ResponseData.json in Resources */,
 				636B4A2C248AFBE600124F6A /* UserCommunications-SendMessage-ResponseData.json in Resources */,
 				636B4A08248AFBE300124F6A /* UserAccounts-GetNarratives-ResponseData.json in Resources */,
+				63B527A6267A6C33007EA64B /* AdminBilling-GenerateBill-ResponseData.json in Resources */,
 				636B498F248AFBDB00124F6A /* DeviceMeasurements-SubmitDataRequest-ResponseData.json in Resources */,
 				636B4812248AFA7F00124F6A /* UnitTests.plist in Resources */,
 			);
@@ -4232,6 +4651,7 @@
 			files = (
 				63BECA5E20C5D6E500408494 /* PPCloudsIntegrationHost.m in Sources */,
 				63BEC9EC20C5D67500408494 /* PPCountry.m in Sources */,
+				63B5274D26798FAE007EA64B /* PPAdminTags.swift in Sources */,
 				63BEC9ED20C5D67500408494 /* PPState.m in Sources */,
 				636D0F58210A1DF2005B9111 /* PPVideoToken.m in Sources */,
 				63BECA0520C5D67500408494 /* PPDeviceMeasurementUnit.m in Sources */,
@@ -4246,6 +4666,7 @@
 				63BEC9DF20C5D67500408494 /* PPLogout.m in Sources */,
 				63AB4A2523AD85580056AE8B /* PPCommunityReaction.m in Sources */,
 				63044566263779E000CDDAAF /* PPSupportTickets.m in Sources */,
+				63B5274826798B12007EA64B /* PPAdminDevices.swift in Sources */,
 				63BEC9EB20C5D67500408494 /* PPCountriesStatesAndTimezones.m in Sources */,
 				63BECA7220C5D6E500408494 /* PPBotengineAppMarketing.m in Sources */,
 				63BECA3D20C5D6C300408494 /* PPEnergyManagementDeviceUsageEnergy.m in Sources */,
@@ -4283,6 +4704,7 @@
 				63BECA8E20C5D74000408494 /* PPNotificationSMSMessage.m in Sources */,
 				63BECA1A20C5D6A100408494 /* PPSystemAndUserProperties.m in Sources */,
 				63BECA0C20C5D6A100408494 /* PPCrowdFeedbacks.m in Sources */,
+				63B5273E26796CE4007EA64B /* PPAdminUsersAndLocations.swift in Sources */,
 				63BECA6420C5D6E500408494 /* PPCircles.m in Sources */,
 				63BECA5320C5D6C300408494 /* PPDeviceTypeGoal.m in Sources */,
 				63BECA6A20C5D6E500408494 /* PPReports.m in Sources */,
@@ -4311,7 +4733,9 @@
 				6390F2FD23AB441E00426CCC /* PPLocationCommunity.m in Sources */,
 				63BECA8720C5D6E500408494 /* PPNSString.m in Sources */,
 				63BECA7520C5D6E500408494 /* PPBotengineAppVersion.m in Sources */,
+				63B5274926798B12007EA64B /* PPAdminFirmware.swift in Sources */,
 				63BECA1320C5D6A100408494 /* PPQuestions.m in Sources */,
+				63B5272F26795A4E007EA64B /* PPLog.swift in Sources */,
 				63BECA1B20C5D6A100408494 /* PPProperty.m in Sources */,
 				63BECA4120C5D6C300408494 /* PPEnergyManagementDeviceUsageAggregatedCost.m in Sources */,
 				63BEC9F420C5D67500408494 /* PPDeviceCameraLocal.m in Sources */,
@@ -4365,12 +4789,15 @@
 				63AD0B09237C975300F4900B /* PPCommunity.m in Sources */,
 				63BECA4920C5D6C300408494 /* PPWeatherForecast.m in Sources */,
 				63BECA4720C5D6C300408494 /* PPWeather.m in Sources */,
+				63B527522679A2BE007EA64B /* PPAdminReports.swift in Sources */,
+				63B5274F2679A00F007EA64B /* PPAdminQuestions.swift in Sources */,
 				63BECA4B20C5D6C300408494 /* PPWeatherObservationMetric.m in Sources */,
 				63BECA2720C5D6A100408494 /* PPRuleComponentAction.m in Sources */,
 				630BDE1F24B3AFFC0035D8B3 /* PPDeviceProxyLocalPictureFrame.m in Sources */,
 				63BECA7A20C5D6E500408494 /* PPAFHTTPRequestOperationManager.m in Sources */,
 				635E3AC422C26BE600C171B0 /* PPDeviceTypeStoryPageAction.m in Sources */,
 				63BECA7620C5D6E500408494 /* PPOrganizations.m in Sources */,
+				63B5272D2679534F007EA64B /* PPAdminAdministrators.swift in Sources */,
 				63BECA0B20C5D6A100408494 /* PPNotificationToken.m in Sources */,
 				63BECA4F20C5D6C300408494 /* PPDeviceTypeAttributeOption.m in Sources */,
 				63BECA5220C5D6C300408494 /* PPDeviceTypeRuleComponentTemplateProduct.m in Sources */,
@@ -4395,6 +4822,7 @@
 				63BECA3720C5D6A100408494 /* PPDynamicUIScreen.m in Sources */,
 				63BEC9F020C5D67500408494 /* PPUserAnalytics.m in Sources */,
 				63BECA7F20C5D6E500408494 /* PPVersion.m in Sources */,
+				63B527542679A8D4007EA64B /* PPAdminBilling.swift in Sources */,
 				63BECA8A20C5D74000408494 /* PPNotificationMessage.m in Sources */,
 				638E82FC24412416000B07FD /* PPUserCode.m in Sources */,
 				635C5B9C259AA12700FD3BC5 /* Peoplepower.m in Sources */,
@@ -4412,8 +4840,10 @@
 				63872B472135AE99003EE488 /* PPLocationSpace.m in Sources */,
 				637D0F3420C85CFE003710AF /* PPInAppMessageParameters.m in Sources */,
 				63BECA4A20C5D6C300408494 /* PPWeatherObservation.m in Sources */,
+				63B5274B26798D68007EA64B /* PPAdminChallenges.swift in Sources */,
 				63BECA0F20C5D6A100408494 /* PPCrowdFeedbackTicket.m in Sources */,
 				63BECA0D20C5D6A100408494 /* PPCrowdFeedback.m in Sources */,
+				63B5273F26796CE8007EA64B /* PPAdminOrganizations.swift in Sources */,
 				63BECA0320C5D67500408494 /* PPDeviceMeasurementsReading.m in Sources */,
 				63BECA5F20C5D6E500408494 /* PPCloudsIntegrationHostAccessToken.m in Sources */,
 				63AB4A2923AD856B0056AE8B /* PPCommunityComment.m in Sources */,
@@ -4455,6 +4885,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63B527E0267A6EC7007EA64B /* PPTCAdminReports.swift in Sources */,
 				636B4940248AFBCE00124F6A /* PPTCLogout.m in Sources */,
 				636DCC102493F9BA000560E8 /* PPTCVersion.swift in Sources */,
 				636B493C248AFBCE00124F6A /* PPTCCopying.m in Sources */,
@@ -4470,21 +4901,30 @@
 				636B494E248AFBCE00124F6A /* PPTCOperationToken.m in Sources */,
 				636B4951248AFBCE00124F6A /* PPTCCloudsIntegration.m in Sources */,
 				636B4953248AFBCE00124F6A /* PPTCCommunications.m in Sources */,
+				63B527DB267A6EC7007EA64B /* PPTCAdminBilling.swift in Sources */,
+				63B527DF267A6EC7007EA64B /* PPTCAdminTags.swift in Sources */,
 				636B4948248AFBCE00124F6A /* PPTCLogin.m in Sources */,
 				636B4941248AFBCE00124F6A /* PPTCDeviceMeasurements.m in Sources */,
 				636DCC1624940463000560E8 /* PPTCAppResources.swift in Sources */,
 				636B4942248AFBCE00124F6A /* PPTCUserAccounts.m in Sources */,
+				63B527DE267A6EC7007EA64B /* PPTCAdminDevices.swift in Sources */,
 				636B493D248AFBCE00124F6A /* PPTCDateUtilities.m in Sources */,
 				636B4954248AFBCE00124F6A /* PPTCEnergyManagement.m in Sources */,
 				636B493F248AFBCE00124F6A /* PPTCDevices.m in Sources */,
+				63B5273126796228007EA64B /* PPTCAdminAdministrators.swift in Sources */,
+				63B527DC267A6EC7007EA64B /* PPTCAdminUsersAndLocations.swift in Sources */,
 				636B4944248AFBCE00124F6A /* PPTCDynamicUserInterfaces.m in Sources */,
+				63B527DD267A6EC7007EA64B /* PPTCAdminChallenges.swift in Sources */,
 				636B4957248AFBCE00124F6A /* PPTCPaidServices.m in Sources */,
 				636B494D248AFBCE00124F6A /* PPTCProfessionalMonitoring.m in Sources */,
 				636B493E248AFBCE00124F6A /* PPTCReports.m in Sources */,
 				636B493A248AFBCE00124F6A /* PPTCWeather.m in Sources */,
 				636B4947248AFBCE00124F6A /* PPTCCloudConnectivity.m in Sources */,
+				63B527DA267A6EC7007EA64B /* PPTCAdminFirmware.swift in Sources */,
 				636B4945248AFBCE00124F6A /* PPBaseTestCase.m in Sources */,
 				636B494F248AFBCE00124F6A /* PPTCBaseModel.m in Sources */,
+				63B527D8267A6EC7007EA64B /* PPTCAdminOrganizations.swift in Sources */,
+				63B527D9267A6EC7007EA64B /* PPTCAdminQuestions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4622,6 +5062,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "-DDEBUG -DDEBUG_APIS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.iOS;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;

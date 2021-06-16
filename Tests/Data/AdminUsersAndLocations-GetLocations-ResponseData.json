@@ -1,0 +1,66 @@
+{
+  "resultCode": 0,
+  "locations": [
+    {
+      "id": 456,
+      "name": "Factory",
+      "parentId": 123,
+      "timezone": {
+        "id": "US/Eastern",
+        "offset": -300,
+        "dst": true,
+        "name": "Eastern Time"
+      },
+      "creationDate": "2011-05-31T23:00:00-07:00",
+      "creationDateMs": 1306908000000,
+      "notes": "organization notes",
+      "type": 1,
+      "state": {
+        "id": 5,
+        "name": "California"
+      },
+      "country": {
+        "id": 1,
+        "name": "United States",
+        "countryCode": "US",
+        "currencyCode": "USD",
+        "currencySymbol": "$",
+        "zipFormat": "^\\d{5}$",
+        "stateName": "State",
+        "zipName": "Zip Code"
+      },
+      "zip": "12345",
+      "latitude": "10.12345",
+      "longitude": "10.12345",
+      "event": "HOME",
+      "priorityCategory": 1,
+      "priorityRank": 10,
+      "priorityComment": "Short note here",
+      "size": {
+        "unit": "ft2",
+        "value": 14000
+      },
+      "storiesNumber": 2,
+      "roomsNumber": 5,
+      "bathroomsNumber": 2,
+      "occupantsNumber": 3,
+      "usagePeriod": 3,
+      "heatingType": 2,
+      "coolingType": 1,
+      "waterHeaterType": 2,
+      "thermostatType": 1,
+      "tags": [
+        {
+          "tag": "hvac",
+          "organizationId": 123,
+          "organizationName": "PPC"
+        },
+        {
+          "tag": "efficient",
+          "appId": 45,
+          "appName": "HVac monitor"
+        }
+      ]
+    }
+  ]
+}

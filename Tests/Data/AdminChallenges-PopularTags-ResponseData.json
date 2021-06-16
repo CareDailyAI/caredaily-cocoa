@@ -1,0 +1,20 @@
+{
+  "resultCode": 0,
+  "tags": [
+    {
+      "type": 1,
+      "tag": "male",
+      "total": 500
+    },
+    {
+      "type": 1,
+      "tag": "female",
+      "total": 475
+    },
+    {
+      "type": 1,
+      "tag": "hasKids",
+      "total": 376
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "resultCode": 0,
+  "challenge": {
+    "locations": [
+      {
+        "id": "123",
+        "locationName": "John's home",
+        "event": "Away",
+        "participationStatus": 2,
+        "participationUpdateDate": "2014-09-09T17:36:20Z",
+        "participationUpdateDateMs": 1410284180000,
+        "devices": [
+          {
+            "id": "abc123",
+            "type": 6,
+            "typeCategory": 2,
+            "desc": "Living room Powerstrip",
+            "lastDataReceivedDate": "2015-06-27T02:14:00-04:00",
+            "lastDataReceivedDateMs": 1435385640000
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "resultCode": 0,
+  "bills": [
+    {
+      "startDate": "2021-03-01",
+      "endDate": "2021-04-01",
+      "totalCost": 1090,
+      "creationDate": "2021-04-22T19:55:49Z",
+      "creationDateMs": 1619121349000,
+      "items": [
+        {
+           "itemType": 1,
+           "description": "type 1",
+           "quantity": 1,
+           "price": 100,
+           "cost": 100
+        },
+        {
+          "itemType": 2,
+          "description": "type 2",
+          "quantity": 10,
+          "price": 99,
+          "cost": 990
+        }
+      ]
+    }
+  ]
+}

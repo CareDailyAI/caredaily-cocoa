@@ -1,0 +1,16 @@
+{
+  "resultCode": 0,
+  "groups": [
+    {
+      "id": 1,
+      "name": "Analytic reports",
+      "description": "Analytic reports, which run by schedule",
+      "dashboard": "care",
+      "dashboardName": "Care Dashboard",
+      "organizationStatus": 1,
+      "organizationId": 123,
+      "analytic": true,
+      "nonAnalytic": true
+    }
+  ]
+}

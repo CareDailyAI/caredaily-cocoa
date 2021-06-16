@@ -1,0 +1,36 @@
+{
+  "resultCode": 0,
+  "totals": {
+    "locationsCount": 100,
+    "groupLocations": [
+      {
+        "id": 100,
+        "name": "Business",
+        "total": 10
+      },
+      {
+        "id": 101,
+        "name": "Home",
+        "total": 1000
+      }
+    ],
+    "organizationDevices": {
+      "active": 3000,
+      "inactive": 400
+    },
+    "groupDevices": [
+      {
+        "id": 100,
+        "name": "Business",
+        "active": 15,
+        "inactive": 5
+      },
+      {
+        "id": 101,
+        "name": "Home",
+        "active": 2000,
+        "inactive": 100
+      }
+    ]
+  }
+}

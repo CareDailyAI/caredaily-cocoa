@@ -1,0 +1,45 @@
+{
+  "resultCode": 0,
+  "nextMarker": "16611d93630-306b",
+  "narratives": [
+    {
+      "id": 20,
+      "locationId": 1,
+      "narrativeDate": "2018-10-01T03:05:07",
+      "narrativeDateMs": 1537692964000,
+      "creationDate": "2018-10-01T03:05:07",
+      "creationDateMs": 1537692964000,
+      "narrativeType": 0,
+      "priority": 3,
+      "status": 0,
+      "icon": "alert.gif",
+      "iconFont": "alert.font",
+      "title": "Water Leak",
+      "description": "Water leak in the bathroom",
+      "target": {
+        "field": "value"
+      },
+      "appInstanceId": 520
+    },
+    {
+      "id": 19,
+      "locationId": 1,
+      "narrativeDate": "2018-10-01T03:05:07",
+      "narrativeDateMs": 1537692964000,
+      "creationDate": "2018-10-01T03:05:07",
+      "creationDateMs": 1537692964000,
+      "narrativeType": 1,
+      "priority": 0,
+      "status": 0,
+      "user": {
+        "userId": 123,
+        "firstName": "John",
+        "lastName": "Smith",
+        "username": "john",
+        "email": "john@gmail.com",
+        "phone": "1234567890",
+        "phoneType": 1
+      }
+    }
+  ]
+}
