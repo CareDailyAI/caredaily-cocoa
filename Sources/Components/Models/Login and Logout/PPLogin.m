@@ -45,6 +45,25 @@
     if (appName) {
         [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"appName" value:appName]];
     }
+    if (keyType) {
+        [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"keyType" value:keyType.stringValue]];
+    }
+    if (clientId) {
+        [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"clientId" value:clientId]];
+    }
+    if (smsPrefix) {
+        [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"smsPrefix" value:smsPrefix.stringValue]];
+    }
+    if (appHash) {
+        [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"appHash" value:appHash]];
+    }
+    if (sign) {
+        [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"sign" value:(sign.boolValue) ? "true" : "false"]];
+    }
+    if (signAlgorithm) {
+        [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"signAlgorithm" value:signAlgorithm]];
+    }
+    
     components.queryItems = queryItems;
     components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
     
