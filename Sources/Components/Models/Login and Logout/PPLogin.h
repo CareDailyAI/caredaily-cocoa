@@ -21,9 +21,17 @@
  * @param passcode NSString The temporary passcode.
  * @param expiry PPLoginExpiryType API key expiration period in days, nonzero. By default, this is set to -1, which means the key will never expire.
  * @param appName NSString Short application name to trigger some automatic actions like registrating the user in an organization.  Regex provided by system property SYSTEM_PROPERTY_PASSWORD_REGEX(appName)
+ * @param keyType NSNumber API key type: 0 - end user; 11 - administrator; 15 - service
+ * @param clientId NSString Short application client ID to generate a specific user API key.
+ * @param smsPrefix NSNumber Passcode SMS prefix type to automatically parse it by the app: 1 = Google <#>
+ * @param appHash NSString 11-character app hash
+ * @param sign NSNumber Set it to true, if an encrypted signature authentication is used.
+ * @param signAlgorithm NSString Signature algorithm
+ 
  * @param callback PPLoginBlock Callback method provides API key, expire data, and optional error
  **/
-+ (void)loginWithUsername:(NSString * _Nonnull )username password:(NSString * _Nullable )password passcode:(NSString * _Nullable )passcode expiry:(PPLoginExpiryType)expiry appName:(NSString * _Nullable )appName callback:(PPLoginBlock _Nonnull )callback;
++ (void)loginWithUsername:(NSString * _Nonnull )username password:(NSString * _Nullable )password passcode:(NSString * _Nullable )passcode expiry:(PPLoginExpiryType)expiry appName:(NSString * _Nullable )appName keyType:(NSNumber * _Nullable )keyType clientId:(NSString * _Nullable )clientId smsPrefix:(NSNumber * _Nullable )smsPrefix appHash:(NSString * _Nullable )appHash sign:(NSNumber * _Nullable )sign signAlgorithm:(NSString * _Nullable )signAlgorithm callback:(PPLoginBlock _Nonnull )callback;
++ (void)loginWithUsername:(NSString * _Nonnull )username password:(NSString * _Nullable )password passcode:(NSString * _Nullable )passcode expiry:(PPLoginExpiryType)expiry appName:(NSString * _Nullable )appName callback:(PPLoginBlock _Nonnull )callback __attribute__((deprecated));
 + (void)loginWithUsername:(NSString * _Nonnull )username password:(NSString * _Nonnull )password expiry:(PPLoginExpiryType)expiry appName:(NSString * _Nullable )appName callback:(PPLoginBlock _Nonnull )callback __attribute__((deprecated));
 
 #pragma mark - Passcode
@@ -59,5 +67,25 @@
  * @param callback PPUserLoginBlock Callback method provides API key, expire data, and optional error
  **/
 + (void)loginWithKey:(NSString * _Nullable )key keyType:(PPLoginKeyType)keyType expiry:(PPLoginExpiryType)expiry clientId:(NSString * _Nullable )clientId cloudName:(NSString * _Nullable )cloudName callback:(PPLoginBlock _Nonnull )callback;
+
+
+#pragma mark - Signature Key
+
+/**
+Generate a new RSA signature private/public keys pair for the user or upload own RSA public key to the account.Both private and public keys are in Base64 format. The private key is PKCS #8 encoded. The public key must be X.509 formatted.
+ */
+
+/** Get Private Key
+ * @param appName NSString App name used to store the public key 
+ * @param callback PPSignatureKeyBlock Private key object.
+*/
++ (void)getPrivateKey:(NSString * _Nonnull )appName callback:(PPSignatureKeyBlock _Nonnull )callback;
+
+/** Put Public Key
+ * @param appName NSString App name used to store the public key
+ * @param callback PPErrorBlock Error object.
+ */
+
++ (void)putPublicKey:(NSString * _Nonnull )appName publicKey:(NSString * _Nonnull )publicKey callback:(PPErrorBlock _Nonnull )callback;
 
 @end

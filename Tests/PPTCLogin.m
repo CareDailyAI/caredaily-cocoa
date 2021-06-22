@@ -149,4 +149,36 @@ static NSString *moduleName = @"Login";
     [self waitForExpectations:@[expectation] timeout:10.0];
 }
 
+- (void)testGetPrivateKey {
+    NSString *methodName = @"GetPrivateKey";
+    XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
+    
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/signatureKey" statusCode:200 headers:nil];
+       
+    [PPLogin getPrivateKey:@"" callback:^(NSString * _Nullable privateKey, NSError * _Nullable error) {
+        XCTAssertNil(error);
+        
+        [expectation fulfill];
+        
+    }];
+
+    [self waitForExpectations:@[expectation] timeout:10.0];
+}
+
+- (void)testPutPublicKey {
+    NSString *methodName = @"PutPublicKey";
+    XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
+    
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/signatureKey" statusCode:200 headers:nil];
+       
+    [PPLogin putPublicKey:@"" publicKey:@"" callback:^(NSError * _Nullable error) {
+        XCTAssertNil(error);
+        
+        [expectation fulfill];
+        
+    }];
+
+    [self waitForExpectations:@[expectation] timeout:10.0];
+}
+
 @end
