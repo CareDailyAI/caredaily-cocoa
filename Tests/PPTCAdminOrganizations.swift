@@ -38,9 +38,10 @@ class PPTCAdminOrganizations: PPBaseTestCase {
     func testCreateAnOrganization() throws {
         let methodName = "CreateAnOrganization";
         let expectation = XCTestExpectation(description: methodName)
-        stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/", statusCode: 200, headers: nil)
+        stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/organizations", statusCode: 200, headers: nil)
         
-        PPAdminOrganizations.createAnOrganization(.none, organization: PPOrganization()) { error in
+        PPAdminOrganizations.createAnOrganization(.none, name: nil, domainName: nil, brand: nil, features: nil, deviceTypes: nil, termsOfService: nil, contactName1: nil, contactEmail1: nil, contactPhone1: nil, contactName2: nil, contactEmail2: nil, contactPhone: nil, officePhone: nil, addrStreet1: nil, addrStreet2: nil, addrCitry: nil, stateId: .none, countryId: .none, zip: nil) { organizationId, error in
+            print(error)
             XCTAssertNil(error)
             expectation.fulfill()
         }
@@ -50,9 +51,9 @@ class PPTCAdminOrganizations: PPBaseTestCase {
     func testUpdateOrganization() throws {
         let methodName = "UpdateOrganization";
         let expectation = XCTestExpectation(description: methodName)
-        stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/", statusCode: 200, headers: nil)
+        stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/organizations", statusCode: 200, headers: nil)
         
-        PPAdminOrganizations.updateOrganization(.none, organization: PPOrganization()) { error in
+        PPAdminOrganizations.updateOrganization(.none, name: nil, domainName: nil, brand: nil, features: nil, deviceTypes: nil, termsOfService: nil, contactName1: nil, contactEmail1: nil, contactPhone1: nil, contactName2: nil, contactEmail2: nil, contactPhone: nil, officePhone: nil, addrStreet1: nil, addrStreet2: nil, addrCitry: nil, stateId: .none, countryId: .none, zip: nil) { error in
             XCTAssertNil(error)
             expectation.fulfill()
         }
@@ -62,7 +63,7 @@ class PPTCAdminOrganizations: PPBaseTestCase {
     func testDeleteOrganization() throws {
         let methodName = "DeleteOrganization";
         let expectation = XCTestExpectation(description: methodName)
-        stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/", statusCode: 200, headers: nil)
+        stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/organizations", statusCode: 200, headers: nil)
         
         PPAdminOrganizations.deleteOrganization(.none) { error in
             XCTAssertNil(error)
@@ -76,33 +77,41 @@ class PPTCAdminOrganizations: PPBaseTestCase {
     func testUploadLargeObject() throws {
         let methodName = "UploadLargeObject";
         let expectation = XCTestExpectation(description: methodName)
-        stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/", statusCode: 200, headers: nil)
+        stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/organizations/1/objects/My object", statusCode: 200, headers: nil)
         
-        PPAdminOrganizations.uploadLargeObject(.none, objectName: "", private: .none, data: Data()) { error in
+        PPAdminOrganizations.uploadLargeObject(PPOrganizationId(rawValue: 1), objectName: "My object", private: .none, data: Data(), contentType: "image/jpeg") { progress in
+            
+        } callback: { error in
             XCTAssertNil(error)
             expectation.fulfill()
         }
+        
         wait(for: [expectation], timeout: 10.0)
     }
     
     func testGetObjectContent() throws {
         let methodName = "GetObjectContent";
         let expectation = XCTestExpectation(description: methodName)
-        stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/", statusCode: 200, headers: nil)
+        stubRequest(forModule: moduleName, methodName: methodName, ofType: "data", path: "/admin/json/organizations/1/objects/My object", statusCode: 200, headers: [
+            "Content-Type": "img/png",
+            "Content-Range": "bytes 21010-47021/47022",
+            "Accept-Ranges": "0-47022",
+            "Content-Disposition": "attachment",
+        ])
         
-        PPAdminOrganizations.getObjectContent(.none, objectName: "") { data, error in
+        PPAdminOrganizations.getObjectContent(PPOrganizationId(rawValue: 1), objectName: "My object", isPublic: .none) { data, error in
             XCTAssertNil(error)
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 10.0)
     }
     
-    func testDeleteContent() throws {
-        let methodName = "DeleteContent";
+    func testDeleteObject() throws {
+        let methodName = "DeleteObject";
         let expectation = XCTestExpectation(description: methodName)
-        stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/", statusCode: 200, headers: nil)
+        stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/organizations/1/objects/My object", statusCode: 200, headers: nil)
         
-        PPAdminOrganizations.deleteContent(.none, objectName: "") { error in
+        PPAdminOrganizations.deleteObject(PPOrganizationId(rawValue: 1), objectName: "My object") { error in
             XCTAssertNil(error)
             expectation.fulfill()
         }
@@ -114,9 +123,9 @@ class PPTCAdminOrganizations: PPBaseTestCase {
     func testListObjectsAndProperties() throws {
         let methodName = "ListObjectsAndProperties";
         let expectation = XCTestExpectation(description: methodName)
-        stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/", statusCode: 200, headers: nil)
+        stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/organizations/1/objects", statusCode: 200, headers: nil)
         
-        PPAdminOrganizations.listObjectsAndProperties(.none) { objectsAndProperties, error in
+        PPAdminOrganizations.listObjectsAndProperties(PPOrganizationId(rawValue: 1)) { objectsAndProperties, error in
             XCTAssertNil(error)
             expectation.fulfill()
         }
@@ -126,9 +135,9 @@ class PPTCAdminOrganizations: PPBaseTestCase {
     func testSetProperties() throws {
         let methodName = "SetProperties";
         let expectation = XCTestExpectation(description: methodName)
-        stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/", statusCode: 200, headers: nil)
+        stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/organizations/1/objects", statusCode: 200, headers: nil)
         
-        PPAdminOrganizations.setProperties(.none, properties: []) { error in
+        PPAdminOrganizations.setProperties(PPOrganizationId(rawValue: 1), properties: []) { error in
             XCTAssertNil(error)
             expectation.fulfill()
         }
@@ -140,9 +149,9 @@ class PPTCAdminOrganizations: PPBaseTestCase {
     func testGetAdministrators() throws {
         let methodName = "GetAdministrators";
         let expectation = XCTestExpectation(description: methodName)
-        stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/", statusCode: 200, headers: nil)
+        stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/organizations/1/admins", statusCode: 200, headers: nil)
         
-        PPAdminOrganizations.getAdministrators(.none) { users, error in
+        PPAdminOrganizations.getAdministrators(PPOrganizationId(rawValue: 1)) { users, error in
             XCTAssertNil(error)
             expectation.fulfill()
         }
@@ -154,9 +163,9 @@ class PPTCAdminOrganizations: PPBaseTestCase {
     func testAddAnAdministrator() throws {
         let methodName = "AddAnAdministrator";
         let expectation = XCTestExpectation(description: methodName)
-        stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/", statusCode: 200, headers: nil)
+        stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/organizations/1/admins/1", statusCode: 200, headers: nil)
         
-        PPAdminOrganizations.addAnAdministrator(.none, userId: .none, brand: nil) { error in
+        PPAdminOrganizations.addAnAdministrator(PPOrganizationId(rawValue: 1), userId: PPUserId(rawValue: 1), brand: nil) { error in
             XCTAssertNil(error)
             expectation.fulfill()
         }
@@ -166,9 +175,9 @@ class PPTCAdminOrganizations: PPBaseTestCase {
     func testRemoveAdministrator() throws {
         let methodName = "RemoveAdministrator";
         let expectation = XCTestExpectation(description: methodName)
-        stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/", statusCode: 200, headers: nil)
+        stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/organizations/1/admins/1", statusCode: 200, headers: nil)
         
-        PPAdminOrganizations.removeAdministrator(.none, userId: .none) { error in
+        PPAdminOrganizations.removeAdministrator(PPOrganizationId(rawValue: 1), userId: PPUserId(rawValue: 1)) { error in
             XCTAssertNil(error)
             expectation.fulfill()
         }
@@ -180,9 +189,9 @@ class PPTCAdminOrganizations: PPBaseTestCase {
     func testGetOrganizationTotals() throws {
         let methodName = "GetOrganizationTotals";
         let expectation = XCTestExpectation(description: methodName)
-        stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/", statusCode: 200, headers: nil)
+        stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/organizations/1/totals", statusCode: 200, headers: nil)
         
-        PPAdminOrganizations.getOrganizationTotals(.none, locations: false, groupLocations: false, userDevices: false, groupDevices: false, groupId: .none, locationId: .none) { totals, error in
+        PPAdminOrganizations.getOrganizationTotals(PPOrganizationId(rawValue: 1), locations: false, groupLocations: false, userDevices: false, groupDevices: false, groupId: .none, locationId: .none) { totals, error in
             XCTAssertNil(error)
             expectation.fulfill()
         }
