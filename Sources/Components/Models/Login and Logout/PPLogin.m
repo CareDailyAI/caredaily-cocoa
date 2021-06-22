@@ -23,9 +23,15 @@
  * @param passcode NSString The temporary passcode.
  * @param expiry PPUserExpiryType API key expiration period in days, nonzero. By default, this is set to -1, which means the key will never expire.
  * @param appName NSString Short application name to trigger some automatic actions like registrating the user in an organization.  Regex provided by system property SYSTEM_PROPERTY_PASSWORD_REGEX(appName)
- * @param callback PPUserAccountsLoginBlock Callback method provides API key, expire data, and optional error
+ * @param keyType NSNumber API key type: 0 - end user; 11 - administrator; 15 - service
+ * @param clientId NSString Short application client ID to generate a specific user API key.
+ * @param smsPrefix NSNumber Passcode SMS prefix type to automatically parse it by the app: 1 = Google <#>
+ * @param appHash NSString 11-character app hash
+ * @param sign NSNumber Set it to true, if an encrypted signature authentication is used.
+ * @param signAlgorithm NSString Signature algorithm
+ * @param callback PPLoginBlock Callback method provides API key, expire data, and optional error
  **/
-+ (void)loginWithUsername:(NSString *)username password:(NSString *)password passcode:(NSString *)passcode expiry:(PPLoginExpiryType)expiry appName:(NSString *)appName callback:(PPLoginBlock)callback {
++ (void)loginWithUsername:(NSString * _Nonnull )username password:(NSString * _Nullable )password passcode:(NSString * _Nullable )passcode expiry:(PPLoginExpiryType)expiry appName:(NSString * _Nullable )appName keyType:(NSNumber * _Nullable )keyType clientId:(NSString * _Nullable )clientId smsPrefix:(NSNumber * _Nullable )smsPrefix appHash:(NSString * _Nullable )appHash sign:(NSNumber * _Nullable )sign signAlgorithm:(NSString * _Nullable )signAlgorithm callback:(PPLoginBlock _Nonnull )callback {
     NSAssert1(username != nil, @"%s missing username", __FUNCTION__);
     NSAssert1(password != nil || passcode != nil, @"%s missing password or passcode", __FUNCTION__);
     
@@ -128,9 +134,13 @@
         });
     }];
 }
++ (void)loginWithUsername:(NSString *)username password:(NSString *)password passcode:(NSString *)passcode expiry:(PPLoginExpiryType)expiry appName:(NSString *)appName callback:(PPLoginBlock)callback {
+    NSLog(@"%s deprecated. Use +loginWithUsername:password:passcode:expiry:appname:keyType:clientId:smsPrefix:appHash:sign:signAlgorithm:callback:", __FUNCTION__);
+    [PPLogin loginWithUsername:username password:password passcode:nil expiry:expiry appName:appName keyType:nil clientId:nil smsPrefix:nil appHash:nil sign:nil signAlgorithm:nil callback:callback];
+}
 + (void)loginWithUsername:(NSString *)username password:(NSString *)password expiry:(PPLoginExpiryType)expiry appName:(NSString *)appName callback:(PPLoginBlock)callback {
-    NSLog(@"%s deprecated. Use +loginWithUsername:password:passcode:expiry:appname:callback:", __FUNCTION__);
-    [PPLogin loginWithUsername:username password:password passcode:nil expiry:expiry appName:appName callback:callback];
+    NSLog(@"%s deprecated. Use +loginWithUsername:password:passcode:expiry:appname:keyType:clientId:smsPrefix:appHash:sign:signAlgorithm:callback:", __FUNCTION__);
+    [PPLogin loginWithUsername:username password:password passcode:nil expiry:expiry appName:appName keyType:nil clientId:nil smsPrefix:nil appHash:nil sign:nil signAlgorithm:nil callback:callback];
 }
 
 #pragma mark - Passcode
@@ -283,6 +293,120 @@
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 callback(nil, nil, [PPBaseModel resultCodeToNSError:10003 originatingClass:NSStringFromClass([self class]) argument:[NSString stringWithFormat:@"Error domain:%@, code:%ld, userInfo:%@", error.domain, (long)error.code, error.userInfo]]);
+            });
+        });
+    }];
+}
+
+#pragma mark - Signature Key
+
+/**
+Generate a new RSA signature private/public keys pair for the user or upload own RSA public key to the account.Both private and public keys are in Base64 format. The private key is PKCS #8 encoded. The public key must be X.509 formatted.
+ */
+
+/** Get Private Key
+ * @param appName NSString App name used to store the public key
+ * @param callback PPSignatureKeyBlock Private key object.
+*/
++ (void)getPrivateKey:(NSString * _Nonnull )appName callback:(PPSignatureKeyBlock _Nonnull )callback {
+   
+   NSURLComponents *components = [NSURLComponents componentsWithURL:[NSURL URLWithString:@"signatureKey"] resolvingAgainstBaseURL:NO];
+   
+   NSMutableArray *queryItems = @[].mutableCopy;
+   [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"appName" value:appName]];
+   components.queryItems = queryItems;
+   
+   dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.login.getPrivateKey()", DISPATCH_QUEUE_SERIAL);
+   
+   PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
+       
+   [[PPCloudEngine sharedAppEngine] GET:components.string success:^(NSData *responseData) {
+       
+       dispatch_async(queue, ^{
+           
+           NSError *error = nil;
+           NSDictionary *root = [PPBaseModel processJSONResponse:responseData originatingClass:NSStringFromClass([self class]) error:&error];
+           
+           NSString *privateKey;
+           
+           if(!error) {
+           
+               PPLogAPI(@"%s >> %@", __PRETTY_FUNCTION__, root);
+               
+               privateKey = [root objectForKey:@"privateKey"];
+           }
+           
+           PPLogAPI(@"< %s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
+           
+           dispatch_async(dispatch_get_main_queue(), ^{
+               callback(privateKey, error);
+           });
+       });
+   } failure:^(NSError *error) {
+       
+       dispatch_async(queue, ^{
+           
+           PPLogAPI(@"< %s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
+           
+           dispatch_async(dispatch_get_main_queue(), ^{
+               callback(nil, [PPBaseModel resultCodeToNSError:10003 originatingClass:NSStringFromClass([self class]) argument:[NSString stringWithFormat:@"Error domain:%@, code:%ld, userInfo:%@", error.domain, (long)error.code, error.userInfo]]);
+           });
+       });
+   }];
+}
+
+
+/** Put Public Key
+ * @param appName NSString App name used to store the public key
+ * @param callback PPErrorBlock Error object.
+ */
+
++ (void)putPublicKey:(NSString *)appName publicKey:(NSString *)publicKey callback:(PPErrorBlock)callback {
+    NSURLComponents *components = [NSURLComponents componentsWithURL:[NSURL URLWithString:@"signatureKey"] resolvingAgainstBaseURL:NO];
+   
+    NSMutableArray *queryItems = @[].mutableCopy;
+    [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"appName" value:appName]];
+    components.queryItems = queryItems;
+    
+    NSDictionary *data = @{@"publicKey": publicKey};
+
+    NSError *dataError;
+    NSData *body = [NSJSONSerialization dataWithJSONObject:data options:0 error:&dataError];
+    if(dataError) {
+        callback([PPBaseModel resultCodeToNSError:14 originatingClass:NSStringFromClass([self class]) argument:[NSString stringWithFormat:@"%@",dataError.userInfo]]);
+        return;
+    }
+   
+    NSError *error;
+    NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"PUT" URLString:[NSURL URLWithString:components.string relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
+    [request setHTTPBody:body];
+   
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.login.putPublicKey()", DISPATCH_QUEUE_SERIAL);
+   
+    PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
+   
+    [[PPCloudEngine sharedAppEngine] operationWithRequest:request success:^(NSData *responseData) {
+       
+        dispatch_async(queue, ^{
+           
+            NSError *error = nil;
+            [PPBaseModel processJSONResponse:responseData originatingClass:NSStringFromClass([self class]) error:&error];
+           
+            PPLogAPI(@"< %s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
+           
+            dispatch_async(dispatch_get_main_queue(), ^{
+                callback(error);
+            });
+        });
+       
+    } failure:^(NSError *error) {
+       
+        dispatch_async(queue, ^{
+           
+            PPLogAPI(@"< %s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
+           
+            dispatch_async(dispatch_get_main_queue(), ^{
+                callback([PPBaseModel resultCodeToNSError:10003 originatingClass:NSStringFromClass([self class]) argument:[NSString stringWithFormat:@"Error domain:%@, code:%ld, userInfo:%@", error.domain, (long)error.code, error.userInfo]]);
             });
         });
     }];

@@ -75,6 +75,21 @@
             </BuildableReference>
             <SkippedTests>
                <Test
+                  Identifier = "PPTCAdminBilling">
+               </Test>
+               <Test
+                  Identifier = "PPTCAdminChallenges">
+               </Test>
+               <Test
+                  Identifier = "PPTCAdminFirmware">
+               </Test>
+               <Test
+                  Identifier = "PPTCAdminQuestions">
+               </Test>
+               <Test
+                  Identifier = "PPTCAdminReports">
+               </Test>
+               <Test
                   Identifier = "PPTCDeviceProxy">
                </Test>
                <Test

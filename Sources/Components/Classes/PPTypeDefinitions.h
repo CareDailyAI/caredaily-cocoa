@@ -3573,6 +3573,7 @@ typedef void (^PPCloudConnectivityServerURLBlock)(NSURL * _Nullable url, NSError
 typedef void (^PPLoginBlock)(NSString * _Nullable APIKey, NSDate * _Nullable expireDate, NSError * _Nullable error);
 typedef void (^PPOperationTokenBlock)(PPOperationToken * _Nullable operationToken, NSError * _Nullable error);
 typedef void (^PPOperationTokenValidityBlock)(BOOL isValid);
+typedef void (^PPSignatureKeyBlock)(NSString * _Nullable privateKey, NSError * _Nullable error);
 
 // MARK: - User Accounts
 
