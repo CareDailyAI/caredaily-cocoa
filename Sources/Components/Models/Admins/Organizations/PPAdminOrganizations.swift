@@ -54,7 +54,7 @@ import Foundation
      */
     @objc public class func getOrganizations(_ callback: @escaping (([PPOrganization]?, Error?) -> (Void))) {
         let components = NSURLComponents(string: "organizations")
-        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organization.sgetOrganizations()")
+        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organizations.getOrganizations()")
         PPLogAPIs(#file, message: "> \(queue.label)")
         
         PPCloudEngine.sharedAdmin().get(components?.string) { responseData in
@@ -80,8 +80,9 @@ import Foundation
                 }
             }
         } failure: { error in
-            queue.async {
-                callback(nil, error)
+            PPLogAPIs(#file, message: "< \(queue.label)")
+            DispatchQueue.main.async {
+                callback(nil, PPBaseModel.resultCode(toNSError: 10003, originatingClass: NSStringFromClass(self), argument: error == nil ? nil : "Error domain: \((error! as NSError).domain), code: \((error! as NSError).code), userInfo: \((error! as NSError).userInfo)"))
             }
         }
     }
@@ -89,36 +90,237 @@ import Foundation
     /**
      Create an Organization
      */
-    @available(*, deprecated, message: "Not available")
     @objc public class func createAnOrganization(_ organizationId: PPOrganizationId,
-                                                 organization: PPOrganization,
-                                                 callback: @escaping ((Error?) -> (Void))) {
-        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organization.screateAnOrganization()")
-        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(PPBaseModel.resultCode(toNSError: 29))
+                                                 name: String?,
+                                                 domainName: String?,
+                                                 brand: String?,
+                                                 features: String?,
+                                                 deviceTypes: String?,
+                                                 termsOfService: String?,
+                                                 contactName1: String?,
+                                                 contactEmail1: String?,
+                                                 contactPhone1: String?,
+                                                 contactName2: String?,
+                                                 contactEmail2: String?,
+                                                 contactPhone: String?,
+                                                 officePhone: String?,
+                                                 addrStreet1: String?,
+                                                 addrStreet2: String?,
+                                                 addrCitry: String?,
+                                                 stateId: PPStateId,
+                                                 countryId: PPCountryId,
+                                                 zip: String?,
+                                                 callback: @escaping ((PPOrganizationId, Error?) -> (Void))) {
+        let components = NSURLComponents(string: "organizations")
+        
+        var queryItems = [URLQueryItem]()
+        
+        if organizationId != .none {
+            queryItems.append(URLQueryItem(name: "organizationId", value: "\(organizationId.rawValue)"))
+        }
+        components?.queryItems = queryItems;
+        
+        var json: [String: Any] = [:]
+        json["name"] = name
+        json["domainName"] = domainName
+        json["brand"] = brand
+        json["features"] = features
+        json["deviceTypes"] = deviceTypes
+        json["termsOfService"] = termsOfService
+        json["contactName1"] = contactName1
+        json["contactEmail1"] = contactEmail1
+        json["contactPhone1"] = contactPhone1
+        json["contactName2"] = contactName2
+        json["contactEmail2"] = contactEmail2
+        json["contactPhone"] = contactPhone
+        json["officePhone"] = officePhone
+        json["addrStreet1"] = addrStreet1
+        json["addrStreet2"] = addrStreet2
+        json["addrCitry"] = addrCitry
+        if stateId != .none {
+            json["state"] = ["id": stateId.rawValue]
+        }
+        if countryId != .none {
+            json["country"] = ["id": countryId.rawValue]
+        }
+        json["zip"] = zip
+        var request: NSMutableURLRequest!
+        do {
+            guard
+                let componentsString = components?.string,
+                let urlString = URL(string: componentsString, relativeTo: PPCloudEngine.sharedAdmin().getBaseURL())?.absoluteString else {
+                throw PPBaseModel.resultCode(toNSError: 14, originatingClass: NSStringFromClass(self), argument: "Invalid endpoint")!
+            }
+            let body = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
+            request = try PPCloudEngine.sharedAdmin().getRequestSerializer().request(withMethod: "POST", urlString: urlString, parameters: nil)
+            request.httpBody = body
+        }
+        catch {
+            callback(.none, PPBaseModel.resultCode(toNSError: 14, originatingClass: NSStringFromClass(self), argument: "\(error.localizedDescription)"))
+            return
+        }
+        
+        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organizations.createAnOrganization()")
+        
+        PPLogAPIs(#file, message: "> \(queue.label)")
+        
+        PPCloudEngine.sharedAdmin().operation(with: request as URLRequest?) { responseData in
+            queue.async {
+                var _organizationId: PPOrganizationId = .none
+                var _error: Error?
+                do {
+                    let root = try PPBaseModel.processJSONResponse(responseData, originatingClass: NSStringFromClass(self))
+                    if let organizationId = root["organizationId"] as? Int {
+                        _organizationId = PPOrganizationId(rawValue: organizationId)
+                    }
+                }
+                catch {
+                    _error = error
+                }
+                
+                PPLogAPIs(#file, message: "< \(queue.label)")
+                
+                DispatchQueue.main.async {
+                    callback(_organizationId, _error)
+                }
+            }
+        } failure: { error in
+            PPLogAPIs(#file, message: "< \(queue.label)")
+            DispatchQueue.main.async {
+                callback(.none, PPBaseModel.resultCode(toNSError: 10003, originatingClass: NSStringFromClass(self), argument: error == nil ? nil : "Error domain: \((error! as NSError).domain), code: \((error! as NSError).code), userInfo: \((error! as NSError).userInfo)"))
+            }
+        }
     }
 
     /**
      Update Organization
      */
-    @available(*, deprecated, message: "Not available")
     @objc public class func updateOrganization(_ organizationId: PPOrganizationId,
-                                               organization: PPOrganization,
+                                               name: String?,
+                                               domainName: String?,
+                                               brand: String?,
+                                               features: String?,
+                                               deviceTypes: String?,
+                                               termsOfService: String?,
+                                               contactName1: String?,
+                                               contactEmail1: String?,
+                                               contactPhone1: String?,
+                                               contactName2: String?,
+                                               contactEmail2: String?,
+                                               contactPhone: String?,
+                                               officePhone: String?,
+                                               addrStreet1: String?,
+                                               addrStreet2: String?,
+                                               addrCitry: String?,
+                                               stateId: PPStateId,
+                                               countryId: PPCountryId,
+                                               zip: String?,
                                                callback: @escaping ((Error?) -> (Void))) {
-        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organization.supdateOrganization()")
-        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(PPBaseModel.resultCode(toNSError: 29))
+        let components = NSURLComponents(string: "organizations")
+      
+        var queryItems = [URLQueryItem]()
+        queryItems.append(URLQueryItem(name: "organizationId", value: "\(organizationId.rawValue)"))
+        components?.queryItems = queryItems;
+        
+        var json: [String: Any] = [:]
+        json["name"] = name
+        json["domainName"] = domainName
+        json["brand"] = brand
+        json["features"] = features
+        json["deviceTypes"] = deviceTypes
+        json["termsOfService"] = termsOfService
+        json["contactName1"] = contactName1
+        json["contactEmail1"] = contactEmail1
+        json["contactPhone1"] = contactPhone1
+        json["contactName2"] = contactName2
+        json["contactEmail2"] = contactEmail2
+        json["contactPhone"] = contactPhone
+        json["officePhone"] = officePhone
+        json["addrStreet1"] = addrStreet1
+        json["addrStreet2"] = addrStreet2
+        json["addrCitry"] = addrCitry
+        if stateId != .none {
+            json["state"] = ["id": stateId.rawValue]
+        }
+        if countryId != .none {
+            json["country"] = ["id": countryId.rawValue]
+        }
+        json["zip"] = zip
+        var request: NSMutableURLRequest!
+        do {
+            guard
+                let componentsString = components?.string,
+                let urlString = URL(string: componentsString, relativeTo: PPCloudEngine.sharedAdmin().getBaseURL())?.absoluteString else {
+                throw PPBaseModel.resultCode(toNSError: 14, originatingClass: NSStringFromClass(self), argument: "Invalid endpoint")!
+            }
+            let body = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
+            request = try PPCloudEngine.sharedAdmin().getRequestSerializer().request(withMethod: "PUT", urlString: urlString, parameters: nil)
+            request.httpBody = body
+        }
+        catch {
+            callback(PPBaseModel.resultCode(toNSError: 14, originatingClass: NSStringFromClass(self), argument: "\(error.localizedDescription)"))
+            return
+        }
+      
+        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organizations.updateOrganization()")
+      
+        PPLogAPIs(#file, message: "> \(queue.label)")
+      
+        PPCloudEngine.sharedAdmin().operation(with: request as URLRequest?) { responseData in
+            queue.async {
+                var _error: Error?
+                do {
+                    let root = try PPBaseModel.processJSONResponse(responseData, originatingClass: NSStringFromClass(self))
+                }
+                catch {
+                    _error = error
+                }
+                
+                PPLogAPIs(#file, message: "< \(queue.label)")
+                
+                DispatchQueue.main.async {
+                    callback(_error)
+                }
+            }
+        } failure: { error in
+            PPLogAPIs(#file, message: "< \(queue.label)")
+            DispatchQueue.main.async {
+                callback(PPBaseModel.resultCode(toNSError: 10003, originatingClass: NSStringFromClass(self), argument: error == nil ? nil : "Error domain: \((error! as NSError).domain), code: \((error! as NSError).code), userInfo: \((error! as NSError).userInfo)"))
+            }
+        }
     }
 
     /**
      Delete Organization
      */
-    @available(*, deprecated, message: "Not available")
     @objc public class func deleteOrganization(_ organizationId: PPOrganizationId,
                                                callback: @escaping ((Error?) -> (Void))) {
-        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organization.sdeleteOrganization()")
-        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(PPBaseModel.resultCode(toNSError: 29))
+        let components = NSURLComponents(string: "organizations")
+        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organizations.deleteOrganization()")
+        PPLogAPIs(#file, message: "> \(queue.label)")
+        
+        PPCloudEngine.sharedAdmin().delete(components?.string) { responseData in
+            queue.async {
+                var err: Error?
+                do {
+                    let _ = try PPBaseModel.processJSONResponse(responseData, originatingClass: NSStringFromClass(self))
+                }
+                catch {
+                    err = error
+                }
+                
+                PPLogAPIs(#file, message: "< \(queue.label)")
+                
+                DispatchQueue.main.async {
+                    callback(err)
+                }
+            }
+        } failure: { error in
+            PPLogAPIs(#file, message: "< \(queue.label)")
+            DispatchQueue.main.async {
+                callback(PPBaseModel.resultCode(toNSError: 10003, originatingClass: NSStringFromClass(self), argument: error == nil ? nil : "Error domain: \((error! as NSError).domain), code: \((error! as NSError).code), userInfo: \((error! as NSError).userInfo)"))
+            }
+        }
     }
 
     // MARK: - Organization Large Objects
@@ -131,40 +333,174 @@ import Foundation
      Upload Large Object
      This API is only available to Organization Administrators.The Content-Type header must be like video/ *, image/ *, text/plain, application/octet-stream or application/json (see https://en.wikipedia.org/wiki/Internet_media_type for possible exact values). For example: video/mp4, image/jpeg, audio/mp3. The object content gets uploaded as a binary stream.
      */
-    @available(*, deprecated, message: "Not available")
     @objc public class func uploadLargeObject(_ organizationId: PPOrganizationId,
                                               objectName: String,
-                                              private: PPOrganizationObjectPrivateContent,
+                                              private privateObject: PPOrganizationObjectPrivateContent,
                                               data: Data,
+                                              contentType: String,
+                                              progressBlock: ((Progress?) -> (Void))?,
                                               callback: @escaping ((Error?) -> (Void))) {
-        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organization.suploadLargeObject()")
-        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(PPBaseModel.resultCode(toNSError: 29))
+        assert(organizationId != .none)
+        assert(objectName.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) != nil)
+        let components = NSURLComponents(string: "organizations/\(organizationId.rawValue)/objects/\(objectName.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!)")
+        
+        var queryItems = [URLQueryItem]()
+        if privateObject != .none {
+            queryItems.append(URLQueryItem(name: "private", value: "\(privateObject.rawValue)"))
+        }
+        components?.queryItems = queryItems;
+        
+        var request: NSMutableURLRequest!
+        do {
+            guard
+                let componentsString = components?.string,
+                let urlString = URL(string: componentsString, relativeTo: PPCloudEngine.sharedAdmin().getBaseURL())?.absoluteString else {
+                throw PPBaseModel.resultCode(toNSError: 14, originatingClass: NSStringFromClass(self), argument: "Invalid endpoint")!
+            }
+            request = try PPCloudEngine.sharedAdmin().getRequestSerializer().request(withMethod: "PUT", urlString: urlString, parameters: nil)
+            request.setValue(contentType, forHTTPHeaderField: HTTP_HEADER_CONTENT_TYPE)
+            request.httpBody = data
+        }
+        catch {
+            callback(PPBaseModel.resultCode(toNSError: 14, originatingClass: NSStringFromClass(self), argument: "\(error.localizedDescription)"))
+            return
+        }
+        
+        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organizations.uploadLargeObject()")
+        
+        PPLogAPIs(#file, message: "> \(queue.label)")
+        
+        PPCloudEngine.sharedAdmin().operation(with: request as URLRequest?) { progress in
+            
+            PPLogAPIs(#file, message: "> \(queue.label) \(String(describing: progress))")
+            DispatchQueue.main.async {
+                if let progressBlock = progressBlock {
+                    progressBlock(progress)
+                }
+            }
+        } success: { responseData, response in
+            queue.async {
+                var _error: Error?
+                do {
+                    let _ = try PPBaseModel.processJSONResponse(responseData, originatingClass: NSStringFromClass(self))
+                }
+                catch {
+                    _error = error
+                }
+                
+                PPLogAPIs(#file, message: "< \(queue.label)")
+                
+                DispatchQueue.main.async {
+                    callback(_error)
+                }
+            }
+        } failure: { error in
+            PPLogAPIs(#file, message: "< \(queue.label)")
+            DispatchQueue.main.async {
+                callback(PPBaseModel.resultCode(toNSError: 10003, originatingClass: NSStringFromClass(self), argument: error == nil ? nil : "Error domain: \((error! as NSError).domain), code: \((error! as NSError).code), userInfo: \((error! as NSError).userInfo)"))
+            }
+        }
     }
 
     /**
      Get Object Conten
      Return the previously uploaded object content.Private objects content is available only for organization administrators. Public objects content is available for any user.
      */
-    @available(*, deprecated, message: "Not available")
     @objc public class func getObjectContent(_ organizationId: PPOrganizationId,
                                              objectName: String,
+                                             isPublic: PPApplicationFilePublicAccess,
                                              callback: @escaping ((Data?, Error?) -> (Void))) {
-        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organization.sgetObjectContent()")
-        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(nil, PPBaseModel.resultCode(toNSError: 29))
+        assert(organizationId != .none)
+        assert(objectName.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) != nil)
+        let components = NSURLComponents(string: "organizations/\(organizationId.rawValue)/objects/\(objectName.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!)")
+        
+        let cloudEngine: PPCloudEngine = (isPublic == .true) ? PPCloudEngine.init(singleton: .admin) : PPCloudEngine.sharedAdmin()
+        var request: NSMutableURLRequest!
+        
+        do {
+            guard
+                let componentsString = components?.string,
+                let urlString = URL(string: componentsString, relativeTo: PPCloudEngine.sharedAdmin().getBaseURL())?.absoluteString else {
+                throw PPBaseModel.resultCode(toNSError: 14, originatingClass: NSStringFromClass(self), argument: "Invalid endpoint")!
+            }
+            request = try cloudEngine.getRequestSerializer().request(withMethod: "GET", urlString: urlString, parameters: nil)
+        }
+        catch {
+            callback(nil, PPBaseModel.resultCode(toNSError: 14, originatingClass: NSStringFromClass(self), argument: "\(error.localizedDescription)"))
+            return
+        }
+        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organizations.getObjectContent()")
+        
+        PPLogAPIs(#file, message: "> \(queue.label)")
+        
+        cloudEngine.operationWithRequest(includingResponse: request as URLRequest?) { responseData, response in
+            queue.async {
+                var _error: Error?
+                do {
+                    let _ = try PPBaseModel.processJSONResponse(responseData, originatingClass: NSStringFromClass(self))
+                    let statusCode = (response as? HTTPURLResponse)?.statusCode
+                    let responseHeaders = (response as? HTTPURLResponse)?.allHeaderFields
+                    
+                    let contentType = responseHeaders?["Content-Type"] as? String
+                    let contentRange = responseHeaders?["Content-Range"] as? String
+                    let acceptRanges = responseHeaders?["Accept-Ranges"] as? String
+                    let contentDisposition = responseHeaders?["Content-Disposition"] as? String
+                }
+                catch {
+                    _error = error
+                }
+                
+                PPLogAPIs(#file, message: "< \(queue.label)")
+                
+                DispatchQueue.main.async {
+                    callback(responseData, _error)
+                }
+            }
+        } failure: { error in
+            PPLogAPIs(#file, message: "< \(queue.label)")
+            DispatchQueue.main.async {
+                callback(nil, PPBaseModel.resultCode(toNSError: 10003, originatingClass: NSStringFromClass(self), argument: error == nil ? nil : "Error domain: \((error! as NSError).domain), code: \((error! as NSError).code), userInfo: \((error! as NSError).userInfo)"))
+            }
+        }
+
     }
 
     /**
      Delete Object
      */
-    @available(*, deprecated, message: "Not available")
-    @objc public class func deleteContent(_ organizationId: PPOrganizationId,
+    @objc public class func deleteObject(_ organizationId: PPOrganizationId,
                                           objectName: String,
                                           callback: @escaping ((Error?) -> (Void))) {
-        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organization.sdeleteContent()")
-        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(PPBaseModel.resultCode(toNSError: 29))
+        assert(organizationId != .none)
+        assert(objectName.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) != nil)
+        let components = NSURLComponents(string: "organizations/\(organizationId.rawValue)/objects/\(objectName.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!)")
+        
+        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organizations.deleteObject()")
+        
+        PPLogAPIs(#file, message: "> \(queue.label)")
+        
+        PPCloudEngine.sharedAdmin().delete(components?.string) { responseData in
+            queue.async {
+                var err: Error?
+                do {
+                    let _ = try PPBaseModel.processJSONResponse(responseData, originatingClass: NSStringFromClass(self))
+                }
+                catch {
+                    err = error
+                }
+                
+                PPLogAPIs(#file, message: "< \(queue.label)")
+                
+                DispatchQueue.main.async {
+                    callback(err)
+                }
+            }
+        } failure: { error in
+            PPLogAPIs(#file, message: "< \(queue.label)")
+            DispatchQueue.main.async {
+                callback(PPBaseModel.resultCode(toNSError: 10003, originatingClass: NSStringFromClass(self), argument: error == nil ? nil : "Error domain: \((error! as NSError).domain), code: \((error! as NSError).code), userInfo: \((error! as NSError).userInfo)"))
+            }
+        }
     }
 
     // MARK: - Organization Objects and Properties
@@ -173,25 +509,106 @@ import Foundation
      List Objects and Properties
      Retrieve all large objects and small properties by the organization. Anyone can call it.Private records are turned only for administrators.
      */
-    @available(*, deprecated, message: "Not available")
     @objc public class func listObjectsAndProperties(_ organizationId: PPOrganizationId,
                                                      callback: @escaping (([PPOrganizationObject]?, Error?) -> (Void))) {
-        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organization.slistObjectsAndProperties()")
-        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(nil, PPBaseModel.resultCode(toNSError: 29))
+        assert(organizationId != .none)
+        let components = NSURLComponents(string: "organizations/\(organizationId.rawValue)/objects")
+        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organizations.listObjectsAndProperties()")
+        PPLogAPIs(#file, message: "> \(queue.label)")
+        
+        PPCloudEngine.sharedAdmin().get(components?.string) { responseData in
+            queue.async {
+                var models: [PPOrganizationObject]?
+                var err: Error?
+                do {
+                    let root = try PPBaseModel.processJSONResponse(responseData, originatingClass: NSStringFromClass(self))
+                    models = []
+                    for d in root["organizations"] as? [Dictionary<String, Any>] ?? [] {
+                        let m = PPOrganizationObject.initWith(d)
+                        models?.append(m)
+                    }
+                }
+                catch {
+                    err = error
+                }
+                
+                PPLogAPIs(#file, message: "< \(queue.label)")
+                
+                DispatchQueue.main.async {
+                    callback(models, err)
+                }
+            }
+        } failure: { error in
+            PPLogAPIs(#file, message: "< \(queue.label)")
+            DispatchQueue.main.async {
+                callback(nil, PPBaseModel.resultCode(toNSError: 10003, originatingClass: NSStringFromClass(self), argument: error == nil ? nil : "Error domain: \((error! as NSError).domain), code: \((error! as NSError).code), userInfo: \((error! as NSError).userInfo)"))
+            }
+        }
     }
 
     /**
      Set Properties
      Update organization property values. Only administrator can call it.
      */
-    @available(*, deprecated, message: "Not available")
     @objc public class func setProperties(_ organizationId: PPOrganizationId,
                                           properties: [PPOrganizationObject],
                                           callback: @escaping ((Error?) -> (Void))) {
-        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organization.ssetProperties()")
-        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(PPBaseModel.resultCode(toNSError: 29))
+        assert(organizationId != .none)
+        let components = NSURLComponents(string: "organizations/\(organizationId.rawValue)/objects")
+        
+        var organizationObjects: [[String: Any]] = []
+        for property in properties {
+            organizationObjects.append([
+                "name": property.name,
+                "value": property.value,
+                "privateContent": property.privateContent == .true
+            ])
+        }
+        let json: [String: Any] = [
+            "organizationObjects": organizationObjects
+        ]
+        var request: NSMutableURLRequest!
+        do {
+            guard
+                let componentsString = components?.string,
+                let urlString = URL(string: componentsString, relativeTo: PPCloudEngine.sharedAdmin().getBaseURL())?.absoluteString else {
+                throw PPBaseModel.resultCode(toNSError: 14, originatingClass: NSStringFromClass(self), argument: "Invalid endpoint")!
+            }
+            let body = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
+            request = try PPCloudEngine.sharedAdmin().getRequestSerializer().request(withMethod: "GET", urlString: urlString, parameters: nil)
+            request.httpBody = body
+        }
+        catch {
+            callback(PPBaseModel.resultCode(toNSError: 14, originatingClass: NSStringFromClass(self), argument: "\(error.localizedDescription)"))
+            return
+        }
+        
+        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organizations.setProperties()")
+      
+        PPLogAPIs(#file, message: "> \(queue.label)")
+      
+        PPCloudEngine.sharedAdmin().operation(with: request as URLRequest?) { responseData in
+            queue.async {
+                var _error: Error?
+                do {
+                    let _ = try PPBaseModel.processJSONResponse(responseData, originatingClass: NSStringFromClass(self))
+                }
+                catch {
+                    _error = error
+                }
+                
+                PPLogAPIs(#file, message: "< \(queue.label)")
+                
+                DispatchQueue.main.async {
+                    callback(_error)
+                }
+            }
+        } failure: { error in
+            PPLogAPIs(#file, message: "< \(queue.label)")
+            DispatchQueue.main.async {
+                callback(PPBaseModel.resultCode(toNSError: 10003, originatingClass: NSStringFromClass(self), argument: error == nil ? nil : "Error domain: \((error! as NSError).domain), code: \((error! as NSError).code), userInfo: \((error! as NSError).userInfo)"))
+            }
+        }
     }
 
     // MARK: - Get Organization Administrators
@@ -199,12 +616,41 @@ import Foundation
     /**
      Get Administrators
      */
-    @available(*, deprecated, message: "Not available")
     @objc public class func getAdministrators(_ organizationId: PPOrganizationId,
                                               callback: @escaping (([PPUser]?, Error?) -> (Void))) {
-        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organization.sgetAdministrators()")
-        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(nil, PPBaseModel.resultCode(toNSError: 29))
+        assert(organizationId != .none)
+        let components = NSURLComponents(string: "organizations/\(organizationId.rawValue)/admins")
+        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organizations.getAdministrators()")
+        PPLogAPIs(#file, message: "> \(queue.label)")
+        
+        PPCloudEngine.sharedAdmin().get(components?.string) { responseData in
+            queue.async {
+                var models: [PPUser]?
+                var err: Error?
+                do {
+                    let root = try PPBaseModel.processJSONResponse(responseData, originatingClass: NSStringFromClass(self))
+                    models = []
+                    for d in root["organizations"] as? [Dictionary<String, Any>] ?? [] {
+                        let m = PPUser.initWith(d)
+                        models?.append(m)
+                    }
+                }
+                catch {
+                    err = error
+                }
+                
+                PPLogAPIs(#file, message: "< \(queue.label)")
+                
+                DispatchQueue.main.async {
+                    callback(models, err)
+                }
+            }
+        } failure: { error in
+            PPLogAPIs(#file, message: "< \(queue.label)")
+            DispatchQueue.main.async {
+                callback(nil, PPBaseModel.resultCode(toNSError: 10003, originatingClass: NSStringFromClass(self), argument: error == nil ? nil : "Error domain: \((error! as NSError).domain), code: \((error! as NSError).code), userInfo: \((error! as NSError).userInfo)"))
+            }
+        }
     }
 
     // MARK: - Manage Organization Administrators
@@ -212,26 +658,85 @@ import Foundation
     /**
      Add an Administrator
      */
-    @available(*, deprecated, message: "Not available")
     @objc public class func addAnAdministrator(_ organizationId: PPOrganizationId,
                                                userId: PPUserId,
                                                brand: String?,
                                                callback: @escaping (( Error?) -> (Void))) {
-        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organization.saddAnAdministrator()")
-        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(PPBaseModel.resultCode(toNSError: 29))
+        assert(organizationId != .none)
+        assert(userId != .none)
+        let components = NSURLComponents(string: "organizations/\(organizationId.rawValue)/admins/\(userId.rawValue)")
+        
+        var queryItems = [URLQueryItem]()
+        
+        if let brand = brand {
+            queryItems.append(URLQueryItem(name: "brand", value: brand))
+        }
+        components?.queryItems = queryItems
+        
+        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organizations.addAnAdministrator()")
+        
+        PPLogAPIs(#file, message: "> \(queue.label)")
+        
+        PPCloudEngine.sharedAdmin().put(components?.string) { responseData in
+            queue.async {
+                var err: Error?
+                do {
+                    let _ = try PPBaseModel.processJSONResponse(responseData, originatingClass: NSStringFromClass(self))
+                }
+                catch {
+                    err = error
+                }
+                
+                PPLogAPIs(#file, message: "< \(queue.label)")
+                
+                DispatchQueue.main.async {
+                    callback(err)
+                }
+            }
+        } failure: { error in
+            PPLogAPIs(#file, message: "< \(queue.label)")
+            DispatchQueue.main.async {
+                callback(PPBaseModel.resultCode(toNSError: 10003, originatingClass: NSStringFromClass(self), argument: error == nil ? nil : "Error domain: \((error! as NSError).domain), code: \((error! as NSError).code), userInfo: \((error! as NSError).userInfo)"))
+            }
+        }
     }
 
     /**
      Remove Administrator
      */
-    @available(*, deprecated, message: "Not available")
     @objc public class func removeAdministrator(_ organizationId: PPOrganizationId,
                                                 userId: PPUserId,
                                                 callback: @escaping (( Error?) -> (Void))) {
-        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organization.sremoveAdministrator()")
-        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(PPBaseModel.resultCode(toNSError: 29))
+        assert(organizationId != .none)
+        assert(userId != .none)
+        let components = NSURLComponents(string: "organizations/\(organizationId.rawValue)/admins/\(userId.rawValue)")
+        
+        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organizations.removeAdministrator()")
+        
+        PPLogAPIs(#file, message: "> \(queue.label)")
+        
+        PPCloudEngine.sharedAdmin().delete(components?.string) { responseData in
+            queue.async {
+                var err: Error?
+                do {
+                    let _ = try PPBaseModel.processJSONResponse(responseData, originatingClass: NSStringFromClass(self))
+                }
+                catch {
+                    err = error
+                }
+                
+                PPLogAPIs(#file, message: "< \(queue.label)")
+                
+                DispatchQueue.main.async {
+                    callback(err)
+                }
+            }
+        } failure: { error in
+            PPLogAPIs(#file, message: "< \(queue.label)")
+            DispatchQueue.main.async {
+                callback(PPBaseModel.resultCode(toNSError: 10003, originatingClass: NSStringFromClass(self), argument: error == nil ? nil : "Error domain: \((error! as NSError).domain), code: \((error! as NSError).code), userInfo: \((error! as NSError).userInfo)"))
+            }
+        }
     }
 
     // MARK: - Organization Totals
@@ -248,7 +753,6 @@ import Foundation
     /**
      Get Organization Totals
      */
-    @available(*, deprecated, message: "Not available")
     @objc public class func getOrganizationTotals(_ organizationId: PPOrganizationId,
                                                   locations: Bool,
                                                   groupLocations: Bool,
@@ -256,10 +760,60 @@ import Foundation
                                                   groupDevices: Bool,
                                                   groupId: PPOrganizationGroupId,
                                                   locationId: PPLocationId,
-                                                  callback: @escaping (([Dictionary<String, Any>]?, Error?) -> (Void))) {
-        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organization.sgetOrganizationTotals()")
-        PPLogAPIs(#file, message: "! \(queue.label) [NOT IMPLEMENTED]")
-        callback(nil, PPBaseModel.resultCode(toNSError: 29))
+                                                  callback: @escaping ((Dictionary<String, Any>?, Error?) -> (Void))) {
+        assert(organizationId != .none)
+        let components = NSURLComponents(string: "organizations/\(organizationId.rawValue)/totals")
+        
+        var queryItems = [URLQueryItem]()
+        
+        if locations == true {
+            queryItems.append(URLQueryItem(name: "locations", value: "true"))
+        }
+        if groupLocations == true {
+            queryItems.append(URLQueryItem(name: "groupLocations", value: "true"))
+        }
+        if userDevices == true {
+            queryItems.append(URLQueryItem(name: "userDevices", value: "true"))
+        }
+        if groupDevices == true {
+            queryItems.append(URLQueryItem(name: "groupDevices", value: "true"))
+        }
+        if groupId != .none {
+            queryItems.append(URLQueryItem(name: "groupId", value: "\(groupId.rawValue)"))
+        }
+        if locationId != .none {
+            queryItems.append(URLQueryItem(name: "locationId", value: "\(locationId.rawValue)"))
+        }
+        components?.queryItems = queryItems
+        
+        let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organizations.getOrganizationTotals()")
+        
+        PPLogAPIs(#file, message: "> \(queue.label)")
+        
+        PPCloudEngine.sharedAdmin().get(components?.string) { responseData in
+            queue.async {
+                var totals: Dictionary<String, Any>?
+                var err: Error?
+                do {
+                    let root = try PPBaseModel.processJSONResponse(responseData, originatingClass: NSStringFromClass(self))
+                    totals = root["totals"] as? Dictionary<String,Any>
+                }
+                catch {
+                    err = error
+                }
+                
+                PPLogAPIs(#file, message: "< \(queue.label)")
+                
+                DispatchQueue.main.async {
+                    callback(totals, err)
+                }
+            }
+        } failure: { error in
+            PPLogAPIs(#file, message: "< \(queue.label)")
+            DispatchQueue.main.async {
+                callback(nil, PPBaseModel.resultCode(toNSError: 10003, originatingClass: NSStringFromClass(self), argument: error == nil ? nil : "Error domain: \((error! as NSError).domain), code: \((error! as NSError).code), userInfo: \((error! as NSError).userInfo)"))
+            }
+        }
     }
 
 }

@@ -537,11 +537,10 @@ static NSString *kTrackingKey = @"com.peoplepowerco.lib.Peoplepower.trackingDisa
 }
 
 + (NSDictionary *)processJSONResponse:(NSData *)responseData originatingClass:(NSString *)originatingClass error:(NSError **)error {
-    
     NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
     
     if(responseString.length == 0) {
-        return nil;
+        return @{};
     }
     
     NSError *parsingError = nil;
@@ -564,7 +563,7 @@ static NSString *kTrackingKey = @"com.peoplepowerco.lib.Peoplepower.trackingDisa
             
             // Ignore any argument
             *error = [PPBaseModel resultCodeToNSError:resultCode originatingClass:originatingClass];
-            return parsedObject;
+            return nil;
         }
         else if((resultCode == 19
                  || resultCode == 44)
@@ -620,6 +619,7 @@ static NSString *kTrackingKey = @"com.peoplepowerco.lib.Peoplepower.trackingDisa
         else {
             *error = [PPBaseModel resultCodeToNSError:resultCode originatingClass:originatingClass];
         }
+        return nil;
     }
     
     PPLogAPI(@"%@", [PPCurlDebug responseToDescription:parsedObject]);

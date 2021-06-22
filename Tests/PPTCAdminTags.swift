@@ -25,9 +25,9 @@ class PPTCAdminTags: PPBaseTestCase {
     func testPopularTags() throws {
         let methodName = "PopularTags";
         let expectation = XCTestExpectation(description: methodName)
-        stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/", statusCode: 200, headers: nil)
+        stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/organizations/1/tags", statusCode: 200, headers: nil)
         
-        PPAdminTags.popularTags(.none, type: 0, limit: nil) { tags, error in
+        PPAdminTags.popularTags(PPOrganizationId(rawValue: 1), type: 1, limit: nil) { tags, error in
             XCTAssertNil(error)
             expectation.fulfill()
         }
@@ -37,9 +37,9 @@ class PPTCAdminTags: PPBaseTestCase {
     func testApplyTags() throws {
         let methodName = "ApplyTags";
         let expectation = XCTestExpectation(description: methodName)
-        stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/", statusCode: 200, headers: nil)
+        stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/organizations/1/tags", statusCode: 200, headers: nil)
         
-        PPAdminTags.applyTags(.none, tags: [:]) { error in
+        PPAdminTags.applyTags(PPOrganizationId(rawValue: 1), tags: [:]) { error in
             XCTAssertNil(error)
             expectation.fulfill()
         }
@@ -49,9 +49,9 @@ class PPTCAdminTags: PPBaseTestCase {
     func testDeleteTags() throws {
         let methodName = "DeleteTags";
         let expectation = XCTestExpectation(description: methodName)
-        stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/", statusCode: 200, headers: nil)
+        stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/organizations/1/tags", statusCode: 200, headers: nil)
         
-        PPAdminTags.deleteTags(.none, type: 0, id: "", tag: "", appId: nil) { error in
+        PPAdminTags.deleteTags(PPOrganizationId(rawValue: 1), type: 0, id: "", tag: "", appId: nil) { error in
             XCTAssertNil(error)
             expectation.fulfill()
         }
