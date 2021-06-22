@@ -58,7 +58,7 @@
         [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"appHash" value:appHash]];
     }
     if (sign) {
-        [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"sign" value:(sign.boolValue) ? "true" : "false"]];
+        [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"sign" value:(sign.boolValue) ? @"true" : @"false"]];
     }
     if (signAlgorithm) {
         [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"signAlgorithm" value:signAlgorithm]];
