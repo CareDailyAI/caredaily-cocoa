@@ -52,8 +52,22 @@ import Foundation
      Get Organizations
      Retrieve organizations information by administrator.
      */
-    @objc public class func getOrganizations(_ callback: @escaping (([PPOrganization]?, Error?) -> (Void))) {
+    @objc public class func getOrganizations(_ organizationId: PPOrganizationId, domainName: String?, name: String?, callback: @escaping (([PPOrganization]?, Error?) -> (Void))) {
         let components = NSURLComponents(string: "organizations")
+        
+        var queryItems = [URLQueryItem]()
+        
+        if organizationId != .none {
+            queryItems.append(URLQueryItem(name: "organizationId", value: "\(organizationId.rawValue)"))
+        }
+        if let domainName = domainName {
+            queryItems.append(URLQueryItem(name: "domainName", value: domainName))
+        }
+        if let name = name {
+            queryItems.append(URLQueryItem(name: "name", value: name))
+        }
+        components?.queryItems = queryItems;
+        
         let queue = DispatchQueue(label: "com.peoplepowerco.lib.Peoplepower.admin.organizations.getOrganizations()")
         PPLogAPIs(#file, message: "> \(queue.label)")
         

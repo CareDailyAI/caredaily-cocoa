@@ -27,7 +27,7 @@ class PPTCAdminOrganizations: PPBaseTestCase {
         let expectation = XCTestExpectation(description: methodName)
         stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/organizations", statusCode: 200, headers: nil)
         
-        PPAdminOrganizations.getOrganizations { organizations, error in
+        PPAdminOrganizations.getOrganizations(.none, domainName: nil, name: nil) { organizations, error in
             XCTAssertNil(error)
             XCTAssertTrue(organizations?.count == 2)
             expectation.fulfill()
