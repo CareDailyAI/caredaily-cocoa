@@ -107,7 +107,7 @@
  * @param proxyId NSString Device ID of the proxy
  * @param callback PPDevicesRegisterBlock Device registration block providing device Id, auth token, device type, exist (whether or not the device was already registered), hot, port, ssl, and error details
  **/
-+ (void)registerDevice:(NSString * _Nullable )deviceId locationId:(PPLocationId)locationId deviceTypeId:(PPDeviceTypeId)deviceTypeId authToken:(PPDevicesAuthToken)authToken startDate:(NSDate * _Nullable )startDate desc:(NSString * _Nullable )desc goalId:(PPDeviceTypeGoalId)goalId properties:(NSArray * _Nullable )properties proxyId:(NSString *)proxyId callback:(PPDevicesRegisterBlock _Nonnull )callback;
++ (void)registerDevice:(NSString * _Nullable )deviceId locationId:(PPLocationId)locationId deviceTypeId:(PPDeviceTypeId)deviceTypeId authToken:(PPDevicesAuthToken)authToken startDate:(NSDate * _Nullable )startDate desc:(NSString * _Nullable )desc goalId:(PPDeviceTypeGoalId)goalId properties:(NSArray * _Nullable )properties proxyId:(NSString * _Nullable )proxyId callback:(PPDevicesRegisterBlock _Nonnull )callback;
 + (void)registerDevice:(NSString * _Nullable )deviceId locationId:(PPLocationId)locationId deviceTypeId:(PPDeviceTypeId)deviceTypeId authToken:(PPDevicesAuthToken)authToken startDate:(NSDate * _Nullable )startDate desc:(NSString * _Nullable )desc goalId:(PPDeviceTypeGoalId)goalId properties:(NSArray * _Nullable )properties callback:(PPDevicesRegisterBlock _Nonnull )callback __attribute__((deprecated));
 
 /**
