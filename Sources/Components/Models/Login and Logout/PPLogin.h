@@ -21,7 +21,12 @@
  * @param passcode NSString The temporary passcode.
  * @param expiry PPLoginExpiryType API key expiration period in days, nonzero. By default, this is set to -1, which means the key will never expire.
  * @param appName NSString Short application name to trigger some automatic actions like registrating the user in an organization.  Regex provided by system property SYSTEM_PROPERTY_PASSWORD_REGEX(appName)
- * @param keyType NSNumber API key type: 0 - end user; 11 - administrator; 15 - service
+ * @param keyType PPLoginKeyType Returned API key type:
+ *      0 = Normal user application, default.
+ *      1 = Temporary key
+ *      11 = Admin key
+ *      13 = OAuth 2.0 access token
+ *      14 = OAuth 2.0 refresh token
  * @param clientId NSString Short application client ID to generate a specific user API key.
  * @param smsPrefix NSNumber Passcode SMS prefix type to automatically parse it by the app: 1 = Google <#>
  * @param appHash NSString 11-character app hash
@@ -30,7 +35,7 @@
  
  * @param callback PPLoginBlock Callback method provides API key, expire data, and optional error
  **/
-+ (void)loginWithUsername:(NSString * _Nonnull )username password:(NSString * _Nullable )password passcode:(NSString * _Nullable )passcode expiry:(PPLoginExpiryType)expiry appName:(NSString * _Nullable )appName keyType:(NSNumber * _Nullable )keyType clientId:(NSString * _Nullable )clientId smsPrefix:(NSNumber * _Nullable )smsPrefix appHash:(NSString * _Nullable )appHash sign:(NSNumber * _Nullable )sign signAlgorithm:(NSString * _Nullable )signAlgorithm callback:(PPLoginBlock _Nonnull )callback;
++ (void)loginWithUsername:(NSString * _Nonnull )username password:(NSString * _Nullable )password passcode:(NSString * _Nullable )passcode expiry:(PPLoginExpiryType)expiry appName:(NSString * _Nullable )appName keyType:(PPLoginKeyType)keyType clientId:(NSString * _Nullable )clientId smsPrefix:(NSNumber * _Nullable )smsPrefix appHash:(NSString * _Nullable )appHash sign:(NSNumber * _Nullable )sign signAlgorithm:(NSString * _Nullable )signAlgorithm callback:(PPLoginBlock _Nonnull )callback;
 + (void)loginWithUsername:(NSString * _Nonnull )username password:(NSString * _Nullable )password passcode:(NSString * _Nullable )passcode expiry:(PPLoginExpiryType)expiry appName:(NSString * _Nullable )appName callback:(PPLoginBlock _Nonnull )callback __attribute__((deprecated));
 + (void)loginWithUsername:(NSString * _Nonnull )username password:(NSString * _Nonnull )password expiry:(PPLoginExpiryType)expiry appName:(NSString * _Nullable )appName callback:(PPLoginBlock _Nonnull )callback __attribute__((deprecated));
 
@@ -61,6 +66,9 @@
  * @param keyType PPLoginKeyType Returned API key type:
  *      0 = Normal user application, default.
  *      1 = Temporary key
+ *      11 = Admin key
+ *      13 = OAuth 2.0 access token
+ *      14 = OAuth 2.0 refresh token
  * @param expiry PPUserExpiry API key expiry period in days, nonzero. By default the key will never expire.
  * @param clientId NSString Client or application ID to retrieve a specific key for this client.
  * @param cloudName NSString The third party cloud name, where the API key must be validated.

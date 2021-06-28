@@ -47,9 +47,12 @@ typedef NS_OPTIONS(NSInteger, PPLoginNotificationType) {
 };
 
 typedef NS_OPTIONS(NSInteger, PPLoginKeyType) {
-    PPLoginKeyTypeDefault = 0,
-    PPLoginKeyTypeTempKey = 1,
-    PPLoginKeyTypeAnalytic = 14
+    PPLoginKeyTypeNone                  = -1,
+    PPLoginKeyTypeDefault               = 0,
+    PPLoginKeyTypeTempKey               = 1,
+    PPLoginKeyTypeAdmin                 = 11,
+    PPLoginKeyTypeOAuthAccessToken      = 13,
+    PPLoginKeyTypeOAuthRefreshToken     = 14,
 };
 
 // MARK: Operation Token
