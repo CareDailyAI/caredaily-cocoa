@@ -35,8 +35,5 @@ Pod::Spec.new do |s|
   
   s.subspec 'Tests' do |ios|
     ios.resources = "Tests/Data/*.{json,m4a,jpeg,mp4}"
-    ios.resource_bundles = {
-      'Peoplepower' => ['Sources/**/*.lproj']
-    }
   end
 end
