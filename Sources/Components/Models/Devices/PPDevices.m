@@ -737,7 +737,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
         data[@"device"] = deviceData;
     }
     
-    if(newLocationId != PPLocationIdNone && startDate) {
+    if(newLocationId != PPLocationIdNone || startDate) {
         NSMutableDictionary *locationData = @{}.mutableCopy;
         
         if(newLocationId != PPLocationIdNone) {
