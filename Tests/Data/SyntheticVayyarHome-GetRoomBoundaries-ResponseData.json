@@ -1,0 +1,32 @@
+{
+  "resultCode": 0,
+  "value": {
+    "id_MzA6QUU6QTQ6RTI6RTY6Njg": {
+      "x_min": -1.285,
+      "x_max": 1.259,
+      "y_min": 0.3,
+      "y_max": 1.5,
+      "z_min": 0,
+      "z_max": 2.5,
+      "updated_ms": 1621452579469
+    },
+    "id_MzA6QUU6QTQ6RTI6RTc6OTA": {
+      "x_min": -1.62,
+      "x_max": 1.9,
+      "y_min": 0.3,
+      "y_max": 3.35,
+      "z_min": 0,
+      "z_max": 2.5,
+      "updated_ms": 1621452599076
+    },
+    "id_MzA6QUU6QTQ6RTM6OEY6RUM": {
+      "x_min": -1.9,
+      "x_max": 0.9,
+      "y_min": 0.3,
+      "y_max": 2.1,
+      "z_min": 0,
+      "z_max": 2.5,
+      "updated_ms": 1621454757753
+    }
+  }
+}

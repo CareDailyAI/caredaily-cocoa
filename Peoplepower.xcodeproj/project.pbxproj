@@ -1217,6 +1217,14 @@
 		63BECB4F20C5D96F00408494 /* PPCurlDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D39304204F287800041C1A /* PPCurlDebug.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63BECB9320C5DDE000408494 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C7C9FF2098016700967C4C /* libicucore.tbd */; };
 		63BECB9420C5DFDB00408494 /* Peoplepower-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 63D39315204F3A0900041C1A /* Peoplepower-Prefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		63C84362268E5C4600C6165E /* PPSyntheticVayyarHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C84361268E5C4600C6165E /* PPSyntheticVayyarHome.swift */; };
+		63C84364268E5CA900C6165E /* PPVayyarRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C84363268E5CA900C6165E /* PPVayyarRoom.swift */; };
+		63C84366268E5FD600C6165E /* PPVayyarSubregion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C84365268E5FD600C6165E /* PPVayyarSubregion.swift */; };
+		63C84368268E614200C6165E /* PPVayyarSubregionBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C84367268E614200C6165E /* PPVayyarSubregionBehavior.swift */; };
+		63C8436A268E6F7900C6165E /* PPTCSyntheticVayyarHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C84369268E6F7900C6165E /* PPTCSyntheticVayyarHome.swift */; };
+		63C8436F268E71FA00C6165E /* SyntheticVayyarHome-GetRoomBoundaries-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63C8436E268E71FA00C6165E /* SyntheticVayyarHome-GetRoomBoundaries-ResponseData.json */; };
+		63C84371268E72E300C6165E /* SyntheticVayyarHome-GetSubregions-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63C84370268E72E300C6165E /* SyntheticVayyarHome-GetSubregions-ResponseData.json */; };
+		63C84373268E730100C6165E /* SyntheticVayyarHome-GetSubregionBehaviors-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63C84372268E730100C6165E /* SyntheticVayyarHome-GetSubregionBehaviors-ResponseData.json */; };
 		63CD14C021C19279002290C9 /* PPLocationUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 63CD14BE21C19279002290C9 /* PPLocationUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63CD14C121C19279002290C9 /* PPLocationUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CD14BF21C19279002290C9 /* PPLocationUser.m */; };
 		63CD14C421C19774002290C9 /* PPLocationUserSchedule.h in Headers */ = {isa = PBXBuildFile; fileRef = 63CD14C221C19774002290C9 /* PPLocationUserSchedule.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1822,6 +1830,14 @@
 		63C7CA28209910D800967C4C /* PPDeviceCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPDeviceCamera.h; sourceTree = "<group>"; };
 		63C7CA29209910D800967C4C /* PPDeviceCameraLocal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPDeviceCameraLocal.m; sourceTree = "<group>"; };
 		63C7CA2A209910D800967C4C /* PPDeviceCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPDeviceCamera.m; sourceTree = "<group>"; };
+		63C84361268E5C4600C6165E /* PPSyntheticVayyarHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPSyntheticVayyarHome.swift; sourceTree = "<group>"; };
+		63C84363268E5CA900C6165E /* PPVayyarRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPVayyarRoom.swift; sourceTree = "<group>"; };
+		63C84365268E5FD600C6165E /* PPVayyarSubregion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPVayyarSubregion.swift; sourceTree = "<group>"; };
+		63C84367268E614200C6165E /* PPVayyarSubregionBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPVayyarSubregionBehavior.swift; sourceTree = "<group>"; };
+		63C84369268E6F7900C6165E /* PPTCSyntheticVayyarHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPTCSyntheticVayyarHome.swift; sourceTree = "<group>"; };
+		63C8436E268E71FA00C6165E /* SyntheticVayyarHome-GetRoomBoundaries-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "SyntheticVayyarHome-GetRoomBoundaries-ResponseData.json"; sourceTree = "<group>"; };
+		63C84370268E72E300C6165E /* SyntheticVayyarHome-GetSubregions-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "SyntheticVayyarHome-GetSubregions-ResponseData.json"; sourceTree = "<group>"; };
+		63C84372268E730100C6165E /* SyntheticVayyarHome-GetSubregionBehaviors-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "SyntheticVayyarHome-GetSubregionBehaviors-ResponseData.json"; sourceTree = "<group>"; };
 		63CD14BE21C19279002290C9 /* PPLocationUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPLocationUser.h; sourceTree = "<group>"; };
 		63CD14BF21C19279002290C9 /* PPLocationUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPLocationUser.m; sourceTree = "<group>"; };
 		63CD14C221C19774002290C9 /* PPLocationUserSchedule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPLocationUserSchedule.h; sourceTree = "<group>"; };
@@ -2217,7 +2233,516 @@
 		636B4627248AF7A300124F6A /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				63B527552679AA80007EA64B /* Admin */,
+				63B527552679AA80007EA64B /* Admin APIs */,
+				63C8436C268E718100C6165E /* Synthetic APIs */,
+				63C8436D268E71A000C6165E /* App APIs */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		636DCC072493E880000560E8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				636B4627248AF7A300124F6A /* Data */,
+				636DCC0E2493F9BA000560E8 /* Tests-Bridging-Header.h */,
+				636DCC042493E4B8000560E8 /* PPTCAppResources.h */,
+				63A7143E25AD00510009E43D /* PPTCLocalization.swift */,
+				636B47F1248AFA7B00124F6A /* UnitTests.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		636DCC092493F8F1000560E8 /* App APIs */ = {
+			isa = PBXGroup;
+			children = (
+				636B4802248AFA7D00124F6A /* PPTCCircles.m */,
+				636B4809248AFA7F00124F6A /* PPTCCloudConnectivity.m */,
+				636B47FD248AFA7D00124F6A /* PPTCCloudsIntegration.m */,
+				636B47EF248AFA7A00124F6A /* PPTCCommunications.m */,
+				636B47EE248AFA7A00124F6A /* PPTCCommunity.m */,
+				636B47F3248AFA7B00124F6A /* PPTCDeviceMeasurements.m */,
+				636B4800248AFA7D00124F6A /* PPTCDevices.m */,
+				636B4804248AFA7E00124F6A /* PPTCDynamicUserInterfaces.m */,
+				636B47FC248AFA7C00124F6A /* PPTCEnergyManagement.m */,
+				636B480B248AFA7F00124F6A /* PPTCFileManagement.m */,
+				636B4808248AFA7E00124F6A /* PPTCApplicationFiles.m */,
+				636B4801248AFA7D00124F6A /* PPTCLogin.m */,
+				636B47FE248AFA7D00124F6A /* PPTCLogout.m */,
+				636B47EB248AFA7900124F6A /* PPTCPaidServices.m */,
+				636B4803248AFA7E00124F6A /* PPTCProducts.m */,
+				636B47F0248AFA7A00124F6A /* PPTCProfessionalMonitoring.m */,
+				636B47FA248AFA7C00124F6A /* PPTCReports.m */,
+				636B47F8248AFA7C00124F6A /* PPTCRules.m */,
+				636B47F6248AFA7B00124F6A /* PPTCSystemAndUserProperties.m */,
+				636B4805248AFA7E00124F6A /* PPTCUserAccounts.m */,
+				636B47F7248AFA7C00124F6A /* PPTCWeather.m */,
+			);
+			name = "App APIs";
+			sourceTree = "<group>";
+		};
+		636DCC0B2493F92A000560E8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				636B47F5248AFA7B00124F6A /* PPTCDateUtilities.m */,
+				636DCC1524940463000560E8 /* PPTCAppResources.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		636DCC0C2493F939000560E8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				636B4807248AFA7E00124F6A /* PPTCBaseModel.m */,
+				63B52837268115E9007EA64B /* PPTCBaseModel.swift */,
+				636B47FF248AFA7D00124F6A /* PPTCCopying.m */,
+				636B47FB248AFA7C00124F6A /* PPTCOperationToken.m */,
+				636B47ED248AFA7A00124F6A /* PPTCDeviceProxy.m */,
+				636DCC0F2493F9BA000560E8 /* PPTCVersion.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		636DCC0D2493F945000560E8 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		636EC3F62058395B001ED811 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				636EC3F720583969001ED811 /* PPWeatherManagement.h */,
+				636EC3F820583969001ED811 /* PPWeatherManagement.m */,
+				636EC3FA20583A66001ED811 /* PPWeather.h */,
+				636EC3FB20583A66001ED811 /* PPWeather.m */,
+				636EC3FD20583A73001ED811 /* PPWeatherMetadata.h */,
+				636EC3FE20583A73001ED811 /* PPWeatherMetadata.m */,
+				636EC40020583A7C001ED811 /* PPWeatherForecast.h */,
+				636EC40120583A7C001ED811 /* PPWeatherForecast.m */,
+				636EC40320583A90001ED811 /* PPWeatherObservation.h */,
+				636EC40420583A90001ED811 /* PPWeatherObservation.m */,
+				636EC40620583A9E001ED811 /* PPWeatherObservationMetric.h */,
+				636EC40720583A9E001ED811 /* PPWeatherObservationMetric.m */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		636EC4092058447D001ED811 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				636EC40A205844A0001ED811 /* PPDeviceTypes.h */,
+				636EC40B205844A0001ED811 /* PPDeviceTypes.m */,
+				636EC40D205844E8001ED811 /* PPDeviceType.h */,
+				636EC40E205844E8001ED811 /* PPDeviceType.m */,
+				636EC410205848B9001ED811 /* PPDeviceTypeAttribute.h */,
+				636EC411205848B9001ED811 /* PPDeviceTypeAttribute.m */,
+				63A95264205C8012000E466A /* PPDeviceTypeAttributeOption.h */,
+				63A95265205C8012000E466A /* PPDeviceTypeAttributeOption.m */,
+				636EC41320584B37001ED811 /* PPDeviceTypeParameter.h */,
+				636EC41420584B37001ED811 /* PPDeviceTypeParameter.m */,
+				6372B66321349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.h */,
+				6372B66421349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.m */,
+				636EC41620584ECD001ED811 /* PPDeviceTypeRuleComponentTemplate.h */,
+				636EC41720584ECD001ED811 /* PPDeviceTypeRuleComponentTemplate.m */,
+				63A95268205C882C000E466A /* PPDeviceTypeRuleComponentTemplateProduct.h */,
+				63A95269205C882C000E466A /* PPDeviceTypeRuleComponentTemplateProduct.m */,
+				63D3943E205212F800041C1A /* PPDeviceTypeGoal.h */,
+				63D3943F205212F800041C1A /* PPDeviceTypeGoal.m */,
+				636EC4192058580D001ED811 /* PPDeviceTypeInstallationInstructions.h */,
+				636EC41A2058580D001ED811 /* PPDeviceTypeInstallationInstructions.m */,
+				636EC41C205858EA001ED811 /* PPDeviceTypeMedia.h */,
+				636EC41D205858EA001ED811 /* PPDeviceTypeMedia.m */,
+				636EC42120585B1C001ED811 /* PPDeviceTypeDeviceModel.h */,
+				636EC42220585B1C001ED811 /* PPDeviceTypeDeviceModel.m */,
+				636EC42420585C63001ED811 /* PPDeviceTypeDeviceModelCategory.h */,
+				636EC42520585C63001ED811 /* PPDeviceTypeDeviceModelCategory.m */,
+				634360AB206313D800B1DAE2 /* PPDeviceTypeDeviceModelBrand.h */,
+				634360AC206313D800B1DAE2 /* PPDeviceTypeDeviceModelBrand.m */,
+				6309B75F20E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.h */,
+				6309B76020E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.m */,
+				636EC427205862C7001ED811 /* PPDeviceTypeStory.h */,
+				636EC428205862C7001ED811 /* PPDeviceTypeStory.m */,
+				636EC42A205862DB001ED811 /* PPDeviceTypeStoryPage.h */,
+				636EC42B205862DB001ED811 /* PPDeviceTypeStoryPage.m */,
+				635E3AC122C26BE600C171B0 /* PPDeviceTypeStoryPageAction.h */,
+				635E3AC222C26BE600C171B0 /* PPDeviceTypeStoryPageAction.m */,
+				634360AE2063288D00B1DAE2 /* PPDeviceTypeStoryModel.h */,
+				634360AF2063288D00B1DAE2 /* PPDeviceTypeStoryModel.m */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
+		636EC42D2058654A001ED811 /* Clouds Integration */ = {
+			isa = PBXGroup;
+			children = (
+				636EC42E205865E3001ED811 /* PPCloudsIntegration.h */,
+				636EC42F205865E3001ED811 /* PPCloudsIntegration.m */,
+				6360FAB621B8520200DB2B6B /* PPCloudsIntegrationCloud.h */,
+				6360FAB721B8520200DB2B6B /* PPCloudsIntegrationCloud.m */,
+				636EC43120586637001ED811 /* PPCloudsIntegrationClient.h */,
+				636EC43220586637001ED811 /* PPCloudsIntegrationClient.m */,
+				636EC4342058663F001ED811 /* PPCloudsIntegrationHost.h */,
+				636EC4352058663F001ED811 /* PPCloudsIntegrationHost.m */,
+				636EC4372058764A001ED811 /* PPCloudsIntegrationHostAccessToken.h */,
+				636EC4382058764A001ED811 /* PPCloudsIntegrationHostAccessToken.m */,
+			);
+			path = "Clouds Integration";
+			sourceTree = "<group>";
+		};
+		636EC43A2058782F001ED811 /* Circles */ = {
+			isa = PBXGroup;
+			children = (
+				636EC43B2058783C001ED811 /* PPCircles.h */,
+				636EC43C2058783C001ED811 /* PPCircles.m */,
+				636EC43E205879F7001ED811 /* PPCircle.h */,
+				636EC43F205879F7001ED811 /* PPCircle.m */,
+				636EC44120587A32001ED811 /* PPCircleMember.h */,
+				636EC44220587A32001ED811 /* PPCircleMember.m */,
+				636EC44420587A87001ED811 /* PPCircleFile.h */,
+				636EC44520587A87001ED811 /* PPCircleFile.m */,
+				636EC44720587A96001ED811 /* PPCirclePost.h */,
+				636EC44820587A96001ED811 /* PPCirclePost.m */,
+				636EC44A20587AAC001ED811 /* PPCircleReaction.h */,
+				636EC44B20587AAC001ED811 /* PPCircleReaction.m */,
+				631DB29921077D8900C2F8F1 /* PPCircleDevice.h */,
+				631DB29A21077D8900C2F8F1 /* PPCircleDevice.m */,
+				63512367213890BB003E7EAA /* PPCircleDeviceCamera.h */,
+				63512368213890BB003E7EAA /* PPCircleDeviceCamera.m */,
+				6351236B21389112003E7EAA /* PPCircleDevicePictureFrame.h */,
+				6351236C21389112003E7EAA /* PPCircleDevicePictureFrame.m */,
+			);
+			path = Circles;
+			sourceTree = "<group>";
+		};
+		636EC44D20588CAF001ED811 /* Reports */ = {
+			isa = PBXGroup;
+			children = (
+				636EC44E20588CBF001ED811 /* PPReports.h */,
+				636EC44F20588CBF001ED811 /* PPReports.m */,
+				63A9526D205DC1B3000E466A /* PPDeviceAlert.h */,
+				63A9526E205DC1B3000E466A /* PPDeviceAlert.m */,
+			);
+			path = Reports;
+			sourceTree = "<group>";
+		};
+		636EC45120588E19001ED811 /* Login and Logout */ = {
+			isa = PBXGroup;
+			children = (
+				636EC45220588E29001ED811 /* PPLogin.h */,
+				636EC45320588E29001ED811 /* PPLogin.m */,
+				636EC45520588E30001ED811 /* PPLogout.h */,
+				636EC45620588E30001ED811 /* PPLogout.m */,
+				636EC45820588F41001ED811 /* PPOperationTokenManagement.h */,
+				636EC45920588F41001ED811 /* PPOperationTokenManagement.m */,
+				63D393BC204F542C00041C1A /* PPOperationToken.h */,
+				63D393BB204F542C00041C1A /* PPOperationToken.m */,
+			);
+			path = "Login and Logout";
+			sourceTree = "<group>";
+		};
+		636EC45B2058A432001ED811 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				63D3931A204F3CD300041C1A /* PPUser.h */,
+				63D39319204F3CD300041C1A /* PPUser.m */,
+				63D393E52050532800041C1A /* PPUserEmail.h */,
+				63D393E62050532800041C1A /* PPUserEmail.m */,
+				63D393BE204F750200041C1A /* PPUserBadge.h */,
+				63D393BF204F750200041C1A /* PPUserBadge.m */,
+				63D393C1204F776400041C1A /* PPUserTag.h */,
+				63D393C2204F776400041C1A /* PPUserTag.m */,
+				638E82F924412416000B07FD /* PPUserCode.h */,
+				638E82FA24412416000B07FD /* PPUserCode.m */,
+				63D393CA204F871200041C1A /* PPUserService.h */,
+				63D393CB204F871200041C1A /* PPUserService.m */,
+				631F72F023BBC16600F98797 /* PPUserCommunity.h */,
+				631F72F123BBC16600F98797 /* PPUserCommunity.m */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		63A9522A205A5566000E466A /* CurlDebug */ = {
+			isa = PBXGroup;
+			children = (
+				63D39304204F287800041C1A /* PPCurlDebug.h */,
+				63D39305204F287800041C1A /* PPCurlDebug.m */,
+			);
+			path = CurlDebug;
+			sourceTree = "<group>";
+		};
+		63AD0B05237C96FF00F4900B /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				63AD0B06237C975300F4900B /* PPCommunity.h */,
+				63AD0B07237C975300F4900B /* PPCommunity.m */,
+				63AD0B0A237C97CA00F4900B /* PPCommunityPost.h */,
+				63AD0B0B237C97CA00F4900B /* PPCommunityPost.m */,
+				63AD0B0E237C9A9F00F4900B /* PPCommunityPostReminder.h */,
+				63AD0B0F237C9A9F00F4900B /* PPCommunityPostReminder.m */,
+				63AB4A2223AD85580056AE8B /* PPCommunityReaction.h */,
+				63AB4A2323AD85580056AE8B /* PPCommunityReaction.m */,
+				63AB4A2623AD856B0056AE8B /* PPCommunityComment.h */,
+				63AB4A2723AD856B0056AE8B /* PPCommunityComment.m */,
+				63AD0B14237CC76100F4900B /* PPCommunityUser.h */,
+				63AD0B15237CC76100F4900B /* PPCommunityUser.m */,
+				63AD0B18237CC77900F4900B /* PPCommunityLocation.h */,
+				63AD0B19237CC77900F4900B /* PPCommunityLocation.m */,
+				635680E7241863C400EAA1D8 /* PPCommunityFile.h */,
+				635680E8241863C400EAA1D8 /* PPCommunityFile.m */,
+				63D3873623D7AB1200BBC378 /* PPAddress.h */,
+				63D3873723D7AB1200BBC378 /* PPAddress.m */,
+			);
+			path = Community;
+			sourceTree = "<group>";
+		};
+		63B526F92679468B007EA64B /* Admin APIs */ = {
+			isa = PBXGroup;
+			children = (
+				63B527032679470F007EA64B /* Administrators */,
+				63B52702267946FD007EA64B /* Organizations */,
+				63B52701267946F5007EA64B /* Users and Locations */,
+				63B52700267946F0007EA64B /* Devices */,
+				63B526FF267946EB007EA64B /* Firmware */,
+				63B526FE267946E7007EA64B /* Challenges */,
+				63B526FD267946E2007EA64B /* Tags */,
+				63B526FC267946DD007EA64B /* Questions */,
+				63B526FA267946BA007EA64B /* Reports */,
+				63B526FB267946C3007EA64B /* Billing */,
+			);
+			path = "Admin APIs";
+			sourceTree = "<group>";
+		};
+		63B526FA267946BA007EA64B /* Reports */ = {
+			isa = PBXGroup;
+			children = (
+				63B527512679A2BE007EA64B /* PPAdminReports.swift */,
+			);
+			path = Reports;
+			sourceTree = "<group>";
+		};
+		63B526FB267946C3007EA64B /* Billing */ = {
+			isa = PBXGroup;
+			children = (
+				63B527532679A8D4007EA64B /* PPAdminBilling.swift */,
+			);
+			path = Billing;
+			sourceTree = "<group>";
+		};
+		63B526FC267946DD007EA64B /* Questions */ = {
+			isa = PBXGroup;
+			children = (
+				63B5274E2679A00F007EA64B /* PPAdminQuestions.swift */,
+			);
+			path = Questions;
+			sourceTree = "<group>";
+		};
+		63B526FD267946E2007EA64B /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				63B5274C26798FAE007EA64B /* PPAdminTags.swift */,
+			);
+			path = Tags;
+			sourceTree = "<group>";
+		};
+		63B526FE267946E7007EA64B /* Challenges */ = {
+			isa = PBXGroup;
+			children = (
+				63B5274A26798D68007EA64B /* PPAdminChallenges.swift */,
+			);
+			path = Challenges;
+			sourceTree = "<group>";
+		};
+		63B526FF267946EB007EA64B /* Firmware */ = {
+			isa = PBXGroup;
+			children = (
+				63B5274626798B0E007EA64B /* PPAdminFirmware.swift */,
+			);
+			path = Firmware;
+			sourceTree = "<group>";
+		};
+		63B52700267946F0007EA64B /* Devices */ = {
+			isa = PBXGroup;
+			children = (
+				63B5274326798A3C007EA64B /* PPAdminDevices.swift */,
+			);
+			path = Devices;
+			sourceTree = "<group>";
+		};
+		63B52701267946F5007EA64B /* Users and Locations */ = {
+			isa = PBXGroup;
+			children = (
+				63B5273C26796CE1007EA64B /* PPAdminUsersAndLocations.swift */,
+			);
+			path = "Users and Locations";
+			sourceTree = "<group>";
+		};
+		63B52702267946FD007EA64B /* Organizations */ = {
+			isa = PBXGroup;
+			children = (
+				63B5273A267967FD007EA64B /* PPAdminOrganizations.swift */,
+			);
+			path = Organizations;
+			sourceTree = "<group>";
+		};
+		63B527032679470F007EA64B /* Administrators */ = {
+			isa = PBXGroup;
+			children = (
+				63B5272C2679534F007EA64B /* PPAdminAdministrators.swift */,
+			);
+			path = Administrators;
+			sourceTree = "<group>";
+		};
+		63B527552679AA80007EA64B /* Admin APIs */ = {
+			isa = PBXGroup;
+			children = (
+				63B5273226796330007EA64B /* AdminAdministrators-GetRoles-ResponseData.json */,
+				63B527382679648F007EA64B /* AdminAdministrators-GrantAdministrativeRoles-ResponseData.json */,
+				63B5273626796451007EA64B /* AdminAdministrators-RevokeAdministrativeRoles-ResponseData.json */,
+				63B5276A267A6C2E007EA64B /* AdminBilling-GenerateBill-ResponseData.json */,
+				63B52791267A6C32007EA64B /* AdminBilling-GetBills-ResponseData.json */,
+				63B52757267A6C2B007EA64B /* AdminBilling-RemoveBillingBot-ResponseData.json */,
+				63B5277E267A6C30007EA64B /* AdminChallenges-CreateAChallenge-ResponseData.json */,
+				63B52774267A6C2F007EA64B /* AdminChallenges-DeleteAChallenge-ResponseData.json */,
+				63B52792267A6C33007EA64B /* AdminChallenges-GetChallenges-ResponseData.json */,
+				63B5275C267A6C2C007EA64B /* AdminChallenges-GetEnergyUsage-ResponseData.json */,
+				63B52765267A6C2D007EA64B /* AdminChallenges-GetParticipants-ResponseData.json */,
+				63B5276C267A6C2E007EA64B /* AdminChallenges-UpdateAChallenge-ResponseData.json */,
+				63B5278B267A6C32007EA64B /* AdminChallenges-UpdateChallengeStatus-ResponseData.json */,
+				63B5278E267A6C32007EA64B /* AdminChallenges-UpdateStatus-ResponseData.json */,
+				63B52777267A6C30007EA64B /* AdminDevices-GetDevices-ResponseData.json */,
+				63B52790267A6C32007EA64B /* AdminFirmware-CreateUpdateJob-ResponseData.json */,
+				63B52778267A6C30007EA64B /* AdminFirmware-DeleteFirmwareVersions-ResponseData.json */,
+				63B5275E267A6C2C007EA64B /* AdminFirmware-DeleteUpdateJob-ResponseData.json */,
+				63B52780267A6C31007EA64B /* AdminFirmware-GetFirmwareVersions-ResponseData.json */,
+				63B5275A267A6C2C007EA64B /* AdminFirmware-GetUpdateJobs-ResponseData.json */,
+				63B5277B267A6C30007EA64B /* AdminFirmware-UpdateFirmwareGroupForDevices-ResponseData.json */,
+				63B52775267A6C2F007EA64B /* AdminFirmware-UploadFirmwareVersion-ResponseData.json */,
+				63B52768267A6C2D007EA64B /* AdminOrganizations-AddAnAdministrator-ResponseData.json */,
+				63B52789267A6C32007EA64B /* AdminOrganizations-CreateAnOrganization-ResponseData.json */,
+				63B52781267A6C31007EA64B /* AdminOrganizations-DeleteObject-ResponseData.json */,
+				63B52779267A6C30007EA64B /* AdminOrganizations-DeleteOrganization-ResponseData.json */,
+				63B52769267A6C2E007EA64B /* AdminOrganizations-GetAdministrators-ResponseData.json */,
+				63B5283926814D68007EA64B /* AdminOrganizations-GetObjectContent-ResponseData.data */,
+				63B5278C267A6C32007EA64B /* AdminOrganizations-GetOrganizations-ResponseData.json */,
+				63B52770267A6C2F007EA64B /* AdminOrganizations-GetOrganizationTotals-ResponseData.json */,
+				63B5277C267A6C30007EA64B /* AdminOrganizations-ListObjectsAndProperties-ResponseData.json */,
+				63B5278F267A6C32007EA64B /* AdminOrganizations-RemoveAdministrator-ResponseData.json */,
+				63B52759267A6C2C007EA64B /* AdminOrganizations-SetProperties-ResponseData.json */,
+				63B5277A267A6C30007EA64B /* AdminOrganizations-UpdateOrganization-ResponseData.json */,
+				63B52760267A6C2C007EA64B /* AdminOrganizations-UploadLargeObject-ResponseData.json */,
+				63B52764267A6C2D007EA64B /* AdminQuestions-AddQuestionToCollection-ResponseData.json */,
+				63B5276E267A6C2E007EA64B /* AdminQuestions-AskAQuestion-ResponseData.json */,
+				63B52776267A6C2F007EA64B /* AdminQuestions-DeleteAQuestion-ResponseData.json */,
+				63B5278D267A6C32007EA64B /* AdminQuestions-DeleteQuestionFromCollection-ResponseData.json */,
+				63B52788267A6C31007EA64B /* AdminQuestions-GetCollections-ResponseData.json */,
+				63B52771267A6C2F007EA64B /* AdminQuestions-GetQuestions-ResponseData.json */,
+				63B5276F267A6C2F007EA64B /* AdminQuestions-SetCollection-ResponseData.json */,
+				63B52761267A6C2D007EA64B /* AdminQuestions-UpdateAnswer-ResponseData.json */,
+				63B5275D267A6C2C007EA64B /* AdminQuestions-UpdateAQuestion-ResponseData.json */,
+				63B52783267A6C31007EA64B /* AdminReports-GenerateReport-ResponseData.txt */,
+				63B52766267A6C2D007EA64B /* AdminReports-GetGroups-ResponseData.json */,
+				63B5277D267A6C30007EA64B /* AdminReports-GetReportExecutionData-ResponseData.json */,
+				63B5276B267A6C2E007EA64B /* AdminReports-GetReports-ResponseData.json */,
+				63B52758267A6C2B007EA64B /* AdminReports-PutGroupOrganizationStatus-ResponseData.json */,
+				63B52785267A6C31007EA64B /* AdminTags-ApplyTags-ResponseData.json */,
+				63B5275B267A6C2C007EA64B /* AdminTags-DeleteTags-ResponseData.json */,
+				63B52786267A6C31007EA64B /* AdminTags-PopularTags-ResponseData.json */,
+				63B52787267A6C31007EA64B /* AdminUsersAndLocations-AddOrUpdateOrRemoveLocations-ResponseData.json */,
+				63B52784267A6C31007EA64B /* AdminUsersAndLocations-CreateAGroup-ResponseData.json */,
+				63B52782267A6C31007EA64B /* AdminUsersAndLocations-CreateLocation-ResponseData.json */,
+				63B5276D267A6C2E007EA64B /* AdminUsersAndLocations-DeleteAGroup-ResponseData.json */,
+				63B52773267A6C2F007EA64B /* AdminUsersAndLocations-DeleteLocation-ResponseData.json */,
+				63B5277F267A6C30007EA64B /* AdminUsersAndLocations-EditLocation-ResponseData.json */,
+				63B5275F267A6C2C007EA64B /* AdminUsersAndLocations-GetGroups-ResponseData.json */,
+				63B5278A267A6C32007EA64B /* AdminUsersAndLocations-GetLocations-ResponseData.json */,
+				63B52772267A6C2F007EA64B /* AdminUsersAndLocations-GetOrganizationNarratives-ResponseData.json */,
+				63B52767267A6C2D007EA64B /* AdminUsersAndLocations-GetUsers-ResponseData.json */,
+				63B52762267A6C2D007EA64B /* AdminUsersAndLocations-PostInvitation-ResponseData.json */,
+				63B52763267A6C2D007EA64B /* AdminUsersAndLocations-UpdateAGroup-ResponseData.json */,
+			);
+			name = "Admin APIs";
+			sourceTree = "<group>";
+		};
+		63B527E1267A6F17007EA64B /* Admin APIs */ = {
+			isa = PBXGroup;
+			children = (
+				63B5273026796228007EA64B /* PPTCAdminAdministrators.swift */,
+				63B527D2267A6EC6007EA64B /* PPTCAdminBilling.swift */,
+				63B527D4267A6EC7007EA64B /* PPTCAdminChallenges.swift */,
+				63B527D5267A6EC7007EA64B /* PPTCAdminDevices.swift */,
+				63B527D1267A6EC6007EA64B /* PPTCAdminFirmware.swift */,
+				63B527CF267A6EC5007EA64B /* PPTCAdminOrganizations.swift */,
+				63B527D0267A6EC5007EA64B /* PPTCAdminQuestions.swift */,
+				63B527D7267A6EC7007EA64B /* PPTCAdminReports.swift */,
+				63B527D6267A6EC7007EA64B /* PPTCAdminTags.swift */,
+				63B527D3267A6EC6007EA64B /* PPTCAdminUsersAndLocations.swift */,
+			);
+			name = "Admin APIs";
+			sourceTree = "<group>";
+		};
+		63C7CA092098DF1100967C4C /* Websocket */ = {
+			isa = PBXGroup;
+			children = (
+				63C7CA0B2098DF1100967C4C /* PPWebSocket.h */,
+				63C7CA0A2098DF1100967C4C /* PPWebSocket.m */,
+				63C7CA232098E98C00967C4C /* PPWebSocketConfiguration.h */,
+				63C7CA222098E98C00967C4C /* PPWebSocketConfiguration.m */,
+				63C7CA0E2098DF9200967C4C /* PPWebSocketCamera.h */,
+				63C7CA0F2098DF9200967C4C /* PPWebSocketCamera.m */,
+				63C7CA122098DFD200967C4C /* PPWebSocketViewer.h */,
+				63C7CA132098DFD200967C4C /* PPWebSocketViewer.m */,
+			);
+			path = Websocket;
+			sourceTree = "<group>";
+		};
+		63C7CA26209910C700967C4C /* Cameras */ = {
+			isa = PBXGroup;
+			children = (
+				63C7CA28209910D800967C4C /* PPDeviceCamera.h */,
+				63C7CA2A209910D800967C4C /* PPDeviceCamera.m */,
+				63C7CA27209910D800967C4C /* PPDeviceCameraLocal.h */,
+				63C7CA29209910D800967C4C /* PPDeviceCameraLocal.m */,
+				63FAAF97209B609F0062638A /* PPDeviceProxyLocalCamera.h */,
+				63FAAF98209B609F0062638A /* PPDeviceProxyLocalCamera.m */,
+				636D0F55210A1DF1005B9111 /* PPVideoToken.h */,
+				636D0F56210A1DF1005B9111 /* PPVideoToken.m */,
+			);
+			path = Cameras;
+			sourceTree = "<group>";
+		};
+		63C84360268E5B1A00C6165E /* Synthetic APIs */ = {
+			isa = PBXGroup;
+			children = (
+				63C84361268E5C4600C6165E /* PPSyntheticVayyarHome.swift */,
+				63C84363268E5CA900C6165E /* PPVayyarRoom.swift */,
+				63C84365268E5FD600C6165E /* PPVayyarSubregion.swift */,
+				63C84367268E614200C6165E /* PPVayyarSubregionBehavior.swift */,
+			);
+			path = "Synthetic APIs";
+			sourceTree = "<group>";
+		};
+		63C8436B268E6F9B00C6165E /* Synthetic APIs */ = {
+			isa = PBXGroup;
+			children = (
+				63C84369268E6F7900C6165E /* PPTCSyntheticVayyarHome.swift */,
+			);
+			name = "Synthetic APIs";
+			sourceTree = "<group>";
+		};
+		63C8436C268E718100C6165E /* Synthetic APIs */ = {
+			isa = PBXGroup;
+			children = (
+				63C8436E268E71FA00C6165E /* SyntheticVayyarHome-GetRoomBoundaries-ResponseData.json */,
+				63C84370268E72E300C6165E /* SyntheticVayyarHome-GetSubregions-ResponseData.json */,
+				63C84372268E730100C6165E /* SyntheticVayyarHome-GetSubregionBehaviors-ResponseData.json */,
+			);
+			name = "Synthetic APIs";
+			sourceTree = "<group>";
+		};
+		63C8436D268E71A000C6165E /* App APIs */ = {
+			isa = PBXGroup;
+			children = (
 				636B46D4248AF7E000124F6A /* ApplicationFiles-DeleteFile-ResponseData.json */,
 				636B4644248AF7C700124F6A /* ApplicationFiles-DownloadFile-ResponseData.data */,
 				636B464B248AF7C800124F6A /* ApplicationFiles-GetDownloadUrl-ResponseData.json */,
@@ -2448,479 +2973,7 @@
 				636B4641248AF7C600124F6A /* Weather-GetForecastByGeocode-ResponseData.json */,
 				636B46A6248AF7D800124F6A /* Weather-GetForecastByLocation-ResponseData.json */,
 			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		636DCC072493E880000560E8 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				636B4627248AF7A300124F6A /* Data */,
-				636DCC0E2493F9BA000560E8 /* Tests-Bridging-Header.h */,
-				636DCC042493E4B8000560E8 /* PPTCAppResources.h */,
-				63A7143E25AD00510009E43D /* PPTCLocalization.swift */,
-				636B47F1248AFA7B00124F6A /* UnitTests.plist */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		636DCC092493F8F1000560E8 /* APIs */ = {
-			isa = PBXGroup;
-			children = (
-				63B527E1267A6F17007EA64B /* Admin */,
-				636B4802248AFA7D00124F6A /* PPTCCircles.m */,
-				636B4809248AFA7F00124F6A /* PPTCCloudConnectivity.m */,
-				636B47FD248AFA7D00124F6A /* PPTCCloudsIntegration.m */,
-				636B47EF248AFA7A00124F6A /* PPTCCommunications.m */,
-				636B47EE248AFA7A00124F6A /* PPTCCommunity.m */,
-				636B47F3248AFA7B00124F6A /* PPTCDeviceMeasurements.m */,
-				636B4800248AFA7D00124F6A /* PPTCDevices.m */,
-				636B4804248AFA7E00124F6A /* PPTCDynamicUserInterfaces.m */,
-				636B47FC248AFA7C00124F6A /* PPTCEnergyManagement.m */,
-				636B480B248AFA7F00124F6A /* PPTCFileManagement.m */,
-				636B4808248AFA7E00124F6A /* PPTCApplicationFiles.m */,
-				636B4801248AFA7D00124F6A /* PPTCLogin.m */,
-				636B47FE248AFA7D00124F6A /* PPTCLogout.m */,
-				636B47EB248AFA7900124F6A /* PPTCPaidServices.m */,
-				636B4803248AFA7E00124F6A /* PPTCProducts.m */,
-				636B47F0248AFA7A00124F6A /* PPTCProfessionalMonitoring.m */,
-				636B47FA248AFA7C00124F6A /* PPTCReports.m */,
-				636B47F8248AFA7C00124F6A /* PPTCRules.m */,
-				636B47F6248AFA7B00124F6A /* PPTCSystemAndUserProperties.m */,
-				636B4805248AFA7E00124F6A /* PPTCUserAccounts.m */,
-				636B47F7248AFA7C00124F6A /* PPTCWeather.m */,
-			);
-			name = APIs;
-			sourceTree = "<group>";
-		};
-		636DCC0B2493F92A000560E8 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				636B47F5248AFA7B00124F6A /* PPTCDateUtilities.m */,
-				636DCC1524940463000560E8 /* PPTCAppResources.swift */,
-			);
-			name = Classes;
-			sourceTree = "<group>";
-		};
-		636DCC0C2493F939000560E8 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				636B4807248AFA7E00124F6A /* PPTCBaseModel.m */,
-				63B52837268115E9007EA64B /* PPTCBaseModel.swift */,
-				636B47FF248AFA7D00124F6A /* PPTCCopying.m */,
-				636B47FB248AFA7C00124F6A /* PPTCOperationToken.m */,
-				636B47ED248AFA7A00124F6A /* PPTCDeviceProxy.m */,
-				636DCC0F2493F9BA000560E8 /* PPTCVersion.swift */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
-		636DCC0D2493F945000560E8 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Categories;
-			sourceTree = "<group>";
-		};
-		636EC3F62058395B001ED811 /* Weather */ = {
-			isa = PBXGroup;
-			children = (
-				636EC3F720583969001ED811 /* PPWeatherManagement.h */,
-				636EC3F820583969001ED811 /* PPWeatherManagement.m */,
-				636EC3FA20583A66001ED811 /* PPWeather.h */,
-				636EC3FB20583A66001ED811 /* PPWeather.m */,
-				636EC3FD20583A73001ED811 /* PPWeatherMetadata.h */,
-				636EC3FE20583A73001ED811 /* PPWeatherMetadata.m */,
-				636EC40020583A7C001ED811 /* PPWeatherForecast.h */,
-				636EC40120583A7C001ED811 /* PPWeatherForecast.m */,
-				636EC40320583A90001ED811 /* PPWeatherObservation.h */,
-				636EC40420583A90001ED811 /* PPWeatherObservation.m */,
-				636EC40620583A9E001ED811 /* PPWeatherObservationMetric.h */,
-				636EC40720583A9E001ED811 /* PPWeatherObservationMetric.m */,
-			);
-			path = Weather;
-			sourceTree = "<group>";
-		};
-		636EC4092058447D001ED811 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				636EC40A205844A0001ED811 /* PPDeviceTypes.h */,
-				636EC40B205844A0001ED811 /* PPDeviceTypes.m */,
-				636EC40D205844E8001ED811 /* PPDeviceType.h */,
-				636EC40E205844E8001ED811 /* PPDeviceType.m */,
-				636EC410205848B9001ED811 /* PPDeviceTypeAttribute.h */,
-				636EC411205848B9001ED811 /* PPDeviceTypeAttribute.m */,
-				63A95264205C8012000E466A /* PPDeviceTypeAttributeOption.h */,
-				63A95265205C8012000E466A /* PPDeviceTypeAttributeOption.m */,
-				636EC41320584B37001ED811 /* PPDeviceTypeParameter.h */,
-				636EC41420584B37001ED811 /* PPDeviceTypeParameter.m */,
-				6372B66321349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.h */,
-				6372B66421349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.m */,
-				636EC41620584ECD001ED811 /* PPDeviceTypeRuleComponentTemplate.h */,
-				636EC41720584ECD001ED811 /* PPDeviceTypeRuleComponentTemplate.m */,
-				63A95268205C882C000E466A /* PPDeviceTypeRuleComponentTemplateProduct.h */,
-				63A95269205C882C000E466A /* PPDeviceTypeRuleComponentTemplateProduct.m */,
-				63D3943E205212F800041C1A /* PPDeviceTypeGoal.h */,
-				63D3943F205212F800041C1A /* PPDeviceTypeGoal.m */,
-				636EC4192058580D001ED811 /* PPDeviceTypeInstallationInstructions.h */,
-				636EC41A2058580D001ED811 /* PPDeviceTypeInstallationInstructions.m */,
-				636EC41C205858EA001ED811 /* PPDeviceTypeMedia.h */,
-				636EC41D205858EA001ED811 /* PPDeviceTypeMedia.m */,
-				636EC42120585B1C001ED811 /* PPDeviceTypeDeviceModel.h */,
-				636EC42220585B1C001ED811 /* PPDeviceTypeDeviceModel.m */,
-				636EC42420585C63001ED811 /* PPDeviceTypeDeviceModelCategory.h */,
-				636EC42520585C63001ED811 /* PPDeviceTypeDeviceModelCategory.m */,
-				634360AB206313D800B1DAE2 /* PPDeviceTypeDeviceModelBrand.h */,
-				634360AC206313D800B1DAE2 /* PPDeviceTypeDeviceModelBrand.m */,
-				6309B75F20E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.h */,
-				6309B76020E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.m */,
-				636EC427205862C7001ED811 /* PPDeviceTypeStory.h */,
-				636EC428205862C7001ED811 /* PPDeviceTypeStory.m */,
-				636EC42A205862DB001ED811 /* PPDeviceTypeStoryPage.h */,
-				636EC42B205862DB001ED811 /* PPDeviceTypeStoryPage.m */,
-				635E3AC122C26BE600C171B0 /* PPDeviceTypeStoryPageAction.h */,
-				635E3AC222C26BE600C171B0 /* PPDeviceTypeStoryPageAction.m */,
-				634360AE2063288D00B1DAE2 /* PPDeviceTypeStoryModel.h */,
-				634360AF2063288D00B1DAE2 /* PPDeviceTypeStoryModel.m */,
-			);
-			path = Products;
-			sourceTree = "<group>";
-		};
-		636EC42D2058654A001ED811 /* Clouds Integration */ = {
-			isa = PBXGroup;
-			children = (
-				636EC42E205865E3001ED811 /* PPCloudsIntegration.h */,
-				636EC42F205865E3001ED811 /* PPCloudsIntegration.m */,
-				6360FAB621B8520200DB2B6B /* PPCloudsIntegrationCloud.h */,
-				6360FAB721B8520200DB2B6B /* PPCloudsIntegrationCloud.m */,
-				636EC43120586637001ED811 /* PPCloudsIntegrationClient.h */,
-				636EC43220586637001ED811 /* PPCloudsIntegrationClient.m */,
-				636EC4342058663F001ED811 /* PPCloudsIntegrationHost.h */,
-				636EC4352058663F001ED811 /* PPCloudsIntegrationHost.m */,
-				636EC4372058764A001ED811 /* PPCloudsIntegrationHostAccessToken.h */,
-				636EC4382058764A001ED811 /* PPCloudsIntegrationHostAccessToken.m */,
-			);
-			path = "Clouds Integration";
-			sourceTree = "<group>";
-		};
-		636EC43A2058782F001ED811 /* Circles */ = {
-			isa = PBXGroup;
-			children = (
-				636EC43B2058783C001ED811 /* PPCircles.h */,
-				636EC43C2058783C001ED811 /* PPCircles.m */,
-				636EC43E205879F7001ED811 /* PPCircle.h */,
-				636EC43F205879F7001ED811 /* PPCircle.m */,
-				636EC44120587A32001ED811 /* PPCircleMember.h */,
-				636EC44220587A32001ED811 /* PPCircleMember.m */,
-				636EC44420587A87001ED811 /* PPCircleFile.h */,
-				636EC44520587A87001ED811 /* PPCircleFile.m */,
-				636EC44720587A96001ED811 /* PPCirclePost.h */,
-				636EC44820587A96001ED811 /* PPCirclePost.m */,
-				636EC44A20587AAC001ED811 /* PPCircleReaction.h */,
-				636EC44B20587AAC001ED811 /* PPCircleReaction.m */,
-				631DB29921077D8900C2F8F1 /* PPCircleDevice.h */,
-				631DB29A21077D8900C2F8F1 /* PPCircleDevice.m */,
-				63512367213890BB003E7EAA /* PPCircleDeviceCamera.h */,
-				63512368213890BB003E7EAA /* PPCircleDeviceCamera.m */,
-				6351236B21389112003E7EAA /* PPCircleDevicePictureFrame.h */,
-				6351236C21389112003E7EAA /* PPCircleDevicePictureFrame.m */,
-			);
-			path = Circles;
-			sourceTree = "<group>";
-		};
-		636EC44D20588CAF001ED811 /* Reports */ = {
-			isa = PBXGroup;
-			children = (
-				636EC44E20588CBF001ED811 /* PPReports.h */,
-				636EC44F20588CBF001ED811 /* PPReports.m */,
-				63A9526D205DC1B3000E466A /* PPDeviceAlert.h */,
-				63A9526E205DC1B3000E466A /* PPDeviceAlert.m */,
-			);
-			path = Reports;
-			sourceTree = "<group>";
-		};
-		636EC45120588E19001ED811 /* Login and Logout */ = {
-			isa = PBXGroup;
-			children = (
-				636EC45220588E29001ED811 /* PPLogin.h */,
-				636EC45320588E29001ED811 /* PPLogin.m */,
-				636EC45520588E30001ED811 /* PPLogout.h */,
-				636EC45620588E30001ED811 /* PPLogout.m */,
-				636EC45820588F41001ED811 /* PPOperationTokenManagement.h */,
-				636EC45920588F41001ED811 /* PPOperationTokenManagement.m */,
-				63D393BC204F542C00041C1A /* PPOperationToken.h */,
-				63D393BB204F542C00041C1A /* PPOperationToken.m */,
-			);
-			path = "Login and Logout";
-			sourceTree = "<group>";
-		};
-		636EC45B2058A432001ED811 /* User */ = {
-			isa = PBXGroup;
-			children = (
-				63D3931A204F3CD300041C1A /* PPUser.h */,
-				63D39319204F3CD300041C1A /* PPUser.m */,
-				63D393E52050532800041C1A /* PPUserEmail.h */,
-				63D393E62050532800041C1A /* PPUserEmail.m */,
-				63D393BE204F750200041C1A /* PPUserBadge.h */,
-				63D393BF204F750200041C1A /* PPUserBadge.m */,
-				63D393C1204F776400041C1A /* PPUserTag.h */,
-				63D393C2204F776400041C1A /* PPUserTag.m */,
-				638E82F924412416000B07FD /* PPUserCode.h */,
-				638E82FA24412416000B07FD /* PPUserCode.m */,
-				63D393CA204F871200041C1A /* PPUserService.h */,
-				63D393CB204F871200041C1A /* PPUserService.m */,
-				631F72F023BBC16600F98797 /* PPUserCommunity.h */,
-				631F72F123BBC16600F98797 /* PPUserCommunity.m */,
-			);
-			path = User;
-			sourceTree = "<group>";
-		};
-		63A9522A205A5566000E466A /* CurlDebug */ = {
-			isa = PBXGroup;
-			children = (
-				63D39304204F287800041C1A /* PPCurlDebug.h */,
-				63D39305204F287800041C1A /* PPCurlDebug.m */,
-			);
-			path = CurlDebug;
-			sourceTree = "<group>";
-		};
-		63AD0B05237C96FF00F4900B /* Community */ = {
-			isa = PBXGroup;
-			children = (
-				63AD0B06237C975300F4900B /* PPCommunity.h */,
-				63AD0B07237C975300F4900B /* PPCommunity.m */,
-				63AD0B0A237C97CA00F4900B /* PPCommunityPost.h */,
-				63AD0B0B237C97CA00F4900B /* PPCommunityPost.m */,
-				63AD0B0E237C9A9F00F4900B /* PPCommunityPostReminder.h */,
-				63AD0B0F237C9A9F00F4900B /* PPCommunityPostReminder.m */,
-				63AB4A2223AD85580056AE8B /* PPCommunityReaction.h */,
-				63AB4A2323AD85580056AE8B /* PPCommunityReaction.m */,
-				63AB4A2623AD856B0056AE8B /* PPCommunityComment.h */,
-				63AB4A2723AD856B0056AE8B /* PPCommunityComment.m */,
-				63AD0B14237CC76100F4900B /* PPCommunityUser.h */,
-				63AD0B15237CC76100F4900B /* PPCommunityUser.m */,
-				63AD0B18237CC77900F4900B /* PPCommunityLocation.h */,
-				63AD0B19237CC77900F4900B /* PPCommunityLocation.m */,
-				635680E7241863C400EAA1D8 /* PPCommunityFile.h */,
-				635680E8241863C400EAA1D8 /* PPCommunityFile.m */,
-				63D3873623D7AB1200BBC378 /* PPAddress.h */,
-				63D3873723D7AB1200BBC378 /* PPAddress.m */,
-			);
-			path = Community;
-			sourceTree = "<group>";
-		};
-		63B526F92679468B007EA64B /* Admins */ = {
-			isa = PBXGroup;
-			children = (
-				63B527032679470F007EA64B /* Administrators */,
-				63B52702267946FD007EA64B /* Organizations */,
-				63B52701267946F5007EA64B /* Users and Locations */,
-				63B52700267946F0007EA64B /* Devices */,
-				63B526FF267946EB007EA64B /* Firmware */,
-				63B526FE267946E7007EA64B /* Challenges */,
-				63B526FD267946E2007EA64B /* Tags */,
-				63B526FC267946DD007EA64B /* Questions */,
-				63B526FA267946BA007EA64B /* Reports */,
-				63B526FB267946C3007EA64B /* Billing */,
-			);
-			path = Admins;
-			sourceTree = "<group>";
-		};
-		63B526FA267946BA007EA64B /* Reports */ = {
-			isa = PBXGroup;
-			children = (
-				63B527512679A2BE007EA64B /* PPAdminReports.swift */,
-			);
-			path = Reports;
-			sourceTree = "<group>";
-		};
-		63B526FB267946C3007EA64B /* Billing */ = {
-			isa = PBXGroup;
-			children = (
-				63B527532679A8D4007EA64B /* PPAdminBilling.swift */,
-			);
-			path = Billing;
-			sourceTree = "<group>";
-		};
-		63B526FC267946DD007EA64B /* Questions */ = {
-			isa = PBXGroup;
-			children = (
-				63B5274E2679A00F007EA64B /* PPAdminQuestions.swift */,
-			);
-			path = Questions;
-			sourceTree = "<group>";
-		};
-		63B526FD267946E2007EA64B /* Tags */ = {
-			isa = PBXGroup;
-			children = (
-				63B5274C26798FAE007EA64B /* PPAdminTags.swift */,
-			);
-			path = Tags;
-			sourceTree = "<group>";
-		};
-		63B526FE267946E7007EA64B /* Challenges */ = {
-			isa = PBXGroup;
-			children = (
-				63B5274A26798D68007EA64B /* PPAdminChallenges.swift */,
-			);
-			path = Challenges;
-			sourceTree = "<group>";
-		};
-		63B526FF267946EB007EA64B /* Firmware */ = {
-			isa = PBXGroup;
-			children = (
-				63B5274626798B0E007EA64B /* PPAdminFirmware.swift */,
-			);
-			path = Firmware;
-			sourceTree = "<group>";
-		};
-		63B52700267946F0007EA64B /* Devices */ = {
-			isa = PBXGroup;
-			children = (
-				63B5274326798A3C007EA64B /* PPAdminDevices.swift */,
-			);
-			path = Devices;
-			sourceTree = "<group>";
-		};
-		63B52701267946F5007EA64B /* Users and Locations */ = {
-			isa = PBXGroup;
-			children = (
-				63B5273C26796CE1007EA64B /* PPAdminUsersAndLocations.swift */,
-			);
-			path = "Users and Locations";
-			sourceTree = "<group>";
-		};
-		63B52702267946FD007EA64B /* Organizations */ = {
-			isa = PBXGroup;
-			children = (
-				63B5273A267967FD007EA64B /* PPAdminOrganizations.swift */,
-			);
-			path = Organizations;
-			sourceTree = "<group>";
-		};
-		63B527032679470F007EA64B /* Administrators */ = {
-			isa = PBXGroup;
-			children = (
-				63B5272C2679534F007EA64B /* PPAdminAdministrators.swift */,
-			);
-			path = Administrators;
-			sourceTree = "<group>";
-		};
-		63B527552679AA80007EA64B /* Admin */ = {
-			isa = PBXGroup;
-			children = (
-				63B5273226796330007EA64B /* AdminAdministrators-GetRoles-ResponseData.json */,
-				63B527382679648F007EA64B /* AdminAdministrators-GrantAdministrativeRoles-ResponseData.json */,
-				63B5273626796451007EA64B /* AdminAdministrators-RevokeAdministrativeRoles-ResponseData.json */,
-				63B5276A267A6C2E007EA64B /* AdminBilling-GenerateBill-ResponseData.json */,
-				63B52791267A6C32007EA64B /* AdminBilling-GetBills-ResponseData.json */,
-				63B52757267A6C2B007EA64B /* AdminBilling-RemoveBillingBot-ResponseData.json */,
-				63B5277E267A6C30007EA64B /* AdminChallenges-CreateAChallenge-ResponseData.json */,
-				63B52774267A6C2F007EA64B /* AdminChallenges-DeleteAChallenge-ResponseData.json */,
-				63B52792267A6C33007EA64B /* AdminChallenges-GetChallenges-ResponseData.json */,
-				63B5275C267A6C2C007EA64B /* AdminChallenges-GetEnergyUsage-ResponseData.json */,
-				63B52765267A6C2D007EA64B /* AdminChallenges-GetParticipants-ResponseData.json */,
-				63B5276C267A6C2E007EA64B /* AdminChallenges-UpdateAChallenge-ResponseData.json */,
-				63B5278B267A6C32007EA64B /* AdminChallenges-UpdateChallengeStatus-ResponseData.json */,
-				63B5278E267A6C32007EA64B /* AdminChallenges-UpdateStatus-ResponseData.json */,
-				63B52777267A6C30007EA64B /* AdminDevices-GetDevices-ResponseData.json */,
-				63B52790267A6C32007EA64B /* AdminFirmware-CreateUpdateJob-ResponseData.json */,
-				63B52778267A6C30007EA64B /* AdminFirmware-DeleteFirmwareVersions-ResponseData.json */,
-				63B5275E267A6C2C007EA64B /* AdminFirmware-DeleteUpdateJob-ResponseData.json */,
-				63B52780267A6C31007EA64B /* AdminFirmware-GetFirmwareVersions-ResponseData.json */,
-				63B5275A267A6C2C007EA64B /* AdminFirmware-GetUpdateJobs-ResponseData.json */,
-				63B5277B267A6C30007EA64B /* AdminFirmware-UpdateFirmwareGroupForDevices-ResponseData.json */,
-				63B52775267A6C2F007EA64B /* AdminFirmware-UploadFirmwareVersion-ResponseData.json */,
-				63B52768267A6C2D007EA64B /* AdminOrganizations-AddAnAdministrator-ResponseData.json */,
-				63B52789267A6C32007EA64B /* AdminOrganizations-CreateAnOrganization-ResponseData.json */,
-				63B52781267A6C31007EA64B /* AdminOrganizations-DeleteObject-ResponseData.json */,
-				63B52779267A6C30007EA64B /* AdminOrganizations-DeleteOrganization-ResponseData.json */,
-				63B52769267A6C2E007EA64B /* AdminOrganizations-GetAdministrators-ResponseData.json */,
-				63B5283926814D68007EA64B /* AdminOrganizations-GetObjectContent-ResponseData.data */,
-				63B5278C267A6C32007EA64B /* AdminOrganizations-GetOrganizations-ResponseData.json */,
-				63B52770267A6C2F007EA64B /* AdminOrganizations-GetOrganizationTotals-ResponseData.json */,
-				63B5277C267A6C30007EA64B /* AdminOrganizations-ListObjectsAndProperties-ResponseData.json */,
-				63B5278F267A6C32007EA64B /* AdminOrganizations-RemoveAdministrator-ResponseData.json */,
-				63B52759267A6C2C007EA64B /* AdminOrganizations-SetProperties-ResponseData.json */,
-				63B5277A267A6C30007EA64B /* AdminOrganizations-UpdateOrganization-ResponseData.json */,
-				63B52760267A6C2C007EA64B /* AdminOrganizations-UploadLargeObject-ResponseData.json */,
-				63B52764267A6C2D007EA64B /* AdminQuestions-AddQuestionToCollection-ResponseData.json */,
-				63B5276E267A6C2E007EA64B /* AdminQuestions-AskAQuestion-ResponseData.json */,
-				63B52776267A6C2F007EA64B /* AdminQuestions-DeleteAQuestion-ResponseData.json */,
-				63B5278D267A6C32007EA64B /* AdminQuestions-DeleteQuestionFromCollection-ResponseData.json */,
-				63B52788267A6C31007EA64B /* AdminQuestions-GetCollections-ResponseData.json */,
-				63B52771267A6C2F007EA64B /* AdminQuestions-GetQuestions-ResponseData.json */,
-				63B5276F267A6C2F007EA64B /* AdminQuestions-SetCollection-ResponseData.json */,
-				63B52761267A6C2D007EA64B /* AdminQuestions-UpdateAnswer-ResponseData.json */,
-				63B5275D267A6C2C007EA64B /* AdminQuestions-UpdateAQuestion-ResponseData.json */,
-				63B52783267A6C31007EA64B /* AdminReports-GenerateReport-ResponseData.txt */,
-				63B52766267A6C2D007EA64B /* AdminReports-GetGroups-ResponseData.json */,
-				63B5277D267A6C30007EA64B /* AdminReports-GetReportExecutionData-ResponseData.json */,
-				63B5276B267A6C2E007EA64B /* AdminReports-GetReports-ResponseData.json */,
-				63B52758267A6C2B007EA64B /* AdminReports-PutGroupOrganizationStatus-ResponseData.json */,
-				63B52785267A6C31007EA64B /* AdminTags-ApplyTags-ResponseData.json */,
-				63B5275B267A6C2C007EA64B /* AdminTags-DeleteTags-ResponseData.json */,
-				63B52786267A6C31007EA64B /* AdminTags-PopularTags-ResponseData.json */,
-				63B52787267A6C31007EA64B /* AdminUsersAndLocations-AddOrUpdateOrRemoveLocations-ResponseData.json */,
-				63B52784267A6C31007EA64B /* AdminUsersAndLocations-CreateAGroup-ResponseData.json */,
-				63B52782267A6C31007EA64B /* AdminUsersAndLocations-CreateLocation-ResponseData.json */,
-				63B5276D267A6C2E007EA64B /* AdminUsersAndLocations-DeleteAGroup-ResponseData.json */,
-				63B52773267A6C2F007EA64B /* AdminUsersAndLocations-DeleteLocation-ResponseData.json */,
-				63B5277F267A6C30007EA64B /* AdminUsersAndLocations-EditLocation-ResponseData.json */,
-				63B5275F267A6C2C007EA64B /* AdminUsersAndLocations-GetGroups-ResponseData.json */,
-				63B5278A267A6C32007EA64B /* AdminUsersAndLocations-GetLocations-ResponseData.json */,
-				63B52772267A6C2F007EA64B /* AdminUsersAndLocations-GetOrganizationNarratives-ResponseData.json */,
-				63B52767267A6C2D007EA64B /* AdminUsersAndLocations-GetUsers-ResponseData.json */,
-				63B52762267A6C2D007EA64B /* AdminUsersAndLocations-PostInvitation-ResponseData.json */,
-				63B52763267A6C2D007EA64B /* AdminUsersAndLocations-UpdateAGroup-ResponseData.json */,
-			);
-			name = Admin;
-			sourceTree = "<group>";
-		};
-		63B527E1267A6F17007EA64B /* Admin */ = {
-			isa = PBXGroup;
-			children = (
-				63B5273026796228007EA64B /* PPTCAdminAdministrators.swift */,
-				63B527D2267A6EC6007EA64B /* PPTCAdminBilling.swift */,
-				63B527D4267A6EC7007EA64B /* PPTCAdminChallenges.swift */,
-				63B527D5267A6EC7007EA64B /* PPTCAdminDevices.swift */,
-				63B527D1267A6EC6007EA64B /* PPTCAdminFirmware.swift */,
-				63B527CF267A6EC5007EA64B /* PPTCAdminOrganizations.swift */,
-				63B527D0267A6EC5007EA64B /* PPTCAdminQuestions.swift */,
-				63B527D7267A6EC7007EA64B /* PPTCAdminReports.swift */,
-				63B527D6267A6EC7007EA64B /* PPTCAdminTags.swift */,
-				63B527D3267A6EC6007EA64B /* PPTCAdminUsersAndLocations.swift */,
-			);
-			name = Admin;
-			sourceTree = "<group>";
-		};
-		63C7CA092098DF1100967C4C /* Websocket */ = {
-			isa = PBXGroup;
-			children = (
-				63C7CA0B2098DF1100967C4C /* PPWebSocket.h */,
-				63C7CA0A2098DF1100967C4C /* PPWebSocket.m */,
-				63C7CA232098E98C00967C4C /* PPWebSocketConfiguration.h */,
-				63C7CA222098E98C00967C4C /* PPWebSocketConfiguration.m */,
-				63C7CA0E2098DF9200967C4C /* PPWebSocketCamera.h */,
-				63C7CA0F2098DF9200967C4C /* PPWebSocketCamera.m */,
-				63C7CA122098DFD200967C4C /* PPWebSocketViewer.h */,
-				63C7CA132098DFD200967C4C /* PPWebSocketViewer.m */,
-			);
-			path = Websocket;
-			sourceTree = "<group>";
-		};
-		63C7CA26209910C700967C4C /* Cameras */ = {
-			isa = PBXGroup;
-			children = (
-				63C7CA28209910D800967C4C /* PPDeviceCamera.h */,
-				63C7CA2A209910D800967C4C /* PPDeviceCamera.m */,
-				63C7CA27209910D800967C4C /* PPDeviceCameraLocal.h */,
-				63C7CA29209910D800967C4C /* PPDeviceCameraLocal.m */,
-				63FAAF97209B609F0062638A /* PPDeviceProxyLocalCamera.h */,
-				63FAAF98209B609F0062638A /* PPDeviceProxyLocalCamera.m */,
-				636D0F55210A1DF1005B9111 /* PPVideoToken.h */,
-				636D0F56210A1DF1005B9111 /* PPVideoToken.m */,
-			);
-			path = Cameras;
+			name = "App APIs";
 			sourceTree = "<group>";
 		};
 		63C8A0AA2059FCEA00256F37 /* Tests */ = {
@@ -2930,7 +2983,9 @@
 				636DCC0C2493F939000560E8 /* Models */,
 				636DCC0B2493F92A000560E8 /* Classes */,
 				636DCC072493E880000560E8 /* Resources */,
-				636DCC092493F8F1000560E8 /* APIs */,
+				63B527E1267A6F17007EA64B /* Admin APIs */,
+				63C8436B268E6F9B00C6165E /* Synthetic APIs */,
+				636DCC092493F8F1000560E8 /* App APIs */,
 				636B47F9248AFA7C00124F6A /* PPBaseTestCase.h */,
 				636B47F2248AFA7B00124F6A /* PPBaseTestCase.m */,
 			);
@@ -3018,7 +3073,8 @@
 		63D392D3204F263000041C1A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				63B526F92679468B007EA64B /* Admins */,
+				63B526F92679468B007EA64B /* Admin APIs */,
+				63C84360268E5B1A00C6165E /* Synthetic APIs */,
 				631F847E2064326F0055C512 /* Cloud Connectivity */,
 				636EC45120588E19001ED811 /* Login and Logout */,
 				63D39335204F414E00041C1A /* User Accounts */,
@@ -4318,6 +4374,7 @@
 				63B527CE267A6C33007EA64B /* AdminChallenges-GetChallenges-ResponseData.json in Resources */,
 				636B49B9248AFBDE00124F6A /* Login-SendPasscode-ResponseData.json in Resources */,
 				636B49C9248AFBDF00124F6A /* Products-CreateRulePhrase-ResponseData.json in Resources */,
+				63C84371268E72E300C6165E /* SyntheticVayyarHome-GetSubregions-ResponseData.json in Resources */,
 				636B4A19248AFBE500124F6A /* UserAccounts-ResetBadges-ResponseData.json in Resources */,
 				636B4995248AFBDB00124F6A /* Devices-GetDeviceById-ResponseData.json in Resources */,
 				63B527A2267A6C33007EA64B /* AdminReports-GetGroups-ResponseData.json in Resources */,
@@ -4400,6 +4457,7 @@
 				636B495C248AFBD700124F6A /* ApplicationFiles-UploadFile-ResponseData.json in Resources */,
 				63B527392679648F007EA64B /* AdminAdministrators-GrantAdministrativeRoles-ResponseData.json in Resources */,
 				636B4968248AFBD800124F6A /* Circles-MakePost-ResponseData.json in Resources */,
+				63C84373268E730100C6165E /* SyntheticVayyarHome-GetSubregionBehaviors-ResponseData.json in Resources */,
 				636B499C248AFBDC00124F6A /* Devices-SetDeviceProperties-ResponseData.json in Resources */,
 				636B49C0248AFBDE00124F6A /* PaidServices-GetTransactions-ResponseData.json in Resources */,
 				63B527C5267A6C33007EA64B /* AdminOrganizations-CreateAnOrganization-ResponseData.json in Resources */,
@@ -4415,6 +4473,7 @@
 				636B4A2C248AFBE600124F6A /* UserCommunications-SendMessage-ResponseData.json in Resources */,
 				636B4A08248AFBE300124F6A /* UserAccounts-GetNarratives-ResponseData.json in Resources */,
 				63B527A6267A6C33007EA64B /* AdminBilling-GenerateBill-ResponseData.json in Resources */,
+				63C8436F268E71FA00C6165E /* SyntheticVayyarHome-GetRoomBoundaries-ResponseData.json in Resources */,
 				636B498F248AFBDB00124F6A /* DeviceMeasurements-SubmitDataRequest-ResponseData.json in Resources */,
 				636B4812248AFA7F00124F6A /* UnitTests.plist in Resources */,
 			);
@@ -4674,6 +4733,7 @@
 				63BEC9E920C5D67500408494 /* PPUserTag.m in Sources */,
 				63BECA4020C5D6C300408494 /* PPEnergyManagementDeviceUsageAggregatedEnergy.m in Sources */,
 				63BEC9E220C5D67500408494 /* PPLocation.m in Sources */,
+				63C84364268E5CA900C6165E /* PPVayyarRoom.swift in Sources */,
 				63BECA2520C5D6A100408494 /* PPRuleComponentTrigger.m in Sources */,
 				63BECA3F20C5D6C300408494 /* PPEnergyManagementDeviceUsageAggregated.m in Sources */,
 				630BDE2124B3AFFF0035D8B3 /* PPDevicePictureFrameLocal.m in Sources */,
@@ -4699,6 +4759,7 @@
 				638147552282101100CC1CCD /* PPDeviceDataRequest.m in Sources */,
 				63BECA7B20C5D6E500408494 /* PPAFHTTPSessionManager.m in Sources */,
 				63BECA1220C5D6A100408494 /* PPInAppMessageRecipient.m in Sources */,
+				63C84366268E5FD600C6165E /* PPVayyarSubregion.swift in Sources */,
 				63BEC9E420C5D67500408494 /* PPLocationSize.m in Sources */,
 				63BECA8920C5D6E500408494 /* PPNSData.m in Sources */,
 				631F72F323BBC16600F98797 /* PPUserCommunity.m in Sources */,
@@ -4772,6 +4833,7 @@
 				63BEC9E520C5D67500408494 /* PPLocationSceneEvent.m in Sources */,
 				63BECA6820C5D6E500408494 /* PPCirclePost.m in Sources */,
 				63BEC9CA20C5D67500408494 /* PPNetworkUtilities.m in Sources */,
+				63C84368268E614200C6165E /* PPVayyarSubregionBehavior.swift in Sources */,
 				63BECA7120C5D6E500408494 /* PPBotengineAppInstance.m in Sources */,
 				63BECA7E20C5D6E500408494 /* PPCloudEngine.m in Sources */,
 				63BEC9DD20C5D67500408494 /* PPCloudConnectivityServer.m in Sources */,
@@ -4878,6 +4940,7 @@
 				63BECA0120C5D67500408494 /* PPDeviceMeasurements.m in Sources */,
 				63BEC9F320C5D67500408494 /* PPDeviceCamera.m in Sources */,
 				63BECA7D20C5D6E500408494 /* PPUrl.m in Sources */,
+				63C84362268E5C4600C6165E /* PPSyntheticVayyarHome.swift in Sources */,
 				63BECA6F20C5D6E500408494 /* PPBotengineAppCommunications.m in Sources */,
 				63BECA1E20C5D6A100408494 /* PPFileTag.m in Sources */,
 				63BEC9F620C5D67500408494 /* PPWebSocket.m in Sources */,
@@ -4914,6 +4977,7 @@
 				63B52838268115E9007EA64B /* PPTCBaseModel.swift in Sources */,
 				636B494C248AFBCE00124F6A /* PPTCFileManagement.m in Sources */,
 				636B4943248AFBCE00124F6A /* PPTCRules.m in Sources */,
+				63C8436A268E6F7900C6165E /* PPTCSyntheticVayyarHome.swift in Sources */,
 				636B494E248AFBCE00124F6A /* PPTCOperationToken.m in Sources */,
 				636B4951248AFBCE00124F6A /* PPTCCloudsIntegration.m in Sources */,
 				636B4953248AFBCE00124F6A /* PPTCCommunications.m in Sources */,
