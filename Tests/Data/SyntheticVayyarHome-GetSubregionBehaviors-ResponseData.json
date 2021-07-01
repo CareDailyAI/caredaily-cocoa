@@ -1,0 +1,298 @@
+{
+  "resultCode": 0,
+  "value": [
+      {
+          "context_id": 1,
+          "title": "King Bed",
+          "icon": "bed-alt",
+          "icon_font": "far",
+          "width_cm": 193,
+          "length_cm": 204,
+          "flexible_cm": false,
+          "detect_falls": false,
+          "edit_falls": false,
+          "detect_presence": true,
+          "edit_presence": false,
+          "enter_duration_s": 3,
+          "exit_duration_s": 3,
+          "compatible_behaviors": [
+              0
+          ]
+      },
+      {
+          "context_id": 2,
+          "title": "Cal King Bed",
+          "icon": "bed-alt",
+          "icon_font": "far",
+          "width_cm": 183,
+          "length_cm": 214,
+          "flexible_cm": false,
+          "detect_falls": false,
+          "edit_falls": false,
+          "detect_presence": true,
+          "edit_presence": false,
+          "enter_duration_s": 3,
+          "exit_duration_s": 3,
+          "compatible_behaviors": [
+              0
+          ]
+      },
+      {
+          "context_id": 3,
+          "title": "Queen Bed",
+          "icon": "bed-alt",
+          "icon_font": "far",
+          "width_cm": 153,
+          "length_cm": 204,
+          "flexible_cm": false,
+          "detect_falls": false,
+          "edit_falls": false,
+          "detect_presence": true,
+          "edit_presence": false,
+          "enter_duration_s": 3,
+          "exit_duration_s": 3,
+          "compatible_behaviors": [
+              0
+          ]
+      },
+      {
+          "context_id": 4,
+          "title": "Full Bed",
+          "icon": "bed-alt",
+          "icon_font": "far",
+          "width_cm": 135,
+          "length_cm": 191,
+          "flexible_cm": false,
+          "detect_falls": false,
+          "edit_falls": false,
+          "detect_presence": true,
+          "edit_presence": false,
+          "enter_duration_s": 3,
+          "exit_duration_s": 3,
+          "compatible_behaviors": [
+              0
+          ]
+      },
+      {
+          "context_id": 5,
+          "title": "Twin XL Bed",
+          "icon": "bed-empty",
+          "icon_font": "far",
+          "width_cm": 97,
+          "length_cm": 204,
+          "flexible_cm": false,
+          "compatible_behaviors": [
+              0
+          ]
+      },
+      {
+          "context_id": 6,
+          "title": "Twin Bed",
+          "icon": "bed-empty",
+          "icon_font": "far",
+          "width_cm": 97,
+          "length_cm": 191,
+          "flexible_cm": false,
+          "detect_falls": false,
+          "edit_falls": false,
+          "detect_presence": true,
+          "edit_presence": false,
+          "enter_duration_s": 3,
+          "exit_duration_s": 3,
+          "compatible_behaviors": [
+              0
+          ]
+      },
+      {
+          "context_id": 7,
+          "title": "Crib",
+          "icon": "baby",
+          "icon_font": "far",
+          "width_cm": 69,
+          "length_cm": 132,
+          "flexible_cm": false,
+          "detect_falls": false,
+          "edit_falls": false,
+          "detect_presence": true,
+          "edit_presence": false,
+          "enter_duration_s": 3,
+          "exit_duration_s": 3,
+          "compatible_behaviors": [
+              0
+          ]
+      },
+      {
+          "context_id": 10,
+          "title": "Toilet",
+          "icon": "toilet",
+          "description": "Include the area in front of the toilet to detect people.",
+          "icon_font": "far",
+          "width_cm": 76,
+          "length_cm": 120,
+          "flexible_cm": false,
+          "detect_falls": true,
+          "edit_falls": false,
+          "detect_presence": true,
+          "edit_presence": false,
+          "enter_duration_s": 3,
+          "exit_duration_s": 3,
+          "compatible_behaviors": [
+              1
+          ]
+      },
+      {
+          "context_id": 11,
+          "title": "Bathtub / Shower",
+          "icon": "bath",
+          "icon_font": "far",
+          "width_cm": 152,
+          "length_cm": 82,
+          "flexible_cm": false,
+          "detect_falls": true,
+          "edit_falls": true,
+          "detect_presence": true,
+          "edit_presence": false,
+          "enter_duration_s": 3,
+          "exit_duration_s": 3,
+          "compatible_behaviors": [
+              1
+          ]
+      },
+      {
+          "context_id": 12,
+          "title": "Walk-in Shower",
+          "icon": "shower",
+          "icon_font": "far",
+          "width_cm": 152,
+          "length_cm": 91,
+          "flexible_cm": true,
+          "detect_falls": true,
+          "edit_falls": false,
+          "detect_presence": true,
+          "edit_presence": false,
+          "enter_duration_s": 3,
+          "exit_duration_s": 3,
+          "compatible_behaviors": [
+              1
+          ]
+      },
+      {
+          "context_id": 13,
+          "title": "Sink Area",
+          "description": "Include the area in front of the sink to detect people.",
+          "icon": "sink",
+          "icon_font": "far",
+          "width_cm": 1,
+          "length_cm": 130,
+          "flexible_cm": true,
+          "detect_falls": true,
+          "edit_falls": false,
+          "detect_presence": true,
+          "edit_presence": true,
+          "enter_duration_s": 3,
+          "exit_duration_s": 3,
+          "compatible_behaviors": [
+              1
+          ]
+      },
+      {
+          "context_id": 20,
+          "title": "Large Chair",
+          "icon": "loveseat",
+          "icon_font": "far",
+          "width_cm": 135,
+          "length_cm": 114,
+          "flexible_cm": true,
+          "detect_falls": false,
+          "edit_falls": false,
+          "detect_presence": true,
+          "edit_presence": true,
+          "enter_duration_s": 3,
+          "exit_duration_s": 3,
+          "compatible_behaviors": [
+              2
+          ]
+      },
+      {
+          "context_id": 21,
+          "title": "Small Chair",
+          "icon": "chair",
+          "icon_font": "far",
+          "width_cm": 48,
+          "length_cm": 52,
+          "flexible_cm": true,
+          "detect_falls": false,
+          "edit_falls": false,
+          "detect_presence": true,
+          "edit_presence": true,
+          "enter_duration_s": 3,
+          "exit_duration_s": 3,
+          "compatible_behaviors": [
+              2,
+              3
+          ]
+      },
+      {
+          "context_id": 22,
+          "title": "Sofa / Couch",
+          "icon": "couch",
+          "icon_font": "far",
+          "width_cm": 259,
+          "length_cm": 98,
+          "flexible_cm": true,
+          "detect_falls": false,
+          "edit_falls": false,
+          "detect_presence": true,
+          "edit_presence": true,
+          "enter_duration_s": 3,
+          "exit_duration_s": 3,
+          "compatible_behaviors": [
+              2
+          ]
+      },
+      {
+          "context_id": 100,
+          "title": "Exit Door Area",
+          "detail": "Large area in front of an exit door.",
+          "icon": "door-open",
+          "icon_font": "far",
+          "width_cm": 152,
+          "length_cm": 100,
+          "flexible_cm": true,
+          "detect_falls": true,
+          "edit_falls": true,
+          "detect_presence": true,
+          "edit_presence": false,
+          "enter_duration_s": 3,
+          "exit_duration_s": 3,
+          "compatible_behaviors": [
+              2,
+              0,
+              3
+          ]
+      },
+      {
+          "context_id": -1,
+          "title": "Ignore this area",
+          "description": "Select this to prevent false alarms in this area of the room.",
+          "icon": "eye-slash",
+          "icon_font": "far",
+          "width_cm": 50,
+          "length_cm": 50,
+          "flexible_cm": true,
+          "detect_falls": false,
+          "edit_falls": false,
+          "detect_presence": true,
+          "edit_presence": true,
+          "enter_duration_s": 3,
+          "exit_duration_s": 3,
+          "compatible_behaviors": [
+              2,
+              0,
+              3,
+              1,
+              4
+          ]
+      }
+  ]
+}

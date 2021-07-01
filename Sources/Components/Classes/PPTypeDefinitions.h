@@ -3600,7 +3600,7 @@ typedef void (^PPUserAccountsNarrativesBlock)(NSArray * _Nullable narratives, NS
 typedef void (^PPUserAccountsAddLocationBlock)(PPLocationId locationId, NSError * _Nullable error);
 typedef void (^PPUserAccountsLocationPresenceBlock)(NSArray * _Nullable ibeaconUUIDs, NSError * _Nullable error);
 typedef void (^PPUserAccountsLocationIdBlock)(PPLocationId locationId, NSError * _Nullable error);
-typedef void (^PPUserAccountsStateBlock)(NSDictionary * _Nullable data, NSError * _Nullable error);
+typedef void (^PPUserAccountsStateBlock)(NSObject * _Nullable data, NSError * _Nullable error);
 typedef void (^PPUserAccountsStatesBlock)(NSArray * _Nullable states, NSError * _Nullable error);
 typedef void (^PPUserAccountsUserCodesBlock)(NSArray * _Nullable userCodes, NSError * _Nullable error);
 

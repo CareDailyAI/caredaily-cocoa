@@ -1027,7 +1027,7 @@ static NSString *moduleName = @"UserAccounts";
 
     [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/locations/%@/state", @(self.location.locationId)] statusCode:200 headers:nil];
     
-    [PPUserAccounts getState:self.location.locationId name:@"test_state" callback:^(NSDictionary *data, NSError *error) {
+    [PPUserAccounts getState:self.location.locationId name:@"test_state" callback:^(NSObject *data, NSError *error) {
         XCTAssertNil(error);
         [expectation fulfill];
     }];
