@@ -19,6 +19,10 @@ import Foundation
  */
 @objc
 open class PPVayyarRoom: PPBaseModel {
+    
+    open override class func primaryKey() -> String? {
+        return "deviceId"
+    }
     @objc open var deviceId: String!
     
     @objc open var xMin: Double = 1.9

@@ -63,11 +63,12 @@
 }
 
 - (void)doSomething {
-    
+    [self checkVayyarRealmClasses];
 }
 
 - (void)initRealm {
     NSLog(@"%s", __PRETTY_FUNCTION__);
+    [PPRealm configureDefaultRealm];
     self.realm = [PPRealm defaultRealm];
 }
 
@@ -114,6 +115,62 @@
     else {
         NSLog(@"%s No Objects", __PRETTY_FUNCTION__);
     }
+}
+
+- (void)checkVayyarRealmClasses {
+    PPVayyarRoom *room = [[PPVayyarRoom alloc] init:@"My Device" data:@{
+        @"x_min": @1.9,
+        @"x_max": @1.9,
+        @"y_min": @0.3,
+        @"y_max": @3.9,
+        @"z_min": @0,
+        @"z_max": @2.5,
+    }];
+
+    PPVayyarSubregion *subregion = [[PPVayyarSubregion alloc] init:@"My Device" data:@{
+        @"subregion_id": @0,
+        @"name": @"Bed",
+        @"context_id": @1,
+        @"x_min_meters": @-1.1,
+        @"x_max_meters": @0.83,
+        @"y_min_meters": @1.25,
+        @"y_max_meters": @3.35,
+        @"detect_falls": @false,
+        @"detect_presence": @true,
+        @"enter_duration_s": @3,
+        @"exit_duration_s": @3,
+        @"unique_id": @"a7944d3e-f748-4153-8a12-6634fa9bb833"
+    }];
+
+    PPVayyarSubregionBehavior *behavior = [[PPVayyarSubregionBehavior alloc] init:@{
+        @"context_id": @2,
+        @"title": @"Cal King Bed",
+        @"icon": @"bed-alt",
+        @"icon_font": @"far",
+        @"width_cm": @183,
+        @"length_cm": @214,
+        @"flexible_cm": @false,
+        @"detect_falls": @false,
+        @"edit_falls": @false,
+        @"detect_presence": @true,
+        @"edit_presence": @false,
+        @"enter_duration_s": @3,
+        @"exit_duration_s": @3,
+        @"compatible_behaviors": @[
+            @0
+        ]
+    }];
+    [self.realm transactionWithBlock:^{
+        [self.realm addOrUpdateObject:room];
+        [self.realm addOrUpdateObject:subregion];
+        [self.realm deleteObjects:[PPVayyarSubregionBehavior allObjects]];
+        [self.realm addObject:behavior];
+    }];
+
+    RLMResults *rooms = [PPVayyarRoom allObjects];
+    RLMResults *subregions = [PPVayyarSubregion allObjects];
+    RLMResults *behaviors = [PPVayyarSubregionBehavior allObjects];
+    NSLog(@"%s %@\n%@\n%@", __PRETTY_FUNCTION__, rooms, subregions, behaviors);
 }
 
 @end

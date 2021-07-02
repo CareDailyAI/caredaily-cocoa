@@ -27,6 +27,11 @@ import Foundation
  */
 @objc
 open class PPVayyarSubregion: PPBaseModel {
+    
+    open override class func primaryKey() -> String? {
+        return "uniqueId"
+    }
+    
     /// Device ID to apply this subregion to
     @objc open var deviceId: String!
     

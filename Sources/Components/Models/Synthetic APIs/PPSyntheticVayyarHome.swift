@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc public class PPSyntheticVayyarHome: PPBaseModel {
+@objc public class PPSyntheticVayyarHome: NSObject {
     
     // Location state name
     @objc public static let stateName: String = "vayyar_room"

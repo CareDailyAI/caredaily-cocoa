@@ -43,7 +43,7 @@ import Foundation
     @objc open var editPresence: Bool = true
     @objc open var enterDuration: Int = 3
     @objc open var exitDuration: Int = 3
-    @objc open var compatibleBehaviors: [Int] = []
+    @objc open var compatibleBehaviors: RLMArray<PPVayyarCompatibleBehavior> = RLMArray.init(objectClassName: "PPVayyarCompatibleBehavior")
     
     @objc open var detectionStatus: String {
         get {
@@ -112,7 +112,17 @@ import Foundation
             self.exitDuration = exitDuration
         }
         if let compatibleBehaviors = data?["compatible_behaviors"] as? [Int] {
-            self.compatibleBehaviors = compatibleBehaviors
+            let array: RLMArray<PPVayyarCompatibleBehavior> = RLMArray.init(objectClassName: "PPVayyarCompatibleBehavior")
+            array.addObjects(compatibleBehaviors.map { PPVayyarCompatibleBehavior($0) } as NSFastEnumeration)
+            self.compatibleBehaviors = array
         }
+    }
+}
+
+@objc public class PPVayyarCompatibleBehavior : PPBaseModel {
+    @objc public var behaviorId: Int = 0
+    @objc public convenience init(_ behaviorId: Int) {
+        self.init()
+        self.behaviorId = behaviorId
     }
 }
