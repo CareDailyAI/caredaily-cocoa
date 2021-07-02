@@ -99,12 +99,12 @@ open class PPVayyarSubregion: PPBaseModel {
         self.init()
         self.deviceId = deviceId
         if let subregionId = data["subregion_id"] as? Int {
-            self.subregionId = PPVayyarSubregionId(rawValue: subregionId) ?? .none
+            self.subregionId = PPVayyarSubregionId(rawValue: subregionId)
         }
         self.uniqueId = data["unique_id"] as? String ?? UUID().uuidString
         self.name = data["name"] as? String ?? ""
         if let contextId = data["context_id"] as? Int {
-            self.contextId = PPVayyarContextId(rawValue: contextId) ?? .none
+            self.contextId = PPVayyarContextId(rawValue: contextId)
         }
         if let xMin = data["x_min_meters"] as? Double {
             self.xMin = xMin
@@ -131,12 +131,4 @@ open class PPVayyarSubregion: PPBaseModel {
             self.exitDuration = exitDuration
         }
     }
-}
-
-@objc public enum PPVayyarSubregionId: Int {
-    case none = -1
-}
-
-@objc public enum PPVayyarContextId: Int {
-    case none = -1
 }
