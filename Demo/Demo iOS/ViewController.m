@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Demo_iOS-Swift.h"
 
 @import Peoplepower;
 
@@ -63,6 +64,7 @@
 }
 
 - (void)doSomething {
+    [self doSomethingInSwift];
     [self checkVayyarRealmClasses];
 }
 

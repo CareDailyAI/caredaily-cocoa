@@ -49,6 +49,7 @@
 		631A7AC8248B376600D86CFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 631A7AC7248B376600D86CFF /* main.m */; };
 		631A7ADD248B376600D86CFF /* Peoplepower_DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631A7ADC248B376600D86CFF /* Peoplepower_DemoUITests.m */; };
 		631A7AEB248B377D00D86CFF /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 631A7AEA248B377D00D86CFF /* Cartfile */; };
+		63C84379268F787B00C6165E /* ViewController+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C84378268F787B00C6165E /* ViewController+Swift.swift */; };
 		63E4CCDEA594A618AB4832E0 /* libPods-Demo iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98415DAA7137D771996564E8 /* libPods-Demo iOS.a */; };
 		63E62B572492A1A60038A694 /* Peoplepower-Config-Override.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63E62B562492A1A60038A694 /* Peoplepower-Config-Override.plist */; };
 		91BFE0A07118670DBB002CBC /* libPods-Demo watchOS Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4FFD1545CF41F8DC7E636C /* libPods-Demo watchOS Extension.a */; };
@@ -159,6 +160,8 @@
 		631A7AF0248B3AB800D86CFF /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
 		631A7AF1248B3AB800D86CFF /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
 		631A7AF3248B3AB800D86CFF /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICKeyChainStore.framework; path = Carthage/Build/iOS/UICKeyChainStore.framework; sourceTree = "<group>"; };
+		63C84377268F787A00C6165E /* Demo iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Demo iOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		63C84378268F787B00C6165E /* ViewController+Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Swift.swift"; sourceTree = "<group>"; };
 		63E62AC42491A4060038A694 /* Peoplepower.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Peoplepower.framework; path = Carthage/Build/iOS/Peoplepower.framework; sourceTree = "<group>"; };
 		63E62B562492A1A60038A694 /* Peoplepower-Config-Override.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Peoplepower-Config-Override.plist"; sourceTree = "<group>"; };
 		956A803CE7D1B61AB5DAC302 /* Pods-Demo iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo iOS.release.xcconfig"; path = "Target Support Files/Pods-Demo iOS/Pods-Demo iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -319,12 +322,14 @@
 				631A7AB9248B376500D86CFF /* SceneDelegate.m */,
 				631A7ABB248B376500D86CFF /* ViewController.h */,
 				631A7ABC248B376500D86CFF /* ViewController.m */,
+				63C84378268F787B00C6165E /* ViewController+Swift.swift */,
 				631A7ABE248B376500D86CFF /* Main.storyboard */,
 				631A7AC1248B376600D86CFF /* Assets.xcassets */,
 				631A7AC3248B376600D86CFF /* LaunchScreen.storyboard */,
 				631A7AC6248B376600D86CFF /* Info.plist */,
 				631A7AC7248B376600D86CFF /* main.m */,
 				63E62B562492A1A60038A694 /* Peoplepower-Config-Override.plist */,
+				63C84377268F787A00C6165E /* Demo iOS-Bridging-Header.h */,
 			);
 			path = "Demo iOS";
 			sourceTree = "<group>";
@@ -498,6 +503,7 @@
 					};
 					631A7AB1248B376500D86CFF = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1250;
 					};
 					631A7AD7248B376600D86CFF = {
 						CreatedOnToolsVersion = 11.5;
@@ -797,6 +803,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63C84379268F787B00C6165E /* ViewController+Swift.swift in Sources */,
 				631A7ABD248B376500D86CFF /* ViewController.m in Sources */,
 				631A7AB7248B376500D86CFF /* AppDelegate.m in Sources */,
 				631A7AC8248B376600D86CFF /* main.m in Sources */,
@@ -1157,6 +1164,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Demo iOS/Demo iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1173,6 +1181,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.demo.iOS;
 				PRODUCT_NAME = "Demo iOS";
+				SWIFT_OBJC_BRIDGING_HEADER = "Demo iOS/Demo iOS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1182,6 +1193,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Demo iOS/Demo iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1198,6 +1210,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.demo.iOS;
 				PRODUCT_NAME = "Demo iOS";
+				SWIFT_OBJC_BRIDGING_HEADER = "Demo iOS/Demo iOS-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1205,6 +1219,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F991DCA70CF86ECDDF0B66CB /* Pods-Demo iOSUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EAWY6XBUH2;
 				INFOPLIST_FILE = "Demo iOSUITests/Info.plist";
@@ -1225,6 +1240,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1C3F805A411A851FEF2C35CC /* Pods-Demo iOSUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EAWY6XBUH2;
 				INFOPLIST_FILE = "Demo iOSUITests/Info.plist";

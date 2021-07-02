@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+@objc extension ViewController {
+    @objc public func doSomethingInSwift() {
+        
+    }
+}
