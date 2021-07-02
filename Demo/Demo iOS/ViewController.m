@@ -167,10 +167,19 @@
         [self.realm addObject:behavior];
     }];
 
-    RLMResults *rooms = [PPVayyarRoom allObjects];
+    RLMResults<PPVayyarRoom *> *rooms = [PPVayyarRoom allObjects];
     RLMResults *subregions = [PPVayyarSubregion allObjects];
     RLMResults *behaviors = [PPVayyarSubregionBehavior allObjects];
     NSLog(@"%s %@\n%@\n%@", __PRETTY_FUNCTION__, rooms, subregions, behaviors);
+    
+    PPVayyarRoom *_room = [rooms firstObject];
+    NSLog(@"%s name: %@ (%@)", __PRETTY_FUNCTION__, @(_room.xMin), [_room valueForKey:@"xMin"]);
+    
+    [self.realm transactionWithBlock:^{
+        _room.xMin = 2.0;
+    }];
+    
+    NSLog(@"%s name: %@ (%@)", __PRETTY_FUNCTION__, @(_room.xMin), [_room valueForKey:@"xMin"]);
 }
 
 @end
