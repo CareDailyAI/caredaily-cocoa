@@ -3088,6 +3088,18 @@ typedef NS_OPTIONS(NSInteger, PPCloudEngineType) {
     PPCloudEngineTypeReport
 };
 
+// MARK: - Synthetic APIS
+
+// MARK: Vayyar
+
+typedef NS_OPTIONS(NSInteger, PPVayyarSubregionId) {
+    PPVayyarSubregionIdNone = -1
+};
+
+typedef NS_OPTIONS(NSInteger, PPVayyarContextId) {
+    PPVayyarContextIdNone = -1
+};
+
 // MARK: -
 // MARK: - Categories
 

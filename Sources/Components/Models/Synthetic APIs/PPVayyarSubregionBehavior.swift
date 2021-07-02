@@ -72,7 +72,7 @@ import Foundation
     @objc public convenience init(_ data: Dictionary<String, Any>?) {
         self.init()
         if let contextId = data?["context_id"] as? Int {
-            self.contextId = PPVayyarContextId(rawValue: contextId) ?? .none
+            self.contextId = PPVayyarContextId(rawValue: contextId)
         }
         if let title = data?["title"] as? String {
             self.title = title
