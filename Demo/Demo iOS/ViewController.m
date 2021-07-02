@@ -27,6 +27,31 @@
     PPLocation *location = [PPLocation initWithDictionary:@{}];
     location.appName = @"my app";
     NSLog(@"location.appName: %@", location.appName);
+    
+    UIButton *button;
+    UIImage *image;
+    if (@available(iOS 13.0, *)) {
+        
+        image = [UIImage systemImageNamed:@"circle"
+                        withConfiguration: [UIImageSymbolConfiguration configurationWithPointSize:30
+                                                                                           weight:UIImageSymbolWeightHeavy
+                                                                                            scale:UIImageSymbolScaleLarge]];
+        button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.translatesAutoresizingMaskIntoConstraints = false;
+        
+        [button setImage:image forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(doSomething) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+    }
+    
+    [[button.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor] setActive:true];
+    [[button.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor] setActive:true];
+    [[button.widthAnchor constraintEqualToConstant:100] setActive:true];
+    [[button.heightAnchor constraintEqualToConstant:100] setActive:true];
+}
+
+- (void)doSomething {
+    
 }
 
 

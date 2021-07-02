@@ -27,9 +27,9 @@ import Foundation
  * - `exit_duration_s` Number of seconds to wait until Vayyar Home declares the sub-region is unoccupied (default is 3 seconds).
  * - `compatible_behaviors` List List of compatible behavior ID's, as defined in the `behaviors` state
  */
-@objc open class PPVayyarSubregionBehavior: NSObject {
+@objc open class PPVayyarSubregionBehavior: PPBaseModel {
     
-    @objc open var contextId: Int = -1
+    @objc open var contextId: PPVayyarContextId = .none
     @objc open var title: String = NSLocalizedString("Ignore this area", comment: "location.device.vayyar.subregion.behavior.ignore");
     @objc open var detail: String? = NSLocalizedString("Select this to prevent false alarms in this area of the room.", comment: "location.device.vayyar.subregion.behavior.ignore.detail")
     @objc open var icon: String = "eye-slash"
@@ -72,7 +72,7 @@ import Foundation
     @objc public convenience init(_ data: Dictionary<String, Any>?) {
         self.init()
         if let contextId = data?["context_id"] as? Int {
-            self.contextId = contextId
+            self.contextId = PPVayyarContextId(rawValue: contextId) ?? .none
         }
         if let title = data?["title"] as? String {
             self.title = title

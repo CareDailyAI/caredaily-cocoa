@@ -26,21 +26,21 @@ import Foundation
  * - `exitDuration` Optional. Number of seconds to wait until Vayyar Home declares the sub-region is unoccupied (default is 3 seconds).
  */
 @objc
-open class PPVayyarSubregion: NSObject {
+open class PPVayyarSubregion: PPBaseModel {
     /// Device ID to apply this subregion to
     @objc open var deviceId: String!
     
     /// Subregion ID of this subregion.  Optional. If provided then this is an existing subregion
-    @objc open var subregionId: NSNumber?
+    @objc open var subregionId: PPVayyarSubregionId = .none
     
     /// Context / behavior of this subregion - see the Subregion Behavior Properties
-    @objc open var contextId: Int = 0
+    @objc open var contextId: PPVayyarContextId = .none
     
     /// Context / behavior of this subregion - see the Subregion Behavior Properties
-    @objc open var uniqueId: String = UUID().uuidString
+    @objc open var uniqueId: String!
     
     /// Descriptive name of this subregion, default is the title of the subregion context that was selected.
-    @objc open var name: String = ""
+    @objc open var name: String!
     
     /// Required. Looking into the room from the device, this is the left-most side of the sub-region. Remember to the left of Vayyar Home is negative numbers on the x-axis.
     @objc open var xMin: Double = -1.0
@@ -94,14 +94,12 @@ open class PPVayyarSubregion: NSObject {
         self.init()
         self.deviceId = deviceId
         if let subregionId = data["subregion_id"] as? Int {
-            self.subregionId = NSNumber(value: subregionId)
+            self.subregionId = PPVayyarSubregionId(rawValue: subregionId) ?? .none
         }
         self.uniqueId = data["unique_id"] as? String ?? UUID().uuidString
-        if let name = data["name"] as? String {
-            self.name = name
-        }
+        self.name = data["name"] as? String ?? ""
         if let contextId = data["context_id"] as? Int {
-            self.contextId = contextId
+            self.contextId = PPVayyarContextId(rawValue: contextId) ?? .none
         }
         if let xMin = data["x_min_meters"] as? Double {
             self.xMin = xMin
@@ -128,4 +126,12 @@ open class PPVayyarSubregion: NSObject {
             self.exitDuration = exitDuration
         }
     }
+}
+
+@objc public enum PPVayyarSubregionId: Int {
+    case none = -1
+}
+
+@objc public enum PPVayyarContextId: Int {
+    case none = -1
 }
