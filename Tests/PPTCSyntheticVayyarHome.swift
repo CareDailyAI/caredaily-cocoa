@@ -25,7 +25,7 @@ class PPTCSyntheticVayyarHome: PPBaseTestCase {
         let expectation = XCTestExpectation(description: methodName)
         stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/cloud/json/locations/1/state", statusCode: 200, headers: nil)
         
-        PPSyntheticVayyarHome.getRoomBoundaries(PPLocationId(rawValue: 1)) { rooms, error in
+        PPVayyarHome.getRoomBoundaries(PPLocationId(rawValue: 1)) { rooms, error in
             XCTAssertNil(error)
             XCTAssertTrue(rooms?.count == 3)
             expectation.fulfill()
@@ -38,7 +38,7 @@ class PPTCSyntheticVayyarHome: PPBaseTestCase {
         let expectation = XCTestExpectation(description: methodName)
         stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/cloud/json/locations/1/state", statusCode: 200, headers: nil)
         
-        PPSyntheticVayyarHome.getSubregions(PPLocationId(rawValue: 1)) { subregions, error in
+        PPVayyarHome.getSubregions(PPLocationId(rawValue: 1)) { subregions, error in
             XCTAssertNil(error)
             XCTAssertTrue(subregions?.count == 6)
             expectation.fulfill()
@@ -51,7 +51,7 @@ class PPTCSyntheticVayyarHome: PPBaseTestCase {
         let expectation = XCTestExpectation(description: methodName)
         stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/cloud/json/locations/1/state", statusCode: 200, headers: nil)
         
-        PPSyntheticVayyarHome.getSubregionBehaviors(PPLocationId(rawValue: 1)) { behaviors, error in
+        PPVayyarHome.getSubregionBehaviors(PPLocationId(rawValue: 1)) { behaviors, error in
             XCTAssertNil(error)
             XCTAssertTrue(behaviors?.count == 16)
             expectation.fulfill()

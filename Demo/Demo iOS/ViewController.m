@@ -120,7 +120,7 @@
 }
 
 - (void)checkVayyarRealmClasses {
-    PPVayyarRoom *room = [[PPVayyarRoom alloc] init:@"My Device" data:@{
+    PPVayyarRoom *room = [PPVayyarRoom initWithDeviceId:@"My Device" data:@{
         @"x_min": @1.9,
         @"x_max": @1.9,
         @"y_min": @0.3,
@@ -129,7 +129,7 @@
         @"z_max": @2.5,
     }];
 
-    PPVayyarSubregion *subregion = [[PPVayyarSubregion alloc] init:@"My Device" data:@{
+    PPVayyarSubregion *subregion = [PPVayyarSubregion initWithDeviceId:@"My Device" data:@{
         @"subregion_id": @0,
         @"name": @"Bed",
         @"context_id": @1,
@@ -144,7 +144,7 @@
         @"unique_id": @"a7944d3e-f748-4153-8a12-6634fa9bb833"
     }];
 
-    PPVayyarSubregionBehavior *behavior = [[PPVayyarSubregionBehavior alloc] init:@{
+    PPVayyarSubregionBehavior *behavior = [PPVayyarSubregionBehavior initWithData:@{
         @"context_id": @2,
         @"title": @"Cal King Bed",
         @"icon": @"bed-alt",
@@ -175,13 +175,13 @@
     NSLog(@"%s %@\n%@\n%@", __PRETTY_FUNCTION__, rooms, subregions, behaviors);
     
     PPVayyarRoom *_room = [rooms firstObject];
-    NSLog(@"%s name: %@ (%@)", __PRETTY_FUNCTION__, @(_room.xMin), [_room valueForKey:@"xMin"]);
+    NSLog(@"%s name: %@ (%@)", __PRETTY_FUNCTION__, _room.xMin, [_room valueForKey:@"xMin"]);
     
     [self.realm transactionWithBlock:^{
-        _room.xMin = 2.0;
+        _room.xMin = @2.0;
     }];
     
-    NSLog(@"%s name: %@ (%@)", __PRETTY_FUNCTION__, @(_room.xMin), [_room valueForKey:@"xMin"]);
+    NSLog(@"%s name: %@ (%@)", __PRETTY_FUNCTION__, _room.xMin, [_room valueForKey:@"xMin"]);
 }
 
 @end
