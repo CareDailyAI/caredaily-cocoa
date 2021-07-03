@@ -151,6 +151,10 @@ FOUNDATION_EXPORT const unsigned char PeoplepowerVersionString[];
 #import <Peoplepower/PPCloudEngine.h>
 #import <Peoplepower/PPVersion.h>
 
+#pragma mark - Synthetic
+
+#import <Peoplepower/PPVayyarHome.h>
+
 #pragma mark - Categories -
 
 #import <Peoplepower/PPNSString.h>

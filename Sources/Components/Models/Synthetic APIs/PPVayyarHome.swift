@@ -1,5 +1,5 @@
 //
-//  PPSyntheticVayyarHome.swift
+//  PPVayyarHome.swift
 //  Peoplepower
 //
 //  Created by Destry Teeter on 7/1/21.
@@ -8,10 +8,7 @@
 
 import Foundation
 
-@objc public class PPSyntheticVayyarHome: PPBaseModel {
-    
-    // Location state name
-    @objc public static let stateName: String = "vayyar_room"
+@objc public class PPVayyarHome: PPBaseModel {
     
     /**
      * # Get the room boundaries
@@ -56,8 +53,7 @@ import Foundation
                     else {
                         continue
                     }
-                        
-                    rooms.append(PPVayyarRoom(deviceId, data: data))
+                    rooms.append(PPVayyarRoom.initWithDeviceId(deviceId, data: data))
                 }
                 
                 PPLogAPIs(#file, message: "< \(queue.label)")
@@ -123,7 +119,7 @@ import Foundation
                     }
                     
                     for data in deviceStateData {
-                        subregions.append(PPVayyarSubregion(deviceId, data: data))
+                        subregions.append(PPVayyarSubregion.initWithDeviceId(deviceId, data: data))
                     }
                 }
                 
@@ -186,7 +182,7 @@ import Foundation
 
                 var behaviors: [PPVayyarSubregionBehavior] = []
                 for data in stateData {
-                    behaviors.append(PPVayyarSubregionBehavior(data))
+                    behaviors.append(PPVayyarSubregionBehavior.initWithData(data))
                 }
                 
                 PPLogAPIs(#file, message: "< \(queue.label)")
@@ -407,4 +403,8 @@ import Foundation
 
         PPBotengine.postDataStream(.invdividual, address: address, locationId: locationId, organizationId: .none, feed: feed, appInstanceId: PPBotengineAppInstanceId.none.rawValue, callback: callback)
     }
+}
+
+extension PPVayyarRoom {
+    
 }

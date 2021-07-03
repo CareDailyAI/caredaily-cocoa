@@ -747,6 +747,16 @@
 		639D8DFD25DDDCDA003376E7 /* PPQuestionSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 639D8DFA25DDDCDA003376E7 /* PPQuestionSlider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		639D8DFE25DDDCDA003376E7 /* PPQuestionSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 639D8DFB25DDDCDA003376E7 /* PPQuestionSlider.m */; };
 		639D8DFF25DDDCDA003376E7 /* PPQuestionSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 639D8DFB25DDDCDA003376E7 /* PPQuestionSlider.m */; };
+		639F9286268FC59700622490 /* PPVayyarHome.h in Headers */ = {isa = PBXBuildFile; fileRef = 639F9285268FC59700622490 /* PPVayyarHome.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		639F9287268FC59700622490 /* PPVayyarHome.h in Headers */ = {isa = PBXBuildFile; fileRef = 639F9285268FC59700622490 /* PPVayyarHome.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		639F928A268FDE0A00622490 /* PPVayyarSubregion.h in Headers */ = {isa = PBXBuildFile; fileRef = 639F9288268FDE0A00622490 /* PPVayyarSubregion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		639F928B268FDE0A00622490 /* PPVayyarSubregion.h in Headers */ = {isa = PBXBuildFile; fileRef = 639F9288268FDE0A00622490 /* PPVayyarSubregion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		639F928C268FDE0A00622490 /* PPVayyarSubregion.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F9289268FDE0A00622490 /* PPVayyarSubregion.m */; };
+		639F928D268FDE0A00622490 /* PPVayyarSubregion.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F9289268FDE0A00622490 /* PPVayyarSubregion.m */; };
+		639F9290268FDE5900622490 /* PPVayyarSubregionBehavior.h in Headers */ = {isa = PBXBuildFile; fileRef = 639F928E268FDE5900622490 /* PPVayyarSubregionBehavior.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		639F9291268FDE5900622490 /* PPVayyarSubregionBehavior.h in Headers */ = {isa = PBXBuildFile; fileRef = 639F928E268FDE5900622490 /* PPVayyarSubregionBehavior.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		639F9292268FDE5900622490 /* PPVayyarSubregionBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F928F268FDE5900622490 /* PPVayyarSubregionBehavior.m */; };
+		639F9293268FDE5900622490 /* PPVayyarSubregionBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F928F268FDE5900622490 /* PPVayyarSubregionBehavior.m */; };
 		63A56D0F20D3161600AC2212 /* PPNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = 63A56D0D20D3161600AC2212 /* PPNotification.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63A56D1020D3161600AC2212 /* PPNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A56D0E20D3161600AC2212 /* PPNotification.m */; };
 		63A69D6D2151B32B0077553F /* PPDevicePictureFrameAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A69D6B2151B32B0077553F /* PPDevicePictureFrameAlert.m */; };
@@ -1217,14 +1227,15 @@
 		63BECB4F20C5D96F00408494 /* PPCurlDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D39304204F287800041C1A /* PPCurlDebug.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63BECB9320C5DDE000408494 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C7C9FF2098016700967C4C /* libicucore.tbd */; };
 		63BECB9420C5DFDB00408494 /* Peoplepower-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 63D39315204F3A0900041C1A /* Peoplepower-Prefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
-		63C84362268E5C4600C6165E /* PPSyntheticVayyarHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C84361268E5C4600C6165E /* PPSyntheticVayyarHome.swift */; };
-		63C84364268E5CA900C6165E /* PPVayyarRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C84363268E5CA900C6165E /* PPVayyarRoom.swift */; };
-		63C84366268E5FD600C6165E /* PPVayyarSubregion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C84365268E5FD600C6165E /* PPVayyarSubregion.swift */; };
-		63C84368268E614200C6165E /* PPVayyarSubregionBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C84367268E614200C6165E /* PPVayyarSubregionBehavior.swift */; };
+		63C84362268E5C4600C6165E /* PPVayyarHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C84361268E5C4600C6165E /* PPVayyarHome.swift */; };
 		63C8436A268E6F7900C6165E /* PPTCSyntheticVayyarHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C84369268E6F7900C6165E /* PPTCSyntheticVayyarHome.swift */; };
 		63C8436F268E71FA00C6165E /* SyntheticVayyarHome-GetRoomBoundaries-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63C8436E268E71FA00C6165E /* SyntheticVayyarHome-GetRoomBoundaries-ResponseData.json */; };
 		63C84371268E72E300C6165E /* SyntheticVayyarHome-GetSubregions-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63C84370268E72E300C6165E /* SyntheticVayyarHome-GetSubregions-ResponseData.json */; };
 		63C84373268E730100C6165E /* SyntheticVayyarHome-GetSubregionBehaviors-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63C84372268E730100C6165E /* SyntheticVayyarHome-GetSubregionBehaviors-ResponseData.json */; };
+		63C8437C268FC12300C6165E /* PPVayyarRoom.h in Headers */ = {isa = PBXBuildFile; fileRef = 63C8437A268FC12300C6165E /* PPVayyarRoom.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63C8437D268FC12300C6165E /* PPVayyarRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C8437B268FC12300C6165E /* PPVayyarRoom.m */; };
+		63C8437E268FC26000C6165E /* PPVayyarRoom.h in Headers */ = {isa = PBXBuildFile; fileRef = 63C8437A268FC12300C6165E /* PPVayyarRoom.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63C8437F268FC3F900C6165E /* PPVayyarRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C8437B268FC12300C6165E /* PPVayyarRoom.m */; };
 		63CD14C021C19279002290C9 /* PPLocationUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 63CD14BE21C19279002290C9 /* PPLocationUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63CD14C121C19279002290C9 /* PPLocationUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CD14BF21C19279002290C9 /* PPLocationUser.m */; };
 		63CD14C421C19774002290C9 /* PPLocationUserSchedule.h in Headers */ = {isa = PBXBuildFile; fileRef = 63CD14C221C19774002290C9 /* PPLocationUserSchedule.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1690,6 +1701,11 @@
 		6390F2FC23AB441E00426CCC /* PPLocationCommunity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPLocationCommunity.m; sourceTree = "<group>"; };
 		639D8DFA25DDDCDA003376E7 /* PPQuestionSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPQuestionSlider.h; sourceTree = "<group>"; };
 		639D8DFB25DDDCDA003376E7 /* PPQuestionSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPQuestionSlider.m; sourceTree = "<group>"; };
+		639F9285268FC59700622490 /* PPVayyarHome.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPVayyarHome.h; sourceTree = "<group>"; };
+		639F9288268FDE0A00622490 /* PPVayyarSubregion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPVayyarSubregion.h; sourceTree = "<group>"; };
+		639F9289268FDE0A00622490 /* PPVayyarSubregion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPVayyarSubregion.m; sourceTree = "<group>"; };
+		639F928E268FDE5900622490 /* PPVayyarSubregionBehavior.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPVayyarSubregionBehavior.h; sourceTree = "<group>"; };
+		639F928F268FDE5900622490 /* PPVayyarSubregionBehavior.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPVayyarSubregionBehavior.m; sourceTree = "<group>"; };
 		63A56D0D20D3161600AC2212 /* PPNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPNotification.h; sourceTree = "<group>"; };
 		63A56D0E20D3161600AC2212 /* PPNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPNotification.m; sourceTree = "<group>"; };
 		63A69D6B2151B32B0077553F /* PPDevicePictureFrameAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPDevicePictureFrameAlert.m; sourceTree = "<group>"; };
@@ -1830,14 +1846,13 @@
 		63C7CA28209910D800967C4C /* PPDeviceCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPDeviceCamera.h; sourceTree = "<group>"; };
 		63C7CA29209910D800967C4C /* PPDeviceCameraLocal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPDeviceCameraLocal.m; sourceTree = "<group>"; };
 		63C7CA2A209910D800967C4C /* PPDeviceCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPDeviceCamera.m; sourceTree = "<group>"; };
-		63C84361268E5C4600C6165E /* PPSyntheticVayyarHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPSyntheticVayyarHome.swift; sourceTree = "<group>"; };
-		63C84363268E5CA900C6165E /* PPVayyarRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPVayyarRoom.swift; sourceTree = "<group>"; };
-		63C84365268E5FD600C6165E /* PPVayyarSubregion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPVayyarSubregion.swift; sourceTree = "<group>"; };
-		63C84367268E614200C6165E /* PPVayyarSubregionBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPVayyarSubregionBehavior.swift; sourceTree = "<group>"; };
+		63C84361268E5C4600C6165E /* PPVayyarHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPVayyarHome.swift; sourceTree = "<group>"; };
 		63C84369268E6F7900C6165E /* PPTCSyntheticVayyarHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPTCSyntheticVayyarHome.swift; sourceTree = "<group>"; };
 		63C8436E268E71FA00C6165E /* SyntheticVayyarHome-GetRoomBoundaries-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "SyntheticVayyarHome-GetRoomBoundaries-ResponseData.json"; sourceTree = "<group>"; };
 		63C84370268E72E300C6165E /* SyntheticVayyarHome-GetSubregions-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "SyntheticVayyarHome-GetSubregions-ResponseData.json"; sourceTree = "<group>"; };
 		63C84372268E730100C6165E /* SyntheticVayyarHome-GetSubregionBehaviors-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "SyntheticVayyarHome-GetSubregionBehaviors-ResponseData.json"; sourceTree = "<group>"; };
+		63C8437A268FC12300C6165E /* PPVayyarRoom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPVayyarRoom.h; sourceTree = "<group>"; };
+		63C8437B268FC12300C6165E /* PPVayyarRoom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPVayyarRoom.m; sourceTree = "<group>"; };
 		63CD14BE21C19279002290C9 /* PPLocationUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPLocationUser.h; sourceTree = "<group>"; };
 		63CD14BF21C19279002290C9 /* PPLocationUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPLocationUser.m; sourceTree = "<group>"; };
 		63CD14C221C19774002290C9 /* PPLocationUserSchedule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPLocationUserSchedule.h; sourceTree = "<group>"; };
@@ -2714,10 +2729,14 @@
 		63C84360268E5B1A00C6165E /* Synthetic APIs */ = {
 			isa = PBXGroup;
 			children = (
-				63C84361268E5C4600C6165E /* PPSyntheticVayyarHome.swift */,
-				63C84363268E5CA900C6165E /* PPVayyarRoom.swift */,
-				63C84365268E5FD600C6165E /* PPVayyarSubregion.swift */,
-				63C84367268E614200C6165E /* PPVayyarSubregionBehavior.swift */,
+				63C84361268E5C4600C6165E /* PPVayyarHome.swift */,
+				639F9285268FC59700622490 /* PPVayyarHome.h */,
+				63C8437A268FC12300C6165E /* PPVayyarRoom.h */,
+				63C8437B268FC12300C6165E /* PPVayyarRoom.m */,
+				639F9288268FDE0A00622490 /* PPVayyarSubregion.h */,
+				639F9289268FDE0A00622490 /* PPVayyarSubregion.m */,
+				639F928E268FDE5900622490 /* PPVayyarSubregionBehavior.h */,
+				639F928F268FDE5900622490 /* PPVayyarSubregionBehavior.m */,
 			);
 			path = "Synthetic APIs";
 			sourceTree = "<group>";
@@ -3633,6 +3652,7 @@
 				630BDCB224B3A6890035D8B3 /* PPCloudsIntegrationHostAccessToken.h in Headers */,
 				630BDCE824B3A6FD0035D8B3 /* PPCircles.h in Headers */,
 				630BDC7B24B3A6230035D8B3 /* PPOperationToken.h in Headers */,
+				639F928B268FDE0A00622490 /* PPVayyarSubregion.h in Headers */,
 				630BDCB024B3A6890035D8B3 /* PPCloudsIntegrationHost.h in Headers */,
 				630BDC7124B3A5F90035D8B3 /* PPCountriesStatesAndTimezones.h in Headers */,
 				630BDCC824B3A69C0035D8B3 /* PPDeviceTypeRuleComponentTemplateProduct.h in Headers */,
@@ -3723,6 +3743,7 @@
 				630BDD6824B3AAE90035D8B3 /* PPServicePlan.h in Headers */,
 				630BDD7A24B3AAED0035D8B3 /* PPCallCenterAlert.h in Headers */,
 				630BDD6624B3AAE90035D8B3 /* PPPaidServices.h in Headers */,
+				639F9291268FDE5900622490 /* PPVayyarSubregionBehavior.h in Headers */,
 				630BDD9224B3AAF50035D8B3 /* PPEnergyManagementDeviceUsageAggregatedCost.h in Headers */,
 				630BDDC024B3AAFF0035D8B3 /* PPDeviceTypeDeviceModelLookupParam.h in Headers */,
 				630BDD2624B3AABA0035D8B3 /* PPDeviceParameterRobotVantagePoint.h in Headers */,
@@ -3792,6 +3813,7 @@
 				630BDCE024B3A6C20035D8B3 /* PPNSDate.h in Headers */,
 				630BDCF224B3A6FD0035D8B3 /* PPCircleReaction.h in Headers */,
 				630BDCAA24B3A6890035D8B3 /* PPCloudsIntegration.h in Headers */,
+				639F9287268FC59700622490 /* PPVayyarHome.h in Headers */,
 				630BDCD624B3A6AF0035D8B3 /* PPBotengineAppMarketing.h in Headers */,
 				630BDC7824B3A6230035D8B3 /* PPLogin.h in Headers */,
 				630BDC5F24B394BA0035D8B3 /* PPAppResources.h in Headers */,
@@ -3801,6 +3823,7 @@
 				630BDC8624B3A6460035D8B3 /* PPLocationNarrative.h in Headers */,
 				630BDC8824B3A6460035D8B3 /* PPLocationUserSchedule.h in Headers */,
 				630BDCBC24B3A69C0035D8B3 /* PPRuleComponentState.h in Headers */,
+				63C8437E268FC26000C6165E /* PPVayyarRoom.h in Headers */,
 				630BDCC224B3A69C0035D8B3 /* PPRuleComponentParameterValue.h in Headers */,
 				630BDC9024B3A6460035D8B3 /* PPUserAccounts.h in Headers */,
 				630BDCBA24B3A69C0035D8B3 /* PPRuleComponentTrigger.h in Headers */,
@@ -3822,6 +3845,7 @@
 			files = (
 				63BECAF520C5D8A800408494 /* PPServicePlanPriceAmount.h in Headers */,
 				630BDE9324B3E3220035D8B3 /* PPSurveyQuestion.h in Headers */,
+				639F9286268FC59700622490 /* PPVayyarHome.h in Headers */,
 				631152E321E817BD00DA7755 /* PPTHConstants.h in Headers */,
 				63BECAB820C5D88400408494 /* PPWebSocket.h in Headers */,
 				63BECB1820C5D8E600408494 /* PPDeviceTypeRuleComponentTemplate.h in Headers */,
@@ -3880,6 +3904,7 @@
 				63BECB1E20C5D8E600408494 /* PPDeviceTypeDeviceModelCategory.h in Headers */,
 				63BECAE120C5D8A800408494 /* PPSystemAndUserProperties.h in Headers */,
 				63BECACD20C5D88400408494 /* PPNotificationEmailMessage.h in Headers */,
+				639F9290268FDE5900622490 /* PPVayyarSubregionBehavior.h in Headers */,
 				63BECAD320C5D88400408494 /* PPCrowdFeedbacks.h in Headers */,
 				63BECAEC20C5D8A800408494 /* PPRuleComponentTrigger.h in Headers */,
 				63BECAB320C5D88400408494 /* PPDeviceProxy.h in Headers */,
@@ -3902,6 +3927,7 @@
 				63BECB2320C5D8E600408494 /* PPCloudsIntegration.h in Headers */,
 				63BECAC220C5D88400408494 /* PPDevice.h in Headers */,
 				63BECB1520C5D8E600408494 /* PPDeviceTypeAttribute.h in Headers */,
+				639F928A268FDE0A00622490 /* PPVayyarSubregion.h in Headers */,
 				63BECAE520C5D8A800408494 /* PPFileTag.h in Headers */,
 				63BECB4120C5D8E600408494 /* PPAFHTTPRequestOperationManager.h in Headers */,
 				63BECAF320C5D8A800408494 /* PPServicePlan.h in Headers */,
@@ -3979,6 +4005,7 @@
 				63BECB1A20C5D8E600408494 /* PPDeviceTypeGoal.h in Headers */,
 				63BECAAE20C5D88400408494 /* PPCountry.h in Headers */,
 				63BECAD120C5D88400408494 /* PPNotificationSubscription.h in Headers */,
+				63C8437C268FC12300C6165E /* PPVayyarRoom.h in Headers */,
 				63BECB0520C5D8E600408494 /* PPEnergyManagementDeviceUsagePower.h in Headers */,
 				63BECABB20C5D88400408494 /* PPWebSocketViewer.h in Headers */,
 				63BECAAD20C5D88400408494 /* PPCountriesStatesAndTimezones.h in Headers */,
@@ -4525,6 +4552,7 @@
 				630BDD1324B3AAB50035D8B3 /* PPDevices.m in Sources */,
 				630BDC9224B3A65C0035D8B3 /* PPLocation.m in Sources */,
 				630BDCB924B3A69C0035D8B3 /* PPRuleComponent.m in Sources */,
+				639F9293268FDE5900622490 /* PPVayyarSubregionBehavior.m in Sources */,
 				630BDD1F24B3AABA0035D8B3 /* PPDeviceMeasurementUnit.m in Sources */,
 				630BDCB124B3A6890035D8B3 /* PPCloudsIntegrationHost.m in Sources */,
 				630BDDBD24B3AAFF0035D8B3 /* PPDeviceTypeDeviceModelCategory.m in Sources */,
@@ -4655,6 +4683,7 @@
 				630BDDE124B3AB0D0035D8B3 /* PPFriendshipFriend.m in Sources */,
 				630BDCC924B3A69C0035D8B3 /* PPDeviceTypeRuleComponentTemplateProduct.m in Sources */,
 				630BDCD324B3A6AF0035D8B3 /* PPBotengineAppDeviceType.m in Sources */,
+				63C8437F268FC3F900C6165E /* PPVayyarRoom.m in Sources */,
 				630BDD9724B3AAF50035D8B3 /* PPEnergyManagementBillingInfoBudget.m in Sources */,
 				630BDD6924B3AAE90035D8B3 /* PPServicePlan.m in Sources */,
 				630BDD7524B3AAED0035D8B3 /* PPProfessionalMonitoring.m in Sources */,
@@ -4675,6 +4704,7 @@
 				630BDD9924B3AAF50035D8B3 /* PPEnergyManagementBillingInfoUtility.m in Sources */,
 				630BDE9024B3E3220035D8B3 /* PPSurveys.m in Sources */,
 				630BDDF324B3AB220035D8B3 /* PPAFHTTPSessionManager.m in Sources */,
+				639F928D268FDE0A00622490 /* PPVayyarSubregion.m in Sources */,
 				630BDD4B24B3AACB0035D8B3 /* PPInAppMessageRecipient.m in Sources */,
 				630BDD7324B3AAE90035D8B3 /* PPStoreProduct.m in Sources */,
 				630BDCC724B3A69C0035D8B3 /* PPDeviceTypeRuleComponentTemplate.m in Sources */,
@@ -4733,12 +4763,12 @@
 				63BEC9E920C5D67500408494 /* PPUserTag.m in Sources */,
 				63BECA4020C5D6C300408494 /* PPEnergyManagementDeviceUsageAggregatedEnergy.m in Sources */,
 				63BEC9E220C5D67500408494 /* PPLocation.m in Sources */,
-				63C84364268E5CA900C6165E /* PPVayyarRoom.swift in Sources */,
 				63BECA2520C5D6A100408494 /* PPRuleComponentTrigger.m in Sources */,
 				63BECA3F20C5D6C300408494 /* PPEnergyManagementDeviceUsageAggregated.m in Sources */,
 				630BDE2124B3AFFF0035D8B3 /* PPDevicePictureFrameLocal.m in Sources */,
 				63BEC9E020C5D67500408494 /* PPOperationTokenManagement.m in Sources */,
 				63BEC9DF20C5D67500408494 /* PPLogout.m in Sources */,
+				63C8437D268FC12300C6165E /* PPVayyarRoom.m in Sources */,
 				63AB4A2523AD85580056AE8B /* PPCommunityReaction.m in Sources */,
 				63044566263779E000CDDAAF /* PPSupportTickets.m in Sources */,
 				63B5274826798B12007EA64B /* PPAdminDevices.swift in Sources */,
@@ -4759,7 +4789,6 @@
 				638147552282101100CC1CCD /* PPDeviceDataRequest.m in Sources */,
 				63BECA7B20C5D6E500408494 /* PPAFHTTPSessionManager.m in Sources */,
 				63BECA1220C5D6A100408494 /* PPInAppMessageRecipient.m in Sources */,
-				63C84366268E5FD600C6165E /* PPVayyarSubregion.swift in Sources */,
 				63BEC9E420C5D67500408494 /* PPLocationSize.m in Sources */,
 				63BECA8920C5D6E500408494 /* PPNSData.m in Sources */,
 				631F72F323BBC16600F98797 /* PPUserCommunity.m in Sources */,
@@ -4833,7 +4862,6 @@
 				63BEC9E520C5D67500408494 /* PPLocationSceneEvent.m in Sources */,
 				63BECA6820C5D6E500408494 /* PPCirclePost.m in Sources */,
 				63BEC9CA20C5D67500408494 /* PPNetworkUtilities.m in Sources */,
-				63C84368268E614200C6165E /* PPVayyarSubregionBehavior.swift in Sources */,
 				63BECA7120C5D6E500408494 /* PPBotengineAppInstance.m in Sources */,
 				63BECA7E20C5D6E500408494 /* PPCloudEngine.m in Sources */,
 				63BEC9DD20C5D67500408494 /* PPCloudConnectivityServer.m in Sources */,
@@ -4894,6 +4922,7 @@
 				63BECA1F20C5D6A100408494 /* PPFileSummary.m in Sources */,
 				63BECA7020C5D6E500408494 /* PPBotengineAppDeviceType.m in Sources */,
 				63BECA3320C5D6A100408494 /* PPCallCenter.m in Sources */,
+				639F9292268FDE5900622490 /* PPVayyarSubregionBehavior.m in Sources */,
 				63BECA2820C5D6A100408494 /* PPRuleComponentParameter.m in Sources */,
 				6372B66621349ED800796A14 /* PPDeviceTypeParameterDisplayInfo.m in Sources */,
 				63BECA3720C5D6A100408494 /* PPDynamicUIScreen.m in Sources */,
@@ -4940,7 +4969,7 @@
 				63BECA0120C5D67500408494 /* PPDeviceMeasurements.m in Sources */,
 				63BEC9F320C5D67500408494 /* PPDeviceCamera.m in Sources */,
 				63BECA7D20C5D6E500408494 /* PPUrl.m in Sources */,
-				63C84362268E5C4600C6165E /* PPSyntheticVayyarHome.swift in Sources */,
+				63C84362268E5C4600C6165E /* PPVayyarHome.swift in Sources */,
 				63BECA6F20C5D6E500408494 /* PPBotengineAppCommunications.m in Sources */,
 				63BECA1E20C5D6A100408494 /* PPFileTag.m in Sources */,
 				63BEC9F620C5D67500408494 /* PPWebSocket.m in Sources */,
@@ -4951,6 +4980,7 @@
 				63BECA5420C5D6C300408494 /* PPDeviceTypeInstallationInstructions.m in Sources */,
 				63BECA5820C5D6C300408494 /* PPDeviceTypeDeviceModelBrand.m in Sources */,
 				63BECA5720C5D6C300408494 /* PPDeviceTypeDeviceModelCategory.m in Sources */,
+				639F928C268FDE0A00622490 /* PPVayyarSubregion.m in Sources */,
 				6351236E21389112003E7EAA /* PPCircleDevicePictureFrame.m in Sources */,
 				63BECA0420C5D67500408494 /* PPDeviceMeasurementsAlert.m in Sources */,
 				63BECA0E20C5D6A100408494 /* PPCrowdFeedbackSupport.m in Sources */,
