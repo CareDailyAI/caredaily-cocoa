@@ -295,7 +295,7 @@ import Foundation
             "x_min_meters": xMin,
             "x_max_meters": xMax,
             "y_min_meters": yMax,
-            "y_min_meters": yMax
+            "y_max_meters": yMax
         ]
         feed["subregion_id"] = subregionId?.intValue
         feed["detect_falls"] = detectFalls?.boolValue
