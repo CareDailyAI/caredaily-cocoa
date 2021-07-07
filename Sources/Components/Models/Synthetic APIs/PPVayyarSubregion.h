@@ -85,9 +85,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (PPVayyarSubregion *)initWithDeviceId:(NSString *)deviceId data:(NSDictionary *)data;
 
-- (NSString *)detectionStatus;
-- (UIColor *)detectionStatusColor;
-
 @end
 
 NS_ASSUME_NONNULL_END

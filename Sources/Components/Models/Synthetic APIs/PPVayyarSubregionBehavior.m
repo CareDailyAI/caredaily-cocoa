@@ -99,23 +99,4 @@
     return behavior;
 }
 
-- (NSString *)detectionStatus {
-    return _detectPresence && _detectFalls
-    ? @"Detect Presence and Falls"
-    : _detectPresence
-    ? @"Detect Presence"
-    : _detectFalls
-    ? @"Detect Falls"
-    : @"No Detection";
-}
-- (UIColor *)detectionStatusColor {
-    return _detectPresence && _detectFalls
-    ? [UIColor greenColor]
-    : _detectPresence
-    ? [UIColor blueColor]
-    : _detectFalls
-    ? [UIColor yellowColor]
-    : [UIColor grayColor];
-}
-
 @end

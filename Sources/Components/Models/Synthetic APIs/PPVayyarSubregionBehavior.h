@@ -65,9 +65,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (PPVayyarSubregionBehavior *)initWithData:(NSDictionary *)data;
 
-- (NSString *)detectionStatus;
-- (UIColor *)detectionStatusColor;
-
 @end
 
 NS_ASSUME_NONNULL_END
