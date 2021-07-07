@@ -77,14 +77,13 @@ import Foundation
      Apply Tags
      Apply tags to users, locations, and devices.
      */
-    @available(*, deprecated, message: "Not available")
     @objc public class func applyTags(_ organizationId: PPOrganizationId,
-                                           tags: Dictionary<String, Any>,
+                                           tags: [Dictionary<String, Any>],
                                            callback: @escaping ((Error?) -> (Void))) {
         assert(organizationId != .none)
         let components = NSURLComponents(string: "organizations/\(organizationId.rawValue)/tags")
         
-        var tags: [[String: Any]] = []
+        var _tags: [[String: Any]] = []
         tags.forEach { tag in
             guard
                 let type = tag["type"] as? Int,
@@ -93,14 +92,14 @@ import Foundation
             else {
                 return
             }
-            tags.append([
+            _tags.append([
                 "type": type,
                 "id": id,
                 "tag": tag
             ])
             
         }
-        let json: [String: Any] = ["tags": tags]
+        let json: [String: Any] = ["tags": _tags]
         
         var request: NSMutableURLRequest!
         do {
