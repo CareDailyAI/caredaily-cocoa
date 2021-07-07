@@ -248,6 +248,7 @@ import Foundation
      * - `deviceId` String Device ID to apply this subregion to
      * - `subregionId` NSNumber Optional Used primarily for modifying or deleting. 0, 1, 2, or 3 and nothing else. You can specify the next valid integer to insert a new subregion, but out-of-bounds values are ignored.
      * - `contextId` Int Context / behavior of this subregion
+     * - `name` String Descriptive name of this subregion, default is the title of the subregion context that was selected.
      * - `xMin` Double Looking into the room from the device, this is the left-most side of the sub-region. Remember to the left of Vayyar Home is negative numbers on the x-axis.
      * - `xMax` Double Looking into the room from the device, this is the right-most side of the sub-region.
      * - `yMin` Double Distance from the Vayyar Home to the nearest side of the sub-region.
@@ -264,6 +265,7 @@ import Foundation
      *     "device_id": deviceId,
      *     "subregion_id": subregionId,
      *     "context_id": contextId,
+     *     "name": name,
      *     "x_min_meters": xMin,
      *     "x_max_meters": xMax,
      *     "y_min_meters": yMin,
@@ -278,6 +280,7 @@ import Foundation
     @objc public class func setSubregion(_ deviceId: String,
                                          subregionId: NSNumber?,
                                          contextId: Int,
+                                         name: String?,
                                          xMin: Double,
                                          xMax: Double,
                                          yMin: Double,
@@ -298,6 +301,7 @@ import Foundation
             "y_max_meters": yMax
         ]
         feed["subregion_id"] = subregionId?.intValue
+        feed["name"] = name
         feed["detect_falls"] = detectFalls?.boolValue
         feed["detect_presence"] = detectPresence?.boolValue
         feed["enter_duration_s"] = enterDuration?.intValue
