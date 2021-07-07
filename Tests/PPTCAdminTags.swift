@@ -39,7 +39,7 @@ class PPTCAdminTags: PPBaseTestCase {
         let expectation = XCTestExpectation(description: methodName)
         stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/organizations/1/tags", statusCode: 200, headers: nil)
         
-        PPAdminTags.applyTags(PPOrganizationId(rawValue: 1), tags: [:]) { error in
+        PPAdminTags.applyTags(PPOrganizationId(rawValue: 1), tags: [[:]]) { error in
             XCTAssertNil(error)
             expectation.fulfill()
         }
