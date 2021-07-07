@@ -52,11 +52,11 @@
         contextId = ((NSNumber *)[data valueForKey:@"context_id"]).intValue;
     }
     NSString * title = [data valueForKey:@"title"];
-    NSString * detail = [data valueForKey:@"detail"];
+    NSString * detail = [data valueForKey:@"description"];
     NSString * icon = [data valueForKey:@"icon"];
     NSString * iconFont = [data valueForKey:@"icon_font"];
-    NSNumber * width = [data valueForKey:@"width"];
-    NSNumber * length = [data valueForKey:@"length"];
+    NSNumber * width = [data valueForKey:@"width_cm"];
+    NSNumber * length = [data valueForKey:@"length_cm"];
     BOOL flexible = false;
     if ([data valueForKey:@"flexible"]) {
         flexible = ((NSNumber *)[data valueForKey:@"flexible"]).intValue;
@@ -77,8 +77,8 @@
     if ([data valueForKey:@"edit_presence"]) {
         editPresence = ((NSNumber *)[data valueForKey:@"edit_presence"]).intValue;
     }
-    NSNumber * enterDuration = [data valueForKey:@"enter_duration"];
-    NSNumber * exitDuration = [data valueForKey:@"exit_duration"];
+    NSNumber * enterDuration = [data valueForKey:@"enter_duration_s"];
+    NSNumber * exitDuration = [data valueForKey:@"exit_duration_s"];
     NSArray * compatibleBehaviors = [data valueForKey:@"compatible_behaviors"];;
     
     PPVayyarSubregionBehavior *behavior = [[PPVayyarSubregionBehavior alloc] initWithContextId:contextId
