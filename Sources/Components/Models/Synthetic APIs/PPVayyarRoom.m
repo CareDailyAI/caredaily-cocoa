@@ -35,29 +35,29 @@
 }
 
 + (PPVayyarRoom *)initWithDeviceId:(NSString *)deviceId data:(NSDictionary *)data {
-    NSNumber *xMin = @1.9;
-    if ([data objectForKey:@"xMin"]) {
-        xMin = [data objectForKey:@"xMin"];
+    NSNumber *xMin = @-1.9;
+    if ([data objectForKey:@"x_left_meters"]) {
+        xMin = [data objectForKey:@"x_left_meters"];
     }
     NSNumber *xMax = @1.9;
-    if ([data objectForKey:@"xMax"]) {
-        xMax = [data objectForKey:@"xMax"];
+    if ([data objectForKey:@"x_right_meters"]) {
+        xMax = [data objectForKey:@"x_right_meters"];
     }
     NSNumber *yMin = @0.3;
-    if ([data objectForKey:@"yMin"]) {
-        yMin = [data objectForKey:@"yMin"];
+    if ([data objectForKey:@"y_min_meters"]) {
+        yMin = [data objectForKey:@"y_min_meters"];
     }
     NSNumber *yMax = @3.9;
-    if ([data objectForKey:@"yMax"]) {
-        yMax = [data objectForKey:@"yMax"];
+    if ([data objectForKey:@"y_max_meters"]) {
+        yMax = [data objectForKey:@"y_max_meters"];
     }
     NSNumber *zMin = @0;
-    if ([data objectForKey:@"zMin"]) {
-        zMin = [data objectForKey:@"zMin"];
+    if ([data objectForKey:@"z_min_meters"]) {
+        zMin = [data objectForKey:@"z_min_meters"];
     }
     NSNumber *zMax = @2.5;
-    if ([data objectForKey:@"zMax"]) {
-        zMax = [data objectForKey:@"zMax"];
+    if ([data objectForKey:@"z_max_meters"]) {
+        zMax = [data objectForKey:@"z_max_meters"];
     }
     PPVayyarRoom *room = [[PPVayyarRoom alloc] initWithDeviceId:deviceId
                                                            xMin:xMin
