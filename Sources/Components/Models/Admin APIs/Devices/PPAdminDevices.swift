@@ -35,7 +35,7 @@ import Foundation
                                      paramValue: String?,
                                      limit: NSNumber?,
                                      getTags: NSNumber?,
-                                     callback: @escaping (([PPDevice]?, Error?) -> (Void))) {
+                                     callback: @escaping (([PPDevice]?, [PPLocation]?, Error?) -> (Void))) {
         let components = NSURLComponents(string: "devices")
         
         var queryItems = [URLQueryItem]()
@@ -91,14 +91,19 @@ import Foundation
         
         PPCloudEngine.sharedAdmin().get(components?.string) { responseData in
             queue.async {
-                var models: [PPDevice]?
+                var models: ([PPDevice]?,[PPLocation]?)?
                 var err: Error?
                 do {
                     let root = try PPBaseModel.processJSONResponse(responseData, originatingClass: NSStringFromClass(self))
-                    models = []
+                    models = ([],[])
                     for d in root["devices"] as? [Dictionary<String, Any>] ?? [] {
                         guard let m = PPDevice.initWith(d) else { continue }
-                        models?.append(m)
+                        models?.0?.append(m)
+                        if
+                            let l = d["location"] as? Dictionary<String, Any>,
+                            let m2 = PPLocation.initWith(l) {
+                            models?.1?.append(m2)
+                        }
                     }
                 }
                 catch {
@@ -108,13 +113,13 @@ import Foundation
                 PPLogAPIs(#file, message: "< \(queue.label)")
                 
                 DispatchQueue.main.async {
-                    callback(models, err)
+                    callback(models?.0, models?.1, err)
                 }
             }
         } failure: { error in
             PPLogAPIs(#file, message: "< \(queue.label)")
             DispatchQueue.main.async {
-                callback(nil, PPBaseModel.resultCode(toNSError: 10003, originatingClass: NSStringFromClass(self), argument: error == nil ? nil : "Error domain: \((error! as NSError).domain), code: \((error! as NSError).code), userInfo: \((error! as NSError).userInfo)"))
+                callback(nil, nil, PPBaseModel.resultCode(toNSError: 10003, originatingClass: NSStringFromClass(self), argument: error == nil ? nil : "Error domain: \((error! as NSError).domain), code: \((error! as NSError).code), userInfo: \((error! as NSError).userInfo)"))
             }
         }
     }

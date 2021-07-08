@@ -27,7 +27,7 @@ class PPTCAdminDevices: PPBaseTestCase {
         let expectation = XCTestExpectation(description: methodName)
         stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/admin/json/devices", statusCode: 200, headers: nil)
         
-        PPAdminDevices.getDevices(.none, groupId: .none, userId: .none, locationId: .none, deviceId: nil, deviceTypes: nil, searchBy: .none, searchTag: nil, lessUpdateDate: nil, moreUpdateDate: nil, paramName: nil, paramValue: nil, limit: nil, getTags: nil) { devices, error in
+        PPAdminDevices.getDevices(.none, groupId: .none, userId: .none, locationId: .none, deviceId: nil, deviceTypes: nil, searchBy: .none, searchTag: nil, lessUpdateDate: nil, moreUpdateDate: nil, paramName: nil, paramValue: nil, limit: nil, getTags: nil) { devices, locations, error in
             XCTAssertNil(error)
             expectation.fulfill()
         }

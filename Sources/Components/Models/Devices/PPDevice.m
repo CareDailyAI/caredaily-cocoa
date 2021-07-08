@@ -91,6 +91,12 @@
     if([deviceDict objectForKey:@"locationId"]) {
         locationId = (PPLocationId)((NSString *)[deviceDict objectForKey:@"locationId"]).integerValue;
     }
+    else if([deviceDict objectForKey:@"location"]) {
+        NSDictionary *locationDict = [deviceDict objectForKey:@"location"];
+        if([locationDict objectForKey:@"id"]) {
+            locationId = (PPLocationId)((NSString *)[locationDict objectForKey:@"id"]).integerValue;
+        }
+    }
     NSString *icon = [deviceDict objectForKey:@"icon"];
     
     NSString *startDateString = [deviceDict objectForKey:@"startDate"];
