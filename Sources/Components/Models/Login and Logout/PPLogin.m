@@ -160,7 +160,7 @@
 }
 + (void)loginWithUsername:(NSString *)username password:(NSString *)password passcode:(NSString *)passcode expiry:(PPLoginExpiryType)expiry appName:(NSString *)appName callback:(PPLoginBlock)callback {
     NSLog(@"%s deprecated. Use +loginWithUsername:password:passcode:expiry:appname:keyType:clientId:smsPrefix:appHash:sign:signAlgorithm:callback:", __FUNCTION__);
-    [PPLogin loginWithUsername:username password:password passcode:nil expiry:expiry appName:appName keyType:PPLoginKeyTypeNone clientId:nil smsPrefix:nil appHash:nil sign:nil signAlgorithm:nil callback:callback];
+    [PPLogin loginWithUsername:username password:password passcode:passcode expiry:expiry appName:appName keyType:PPLoginKeyTypeNone clientId:nil smsPrefix:nil appHash:nil sign:nil signAlgorithm:nil callback:callback];
 }
 + (void)loginWithUsername:(NSString *)username password:(NSString *)password expiry:(PPLoginExpiryType)expiry appName:(NSString *)appName callback:(PPLoginBlock)callback {
     NSLog(@"%s deprecated. Use +loginWithUsername:password:passcode:expiry:appname:keyType:clientId:smsPrefix:appHash:sign:signAlgorithm:callback:", __FUNCTION__);
