@@ -34,6 +34,6 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'Tests' do |ios|
-    ios.resources = "Tests/Data/*.{json,m4a,jpeg,mp4}"
+    ios.resources = "Tests/Data/*.{json,txt,m4a,jpeg,mp4}"
   end
 end
