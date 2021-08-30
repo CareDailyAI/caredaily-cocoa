@@ -99,6 +99,32 @@ static NSString *moduleName = @"ApplicationFiles";
 #pragma mark - Single File Management
 
 /**
+ * Get download URL's
+ * A client can request temporary download URL's to get file and thumbnail content directly from S3 instead of copying it through the server.
+ *
+ * @ param fileId Required PPApplicationFleId File ID to download
+ * @ param locationId PPLocationId Location ID to download the file
+ * @ param userId PPUserId User ID to download the file
+ * @ param expiration PPFileURLExpiration URL's expiration in milliseconds since the current time
+ * @ param callback PPFileManagementDownloadURLBlock File content block
+ **/
+- (void)testGetDownloadUrl {
+   NSString *methodName = @"GetDownloadUrl";
+    XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
+    
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/appfiles/%li/url", (long)self.file.fileId] statusCode:200 headers:nil];
+    
+    [PPApplicationFileManagement getDownloadURL:self.file.fileId locationId:PPLocationIdNone userId:PPUserIdNone expiration:PPFileURLExpirationNone callback:^(NSURL * _Nullable contentURL, NSURL * _Nullable thumbnailURL, NSError * _Nullable error) {
+        
+        XCTAssertNil(error);
+        [expectation fulfill];
+
+    }];
+    
+    [self waitForExpectations:@[expectation] timeout:10.0];
+}
+
+/**
  * Download File.
  * The Range HTTP Header is optional, and will only return a chunk of the total content.
  * A temporary API key provided in the query parameter may be used to forward a link to other part of the app. A temporary API key can be obtained by calling the loginByKey API. It is expired soon after receiving.
@@ -141,6 +167,7 @@ static NSString *moduleName = @"ApplicationFiles";
     
     [self waitForExpectations:@[expectation] timeout:30.0];
 }
+
 /**
  * Delete a File.
  *

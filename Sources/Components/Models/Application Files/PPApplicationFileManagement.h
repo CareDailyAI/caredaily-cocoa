@@ -77,6 +77,18 @@
 #pragma mark - Single File Management
 
 /**
+ * Get download URL's
+ * A client can request temporary download URL's to get file and thumbnail content directly from S3 instead of copying it through the server.
+ *
+ * @param fileId Required PPApplicationFleId File ID to download
+ * @param locationId PPLocationId Location ID to download the file
+ * @param userId PPUserId User ID to download the file
+ * @param expiration PPFileURLExpiration URL's expiration in milliseconds since the current time
+ * @param callback PPFileManagementDownloadURLBlock File content block
+ **/
++ (void)getDownloadURL:(PPApplicationFileId)fileId locationId:(PPLocationId)locationId userId:(PPUserId)userId expiration:(PPFileURLExpiration)expiration callback:(PPFileManagementDownloadURLBlock _Nonnull )callback;
+
+/**
  * Download File.
  * The Range HTTP Header is optional, and will only return a chunk of the total content.
  * A temporary API key provided in the query parameter may be used to forward a link to other part of the app. A temporary API key can be obtained by calling the loginByKey API. It is expired soon after receiving.
