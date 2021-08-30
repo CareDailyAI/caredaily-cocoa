@@ -300,6 +300,70 @@
 #pragma mark - Single File Management
 
 /**
+ * Get download URL's
+ * A client can request temporary download URL's to get file and thumbnail content directly from S3 instead of copying it through the server.
+ *
+ * @param fileId Required PPApplicationFleId File ID to download
+ * @param locationId PPLocationId Location ID to download the file
+ * @param userId PPUserId User ID to download the file
+ * @param expiration PPFileURLExpiration URL's expiration in milliseconds since the current time
+ * @param callback PPFileManagementDownloadURLBlock File content block
+ **/
++ (void)getDownloadURL:(PPApplicationFileId)fileId locationId:(PPLocationId)locationId userId:(PPUserId)userId expiration:(PPFileURLExpiration)expiration callback:(PPFileManagementDownloadURLBlock _Nonnull )callback {
+    NSAssert1(fileId != PPApplicationFileIdNone, @"%s missing fileId", __FUNCTION__);
+    NSMutableString *requestString = [[NSMutableString alloc] initWithFormat:@"appfiles/%li/url", (long)fileId];
+    if(locationId != PPLocationIdNone) {
+        [requestString appendFormat:@"locationId=%li&", (long)locationId];
+    }
+    if(userId != PPUserIdNone) {
+        [requestString appendFormat:@"userId=%li&", (long)userId];
+    }
+    if(expiration != PPFileURLExpirationNone) {
+        [requestString appendFormat:@"expiration=%@&", (expiration) ? @"true" : @"false"];
+    }
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.applicationfilemanagement.getDownloadURL()", DISPATCH_QUEUE_SERIAL);
+    
+    PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
+        
+    [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {
+        
+        dispatch_async(queue, ^{
+            
+            NSError *error = nil;
+            NSDictionary *root = [PPBaseModel processJSONResponse:responseData originatingClass:NSStringFromClass([self class]) error:&error];
+            
+            NSURL *contentUrl;
+            NSURL *thumbnailUrl;
+            
+            if(!error) {
+                if([root objectForKey:@"contentUrl"]) {
+                    contentUrl = [NSURL URLWithString:[root objectForKey:@"contentUrl"]];
+                }
+                if([root objectForKey:@"thumbnailUrl"]) {
+                    thumbnailUrl = [NSURL URLWithString:[root objectForKey:@"thumbnailUrl"]];
+                }
+            }
+            
+            PPLogAPI(@"< %s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                callback(contentUrl, thumbnailUrl, error);
+            });
+        });
+    } failure:^(NSError *error) {
+        
+        dispatch_async(queue, ^{
+            
+            PPLogAPI(@"< %s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                callback(nil, nil, [PPBaseModel resultCodeToNSError:10003 originatingClass:NSStringFromClass([self class]) argument:[NSString stringWithFormat:@"Error domain:%@, code:%ld, userInfo:%@", error.domain, (long)error.code, error.userInfo]]);
+            });
+        });
+    }];
+}
+
+/**
  * Download File.
  * The Range HTTP Header is optional, and will only return a chunk of the total content.
  * A temporary API key provided in the query parameter may be used to forward a link to other part of the app. A temporary API key can be obtained by calling the loginByKey API. It is expired soon after receiving.
