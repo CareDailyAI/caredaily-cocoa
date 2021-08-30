@@ -311,7 +311,7 @@
  **/
 + (void)getDownloadURL:(PPApplicationFileId)fileId locationId:(PPLocationId)locationId userId:(PPUserId)userId expiration:(PPFileURLExpiration)expiration callback:(PPFileManagementDownloadURLBlock _Nonnull )callback {
     NSAssert1(fileId != PPApplicationFileIdNone, @"%s missing fileId", __FUNCTION__);
-    NSMutableString *requestString = [[NSMutableString alloc] initWithFormat:@"appfiles/%li/url", (long)fileId];
+    NSMutableString *requestString = [[NSMutableString alloc] initWithFormat:@"appfiles/%li/url?", (long)fileId];
     if(locationId != PPLocationIdNone) {
         [requestString appendFormat:@"locationId=%li&", (long)locationId];
     }
