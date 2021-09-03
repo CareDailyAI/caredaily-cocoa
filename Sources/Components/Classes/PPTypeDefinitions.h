@@ -2394,7 +2394,7 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeId)  {
     PPDeviceTypeIdAMTKIPCamera = 7002,
     PPDeviceTypeIdNabtoCamera = 7007,
     
-    PPDeviceTypeIdGEInWallSwitch = 9001,
+    PPDeviceTypeIdInWallSwitch = 9001,
     PPDeviceTypeIdSmartenitSiren = 9002,
     PPDeviceTypeIdGreenPeakHumidityAndTemperatureSensor = 9003,
     
@@ -2403,7 +2403,9 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeId)  {
     PPDeviceTypeIdEWIDButton = 9014,
     PPDeviceTypeIdLargeLoadController = 9017,
     
-    PPDeviceTypeIdGEInWallSwitchDimmable = 9018,
+    PPDeviceTypeIdInWallDimmer = 9018,
+    PPDeviceTypeIdInWallOutlet = 9019,
+    PPDeviceTypeIdSmartDimmer = 9020,
     
     PPDeviceTypeIdDevelcoButton = 9101,
     PPDeviceTypeIdDevelcoSiren = 9102,
