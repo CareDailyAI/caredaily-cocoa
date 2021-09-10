@@ -297,7 +297,7 @@ import Foundation
             "context_id": contextId,
             "x_min_meters": xMin,
             "x_max_meters": xMax,
-            "y_min_meters": yMax,
+            "y_min_meters": yMin,
             "y_max_meters": yMax
         ]
         feed["subregion_id"] = subregionId?.intValue
