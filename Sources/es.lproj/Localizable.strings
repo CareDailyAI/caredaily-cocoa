@@ -1274,10 +1274,10 @@
 "ppc.error.lock.timout" = "%1$li %2$@";
 
 /* Label - $time1 and $time2 */
-"rule.component.state.schedule" = "$ time1 y $ time2";
+"rule.component.state.schedule" = "$time1 y $time2";
 
 /* Label - between $time1 and $time2 */
-"rule.component.state.schedule.past" = "entre $ time1 y $ time2";
+"rule.component.state.schedule.past" = "entre $time1 y $time2";
 
 /* Label - What is the start time, and on which days? */
 "rule.component.state.schedule.start" = "¿Cuál es la hora de inicio y en qué días?";
