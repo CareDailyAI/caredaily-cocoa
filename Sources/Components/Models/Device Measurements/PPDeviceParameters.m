@@ -39,37 +39,37 @@
     }
     if([parameter isEqualToString:SYSTEM_MODE]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"System Mode", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - System Mode");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.systemmode", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"System Mode", @"Device Parameter - System Mode");
         }
         else {
             PPDeviceParametersSystemMode systemMode = (PPDeviceParametersSystemMode)value.integerValue;
             switch (systemMode) {
                 case PPDeviceParametersSystemModeOff:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Off", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Off");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.systemmode.off", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Off", @"Device Parameter - Off");
                     break;
                 case PPDeviceParametersSystemModeAuto:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Auto", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Auto");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.systemmode.auto", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Auto", @"Device Parameter - Auto");
                     break;
                 case PPDeviceParametersSystemModeCool:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Cool", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Cool");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.systemmode.cool", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Cool", @"Device Parameter - Cool");
                     break;
                 case PPDeviceParametersSystemModeHeat:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Heat", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Heat");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.systemmode.heat", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Heat", @"Device Parameter - Heat");
                     break;
                 case PPDeviceParametersSystemModeEmergencyHeat:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Emergency Heat", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Emergency Heat");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.systemmode.emergencyheat", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Emergency Heat", @"Device Parameter - Emergency Heat");
                     break;
                 case PPDeviceParametersSystemModePrecooling:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Precooling", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Precooling");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.systemmode.precooling", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Precooling", @"Device Parameter - Precooling");
                     break;
                 case PPDeviceParametersSystemModeFanOnly:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Fan Only", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Fan Only");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.systemmode.fanonly", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Fan Only", @"Device Parameter - Fan Only");
                     break;
                 case PPDeviceParametersSystemModeDry:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Dry", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Dry");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.systemmode.dry", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Dry", @"Device Parameter - Dry");
                     break;
                 case PPDeviceParametersSystemModeAuxiliaryHeat:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Auxiliary Heat", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Auxiliary Heat");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.systemmode.auxiliaryheat", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Auxiliary Heat", @"Device Parameter - Auxiliary Heat");
                     break;
                     
                 default:
@@ -80,7 +80,7 @@
     }
     else if([parameter isEqualToString:SYSTEM_MODE_VALUES]) {
         if(!value) {
-            return @"SYSTEM_MODE_VALUES";
+            return NSLocalizedStringWithDefaultValue(@"device.parameter.systemmodevalues", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"System Mode Values", @"Device Parameter - System Mode Values");
         }
         else {
             returnString = value;
@@ -88,19 +88,19 @@
     }
     else if([parameter isEqualToString:SYSTEM_MODE_STATUS]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"System Mode Status", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - System Mode Status");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.systemmodestatus", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"System Mode Status", @"Device Parameter - System Mode Status");
         }
         else {
             PPDeviceParametersSystemModeStatus systemModeStatus = (PPDeviceParametersSystemModeStatus)value.integerValue;
             switch (systemModeStatus) {
                 case PPDeviceParametersSystemModeStatusOff:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Off", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Off");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.systemmodestatus.off", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Off", @"Device Parameter - Off");
                     break;
                 case PPDeviceParametersSystemModeStatusCool:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Cool", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Cool");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.systemmodestatus.cool", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Cool", @"Device Parameter - Cool");
                     break;
                 case PPDeviceParametersSystemModeStatusHeat:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Heat", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Heat");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.systemmodestatus.heat", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Heat", @"Device Parameter - Heat");
                     break;
                     
                 default:
@@ -111,31 +111,31 @@
     }
     else if([parameter isEqualToString:FAN_MODE]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"Fan Mode", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Fan Mode");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.fanmode", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Fan Mode", @"Device Parameter - Fan Mode");
         }
         else {
             PPDeviceParametersFanMode fanMode = (PPDeviceParametersFanMode)value.integerValue;
             switch (fanMode) {
                 case PPDeviceParametersFanModeOff:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Off", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Off");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.fanmode.off", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Off", @"Device Parameter - Off");
                     break;
                 case PPDeviceParametersFanModeLow:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Low", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Low");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.fanmode.low", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Low", @"Device Parameter - Low");
                     break;
                 case PPDeviceParametersFanModeMedium:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Medium", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Medium");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.fanmode.medium", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Medium", @"Device Parameter - Medium");
                     break;
                 case PPDeviceParametersFanModeHigh:
-                    returnString = NSLocalizedStringFromTableInBundle(@"High", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - High");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.fanmode.high", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"High", @"Device Parameter - High");
                     break;
                 case PPDeviceParametersFanModeOn:
-                    returnString = NSLocalizedStringFromTableInBundle(@"On", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - On");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.fanmode.on", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"On", @"Device Parameter - On");
                     break;
                 case PPDeviceParametersFanModeAuto:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Auto", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Auto");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.fanmode.auto", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Auto", @"Device Parameter - Auto");
                     break;
                 case PPDeviceParametersFanModeSmart:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Smart", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Smart");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.fanmode.smart", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Smart", @"Device Parameter - Smart");
                     break;
                     
                 default:
@@ -146,26 +146,26 @@
     }
     else if([parameter isEqualToString:SWING_MODE]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"Swing Mode", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Swing Mode");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.swingmode", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Swing Mode", @"Device Parameter - Swing Mode");
         }
         else {
             PPDeviceParametersSwingMode swingMode = (PPDeviceParametersSwingMode)value.integerValue;
             switch (swingMode) {
                 case PPDeviceParametersSwingModeStopped:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Stopped", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Stopped");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.swingmode.stopped", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Stopped", @"Device Parameter - Stopped");
                     break;
                 case PPDeviceParametersSwingModeRangeFull:
                 case PPDeviceParametersSwingModeRangeTop:
                 case PPDeviceParametersSwingModeRangeMiddle:
                 case PPDeviceParametersSwingModeRangeBottom:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Range", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Range");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.swingmode.range", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Range", @"Device Parameter - Range");
                     break;
                 case PPDeviceParametersSwingModeFixedTop:
                 case PPDeviceParametersSwingModeFixedMiddleTop:
                 case PPDeviceParametersSwingModeFixedMiddle:
                 case PPDeviceParametersSwingModeFixedMiddleBottom:
                 case PPDeviceParametersSwingModeFixedBottom:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Fixed", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Fixed");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.swingmode.fixed", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Fixed", @"Device Parameter - Fixed");
                     break;
                     
                 default:
@@ -176,16 +176,16 @@
     }
     else if([parameter isEqualToString:STATE]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"State", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - State");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.state", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"State", @"Device Parameter - State");
         }
         else {
             PPDeviceParametersState state = (PPDeviceParametersState)value.integerValue;
             switch (state) {
                 case PPDeviceParametersStateOff:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Off", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Off");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.state.off", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Off", @"Device Parameter - Off");
                     break;
                 case PPDeviceParametersStateOn:
-                    returnString = NSLocalizedStringFromTableInBundle(@"On", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - On");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.state.on", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"On", @"Device Parameter - On");
                     break;
                     
                 default:
@@ -196,7 +196,7 @@
     }
     else if([parameter isEqualToString:CURRENT_LEVEL]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"Brightness", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Brightness");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.brightness", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Brightness", @"Device Parameter - Brightness");
         }
         else {
             returnString = [NSString stringWithFormat:@"%@%%", value];
@@ -204,16 +204,16 @@
     }
     else if([parameter isEqualToString:OUTLET_STATUS]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"Outlet Status", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Outlet Status");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.outletstatus", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Outlet Status", @"Device Parameter - Outlet Status");
         }
         else {
             PPDeviceParametersOutletStatus outletStatus = (PPDeviceParametersOutletStatus)value.integerValue;
             switch (outletStatus) {
                 case PPDeviceParametersOutletStatusOff:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Off", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Off");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.outletstatus.off", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Off", @"Device Parameter - Off");
                     break;
                 case PPDeviceParametersOutletStatusOn:
-                    returnString = NSLocalizedStringFromTableInBundle(@"On", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - On");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.outletstatus.on", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"On", @"Device Parameter - On");
                     break;
                     
                 default:
@@ -224,16 +224,16 @@
     }
     else if([parameter isEqualToString:POWER_STATUS]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"Power Status", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Power Status");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.powerstatus", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Power Status", @"Device Parameter - Power Status");
         }
         else {
             PPDeviceParametersPowerStatus powerStatus = (PPDeviceParametersPowerStatus)value.integerValue;
             switch (powerStatus) {
                 case PPDeviceParametersPowerStatusOff:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Off", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Off");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.powerstatus.off", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Off", @"Device Parameter - Off");
                     break;
                 case PPDeviceParametersPowerStatusOn:
-                    returnString = NSLocalizedStringFromTableInBundle(@"On", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - On");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.powerstatus.on", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"On", @"Device Parameter - On");
                     break;
                     
                 default:
@@ -244,7 +244,7 @@
     }
     else if([parameter isEqualToString:POWER]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"Power", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Power");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.power", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Power", @"Device Parameter - Power");
         }
         else {
             returnString = [NSString stringWithFormat:@"%@ watts", value];
@@ -252,7 +252,7 @@
     }
     else if([parameter isEqualToString:DEG_C]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"Temperature", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Temperature");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.temperature", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Temperature", @"Device Parameter - Temperature");
         }
         else {
             // Allow controllers to handle setting temperature information
@@ -261,7 +261,7 @@
     }
     else if([parameter isEqualToString:INTERNAL_DEG_C]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"Internal Temperature", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Internal Temperature");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.internaltemperature", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Internal Temperature", @"Device Parameter - Internal Temperature");
         }
         else {
             // Allow controllers to handle setting temperature information
@@ -270,7 +270,7 @@
     }
     else if([parameter isEqualToString:COOLING_SETPOINT]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"Cooling Setpoint", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Cooling Setpoint");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.coolingsetpoint", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Cooling Setpoint", @"Device Parameter - Cooling Setpoint");
         }
         else {
             // Allow controllers to handle setting temperature information
@@ -279,7 +279,7 @@
     }
     else if([parameter isEqualToString:HEATING_SETPOINT]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"Heating Setpoint", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Heating Setpoint");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.heatingsetpoint", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Heating Setpoint", @"Device Parameter - Heating Setpoint");
         }
         else {
             // Allow controllers to handle setting temperature information
@@ -288,7 +288,7 @@
     }
     else if([parameter isEqualToString:RELATIVE_HUMIDITY]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"Relative Humidity", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Relative Humidity");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.relativehumidity", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Relative Humidity", @"Device Parameter - Relative Humidity");
         }
         else {
             returnString = [NSString stringWithFormat:@"%@%%", value];
@@ -296,16 +296,16 @@
     }
     else if([parameter isEqualToString:DOOR_STATUS]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"Door Status", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Door Status");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.doorstatus", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Door Status", @"Device Parameter - Door Status");
         }
         else {
             PPDeviceParametersDoorStatus doorStatus = (PPDeviceParametersDoorStatus)value.integerValue;
             switch (doorStatus) {
                 case PPDeviceParametersDoorStatusClosed:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Closed", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Closed");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.doorstatus.closed", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Closed", @"Detail Device Parameter - Closed");
                     break;
                 case PPDeviceParametersDoorStatusOpen:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Open", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Open");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.doorstatus.open", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Open", @"Detail Device Parameter - Open");
                     break;
                     
                 default:
@@ -317,16 +317,16 @@
     
     else if([parameter isEqualToString:VIBRATION_STATUS]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"Vibration Status", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Vibration Status");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.vibrationstatus", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Vibration Status", @"Device Parameter - Vibration Status");
         }
         else {
             PPDeviceParametersVibrationStatus vibrationStatus = (PPDeviceParametersVibrationStatus)value.integerValue;
             switch (vibrationStatus) {
                 case PPDeviceParametersVibrationStatusStill:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Still", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Still");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.vibrationstatus.still", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Still", @"Detail Device Parameter - Still");
                     break;
                 case PPDeviceParametersVibrationStatusMoved:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Moved", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Moved");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.vibrationstatus.moved", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Moved", @"Detail Device Parameter - Moved");
                     break;
                     
                 default:
@@ -338,16 +338,16 @@
     
     else if([parameter isEqualToString:MOTION_STATUS]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"Motion Status", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Motion Status");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.motionstatus", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Motion Status", @"Device Parameter - Motion Status");
         }
         else {
             PPDeviceParametersMotionStatus motionStatus = (PPDeviceParametersMotionStatus)value.integerValue;
             switch (motionStatus) {
                 case PPDeviceParametersMotionStatusNoMotion:
-                    returnString = NSLocalizedStringFromTableInBundle(@"No Motion", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - No Motion");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.motionstatus.nomotion", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"No Motion", @"Detail Device Parameter - No Motion");
                     break;
                 case PPDeviceParametersMotionStatusMotion:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Motion", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Motion");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.motionstatus.motion", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Motion", @"Detail Device Parameter - Motion");
                     break;
                     
                 default:
@@ -358,16 +358,16 @@
     }
     else if([parameter isEqualToString:WATER_LEAK]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"Water Leak", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Water Leak");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.waterleak", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Water Leak", @"Device Parameter - Water Leak");
         }
         else {
             PPDeviceParametersWaterLeak waterLeak = (PPDeviceParametersWaterLeak)value.integerValue;
             switch (waterLeak) {
                 case PPDeviceParametersWaterLeakDry:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Dry", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Dry");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.waterleak.dry", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Dry", @"Detail Device Parameter - Dry");
                     break;
                 case PPDeviceParametersWaterLeakWet:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Wet", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Wet");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.waterleak.wet", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Wet", @"Detail Device Parameter - Wet");
                     break;
                     
                 default:
@@ -378,16 +378,16 @@
     }
     else if([parameter isEqualToString:LOCK_STATUS]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"Lock Status", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Lock Status");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.lockstatus", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Lock Status", @"Device Parameter - Lock Status");
         }
         else {
             PPDeviceParametersLockStatus lockStatus = (PPDeviceParametersLockStatus)value.integerValue;
             switch (lockStatus) {
                 case PPDeviceParametersLockStatusLocked:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Locked", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Locked");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.lockstatus.locked", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Locked", @"Detail Device Parameter - Locked");
                     break;
                 case PPDeviceParametersLockStatusUnlocked:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Unlocked", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Unlocked");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.lockstatus.unlocked", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Unlocked", @"Detail Device Parameter - Unlocked");
                     break;
                     
                 default:
@@ -398,31 +398,31 @@
     }
     else if([parameter isEqualToString:LOCK_STATUS_ALARM]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"Lock Status Alarm", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Lock Status Alarm");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.lockstatusalarm", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Lock Status Alarm", @"Device Parameter - Lock Status Alarm");
         }
         else {
             PPDeviceParametersLockStatusAlarm lockStatusAlarm = (PPDeviceParametersLockStatusAlarm)value.integerValue;
             switch (lockStatusAlarm) {
                 case PPDeviceParametersLockStatusAlarmOK:
-                    returnString = NSLocalizedStringFromTableInBundle(@"OK", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - OK");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.lockstatusalarm.ok", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"OK", @"Detail Device Parameter - OK");
                     break;
                 case PPDeviceParametersLockStatusAlarmDeadboltJammed:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Deadbolt Jammed", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Deadbolt Jammed");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.lockstatusalarm.deadboltjammed", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Deadbolt Jammed", @"Detail Device Parameter - Deadbolt Jammed");
                     break;
                 case PPDeviceParametersLockStatusAlarmLockResetFactoryDefaults:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Lock Reset to Factory Defaults", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Lock Reset to Factory Defaults");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.lockstatusalarm.lockresettofactorydefaults", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Lock Reset to Factory Defaults", @"Detail Device Parameter - Lock Reset to Factory Defaults");
                     break;
                 case PPDeviceParametersLockStatusAlarmRFModulePowerCycled:
-                    returnString = NSLocalizedStringFromTableInBundle(@"RF Module Power Cycled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - RF Module Power Cycled");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.lockstatusalarm.rfmodulepowercycled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"RF Module Power Cycled", @"Detail Device Parameter - RF Module Power Cycled");
                     break;
                 case PPDeviceParametersLockStatusAlarmWrongCodeEntryLimit:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Wrong Code Entry Limit", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Wrong Code Entry Limit");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.lockstatusalarm.wrongcodeentrylimit", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Wrong Code Entry Limit", @"Detail Device Parameter - Wrong Code Entry Limit");
                     break;
                 case PPDeviceParametersLockStatusAlarmFrontEscutcheonRemoved:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Front Escutcheon Removed", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Front Escutcheon Removed");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.lockstatusalarm.frontescutcheonremoved", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Front Escutcheon Removed", @"Detail Device Parameter - Front Escutcheon Removed");
                     break;
                 case PPDeviceParametersLockStatusAlarmDoorForcedOpen:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Door Forced Open", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Door Forced Open");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.lockstatusalarm.doorforcedopen", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Door Forced Open", @"Detail Device Parameter - Door Forced Open");
                     break;
                     
                 default:
@@ -433,16 +433,16 @@
     }
     else if([parameter isEqualToString:BUTTON_STATUS]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"Button Status", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Button Status");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.buttonstatus", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Button Status", @"Device Parameter - Button Status");
         }
         else {
             PPDeviceParametersButtonStatus buttonStatus = (PPDeviceParametersButtonStatus)value.integerValue;
             switch (buttonStatus) {
                 case PPDeviceParametersButtonStatusReleased:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Released", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Released");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.buttonstatus.released", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Released", @"Detail Device Parameter - Released");
                     break;
                 case PPDeviceParametersButtonStatusPressed:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Pressed", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Pressed");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.buttonstatus.pressed", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Pressed", @"Detail Device Parameter - Pressed");
                     break;
                     
                 default:
@@ -453,16 +453,16 @@
     }
     else if([parameter isEqualToString:ALARM_STATUS]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"Alarm Status", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Alarm Status");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmstatus", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Alarm Status", @"Device Parameter - Alarm Status");
         }
         else {
             PPDeviceParametersAlarmStatus alarmStatus = (PPDeviceParametersAlarmStatus)value.integerValue;
             switch (alarmStatus) {
                 case PPDeviceParametersAlarmStatusInactive:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Inactive", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Inactive");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmstatus.inactive", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Inactive", @"Detail Device Parameter - Inactive");
                     break;
                 case PPDeviceParametersAlarmStatusActive:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Active", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Active");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmstatus.active", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Active", @"Detail Device Parameter - Active");
                     break;
                     
                 default:
@@ -474,65 +474,65 @@
     
     else if([parameter isEqualToString:ALARM_WARN]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"Alarm Warn", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Alarm Warn");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Alarm Warn", @"Device Parameter - Alarm Warn");
         }
         else {
             if(deviceTypeId == PPDeviceTypeIdNone) {
-                returnString = NSLocalizedStringFromTableInBundle(@"Alarm Warn", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Alarm Warn");
+                returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Alarm Warn", @"Device Parameter - Alarm Warn");
             }
             else if(deviceTypeId == PPDeviceTypeIdSmartenitSiren) {
                 PPDeviceParametersAlarmWarnSmartenit alarmWarn = (PPDeviceParametersAlarmWarnSmartenit)value.integerValue;
                 switch (alarmWarn) {
                     case PPDeviceParametersAlarmWarnSmartenitSecurityDrill:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Security Drill", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Security Drill");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.smartenit.securitydrill", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Security Drill", @"Detail Device Parameter - Security Drill");
                         break;
                     case PPDeviceParametersAlarmWarnSmartenitStop:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Stop alarm", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Stop alarm");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.smartenit.stopalarm", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Stop alarm", @"Detail Device Parameter - Stop alarm");
                         break;
                     case PPDeviceParametersAlarmWarnSmartenitBurglar:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Burglar alarm", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Burglar alarm");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.smartenit.burglaralarm", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Burglar alarm", @"Detail Device Parameter - Burglar alarm");
                         break;
                     case PPDeviceParametersAlarmWarnSmartenitFire:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Fire alarm", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Fire alarm");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.smartenit.firealarm", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Fire alarm", @"Detail Device Parameter - Fire alarm");
                         break;
                     case PPDeviceParametersAlarmWarnSmartenitEmergency:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Emergency alarm", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Emergency alarm");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.smartenit.emergencyalarm", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Emergency alarm", @"Detail Device Parameter - Emergency alarm");
                         break;
                     case PPDeviceParametersAlarmWarnSmartenitChinese1:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Chinese1", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Chinese1");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.smartenit.chinese1", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Chinese1", @"Detail Device Parameter - Chinese1");
                         break;
                     case PPDeviceParametersAlarmWarnSmartenitChinese2:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Chinese2", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Chinese2");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.smartenit.chinese2", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Chinese2", @"Detail Device Parameter - Chinese2");
                         break;
                     case PPDeviceParametersAlarmWarnSmartenitChinese3:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Chinese3", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Chinese3");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.smartenit.chinese3", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Chinese3", @"Detail Device Parameter - Chinese3");
                         break;
                     case PPDeviceParametersAlarmWarnSmartenitChinese4:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Chinese4", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Chinese4");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.smartenit.chinese4", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Chinese4", @"Detail Device Parameter - Chinese4");
                         break;
                     case PPDeviceParametersAlarmWarnSmartenitChinese5:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Chinese5", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Chinese5");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.smartenit.chinese5", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Chinese5", @"Detail Device Parameter - Chinese5");
                         break;
                     case PPDeviceParametersAlarmWarnSmartenitChinese6:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Chinese6", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Chinese6");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.smartenit.chinese6", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Chinese6", @"Detail Device Parameter - Chinese6");
                         break;
                     case PPDeviceParametersAlarmWarnSmartenitChinese7:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Chinese7", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Chinese7");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.smartenit.chinese7", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Chinese7", @"Detail Device Parameter - Chinese7");
                         break;
                     case PPDeviceParametersAlarmWarnSmartenitChinese8:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Chinese8", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Chinese8");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.smartenit.chinese8", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Chinese8", @"Detail Device Parameter - Chinese8");
                         break;
                     case PPDeviceParametersAlarmWarnSmartenitClickOnce:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Click once", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Click once");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.smartenit.clickonce", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Click once", @"Detail Device Parameter - Click once");
                         break;
                     case PPDeviceParametersAlarmWarnSmartenitClickMulitple:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Mulitple clicks", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Multiple clicks");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.smartenit.mulitpleclicks", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Mulitple clicks", @"Detail Device Parameter - Multiple clicks");
                         break;
                     case PPDeviceParametersAlarmWarnSmartenitNoSound:
-                        returnString = NSLocalizedStringFromTableInBundle(@"No sound", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - No sound");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.smartenit.nosound", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"No sound", @"Detail Device Parameter - No sound");
                         break;
                     case PPDeviceParametersAlarmWarnSmartenitDoorbell:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Doorbell", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Doorbell");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.smartenit.doorbell", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Doorbell", @"Detail Device Parameter - Doorbell");
                         break;
                         
                     default:
@@ -544,49 +544,49 @@
                 PPDeviceParametersAlarmWarnLinkHigh alarmWarn = (PPDeviceParametersAlarmWarnLinkHigh)value.integerValue;
                 switch (alarmWarn) {
                     case PPDeviceParametersAlarmWarnLinkHighSecurityDrill:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Security Drill", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Security Drill");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.linkhigh.securitydrill", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Security Drill", @"Detail Device Parameter - Security Drill");
                         break;
                     case PPDeviceParametersAlarmWarnLinkHighAlarm:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Alarm", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Alarm");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.linkhigh.alarm", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Alarm", @"Detail Device Parameter - Alarm");
                         break;
                     case PPDeviceParametersAlarmWarnLinkHighDog:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Dog", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Dog");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.linkhigh.dog", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Dog", @"Detail Device Parameter - Dog");
                         break;
                     case PPDeviceParametersAlarmWarnLinkHighWarning:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Warning", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Warning");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.linkhigh.warning", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Warning", @"Detail Device Parameter - Warning");
                         break;
                     case PPDeviceParametersAlarmWarnLinkHighBling:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Bling", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Bling");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.linkhigh.bling", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Bling", @"Detail Device Parameter - Bling");
                         break;
                     case PPDeviceParametersAlarmWarnLinkHighBird:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Bird", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Bird");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.linkhigh.bird", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Bird", @"Detail Device Parameter - Bird");
                         break;
                     case PPDeviceParametersAlarmWarnLinkHighDroid:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Droid", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Droid");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.linkhigh.droid", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Droid", @"Detail Device Parameter - Droid");
                         break;
                     case PPDeviceParametersAlarmWarnLinkHighLock:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Lock", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Lock");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.linkhigh.lock", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Lock", @"Detail Device Parameter - Lock");
                         break;
                     case PPDeviceParametersAlarmWarnLinkHighPhaser:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Phaser", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Phaser");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.linkhigh.phaser", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Phaser", @"Detail Device Parameter - Phaser");
                         break;
                     case PPDeviceParametersAlarmWarnLinkHighDoorbel:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Doorbel", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Doorbel");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.linkhigh.doorbell", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Doorbell", @"Detail Device Parameter - Doorbell");
                         break;
                     case PPDeviceParametersAlarmWarnLinkHighGunCock:
-                        returnString = NSLocalizedStringFromTableInBundle(@"GunCock", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - GunCock");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.linkhigh.guncock", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"GunCock", @"Detail Device Parameter - GunCock");
                         break;
                     case PPDeviceParametersAlarmWarnLinkHighGunShot:
-                        returnString = NSLocalizedStringFromTableInBundle(@"GunShot", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - GunShot");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.linkhigh.gunshot", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"GunShot", @"Detail Device Parameter - GunShot");
                         break;
                     case PPDeviceParametersAlarmWarnLinkHighSwitch:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Switch", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Switch");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.linkhigh.switch", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Switch", @"Detail Device Parameter - Switch");
                         break;
                     case PPDeviceParametersAlarmWarnLinkHighTrumpet:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Trumpet", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Trumpet");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.linkhigh.trumpet", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Trumpet", @"Detail Device Parameter - Trumpet");
                         break;
                     case PPDeviceParametersAlarmWarnLinkHighWhistle:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Whistle", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Whistle");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.linkhigh.whistle", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Whistle", @"Detail Device Parameter - Whistle");
                         break;
                         
                     default:
@@ -598,37 +598,37 @@
                 PPDeviceParametersAlarmWarnDevelco alarmWarn = (PPDeviceParametersAlarmWarnDevelco)value.integerValue;
                 switch (alarmWarn) {
                     case PPDeviceParametersAlarmWarnDevelcoSilence:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Silence", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Silence");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.develco.silence", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Silence", @"Detail Device Parameter - Silence");
                         break;
                     case PPDeviceParametersAlarmWarnDevelcoBurglar:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Burglar", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Burglar");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.develco.burglar", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Burglar", @"Detail Device Parameter - Burglar");
                         break;
                     case PPDeviceParametersAlarmWarnDevelcoFire:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Fire", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Fire");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.develco.fire", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Fire", @"Detail Device Parameter - Fire");
                         break;
                     case PPDeviceParametersAlarmWarnDevelcoEmergency:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Emergency", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Emergency");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.develco.emergency", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Emergency", @"Detail Device Parameter - Emergency");
                         break;
                     case PPDeviceParametersAlarmWarnDevelcoPanicP:
-                        returnString = NSLocalizedStringFromTableInBundle(@"PanicP", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - PanicP");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.develco.panic.p", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"PanicP", @"Detail Device Parameter - PanicP");
                         break;
                     case PPDeviceParametersAlarmWarnDevelcoPanicF:
-                        returnString = NSLocalizedStringFromTableInBundle(@"PanicF", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - PanicF");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.develco.panic.f", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"PanicF", @"Detail Device Parameter - PanicF");
                         break;
                     case PPDeviceParametersAlarmWarnDevelcoPanicE:
-                        returnString = NSLocalizedStringFromTableInBundle(@"PanicE", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - PanicE");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.develco.panic.e", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"PanicE", @"Detail Device Parameter - PanicE");
                         break;
                     case PPDeviceParametersAlarmWarnDevelcoBeepBeepWelcome:
-                        returnString = NSLocalizedStringFromTableInBundle(@"BeepBeepWelcome", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - BeepBeepWelcome");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.develco.beepbeepwelcome", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"BeepBeepWelcome", @"Detail Device Parameter - BeepBeepWelcome");
                         break;
                     case PPDeviceParametersAlarmWarnDevelcoBeepWelcome:
-                        returnString = NSLocalizedStringFromTableInBundle(@"BeepWelcome", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - BeepWelcome");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.develco.beepwelcome", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"BeepWelcome", @"Detail Device Parameter - BeepWelcome");
                         break;
                     case PPDeviceParametersAlarmWarnDevelcoBeepBeep:
-                        returnString = NSLocalizedStringFromTableInBundle(@"BeepBeep", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - BeepBeep");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.develco.beepbeep", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"BeepBeep", @"Detail Device Parameter - BeepBeep");
                         break;
                     case PPDeviceParametersAlarmWarnDevelcoBeep:
-                        returnString = NSLocalizedStringFromTableInBundle(@"Beep", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Beep");
+                        returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmwarn.develco.beep", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Beep", @"Detail Device Parameter - Beep");
                         break;
                         
                     default:
@@ -640,20 +640,20 @@
     }
     else if([parameter isEqualToString:ALARM_DURATION]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"Alarm Duration", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Alarm Duration");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmduration", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Alarm Duration", @"Device Parameter - Alarm Duration");
         }
         else {
             PPDeviceParametersAlarmDuration alarmDuration = (PPDeviceParametersAlarmDuration)value.integerValue;
             switch (alarmDuration) {
                 case PPDeviceParametersAlarmDurationStop:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Stop", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Stop");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmduration.stop", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Stop", @"Detail Device Parameter - Stop");
                     break;
                 case PPDeviceParametersAlarmDurationOnce:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Play once", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Play once");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmduration.playonce", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Play once", @"Detail Device Parameter - Play once");
                     break;
                     
                 default:
-                    returnString = [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"Play for %i seconds", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Play for {n} seconds"), alarmDuration];
+                    returnString = [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"device.parameter.alarmduration.play.seconds.multiple", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Play for %@ seconds", @"Detail Device Parameter - Play for {n} seconds"), alarmDuration];
                     break;
             }
         }
@@ -661,16 +661,16 @@
     
     else if([parameter isEqualToString:ALARM_STROBE]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"Alarm Strobe", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Alarm Strobe");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmstrobe", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Alarm Strobe", @"Device Parameter - Alarm Strobe");
         }
         else {
             PPDeviceParametersAlarmStrobe alarmStrobe = (PPDeviceParametersAlarmStrobe)value.integerValue;
             switch (alarmStrobe) {
                 case PPDeviceParametersAlarmStrobeOn:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Strobe on", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Strobe on");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmstrobe.strobeon", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Strobe on", @"Detail Device Parameter - Strobe on");
                     break;
                 case PPDeviceParametersAlarmStrobeOff:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Strobe off", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Strobe off");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmstrobe.strobeoff", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Strobe off", @"Detail Device Parameter - Strobe off");
                     break;
                     
                 default:
@@ -682,16 +682,16 @@
     
     else if([parameter isEqualToString:ALARM_SQUAWK]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"Alarm Squawk", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Alarm Squawk");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmsquawk", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Alarm Squawk", @"Device Parameter - Alarm Squawk");
         }
         else {
             PPDeviceParametersAlarmSquawk alarmSquawk = (PPDeviceParametersAlarmSquawk)value.integerValue;
             switch (alarmSquawk) {
                 case PPDeviceParametersAlarmSquawkArmed:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Squawk armed", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Squawk sarmed");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmsquawk.squawkarmed", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Squawk armed", @"Detail Device Parameter - Squawk sarmed");
                     break;
                 case PPDeviceParametersAlarmSquawkDisarmed:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Squawk disarmed", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - Squawk disarmed");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarmsquawk.squawkdisarmed", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Squawk disarmed", @"Detail Device Parameter - Squawk disarmed");
                     break;
                     
                 default:
@@ -702,16 +702,16 @@
     }
     else if([parameter isEqualToString:IBEACON_STATUS]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"iBeacon Status", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - iBeacon Status");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.ibeaconstatus", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"iBeacon Status", @"Device Parameter - iBeacon Status");
         }
         else {
             PPDeviceParametersIBeaconStatus iBeaconStatus = (PPDeviceParametersIBeaconStatus)value.integerValue;
             switch (iBeaconStatus) {
                 case PPDeviceParametersIBeaconStatusOn:
-                    returnString = NSLocalizedStringFromTableInBundle(@"On", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - On");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.ibeaconstatus.on", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"On", @"Device Parameter - On");
                     break;
                 case PPDeviceParametersIBeaconStatusOff:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Off", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Off");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.ibeaconstatus.off", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Off", @"Device Parameter - Off");
                     break;
                     
                 default:
@@ -722,22 +722,22 @@
     }
     else if([parameter isEqualToString:IBEACON_PROXIMITY]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"iBeacon Proximity", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - iBeacon Proximity");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.ibeaconproximity", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"iBeacon Proximity", @"Device Parameter - iBeacon Proximity");
         }
         else {
             PPDeviceParametersIBeaconProximity iBeaconProximity = (PPDeviceParametersIBeaconProximity)value.integerValue;
             switch (iBeaconProximity) {
                 case PPDeviceParametersIBeaconProximityUnknown:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Unknown", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Unknown");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.ibeaconproximity.unknown", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Unknown", @"Device Parameter - Unknown");
                     break;
                 case PPDeviceParametersIBeaconProximityImmediate:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Immediate", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Immediate");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.ibeaconproximity.immediate", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Immediate", @"Device Parameter - Immediate");
                     break;
                 case PPDeviceParametersIBeaconProximityNear:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Near", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Near");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.ibeaconproximity.near", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Near", @"Device Parameter - Near");
                     break;
                 case PPDeviceParametersIBeaconProximityFar:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Far", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Far");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.ibeaconproximity.far", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Far", @"Device Parameter - Far");
                     break;
                 default:
                     returnString = @"undefined";
@@ -747,16 +747,16 @@
     }
     else if([parameter isEqualToString:SIG_STATUS]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"LintAlert Status", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - LintAlert Status");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.lintalertstatus", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"LintAlert Status", @"Device Parameter - LintAlert Status");
         }
         else {
             PPDeviceParametersSigStatus sigStatus = (PPDeviceParametersSigStatus)value.integerValue;
             switch (sigStatus) {
                 case PPDeviceParametersSigStatusOff:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Dryer Off", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - LintAlert Dryer Off");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.lintalertstatus.dryeroff", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Dryer Off", @"Device Parameter - LintAlert Dryer Off");
                     break;
                 case PPDeviceParametersSigStatusOn:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Dryer On", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - LintAlert Dryer On");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.lintalertstatus.dryeron", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Dryer On", @"Device Parameter - LintAlert Dryer On");
                     break;
                 default:
                     returnString = @"undefined";
@@ -766,42 +766,42 @@
     }
     else if([parameter isEqualToString:SIG_CUR_MAX_LED]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"LintAlert Current LED", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - LintAlert Current LED");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.lintalertcurrentled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"LintAlert Current LED", @"Device Parameter - LintAlert Current LED");
         }
         else {
             PPDeviceParametersSigCurMaxLed sigCurMaxLed = (PPDeviceParametersSigCurMaxLed)value.integerValue;
             if(sigCurMaxLed <= PPDeviceParametersSigCurMaxLedOK) {
-                returnString = NSLocalizedStringFromTableInBundle(@"OK", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - LintAlert OK");
+                returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.lintalertcurrentled.ok", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"OK", @"Detail Device Parameter - LintAlert OK");
             }
             else if(sigCurMaxLed == PPDeviceParametersSigCurMaxLedWarning) {
-                returnString = NSLocalizedStringFromTableInBundle(@"Warning", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - LintAlert Warning");
+                returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.lintalertcurrentled.warning", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Warning", @"Detail Device Parameter - LintAlert Warning");
             }
             else {
-                returnString = NSLocalizedStringFromTableInBundle(@"Blocked", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detail Label - LintAlert Blocked");
+                returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.lintalertcurrentled.blocked", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Blocked", @"Detail Device Parameter - LintAlert Blocked");
             }
         }
     }
     else if([parameter isEqualToString:NAM_HEALTH_IDX]) {
         if(!value) {
-            returnString = NSLocalizedStringFromTableInBundle(@"Netatmo Health Coach Status", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Netatmo Health Coach Status");
+            returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.netatmohealthcoachstatus", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Netatmo Health Coach Status", @"Device Parameter - Netatmo Health Coach Status");
         }
         else {
             PPDeviceParametersNamHealthIdx namHealthIdx = (PPDeviceParametersNamHealthIdx)value.integerValue;
             switch (namHealthIdx) {
                 case PPDeviceParametersNamHealthIdxHealthy:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Healthy", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Netatmo Health Coath stauts - Healthy");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.netatmohealthcoachstatus.healthy", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Healthy", @"Device Parameter - Netatmo Health Coath stauts - Healthy");
                     break;
                 case PPDeviceParametersNamHealthIdxFine:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Fine", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Netatmo Health Coath stauts - Fine");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.netatmohealthcoachstatus.fine", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Fine", @"Device Parameter - Netatmo Health Coath stauts - Fine");
                     break;
                 case PPDeviceParametersNamHealthIdxFair:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Fair", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Netatmo Health Coath stauts - Fair");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.netatmohealthcoachstatus.fair", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Fair", @"Device Parameter - Netatmo Health Coath stauts - Fair");
                     break;
                 case PPDeviceParametersNamHealthIdxPoor:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Poor", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Netatmo Health Coath stauts - Poor");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.netatmohealthcoachstatus.poor", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Poor", @"Device Parameter - Netatmo Health Coath stauts - Poor");
                     break;
                 case PPDeviceParametersNamHealthIdxUnhealthy:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Unhealthy", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Netatmo Health Coath stauts - Unhealthy");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.netatmohealthcoachstatus.unhealthy", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Unhealthy", @"Device Parameter - Netatmo Health Coath stauts - Unhealthy");
                     break;
                     
                 default:
@@ -812,7 +812,7 @@
     }
     else if([parameter isEqualToString:FAN_MODE_SEQUENCE]) {
         if(!value) {
-            return @"FAN_MODE_SEQUENCE";
+            return NSLocalizedStringWithDefaultValue(@"device.parameter.fanmodesequence", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Fan Mode Sequence", @"Device Parameter - Fan Mode Sequence");
         }
         else {
             returnString = value;
@@ -820,7 +820,7 @@
     }
     else if([parameter isEqualToString:FAN_MODE_VALUES]) {
         if(!value) {
-            return @"FAN_MODE_VALUES";
+            return NSLocalizedStringWithDefaultValue(@"device.parameter.fanmodevalues", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Fan Mode Values", @"Device Parameter - Fan Mode Values");
         }
         else {
             returnString = value;
@@ -828,7 +828,7 @@
     }
     else if([parameter isEqualToString:MIN_COOLING_SETPOINT]) {
         if(!value) {
-            return @"MIN_COOLING_SETPOINT";
+            return NSLocalizedStringWithDefaultValue(@"device.parameter.mincoolingsetpoint", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Minimum Cooling Setpoint", @"Device Parameter - Minimum Cooling Setpoint");
         }
         else {
             returnString = value;
@@ -836,7 +836,7 @@
     }
     else if([parameter isEqualToString:MAX_COOLING_SETPOINT]) {
         if(!value) {
-            return @"MAX_COOLING_SETPOINT";
+            return NSLocalizedStringWithDefaultValue(@"device.parameter.maxcoolingsetpoint", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Maximum Cooling Setpoint", @"Device Parameter - Maximum Cooling Setpoint");
         }
         else {
             returnString = value;
@@ -844,7 +844,7 @@
     }
     else if([parameter isEqualToString:MIN_HEATING_SETPOINT]) {
         if(!value) {
-            return @"MIN_HEATING_SETPOINT";
+            return NSLocalizedStringWithDefaultValue(@"device.parameter.minheatingsetpoint", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Minimum Heating Setpoint", @"Device Parameter - Minimum Heating Setpoint");
         }
         else {
             returnString = value;
@@ -852,7 +852,7 @@
     }
     else if([parameter isEqualToString:MAX_HEATING_SETPOINT]) {
         if(!value) {
-            return @"MAX_HEATING_SETPOINT";
+            return NSLocalizedStringWithDefaultValue(@"device.parameter.maxheatingsetpoint", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Maximum Heating Setpoint", @"Device Parameter - Maximum Heating Setpoint");
         }
         else {
             returnString = value;
@@ -860,7 +860,7 @@
     }
     else if([parameter isEqualToString:TEMP_VALUES]) {
         if(!value) {
-            return @"TEMP_VALUES";
+            return NSLocalizedStringWithDefaultValue(@"device.parameter.tempvalues", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Temperature Values", @"Device Parameter - Temperature Values");
         }
         else {
             returnString = value;
@@ -868,7 +868,7 @@
     }
     else if([parameter isEqualToString:SWING_MODE_VALUES]) {
         if(!value) {
-            return @"SWING_MODE_VALUES";
+            return NSLocalizedStringWithDefaultValue(@"device.parameter.swingmodevalues", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Swing Mode Values", @"Device Parameter - Swing Mode Values");
         }
         else {
             returnString = value;
@@ -876,16 +876,16 @@
     }
     else if([parameter isEqualToString:RECORD_STATUS]) {
         if(!value) {
-            return @"RECORD_STATUS";
+            return NSLocalizedStringWithDefaultValue(@"device.parameter.recordstatus", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Record Status", @"Device Parameter - Record Status");
         }
         else {
             PPDeviceParametersRecordStatus recordStatus = (PPDeviceParametersRecordStatus)value.integerValue;
             switch (recordStatus) {
                 case PPDeviceParametersRecordStatusRecording:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Recording", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Recording");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.recordstatus.recording", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Recording", @"Device Parameter - Recording");
                     break;
                 case PPDeviceParametersRecordStatusNotRecording:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Not recording", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Not recording");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.recordstatus.notrecording", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Not recording", @"Device Parameter - Not recording");
                 default:
                     break;
             }
@@ -893,17 +893,17 @@
     }
     else if([parameter isEqualToString:ACCESS_CAMERA_SETTINGS]) {
         if(!value) {
-            return @"ACCESS_CAMERA_SETTINGS";
+            return NSLocalizedStringWithDefaultValue(@"device.parameter.accesscamerasettings", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Access Camera Settings", @"Device Parameter - Access Camera Settings");
         }
         else {
             
             PPDeviceParametersAccessCameraSettings accessCameraSettings = (PPDeviceParametersAccessCameraSettings)value.integerValue;
             switch (accessCameraSettings) {
                 case PPDeviceParametersAccessCameraSettingsOn:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Remote control enabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Recording");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.accesscamerasettings.remotecontrolenabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Remote control enabled", @"Device Parameter - Remote control enabled");
                     break;
                 case PPDeviceParametersAccessCameraSettingsOff:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Remote control disabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Remote control disabled");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.accesscamerasettings.remotecontroldisabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Remote control disabled", @"Device Parameter - Remote control disabled");
                 default:
                     break;
             }
@@ -911,17 +911,17 @@
     }
     else if([parameter isEqualToString:AUDIO_STREAMING]) {
         if(!value) {
-            return @"AUDIO_STREAMING";
+            return NSLocalizedStringWithDefaultValue(@"device.parameter.audiostreaming", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Audio Streaming", @"Device Parameter - Audio Streaming");
         }
         else {
             
             PPDeviceParametersAudioStreaming audioStreaming = (PPDeviceParametersAudioStreaming)value.integerValue;
             switch (audioStreaming) {
                 case PPDeviceParametersAudioStreamingOn:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Audio streaming enabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Audio streaming enabled");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.audiostreaming.audiostreamingenabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Audio streaming enabled", @"Device Parameter - Audio streaming enabled");
                     break;
                 case PPDeviceParametersAudioStreamingOff:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Audio streaming disabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Audio streaming disabled");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.audiostreaming.audiostreamingdisabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Audio streaming disabled", @"Device Parameter - Audio streaming disabled");
                 default:
                     break;
             }
@@ -929,17 +929,17 @@
     }
     else if([parameter isEqualToString:VIDEO_STREAMING]) {
         if(!value) {
-            return @"VIDEO_STREAMING";
+            return NSLocalizedStringWithDefaultValue(@"device.parameter.videostreaming", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Video Streaming", @"Device Parameter - Video Streaming");
         }
         else {
             
             PPDeviceParametersVideoStreaming videoStreaming = (PPDeviceParametersVideoStreaming)value.integerValue;
             switch (videoStreaming) {
                 case PPDeviceParametersVideoStreamingOn:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Video streaming enabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Video streaming enabled");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.videostreaming.videostreamingenabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Video streaming enabled", @"Device Parameter - Video streaming enabled");
                     break;
                 case PPDeviceParametersVideoStreamingOff:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Video streaming disabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Video streaming disabled");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.videostreaming.videostreamingdisabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Video streaming disabled", @"Device Parameter - Video streaming disabled");
                 default:
                     break;
             }
@@ -947,17 +947,17 @@
     }
     else if([parameter isEqualToString:HD_STATUS]) {
         if(!value) {
-            return @"HD_STATUS";
+            return NSLocalizedStringWithDefaultValue(@"device.parameter.hdstatus", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"HD Status", @"Device Parameter - HD Status");
         }
         else {
             
             PPDeviceParametersHDStatus HDStatus = (PPDeviceParametersHDStatus)value.integerValue;
             switch (HDStatus) {
                 case PPDeviceParametersHDStatusOn:
-                    returnString = NSLocalizedStringFromTableInBundle(@"HD Status enabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - HD Status enabled");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.hdstatus.hdstatusenabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"HD Status enabled", @"Device Parameter - HD Status enabled");
                     break;
                 case PPDeviceParametersHDStatusOff:
-                    returnString = NSLocalizedStringFromTableInBundle(@"HD Status disabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - HD Status disabled");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.hdstatus.hdstatusdisabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"HD Status disabled", @"Device Parameter - HD Status disabled");
                 default:
                     break;
             }
@@ -965,7 +965,7 @@
     }
     else if([parameter isEqualToString:RAPID_MOTION_STATUS]) {
         if(!value) {
-            return @"RAPID_MOTION_STATUS";
+            return NSLocalizedStringWithDefaultValue(@"device.parameter.rapidmotionstatus", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Rapid Motion Status", @"Device Parameter - Rapid Motion Status");
         }
         else {
             
@@ -977,7 +977,7 @@
             
             switch (rapidMotionStatus) {
                 case PPDeviceParametersRapidMotionStatusMinProVideo:
-                    returnString = NSLocalizedStringFromTableInBundle(@"As fast as possible", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - As fast as possible");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.rapidmotionstatus.asfastaspossible", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"As fast as possible", @"Device Parameter - As fast as possible");
                     break;
                 default:
                     rapidMotionStatusSeconds = (int)value.integerValue % 60;
@@ -985,11 +985,11 @@
                     rapidMotionStatusHours = (int)value.integerValue / 3600;
                     
                     if(rapidMotionStatusSeconds == 0 && rapidMotionStatusMinutes == 0) {
-                        returnString = [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"%d hr", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - {number} hours"), rapidMotionStatusHours];
+                        returnString = [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"device.parameter.rapidmotionstatus.hours", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%d hr", @"Device Parameter - {number} hours"), rapidMotionStatusHours];
                     } else if (rapidMotionStatusSeconds == 0 && rapidMotionStatusMinutes > 0) {
-                        returnString = [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"%d min", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - {number} minutes"), rapidMotionStatusMinutes];
+                        returnString = [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"device.parameter.rapidmotionstatus.minutes", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%d min", @"Device Parameter - {number} minutes"), rapidMotionStatusMinutes];
                     } else {
-                        returnString = [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"%d min %d sec", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - {number} minutes {number} seconds"), rapidMotionStatusMinutes , rapidMotionStatusSeconds];
+                        returnString = [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"device.parameter.rapidmotionstatus.minutes_seconds", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%d min %d sec", @"Device Parameter - {number} minutes {number} seconds"), rapidMotionStatusMinutes , rapidMotionStatusSeconds];
                     }
                     break;
             }
@@ -997,7 +997,7 @@
     }
     else if([parameter isEqualToString:BATTERY_LEVEL]) {
         if(!value) {
-            return @"BATTERY_LEVEL";
+            return NSLocalizedStringWithDefaultValue(@"device.parameter.batterylevel", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Battery Level", @"Device Parameter - Battery Level");
         }
         else {
             returnString = value;
@@ -1005,17 +1005,17 @@
     }
     else if([parameter isEqualToString:CHARGING]) {
         if(!value) {
-            return @"CHARGING";
+            return NSLocalizedStringWithDefaultValue(@"device.parameter.charging", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Charging", @"Device Parameter - Charging");
         }
         else {
             
             PPDeviceParametersCharging charging = (PPDeviceParametersCharging)value.integerValue;
             switch (charging) {
                 case PPDeviceParametersChargingTrue:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Charging", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Charging");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.charging.charging", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Charging", @"Device Parameter - Charging");
                     break;
                 case PPDeviceParametersChargingFalse:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Not charging", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Not charging");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.charging.notcharging", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Not charging", @"Device Parameter - Not charging");
                 default:
                     break;
             }
@@ -1023,17 +1023,17 @@
     }
     else if([parameter isEqualToString:MOTION_DETECTION_STATUS]) {
         if(!value) {
-            return @"MOTION_STATUS";
+            return NSLocalizedStringWithDefaultValue(@"device.parameter.motionstatus", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Motion Status", @"Device Parameter - Motion Status");
         }
         else {
             
             PPDeviceParametersMotionStatus motionStatus= (PPDeviceParametersMotionStatus)value.integerValue;
             switch (motionStatus) {
                 case PPDeviceParametersMotionStatusMotion:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Detecting Motion", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Detecting Motion");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.motionstatus.detectingmotion", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detecting Motion", @"Device Parameter - Detecting Motion");
                     break;
                 case PPDeviceParametersMotionStatusNoMotion:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Not detecting motion", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Not detecting motion");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.motionstatus.notdetectingmotion", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Not Detecting Motion", @"Device Parameter - Not Detecting Motion");
                 default:
                     break;
             }
@@ -1041,17 +1041,17 @@
     }
     else if([parameter isEqualToString:AUTO_FOCUS]) {
         if(!value) {
-            return @"AUTO_FOCUS";
+            return NSLocalizedStringWithDefaultValue(@"device.parameter.autofocus", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Auto Focus", @"Device Parameter - Auto Focus");
         }
         else {
             
             PPDeviceParametersAutoFocus autoFocus = (PPDeviceParametersAutoFocus)value.integerValue;
             switch (autoFocus) {
                 case PPDeviceParametersAutoFocusShouldFocus:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Focusing", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Focusing");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.autofocus.focusing", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Focusing", @"Device Parameter - Focusing");
                     break;
                 default:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Focused", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Focused");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.autofocus.focused", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Focused", @"Device Parameter - Focused");
                     break;
             }
         }
@@ -1065,10 +1065,10 @@
             PPDeviceParametersAudioStatus audioStatus = (PPDeviceParametersAudioStatus)value.integerValue;
             switch (audioStatus) {
                 case PPDeviceParametersAudioStatusAudio:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Detecting Audio", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Detecting Audio");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter._.Detecting Audio", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detecting Audio", @"Device Parameter - Detecting Audio");
                     break;
                 case PPDeviceParametersAudioStatusNoAudio:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Not detecting audio", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Not detecting audio");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter._.Not detecting audio", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Not detecting audio", @"Device Parameter - Not detecting audio");
                 default:
                     break;
             }
@@ -1076,7 +1076,7 @@
     }
     else if([parameter isEqualToString:SELECTED_CAMERA]) {
         if(!value) {
-            return @"SELECTED_CAMERA";
+            return NSLocalizedStringWithDefaultValue(@"device.parameter.selectedcamera", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Selected Camera", @"Device Parameter - Selected Camera");
         }
         else {
             
@@ -1084,10 +1084,10 @@
             switch (selectedCamera) {
                 case PPDeviceParametersSelectedCameraRearOnly:
                 case PPDeviceParametersSelectedCameraRear:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Rear camera", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Rear camera");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.selectedcamera.rearcamera", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Rear camera", @"Device Parameter - Rear camera");
                     break;
                 case PPDeviceParametersSelectedCameraFront:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Front camera", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Front camera");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.selectedcamera.frontcamera", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Front camera", @"Device Parameter - Front camera");
                 default:
                     break;
             }
@@ -1095,7 +1095,7 @@
     }
     else if([parameter isEqualToString:RECORD_SECONDS]) {
         if(!value) {
-            return @"RECORD_SECONDS";
+            return NSLocalizedStringWithDefaultValue(@"device.parameter.recordseconds", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Record Seconds", @"Device Parameter - Record Seconds");
         }
         else {
             int motionRecordMinutes = 0;
@@ -1110,36 +1110,36 @@
             }
             
             if(motionRecordMinutes == 0) {
-                returnString = [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"%d sec", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - {number} seconds"), motionRecordSeconds];
+                returnString = [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"device.parameter.recordseconds.seconds", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%d sec", @"Device Parameter - {number} seconds"), motionRecordSeconds];
             } else if (motionRecordSeconds == 0 && motionRecordMinutes > 0) {
-                returnString = [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"%d min", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - {number} minutes"), motionRecordMinutes];
+                returnString = [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"device.parameter.recordseconds.minutes", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%d min", @"Device Parameter - {number} minutes"), motionRecordMinutes];
             } else {
-                returnString = [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"%d min %d sec", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - {number} minutes {number} seconds"), motionRecordMinutes , motionRecordSeconds];
+                returnString = [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"device.parameter.recordseconds.minutes_seconds", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%d min %d sec", @"Device Parameter - {number} minutes {number} seconds"), motionRecordMinutes , motionRecordSeconds];
             }
         }
     }
     else if([parameter isEqualToString:MOTION_SENSITIVITY]) {
         if(!value) {
-            return @"MOTION_SENSITIVITY";
+            return NSLocalizedStringWithDefaultValue(@"device.parameter.motionsensitivity", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Motion Sensitivity", @"Device Parameter - Motion Sensitivity");
         }
         else {
             
             PPDeviceParametersMotionSensitiviy motionSensitivity = (PPDeviceParametersMotionSensitiviy)value.integerValue;
             switch (motionSensitivity) {
                 case PPDeviceParametersMotionSensitiviyTiny:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Detect tiny movements", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Detect tiny movements");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.motionsensitivity.detecttinymovements", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detect tiny movements", @"Device Parameter - Detect tiny movements");
                     break;
                 case PPDeviceParametersMotionSensitiviySmall:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Detect small movements", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Detect small movements");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.motionsensitivity.detectsmallmovements", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detect small movements", @"Device Parameter - Detect small movements");
                     break;
                 case PPDeviceParametersMotionSensitiviyNormal:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Detect normal movements", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Detect normal movements");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.motionsensitivity.detectnormalmovements", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detect normal movements", @"Device Parameter - Detect normal movements");
                     break;
                 case PPDeviceParametersMotionSensitiviyLarge:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Detect large movements", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Detect large movements");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.motionsensitivity.detectlargemovements", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detect large movements", @"Device Parameter - Detect large movements");
                     break;
                 case PPDeviceParametersMotionSensitiviyHuge:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Detect huge movements", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Detect huge movements");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.motionsensitivity.detecthugemovements", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detect huge movements", @"Device Parameter - Detect huge movements");
                     break;
                 default:
                     break;
@@ -1148,26 +1148,26 @@
     }
     else if([parameter isEqualToString:AUDIO_SENSITIVITY]) {
         if(!value) {
-            return @"AUDIO_SENSITIVITY";
+            return NSLocalizedStringWithDefaultValue(@"device.parameter.audiosensitivity", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Audio Sensitivity", @"Device Parameter - Audio Sensitivity");
         }
         else {
             
             PPDeviceParametersAudioSensitiviy audioSensitivity = (PPDeviceParametersAudioSensitiviy)value.integerValue;
             switch (audioSensitivity) {
                 case PPDeviceParametersAudioSensitiviyTiny:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Detect tiny aounds", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Detect tiny sounds");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.audiosensitivity.detecttinysounds", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detect tiny sounds", @"Device Parameter - Detect tiny sounds");
                     break;
                 case PPDeviceParametersAudioSensitiviySmall:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Detect small sounds", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Detect small sounds");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.audiosensitivity.detectsmallsounds", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detect small sounds", @"Device Parameter - Detect small sounds");
                     break;
                 case PPDeviceParametersAudioSensitiviyNormal:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Detect normal sounds", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Detect normal sounds");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.audiosensitivity.detectnormalsounds", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detect normal sounds", @"Device Parameter - Detect normal sounds");
                     break;
                 case PPDeviceParametersAudioSensitiviyLarge:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Detect large sounds", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Detect large sounds");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.audiosensitivity.detectlargesounds", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detect large sounds", @"Device Parameter - Detect large sounds");
                     break;
                 case PPDeviceParametersAudioSensitiviyHuge:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Detect huge sounds", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Detect huge sounds");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.audiosensitivity.detecthugesounds", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Detect huge sounds", @"Device Parameter - Detect huge sounds");
                     break;
                 default:
                     break;
@@ -1176,7 +1176,7 @@
     }
     else if([parameter isEqualToString:VERSION]) {
         if(!value) {
-            return @"VERSION";
+            return NSLocalizedStringWithDefaultValue(@"device.parameter.version", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Version", @"Device Parameter - Version");
         }
         else {
             returnString =  value;
@@ -1184,32 +1184,32 @@
     }
     else if([parameter isEqualToString:ROBOT_CONNECTED]) {
         if(!value) {
-            return @"ROBOT_CONNECTED";
+            return NSLocalizedStringWithDefaultValue(@"device.parameter.robotconnected", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Robot Connected", @"Device Parameter - Robot Connected");
         }
         else {
             
             PPDeviceParametersRobotConnected robotConnected = (PPDeviceParametersRobotConnected)value.integerValue;
             switch (robotConnected) {
                 case PPDeviceParametersRobotConnectedNone:
-                    returnString = NSLocalizedStringFromTableInBundle(@"No robot connected", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - No robot connected");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.robotconnected.norobotconnected", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"No robot connected", @"Device Parameter - No robot connected");
                     break;
                 case PPDeviceParametersRobotConnectedGalileo:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Galileo", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Galileo");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.robotconnected.galileo", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Galileo", @"Device Parameter - Galileo");
                     break;
                 case PPDeviceParametersRobotConnectedKubi:
-                    returnString = NSLocalizedStringFromTableInBundle(@"KUBI", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - KUBI");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.robotconnected.kubi", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"KUBI", @"Device Parameter - KUBI");
                     break;
                 case PPDeviceParametersRobotConnectedRomo:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Romo", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Romo");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.robotconnected.romo", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Romo", @"Device Parameter - Romo");
                     break;
                 case PPDeviceParametersRobotConnectedGalileoBT:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Galileo BT", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Galileo BT");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.robotconnected.galileobt", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Galileo BT", @"Device Parameter - Galileo BT");
                     break;
                 case PPDeviceParametersRobotConnected360:
-                    returnString = [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"%@ 360", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - {AppName} 360"), [PPBaseModel appName:NO]];
+                    returnString = [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"device.parameter.robotconnected.presence360", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%@ 360", @"Device Parameter - {AppName} 360"), [PPBaseModel appName:NO]];
                     break;
                 case PPDeviceParametersRobotConnectedUnknown:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Unknown robot", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Unknown robot");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.robotconnected.unknownrobot", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Unknown robot", @"Device Parameter - Unknown robot");
                     break;
                 default:
                     break;
@@ -1264,25 +1264,25 @@
             PPDeviceParametersRobotVantageConfigurationStatus configurationStatus = (PPDeviceParametersRobotVantageConfigurationStatus)value.integerValue;
             switch (configurationStatus) {
                 case PPDeviceParametersRobotVantageConfigurationStatusHardReset:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Hard Reset", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Hard Reset");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.robotvantageconfigurationstatus.hardreset", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Hard Reset", @"Device Parameter - Hard Reset");
                     break;
                 case PPDeviceParametersRobotVantageConfigurationStatusWarmReset:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Warm Reset", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Warm Reset");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.robotvantageconfigurationstatus.warmreset", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Warm Reset", @"Device Parameter - Warm Reset");
                     break;
                 case PPDeviceParametersRobotVantageConfigurationStatusResetUART:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Reset UART", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Reset UART");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.robotvantageconfigurationstatus.resetuart", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Reset UART", @"Device Parameter - Reset UART");
                     break;
                 case PPDeviceParametersRobotVantageConfigurationStatusResetUARTQueue:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Reset UART queue", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Reset UART queue");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.robotvantageconfigurationstatus.resetuardqueue", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Reset UART queue", @"Device Parameter - Reset UART queue");
                     break;
                 case PPDeviceParametersRobotVantageConfigurationStatusRebootMotorControlBoard:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Reboot motor control board", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Reboot motor control board");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.robotvantageconfigurationstatus.rebootmotorcontrolboard", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Reboot motor control board", @"Device Parameter - Reboot motor control board");
                     break;
                 case PPDeviceParametersRobotVantageConfigurationStatusReady:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Ready", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Ready");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.robotvantageconfigurationstatus.ready", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Ready", @"Device Parameter - Ready");
                     break;
                 case PPDeviceParametersRobotVantageConfigurationStatusConfigureVantage:
-                    returnString = [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"Configure vantage point %@", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Configure vantage point {vantage point index}"), value];
+                    returnString = [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"device.parameter.robotvantageconfigurationstatus.configurevantagepoint", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Configure vantage point %@", @"Device Parameter - Configure vantage point {vantage point index}"), value];
                     break;
                 default:
                     break;
@@ -1298,7 +1298,7 @@
             PPDeviceParametersRobotOrientation orientation = (PPDeviceParametersRobotOrientation)value.integerValue;
             switch (orientation) {
                 case PPDeviceParametersRobotOrientationShouldFlip:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Flip vertical", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Flip vertical");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.robotorientation.flipvertical", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Flip vertical", @"Device Parameter - Flip vertical");
                     break;
                 default:
                     break;
@@ -1322,10 +1322,10 @@
             PPDeviceParametersTwitterAutoShare autoShare = (PPDeviceParametersTwitterAutoShare)value.integerValue;
             switch (autoShare) {
                 case PPDeviceParametersTwitterAutoShareOff:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Twitter auto-sharing disabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Twitter auto-sharing disabled");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.twitterautoshare.twitterautosharingdisabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Twitter auto-sharing disabled", @"Device Parameter - Twitter auto-sharing disabled");
                     break;
                 case PPDeviceParametersTwitterAutoShareOn:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Twitter auto-sharing enabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Twitter auto-sharing enabled");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.twitterautoshare.twitterautosharingenabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Twitter auto-sharing enabled", @"Device Parameter - Twitter auto-sharing enabled");
                     break;
                 default:
                     break;
@@ -1349,10 +1349,10 @@
             PPDeviceParametersTwitterReminder reminder = (PPDeviceParametersTwitterReminder)value.integerValue;
             switch (reminder) {
                 case PPDeviceParametersTwitterReminderOff:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Twitter reminder disabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Twitter reminder disabled");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.twitterreminder.twitterreminderdisabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Twitter reminder disabled", @"Device Parameter - Twitter reminder disabled");
                     break;
                 case PPDeviceParametersTwitterReminderOn:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Twitter reminder enabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Twitter reminder enabled");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.twitterreminder.twitterreminderenabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Twitter reminder enabled", @"Device Parameter - Twitter reminder enabled");
                     break;
                 default:
                     break;
@@ -1368,10 +1368,10 @@
             PPDeviceParametersTwitterStatus status = (PPDeviceParametersTwitterStatus)value.integerValue;
             switch (status) {
                 case PPDeviceParametersTwitterStatusOff:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Twitter disabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Twitter disabled");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.twitterstatus.twitterdisabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Twitter disabled", @"Device Parameter - Twitter disabled");
                     break;
                 case PPDeviceParametersTwitterStatusOn:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Twitter enabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Twitter enabled");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.twitterstatus.twitterenabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Twitter enabled", @"Device Parameter - Twitter enabled");
                     break;
                 default:
                     break;
@@ -1395,11 +1395,11 @@
             }
             
             if(motionCountDownMinutes == 0) {
-                returnString = [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"%d sec", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - {number} seconds"), motionCountDownSeconds];
+                returnString = [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"device.parameter.motioncountdowntime.seconds", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%d sec", @"Device Parameter - {number} seconds"), motionCountDownSeconds];
             } else if (motionCountDownSeconds == 0 && motionCountDownMinutes > 0) {
-                returnString = [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"%d min", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - {number} minutes"), motionCountDownMinutes];
+                returnString = [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"device.parameter.motioncountdowntime.minutes", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%d min", @"Device Parameter - {number} minutes"), motionCountDownMinutes];
             } else {
-                returnString = [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"%d min %d sec", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - {number} minutes {number} seconds"), motionCountDownMinutes , motionCountDownSeconds];
+                returnString = [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"device.parameter.motioncountdowntime.minutes_seconds", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%d min %d sec", @"Device Parameter - {number} minutes {number} seconds"), motionCountDownMinutes , motionCountDownSeconds];
             }
         }
     }
@@ -1412,10 +1412,10 @@
             PPDeviceParametersBlackoutScreenOn blackout = (PPDeviceParametersBlackoutScreenOn)value.integerValue;
             switch (blackout) {
                 case PPDeviceParametersBlackoutScreenOnOff:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Blackout disabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Blackout disabled");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.blackoutscreenon.blackoutdisabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Blackout disabled", @"Device Parameter - Blackout disabled");
                     break;
                 case PPDeviceParametersBlackoutScreenOnOn:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Blackout enabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Blackout enabled");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.blackoutscreenon.blackoutenabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Blackout enabled", @"Device Parameter - Blackout enabled");
                     break;
                 default:
                     break;
@@ -1431,10 +1431,10 @@
             PPDeviceParametersWarningStatus warningStatus = (PPDeviceParametersWarningStatus)value.integerValue;
             switch (warningStatus) {
                 case PPDeviceParametersWarningStatusOff:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Warning status disabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Warning status disabled");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.warningstatus.warningstatusdisabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Warning status disabled", @"Device Parameter - Warning status disabled");
                     break;
                 case PPDeviceParametersWarningStatusOn:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Warning status enabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Warning status enabled");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.warningstatus.warningstatusenabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Warning status enabled", @"Device Parameter - Warning status enabled");
                     break;
                 default:
                     break;
@@ -1463,10 +1463,10 @@
             PPDeviceParametersRecordFullDuration recordFullDuration = (PPDeviceParametersRecordFullDuration)value.integerValue;
             switch (recordFullDuration) {
                 case PPDeviceParametersRecordFullDurationOff:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Stop recording after motion goes away", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Stop recording after motion goes away");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.recordfullduration.stop", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Stop recording after motion goes away", @"Device Parameter - Stop recording after motion goes away");
                     break;
                 case PPDeviceParametersRecordFullDurationOn:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Continue recording even after motion goes away", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Continue recording even after motion goes away");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.recordfullduration.continue", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Continue recording even after motion goes away", @"Device Parameter - Continue recording even after motion goes away");
                     break;
                 default:
                     break;
@@ -1483,14 +1483,14 @@
             PPDeviceParametersFlashOn flashOn = (PPDeviceParametersFlashOn)value.integerValue;
             switch (flashOn) {
                 case PPDeviceParametersFlashOnOn:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Flash on", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Flash off");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.flashon.flashon", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Flash on", @"Device Parameter - Flash on");
                     break;
                 case PPDeviceParametersFlashOnOff:
                 case PPDeviceParametersFlashOnWasOn:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Flash off", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Flash off");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.flashon.flashoff", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Flash off", @"Device Parameter - Flash off");
                     break;
                 case PPDeviceParametersFlashOnNoFlash:
-                    returnString = NSLocalizedStringFromTableInBundle(@"No Flash", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - No Flash");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.flashon.noflash", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"No Flash", @"Device Parameter - No Flash");
                     break;
                 default:
                     break;
@@ -1506,10 +1506,10 @@
             PPDeviceParametersSupportsVideoCall videoCall = (PPDeviceParametersSupportsVideoCall)value.integerValue;
             switch (videoCall) {
                 case PPDeviceParametersSupportsVideoCallFalse:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Video calling not supported", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Video calling not supported");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.supportsvideocall.videocallingnotsupported", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Video calling not supported", @"Device Parameter - Video calling not supported");
                     break;
                 case PPDeviceParametersSupportsVideoCallTrue:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Video calling supported", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Video calling supported");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.supportsvideocall.videocallingsupported", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Video calling supported", @"Device Parameter - Video calling supported");
                     break;
                 default:
                     break;
@@ -1522,13 +1522,13 @@
         }
         else {
             if(value.integerValue <= 0) {
-                returnString = NSLocalizedStringFromTableInBundle(@"Camera speaker volume is muted.", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Camera - Label describing this camera is muted");
+                returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.outputvolume.cameraspeakervolumemuted", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Camera speaker volume is muted.", @"Camera - Label describing this camera is muted");
             }
             else if (value.integerValue >= PPDeviceParametersOutputVolumeMax) {
-                returnString = NSLocalizedStringFromTableInBundle(@"Camera speaker volume is maxed.", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Camera - Label describing this camera's volume is maxed");
+                returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.outputvolume.cameraspeakervolumemaxed", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Camera speaker volume is maxed.", @"Camera - Label describing this camera's volume is maxed");
             }
             else {
-                returnString = [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"Camera speaker volume is at %.0f%%.", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Camera speaker volume is at {number}{percent %}"),(float)(value.floatValue / PPDeviceParametersOutputVolumeMax) * 100];
+                returnString = [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"device.parameter.outputvolume.cameraspeakervolumelevel", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Camera speaker volume is at %.0f%%.", @"Device Parameter - Camera speaker volume is at {number}{percent %}"),(float)(value.floatValue / PPDeviceParametersOutputVolumeMax) * 100];
             }
         }
     }
@@ -1546,17 +1546,17 @@
             PPDeviceParametersAlarm alarm = (PPDeviceParametersAlarm)value.integerValue;
             switch (alarm) {
                 case PPDeviceParametersAlarmOn:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Alarm is active", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Alarm is active");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarm.alarmisactive", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Alarm is active", @"Device Parameter - Alarm is active");
                     break;
                 case PPDeviceParametersAlarmOff:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Alarm is off", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Alarm is off");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.alarm.alarmisoff", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Alarm is off", @"Device Parameter - Alarm is off");
                     break;
                 case PPDeviceParametersAlarmBeep1:
-                    returnString = [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"Alarm will beep %i times", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Alarm will beep %@ times"), value];
+                    returnString = [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"device.parameter.alarm.alarmwillbeep.count", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Alarm will beep %@ times", @"Device Parameter - Alarm will beep %@ times"), value];
                     break;
                 case PPDeviceParametersAlarmBeep2:
                 case PPDeviceParametersAlarmBeep3:
-                    returnString = [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"Alarm will beep %i times", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Alarm will beep %@ times"), value];
+                    returnString = [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"device.parameter.alarm.alarmwillbeep.count", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Alarm will beep %@ times", @"Device Parameter - Alarm will beep %@ times"), value];
                     break;
                 default:
                     break;
@@ -1587,18 +1587,18 @@
             PPDeviceParametersAlarm alarm = (PPDeviceParametersAlarm)value.integerValue;
             switch (alarm) {
                 case PPDeviceParametersAlarmOn:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Sound alarm when motion is detected", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Sound alarm when motion is detected");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.motionalarm.soundalarm", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Sound alarm when motion is detected", @"Device Parameter - Sound alarm when motion is detected");
                     break;
                 case PPDeviceParametersAlarmOff:
                     
-                    returnString = NSLocalizedStringFromTableInBundle(@"Disabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Disabled");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.motionalarm.disabled", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Disabled", @"Device Parameter - Disabled");
                     break;
                 case PPDeviceParametersAlarmBeep1:
-                    returnString = NSLocalizedStringFromTableInBundle(@"Beep 1 time when motion is detected", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Beep 1 time when motion is detected");
+                    returnString = NSLocalizedStringWithDefaultValue(@"device.parameter.motionalarm.beep.single", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Beep 1 time when motion is detected", @"Device Parameter - Beep 1 time when motion is detected");
                     break;
                 case PPDeviceParametersAlarmBeep2:
                 case PPDeviceParametersAlarmBeep3:
-                    returnString = [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"Beep %@ times when motion is detected", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - Beep 2 times when motion is detected"), value];
+                    returnString = [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"device.parameter.motionalarm.beep.multiple", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Beep %@ times when motion is detected", @"Device Parameter - Beep 2 times when motion is detected"), value];
                     break;
                 default:
                     break;

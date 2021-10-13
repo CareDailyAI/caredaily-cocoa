@@ -72,16 +72,16 @@
     NSString *statusString = @"";
     switch (_status) {
         case PPDeviceFirmwareUpdateStatusAvailable:
-            statusString = NSLocalizedStringFromTableInBundle(@"Available", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Firmware Update - Available");
+            statusString = NSLocalizedStringWithDefaultValue(@"device.firmware.update.job.available", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Available", @"Available");
             break;
         case PPDeviceFirmwareUpdateStatusApproved:
-            statusString = NSLocalizedStringFromTableInBundle(@"Approved", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Firmware Update - Approved");
+            statusString = NSLocalizedStringWithDefaultValue(@"device.firmware.update.job.approved", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Approved", @"Approved");
             break;
         case PPDeviceFirmwareUpdateStatusDecline:
-            statusString = NSLocalizedStringFromTableInBundle(@"Declined", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Firmware Update - Declined");
+            statusString = NSLocalizedStringWithDefaultValue(@"device.firmware.update.job.declined", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Declined", @"Declined");
             break;
         case PPDeviceFirmwareUpdateStatusStarted:
-            statusString = NSLocalizedStringFromTableInBundle(@"Started", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Firmware Update - Started");
+            statusString = NSLocalizedStringWithDefaultValue(@"device.firmware.update.job.started", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Started", @"Started");
             break;
             
         default:

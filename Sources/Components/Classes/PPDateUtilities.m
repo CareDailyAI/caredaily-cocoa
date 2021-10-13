@@ -22,33 +22,33 @@
 	if(secondsAgo < 0) {
 		return @"";
     } else if (secondsAgo < 30) {
-        return NSLocalizedStringFromTableInBundle(@"just now", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - just now");
+        return NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.now", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"just now", @"just now");
     } else if (secondsAgo < 60) {
-        return [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"%ld seconds ago", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - {number} seconds ago"), (long)secondsAgo];
+        return [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.sec.multiple", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%ld seconds ago", @"{number} seconds ago"), (long)secondsAgo];
     } else if (minutesAgo == 1) {
-        return NSLocalizedStringFromTableInBundle(@"a minute ago", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - a minute ago");
+        return NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.min.single", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"a minute ago", @"a minute ago");
     } else if (minutesAgo < 60) {
-        return [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"%ld minutes ago", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - {number} minutes ago"), (long)minutesAgo];
+        return [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.min.multiple", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%ld minutes ago", @"{number} minutes ago"), (long)minutesAgo];
     } else if (hoursAgo == 1) {
-        return NSLocalizedStringFromTableInBundle(@"an hour ago", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - an hour ago");
+        return NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.hour.single", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"an hour ago", @"an hour ago");
     } else if (hoursAgo < 24) {
-        return [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"%ld hours ago", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - {number} hours ago"), (long)hoursAgo];
+        return [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.hour.multiple", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%ld hours ago", @"{number} hours ago"), (long)hoursAgo];
     } else if (daysAgo == 1) {
-        return NSLocalizedStringFromTableInBundle(@"yesterday", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - yesterday");
+        return NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.day.single", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"yesterday", @"yesterday");
     } else if (daysAgo < 7) {
-        return [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"%ld days ago", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - {number} days ago"), (long)daysAgo];
+        return [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.day.multiple", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%ld days ago", @"{number} days ago"), (long)daysAgo];
     } else if (weeksAgo == 1) {
-        return NSLocalizedStringFromTableInBundle(@"a week ago", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - a week ago");
+        return NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.week.single", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"a week ago", @"a week ago");
     } else if (weeksAgo < 4) {
-        return [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"%ld weeks ago", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - {number} weeks ago"), (long)weeksAgo];
+        return [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.week.multiple", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%ld weeks ago", @"{number} weeks ago"), (long)weeksAgo];
     } else if (monthsAgo == 1) {
-        return NSLocalizedStringFromTableInBundle(@"a month ago", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - a month ago");
+        return NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.month.single", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"a month ago", @"a month ago");
     } else if (monthsAgo < 12) {
-        return [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"%ld months ago", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - {number} months ago"), (long)monthsAgo];
+        return [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.month.multiple", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%ld months ago", @"{number} months ago"), (long)monthsAgo];
     } else if (yearsAgo == 1) {
-        return NSLocalizedStringFromTableInBundle(@"last year", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - last year");
+        return NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.year.single", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"last year", @"last year");
     } else {
-        return [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"%ld years ago", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - {number} years ago"), (long)yearsAgo];
+        return [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.year.multiple", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%ld years ago", @"{number} years ago"), (long)yearsAgo];
     }
 }
 
@@ -63,24 +63,24 @@
 	NSInteger yearsAgo = monthsAgo / 12;
 	
     if(daysAgo == 0) {
-        return NSLocalizedStringFromTableInBundle(@"today", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - today");
+        return NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.now.alt", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"today", @"today");
     }
     else if (daysAgo == 1) {
-        return NSLocalizedStringFromTableInBundle(@"yesterday", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - yesterday");
+        return NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.day.single", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"yesterday", @"yesterday");
     } else if (daysAgo < 7) {
-        return [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"%ld days ago", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - {number} days ago"), (long)daysAgo];
+        return [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.day.multiple", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%ld days ago", @"{number} days ago"), (long)daysAgo];
     } else if (weeksAgo == 1) {
-        return NSLocalizedStringFromTableInBundle(@"a week ago", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - a week ago");
+        return NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.week.single", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"a week ago", @"a week ago");
     } else if (weeksAgo < 4) {
-        return [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"%ld weeks ago", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - {number} weeks ago"), (long)weeksAgo];
+        return [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.week.multiple", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%ld weeks ago", @"{number} weeks ago"), (long)weeksAgo];
     } else if (monthsAgo == 1) {
-        return NSLocalizedStringFromTableInBundle(@"a month ago", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - a month ago");
+        return NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.month.single", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"a month ago", @"a month ago");
     } else if (monthsAgo < 12) {
-        return [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"%ld months ago", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - {number} months ago"), (long)monthsAgo];
+        return [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.month.multiple", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%ld months ago", @"{number} months ago"), (long)monthsAgo];
     } else if (yearsAgo == 1) {
-        return NSLocalizedStringFromTableInBundle(@"last year", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - last year");
+        return NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.year.single", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"last year", @"last year");
     } else {
-        return [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"%ld years ago", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - {number} years ago"), (long)yearsAgo];
+        return [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.year.multiple", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%ld years ago", @"{number} years ago"), (long)yearsAgo];
     }
 }
 
@@ -125,7 +125,7 @@
 + (NSString *) dateInTimezone:(NSTimeZone *)timezone referenceDate:(NSDate *)referenceDate use24HourTimeFormat:(BOOL)use24HourTimeFormat {
     NSDateFormatter *localTime = [[NSDateFormatter alloc] init];
     [localTime setTimeZone:(timezone) ? timezone : [NSTimeZone localTimeZone]];
-    NSString *atString = NSLocalizedStringFromTableInBundle(@"at", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Label - at");
+    NSString *atString = NSLocalizedStringWithDefaultValue(@"date.utilities.join.at", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"at", @"at");
     if(use24HourTimeFormat) {
         [localTime setDateFormat:[NSString stringWithFormat:@"yyyy.MM.dd '%@' HH:mm:ss zzz", atString]];
     }
