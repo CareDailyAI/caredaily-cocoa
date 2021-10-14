@@ -818,7 +818,7 @@
 "error.code.16.accountlocked" = "La cuenta está bloqueada hasta el %@";
 
 /* Language Code: 'en', 'zh', etc... */
-"language.code" = "en";
+"language.code" = "es";
 
 /* Away */
 "location.event.away" = "Lejos";
