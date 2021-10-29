@@ -290,7 +290,7 @@
 "device.parameter.autofocus.focusing" = "Enfoque";
 
 /* Device Parameter - Battery Level */
-"device.parameter.batterylevel" = "Nivel de bateria";
+"device.parameter.batterylevel" = "Nivel de batería";
 
 /* Device Parameter - Blackout disabled */
 "device.parameter.blackoutscreenon.blackoutdisabled" = "Apagón desactivado";
@@ -581,7 +581,7 @@
 "device.parameter.rapidmotionstatus" = "Estado de movimiento rápido";
 
 /* Device Parameter - As fast as possible */
-"device.parameter.rapidmotionstatus.asfastaspossible" = "Tan rápido como sea posible";
+"device.parameter.rapidmotionstatus.asfastaspossible" = "Lo más rápido posible";
 
 /* Device Parameter - {number} hours */
 "device.parameter.rapidmotionstatus.hours" = "%li h";

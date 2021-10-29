@@ -8,32 +8,25 @@
 
 import XCTest
 
+fileprivate struct L10N {
+    static func verify(_ key: String, forLocale localeIdentifier: String, inTable table: String? = nil)  -> Bool {
+        guard
+            let bundle = Bundle(identifier: "com.peoplepowerco.lib.Peoplepower.iOS"),
+            let path = bundle.path(forResource: localeIdentifier, ofType: "lproj"),
+            let bundle = Bundle(path: path) else {
+                return false
+        }
+
+        let string = bundle.localizedString(forKey: key, value: key, table: nil)
+        debugPrint(key, string)
+        return string != key
+    }
+}
+
 class PPTCLocalization: PPBaseTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testUrl() throws {
+        XCTAssertTrue(L10N.verify("language.code", forLocale: "en"))
+        XCTAssertTrue(L10N.verify("language.code", forLocale: "es"))
+        
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testBundle() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        guard let bundle = Bundle(identifier: "com.peoplepowerco.lib.Peoplepower.iOS") else {
-            print("NO BUNDLE")
-            return
-        }
-        let s = NSLocalizedString("en", tableName: nil, bundle: bundle, comment: "")
-        print("\(s)")
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

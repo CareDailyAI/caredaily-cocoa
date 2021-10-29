@@ -37,97 +37,98 @@
     
     // Just now
     secondsAgo = 1;
-    date = [NSDate dateWithTimeIntervalSinceNow:secondsAgo];
+    date = [NSDate dateWithTimeIntervalSinceNow:-secondsAgo];
     timeAgo = [PPDateUtilities timeAgo:date];
     expectedResult = NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.now", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"just now", @"just now");
     XCTAssertTrue([timeAgo isEqualToString:expectedResult]);
     
     // Seconds
-    date = [NSDate dateWithTimeIntervalSinceNow:secondsAgo];
+    secondsAgo = 31;
+    date = [NSDate dateWithTimeIntervalSinceNow:-secondsAgo];
     timeAgo = [PPDateUtilities timeAgo:date];
     expectedResult = [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.sec.multiple", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%ld seconds ago", @"{number} seconds ago"), (long)secondsAgo];
     XCTAssertTrue([timeAgo isEqualToString:expectedResult]);
     
     // Minute
-    secondsAgo = -60;
-    date = [NSDate dateWithTimeIntervalSinceNow:secondsAgo];
+    secondsAgo = 60;
+    date = [NSDate dateWithTimeIntervalSinceNow:-secondsAgo];
     timeAgo = [PPDateUtilities timeAgo:date];
     expectedResult = NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.min.single", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"a minute ago", @"a minute ago");
     XCTAssertTrue([timeAgo isEqualToString:expectedResult]);
     
     // Minutes
-    secondsAgo = -120;
-    date = [NSDate dateWithTimeIntervalSinceNow:secondsAgo];
+    secondsAgo = 120;
+    date = [NSDate dateWithTimeIntervalSinceNow:-secondsAgo];
     timeAgo = [PPDateUtilities timeAgo:date];
     expectedResult = [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.min.multiple", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%ld minutes ago", @"{number} minutes ago"), (long)secondsAgo / 60];
     XCTAssertTrue([timeAgo isEqualToString:expectedResult]);
     
     // Hour
-    secondsAgo = -3600;
-    date = [NSDate dateWithTimeIntervalSinceNow:secondsAgo];
+    secondsAgo = 3600;
+    date = [NSDate dateWithTimeIntervalSinceNow:-secondsAgo];
     timeAgo = [PPDateUtilities timeAgo:date];
     expectedResult = NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.hour.single", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"an hour ago", @"an hour ago");
     XCTAssertTrue([timeAgo isEqualToString:expectedResult]);
     
     // Hours
-    secondsAgo = -7200;
-    date = [NSDate dateWithTimeIntervalSinceNow:secondsAgo];
+    secondsAgo = 7200;
+    date = [NSDate dateWithTimeIntervalSinceNow:-secondsAgo];
     timeAgo = [PPDateUtilities timeAgo:date];
     expectedResult = [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.hour.multiple", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%ld hours ago", @"{number} hours ago"), (long)secondsAgo / 60 / 60];
     XCTAssertTrue([timeAgo isEqualToString:expectedResult]);
     
     // Day
-    secondsAgo = -86400;
-    date = [NSDate dateWithTimeIntervalSinceNow:secondsAgo];
+    secondsAgo = 86400;
+    date = [NSDate dateWithTimeIntervalSinceNow:-secondsAgo];
     timeAgo = [PPDateUtilities timeAgo:date];
     expectedResult = NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.day.single", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"yesterday", @"yesterday");
     XCTAssertTrue([timeAgo isEqualToString:expectedResult]);
     
     // Days
-    secondsAgo = -172800;
-    date = [NSDate dateWithTimeIntervalSinceNow:secondsAgo];
+    secondsAgo = 172800;
+    date = [NSDate dateWithTimeIntervalSinceNow:-secondsAgo];
     timeAgo = [PPDateUtilities timeAgo:date];
     expectedResult = [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.day.multiple", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%ld days ago", @"{number} days ago"), (long)secondsAgo / 60 / 60 / 24];
     XCTAssertTrue([timeAgo isEqualToString:expectedResult]);
     
     // Week
-    secondsAgo = -604800;
-    date = [NSDate dateWithTimeIntervalSinceNow:secondsAgo];
+    secondsAgo = 604800;
+    date = [NSDate dateWithTimeIntervalSinceNow:-secondsAgo];
     timeAgo = [PPDateUtilities timeAgo:date];
     expectedResult = NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.week.single", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"a week ago", @"a week ago");
     XCTAssertTrue([timeAgo isEqualToString:expectedResult]);
     
     // Weeks
-    secondsAgo = -1209600;
-    date = [NSDate dateWithTimeIntervalSinceNow:secondsAgo];
+    secondsAgo = 1209600;
+    date = [NSDate dateWithTimeIntervalSinceNow:-secondsAgo];
     timeAgo = [PPDateUtilities timeAgo:date];
     expectedResult = [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.week.multiple", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%ld weeks ago", @"{number} weeks ago"), (long)secondsAgo / 60 / 60 / 24 / 7];
     XCTAssertTrue([timeAgo isEqualToString:expectedResult]);
     
     // Month
-    secondsAgo = -2419200;
-    date = [NSDate dateWithTimeIntervalSinceNow:secondsAgo];
+    secondsAgo = 2419200;
+    date = [NSDate dateWithTimeIntervalSinceNow:-secondsAgo];
     timeAgo = [PPDateUtilities timeAgo:date];
     expectedResult = NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.month.single", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"a month ago", @"a month ago");
     XCTAssertTrue([timeAgo isEqualToString:expectedResult]);
     
     // Months
-    secondsAgo = -4838400;
-    date = [NSDate dateWithTimeIntervalSinceNow:secondsAgo];
+    secondsAgo = 4838400;
+    date = [NSDate dateWithTimeIntervalSinceNow:-secondsAgo];
     timeAgo = [PPDateUtilities timeAgo:date];
     expectedResult = [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.month.multiple", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%ld months ago", @"{number} months ago"), (long)secondsAgo / 60 / 60 / 24 / 7 / 4];
     XCTAssertTrue([timeAgo isEqualToString:expectedResult]);
     
     // Year
-    secondsAgo = -29030400;
-    date = [NSDate dateWithTimeIntervalSinceNow:secondsAgo];
+    secondsAgo = 29030400;
+    date = [NSDate dateWithTimeIntervalSinceNow:-secondsAgo];
     timeAgo = [PPDateUtilities timeAgo:date];
     expectedResult = NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.year.single", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"last year", @"last year");
     XCTAssertTrue([timeAgo isEqualToString:expectedResult]);
     
     // Years
-    secondsAgo = -58060800;
-    date = [NSDate dateWithTimeIntervalSinceNow:secondsAgo];
+    secondsAgo = 58060800;
+    date = [NSDate dateWithTimeIntervalSinceNow:-secondsAgo];
     timeAgo = [PPDateUtilities timeAgo:date];
     expectedResult = [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.year.multiple", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%ld years ago", @"{number} years ago"), (long)secondsAgo / 60 / 60 / 24 / 7 / 4 / 12];
     XCTAssertTrue([timeAgo isEqualToString:expectedResult]);
@@ -142,63 +143,63 @@
     
     // Today
     NSInteger secondsAgo = 0;
-    date = [NSDate dateWithTimeIntervalSinceNow:secondsAgo];
+    date = [NSDate dateWithTimeIntervalSinceNow:-secondsAgo];
     timeAgo = [PPDateUtilities timeAgoOlderThanToday:date];
     NSString *expectedResult = NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.now.alt", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"today", @"today");
     XCTAssertTrue([timeAgo isEqualToString:expectedResult]);
     
     // Yesterday
-    secondsAgo = -86400;
-    date = [NSDate dateWithTimeIntervalSinceNow:secondsAgo];
+    secondsAgo = 86400;
+    date = [NSDate dateWithTimeIntervalSinceNow:-secondsAgo];
     timeAgo = [PPDateUtilities timeAgoOlderThanToday:date];
     expectedResult = NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.day.single", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"yesterday", @"yesterday");
     XCTAssertTrue([timeAgo isEqualToString:expectedResult]);
     
     // Days
-    secondsAgo = -172800;
-    date = [NSDate dateWithTimeIntervalSinceNow:secondsAgo];
+    secondsAgo = 172800;
+    date = [NSDate dateWithTimeIntervalSinceNow:-secondsAgo];
     timeAgo = [PPDateUtilities timeAgoOlderThanToday:date];
     expectedResult = [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.day.multiple", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%ld days ago", @"{number} days ago"), (long)secondsAgo / 60 / 60 / 24];
     XCTAssertTrue([timeAgo isEqualToString:expectedResult]);
     
     // Week
-    secondsAgo = -604800;
-    date = [NSDate dateWithTimeIntervalSinceNow:secondsAgo];
+    secondsAgo = 604800;
+    date = [NSDate dateWithTimeIntervalSinceNow:-secondsAgo];
     timeAgo = [PPDateUtilities timeAgoOlderThanToday:date];
     expectedResult = NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.week.single", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"a week ago", @"a week ago");
     XCTAssertTrue([timeAgo isEqualToString:expectedResult]);
     
     // Weeks
-    secondsAgo = -1209600;
-    date = [NSDate dateWithTimeIntervalSinceNow:secondsAgo];
+    secondsAgo = 1209600;
+    date = [NSDate dateWithTimeIntervalSinceNow:-secondsAgo];
     timeAgo = [PPDateUtilities timeAgoOlderThanToday:date];
     expectedResult = [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.week.multiple", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%ld weeks ago", @"{number} weeks ago"), (long)secondsAgo / 60 / 60 / 24 / 7];
     XCTAssertTrue([timeAgo isEqualToString:expectedResult]);
     
     // Month
-    secondsAgo = -2419200;
-    date = [NSDate dateWithTimeIntervalSinceNow:secondsAgo];
+    secondsAgo = 2419200;
+    date = [NSDate dateWithTimeIntervalSinceNow:-secondsAgo];
     timeAgo = [PPDateUtilities timeAgoOlderThanToday:date];
     expectedResult = NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.month.single", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"a month ago", @"a month ago");
     XCTAssertTrue([timeAgo isEqualToString:expectedResult]);
     
     // Months
-    secondsAgo = -4838400;
-    date = [NSDate dateWithTimeIntervalSinceNow:secondsAgo];
+    secondsAgo = 4838400;
+    date = [NSDate dateWithTimeIntervalSinceNow:-secondsAgo];
     timeAgo = [PPDateUtilities timeAgoOlderThanToday:date];
     expectedResult = [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.month.multiple", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%ld months ago", @"{number} months ago"), (long)secondsAgo / 60 / 60 / 24 / 7 / 4];
     XCTAssertTrue([timeAgo isEqualToString:expectedResult]);
     
     // Year
-    secondsAgo = -29030400;
-    date = [NSDate dateWithTimeIntervalSinceNow:secondsAgo];
+    secondsAgo = 29030400;
+    date = [NSDate dateWithTimeIntervalSinceNow:-secondsAgo];
     timeAgo = [PPDateUtilities timeAgoOlderThanToday:date];
     expectedResult = NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.year.single", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"last year", @"last year");
     XCTAssertTrue([timeAgo isEqualToString:expectedResult]);
     
     // Years
-    secondsAgo = -58060800;
-    date = [NSDate dateWithTimeIntervalSinceNow:secondsAgo];
+    secondsAgo = 58060800;
+    date = [NSDate dateWithTimeIntervalSinceNow:-secondsAgo];
     timeAgo = [PPDateUtilities timeAgoOlderThanToday:date];
     expectedResult = [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"date.utilities.timeago.year.multiple", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"%ld years ago", @"{number} years ago"), (long)secondsAgo / 60 / 60 / 24 / 7 / 4 / 12];
     XCTAssertTrue([timeAgo isEqualToString:expectedResult]);
