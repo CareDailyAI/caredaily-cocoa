@@ -64,7 +64,9 @@
           organizationId:(PPOrganizationId)organizationId
             organization:(PPOrganization *)organization
                     test:(PPLocationTest)test
-                codeType:(PPLocationCodeType)codeType {
+                codeType:(PPLocationCodeType)codeType
+                language:(NSString *)language
+{
     self = [super init];
     if(self) {
         self.locationId = locationId;
@@ -107,6 +109,7 @@
         self.organization = organization;
         self.test = test;
         self.codeType = codeType;
+        self.language = language;
     }
     return self;
 }
@@ -277,6 +280,8 @@
         codeType = (PPLocationCodeType)((NSString *)[locationDict objectForKey:@"codeType"]).integerValue;
     }
     
+    NSString *language = [locationDict objectForKey:@"language"];
+    
     PPLocation *location = [[PPLocation alloc] initWithLocationId:locationId
                                                              name:name
                                                    locationAccess:locationAccess
@@ -317,7 +322,9 @@
                                                    organizationId:organizationId
                                                      organization:organization
                                                              test:test
-                                                         codeType:codeType];
+                                                         codeType:codeType
+                                                         language:language
+                            ];
     return location;
 }
 
@@ -503,24 +510,28 @@
             [JSONString appendString:@","];
         }
         [JSONString appendFormat:@"\"storiesNumber\":\"%li\"", (long)location.storiesNumber];
+        appendComma = YES;
     }
     if(location.roomsNumber != PPLocationRoomsNumberNone) {
         if(appendComma) {
             [JSONString appendString:@","];
         }
         [JSONString appendFormat:@"\"roomsNumber\":\"%li\"", (long)location.roomsNumber];
+        appendComma = YES;
     }
     if(location.bathroomsNumber != PPLocationBathroomsNumberNone) {
         if(appendComma) {
             [JSONString appendString:@","];
         }
         [JSONString appendFormat:@"\"bathroomsNumber\":\"%li\"", (long)location.bathroomsNumber];
+        appendComma = YES;
     }
     if(location.occupantsNumber != PPLocationOccupantsNumberNone) {
         if(appendComma) {
             [JSONString appendString:@","];
         }
         [JSONString appendFormat:@"\"occupantsNumber\":\"%li\"", (long)location.occupantsNumber];
+        appendComma = YES;
     }
     if([location.occupantsRanges count]) {
         if(appendComma) {
@@ -549,42 +560,56 @@
             [JSONString appendString:@","];
         }
         [JSONString appendFormat:@"\"usagePeriod\":\"%li\"", (long)location.usagePeriod];
+        appendComma = YES;
     }
     if(location.heatingType != PPLocationHeatingTypeNone) {
         if(appendComma) {
             [JSONString appendString:@","];
         }
         [JSONString appendFormat:@"\"heatingType\":\"%lu\"", (unsigned long)location.heatingType];
+        appendComma = YES;
     }
     if(location.coolingType != PPLocationCoolingTypeNone) {
         if(appendComma) {
             [JSONString appendString:@","];
         }
         [JSONString appendFormat:@"\"coolingType\":\"%lu\"", (unsigned long)location.coolingType];
+        appendComma = YES;
     }
     if(location.waterHeaterType != PPLocationWaterHeaterTypeNone) {
         if(appendComma) {
             [JSONString appendString:@","];
         }
         [JSONString appendFormat:@"\"waterHeaterType\":\"%lu\"", (unsigned long)location.waterHeaterType];
+        appendComma = YES;
     }
     if(location.thermostatType != PPLocationThermostatTypeNone) {
         if(appendComma) {
             [JSONString appendString:@","];
         }
         [JSONString appendFormat:@"\"thermostatType\":\"%lu\"", (unsigned long)location.thermostatType];
+        appendComma = YES;
     }
     if(location.fileUploadPolicy != PPLocationFileUploadPolicyNone) {
         if(appendComma) {
             [JSONString appendString:@","];
         }
         [JSONString appendFormat:@"\"fileUploadPolicy\":\"%li\"", (long)location.fileUploadPolicy];
+        appendComma = YES;
     }
     if(location.test != PPLocationTestNone) {
         if(appendComma) {
             [JSONString appendString:@","];
         }
         [JSONString appendFormat:@"\"test\":%@", @(location.test)];
+        appendComma = YES;
+    }
+    if(location.language != nil) {
+        if(appendComma) {
+            [JSONString appendString:@","];
+        }
+        [JSONString appendFormat:@"\"language\":%@", location.language];
+        appendComma = YES;
     }
     
     [JSONString appendString:@"}"];
@@ -688,6 +713,9 @@
     if(location.fileUploadPolicy != PPLocationFileUploadPolicyNone) {
         data[@"fileUploadPolicy"] = @(location.fileUploadPolicy);
     }
+    if(location.language != nil) {
+        data[@"language"] = location.language;
+    }
     
     return data;
 }
@@ -760,6 +788,7 @@
     location.organization = [self.organization copyWithZone:zone];
     location.test = self.test;
     location.codeType = self.codeType;
+    location.language = self.language;
     return location;
 }
 
@@ -807,6 +836,7 @@
         self.organization = [decoder decodeObjectForKey:@"organization"];
         self.test = (PPLocationTest)((NSNumber *)[decoder decodeObjectForKey:@"test"]).integerValue;
         self.codeType = (PPLocationCodeType)((NSNumber *)[decoder decodeObjectForKey:@"codeType"]).integerValue;
+        self.language = [decoder decodeObjectForKey:@"language"];
     }
     return self;
 }
@@ -853,6 +883,7 @@
     [encoder encodeObject:_organization forKey:@"organization"];
     [encoder encodeObject:@(_test) forKey:@"test"];
     [encoder encodeObject:@(_codeType) forKey:@"codeType"];
+    [encoder encodeObject:_language forKey:@"language"];
 }
 
 

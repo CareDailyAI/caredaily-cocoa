@@ -1,4 +1,4 @@
-github "facebook/SocketRocket" == 0.4.2
+github "facebook/SocketRocket"
 github "kishikawakatsumi/UICKeyChainStore"
 github "AFNetworking/AFNetworking" ~> 4.0
 github "robbiehanson/KissXML"

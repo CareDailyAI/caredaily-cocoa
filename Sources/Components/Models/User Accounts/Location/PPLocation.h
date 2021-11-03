@@ -173,6 +173,14 @@
 /* Location Code Type */
 @property (nonatomic) PPLocationCodeType codeType;
 
+/* Locations's preferred language. For example:
+ en - English
+ cn - Chinese
+ fr - French
+ ru - Russian
+ etc */
+@property (nonatomic, strong) NSString *language;
+
 - (id)initWithLocationId:(PPLocationId)locationId
                     name:(NSString *)name
           locationAccess:(PPLocationAccess)locationAccess
@@ -214,6 +222,7 @@
             organization:(PPOrganization *)organization
                     test:(PPLocationTest)test
                 codeType:(PPLocationCodeType)codeType
+                language:(NSString *)language
 ;
 
 + (PPLocation *)initWithDictionary:(NSDictionary *)locationDict;
