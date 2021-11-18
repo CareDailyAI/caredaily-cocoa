@@ -242,7 +242,7 @@ static NSString *kTrackingKey = @"com.peoplepowerco.lib.Peoplepower.trackingDisa
         case 43:
             break;
         case 44: // Too often API calls
-            [errorDetail setValue:NSLocalizedStringWithDefaultValue(@"ppc.error.code.44.description", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Too often API calls", @"Error - 44") forKey:NSLocalizedDescriptionKey];
+            [errorDetail setValue:NSLocalizedStringWithDefaultValue(@"ppc.error.code.44.description", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Too many API calls", @"Error - 44") forKey:NSLocalizedDescriptionKey];
             break;
         case 45: // The communication channel is not authenticated
             [errorDetail setValue:NSLocalizedStringWithDefaultValue(@"ppc.error.code.45.description", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"The communication channel is not authenticated", @"Error - 45") forKey:NSLocalizedDescriptionKey];
