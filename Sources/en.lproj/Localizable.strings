@@ -1010,7 +1010,7 @@
 "ppc.error.code.42.description" = "Cannot connect to an external resource";
 
 /* Error - 44 */
-"ppc.error.code.44.description" = "Too often API calls";
+"ppc.error.code.44.description" = "Too many API calls";
 
 /* Error - 45 */
 "ppc.error.code.45.description" = "The communication channel is not authenticated";
