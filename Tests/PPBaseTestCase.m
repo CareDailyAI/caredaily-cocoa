@@ -21,7 +21,7 @@
 
 - (void)stubRequestForModule:(NSString *)moduleName methodName:(NSString *)methodName ofType:(NSString *)type path:(NSString *)path statusCode:(int)statusCode headers:(NSDictionary *)headers {
     [HTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest * _Nonnull request) {
-        return [request.URL.path isEqualToString:path];
+        return [request.URL.path isEqualToString:path] || [request.URL.path isEqualToString:[NSString stringWithFormat:@"/espapi%@", path]];
     } withStubResponse:^HTTPStubsResponse * _Nonnull(NSURLRequest * _Nonnull request) {
 
         NSString *path = [[NSBundle bundleForClass:[self class]] pathForResource:[NSString stringWithFormat:@"%@-%@-ResponseData", moduleName, methodName] ofType:type];
