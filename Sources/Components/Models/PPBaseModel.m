@@ -491,6 +491,12 @@ static NSString *kTrackingKey = @"com.peoplepowerco.lib.Peoplepower.trackingDisa
             [errorDetail setValue:NSLocalizedStringWithDefaultValue(@"ppc.error.code.80003.description", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"You've chosen to not allow this application access to your \"Push Notifications\".  You can change your app settings in your profile page.", @"Error - Push Notifications - Privacy - Denied") forKey:NSLocalizedDescriptionKey];
             break;
             
+            // Health Kit
+        case 90000:
+            [errorDetail setValue:NSLocalizedStringWithDefaultValue(@"ppc.error.code.90000.description", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Failed to authorize for health kit.", @"Error - Failed to authorize for health kit.") forKey:NSLocalizedDescriptionKey];
+            break;
+            
+            
         default:
             [errorDetail setValue:[NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"ppc.error.code.general", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Oops, something went wrong.  Please contact support. (%li)", @"Error - Default"), (long)resultCode] forKey:NSLocalizedDescriptionKey];
             argument = nil;
