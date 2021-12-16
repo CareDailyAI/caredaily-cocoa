@@ -443,8 +443,7 @@
 		630EB9AC24948778002D5614 /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630EB9A724948777002D5614 /* UICKeyChainStore.framework */; };
 		631152E321E817BD00DA7755 /* PPTHConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 631152DE21E7FB8400DA7755 /* PPTHConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		631A7AA3248B151600D86CFF /* UnitTests.plist in Resources */ = {isa = PBXBuildFile; fileRef = 636B47F1248AFA7B00124F6A /* UnitTests.plist */; };
-		631A7AA6248B16DD00D86CFF /* Peoplepower-Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63A9524E205AFC15000E466A /* Peoplepower-Info-iOS.plist */; };
-		631A7AA7248B16E000D86CFF /* Peoplepower-Framework-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63BEC9AF20C5D2AB00408494 /* Peoplepower-Framework-Info.plist */; };
+		631A7AA7248B16E000D86CFF /* Peoplepower-Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63BEC9AF20C5D2AB00408494 /* Peoplepower-Info-iOS.plist */; };
 		631A7AA8248B171000D86CFF /* Peoplepower-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 637A632B206C44B000F7876D /* Peoplepower-Config.plist */; };
 		631DB29B21077D8900C2F8F1 /* PPCircleDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 631DB29921077D8900C2F8F1 /* PPCircleDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		631DB29C21077D8900C2F8F1 /* PPCircleDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 631DB29A21077D8900C2F8F1 /* PPCircleDevice.m */; };
@@ -1713,7 +1712,6 @@
 		63A7143E25AD00510009E43D /* PPTCLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPTCLocalization.swift; sourceTree = "<group>"; };
 		63A721B925B770AB0009E43D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		63A95234205AD424000E466A /* PPAppResources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPAppResources.h; sourceTree = "<group>"; };
-		63A9524E205AFC15000E466A /* Peoplepower-Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Peoplepower-Info-iOS.plist"; sourceTree = "<group>"; };
 		63A9525B205C2E9A000E466A /* PPNetworkUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkUtilities.m; sourceTree = "<group>"; };
 		63A9525C205C2E9B000E466A /* PPNetworkUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNetworkUtilities.h; sourceTree = "<group>"; };
 		63A9525F205C33F7000E466A /* PPRuleCalendar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPRuleCalendar.h; sourceTree = "<group>"; };
@@ -1827,7 +1825,7 @@
 		63B5283B26828081007EA64B /* Login-GetPrivateKey-ResponseData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Login-GetPrivateKey-ResponseData.json"; sourceTree = "<group>"; };
 		63B5283D2682808E007EA64B /* Login-PutPublicKey-ResponseData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Login-PutPublicKey-ResponseData.json"; sourceTree = "<group>"; };
 		63BEC9AC20C5D2AA00408494 /* Peoplepower.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Peoplepower.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		63BEC9AF20C5D2AB00408494 /* Peoplepower-Framework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Peoplepower-Framework-Info.plist"; sourceTree = "<group>"; };
+		63BEC9AF20C5D2AB00408494 /* Peoplepower-Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Peoplepower-Info-iOS.plist"; sourceTree = "<group>"; };
 		63BEC9B420C5D2AB00408494 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C7C9FD2098015D00967C4C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		63C7C9FF2098016700967C4C /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
@@ -3039,9 +3037,8 @@
 				635C5B9B259AA12700FD3BC5 /* Peoplepower.m */,
 				63D39315204F3A0900041C1A /* Peoplepower-Prefix.pch */,
 				637A632B206C44B000F7876D /* Peoplepower-Config.plist */,
-				63A9524E205AFC15000E466A /* Peoplepower-Info-iOS.plist */,
 				630BDC5524B393480035D8B3 /* Peoplepower-Info-watchOS.plist */,
-				63BEC9AF20C5D2AB00408494 /* Peoplepower-Framework-Info.plist */,
+				63BEC9AF20C5D2AB00408494 /* Peoplepower-Info-iOS.plist */,
 				63EC62E8219A44AE0054010D /* Peoplepower-Attributions.plist */,
 				63A712B525ACF8E60009E43D /* Localizable.strings */,
 			);
@@ -4192,8 +4189,7 @@
 				636B4447248AE82A00124F6A /* Cartfile in Resources */,
 				63E62AB7249196B30038A694 /* Peoplepower-Resources.podspec in Resources */,
 				631A7AA3248B151600D86CFF /* UnitTests.plist in Resources */,
-				631A7AA6248B16DD00D86CFF /* Peoplepower-Info-iOS.plist in Resources */,
-				631A7AA7248B16E000D86CFF /* Peoplepower-Framework-Info.plist in Resources */,
+				631A7AA7248B16E000D86CFF /* Peoplepower-Info-iOS.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
