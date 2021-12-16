@@ -35,7 +35,6 @@ peoplepower-cocoa/
 │   ├── Peoplepower-Config.plist
 │   ├── Peoplepower-Info-iOS.plist
 │   ├── Peoplepower-Info-watchOS.plist
-│   ├── Peoplepower-Framework-Info.plist
 │   ├── Peoplepower-Attributions.plist
 │   ├── en.lproj/
 │   ├── sv.lproj/
