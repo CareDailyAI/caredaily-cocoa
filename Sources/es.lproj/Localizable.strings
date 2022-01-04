@@ -1234,6 +1234,9 @@
 /* Error - Push Notifications - Privacy - Denied */
 "ppc.error.code.80003.description" = "Ha elegido no permitir que esta aplicación acceda a sus \"Notificaciones automáticas\". Puedes cambiar la configuración de tu aplicación en tu página de perfil.";
 
+/* Error - Failed to authorize for health kit. */
+"ppc.error.code.90000.description" = "No se pudo autorizar el kit de salud.";
+
 /* Error - Default */
 "ppc.error.code.general" = "Huy! Algo salió mal. Comuníquese con el soporte. ( %li )";
 

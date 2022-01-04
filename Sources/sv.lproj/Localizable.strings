@@ -1,1 +1,1290 @@
+/* at */
+"date.utilities.join.at" = "på";
+
+/* {number} days ago */
+"date.utilities.timeago.day.multiple" = "%ld dagar sedan";
+
+/* yesterday */
+"date.utilities.timeago.day.single" = "Igår";
+
+/* {number} hours ago */
+"date.utilities.timeago.hour.multiple" = "%ld timmar sedan";
+
+/* an hour ago */
+"date.utilities.timeago.hour.single" = "en timme sedan";
+
+/* {number} minutes ago */
+"date.utilities.timeago.min.multiple" = "%ld minuter sedan";
+
+/* a minute ago */
+"date.utilities.timeago.min.single" = "för en minut sedan";
+
+/* {number} months ago */
+"date.utilities.timeago.month.multiple" = "%ld månader sedan";
+
+/* a month ago */
+"date.utilities.timeago.month.single" = "en månad sedan";
+
+/* just now */
+"date.utilities.timeago.now" = "precis nu";
+
+/* today */
+"date.utilities.timeago.now.alt" = "idag";
+
+/* {number} seconds ago */
+"date.utilities.timeago.sec.multiple" = "%ld sekunder sedan";
+
+/* {number} weeks ago */
+"date.utilities.timeago.week.multiple" = "%ld veckor sedan";
+
+/* a week ago */
+"date.utilities.timeago.week.single" = "en vecka sedan";
+
+/* {number} years ago */
+"date.utilities.timeago.year.multiple" = "%ld år sedan";
+
+/* last year */
+"date.utilities.timeago.year.single" = "förra året";
+
+/* Approved */
+"device.firmware.update.job.approved" = "Godkänd";
+
+/* Available */
+"device.firmware.update.job.available" = "Tillgängligt";
+
+/* Declined */
+"device.firmware.update.job.declined" = "Tackat nej";
+
+/* Started */
+"device.firmware.update.job.started" = "Satte igång";
+
+/* Device Parameter - Detecting Audio */
+"device.parameter._.Detecting Audio" = "Upptäcker ljud";
+
+/* Device Parameter - Not detecting audio */
+"device.parameter._.Not detecting audio" = "Känner inte av ljud";
+
+/* Device Parameter - Access Camera Settings */
+"device.parameter.accesscamerasettings" = "Öppna kamerainställningar";
+
+/* Device Parameter - Remote control disabled */
+"device.parameter.accesscamerasettings.remotecontroldisabled" = "Fjärrkontrollen inaktiverad";
+
+/* Device Parameter - Remote control enabled */
+"device.parameter.accesscamerasettings.remotecontrolenabled" = "Fjärrkontroll aktiverad";
+
+/* Device Parameter - Alarm is active */
+"device.parameter.alarm.alarmisactive" = "Larmet är aktivt";
+
+/* Device Parameter - Alarm is off */
+"device.parameter.alarm.alarmisoff" = "Larmet är avstängt";
+
+/* Device Parameter - Alarm will beep %@ times */
+"device.parameter.alarm.alarmwillbeep.count" = "Larmet piper %@ gånger";
+
+/* Device Parameter - Alarm Duration */
+"device.parameter.alarmduration" = "Larmtid";
+
+/* Detail Device Parameter - Play for {n} seconds */
+"device.parameter.alarmduration.play.seconds.multiple" = "Spela i %@ sekunder";
+
+/* Detail Device Parameter - Play once */
+"device.parameter.alarmduration.playonce" = "Spela en gång";
+
+/* Detail Device Parameter - Stop */
+"device.parameter.alarmduration.stop" = "Sluta";
+
+/* Device Parameter - Alarm Squawk */
+"device.parameter.alarmsquawk" = "Larm Squawk";
+
+/* Detail Device Parameter - Squawk sarmed */
+"device.parameter.alarmsquawk.squawkarmed" = "Squawk beväpnad";
+
+/* Detail Device Parameter - Squawk disarmed */
+"device.parameter.alarmsquawk.squawkdisarmed" = "Squawk avväpnad";
+
+/* Device Parameter - Alarm Status */
+"device.parameter.alarmstatus" = "Larmstatus";
+
+/* Detail Device Parameter - Active */
+"device.parameter.alarmstatus.active" = "Aktiva";
+
+/* Detail Device Parameter - Inactive */
+"device.parameter.alarmstatus.inactive" = "Inaktiv";
+
+/* Device Parameter - Alarm Strobe */
+"device.parameter.alarmstrobe" = "Larmblixt";
+
+/* Detail Device Parameter - Strobe off */
+"device.parameter.alarmstrobe.strobeoff" = "Strobe av";
+
+/* Detail Device Parameter - Strobe on */
+"device.parameter.alarmstrobe.strobeon" = "Strobe på";
+
+/* Device Parameter - Alarm Warn */
+"device.parameter.alarmwarn" = "Larm Varna";
+
+/* Detail Device Parameter - Beep */
+"device.parameter.alarmwarn.develco.beep" = "Pip";
+
+/* Detail Device Parameter - BeepBeep */
+"device.parameter.alarmwarn.develco.beepbeep" = "Pip pip";
+
+/* Detail Device Parameter - BeepBeepWelcome */
+"device.parameter.alarmwarn.develco.beepbeepwelcome" = "BeepBeepVälkommen";
+
+/* Detail Device Parameter - BeepWelcome */
+"device.parameter.alarmwarn.develco.beepwelcome" = "BeepVälkommen";
+
+/* Detail Device Parameter - Burglar */
+"device.parameter.alarmwarn.develco.burglar" = "Inbrottstjuv";
+
+/* Detail Device Parameter - Emergency */
+"device.parameter.alarmwarn.develco.emergency" = "Nödsituation";
+
+/* Detail Device Parameter - Fire */
+"device.parameter.alarmwarn.develco.fire" = "Brand";
+
+/* Detail Device Parameter - PanicE */
+"device.parameter.alarmwarn.develco.panic.e" = "PanicE";
+
+/* Detail Device Parameter - PanicF */
+"device.parameter.alarmwarn.develco.panic.f" = "PanicF";
+
+/* Detail Device Parameter - PanicP */
+"device.parameter.alarmwarn.develco.panic.p" = "PanicP";
+
+/* Detail Device Parameter - Silence */
+"device.parameter.alarmwarn.develco.silence" = "Tystnad";
+
+/* Detail Device Parameter - Alarm */
+"device.parameter.alarmwarn.linkhigh.alarm" = "Larm";
+
+/* Detail Device Parameter - Bird */
+"device.parameter.alarmwarn.linkhigh.bird" = "Fågel";
+
+/* Detail Device Parameter - Bling */
+"device.parameter.alarmwarn.linkhigh.bling" = "Smycke";
+
+/* Detail Device Parameter - Dog */
+"device.parameter.alarmwarn.linkhigh.dog" = "Hund";
+
+/* Detail Device Parameter - Doorbell */
+"device.parameter.alarmwarn.linkhigh.doorbell" = "Dörrklocka";
+
+/* Detail Device Parameter - Droid */
+"device.parameter.alarmwarn.linkhigh.droid" = "Droid";
+
+/* Detail Device Parameter - GunCock */
+"device.parameter.alarmwarn.linkhigh.guncock" = "GunCock";
+
+/* Detail Device Parameter - GunShot */
+"device.parameter.alarmwarn.linkhigh.gunshot" = "GunShot";
+
+/* Detail Device Parameter - Lock */
+"device.parameter.alarmwarn.linkhigh.lock" = "Lås";
+
+/* Detail Device Parameter - Phaser */
+"device.parameter.alarmwarn.linkhigh.phaser" = "Laser";
+
+/* Detail Device Parameter - Security Drill */
+"device.parameter.alarmwarn.linkhigh.securitydrill" = "Säkerhetsövning";
+
+/* Detail Device Parameter - Switch */
+"device.parameter.alarmwarn.linkhigh.switch" = "Strömbrytare";
+
+/* Detail Device Parameter - Trumpet */
+"device.parameter.alarmwarn.linkhigh.trumpet" = "Trumpet";
+
+/* Detail Device Parameter - Warning */
+"device.parameter.alarmwarn.linkhigh.warning" = "Varning";
+
+/* Detail Device Parameter - Whistle */
+"device.parameter.alarmwarn.linkhigh.whistle" = "Vissling";
+
+/* Detail Device Parameter - Burglar alarm */
+"device.parameter.alarmwarn.smartenit.burglaralarm" = "Inbrottslarm";
+
+/* Detail Device Parameter - Chinese1 */
+"device.parameter.alarmwarn.smartenit.chinese1" = "kinesiska 1";
+
+/* Detail Device Parameter - Chinese2 */
+"device.parameter.alarmwarn.smartenit.chinese2" = "kinesiska 2";
+
+/* Detail Device Parameter - Chinese3 */
+"device.parameter.alarmwarn.smartenit.chinese3" = "kinesiska 3";
+
+/* Detail Device Parameter - Chinese4 */
+"device.parameter.alarmwarn.smartenit.chinese4" = "kinesiska 4";
+
+/* Detail Device Parameter - Chinese5 */
+"device.parameter.alarmwarn.smartenit.chinese5" = "kinesiska 5";
+
+/* Detail Device Parameter - Chinese6 */
+"device.parameter.alarmwarn.smartenit.chinese6" = "kinesiska 6";
+
+/* Detail Device Parameter - Chinese7 */
+"device.parameter.alarmwarn.smartenit.chinese7" = "kinesiska 7";
+
+/* Detail Device Parameter - Chinese8 */
+"device.parameter.alarmwarn.smartenit.chinese8" = "kinesiska8";
+
+/* Detail Device Parameter - Click once */
+"device.parameter.alarmwarn.smartenit.clickonce" = "Klicka en gång";
+
+/* Detail Device Parameter - Doorbell */
+"device.parameter.alarmwarn.smartenit.doorbell" = "Dörrklocka";
+
+/* Detail Device Parameter - Emergency alarm */
+"device.parameter.alarmwarn.smartenit.emergencyalarm" = "Nödlarm";
+
+/* Detail Device Parameter - Fire alarm */
+"device.parameter.alarmwarn.smartenit.firealarm" = "Brandlarm";
+
+/* Detail Device Parameter - Multiple clicks */
+"device.parameter.alarmwarn.smartenit.mulitpleclicks" = "Flera klick";
+
+/* Detail Device Parameter - No sound */
+"device.parameter.alarmwarn.smartenit.nosound" = "Inget ljud";
+
+/* Detail Device Parameter - Security Drill */
+"device.parameter.alarmwarn.smartenit.securitydrill" = "Säkerhetsövning";
+
+/* Detail Device Parameter - Stop alarm */
+"device.parameter.alarmwarn.smartenit.stopalarm" = "Stoppa larmet";
+
+/* Device Parameter - Audio Sensitivity */
+"device.parameter.audiosensitivity" = "Ljudkänslighet";
+
+/* Device Parameter - Detect huge sounds */
+"device.parameter.audiosensitivity.detecthugesounds" = "Upptäck enorma ljud";
+
+/* Device Parameter - Detect large sounds */
+"device.parameter.audiosensitivity.detectlargesounds" = "Upptäck stora ljud";
+
+/* Device Parameter - Detect normal sounds */
+"device.parameter.audiosensitivity.detectnormalsounds" = "Upptäck normala ljud";
+
+/* Device Parameter - Detect small sounds */
+"device.parameter.audiosensitivity.detectsmallsounds" = "Upptäck små ljud";
+
+/* Device Parameter - Detect tiny sounds */
+"device.parameter.audiosensitivity.detecttinysounds" = "Upptäck små ljud";
+
+/* Device Parameter - Audio Streaming */
+"device.parameter.audiostreaming" = "Ljudströmning";
+
+/* Device Parameter - Audio streaming disabled */
+"device.parameter.audiostreaming.audiostreamingdisabled" = "Ljudströmning inaktiverad";
+
+/* Device Parameter - Audio streaming enabled */
+"device.parameter.audiostreaming.audiostreamingenabled" = "Ljudströmning aktiverad";
+
+/* Device Parameter - Auto Focus */
+"device.parameter.autofocus" = "Autofokus";
+
+/* Device Parameter - Focused */
+"device.parameter.autofocus.focused" = "Fokuserad";
+
+/* Device Parameter - Focusing */
+"device.parameter.autofocus.focusing" = "Fokusering";
+
+/* Device Parameter - Battery Level */
+"device.parameter.batterylevel" = "Batterinivå";
+
+/* Device Parameter - Blackout disabled */
+"device.parameter.blackoutscreenon.blackoutdisabled" = "Blackout inaktiverad";
+
+/* Device Parameter - Blackout enabled */
+"device.parameter.blackoutscreenon.blackoutenabled" = "Blackout aktiverade";
+
+/* Device Parameter - Brightness */
+"device.parameter.brightness" = "Ljusstyrka";
+
+/* Device Parameter - Button Status */
+"device.parameter.buttonstatus" = "Knappstatus";
+
+/* Detail Device Parameter - Pressed */
+"device.parameter.buttonstatus.pressed" = "Nedtryckt";
+
+/* Detail Device Parameter - Released */
+"device.parameter.buttonstatus.released" = "Släppte";
+
+/* Device Parameter - Charging */
+"device.parameter.charging" = "Laddar";
+
+/* Device Parameter - Charging */
+"device.parameter.charging.charging" = "Laddar";
+
+/* Device Parameter - Not charging */
+"device.parameter.charging.notcharging" = "Laddar inte";
+
+/* Device Parameter - Cooling Setpoint */
+"device.parameter.coolingsetpoint" = "Kyla börvärde";
+
+/* Device Parameter - Door Status */
+"device.parameter.doorstatus" = "Dörrstatus";
+
+/* Detail Device Parameter - Closed */
+"device.parameter.doorstatus.closed" = "Stängd";
+
+/* Detail Device Parameter - Open */
+"device.parameter.doorstatus.open" = "Öppen";
+
+/* Device Parameter - Fan Mode */
+"device.parameter.fanmode" = "Fläktläge";
+
+/* Device Parameter - Auto */
+"device.parameter.fanmode.auto" = "Bil";
+
+/* Device Parameter - High */
+"device.parameter.fanmode.high" = "Hög";
+
+/* Device Parameter - Low */
+"device.parameter.fanmode.low" = "Låg";
+
+/* Device Parameter - Medium */
+"device.parameter.fanmode.medium" = "Medium";
+
+/* Device Parameter - Off */
+"device.parameter.fanmode.off" = "Av";
+
+/* Device Parameter - On */
+"device.parameter.fanmode.on" = "På";
+
+/* Device Parameter - Smart */
+"device.parameter.fanmode.smart" = "Smart";
+
+/* Device Parameter - Fan Mode Sequence */
+"device.parameter.fanmodesequence" = "Fläktlägessekvens";
+
+/* Device Parameter - Fan Mode Values */
+"device.parameter.fanmodevalues" = "Fläktlägesvärden";
+
+/* Device Parameter - Flash off */
+"device.parameter.flashon.flashoff" = "Blixt av";
+
+/* Device Parameter - Flash on */
+"device.parameter.flashon.flashon" = "Blixt på";
+
+/* Device Parameter - No Flash */
+"device.parameter.flashon.noflash" = "Ingen blixt";
+
+/* Device Parameter - HD Status */
+"device.parameter.hdstatus" = "HD-status";
+
+/* Device Parameter - HD Status disabled */
+"device.parameter.hdstatus.hdstatusdisabled" = "HD-status inaktiverad";
+
+/* Device Parameter - HD Status enabled */
+"device.parameter.hdstatus.hdstatusenabled" = "HD-status aktiverad";
+
+/* Device Parameter - Heating Setpoint */
+"device.parameter.heatingsetpoint" = "Värmebörvärde";
+
+/* Device Parameter - iBeacon Proximity */
+"device.parameter.ibeaconproximity" = "iBeacon närhet";
+
+/* Device Parameter - Far */
+"device.parameter.ibeaconproximity.far" = "Långt";
+
+/* Device Parameter - Immediate */
+"device.parameter.ibeaconproximity.immediate" = "Omedelbar";
+
+/* Device Parameter - Near */
+"device.parameter.ibeaconproximity.near" = "Nära";
+
+/* Device Parameter - Unknown */
+"device.parameter.ibeaconproximity.unknown" = "Okänd";
+
+/* Device Parameter - iBeacon Status */
+"device.parameter.ibeaconstatus" = "iBeacon Status";
+
+/* Device Parameter - Off */
+"device.parameter.ibeaconstatus.off" = "Av";
+
+/* Device Parameter - On */
+"device.parameter.ibeaconstatus.on" = "På";
+
+/* Device Parameter - Internal Temperature */
+"device.parameter.internaltemperature" = "Intern temperatur";
+
+/* Device Parameter - LintAlert Current LED */
+"device.parameter.lintalertcurrentled" = "LintAlert aktuell LED";
+
+/* Detail Device Parameter - LintAlert Blocked */
+"device.parameter.lintalertcurrentled.blocked" = "Blockerad";
+
+/* Detail Device Parameter - LintAlert OK */
+"device.parameter.lintalertcurrentled.ok" = "OK";
+
+/* Detail Device Parameter - LintAlert Warning */
+"device.parameter.lintalertcurrentled.warning" = "Varning";
+
+/* Device Parameter - LintAlert Status */
+"device.parameter.lintalertstatus" = "LintAlert Status";
+
+/* Device Parameter - LintAlert Dryer Off */
+"device.parameter.lintalertstatus.dryeroff" = "Torktumlare av";
+
+/* Device Parameter - LintAlert Dryer On */
+"device.parameter.lintalertstatus.dryeron" = "Torktumlare på";
+
+/* Device Parameter - Lock Status */
+"device.parameter.lockstatus" = "Låsstatus";
+
+/* Detail Device Parameter - Locked */
+"device.parameter.lockstatus.locked" = "Låst";
+
+/* Detail Device Parameter - Unlocked */
+"device.parameter.lockstatus.unlocked" = "Olåst";
+
+/* Device Parameter - Lock Status Alarm */
+"device.parameter.lockstatusalarm" = "Lås statuslarm";
+
+/* Detail Device Parameter - Deadbolt Jammed */
+"device.parameter.lockstatusalarm.deadboltjammed" = "Deadbolt har fastnat";
+
+/* Detail Device Parameter - Door Forced Open */
+"device.parameter.lockstatusalarm.doorforcedopen" = "Dörren tvångsöppning";
+
+/* Detail Device Parameter - Front Escutcheon Removed */
+"device.parameter.lockstatusalarm.frontescutcheonremoved" = "Frontbricka borttagen";
+
+/* Detail Device Parameter - Lock Reset to Factory Defaults */
+"device.parameter.lockstatusalarm.lockresettofactorydefaults" = "Lås Återställ till fabriksinställningar";
+
+/* Detail Device Parameter - OK */
+"device.parameter.lockstatusalarm.ok" = "OK";
+
+/* Detail Device Parameter - RF Module Power Cycled */
+"device.parameter.lockstatusalarm.rfmodulepowercycled" = "RF-modul strömsatt";
+
+/* Detail Device Parameter - Wrong Code Entry Limit */
+"device.parameter.lockstatusalarm.wrongcodeentrylimit" = "Fel kodinmatningsgräns";
+
+/* Device Parameter - Maximum Cooling Setpoint */
+"device.parameter.maxcoolingsetpoint" = "Maximalt börvärde för kylning";
+
+/* Device Parameter - Maximum Heating Setpoint */
+"device.parameter.maxheatingsetpoint" = "Maximalt värmebörvärde";
+
+/* Device Parameter - Minimum Cooling Setpoint */
+"device.parameter.mincoolingsetpoint" = "Minsta börvärde för kylning";
+
+/* Device Parameter - Minimum Heating Setpoint */
+"device.parameter.minheatingsetpoint" = "Minsta börvärde för värme";
+
+/* Device Parameter - Beep 2 times when motion is detected */
+"device.parameter.motionalarm.beep.multiple" = "Pip %@ gånger när rörelse upptäcks";
+
+/* Device Parameter - Beep 1 time when motion is detected */
+"device.parameter.motionalarm.beep.single" = "Pip 1 gång när rörelse upptäcks";
+
+/* Device Parameter - Disabled */
+"device.parameter.motionalarm.disabled" = "Inaktiverad";
+
+/* Device Parameter - Sound alarm when motion is detected */
+"device.parameter.motionalarm.soundalarm" = "Ljudlarm när rörelse upptäcks";
+
+/* Device Parameter - {number} minutes */
+"device.parameter.motioncountdowntime.minutes" = "%li min";
+
+/* Device Parameter - {number} minutes {number} seconds */
+"device.parameter.motioncountdowntime.minutes_seconds" = "%1$li min %2$li sek";
+
+/* Device Parameter - {number} seconds */
+"device.parameter.motioncountdowntime.seconds" = "%li sek";
+
+/* Device Parameter - Motion Sensitivity */
+"device.parameter.motionsensitivity" = "Rörelsekänslighet";
+
+/* Device Parameter - Detect huge movements */
+"device.parameter.motionsensitivity.detecthugemovements" = "Upptäck stora rörelser";
+
+/* Device Parameter - Detect large movements */
+"device.parameter.motionsensitivity.detectlargemovements" = "Upptäck stora rörelser";
+
+/* Device Parameter - Detect normal movements */
+"device.parameter.motionsensitivity.detectnormalmovements" = "Upptäck normala rörelser";
+
+/* Device Parameter - Detect small movements */
+"device.parameter.motionsensitivity.detectsmallmovements" = "Upptäck små rörelser";
+
+/* Device Parameter - Detect tiny movements */
+"device.parameter.motionsensitivity.detecttinymovements" = "Upptäck små rörelser";
+
+/* Device Parameter - Motion Status */
+"device.parameter.motionstatus" = "Rörelsestatus";
+
+/* Device Parameter - Detecting Motion */
+"device.parameter.motionstatus.detectingmotion" = "Detekterar rörelse";
+
+/* Detail Device Parameter - Motion */
+"device.parameter.motionstatus.motion" = "Rörelse";
+
+/* Detail Device Parameter - No Motion */
+"device.parameter.motionstatus.nomotion" = "Ingen rörelse";
+
+/* Device Parameter - Not Detecting Motion */
+"device.parameter.motionstatus.notdetectingmotion" = "Upptäcker inte rörelse";
+
+/* Device Parameter - Netatmo Health Coach Status */
+"device.parameter.netatmohealthcoachstatus" = "Status för Netatmo Health Coach";
+
+/* Device Parameter - Netatmo Health Coath stauts - Fair */
+"device.parameter.netatmohealthcoachstatus.fair" = "Rättvist";
+
+/* Device Parameter - Netatmo Health Coath stauts - Fine */
+"device.parameter.netatmohealthcoachstatus.fine" = "Bra";
+
+/* Device Parameter - Netatmo Health Coath stauts - Healthy */
+"device.parameter.netatmohealthcoachstatus.healthy" = "Friska";
+
+/* Device Parameter - Netatmo Health Coath stauts - Poor */
+"device.parameter.netatmohealthcoachstatus.poor" = "Fattig";
+
+/* Device Parameter - Netatmo Health Coath stauts - Unhealthy */
+"device.parameter.netatmohealthcoachstatus.unhealthy" = "Ohälsosam";
+
+/* Device Parameter - Outlet Status */
+"device.parameter.outletstatus" = "Uttagsstatus";
+
+/* Device Parameter - Off */
+"device.parameter.outletstatus.off" = "Av";
+
+/* Device Parameter - On */
+"device.parameter.outletstatus.on" = "På";
+
+/* Device Parameter - Camera speaker volume is at {number}{percent %} */
+"device.parameter.outputvolume.cameraspeakervolumelevel" = "Kamerans högtalarvolym är på %.0f %% .";
+
+/* Camera - Label describing this camera's volume is maxed */
+"device.parameter.outputvolume.cameraspeakervolumemaxed" = "Kamerans högtalarvolym är maxad.";
+
+/* Camera - Label describing this camera is muted */
+"device.parameter.outputvolume.cameraspeakervolumemuted" = "Kamerans högtalarvolym är avstängd.";
+
+/* Device Parameter - Power */
+"device.parameter.power" = "Kraft";
+
+/* Device Parameter - Power Status */
+"device.parameter.powerstatus" = "Strömstatus";
+
+/* Device Parameter - Off */
+"device.parameter.powerstatus.off" = "Av";
+
+/* Device Parameter - On */
+"device.parameter.powerstatus.on" = "På";
+
+/* Device Parameter - Rapid Motion Status */
+"device.parameter.rapidmotionstatus" = "Rapid Motion Status";
+
+/* Device Parameter - As fast as possible */
+"device.parameter.rapidmotionstatus.asfastaspossible" = "Så snabbt som möjligt";
+
+/* Device Parameter - {number} hours */
+"device.parameter.rapidmotionstatus.hours" = "%li tim";
+
+/* Device Parameter - {number} minutes */
+"device.parameter.rapidmotionstatus.minutes" = "%li min";
+
+/* Device Parameter - {number} minutes {number} seconds */
+"device.parameter.rapidmotionstatus.minutes_seconds" = "%1$li min %2$li sek";
+
+/* Device Parameter - Continue recording even after motion goes away */
+"device.parameter.recordfullduration.continue" = "Fortsätt spela in även efter att rörelsen försvinner";
+
+/* Device Parameter - Stop recording after motion goes away */
+"device.parameter.recordfullduration.stop" = "Sluta spela in när rörelsen försvinner";
+
+/* Device Parameter - Record Seconds */
+"device.parameter.recordseconds" = "Spela in sekunder";
+
+/* Device Parameter - {number} minutes */
+"device.parameter.recordseconds.minutes" = "%li min";
+
+/* Device Parameter - {number} minutes {number} seconds */
+"device.parameter.recordseconds.minutes_seconds" = "%1$li min %2$li sek";
+
+/* Device Parameter - {number} seconds */
+"device.parameter.recordseconds.seconds" = "%li sek";
+
+/* Device Parameter - Record Status */
+"device.parameter.recordstatus" = "Record Status";
+
+/* Device Parameter - Not recording */
+"device.parameter.recordstatus.notrecording" = "Spelar inte in";
+
+/* Device Parameter - Recording */
+"device.parameter.recordstatus.recording" = "Inspelning";
+
+/* Device Parameter - Relative Humidity */
+"device.parameter.relativehumidity" = "Relativ luftfuktighet";
+
+/* Device Parameter - Robot Connected */
+"device.parameter.robotconnected" = "Robot ansluten";
+
+/* Device Parameter - Galileo */
+"device.parameter.robotconnected.galileo" = "Galileo";
+
+/* Device Parameter - Galileo BT */
+"device.parameter.robotconnected.galileobt" = "Galileo BT";
+
+/* Device Parameter - KUBI */
+"device.parameter.robotconnected.kubi" = "KUBI";
+
+/* Device Parameter - No robot connected */
+"device.parameter.robotconnected.norobotconnected" = "Ingen robot ansluten";
+
+/* Device Parameter - {AppName} 360 */
+"device.parameter.robotconnected.presence360" = "%@ 360";
+
+/* Device Parameter - Romo */
+"device.parameter.robotconnected.romo" = "Romo";
+
+/* Device Parameter - Unknown robot */
+"device.parameter.robotconnected.unknownrobot" = "Okänd robot";
+
+/* Device Parameter - Flip vertical */
+"device.parameter.robotorientation.flipvertical" = "Vänd vertikalt";
+
+/* Device Parameter - Configure vantage point {vantage point index} */
+"device.parameter.robotvantageconfigurationstatus.configurevantagepoint" = "Konfigurera utsiktspunkt %@";
+
+/* Device Parameter - Hard Reset */
+"device.parameter.robotvantageconfigurationstatus.hardreset" = "Hård återställning";
+
+/* Device Parameter - Ready */
+"device.parameter.robotvantageconfigurationstatus.ready" = "Klar";
+
+/* Device Parameter - Reboot motor control board */
+"device.parameter.robotvantageconfigurationstatus.rebootmotorcontrolboard" = "Starta om motorstyrkortet";
+
+/* Device Parameter - Reset UART queue */
+"device.parameter.robotvantageconfigurationstatus.resetuardqueue" = "Återställ UART-kön";
+
+/* Device Parameter - Reset UART */
+"device.parameter.robotvantageconfigurationstatus.resetuart" = "Återställ UART";
+
+/* Device Parameter - Warm Reset */
+"device.parameter.robotvantageconfigurationstatus.warmreset" = "Varm återställning";
+
+/* Device Parameter - Selected Camera */
+"device.parameter.selectedcamera" = "Vald kamera";
+
+/* Device Parameter - Front camera */
+"device.parameter.selectedcamera.frontcamera" = "Fram kamera";
+
+/* Device Parameter - Rear camera */
+"device.parameter.selectedcamera.rearcamera" = "Backkamera";
+
+/* Device Parameter - State */
+"device.parameter.state" = "stat";
+
+/* Device Parameter - Off */
+"device.parameter.state.off" = "Av";
+
+/* Device Parameter - On */
+"device.parameter.state.on" = "På";
+
+/* Device Parameter - Video calling not supported */
+"device.parameter.supportsvideocall.videocallingnotsupported" = "Videosamtal stöds inte";
+
+/* Device Parameter - Video calling supported */
+"device.parameter.supportsvideocall.videocallingsupported" = "Videosamtal stöds";
+
+/* Device Parameter - Swing Mode */
+"device.parameter.swingmode" = "Svängläge";
+
+/* Device Parameter - Fixed */
+"device.parameter.swingmode.fixed" = "Fast";
+
+/* Device Parameter - Range */
+"device.parameter.swingmode.range" = "Räckvidd";
+
+/* Device Parameter - Stopped */
+"device.parameter.swingmode.stopped" = "Slutade";
+
+/* Device Parameter - Swing Mode Values */
+"device.parameter.swingmodevalues" = "Swing Mode-värden";
+
+/* Device Parameter - System Mode */
+"device.parameter.systemmode" = "Systemläge";
+
+/* Device Parameter - Auto */
+"device.parameter.systemmode.auto" = "Bil";
+
+/* Device Parameter - Auxiliary Heat */
+"device.parameter.systemmode.auxiliaryheat" = "Extra värme";
+
+/* Device Parameter - Cool */
+"device.parameter.systemmode.cool" = "Häftigt";
+
+/* Device Parameter - Dry */
+"device.parameter.systemmode.dry" = "Torr";
+
+/* Device Parameter - Emergency Heat */
+"device.parameter.systemmode.emergencyheat" = "Nödvärme";
+
+/* Device Parameter - Fan Only */
+"device.parameter.systemmode.fanonly" = "Endast fläkt";
+
+/* Device Parameter - Heat */
+"device.parameter.systemmode.heat" = "Värmedetektor";
+
+/* Device Parameter - Off */
+"device.parameter.systemmode.off" = "Av";
+
+/* Device Parameter - Precooling */
+"device.parameter.systemmode.precooling" = "Förkylning";
+
+/* Device Parameter - System Mode Status */
+"device.parameter.systemmodestatus" = "Systemlägesstatus";
+
+/* Device Parameter - Cool */
+"device.parameter.systemmodestatus.cool" = "Häftigt";
+
+/* Device Parameter - Heat */
+"device.parameter.systemmodestatus.heat" = "Värmedetektor";
+
+/* Device Parameter - Off */
+"device.parameter.systemmodestatus.off" = "Av";
+
+/* Device Parameter - System Mode Values */
+"device.parameter.systemmodevalues" = "Systemlägesvärden";
+
+/* Device Parameter - Temperature */
+"device.parameter.temperature" = "Temperatur";
+
+/* Device Parameter - Temperature Values */
+"device.parameter.tempvalues" = "Temperaturvärden";
+
+/* Device Parameter - Twitter auto-sharing disabled */
+"device.parameter.twitterautoshare.twitterautosharingdisabled" = "Twitter automatisk delning inaktiverad";
+
+/* Device Parameter - Twitter auto-sharing enabled */
+"device.parameter.twitterautoshare.twitterautosharingenabled" = "Twitter automatisk delning aktiverad";
+
+/* Device Parameter - Twitter reminder disabled */
+"device.parameter.twitterreminder.twitterreminderdisabled" = "Twitter-påminnelse inaktiverad";
+
+/* Device Parameter - Twitter reminder enabled */
+"device.parameter.twitterreminder.twitterreminderenabled" = "Twitter-påminnelse aktiverad";
+
+/* Device Parameter - Twitter disabled */
+"device.parameter.twitterstatus.twitterdisabled" = "Twitter inaktiverad";
+
+/* Device Parameter - Twitter enabled */
+"device.parameter.twitterstatus.twitterenabled" = "Twitter aktiverat";
+
+/* Device Parameter - Version */
+"device.parameter.version" = "Version";
+
+/* Device Parameter - Vibration Status */
+"device.parameter.vibrationstatus" = "Vibrationsstatus";
+
+/* Detail Device Parameter - Moved */
+"device.parameter.vibrationstatus.moved" = "Rörd";
+
+/* Detail Device Parameter - Still */
+"device.parameter.vibrationstatus.still" = "Fortfarande";
+
+/* Device Parameter - Video Streaming */
+"device.parameter.videostreaming" = "Videoströmning";
+
+/* Device Parameter - Video streaming disabled */
+"device.parameter.videostreaming.videostreamingdisabled" = "Videoströmning inaktiverad";
+
+/* Device Parameter - Video streaming enabled */
+"device.parameter.videostreaming.videostreamingenabled" = "Videoströmning aktiverad";
+
+/* Device Parameter - Warning status disabled */
+"device.parameter.warningstatus.warningstatusdisabled" = "Varningsstatus inaktiverad";
+
+/* Device Parameter - Warning status enabled */
+"device.parameter.warningstatus.warningstatusenabled" = "Varningsstatus aktiverad";
+
+/* Device Parameter - Water Leak */
+"device.parameter.waterleak" = "Vattenläcka";
+
+/* Detail Device Parameter - Dry */
+"device.parameter.waterleak.dry" = "Torr";
+
+/* Detail Device Parameter - Wet */
+"device.parameter.waterleak.wet" = "Våt";
+
+/* Error - Account is locked until {lockTime} */
+"error.code.16.accountlocked" = "Kontot är låst tills %@";
+
+/* Language Code: 'en', 'zh', etc... */
+"language.code" = "sv";
+
+/* Away */
+"location.event.away" = "Bort";
+
+/* Home */
+"location.event.home" = "Hem";
+
+/* Sleep */
+"location.event.sleep" = "Sömn";
+
+/* Stay */
+"location.event.stay" = "Stanna kvar";
+
+/* Test */
+"location.event.test" = "Testa";
+
+/* Vacation */
+"location.event.vacation" = "Semester";
+
+/* Basement */
+"location.space.name.basement" = "Källare";
+
+/* Bathroom */
+"location.space.name.bathroom" = "Badrum";
+
+/* Bedroom */
+"location.space.name.bedroom" = "Sovrum";
+
+/* Dining Room */
+"location.space.name.diningroom" = "Matsal";
+
+/* Family Room */
+"location.space.name.familyroom" = "Familjerum";
+
+/* Garage */
+"location.space.name.garage" = "Garage";
+
+/* Hallway */
+"location.space.name.hallway" = "Hall";
+
+/* Kitchen */
+"location.space.name.kitchen" = "Kök";
+
+/* Laundry Room */
+"location.space.name.laundryroom" = "Tvättstuga";
+
+/* Living Room */
+"location.space.name.livingroom" = "Vardagsrum";
+
+/* None */
+"location.space.name.none" = "Ingen";
+
+/* Office */
+"location.space.name.office" = "Kontor";
+
+/* Other */
+"location.space.name.other" = "Övrig";
+
+/* Stairs */
+"location.space.name.stairs" = "Trappa";
+
+/* Undefined */
+"location.space.name.undefined" = "Odefinierad";
+
+/* Error - The (App Name) app had trouble connecting. Is your internet connection ok? */
+"ppc.error.code.1.description" = "%@ hade problem med att ansluta. Är din internetanslutning ok?";
+
+/* Error - You are no longer signed in */
+"ppc.error.code.2.description" = "Du är inte längre inloggad";
+
+/* Error - Wrong location ID or location is not related to the user */
+"ppc.error.code.3.description" = "Fel plats-ID eller plats är inte relaterat till användaren";
+
+/* Error - That device is no longer in your account */
+"ppc.error.code.4.description" = "Den enheten finns inte längre på ditt konto";
+
+/* Error - Device command proxy (gateway) has not been found */
+"ppc.error.code.5.description" = "Enhetskommandoproxy (gateway) har inte hittats";
+
+/* Error - That type of product isn't supported on this server. */
+"ppc.error.code.6.description" = "Den typen av produkt stöds inte på den här servern.";
+
+/* Error - Access denied */
+"ppc.error.code.7.description" = "Tillträde beviljas ej";
+
+/* Error - Oops, you typed in something wrong there */
+"ppc.error.code.8.description" = "Oj, du skrev in något fel där";
+
+/* Error - Please fill in all required fields */
+"ppc.error.code.9.description" = "Vänligen fyll i alla obligatoriska fält";
+
+/* Error - No available device resources to complete operation */
+"ppc.error.code.10.description" = "Inga tillgängliga enhetsresurser för att slutföra operationen";
+
+/* Error - The username or password you entered is incorrect */
+"ppc.error.code.11.description" = "Användarnamnet eller lösenordet du angav är felaktigt";
+
+/* Error - The username or password you entered is incorrect */
+"ppc.error.code.12.description" = "Användarnamnet eller lösenordet du angav är felaktigt";
+
+/* Error - Wrong index value */
+"ppc.error.code.13.description" = "Fel indexvärde";
+
+/* Error - Error in parsing of input data */
+"ppc.error.code.14.description" = "Fel vid analys av indata";
+
+/* Error - Wrong consumer ID */
+"ppc.error.code.15.description" = "Fel konsument-ID";
+
+/* Error - Account locked */
+"ppc.error.code.16.description" = "Kontot är låst";
+
+/* Error - Wrong activation key */
+"ppc.error.code.17.description" = "Fel aktiveringsnyckel";
+
+/* Error - Wrong rule schedule format */
+"ppc.error.code.18.description" = "Fel schemaformat för regeln";
+
+/* Error - This action is temporarily locked */
+"ppc.error.code.19.description" = "Denna åtgärd är tillfälligt låst";
+
+/* Error - Duplicate user name */
+"ppc.error.code.20.description" = "Dubblett användarnamn";
+
+/* Error - Device is offline or disconnected */
+"ppc.error.code.21.description" = "Enheten är offline eller frånkopplad";
+
+/* Error - That device belongs to someone else */
+"ppc.error.code.22.description" = "Den enheten tillhör någon annan";
+
+/* Error - Well that's strange, we had a problem saving that rule. Sorry about this! If you have time, please contact support and describe the rule you were trying to create so we can fix it. */
+"ppc.error.code.23.description" = "Det är konstigt, vi hade problem med att spara den regeln. Förlåt för det här! Om du har tid, kontakta supporten och beskriv regeln du försökte skapa så att vi kan fixa det.";
+
+/* Error - Wrong device registration code */
+"ppc.error.code.24.description" = "Fel enhetsregistreringskod";
+
+/* Error - Number of pending device types for this user is more than allowed */
+"ppc.error.code.25.description" = "Antalet väntande enhetstyper för denna användare är fler än tillåtet";
+
+/* Error - Duplicate entity or property */
+"ppc.error.code.26.description" = "Duplicerad enhet eller egendom";
+
+/* Error - Timeout in device communication */
+"ppc.error.code.27.description" = "Timeout i enhetskommunikation";
+
+/* Error - Device is not linked to any location */
+"ppc.error.code.28.description" = "Enheten är inte länkad till någon plats";
+
+/* Error - Requested API method not found */
+"ppc.error.code.29.description" = "Den begärda API-metoden hittades inte";
+
+/* Error - Service is temporarily unavailable */
+"ppc.error.code.30.description" = "Tjänsten är tillfälligt otillgänglig";
+
+/* Error - Unknown OAuth client */
+"ppc.error.code.31.description" = "Okänd OAuth-klient";
+
+/* Error - External application error response */
+"ppc.error.code.32.description" = "Externt programfelsvar";
+
+/* Error - Wrong operation token */
+"ppc.error.code.33.description" = "Fel operationstoken";
+
+/* Error - Cannot modify external resources */
+"ppc.error.code.34.description" = "Det går inte att ändra externa resurser";
+
+/* Error - Wrong phone number */
+"ppc.error.code.35.description" = "Fel telefonnummer";
+
+/* Error - Operation canceled */
+"ppc.error.code.36.description" = "Åtgärden avbröts";
+
+/* Error - 37 */
+"ppc.error.code.37.description" = "Kan inte auktorisera användare på extern resurs eller moln";
+
+/* Error - Maximum reached */
+"ppc.error.code.38.description" = "Maximum nått";
+
+/* Error - 39 */
+"ppc.error.code.39.description" = "Enheten hittades inte på externt molnet";
+
+/* Error - 40 */
+"ppc.error.code.40.description" = "Begäran är inte tillåten i resursens nuvarande tillstånd";
+
+/* Error - 41 */
+"ppc.error.code.41.description" = "Begäran har inte slutförts. Det är inget fel, bara inget att göra.";
+
+/* Error - 42 */
+"ppc.error.code.42.description" = "Kan inte ansluta till en extern resurs";
+
+/* Error - 44 */
+"ppc.error.code.44.description" = "För många API-anrop";
+
+/* Error - 45 */
+"ppc.error.code.45.description" = "Kommunikationskanalen är inte autentiserad";
+
+/* Error - Having trouble connecting. If you're not viewing your camera from somewhere else, please try connecting again. */
+"ppc.error.code.10000.description" = "Har problem med att ansluta. Om du inte ser din kamera från någon annanstans, försök att ansluta igen.";
+
+/* Error - This camera is currently not available. Make sure it is up and running remotely. */
+"ppc.error.code.10001.description" = "Denna kamera är inte tillgänglig för närvarande. Se till att den är igång på distans.";
+
+/* Error - There was an error creating the camera, please try again later. */
+"ppc.error.code.10002.description" = "Det gick inte att skapa kameran, försök igen senare.";
+
+/* Error - The {App Name} app had trouble connecting. Is your internet connection ok? */
+"ppc.error.code.10003.description" = "%@ hade problem med att ansluta. Är din internetanslutning ok?";
+
+/* Error - Lost the connection with the camera. Is your camera's WiFi strong enough? */
+"ppc.error.code.10004.description" = "Förlorade kontakten med kameran. Är kamerans wifi tillräckligt stark?";
+
+/* Error - This camera detected some motion and is currently recording, try again in a few moments. */
+"ppc.error.code.10005.description" = "Den här kameran upptäckte en viss rörelse och spelar in för närvarande. Försök igen om några ögonblick.";
+
+/* Error - We're having trouble connecting to the camera. Are you and your camera on a good connection? Please try it again. */
+"ppc.error.code.10006.description" = "Vi har problem med att ansluta till kameran. Har du och din kamera en bra kontakt? Vänligen försök igen.";
+
+/* Error - Your password must be at least 8 characters long. */
+"ppc.error.code.10007.description" = "Ditt lösenord måste vara minst 8 tecken långt.";
+
+/* Error - You are already viewing this camera from somewhere else. */
+"ppc.error.code.10008.description" = "Du ser redan den här kameran från någon annanstans.";
+
+/* Error - {name} seems to already be viewing this camera. Press the reconnect button to take over. */
+"ppc.error.code.10008.description.alt" = "\" %@ \" verkar redan titta på den här kameran. Tryck på återanslutningsknappen för att ta över.";
+
+/* Error - That wasn't the barcode you were looking for. */
+"ppc.error.code.10009.description" = "Det var inte streckkoden du letade efter.";
+
+/* Error - That barcode is corrupted. */
+"ppc.error.code.10010.description" = "Den streckkoden är skadad.";
+
+/* Error - Having trouble connecting to Bluetooth! */
+"ppc.error.code.10011.description" = "Har problem med att ansluta till Bluetooth!";
+
+/* Error - This device is too old to support Bluetooth LE */
+"ppc.error.code.10012.description" = "Den här enheten är för gammal för att stödja Bluetooth LE";
+
+/* Error - Please authorize {App Name} to access Bluetooth LE */
+"ppc.error.code.10013.description" = "Vänligen auktorisera %@ för åtkomst till Bluetooth LE";
+
+/* Error - Bluetooth is currently powered off. Please go into your Settings and turn on Bluetooth. */
+"ppc.error.code.10014.description" = "Bluetooth är för närvarande avstängt. Gå in i dina inställningar och aktivera Bluetooth.";
+
+/* Error - Waiting for Bluetooth to power up... */
+"ppc.error.code.10015.description" = "Väntar på att Bluetooth ska slås på...";
+
+/* Error - Couldn't save this video to your album! */
+"ppc.error.code.10016.description" = "Det gick inte att spara den här videon i ditt album!";
+
+/* Error - Corrupted video file! */
+"ppc.error.code.10017.description" = "Skadad videofil!";
+
+/* Error - Can't save the video! Please grant {App Name} access to your Photos and Videos folder in iOS Settings > Privacy > Photos, then try your download again. */
+"ppc.error.code.10018.description" = "Det går inte att spara videon! Vänligen ge %@ åtkomst till mappen Foton och videor i iOS-inställningar > Sekretess > Foton och försök sedan ladda ner igen.";
+
+/* Error - Error uploading */
+"ppc.error.code.10019.description" = "Fel vid uppladdning";
+
+/* Error - Can't play this video! Did you delete it remotely? Do you have a good connection? */
+"ppc.error.code.10020.description" = "Kan inte spela upp den här videon! Har du raderat det på distans? Har du en bra kontakt?";
+
+/* Error - Please select at least one day this rule should repeat. */
+"ppc.error.code.10021.description" = "Välj minst en dag som denna regel ska upprepas.";
+
+/* Error - Please name this device */
+"ppc.error.code.10022.description" = "Vänligen namnge denna enhet";
+
+/* Error - An email has been sent to you with instructions on how to add this device to your {App Name} account. */
+"ppc.error.code.10023.description" = "Ett e-postmeddelande har skickats till dig med instruktioner om hur du lägger till den här enheten på ditt %@ -konto.";
+
+/* Error - Thank you, our team will look into this. */
+"ppc.error.code.10024.description" = "Tack, vårt team kommer att undersöka detta.";
+
+/* Error - TED is not activated properly. */
+"ppc.error.code.10025.description" = "TED är inte aktiverat korrekt.";
+
+/* Error - Couldn't contact Blue Line. */
+"ppc.error.code.10026.description" = "Det gick inte att kontakta Blue Line.";
+
+/* Error - Not activated. */
+"ppc.error.code.10027.description" = "Inte aktiverad.";
+
+/* Error - We believe there is a firewall blocking access to the {App Name} camera. */
+"ppc.error.code.10028.description" = "Vi tror att det finns en brandvägg som blockerar åtkomst till kameran %@";
+
+/* Error - Unable to connect Galileo 30-pin */
+"ppc.error.code.10029.description" = "Det går inte att ansluta Galileo 30-stift";
+
+/* Error - Unable to connect the LintAlert */
+"ppc.error.code.10030.description" = "Vi kunde inte kontakta LintAlert Pro Plus. Tryck och släpp Circle RESET-knappen och håll sedan in Square CONFIG-knappen i 3 sekunder. Återanslut till LintAlerts Wi-Fi-nätverk i dina iOS Wi-Fi-inställningar och försök sedan igen.";
+
+/* Error - Unable to configure IP Camera - No IP or DDNS address */
+"ppc.error.code.10031.description" = "IP-kamerakonfiguration kräver antingen en IP- eller en DDNS-adress.";
+
+/* Error - Unable to verify IP Camera */
+"ppc.error.code.10032.description" = "Det gick inte att verifiera IP-kameran";
+
+/* Error - Unable to configure default admin user */
+"ppc.error.code.10033.description" = "Det går inte att konfigurera standardadminanvändare";
+
+/* Error - Unable to enable IP Camera UPnP */
+"ppc.error.code.10034.description" = "Det går inte att aktivera IP Camera UPnP";
+
+/* Error - Unable to change camera name */
+"ppc.error.code.10035.description" = "Det gick inte att ändra kameranamn";
+
+/* Error - Unable to get camera name */
+"ppc.error.code.10036.description" = "Det gick inte att få kameranamnet";
+
+/* Error - Unable to change DDNS */
+"ppc.error.code.10037.description" = "Det går inte att ändra DDNS";
+
+/* Error - Unable to get DDNS */
+"ppc.error.code.10038.description" = "Det går inte att hämta DDNS";
+
+/* Error - Unable to get register IP Camera */
+"ppc.error.code.10039.description" = "Det gick inte att registrera en IP-kamera med denna enhetstyp. Se till att din kamera är online och att du har valt rätt enhet att lägga till.";
+
+/* Error - Too many registration attempts. Please try again in a few minutes. */
+"ppc.error.code.10040.description" = "För många registreringsförsök. Försök igen om några minuter.";
+
+/* Error - Unable to upload file! */
+"ppc.error.code.10041.description" = "Det gick inte att ladda upp filen!";
+
+/* Error - Unable to download firmware! */
+"ppc.error.code.10042.description" = "Det går inte att ladda ner firmware!";
+
+/* Error - Unable to start up your camera! Please contact support. */
+"ppc.error.code.10043.description" = "Det går inte att starta kameran! Kontakta supporten.";
+
+/* Error - This app requires access to your contacts to function properly. Please visit to the \"Privacy\" section in the iPhone Settings app. */
+"ppc.error.code.20000.description" = "Den här appen kräver åtkomst till dina kontakter för att fungera korrekt. Besök avsnittet \"Sekretess\" i appen iPhone Settings.";
+
+/* Error - Unable to access your address book. */
+"ppc.error.code.20001.description" = "Det går inte att komma åt din adressbok.";
+
+/* Error - An error occurred when attempting to request access to your Address Book. */
+"ppc.error.code.20002.description" = "Ett fel uppstod när du försökte begära åtkomst till din adressbok.";
+
+/* Error - You can still add friends manually using \"Search email or phone\" */
+"ppc.error.code.20003.description" = "Du kan fortfarande lägga till vänner manuellt med \"Sök e-post eller telefon\"";
+
+/* Error - Unable to access your address book. Please check your privacy settings. */
+"ppc.error.code.20004.description" = "Det går inte att komma åt din adressbok. Kontrollera dina sekretessinställningar.";
+
+/* Error - There are no contacts on this device.  Tap 'Search' or 'Scan someone's bar code' to add a friend manually. */
+"ppc.error.code.20005.description" = "Det finns inga kontakter på den här enheten. Tryck på \"Sök\" eller \"Skanna någons streckkod\" för att lägga till en vän manuellt.";
+
+/* Error - \"Geofencing\" is not available for this mode. */
+"ppc.error.code.30000.description" = "\"Geofencing\" är inte tillgängligt för detta läge.";
+
+/* Error - Your location is already set this mode. */
+"ppc.error.code.30001.description" = "Din plats är redan inställd i detta läge.";
+
+/* Error - Failed to register for location services. */
+"ppc.error.code.30002.description" = "Det gick inte att registrera sig för platstjänster.";
+
+/* Error - Duplicate state change for region. */
+"ppc.error.code.30003.description" = "Dubblett tillståndsändring för region.";
+
+/* Error - SMS Subscriber - Error updating phone number */
+"ppc.error.code.40000.description" = "Ditt nya telefonnummer kan inte ta emot SMS.";
+
+/* Error - Invalid phone number */
+"ppc.error.code.40001.description" = "Ditt telefonnummer kan inte ta emot SMS. Använd ett telefonnummer som kan ta emot SMS.";
+
+/* Error - Photo Data - Privacy - Not Determined */
+"ppc.error.code.50000.description" = "Den här appen behöver åtkomst till dina \"Fotodata\" för att du ska kunna ladda upp bilder och videor som du redan har tagit på den här enheten. Du kan tillåta detta i iOS > Inställningar > Sekretessmeny.";
+
+/* Error - Photo Data - Privacy - Restricted */
+"ppc.error.code.50001.description" = "Denna applikation kan inte komma åt dina \"Fotodata\" på grund av vissa begränsningar. Kontrollera iOS > Inställningar > Sekretessmeny.";
+
+/* Error - Photo Data - Privacy - Denied */
+"ppc.error.code.50002.description" = "Åtkomst till dina \"Fotodata\" nekades tidigare. Kontrollera iOS > Inställningar > Sekretessmeny.";
+
+/* Error - Photo Data - Privacy - Denied */
+"ppc.error.code.50003.description" = "Du har valt att inte tillåta denna applikation åtkomst till dina \"Fotodata\". Du kommer att bli tillfrågad om tillstånd igen nästa gång du använder den här funktionen.";
+
+/* Error - Camera - Privacy - Not Determined */
+"ppc.error.code.60000.description" = "Den här appen behöver åtkomst till din \"Kamera\" för att du ska kunna ta nya videor och bilder. Du kan tillåta detta i iOS > Inställningar > Sekretessmeny.";
+
+/* Error - Camera - Privacy - Restricted */
+"ppc.error.code.60001.description" = "Denna applikation kan inte komma åt din \"Kamera\" på grund av vissa begränsningar. Kontrollera iOS > Inställningar > Sekretessmeny.";
+
+/* Error - Camera - Privacy - Denied */
+"ppc.error.code.60002.description" = "Åtkomst till din \"Kamera\" nekades tidigare. Kontrollera iOS > Inställningar > Sekretessmeny.";
+
+/* Error - Photo Data - Privacy - Denied */
+"ppc.error.code.60003.description" = "Du har valt att inte tillåta denna applikation åtkomst till din \"Kamera\". Du kommer att bli ombedd om tillåtelse igen nästa gång du använder den här funktionen.";
+
+/* Error - Microphone - Privacy - Not Determined */
+"ppc.error.code.70000.description" = "Den här appen behöver tillgång till din \"mikrofon\" för att du ska kunna spela in ljud. Du kan tillåta detta i iOS > Inställningar > Sekretessmeny.";
+
+/* Error - Microphone - Privacy - Restricted */
+"ppc.error.code.70001.description" = "Denna applikation kan inte komma åt din \"mikrofon\" på grund av vissa begränsningar. Kontrollera iOS > Inställningar > Sekretessmeny.";
+
+/* Error - Microphone - Privacy - Denied */
+"ppc.error.code.70002.description" = "Tillgång till din \"mikrofon\" nekades tidigare. Kontrollera iOS > Inställningar > Sekretessmeny.";
+
+/* Error - Photo Data - Privacy - Denied */
+"ppc.error.code.70003.description" = "Du har valt att inte ge denna applikation åtkomst till din \"mikrofon\". Du kommer att bli ombedd om tillåtelse igen nästa gång du använder den här funktionen.";
+
+/* Error - Push Notifications - Privacy - Not Determined */
+"ppc.error.code.80000.description" = "Den här appen behöver åtkomst till dina \"Push-meddelanden\" för att du ska kunna ta emot push-meddelanden. Du kan tillåta detta i iOS > Inställningar > Sekretessmeny.";
+
+/* Error - Push Notifications - Privacy - Provisional */
+"ppc.error.code.80001.description" = "Du testar för närvarande \"Push Notifications\", med vissa begränsningar. Kontrollera iOS > Inställningar > Sekretessmeny.";
+
+/* Error - Push Notifications - Privacy - Denied */
+"ppc.error.code.80002.description" = "Åtkomst till dina \"Push Notifications\" nekades tidigare. Kontrollera iOS > Inställningar > Sekretessmeny.";
+
+/* Error - Push Notifications - Privacy - Denied */
+"ppc.error.code.80003.description" = "Du har valt att inte tillåta den här appen åtkomst till dina \"Push-meddelanden\". Du kan ändra dina appinställningar på din profilsida.";
+
+/* Error - Failed to authorize for health kit. */
+"ppc.error.code.90000.description" = "Det gick inte att auktorisera hälsosatsen.";
+
+/* Error - Default */
+"ppc.error.code.general" = "Oops! Något gick fel. Kontakta supporten. ( %li )";
+
+/* Character - Ampersand */
+"ppc.error.lock.characters.ampersand" = "&";
+
+/* Character - Comma */
+"ppc.error.lock.characters.comma" = ",";
+
+/* Character - Space */
+"ppc.error.lock.characters.space" = " ";
+
+/* Error - lock timeout hour */
+"ppc.error.lock.hour" = "timme";
+
+/* Error - lock timeout hours */
+"ppc.error.lock.hours" = "timmar";
+
+/* Error - lock timeout minute */
+"ppc.error.lock.minute" = "minut";
+
+/* Error - lock timeout minutes */
+"ppc.error.lock.minutes" = "minuter";
+
+/* Error - lock timeout second */
+"ppc.error.lock.second" = "andra";
+
+/* Error - lock timeout seconds */
+"ppc.error.lock.seconds" = "sekunder";
+
+/* Error - lock timeout general notice */
+"ppc.error.lock.timeout" = "Försök igen senare.";
+
+/* Error - Lock timeout with specified time */
+"ppc.error.lock.timeout.specified" = "Försök igen om %@";
+
+/* Error - lock timeout helper */
+"ppc.error.lock.timout" = "%1$li %2$@";
+
+/* Label - $time1 and $time2 */
+"rule.component.state.schedule" = "$tid1 och $tid2";
+
+/* Label - between $time1 and $time2 */
+"rule.component.state.schedule.past" = "mellan $tid1 och $tid2";
+
+/* Label - What is the start time, and on which days? */
+"rule.component.state.schedule.start" = "Vad är starttiden och vilka dagar?";
+
+/* Label - What time should it end each day? */
+"rule.component.state.schedule.stop" = "Vilken tid ska det sluta varje dag?";
 
