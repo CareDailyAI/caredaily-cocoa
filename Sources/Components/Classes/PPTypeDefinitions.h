@@ -3475,6 +3475,7 @@ typedef NS_OPTIONS(NSInteger, PPVayyarContextId) {
 #define SYSTEM_PROPERTY_PASSCODE_LOWERCASE @"passcode-lowercase" // BOOL
 #define SYSTEM_PROPERTY_COMMUNITY_POST_FILE_CONTENT_LIMIT @"ppc.communityPostFile.contentLimit"
 #define SYSTEM_PROPERTY_MMS_NUMBER @"mms_number"
+#define SYSTEM_PROPERTY_LANGUAGES @"ppc.api.languages"
 
 // MARK: - Rules
 
