@@ -93,7 +93,7 @@ static NSString *moduleName = @"DeviceMeasurements";
     
     [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/devices/%@/parameters", self.device.deviceId] statusCode:200 headers:nil];
     
-    [PPDeviceMeasurements sendCommand:self.device.deviceId params:self.parameters commandTimeout:PPDeviceCommandTimeoutDefault locationId:self.device.locationId comment:nil shared:PPDeviceSharedNone callback:^(NSArray *commands, NSError *error) {
+    [PPDeviceMeasurements sendCommand:self.device.deviceId params:self.parameters commandTimeout:PPDeviceCommandTimeoutDefault locationId:self.device.locationId comment:nil shared:PPDeviceSharedNone commandType:0 skipProspect:true callback:^(NSArray *commands, NSError *error) {
         
         XCTAssertNil(error);
         [expectation fulfill];
