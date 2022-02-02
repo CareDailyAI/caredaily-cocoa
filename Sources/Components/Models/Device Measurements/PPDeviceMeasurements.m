@@ -244,7 +244,7 @@
  * @param commandType PPDeviceMeasurementsCommandType Command type: 0 = set, 4 = get, 5 = update, 6 = delete
  * @param callback PPDeviceMeasurementsCommandsBlock Device commands callback block containing array of command responses
  **/
-+ (void)sendCommand:(NSString *)deviceId params:(NSArray *)params commandTimeout:(PPDeviceCommandTimeout)commandTimeout locationId:(PPLocationId)locationId comment:(NSString *)comment shared:(PPDeviceShared)shared commandType:(PPDeviceMeasurementsCommandType)commandType callback:(PPDeviceMeasurementsCommandsBlock _Nonnull)callback {
+ + (void)sendCommand:(NSString * _Nonnull )deviceId params:(NSArray * _Nonnull )params commandTimeout:(PPDeviceCommandTimeout)commandTimeout locationId:(PPLocationId)locationId comment:(NSString * _Nullable )comment shared:(PPDeviceShared)shared commandType:(PPDeviceMeasurementsCommandType)commandType skipProspect:(PPDeviceSkipProspect)skipProspect callback:(PPDeviceMeasurementsCommandsBlock _Nonnull )callback {
     NSAssert1(locationId != PPLocationIdNone, @"%s missing locationId", __FUNCTION__);
     NSAssert1(deviceId != nil, @"%s missing deviceId", __FUNCTION__);
     NSAssert1(params != nil && [params count] > 0, @"%s missing params", __FUNCTION__);
@@ -260,6 +260,10 @@
     }
     else if(locationId != PPLocationIdNone) {
         [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"locationId" value:@(locationId).stringValue]];
+    }
+
+    if(skipProspect != PPDeviceSkipProspectNone) {
+        [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"skipProspect" value:(skipProspect) ? @"true": @"false"]];
     }
     components.queryItems = queryItems;
     
@@ -329,13 +333,17 @@
         });
     }];
 }
++ (void)sendCommand:(NSString *)deviceId params:(NSArray *)params commandTimeout:(PPDeviceCommandTimeout)commandTimeout locationId:(PPLocationId)locationId comment:(NSString *)comment shared:(PPDeviceShared)shared commandType:(PPDeviceMeasurementsCommandType)commandType callback:(PPDeviceMeasurementsCommandsBlock _Nonnull)callback {
+    NSLog(@"%s deprecated. Use +sendCommand:deviceId:params:commandTimeout:locationId:comment:shared:commandType:skipProspect:callback:", __FUNCTION__);
+    [PPDeviceMeasurements sendCommand:deviceId params:params commandTimeout:commandTimeout locationId:locationId comment:nil shared:PPDeviceSharedNone commandType:PPDeviceMeasurementsCommandTypeNone skipProspect:PPDeviceSkipProspectNone callback:callback];
+}
 + (void)sendCommand:(NSString *)deviceId params:(NSArray *)params commandTimeout:(PPDeviceCommandTimeout)commandTimeout locationId:(PPLocationId)locationId comment:(NSString *)comment shared:(PPDeviceShared)shared callback:(PPDeviceMeasurementsCommandsBlock)callback {
-    NSLog(@"%s deprecated. Use +sendCommand:deviceId:params:commandTimeout:locationId:comment:shared:commandType:callback:", __FUNCTION__);
-    [PPDeviceMeasurements sendCommand:deviceId params:params commandTimeout:commandTimeout locationId:locationId comment:nil shared:PPDeviceSharedNone commandType:PPDeviceMeasurementsCommandTypeNone callback:callback];
+    NSLog(@"%s deprecated. Use +sendCommand:deviceId:params:commandTimeout:locationId:comment:shared:commandType:skipProspect:callback:", __FUNCTION__);
+    [PPDeviceMeasurements sendCommand:deviceId params:params commandTimeout:commandTimeout locationId:locationId comment:nil shared:PPDeviceSharedNone commandType:PPDeviceMeasurementsCommandTypeNone skipProspect:PPDeviceSkipProspectNone callback:callback];
 }
 + (void)sendCommand:(NSString *)deviceId params:(NSArray *)params commandTimeout:(PPDeviceCommandTimeout)commandTimeout locationId:(PPLocationId)locationId callback:(PPDeviceMeasurementsCommandsBlock)callback {
-    NSLog(@"%s deprecated. Use +sendCommand:deviceId:params:commandTimeout:locationId:comment:shared:commandType:callback:", __FUNCTION__);
-    [PPDeviceMeasurements sendCommand:deviceId params:params commandTimeout:commandTimeout locationId:locationId comment:nil shared:PPDeviceSharedNone commandType:PPDeviceMeasurementsCommandTypeNone callback:callback];
+    NSLog(@"%s deprecated. Use +sendCommand:deviceId:params:commandTimeout:locationId:comment:shared:commandType:skipProspect:callback:", __FUNCTION__);
+    [PPDeviceMeasurements sendCommand:deviceId params:params commandTimeout:commandTimeout locationId:locationId comment:nil shared:PPDeviceSharedNone commandType:PPDeviceMeasurementsCommandTypeNone skipProspect:PPDeviceSkipProspectNone callback:callback];
 }
 
 #pragma mark - Multiple Device Parameters

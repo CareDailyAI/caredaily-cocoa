@@ -91,8 +91,10 @@
  * @param comment NSString Describes why this command was made
  * @param shared PPDeviceShared Send command to a device shared in circle. If true, the location ID is not required
  * @param commandType PPDeviceMeasurementsCommandType Command type: 0 = set, 4 = get, 5 = update, 6 = delete
+ * @param skipProspect PPDeviceSkipProspect Do not automatically register prospect devices after a device pairing command
  * @param callback PPDeviceMeasurementsCommandsBlock Device commands callback block containing array of command responses
  **/
++ (void)sendCommand:(NSString * _Nonnull )deviceId params:(NSArray * _Nonnull )params commandTimeout:(PPDeviceCommandTimeout)commandTimeout locationId:(PPLocationId)locationId comment:(NSString * _Nullable )comment shared:(PPDeviceShared)shared commandType:(PPDeviceMeasurementsCommandType)commandType skipProspect:(PPDeviceSkipProspect)skipProspect callback:(PPDeviceMeasurementsCommandsBlock _Nonnull )callback;
 + (void)sendCommand:(NSString * _Nonnull )deviceId params:(NSArray * _Nonnull )params commandTimeout:(PPDeviceCommandTimeout)commandTimeout locationId:(PPLocationId)locationId comment:(NSString * _Nullable )comment shared:(PPDeviceShared)shared commandType:(PPDeviceMeasurementsCommandType)commandType callback:(PPDeviceMeasurementsCommandsBlock _Nonnull )callback;
 + (void)sendCommand:(NSString * _Nonnull )deviceId params:(NSArray * _Nonnull )params commandTimeout:(PPDeviceCommandTimeout)commandTimeout locationId:(PPLocationId)locationId comment:(NSString * _Nullable )comment shared:(PPDeviceShared)shared callback:(PPDeviceMeasurementsCommandsBlock _Nonnull )callback;
 + (void)sendCommand:(NSString * _Nonnull )deviceId params:(NSArray * _Nonnull )params commandTimeout:(PPDeviceCommandTimeout)commandTimeout locationId:(PPLocationId)locationId callback:(PPDeviceMeasurementsCommandsBlock _Nonnull )callback __attribute__((deprecated));

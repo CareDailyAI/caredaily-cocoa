@@ -732,6 +732,24 @@ typedef NS_OPTIONS(NSInteger, PPDeviceMeasurementsCommandType) {
     PPDeviceMeasurementsCommandTypeDelete   = 6,
 };
 
+typedef NS_OPTIONS(NSInteger, PPDeviceSkipProspect) {
+    PPDeviceSkipProspectNone = -1,
+    PPDeviceSkipProspectFalse = 0,
+    PPDeviceSkipProspectTrue = 1
+};
+
+typedef NS_OPTIONS(NSInteger, PPDeviceProspect) {
+    PPDeviceProspectNone = -1,
+    PPDeviceProspectFalse = 0,
+    PPDeviceProspectTrue = 1
+};
+
+typedef NS_OPTIONS(NSInteger, PPDeviceTags) {
+    PPDeviceTagsNone = -1,
+    PPDeviceTagsFalse = 0,
+    PPDeviceTagsTrue = 1
+};
+
 typedef NS_OPTIONS(NSInteger, PPDeviceMeasurementsAlertId) {
     PPDeviceMeasurementsAlertIdNone = -1
 };

@@ -347,6 +347,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
  * @param desc NSString Device nickname / description
  * @param goalId PPDeviceTypeGoalId Device usage goal ID
  * @param properties NSArray Additional properties needed to register the device. e.g. [{"name": "username","value": "admin"},{"name": "port","index": "01","value": "1234"}]
+ * @param proxyId NSString Send add device command to this proxy
  * @param callback PPDevicesRegisterBlock Device registration block providing device Id, auth token, device type, exist (whether or not the device was already registered), hot, port, ssl, and error details
  **/
 + (void)registerDevice:(NSString *)deviceId locationId:(PPLocationId)locationId deviceTypeId:(PPDeviceTypeId)deviceTypeId authToken:(PPDevicesAuthToken)authToken startDate:(NSDate *)startDate desc:(NSString *)desc goalId:(PPDeviceTypeGoalId)goalId properties:(NSArray *)properties proxyId:(NSString *)proxyId callback:(PPDevicesRegisterBlock)callback {
@@ -469,9 +470,13 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
  *      true - The server will check for an active persistent connection with the device, and overwrite the previously declared 'connected' value.
  *      false - Do not check for persistent connections when declaring the device "connected" (faster, more efficient)
  *      Not Set - the server will check for a persistent connection only for devices which were not previously declared 'connected'.
+ * @param spaceId PPLocationSpaceId Filter devices by space ID
+ * @param spaceType PPLocationSpaceType Filter devices by space type
+ * @param getTags PPDeviceTags Get device tags
+ * @param prospect PPDeviceProspect Get prospect devices
  * @param callback PPDevicesBlock Devices callback block containing list of devices and error object
  **/
-+ (void)getListOfDevicesForLocationId:(PPLocationId)locationId userId:(PPUserId)userId checkPersistent:(PPDevicesCheckPersistent)checkPersistent callback:(PPDevicesBlock)callback {
++ (void)getListOfDevicesForLocationId:(PPLocationId)locationId userId:(PPUserId)userId checkPersistent:(PPDevicesCheckPersistent)checkPersistent spaceId:(PPLocationSpaceId)spaceId spaceType:(PPLocationSpaceType)spaceType getTags:(PPDeviceTags)getTags prospect:(PPDeviceProspect)prospect callback:(PPDevicesBlock _Nonnull )callback {
     NSAssert1(locationId != PPLocationIdNone, @"%s missing locationId", __FUNCTION__);
     
     NSURLComponents *components = [NSURLComponents componentsWithURL:[NSURL URLWithString:@"devices"] resolvingAgainstBaseURL:NO];
@@ -483,6 +488,18 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
     }
     if(checkPersistent != PPDevicesCheckPersistentNone) {
         [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"checkPersistent" value:(checkPersistent) ? @"true" : @"false"]];
+    }
+    if(spaceId != PPLocationSpaceIdNone) {
+        [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"spaceId" value:@(spaceId).stringValue]];
+    }
+    if(spaceType != PPLocationSpaceTypeNone) {
+        [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"spaceType" value:@(spaceType).stringValue]];
+    }
+    if(getTags != PPDeviceTagsNone) {
+        [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"getTags" value:(getTags) ? @"true" : @"false"]];
+    }
+    if(prospect != PPDeviceProspectNone) {
+        [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"prospect" value:(prospect) ? @"true" : @"false"]];
     }
     components.queryItems = queryItems;
 
@@ -566,6 +583,10 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
             });
         });
     }];
+}
++ (void)getListOfDevicesForLocationId:(PPLocationId)locationId userId:(PPUserId)userId checkPersistent:(PPDevicesCheckPersistent)checkPersistent callback:(PPDevicesBlock)callback {
+    NSLog(@"%s deprecated. Use +getListOfDevicesForLocationId:userId:checkPersistent:spaceId:spaceType:getTags:prospect:callback:", __FUNCTION__);
+    [PPDevices getListOfDevicesForLocationId:locationId userId:userId checkPersistent:checkPersistent spaceId:PPLocationSpaceIdNone spaceType:PPLocationSpaceTypeNone getTags:PPDeviceTagsNone prospect:PPDeviceProspectNone callback:callback];
 }
 
 /**

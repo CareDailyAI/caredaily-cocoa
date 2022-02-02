@@ -70,7 +70,7 @@ static NSString *moduleName = @"Devices";
     
     [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/devices" statusCode:200 headers:nil];
     
-    [PPDevices registerDevice:self.device.deviceId locationId:self.location.locationId deviceTypeId:self.device.typeId authToken:PPDevicesAuthTokenNoAuthenticationTokenNeeded startDate:[NSDate date] desc:self.device.name goalId:self.device.goalId properties:self.device.properties proxyId:nil callback:^(NSString *deviceId, NSString *authToken, PPDeviceTypeId deviceTypeId, PPDevicesExist exist, NSString *host, PPDevicesPort port, PPDevicesUseSSL useSsl, NSError *error) {
+    [PPDevices registerDevice:self.device.deviceId locationId:self.location.locationId deviceTypeId:self.device.typeId authToken:PPDevicesAuthTokenNoAuthenticationTokenNeeded startDate:[NSDate date] desc:self.device.name goalId:self.device.goalId properties:self.device.properties proxyId:@"ABC123" callback:^(NSString *deviceId, NSString *authToken, PPDeviceTypeId deviceTypeId, PPDevicesExist exist, NSString *host, PPDevicesPort port, PPDevicesUseSSL useSsl, NSError *error) {
                          
         XCTAssertNil(error);
         [expectation fulfill];
@@ -98,7 +98,7 @@ static NSString *moduleName = @"Devices";
     
     [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/devices" statusCode:200 headers:nil];
     
-    [PPDevices getListOfDevicesForLocationId:self.location.locationId userId:PPUserIdNone checkPersistent:PPDevicesCheckPersistentTrue callback:^(NSArray *devices, NSError *error) {
+    [PPDevices getListOfDevicesForLocationId:self.location.locationId userId:1 checkPersistent:true spaceId:1 spaceType:1 getTags:true prospect:true callback:^(NSArray * _Nullable devices, NSError * _Nullable error) {
         
         XCTAssertNil(error);
         [expectation fulfill];

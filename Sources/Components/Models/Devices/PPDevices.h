@@ -104,7 +104,7 @@
  * @param desc NSString Device nickname / description
  * @param goalId PPDeviceTypeGoalId Device usage goal ID
  * @param properties NSArray Additional properties needed to register the device. e.g. [{"name": "username","value": "admin"},{"name": "port","index": "01","value": "1234"}]
- * @param proxyId NSString Device ID of the proxy
+ * @param proxyId NSString Send add device command to this proxy
  * @param callback PPDevicesRegisterBlock Device registration block providing device Id, auth token, device type, exist (whether or not the device was already registered), hot, port, ssl, and error details
  **/
 + (void)registerDevice:(NSString * _Nullable )deviceId locationId:(PPLocationId)locationId deviceTypeId:(PPDeviceTypeId)deviceTypeId authToken:(PPDevicesAuthToken)authToken startDate:(NSDate * _Nullable )startDate desc:(NSString * _Nullable )desc goalId:(PPDeviceTypeGoalId)goalId properties:(NSArray * _Nullable )properties proxyId:(NSString * _Nullable )proxyId callback:(PPDevicesRegisterBlock _Nonnull )callback;
@@ -120,8 +120,13 @@
  *      true - The server will check for an active persistent connection with the device, and overwrite the previously declared 'connected' value.
  *      false - Do not check for persistent connections when declaring the device "connected" (faster, more efficient)
  *      Not Set - the server will check for a persistent connection only for devices which were not previously declared 'connected'.
+ * @param spaceId PPLocationSpaceId Filter devices by space ID
+ * @param spaceType PPLocationSpaceType Filter devices by space type
+ * @param getTags PPDeviceTags Get device tags
+ * @param prospect PPDeviceProspect Get prospect devices
  * @param callback PPDevicesBlock Devices callback block containing list of devices and error object
  **/
++ (void)getListOfDevicesForLocationId:(PPLocationId)locationId userId:(PPUserId)userId checkPersistent:(PPDevicesCheckPersistent)checkPersistent spaceId:(PPLocationSpaceId)spaceId spaceType:(PPLocationSpaceType)spaceType getTags:(PPDeviceTags)getTags prospect:(PPDeviceProspect)prospect callback:(PPDevicesBlock _Nonnull )callback;
 + (void)getListOfDevicesForLocationId:(PPLocationId)locationId userId:(PPUserId)userId checkPersistent:(PPDevicesCheckPersistent)checkPersistent callback:(PPDevicesBlock _Nonnull )callback;
 
 /**
