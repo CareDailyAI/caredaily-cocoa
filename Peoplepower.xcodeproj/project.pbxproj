@@ -1261,6 +1261,7 @@
 		63CD14C121C19279002290C9 /* PPLocationUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CD14BF21C19279002290C9 /* PPLocationUser.m */; };
 		63CD14C421C19774002290C9 /* PPLocationUserSchedule.h in Headers */ = {isa = PBXBuildFile; fileRef = 63CD14C221C19774002290C9 /* PPLocationUserSchedule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63CD14C521C19774002290C9 /* PPLocationUserSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CD14C321C19774002290C9 /* PPLocationUserSchedule.m */; };
+		63CF57A427C0381200C4D9F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63CF579D27C037A900C4D9F2 /* InfoPlist.strings */; };
 		63D3873823D7AB1200BBC378 /* PPAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3873623D7AB1200BBC378 /* PPAddress.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63D3873923D7AB1200BBC378 /* PPAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3873723D7AB1200BBC378 /* PPAddress.m */; };
 		63DC1D10215A98EF0091FB2D /* PPLocationNarrative.h in Headers */ = {isa = PBXBuildFile; fileRef = 63DC1D0E215A98EF0091FB2D /* PPLocationNarrative.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1888,6 +1889,9 @@
 		63CD14BF21C19279002290C9 /* PPLocationUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPLocationUser.m; sourceTree = "<group>"; };
 		63CD14C221C19774002290C9 /* PPLocationUserSchedule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPLocationUserSchedule.h; sourceTree = "<group>"; };
 		63CD14C321C19774002290C9 /* PPLocationUserSchedule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPLocationUserSchedule.m; sourceTree = "<group>"; };
+		63CF579E27C037A900C4D9F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		63CF57A027C037AD00C4D9F2 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		63CF57A127C037AD00C4D9F2 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		63D3873623D7AB1200BBC378 /* PPAddress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPAddress.h; sourceTree = "<group>"; };
 		63D3873723D7AB1200BBC378 /* PPAddress.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPAddress.m; sourceTree = "<group>"; };
 		63D392C0204F21EE00041C1A /* Peoplepower.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Peoplepower.h; sourceTree = "<group>"; };
@@ -3077,6 +3081,7 @@
 				63BEC9AF20C5D2AB00408494 /* Peoplepower-Info-iOS.plist */,
 				63EC62E8219A44AE0054010D /* Peoplepower-Attributions.plist */,
 				63A712B525ACF8E60009E43D /* Localizable.strings */,
+				63CF579D27C037A900C4D9F2 /* InfoPlist.strings */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -4387,6 +4392,7 @@
 				636B4965248AFBD800124F6A /* Circles-GetDownloadUrls-ResponseData.json in Resources */,
 				636B49CB248AFBDF00124F6A /* Products-DeleteDeviceModels-ResponseData.json in Resources */,
 				636B498E248AFBDB00124F6A /* DeviceMeasurements-SendSetCommands-ResponseData.json in Resources */,
+				63CF57A427C0381200C4D9F2 /* InfoPlist.strings in Resources */,
 				636B49BD248AFBDE00124F6A /* PaidServices-CancelSubscription-ResponseData.json in Resources */,
 				636B49A6248AFBDC00124F6A /* EnergyManagement-GetEnergyUsage-ResponseData.json in Resources */,
 				636B4A35248AFBE700124F6A /* Weather-GetForecastByGeocode-ResponseData.json in Resources */,
@@ -5117,6 +5123,16 @@
 				63175EC525D224F400690433 /* sv */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		63CF579D27C037A900C4D9F2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63CF579E27C037A900C4D9F2 /* en */,
+				63CF57A027C037AD00C4D9F2 /* es */,
+				63CF57A127C037AD00C4D9F2 /* sv */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
