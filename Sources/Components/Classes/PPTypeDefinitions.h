@@ -2368,6 +2368,8 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeId)  {
     PPDeviceTypeIdDevelcoGatewayDP2X = 37,
     PPDeviceTypeIdDevelcoGatewayDP4X = 38,
     
+    PPDeviceTypeIdDSRSGW = 40,
+    
     PPDeviceTypeIdQmote = 120,
     PPDeviceTypeIdLintAlertProPlus = 130,
     PPDeviceTypeIdLondonHydroGreenButton = 200,
