@@ -1,7 +1,6 @@
-$(SRCROOT)/Carthage/Build/iOS/AFNetworking.framework
-$(SRCROOT)/Carthage/Build/iOS/KissXML.framework
-$(SRCROOT)/Carthage/Build/iOS/OHHTTPStubs.framework
-$(SRCROOT)/Carthage/Build/iOS/Peoplepower.framework
-$(SRCROOT)/Carthage/Build/iOS/Realm.framework
-$(SRCROOT)/Carthage/Build/iOS/SocketRocket.framework
-$(SRCROOT)/Carthage/Build/iOS/UICKeyChainStore.framework
+$(SRCROOT)/../Carthage/Build/iOS/AFNetworking.framework
+$(SRCROOT)/../Carthage/Build/iOS/KissXML.framework
+$(SRCROOT)/../Carthage/Build/iOS/OHHTTPStubs.framework
+$(SRCROOT)/../Carthage/Build/iOS/Realm.framework
+$(SRCROOT)/../Carthage/Build/iOS/SocketRocket.framework
+$(SRCROOT)/../Carthage/Build/iOS/UICKeyChainStore.framework
