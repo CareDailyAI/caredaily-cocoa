@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		448477C7C2BF14C8F83C83D0 /* libPods-Demo iOS Today.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBC86F7F55002A1A5A82249B /* libPods-Demo iOS Today.a */; };
 		630BDE0024B3ADC60035D8B3 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630BDDFF24B3ADC60035D8B3 /* NotificationCenter.framework */; };
 		630BDE0324B3ADC60035D8B3 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630BDE0224B3ADC60035D8B3 /* TodayViewController.swift */; };
 		630BDE0624B3ADC60035D8B3 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 630BDE0424B3ADC60035D8B3 /* MainInterface.storyboard */; };
@@ -26,20 +25,6 @@
 		630BDE3A24B3B0F30035D8B3 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630BDE3924B3B0F30035D8B3 /* NotificationController.swift */; };
 		630BDE3C24B3B0F30035D8B3 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630BDE3B24B3B0F30035D8B3 /* ComplicationController.swift */; };
 		630BDE3E24B3B0F40035D8B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 630BDE3D24B3B0F40035D8B3 /* Assets.xcassets */; };
-		630BDE5F24B3B60C0035D8B3 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630BDE5B24B3B60C0035D8B3 /* AFNetworking.framework */; };
-		630BDE6124B3B60C0035D8B3 /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630BDE5C24B3B60C0035D8B3 /* KissXML.framework */; };
-		630BDE6324B3B60C0035D8B3 /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630BDE5D24B3B60C0035D8B3 /* UICKeyChainStore.framework */; };
-		630BDE6524B3B60C0035D8B3 /* Peoplepower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630BDE5E24B3B60C0035D8B3 /* Peoplepower.framework */; };
-		630BDE6924B3B7390035D8B3 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630BDE5B24B3B60C0035D8B3 /* AFNetworking.framework */; };
-		630BDE6B24B3B7390035D8B3 /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630BDE5C24B3B60C0035D8B3 /* KissXML.framework */; };
-		630BDE6D24B3B7390035D8B3 /* Peoplepower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630BDE5E24B3B60C0035D8B3 /* Peoplepower.framework */; };
-		630BDE7024B3B73D0035D8B3 /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630BDE5D24B3B60C0035D8B3 /* UICKeyChainStore.framework */; };
-		630EB99624948298002D5614 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631A7AF1248B3AB800D86CFF /* AFNetworking.framework */; };
-		630EB99824948298002D5614 /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631A7AEE248B3AB800D86CFF /* KissXML.framework */; };
-		630EB99A24948298002D5614 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631A7AF0248B3AB800D86CFF /* OHHTTPStubs.framework */; };
-		630EB99C24948298002D5614 /* Peoplepower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63E62AC42491A4060038A694 /* Peoplepower.framework */; };
-		630EB99E24948298002D5614 /* SocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631A7AEF248B3AB800D86CFF /* SocketRocket.framework */; };
-		630EB9A024948298002D5614 /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631A7AF3248B3AB800D86CFF /* UICKeyChainStore.framework */; };
 		631A7AB7248B376500D86CFF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 631A7AB6248B376500D86CFF /* AppDelegate.m */; };
 		631A7ABA248B376500D86CFF /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 631A7AB9248B376500D86CFF /* SceneDelegate.m */; };
 		631A7ABD248B376500D86CFF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631A7ABC248B376500D86CFF /* ViewController.m */; };
@@ -48,12 +33,20 @@
 		631A7AC5248B376600D86CFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631A7AC3248B376600D86CFF /* LaunchScreen.storyboard */; };
 		631A7AC8248B376600D86CFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 631A7AC7248B376600D86CFF /* main.m */; };
 		631A7ADD248B376600D86CFF /* Peoplepower_DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631A7ADC248B376600D86CFF /* Peoplepower_DemoUITests.m */; };
-		631A7AEB248B377D00D86CFF /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 631A7AEA248B377D00D86CFF /* Cartfile */; };
+		634A521127D5CE41004B903A /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634A520C27D5CE41004B903A /* UICKeyChainStore.framework */; };
+		634A521327D5CE41004B903A /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634A520D27D5CE41004B903A /* AFNetworking.framework */; };
+		634A521527D5CE41004B903A /* SocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634A520E27D5CE41004B903A /* SocketRocket.framework */; };
+		634A521727D5CE41004B903A /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634A520F27D5CE41004B903A /* KissXML.framework */; };
+		634A521927D5CE41004B903A /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634A521027D5CE41004B903A /* OHHTTPStubs.framework */; };
+		634A521D27D5CE54004B903A /* Peoplepower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634A521C27D5CE54004B903A /* Peoplepower.framework */; };
+		634A521E27D5CE54004B903A /* Peoplepower.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 634A521C27D5CE54004B903A /* Peoplepower.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		634A522F27D5D0CD004B903A /* Peoplepower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634A522E27D5D0CC004B903A /* Peoplepower.framework */; };
+		634A523027D5D0CD004B903A /* Peoplepower.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 634A522E27D5D0CC004B903A /* Peoplepower.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		634A523227D5D0E8004B903A /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634A522227D5CF98004B903A /* AFNetworking.framework */; };
+		634A523427D5D0E8004B903A /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634A522127D5CF98004B903A /* KissXML.framework */; };
+		634A523627D5D0E8004B903A /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634A522027D5CF98004B903A /* UICKeyChainStore.framework */; };
 		63C84379268F787B00C6165E /* ViewController+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C84378268F787B00C6165E /* ViewController+Swift.swift */; };
-		63E4CCDEA594A618AB4832E0 /* libPods-Demo iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98415DAA7137D771996564E8 /* libPods-Demo iOS.a */; };
 		63E62B572492A1A60038A694 /* Peoplepower-Config-Override.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63E62B562492A1A60038A694 /* Peoplepower-Config-Override.plist */; };
-		91BFE0A07118670DBB002CBC /* libPods-Demo watchOS Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4FFD1545CF41F8DC7E636C /* libPods-Demo watchOS Extension.a */; };
-		B2BC55B11FA9F48460F4EDEB /* libPods-Demo iOSUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1BA2E1AF453E71BF0A1704 /* libPods-Demo iOSUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,14 +96,31 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		634A521F27D5CE55004B903A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				634A521E27D5CE54004B903A /* Peoplepower.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		634A523127D5D0CD004B903A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				634A523027D5D0CD004B903A /* Peoplepower.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1C3F805A411A851FEF2C35CC /* Pods-Demo iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Demo iOSUITests/Pods-Demo iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
-		24EE40DAFA58BB18D6D09B84 /* Pods-Demo iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo iOS.debug.xcconfig"; path = "Target Support Files/Pods-Demo iOS/Pods-Demo iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		2DD8F3EB74DAA422E41A6232 /* Pods-Demo iOS Today.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo iOS Today.release.xcconfig"; path = "Target Support Files/Pods-Demo iOS Today/Pods-Demo iOS Today.release.xcconfig"; sourceTree = "<group>"; };
-		2E4FFD1545CF41F8DC7E636C /* libPods-Demo watchOS Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo watchOS Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4E1BA2E1AF453E71BF0A1704 /* libPods-Demo iOSUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo iOSUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		630BDC4324B389E50035D8B3 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		630BDC4424B389E50035D8B3 /* output.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = output.xcfilelist; sourceTree = "<group>"; };
 		630BDC4524B389E60035D8B3 /* input.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = input.xcfilelist; sourceTree = "<group>"; };
@@ -154,23 +164,26 @@
 		631A7AD8248B376600D86CFF /* Demo iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Demo iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		631A7ADC248B376600D86CFF /* Peoplepower_DemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Peoplepower_DemoUITests.m; sourceTree = "<group>"; };
 		631A7ADE248B376600D86CFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		631A7AEA248B377D00D86CFF /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		631A7AEE248B3AB800D86CFF /* KissXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KissXML.framework; path = Carthage/Build/iOS/KissXML.framework; sourceTree = "<group>"; };
 		631A7AEF248B3AB800D86CFF /* SocketRocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SocketRocket.framework; path = Carthage/Build/iOS/SocketRocket.framework; sourceTree = "<group>"; };
 		631A7AF0248B3AB800D86CFF /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
 		631A7AF1248B3AB800D86CFF /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
 		631A7AF3248B3AB800D86CFF /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICKeyChainStore.framework; path = Carthage/Build/iOS/UICKeyChainStore.framework; sourceTree = "<group>"; };
+		634A520C27D5CE41004B903A /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICKeyChainStore.framework; path = ../Carthage/Build/iOS/UICKeyChainStore.framework; sourceTree = "<group>"; };
+		634A520D27D5CE41004B903A /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = ../Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
+		634A520E27D5CE41004B903A /* SocketRocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SocketRocket.framework; path = ../Carthage/Build/iOS/SocketRocket.framework; sourceTree = "<group>"; };
+		634A520F27D5CE41004B903A /* KissXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KissXML.framework; path = ../Carthage/Build/iOS/KissXML.framework; sourceTree = "<group>"; };
+		634A521027D5CE41004B903A /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = ../Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
+		634A521C27D5CE54004B903A /* Peoplepower.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Peoplepower.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		634A522027D5CF98004B903A /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICKeyChainStore.framework; path = ../Carthage/Build/watchOS/UICKeyChainStore.framework; sourceTree = "<group>"; };
+		634A522127D5CF98004B903A /* KissXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KissXML.framework; path = ../Carthage/Build/watchOS/KissXML.framework; sourceTree = "<group>"; };
+		634A522227D5CF98004B903A /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = ../Carthage/Build/watchOS/AFNetworking.framework; sourceTree = "<group>"; };
+		634A522A27D5CFA4004B903A /* Peoplepower.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Peoplepower.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		634A522E27D5D0CC004B903A /* Peoplepower.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Peoplepower.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C84377268F787A00C6165E /* Demo iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Demo iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		63C84378268F787B00C6165E /* ViewController+Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Swift.swift"; sourceTree = "<group>"; };
 		63E62AC42491A4060038A694 /* Peoplepower.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Peoplepower.framework; path = Carthage/Build/iOS/Peoplepower.framework; sourceTree = "<group>"; };
 		63E62B562492A1A60038A694 /* Peoplepower-Config-Override.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Peoplepower-Config-Override.plist"; sourceTree = "<group>"; };
-		956A803CE7D1B61AB5DAC302 /* Pods-Demo iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo iOS.release.xcconfig"; path = "Target Support Files/Pods-Demo iOS/Pods-Demo iOS.release.xcconfig"; sourceTree = "<group>"; };
-		98415DAA7137D771996564E8 /* libPods-Demo iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A9DC04652A13EA3A71A76675 /* Pods-Demo watchOS Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo watchOS Extension.debug.xcconfig"; path = "Target Support Files/Pods-Demo watchOS Extension/Pods-Demo watchOS Extension.debug.xcconfig"; sourceTree = "<group>"; };
-		BBC86F7F55002A1A5A82249B /* libPods-Demo iOS Today.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo iOS Today.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D40FEF05E5500A20A3CB25C0 /* Pods-Demo watchOS Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo watchOS Extension.release.xcconfig"; path = "Target Support Files/Pods-Demo watchOS Extension/Pods-Demo watchOS Extension.release.xcconfig"; sourceTree = "<group>"; };
-		F86951745137503589B95F11 /* Pods-Demo iOS Today.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo iOS Today.debug.xcconfig"; path = "Target Support Files/Pods-Demo iOS Today/Pods-Demo iOS Today.debug.xcconfig"; sourceTree = "<group>"; };
-		F991DCA70CF86ECDDF0B66CB /* Pods-Demo iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-Demo iOSUITests/Pods-Demo iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,7 +198,6 @@
 				630BDE1524B3ADEC0035D8B3 /* OHHTTPStubs.framework in Frameworks */,
 				630BDE1124B3ADEC0035D8B3 /* AFNetworking.framework in Frameworks */,
 				630BDE0F24B3ADEC0035D8B3 /* Peoplepower.framework in Frameworks */,
-				448477C7C2BF14C8F83C83D0 /* libPods-Demo iOS Today.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,11 +205,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				630BDE6B24B3B7390035D8B3 /* KissXML.framework in Frameworks */,
-				630BDE6924B3B7390035D8B3 /* AFNetworking.framework in Frameworks */,
-				630BDE7024B3B73D0035D8B3 /* UICKeyChainStore.framework in Frameworks */,
-				630BDE6D24B3B7390035D8B3 /* Peoplepower.framework in Frameworks */,
-				91BFE0A07118670DBB002CBC /* libPods-Demo watchOS Extension.a in Frameworks */,
+				634A523427D5D0E8004B903A /* KissXML.framework in Frameworks */,
+				634A523227D5D0E8004B903A /* AFNetworking.framework in Frameworks */,
+				634A523627D5D0E8004B903A /* UICKeyChainStore.framework in Frameworks */,
+				634A522F27D5D0CD004B903A /* Peoplepower.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,13 +216,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				630EB9A024948298002D5614 /* UICKeyChainStore.framework in Frameworks */,
-				630EB99A24948298002D5614 /* OHHTTPStubs.framework in Frameworks */,
-				630EB99824948298002D5614 /* KissXML.framework in Frameworks */,
-				630EB99624948298002D5614 /* AFNetworking.framework in Frameworks */,
-				630EB99C24948298002D5614 /* Peoplepower.framework in Frameworks */,
-				630EB99E24948298002D5614 /* SocketRocket.framework in Frameworks */,
-				63E4CCDEA594A618AB4832E0 /* libPods-Demo iOS.a in Frameworks */,
+				634A521127D5CE41004B903A /* UICKeyChainStore.framework in Frameworks */,
+				634A521727D5CE41004B903A /* KissXML.framework in Frameworks */,
+				634A521327D5CE41004B903A /* AFNetworking.framework in Frameworks */,
+				634A521927D5CE41004B903A /* OHHTTPStubs.framework in Frameworks */,
+				634A521D27D5CE54004B903A /* Peoplepower.framework in Frameworks */,
+				634A521527D5CE41004B903A /* SocketRocket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,7 +229,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2BC55B11FA9F48460F4EDEB /* libPods-Demo iOSUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,21 +236,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				630BDE6324B3B60C0035D8B3 /* UICKeyChainStore.framework in Frameworks */,
-				630BDE6124B3B60C0035D8B3 /* KissXML.framework in Frameworks */,
-				630BDE5F24B3B60C0035D8B3 /* AFNetworking.framework in Frameworks */,
-				630BDE6524B3B60C0035D8B3 /* Peoplepower.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		474F3D52B8CFB4C610ECAFC7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		630BDC4024B389A30035D8B3 /* Build Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				630BDC4324B389E50035D8B3 /* Podfile */,
-				631A7AEA248B377D00D86CFF /* Cartfile */,
 				630BDC4524B389E60035D8B3 /* input.xcfilelist */,
 				630BDC4424B389E50035D8B3 /* output.xcfilelist */,
 				630BDE4C24B3B1D80035D8B3 /* input_watchOS.xcfilelist */,
@@ -296,7 +307,7 @@
 				630BDE3424B3B0F30035D8B3 /* Demo watchOS Extension */,
 				631A7AB3248B376500D86CFF /* Products */,
 				631A7AED248B3AB800D86CFF /* Frameworks */,
-				881665657F0C74EC55363359 /* Pods */,
+				474F3D52B8CFB4C610ECAFC7 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -346,6 +357,17 @@
 		631A7AED248B3AB800D86CFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				634A522E27D5D0CC004B903A /* Peoplepower.framework */,
+				634A522A27D5CFA4004B903A /* Peoplepower.framework */,
+				634A522227D5CF98004B903A /* AFNetworking.framework */,
+				634A522127D5CF98004B903A /* KissXML.framework */,
+				634A522027D5CF98004B903A /* UICKeyChainStore.framework */,
+				634A521C27D5CE54004B903A /* Peoplepower.framework */,
+				634A520D27D5CE41004B903A /* AFNetworking.framework */,
+				634A520F27D5CE41004B903A /* KissXML.framework */,
+				634A521027D5CE41004B903A /* OHHTTPStubs.framework */,
+				634A520E27D5CE41004B903A /* SocketRocket.framework */,
+				634A520C27D5CE41004B903A /* UICKeyChainStore.framework */,
 				63E62AC42491A4060038A694 /* Peoplepower.framework */,
 				631A7AF1248B3AB800D86CFF /* AFNetworking.framework */,
 				631A7AEE248B3AB800D86CFF /* KissXML.framework */,
@@ -357,27 +379,8 @@
 				631A7AEF248B3AB800D86CFF /* SocketRocket.framework */,
 				631A7AF3248B3AB800D86CFF /* UICKeyChainStore.framework */,
 				630BDDFF24B3ADC60035D8B3 /* NotificationCenter.framework */,
-				98415DAA7137D771996564E8 /* libPods-Demo iOS.a */,
-				BBC86F7F55002A1A5A82249B /* libPods-Demo iOS Today.a */,
-				2E4FFD1545CF41F8DC7E636C /* libPods-Demo watchOS Extension.a */,
-				4E1BA2E1AF453E71BF0A1704 /* libPods-Demo iOSUITests.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		881665657F0C74EC55363359 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				24EE40DAFA58BB18D6D09B84 /* Pods-Demo iOS.debug.xcconfig */,
-				956A803CE7D1B61AB5DAC302 /* Pods-Demo iOS.release.xcconfig */,
-				F86951745137503589B95F11 /* Pods-Demo iOS Today.debug.xcconfig */,
-				2DD8F3EB74DAA422E41A6232 /* Pods-Demo iOS Today.release.xcconfig */,
-				A9DC04652A13EA3A71A76675 /* Pods-Demo watchOS Extension.debug.xcconfig */,
-				D40FEF05E5500A20A3CB25C0 /* Pods-Demo watchOS Extension.release.xcconfig */,
-				F991DCA70CF86ECDDF0B66CB /* Pods-Demo iOSUITests.debug.xcconfig */,
-				1C3F805A411A851FEF2C35CC /* Pods-Demo iOSUITests.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,11 +390,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 630BDE0B24B3ADC60035D8B3 /* Build configuration list for PBXNativeTarget "Demo iOS Today" */;
 			buildPhases = (
-				A4C0391CB82F503B2D3F1F22 /* [CP] Check Pods Manifest.lock */,
 				630BDDFA24B3ADC60035D8B3 /* Sources */,
 				630BDDFB24B3ADC60035D8B3 /* Frameworks */,
 				630BDDFC24B3ADC60035D8B3 /* Resources */,
-				B525D37AFAE5541DA18A18C8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -409,7 +410,6 @@
 				630BDE2224B3B0F10035D8B3 /* Resources */,
 				630BDE4724B3B0F40035D8B3 /* Embed App Extensions */,
 				A853F2C1BBBCEA47B935FC46 /* Frameworks */,
-				630BDE6824B3B6400035D8B3 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -425,11 +425,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 630BDE4424B3B0F40035D8B3 /* Build configuration list for PBXNativeTarget "Demo watchOS Extension" */;
 			buildPhases = (
-				4CDE67AE4EC6D236F96DA6F9 /* [CP] Check Pods Manifest.lock */,
 				630BDE2C24B3B0F30035D8B3 /* Sources */,
 				630BDE2D24B3B0F30035D8B3 /* Frameworks */,
 				630BDE2E24B3B0F30035D8B3 /* Resources */,
-				0A36598B681918E92403299F /* [CP] Copy Pods Resources */,
+				634A523827D5D19E004B903A /* Carthage */,
+				634A523127D5D0CD004B903A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -444,13 +444,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 631A7AE1248B376600D86CFF /* Build configuration list for PBXNativeTarget "Demo iOS" */;
 			buildPhases = (
-				55C0698ABF737A25B30B1A7D /* [CP] Check Pods Manifest.lock */,
 				631A7AAE248B376500D86CFF /* Sources */,
 				631A7AAF248B376500D86CFF /* Frameworks */,
 				631A7AB0248B376500D86CFF /* Resources */,
 				631A7AEC248B39EE00D86CFF /* Carthage */,
 				630BDE0E24B3ADC60035D8B3 /* Embed App Extensions */,
-				1D1B85E68684BFEE838C20E6 /* [CP] Copy Pods Resources */,
+				634A521F27D5CE55004B903A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -466,11 +465,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 631A7AE7248B376600D86CFF /* Build configuration list for PBXNativeTarget "Demo iOSUITests" */;
 			buildPhases = (
-				DB63F7A9215455B1E3BB61A8 /* [CP] Check Pods Manifest.lock */,
 				631A7AD4248B376600D86CFF /* Sources */,
 				631A7AD5248B376600D86CFF /* Frameworks */,
 				631A7AD6248B376600D86CFF /* Resources */,
-				8133FF69EFA0A41244C6A61C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -565,7 +562,6 @@
 			files = (
 				631A7AC5248B376600D86CFF /* LaunchScreen.storyboard in Resources */,
 				631A7AC2248B376600D86CFF /* Assets.xcassets in Resources */,
-				631A7AEB248B377D00D86CFF /* Cartfile in Resources */,
 				63E62B572492A1A60038A694 /* Peoplepower-Config-Override.plist in Resources */,
 				631A7AC0248B376500D86CFF /* Main.storyboard in Resources */,
 			);
@@ -581,104 +577,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0A36598B681918E92403299F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Demo watchOS Extension/Pods-Demo watchOS Extension-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Demo watchOS Extension/Pods-Demo watchOS Extension-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Demo watchOS Extension/Pods-Demo watchOS Extension-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1D1B85E68684BFEE838C20E6 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Demo iOS/Pods-Demo iOS-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Demo iOS/Pods-Demo iOS-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Demo iOS/Pods-Demo iOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4CDE67AE4EC6D236F96DA6F9 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Demo watchOS Extension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		55C0698ABF737A25B30B1A7D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Demo iOS-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		630BDE6824B3B6400035D8B3 /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"$(SRCROOT)/input_watchOS.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = Carthage;
-			outputFileListPaths = (
-				"$(SRCROOT)/output_watchOS.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
 		631A7AEC248B39EE00D86CFF /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -699,83 +597,25 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
-		8133FF69EFA0A41244C6A61C /* [CP] Copy Pods Resources */ = {
+		634A523827D5D19E004B903A /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Demo iOSUITests/Pods-Demo iOSUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Demo iOSUITests/Pods-Demo iOSUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Demo iOSUITests/Pods-Demo iOSUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A4C0391CB82F503B2D3F1F22 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
+				"$(SRCROOT)/input_watchOS.xcfilelist",
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = Carthage;
 			outputFileListPaths = (
+				"$(SRCROOT)/output_watchOS.xcfilelist",
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Demo iOS Today-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B525D37AFAE5541DA18A18C8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Demo iOS Today/Pods-Demo iOS Today-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Demo iOS Today/Pods-Demo iOS Today-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Demo iOS Today/Pods-Demo iOS Today-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DB63F7A9215455B1E3BB61A8 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Demo iOSUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -877,14 +717,13 @@
 /* Begin XCBuildConfiguration section */
 		630BDE0C24B3ADC60035D8B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F86951745137503589B95F11 /* Pods-Demo iOS Today.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Demo iOS Today/Demo iOS Today.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EAWY6XBUH2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/../Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "Demo iOS Today/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -903,14 +742,13 @@
 		};
 		630BDE0D24B3ADC60035D8B3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2DD8F3EB74DAA422E41A6232 /* Pods-Demo iOS Today.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Demo iOS Today/Demo iOS Today.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EAWY6XBUH2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/../Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "Demo iOS Today/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -930,14 +768,14 @@
 		};
 		630BDE4524B3B0F40035D8B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A9DC04652A13EA3A71A76675 /* Pods-Demo watchOS Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EAWY6XBUH2;
+				"EXCLUDED_ARCHS[sdk=watchsimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+					"$(PROJECT_DIR)/../Carthage/Build/watchOS",
 				);
 				INFOPLIST_FILE = "Demo watchOS Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -959,14 +797,14 @@
 		};
 		630BDE4624B3B0F40035D8B3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D40FEF05E5500A20A3CB25C0 /* Pods-Demo watchOS Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EAWY6XBUH2;
+				"EXCLUDED_ARCHS[sdk=watchsimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+					"$(PROJECT_DIR)/../Carthage/Build/watchOS",
 				);
 				INFOPLIST_FILE = "Demo watchOS Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -993,10 +831,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EAWY6XBUH2;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/watchOS",
-				);
+				ENABLE_BITCODE = YES;
 				IBSC_MODULE = Demo_watchOS_Extension;
 				INFOPLIST_FILE = "Demo watchOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1022,10 +857,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EAWY6XBUH2;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/watchOS",
-				);
+				ENABLE_BITCODE = YES;
 				IBSC_MODULE = Demo_watchOS_Extension;
 				INFOPLIST_FILE = "Demo watchOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1160,7 +992,6 @@
 		};
 		631A7AE2248B376600D86CFF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24EE40DAFA58BB18D6D09B84 /* Pods-Demo iOS.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1171,7 +1002,7 @@
 				DEVELOPMENT_TEAM = EAWY6XBUH2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/../Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "Demo iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1189,7 +1020,6 @@
 		};
 		631A7AE3248B376600D86CFF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 956A803CE7D1B61AB5DAC302 /* Pods-Demo iOS.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1200,7 +1030,7 @@
 				DEVELOPMENT_TEAM = EAWY6XBUH2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/../Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "Demo iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1217,7 +1047,6 @@
 		};
 		631A7AE8248B376600D86CFF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F991DCA70CF86ECDDF0B66CB /* Pods-Demo iOSUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1228,7 +1057,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.iOS.UITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.iOS.demo.UITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1238,7 +1067,6 @@
 		};
 		631A7AE9248B376600D86CFF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C3F805A411A851FEF2C35CC /* Pods-Demo iOSUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1249,7 +1077,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.iOS.UITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.peoplepowerco.lib.Peoplepower.iOS.demo.UITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
