@@ -13,13 +13,13 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PPQuestionSlider : PPBaseModel
 
 /* Slider question minimum value */
-@property (nonatomic) PPQuestionSliderMin min;
+@property (nonatomic) NSNumber *min;
 
 /* Slider question maximum value */
-@property (nonatomic) PPQuestionSliderMax max;
+@property (nonatomic) NSNumber *max;
 
 /* Slider question incremental slider value */
-@property (nonatomic) PPQuestionSliderInc inc;
+@property (nonatomic) NSNumber *inc;
 
 /* Description of slider question minimum value */
 @property (nonatomic, strong) NSString *minDesc;
@@ -30,9 +30,9 @@ NS_ASSUME_NONNULL_BEGIN
 /* Description of slider question UOM */
 @property (nonatomic, strong) NSString *unitsDesc;
 
-- (id)initWithMax:(PPQuestionSliderMax)max
-              min:(PPQuestionSliderMin)min
-              inc:(PPQuestionSliderInc)inc
+- (id)initWithMax:(NSNumber *)max
+              min:(NSNumber *)min
+              inc:(NSNumber *)inc
           minDesc:(NSString *)minDesc
           maxDesc:(NSString *)maxDesc
         unitsDesc:(NSString *)unitsDesc;
