@@ -1776,6 +1776,9 @@
 		63B9B141248C0D9B0056E7CE /* PPRealm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPRealm.h; sourceTree = "<group>"; };
 		63B9B142248C0D9B0056E7CE /* PPRealm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPRealm.m; sourceTree = "<group>"; };
 		63B9B14E248C36BA0056E7CE /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		63AE676B27D7BFA700F1D073 /* ci_post_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = ci_post_xcodebuild.sh; path = ci_scripts/ci_post_xcodebuild.sh; sourceTree = "<group>"; };
+		63AE676C27D7BFA700F1D073 /* ci_post_clone.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = ci_post_clone.sh; path = ci_scripts/ci_post_clone.sh; sourceTree = "<group>"; };
+		63AE676D27D7BFA800F1D073 /* ci_pre_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = ci_pre_xcodebuild.sh; path = ci_scripts/ci_pre_xcodebuild.sh; sourceTree = "<group>"; };
 		63B5272C2679534F007EA64B /* PPAdminAdministrators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPAdminAdministrators.swift; sourceTree = "<group>"; };
 		63B5272E26795A4E007EA64B /* PPLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLog.swift; sourceTree = "<group>"; };
 		63B5273026796228007EA64B /* PPTCAdminAdministrators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPTCAdminAdministrators.swift; sourceTree = "<group>"; };
@@ -2271,6 +2274,9 @@
 				630BDC4124B389D40035D8B3 /* output.xcfilelist */,
 				6352965C2552356D00ADBC11 /* input_watchOS.xcfilelist */,
 				6352965D2552356D00ADBC11 /* output_watchOS.xcfilelist */,
+				63AE676C27D7BFA700F1D073 /* ci_post_clone.sh */,
+				63AE676B27D7BFA700F1D073 /* ci_post_xcodebuild.sh */,
+				63AE676D27D7BFA800F1D073 /* ci_pre_xcodebuild.sh */,
 			);
 			name = "Build Utilities";
 			sourceTree = "<group>";
@@ -5292,10 +5298,10 @@
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.2.55;
+				CURRENT_PROJECT_VERSION = 1.0.1;
 				DEVELOPMENT_TEAM = EAWY6XBUH2;
 				DYLIB_COMPATIBILITY_VERSION = "$(inherited)";
-				DYLIB_CURRENT_VERSION = 0.2.55;
+				DYLIB_CURRENT_VERSION = 1.0.1;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -5327,10 +5333,10 @@
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.2.55;
+				CURRENT_PROJECT_VERSION = 1.0.1;
 				DEVELOPMENT_TEAM = EAWY6XBUH2;
 				DYLIB_COMPATIBILITY_VERSION = "$(inherited)";
-				DYLIB_CURRENT_VERSION = 0.2.55;
+				DYLIB_CURRENT_VERSION = 1.0.1;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -5385,9 +5391,10 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1.0.1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1.0.0;
+				DYLIB_CURRENT_VERSION = 1.0.1;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -5449,9 +5456,10 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1.0.1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1.0.0;
+				DYLIB_CURRENT_VERSION = 1.0.1;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Xcode Cloud CI to build specific framework
+if [ -z ${CI_PRODUCT_PLATFORM+x} ]; then PLATFORMS="ios,watchOS"; else PLATFORMS=${CI_PRODUCT_PLATFORM}; fi
+
 set -euo pipefail
 
 xcconfig=$(mktemp /tmp/static.xcconfig.XXXXXX)
@@ -16,7 +19,7 @@ echo 'EXCLUDED_ARCHS = $(inherited) $(EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_
 export XCODE_XCCONFIG_FILE="$xcconfig"
 
 # Install Carthage
-carthage update --cache-builds --platform iOS,watchOS
+carthage update --cache-builds --platform $PLATFORMS
 
 cd Demo
 
