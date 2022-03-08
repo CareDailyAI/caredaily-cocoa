@@ -1742,6 +1742,9 @@
 		63AD0B15237CC76100F4900B /* PPCommunityUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPCommunityUser.m; sourceTree = "<group>"; };
 		63AD0B18237CC77900F4900B /* PPCommunityLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPCommunityLocation.h; sourceTree = "<group>"; };
 		63AD0B19237CC77900F4900B /* PPCommunityLocation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPCommunityLocation.m; sourceTree = "<group>"; };
+		63AE676B27D7BFA700F1D073 /* ci_post_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = ci_post_xcodebuild.sh; path = ci_scripts/ci_post_xcodebuild.sh; sourceTree = "<group>"; };
+		63AE676C27D7BFA700F1D073 /* ci_post_clone.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = ci_post_clone.sh; path = ci_scripts/ci_post_clone.sh; sourceTree = "<group>"; };
+		63AE676D27D7BFA800F1D073 /* ci_pre_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = ci_pre_xcodebuild.sh; path = ci_scripts/ci_pre_xcodebuild.sh; sourceTree = "<group>"; };
 		63B5272C2679534F007EA64B /* PPAdminAdministrators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPAdminAdministrators.swift; sourceTree = "<group>"; };
 		63B5272E26795A4E007EA64B /* PPLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLog.swift; sourceTree = "<group>"; };
 		63B5273026796228007EA64B /* PPTCAdminAdministrators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPTCAdminAdministrators.swift; sourceTree = "<group>"; };
@@ -2235,6 +2238,9 @@
 				630BDC4124B389D40035D8B3 /* output.xcfilelist */,
 				6352965C2552356D00ADBC11 /* input_watchOS.xcfilelist */,
 				6352965D2552356D00ADBC11 /* output_watchOS.xcfilelist */,
+				63AE676C27D7BFA700F1D073 /* ci_post_clone.sh */,
+				63AE676B27D7BFA700F1D073 /* ci_post_xcodebuild.sh */,
+				63AE676D27D7BFA800F1D073 /* ci_pre_xcodebuild.sh */,
 			);
 			name = "Build Utilities";
 			sourceTree = "<group>";
