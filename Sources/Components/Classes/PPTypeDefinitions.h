@@ -1640,6 +1640,7 @@ typedef NS_OPTIONS(NSInteger, PPQuestionDisplayTypeSlider) {
     PPQuestionDisplayTypeSliderInteger = 0, // Integer select, default.
     PPQuestionDisplayTypeSliderFloat = 1, // Floating point select.
     PPQuestionDisplayTypeSliderMinutesSeconds = 2, // Minutes:Seconds
+    PPQuestionDisplayTypeSliderCelsius = 3, // floating point with prescribed temperature in celsius
 };
 
 typedef NS_OPTIONS(NSInteger, PPQuestionDisplayTypeTimeInSecondsSinceMidnight) {
@@ -2574,6 +2575,7 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeParameterDisplayType) {
     PPDeviceTypeParameterDisplayTypeSliderInteger           = 70, // - integer selection between min and max (default is 0 to 100, default)
     PPDeviceTypeParameterDisplayTypeSliderFloat             = 71, // - floating point selector (e.g. in a range from 0 to 1)
     PPDeviceTypeParameterDisplayTypeSliderMinutesSeconds    = 72, // - as a minutes:seconds format between a min and max (e.g. from 0 to 5 minutes)
+    PPDeviceTypeParameterDisplayTypeSliderCelsius           = 73, // - floating point with prescribed temperature in celsius (e.g. 10.1 C)
     PPDeviceTypeParameterDisplayTypeTime                    = 8,  // - Time (in seconds)
     PPDeviceTypeParameterDisplayTypeTimeHoursMinutesSeconds = 80, // - as hours:minutes:seconds (am/pm, default)
     PPDeviceTypeParameterDisplayTypeTimeHoursMinutes        = 81, // - as hours:minutes (am/pm)
