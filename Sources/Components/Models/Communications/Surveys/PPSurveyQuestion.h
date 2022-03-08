@@ -17,9 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString * _Nonnull title;
 @property (nonatomic, strong) NSString * _Nonnull question;
 @property (nonatomic, strong) NSString * _Nullable answer;
-@property (nonatomic) NSNumber<RLMFloat> *sliderMin;
-@property (nonatomic) NSNumber<RLMFloat> *sliderMax;
-@property (nonatomic) NSNumber<RLMFloat> *sliderValue;
+@property (nonatomic) NSNumber<RLMFloat> * _Nonnull sliderMin;
+@property (nonatomic) NSNumber<RLMFloat> * _Nonnull sliderMax;
+@property (nonatomic) NSNumber<RLMFloat> * _Nullable sliderValue;
 
 - (id)initWithQuestionId:(PPSurveyQuestionId)questionId
                      key:(NSString * _Nullable )key

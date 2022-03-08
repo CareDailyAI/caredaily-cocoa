@@ -18,19 +18,19 @@
 @property (nonatomic) PPQuestionId questionId;
 
 /* Optional unique key to identify this context of this question later */
-@property (nonatomic, strong) NSString *key;
+@property (nonatomic, strong) NSString * _Nullable key;
 
 /* Creation timestamp */
-@property (nonatomic, strong) NSDate *creationDate;
+@property (nonatomic, strong) NSDate * _Nonnull creationDate;
 
 /* Group like questions together on a list by this category. */
-@property (nonatomic, strong) PPQuestionCollection *collection;
+@property (nonatomic, strong) PPQuestionCollection * _Nullable collection;
 
 /* The actual text of the question to ask. */
-@property (nonatomic, strong) NSString *question;
+@property (nonatomic, strong) NSString * _Nonnull question;
 
 /* A placeholder for this question. */
-@property (nonatomic, strong) NSString *placeholder;
+@property (nonatomic, strong) NSString * _Nullable placeholder;
 
 /* If true, the results of this question will be made publicly available at an aggregate level, so individual users can see how others voted on the question. */
 @property (nonatomic) PPQuestionAggregatePublicly aggregatePublicly;
@@ -51,37 +51,37 @@
 @property (nonatomic) PPQuestionResponseOptionType responseType;
 
 /* Response options */
-@property (nonatomic, strong) RLMArray<PPQuestionResponseOption *><PPQuestionResponseOption> *responseOptions;
+@property (nonatomic, strong) RLMArray<PPQuestionResponseOption *><PPQuestionResponseOption> * _Nullable responseOptions;
 
 /* Application-layer display type for each type of question (for example, yes/no vs. on/off switch, or a slider that shows integers vs. a slider that shows minutes:seconds) */
 @property (nonatomic) PPQuestionDisplayType displayType;
 
 /* Name of the device ID referenced by this question, if any. */
-@property (nonatomic, strong) NSString *deviceId;
+@property (nonatomic, strong) NSString * _Nullable deviceId;
 
 /* Icon to show next to the question, if any. */
-@property (nonatomic, strong) NSString *icon;
+@property (nonatomic, strong) NSString * _Nullable icon;
 
 /* Pre-populated default values for question responses, or force-change the user's response. */
-@property (nonatomic, strong) NSString *defaultAnswer;
+@property (nonatomic, strong) NSString * _Nullable defaultAnswer;
 
 /* Regular expression to validate answer format in UI. */
-@property (nonatomic, strong) NSString *answerFormat;
+@property (nonatomic, strong) NSString * _Nullable answerFormat;
 
 /* Slider question minimum value */
-@property (nonatomic) NSNumber<RLMFloat> *sliderMin;
+@property (nonatomic) NSNumber<RLMFloat> * _Nullable sliderMin;
 
 /* Slider question maximum value */
-@property (nonatomic) NSNumber<RLMFloat> *sliderMax;
+@property (nonatomic) NSNumber<RLMFloat> * _Nullable sliderMax;
 
 /* Slider question incremental slider value */
-@property (nonatomic) NSNumber<RLMFloat> *sliderInc;
+@property (nonatomic) NSNumber<RLMFloat> * _Nullable sliderInc;
 
 /* Slider question object */
-@property (nonatomic) PPQuestionSlider *slider;
+@property (nonatomic) PPQuestionSlider * _Nonnull slider;
 
 /* The title of a group of questions */
-@property (nonatomic, strong) NSString *sectionTitle;
+@property (nonatomic, strong) NSString * _Nullable sectionTitle;
 
 /* The ID of a group of questions, and the order in which to display this group */
 @property (nonatomic) PPQuestionSectionId sectionId;
@@ -93,46 +93,46 @@
 @property (nonatomic) PPQuestionPoints points;
 
 /* Answer */
-@property (nonatomic, strong) PPQuestionAnswer *answer;
+@property (nonatomic, strong) PPQuestionAnswer * _Nonnull answer;
 
 - (id)initWithId:(PPQuestionId)questionId
-             key:(NSString *)key
-    creationDate:(NSDate *)creationDate
-      collection:(PPQuestionCollection *)collection
-        question:(NSString *)question
-     placeholder:(NSString *)placeholder
+             key:(NSString * _Nullable )key
+    creationDate:(NSDate * _Nonnull )creationDate
+      collection:(PPQuestionCollection * _Nullable )collection
+        question:(NSString * _Nonnull )question
+     placeholder:(NSString * _Nullable )placeholder
 aggregatePublicly:(PPQuestionAggregatePublicly)aggregatePublicly
           urgent:(PPQuestionUrgent)urgent
            front:(PPQuestionFront)front
         editable:(PPQuestionEditable)editable
   totalResponses:(PPQuestionTotalResponses)totalResponses
     responseType:(PPQuestionResponseOptionType)responseType
- responseOptions:(RLMArray *)responseOptions
+ responseOptions:(RLMArray * _Nullable )responseOptions
      displayType:(PPQuestionDisplayType)displayType
-        deviceId:(NSString *)deviceId
-            icon:(NSString *)icon
-   defaultAnswer:(NSString *)defaultAnswer
-    answerFormat:(NSString *)answerFormat
-       sliderMin:(NSNumber *)sliderMin
-       sliderMax:(NSNumber *)sliderMax
-       sliderInc:(NSNumber *)sliderInc
-          slider:(PPQuestionSlider *)slider
-    sectionTitle:(NSString *)sectionTitle
+        deviceId:(NSString * _Nullable )deviceId
+            icon:(NSString * _Nullable )icon
+   defaultAnswer:(NSString * _Nullable )defaultAnswer
+    answerFormat:(NSString * _Nullable )answerFormat
+       sliderMin:(NSNumber * _Nullable )sliderMin
+       sliderMax:(NSNumber * _Nullable )sliderMax
+       sliderInc:(NSNumber * _Nullable )sliderInc
+          slider:(PPQuestionSlider * _Nonnull )slider
+    sectionTitle:(NSString * _Nullable )sectionTitle
        sectionId:(PPQuestionSectionId)sectionId
   questionWeight:(PPQuestionWeight)questionWeight
           points:(PPQuestionPoints)points
-          answer:(PPQuestionAnswer *)answer;
+          answer:(PPQuestionAnswer * _Nonnull )answer;
 
-+ (PPQuestion *)initWithDictionary:(NSDictionary *)questionDict;
++ (PPQuestion * _Nonnull )initWithDictionary:(NSDictionary * _Nonnull )questionDict;
 
-+ (NSString *)stringify:(PPQuestion *)question;
-+ (NSDictionary *)data:(PPQuestion *)question;
++ (NSString * _Nonnull )stringify:(PPQuestion * _Nonnull )question;
++ (NSDictionary * _Nonnull )data:(PPQuestion * _Nonnull )question;
 
 #pragma mark - Helper methods
 
-- (BOOL)isEqualToQuestion:(PPQuestion *)question;
+- (BOOL)isEqualToQuestion:(PPQuestion * _Nonnull)question;
 
-- (void)sync:(PPQuestion *)question;
+- (void)sync:(PPQuestion * _Nonnull )question;
 
 @end
 
