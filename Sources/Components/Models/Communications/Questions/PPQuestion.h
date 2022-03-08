@@ -69,13 +69,13 @@
 @property (nonatomic, strong) NSString *answerFormat;
 
 /* Slider question minimum value */
-@property (nonatomic) NSNumber *sliderMin;
+@property (nonatomic) NSNumber<RLMFloat> *sliderMin;
 
 /* Slider question maximum value */
-@property (nonatomic) NSNumber *sliderMax;
+@property (nonatomic) NSNumber<RLMFloat> *sliderMax;
 
 /* Slider question incremental slider value */
-@property (nonatomic) NSNumber *sliderInc;
+@property (nonatomic) NSNumber<RLMFloat> *sliderInc;
 
 /* Slider question object */
 @property (nonatomic) PPQuestionSlider *slider;

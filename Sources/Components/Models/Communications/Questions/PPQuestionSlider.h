@@ -13,13 +13,13 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PPQuestionSlider : PPBaseModel
 
 /* Slider question minimum value */
-@property (nonatomic) NSNumber *min;
+@property (nonatomic) NSNumber<RLMFloat> *min;
 
 /* Slider question maximum value */
-@property (nonatomic) NSNumber *max;
+@property (nonatomic) NSNumber<RLMFloat> *max;
 
 /* Slider question incremental slider value */
-@property (nonatomic) NSNumber *inc;
+@property (nonatomic) NSNumber<RLMFloat> *inc;
 
 /* Description of slider question minimum value */
 @property (nonatomic, strong) NSString *minDesc;
