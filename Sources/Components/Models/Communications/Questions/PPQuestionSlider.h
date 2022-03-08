@@ -13,29 +13,29 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PPQuestionSlider : PPBaseModel
 
 /* Slider question minimum value */
-@property (nonatomic) NSNumber *min;
+@property (nonatomic) NSNumber * _Nullable min;
 
 /* Slider question maximum value */
-@property (nonatomic) NSNumber *max;
+@property (nonatomic) NSNumber * _Nullable max;
 
 /* Slider question incremental slider value */
-@property (nonatomic) NSNumber *inc;
+@property (nonatomic) NSNumber * _Nullable inc;
 
 /* Description of slider question minimum value */
-@property (nonatomic, strong) NSString *minDesc;
+@property (nonatomic, strong) NSString * _Nullable minDesc;
 
 /* Description of slider question maximum value */
-@property (nonatomic, strong) NSString *maxDesc;
+@property (nonatomic, strong) NSString * _Nullable maxDesc;
 
 /* Description of slider question UOM */
-@property (nonatomic, strong) NSString *unitsDesc;
+@property (nonatomic, strong) NSString * _Nullable unitsDesc;
 
-- (id)initWithMax:(NSNumber *)max
-              min:(NSNumber *)min
-              inc:(NSNumber *)inc
-          minDesc:(NSString *)minDesc
-          maxDesc:(NSString *)maxDesc
-        unitsDesc:(NSString *)unitsDesc;
+- (id)initWithMax:(NSNumber * _Nullable )max
+              min:(NSNumber * _Nullable )min
+              inc:(NSNumber * _Nullable )inc
+          minDesc:(NSString * _Nullable )minDesc
+          maxDesc:(NSString * _Nullable )maxDesc
+        unitsDesc:(NSString * _Nullable )unitsDesc;
 
 + (PPQuestionSlider *)initWithDictionary:(NSDictionary *)sliderDict;
 
