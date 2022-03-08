@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.author             = { "Destry Teeter" => "destry.teeter@gmail.com" }
   s.social_media_url   = "http://twitter.com/DestryTeeter"
   
-  s.version      = "0.2.55"
+  s.version      = "1.0.1"
   
   s.ios.deployment_target = "11.0"
   s.watchos.deployment_target = "6.0"
