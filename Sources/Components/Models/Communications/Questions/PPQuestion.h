@@ -69,13 +69,13 @@
 @property (nonatomic, strong) NSString *answerFormat;
 
 /* Slider question minimum value */
-@property (nonatomic) PPQuestionSliderMin sliderMin;
+@property (nonatomic) NSNumber *sliderMin;
 
 /* Slider question maximum value */
-@property (nonatomic) PPQuestionSliderMax sliderMax;
+@property (nonatomic) NSNumber *sliderMax;
 
 /* Slider question incremental slider value */
-@property (nonatomic) PPQuestionSliderInc sliderInc;
+@property (nonatomic) NSNumber *sliderInc;
 
 /* Slider question object */
 @property (nonatomic) PPQuestionSlider *slider;
@@ -113,9 +113,9 @@ aggregatePublicly:(PPQuestionAggregatePublicly)aggregatePublicly
             icon:(NSString *)icon
    defaultAnswer:(NSString *)defaultAnswer
     answerFormat:(NSString *)answerFormat
-       sliderMin:(PPQuestionSliderMin)sliderMin
-       sliderMax:(PPQuestionSliderMax)sliderMax
-       sliderInc:(PPQuestionSliderInc)sliderInc
+       sliderMin:(NSNumber *)sliderMin
+       sliderMax:(NSNumber *)sliderMax
+       sliderInc:(NSNumber *)sliderInc
           slider:(PPQuestionSlider *)slider
     sectionTitle:(NSString *)sectionTitle
        sectionId:(PPQuestionSectionId)sectionId

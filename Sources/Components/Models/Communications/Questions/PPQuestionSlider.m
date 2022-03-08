@@ -10,9 +10,9 @@
 
 @implementation PPQuestionSlider
 
-- (id)initWithMax:(PPQuestionSliderMax)max
-              min:(PPQuestionSliderMin)min
-              inc:(PPQuestionSliderInc)inc
+- (id)initWithMax:(NSNumber *)max
+              min:(NSNumber *)min
+              inc:(NSNumber *)inc
           minDesc:(NSString *)minDesc
           maxDesc:(NSString *)maxDesc
         unitsDesc:(NSString *)unitsDesc {
@@ -29,17 +29,17 @@
 }
 
 + (PPQuestionSlider *)initWithDictionary:(NSDictionary *)sliderDict {
-    PPQuestionSliderMin min = PPQuestionSliderMinNone;
+    NSNumber *min;
     if([sliderDict objectForKey:@"min"]) {
-        min = (PPQuestionSliderMin)((NSString *)[sliderDict objectForKey:@"min"]).integerValue;
+        min = [[NSNumber alloc] initWithFloat:((NSString *)[sliderDict objectForKey:@"min"]).floatValue];
     }
-    PPQuestionSliderMax max = PPQuestionSliderMaxNone;
+    NSNumber *max;
     if([sliderDict objectForKey:@"max"]) {
-        max = (PPQuestionSliderMax)((NSString *)[sliderDict objectForKey:@"max"]).integerValue;
+        max = [[NSNumber alloc] initWithFloat:((NSString *)[sliderDict objectForKey:@"max"]).floatValue];
     }
-    PPQuestionSliderInc inc = PPQuestionSliderIncNone;
+    NSNumber *inc;
     if([sliderDict objectForKey:@"inc"]) {
-        inc = (PPQuestionSliderInc)((NSString *)[sliderDict objectForKey:@"inc"]).integerValue;
+        inc = [[NSNumber alloc] initWithFloat:((NSString *)[sliderDict objectForKey:@"inc"]).floatValue];
     }
     NSString *minDesc = [sliderDict objectForKey:@"minDesc"];
     NSString *maxDesc = [sliderDict objectForKey:@"maxDesc"];

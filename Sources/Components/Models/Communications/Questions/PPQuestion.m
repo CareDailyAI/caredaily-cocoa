@@ -28,9 +28,9 @@ aggregatePublicly:(PPQuestionAggregatePublicly)aggregatePublicly
             icon:(NSString *)icon
    defaultAnswer:(NSString *)defaultAnswer
     answerFormat:(NSString *)answerFormat
-       sliderMin:(PPQuestionSliderMin)sliderMin
-       sliderMax:(PPQuestionSliderMax)sliderMax
-       sliderInc:(PPQuestionSliderInc)sliderInc
+       sliderMin:(NSNumber *)sliderMin
+       sliderMax:(NSNumber *)sliderMax
+       sliderInc:(NSNumber *)sliderInc
           slider:(PPQuestionSlider *)slider
     sectionTitle:(NSString *)sectionTitle
        sectionId:(PPQuestionSectionId)sectionId
@@ -132,17 +132,17 @@ aggregatePublicly:(PPQuestionAggregatePublicly)aggregatePublicly
     NSString *icon = [questionDict objectForKey:@"icon"];
     NSString *defaultAnswer = [questionDict objectForKey:@"defaultAnswer"];
     NSString *answerFormat = [questionDict objectForKey:@"answerFormat"];
-    PPQuestionSliderMin sliderMin = PPQuestionSliderMinNone;
+    NSNumber *sliderMin;
     if([questionDict objectForKey:@"sliderMin"]) {
-        sliderMin = (PPQuestionSliderMin)((NSString *)[questionDict objectForKey:@"sliderMin"]).integerValue;
+        sliderMin = [[NSNumber alloc] initWithFloat:((NSString *)[questionDict objectForKey:@"sliderMin"]).floatValue];
     }
-    PPQuestionSliderMax sliderMax = PPQuestionSliderMaxNone;
+    NSNumber *sliderMax;
     if([questionDict objectForKey:@"sliderMax"]) {
-        sliderMax = (PPQuestionSliderMax)((NSString *)[questionDict objectForKey:@"sliderMax"]).integerValue;
+        sliderMax = [[NSNumber alloc] initWithFloat:((NSString *)[questionDict objectForKey:@"sliderMax"]).floatValue];
     }
-    PPQuestionSliderInc sliderInc = PPQuestionSliderIncNone;
+    NSNumber *sliderInc;
     if([questionDict objectForKey:@"sliderInc"]) {
-        sliderInc = (PPQuestionSliderInc)((NSString *)[questionDict objectForKey:@"sliderInc"]).integerValue;
+        sliderInc = [[NSNumber alloc] initWithFloat:((NSString *)[questionDict objectForKey:@"sliderInc"]).floatValue];
     }
     PPQuestionSlider *slider = [PPQuestionSlider initWithDictionary:[questionDict objectForKey:@"slider"]];
     NSString *sectionTitle = [questionDict objectForKey:@"sectionTitle"];
@@ -318,13 +318,13 @@ aggregatePublicly:(PPQuestionAggregatePublicly)aggregatePublicly
     if(question.answerFormat) {
         _answerFormat = question.answerFormat;
     }
-    if(question.sliderMin != PPQuestionSliderMinNone) {
+    if(question.sliderMin != nil) {
         _sliderMin = question.sliderMin;
     }
-    if(question.sliderMax != PPQuestionSliderMaxNone) {
+    if(question.sliderMax != nil) {
         _sliderMax = question.sliderMax;
     }
-    if(question.sliderInc != PPQuestionSliderIncNone) {
+    if(question.sliderInc != nil) {
         _sliderInc = question.sliderInc;
     }
     if(question.sectionTitle) {

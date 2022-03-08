@@ -1542,21 +1542,6 @@ typedef NS_OPTIONS(NSInteger, PPQuestionTotalResponses) {
     PPQuestionTotalResponsesNone = -1
 };
 
-typedef NS_OPTIONS(NSInteger, PPQuestionSliderMin) {
-    PPQuestionSliderMinNone = -1,
-    PPQuestionSliderMinDefault = 0
-};
-
-typedef NS_OPTIONS(NSInteger, PPQuestionSliderMax) {
-    PPQuestionSliderMaxNone = -1,
-    PPQuestionSliderMaxDefault = 100
-};
-
-typedef NS_OPTIONS(NSInteger, PPQuestionSliderInc) {
-    PPQuestionSliderIncNone = -1,
-    PPQuestionSliderIncDefault = 1
-};
-
 typedef NS_OPTIONS(NSInteger, PPQuestionSectionId) {
     PPQuestionSectionIdNone = -1
 };

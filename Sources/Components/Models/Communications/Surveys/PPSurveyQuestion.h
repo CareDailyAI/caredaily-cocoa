@@ -17,18 +17,18 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString * _Nonnull title;
 @property (nonatomic, strong) NSString * _Nonnull question;
 @property (nonatomic, strong) NSString * _Nullable answer;
-@property (nonatomic) NSInteger sliderMin;
-@property (nonatomic) NSInteger sliderMax;
-@property (nonatomic) PPSurveyQuestionSliderValue sliderValue;
+@property (nonatomic) NSNumber *sliderMin;
+@property (nonatomic) NSNumber *sliderMax;
+@property (nonatomic) NSNumber *sliderValue;
 
 - (id)initWithQuestionId:(PPSurveyQuestionId)questionId
                      key:(NSString * _Nullable )key
                    title:(NSString * _Nonnull )title
                 question:(NSString * _Nonnull )question
                   answer:(NSString * _Nullable )answer
-               sliderMin:(NSInteger)sliderMin
-               sliderMax:(NSInteger)sliderMax
-             sliderValue:(PPSurveyQuestionSliderValue)sliderValue;
+               sliderMin:(NSNumber * _Nonnull )sliderMin
+               sliderMax:(NSNumber * _Nonnull )sliderMax
+             sliderValue:(NSNumber * _Nullable )sliderValue;
 
 + (PPSurveyQuestion *)initWithDictionary:(NSDictionary *)questionDict;
 
