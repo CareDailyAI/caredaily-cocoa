@@ -7,11 +7,12 @@
 //
 
 import XCTest
+import Peoplepower
 
 fileprivate struct L10N {
     static func verify(_ key: String, forLocale localeIdentifier: String, inTable table: String? = nil)  -> Bool {
         guard
-            let bundle = Bundle(identifier: "com.peoplepowerco.lib.Peoplepower.iOS"),
+            let bundle = PPBaseModel.bundle(),
             let path = bundle.path(forResource: localeIdentifier, ofType: "lproj"),
             let bundle = Bundle(path: path) else {
                 return false

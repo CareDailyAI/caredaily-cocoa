@@ -19,7 +19,7 @@
 }
 
 + (PPVersion *)bundleVersion {
-    NSDictionary* infoDict = [[NSBundle bundleForClass:[self class]] infoDictionary];
+    NSDictionary* infoDict = [[PPBaseModel bundle] infoDictionary];
     return [[PPVersion alloc] initWithVersion:[infoDict objectForKey:@"CFBundleShortVersionString"]];
 }
 

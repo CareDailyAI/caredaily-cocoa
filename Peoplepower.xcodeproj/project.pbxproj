@@ -18,7 +18,6 @@
 		630445A926377F1100CDDAAF /* UserCommunications-PostSupportTicket-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 630445A826377F1000CDDAAF /* UserCommunications-PostSupportTicket-ResponseData.json */; };
 		6309B76120E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.h in Headers */ = {isa = PBXBuildFile; fileRef = 6309B75F20E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6309B76220E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 6309B76020E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.m */; };
-		630BDC5624B393480035D8B3 /* Peoplepower-Info-watchOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 630BDC5524B393480035D8B3 /* Peoplepower-Info-watchOS.plist */; };
 		630BDC5A24B393D90035D8B3 /* PPNetworkUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 63A9525C205C2E9B000E466A /* PPNetworkUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		630BDC5B24B393DD0035D8B3 /* PPNetworkUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A9525B205C2E9A000E466A /* PPNetworkUtilities.m */; };
 		630BDC5C24B393F00035D8B3 /* PPTHConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 631152DE21E7FB8400DA7755 /* PPTHConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1251,6 +1250,12 @@
 		63BECB4F20C5D96F00408494 /* PPCurlDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D39304204F287800041C1A /* PPCurlDebug.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63BECB9320C5DDE000408494 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C7C9FF2098016700967C4C /* libicucore.tbd */; };
 		63BECB9420C5DFDB00408494 /* Peoplepower-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 63D39315204F3A0900041C1A /* Peoplepower-Prefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		63C2A28427FCA87500E2DFC1 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634A523A27D5D322004B903A /* AFNetworking.framework */; };
+		63C2A28527FCA87500E2DFC1 /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634A523B27D5D322004B903A /* KissXML.framework */; };
+		63C2A28627FCA87500E2DFC1 /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634A523927D5D322004B903A /* UICKeyChainStore.framework */; };
+		63C2A28727FCA94000E2DFC1 /* PPBaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B47F2248AFA7B00124F6A /* PPBaseTestCase.m */; };
+		63C2A28827FCA95600E2DFC1 /* PPTCBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B4807248AFA7E00124F6A /* PPTCBaseModel.m */; };
+		63C2A28E27FCA9ED00E2DFC1 /* PPTCBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B52837268115E9007EA64B /* PPTCBaseModel.swift */; };
 		63C84362268E5C4600C6165E /* PPVayyarHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C84361268E5C4600C6165E /* PPVayyarHome.swift */; };
 		63C8436A268E6F7900C6165E /* PPTCSyntheticVayyarHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C84369268E6F7900C6165E /* PPTCSyntheticVayyarHome.swift */; };
 		63C8436F268E71FA00C6165E /* SyntheticVayyarHome-GetRoomBoundaries-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63C8436E268E71FA00C6165E /* SyntheticVayyarHome-GetRoomBoundaries-ResponseData.json */; };
@@ -1269,6 +1274,17 @@
 		63D3873923D7AB1200BBC378 /* PPAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3873723D7AB1200BBC378 /* PPAddress.m */; };
 		63DC1D10215A98EF0091FB2D /* PPLocationNarrative.h in Headers */ = {isa = PBXBuildFile; fileRef = 63DC1D0E215A98EF0091FB2D /* PPLocationNarrative.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63DC1D11215A98EF0091FB2D /* PPLocationNarrative.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DC1D0F215A98EF0091FB2D /* PPLocationNarrative.m */; };
+		63DEE9AC27FCAEF600D7957C /* PPTCCopying.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B47FF248AFA7D00124F6A /* PPTCCopying.m */; };
+		63DEE9AD27FCAF0500D7957C /* PPTCVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636DCC0F2493F9BA000560E8 /* PPTCVersion.swift */; };
+		63DEE9AF27FCAF1300D7957C /* PPTCDateUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B47F5248AFA7B00124F6A /* PPTCDateUtilities.m */; };
+		63DEE9B027FCAF5000D7957C /* PPTCLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A7143E25AD00510009E43D /* PPTCLocalization.swift */; };
+		63DEE9B127FCB08C00D7957C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63A712B525ACF8E60009E43D /* Localizable.strings */; };
+		63DEE9B227FCB09800D7957C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63CF579D27C037A900C4D9F2 /* InfoPlist.strings */; };
+		63DEE9B327FCB09F00D7957C /* Peoplepower-Attributions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63EC62E8219A44AE0054010D /* Peoplepower-Attributions.plist */; };
+		63DEE9B527FCB0A700D7957C /* Peoplepower-Info-watchOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 630BDC5524B393480035D8B3 /* Peoplepower-Info-watchOS.plist */; };
+		63DEE9B627FCB0AA00D7957C /* Peoplepower-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 637A632B206C44B000F7876D /* Peoplepower-Config.plist */; };
+		63DEE9B727FCB0C000D7957C /* Peoplepower-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 63D39315204F3A0900041C1A /* Peoplepower-Prefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		63DEE9B827FCB0CB00D7957C /* Peoplepower.m in Sources */ = {isa = PBXBuildFile; fileRef = 635C5B9B259AA12700FD3BC5 /* Peoplepower.m */; };
 		63E62AB7249196B30038A694 /* Peoplepower-Resources.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 63E62AB6249196B30038A694 /* Peoplepower-Resources.podspec */; };
 		63EC62E9219A44AE0054010D /* Peoplepower-Attributions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63EC62E8219A44AE0054010D /* Peoplepower-Attributions.plist */; };
 /* End PBXBuildFile section */
@@ -1280,6 +1296,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 63BEC9AB20C5D2AA00408494;
 			remoteInfo = Peoplepower;
+		};
+		63C2A26727F69E6700E2DFC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63D392B5204F21EE00041C1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 630BDC4A24B392400035D8B3;
+			remoteInfo = "Peoplepower watchOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -1869,7 +1892,8 @@
 		63B5283D2682808E007EA64B /* Login-PutPublicKey-ResponseData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Login-PutPublicKey-ResponseData.json"; sourceTree = "<group>"; };
 		63BEC9AC20C5D2AA00408494 /* Peoplepower.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Peoplepower.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BEC9AF20C5D2AB00408494 /* Peoplepower-Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Peoplepower-Info-iOS.plist"; sourceTree = "<group>"; };
-		63BEC9B420C5D2AB00408494 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		63BEC9B420C5D2AB00408494 /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63C2A26227F69E6700E2DFC1 /* Tests watchOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests watchOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C7C9FD2098015D00967C4C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		63C7C9FF2098016700967C4C /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		63C7CA012098017800967C4C /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
@@ -2177,6 +2201,16 @@
 				630EB9AB24948778002D5614 /* SocketRocket.framework in Frameworks */,
 				630EB9AC24948778002D5614 /* UICKeyChainStore.framework in Frameworks */,
 				630EB9B22494893E002D5614 /* Realm.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63C2A25F27F69E6700E2DFC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63C2A28427FCA87500E2DFC1 /* AFNetworking.framework in Frameworks */,
+				63C2A28527FCA87500E2DFC1 /* KissXML.framework in Frameworks */,
+				63C2A28627FCA87500E2DFC1 /* UICKeyChainStore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3079,8 +3113,9 @@
 			isa = PBXGroup;
 			children = (
 				63BEC9AC20C5D2AA00408494 /* Peoplepower.framework */,
-				63BEC9B420C5D2AB00408494 /* Tests.xctest */,
+				63BEC9B420C5D2AB00408494 /* Tests iOS.xctest */,
 				630BDC4B24B392400035D8B3 /* Peoplepower.framework */,
+				63C2A26227F69E6700E2DFC1 /* Tests watchOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -3820,6 +3855,7 @@
 				630BDD8224B3AAF10035D8B3 /* PPDynamicUIScreenSectionItem.h in Headers */,
 				630BDDB624B3AAFF0035D8B3 /* PPDeviceTypeInstallationInstructions.h in Headers */,
 				630BDD2824B3AABA0035D8B3 /* PPDeviceDataRequest.h in Headers */,
+				63DEE9B727FCB0C000D7957C /* Peoplepower-Prefix.pch in Headers */,
 				630BDDE824B3AB110035D8B3 /* PPCircleDevicePictureFrame.h in Headers */,
 				630BDDCE24B3AB080035D8B3 /* PPCommunityPostReminder.h in Headers */,
 				630BDD5824B3AAD20035D8B3 /* PPSMSSubscriber.h in Headers */,
@@ -4183,9 +4219,9 @@
 			productReference = 63BEC9AC20C5D2AA00408494 /* Peoplepower.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		63BEC9B320C5D2AB00408494 /* Tests */ = {
+		63BEC9B320C5D2AB00408494 /* Tests iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 63BEC9C720C5D2AB00408494 /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildConfigurationList = 63BEC9C720C5D2AB00408494 /* Build configuration list for PBXNativeTarget "Tests iOS" */;
 			buildPhases = (
 				63BEC9B020C5D2AB00408494 /* Sources */,
 				63BEC9B120C5D2AB00408494 /* Frameworks */,
@@ -4197,9 +4233,28 @@
 			dependencies = (
 				631A7A9C248B0AD500D86CFF /* PBXTargetDependency */,
 			);
-			name = Tests;
+			name = "Tests iOS";
 			productName = "PPiOSCore-FrameworkTests";
-			productReference = 63BEC9B420C5D2AB00408494 /* Tests.xctest */;
+			productReference = 63BEC9B420C5D2AB00408494 /* Tests iOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		63C2A26127F69E6700E2DFC1 /* Tests watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63C2A26B27F69E6700E2DFC1 /* Build configuration list for PBXNativeTarget "Tests watchOS" */;
+			buildPhases = (
+				63C2A25E27F69E6700E2DFC1 /* Sources */,
+				63C2A25F27F69E6700E2DFC1 /* Frameworks */,
+				63C2A26027F69E6700E2DFC1 /* Resources */,
+				63C2A28F27FCAB0700E2DFC1 /* Carthage */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				63C2A26827F69E6700E2DFC1 /* PBXTargetDependency */,
+			);
+			name = "Tests watchOS";
+			productName = "Tests watchOS";
+			productReference = 63C2A26227F69E6700E2DFC1 /* Tests watchOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -4226,6 +4281,10 @@
 						LastSwiftMigration = 1150;
 						ProvisioningStyle = Automatic;
 					};
+					63C2A26127F69E6700E2DFC1 = {
+						CreatedOnToolsVersion = 13.2;
+						LastSwiftMigration = 1320;
+					};
 				};
 			};
 			buildConfigurationList = 63D392B8204F21EE00041C1A /* Build configuration list for PBXProject "Peoplepower" */;
@@ -4245,7 +4304,8 @@
 			targets = (
 				63BEC9AB20C5D2AA00408494 /* Peoplepower iOS */,
 				630BDC4A24B392400035D8B3 /* Peoplepower watchOS */,
-				63BEC9B320C5D2AB00408494 /* Tests */,
+				63BEC9B320C5D2AB00408494 /* Tests iOS */,
+				63C2A26127F69E6700E2DFC1 /* Tests watchOS */,
 			);
 		};
 /* End PBXProject section */
@@ -4255,6 +4315,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63DEE9B127FCB08C00D7957C /* Localizable.strings in Resources */,
+				63DEE9B527FCB0A700D7957C /* Peoplepower-Info-watchOS.plist in Resources */,
+				63DEE9B327FCB09F00D7957C /* Peoplepower-Attributions.plist in Resources */,
+				63DEE9B627FCB0AA00D7957C /* Peoplepower-Config.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4262,7 +4326,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				630BDC5624B393480035D8B3 /* Peoplepower-Info-watchOS.plist in Resources */,
 				631A7AA8248B171000D86CFF /* Peoplepower-Config.plist in Resources */,
 				63EC62E9219A44AE0054010D /* Peoplepower-Attributions.plist in Resources */,
 				63A712B325ACF8E60009E43D /* Localizable.strings in Resources */,
@@ -4578,6 +4641,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		63C2A26027F69E6700E2DFC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63DEE9B227FCB09800D7957C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -4594,6 +4665,26 @@
 			name = Carthage;
 			outputFileListPaths = (
 				"$(SRCROOT)/output.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		63C2A28F27FCAB0700E2DFC1 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/input_watchOS.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = Carthage;
+			outputFileListPaths = (
+				"$(SRCROOT)/output_watchOS.xcfilelist",
 			);
 			outputPaths = (
 			);
@@ -4804,6 +4895,7 @@
 				630BDD4324B3AAC90035D8B3 /* PPCrowdFeedbackTicket.m in Sources */,
 				630BDC9D24B3A65C0035D8B3 /* PPUserBadge.m in Sources */,
 				630BDD3924B3AAC20035D8B3 /* PPNotificationToken.m in Sources */,
+				63DEE9B827FCB0CB00D7957C /* Peoplepower.m in Sources */,
 				630BDCC324B3A69C0035D8B3 /* PPRuleComponentParameterValue.m in Sources */,
 				630BDDDD24B3AB0D0035D8B3 /* PPFriends.m in Sources */,
 				630BDCA224B3A65C0035D8B3 /* PPUserAccounts.m in Sources */,
@@ -5120,6 +5212,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		63C2A25E27F69E6700E2DFC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63DEE9B027FCAF5000D7957C /* PPTCLocalization.swift in Sources */,
+				63DEE9AC27FCAEF600D7957C /* PPTCCopying.m in Sources */,
+				63DEE9AD27FCAF0500D7957C /* PPTCVersion.swift in Sources */,
+				63C2A28E27FCA9ED00E2DFC1 /* PPTCBaseModel.swift in Sources */,
+				63C2A28827FCA95600E2DFC1 /* PPTCBaseModel.m in Sources */,
+				63C2A28727FCA94000E2DFC1 /* PPBaseTestCase.m in Sources */,
+				63DEE9AF27FCAF1300D7957C /* PPTCDateUtilities.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -5127,6 +5233,11 @@
 			isa = PBXTargetDependency;
 			target = 63BEC9AB20C5D2AA00408494 /* Peoplepower iOS */;
 			targetProxy = 631A7A9B248B0AD500D86CFF /* PBXContainerItemProxy */;
+		};
+		63C2A26827F69E6700E2DFC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 630BDC4A24B392400035D8B3 /* Peoplepower watchOS */;
+			targetProxy = 63C2A26727F69E6700E2DFC1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -5359,6 +5470,76 @@
 			};
 			name = Release;
 		};
+		63C2A26927F69E6700E2DFC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.5;
+				DEVELOPMENT_TEAM = EAWY6XBUH2;
+				"EXCLUDED_ARCHS[sdk=watchsimulator*]" = arm64;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/watchOS";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LD_RUNPATH_SEARCH_PATHS_SHALLOW_BUNDLE_$(SHALLOW_BUNDLE))",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.peoplepowerco.lib.Peoplepower.iOS.Tests.Tests-watchOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "Tests/Tests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Debug;
+		};
+		63C2A26A27F69E6700E2DFC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.5;
+				DEVELOPMENT_TEAM = EAWY6XBUH2;
+				"EXCLUDED_ARCHS[sdk=watchsimulator*]" = arm64;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/watchOS";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LD_RUNPATH_SEARCH_PATHS_SHALLOW_BUNDLE_$(SHALLOW_BUNDLE))",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.peoplepowerco.lib.Peoplepower.iOS.Tests.Tests-watchOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "Tests/Tests-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Release;
+		};
 		63D392C4204F21EE00041C1A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -5503,11 +5684,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		63BEC9C720C5D2AB00408494 /* Build configuration list for PBXNativeTarget "Tests" */ = {
+		63BEC9C720C5D2AB00408494 /* Build configuration list for PBXNativeTarget "Tests iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				63BEC9C820C5D2AB00408494 /* Debug */,
 				63BEC9C920C5D2AB00408494 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63C2A26B27F69E6700E2DFC1 /* Build configuration list for PBXNativeTarget "Tests watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63C2A26927F69E6700E2DFC1 /* Debug */,
+				63C2A26A27F69E6700E2DFC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

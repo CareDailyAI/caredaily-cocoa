@@ -12,6 +12,8 @@
 
 + (void)disableTracking:(BOOL)disabled;
 
++ (NSBundle *)bundle;
+
 + (NSString * _Nonnull )appName:(BOOL)apiFriendly;
 + (NSString * _Nonnull )brandName;
 + (NSString * _Nonnull )urlScheme;
