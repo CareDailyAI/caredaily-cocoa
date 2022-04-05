@@ -9,6 +9,7 @@
 #import "PPBaseTestCase.h"
 
 #import <Peoplepower/PPNSData.h>
+#import <Realm/Realm.h>
 #if !TARGET_OS_WATCH
 #import <OHHTTPStubs/OHHTTPStubs.h>
 #endif

@@ -7,7 +7,7 @@
 
 #import "PPBaseModel.h"
 
-@interface PPVersion : NSObject
+@interface PPVersion : RLMObject
 
 + (PPVersion * _Nonnull )myVersion;
 
