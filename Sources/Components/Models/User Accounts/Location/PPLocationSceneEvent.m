@@ -69,26 +69,26 @@
     NSString *localizedEventString;;
     
     if([[event uppercaseString] rangeOfString:EVENT_HOME].location != NSNotFound) {
-        localizedEventString = NSLocalizedStringWithDefaultValue(@"location.event.home", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Home", @"Home");
+        localizedEventString = NSLocalizedStringWithDefaultValue(@"location.event.home", nil, [PPBaseModel bundle], @"Home", @"Home");
     }
     else if([[event uppercaseString] rangeOfString:EVENT_AWAY].location != NSNotFound) {
-        localizedEventString = NSLocalizedStringWithDefaultValue(@"location.event.away", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Away", @"Away");
+        localizedEventString = NSLocalizedStringWithDefaultValue(@"location.event.away", nil, [PPBaseModel bundle], @"Away", @"Away");
     }
     else if([[event uppercaseString] rangeOfString:EVENT_VACATION].location != NSNotFound) {
-        localizedEventString = NSLocalizedStringWithDefaultValue(@"location.event.vacation", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Vacation", @"Vacation");
+        localizedEventString = NSLocalizedStringWithDefaultValue(@"location.event.vacation", nil, [PPBaseModel bundle], @"Vacation", @"Vacation");
     }
     else if([[event uppercaseString] rangeOfString:EVENT_SLEEP].location != NSNotFound) {
-        localizedEventString = NSLocalizedStringWithDefaultValue(@"location.event.sleep", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Sleep", @"Sleep");
+        localizedEventString = NSLocalizedStringWithDefaultValue(@"location.event.sleep", nil, [PPBaseModel bundle], @"Sleep", @"Sleep");
     }
     else if([[event uppercaseString] rangeOfString:EVENT_TEST].location != NSNotFound) {
-        localizedEventString = NSLocalizedStringWithDefaultValue(@"location.event.test", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Test", @"Test");
+        localizedEventString = NSLocalizedStringWithDefaultValue(@"location.event.test", nil, [PPBaseModel bundle], @"Test", @"Test");
     }
     else if([[event uppercaseString] rangeOfString:EVENT_STAY].location != NSNotFound) {
-        localizedEventString = NSLocalizedStringWithDefaultValue(@"location.event.stay", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Stay", @"Stay");
+        localizedEventString = NSLocalizedStringWithDefaultValue(@"location.event.stay", nil, [PPBaseModel bundle], @"Stay", @"Stay");
     }
     else {
         // In the case of a translation failure, default to "Home" mode.
-        localizedEventString = NSLocalizedStringWithDefaultValue(@"location.event.home", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Home", @"Home");
+        localizedEventString = NSLocalizedStringWithDefaultValue(@"location.event.home", nil, [PPBaseModel bundle], @"Home", @"Home");
     }
     
     return localizedEventString;
@@ -96,22 +96,22 @@
 
 + (NSString *)nonLocalizedEventString:(NSString *)event {
     NSString *nonLocalizedEventString = event;
-    if([[event uppercaseString] rangeOfString:[NSLocalizedStringWithDefaultValue(@"location.event.home", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Home", @"Home") uppercaseString]].location != NSNotFound) {
+    if([[event uppercaseString] rangeOfString:[NSLocalizedStringWithDefaultValue(@"location.event.home", nil, [PPBaseModel bundle], @"Home", @"Home") uppercaseString]].location != NSNotFound) {
         nonLocalizedEventString = EVENT_HOME;
     }
-    else if([[event uppercaseString] rangeOfString:[NSLocalizedStringWithDefaultValue(@"location.event.away", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Away", @"Away") uppercaseString]].location != NSNotFound) {
+    else if([[event uppercaseString] rangeOfString:[NSLocalizedStringWithDefaultValue(@"location.event.away", nil, [PPBaseModel bundle], @"Away", @"Away") uppercaseString]].location != NSNotFound) {
         nonLocalizedEventString = EVENT_AWAY;
     }
-    else if([[event uppercaseString] rangeOfString:[NSLocalizedStringWithDefaultValue(@"location.event.vacation", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Vacation", @"Vacation") uppercaseString]].location != NSNotFound) {
+    else if([[event uppercaseString] rangeOfString:[NSLocalizedStringWithDefaultValue(@"location.event.vacation", nil, [PPBaseModel bundle], @"Vacation", @"Vacation") uppercaseString]].location != NSNotFound) {
         nonLocalizedEventString = EVENT_VACATION;
     }
-    else if([[event uppercaseString] rangeOfString:[NSLocalizedStringWithDefaultValue(@"location.event.sleep", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Sleep", @"Sleep") uppercaseString]].location != NSNotFound) {
+    else if([[event uppercaseString] rangeOfString:[NSLocalizedStringWithDefaultValue(@"location.event.sleep", nil, [PPBaseModel bundle], @"Sleep", @"Sleep") uppercaseString]].location != NSNotFound) {
         nonLocalizedEventString = EVENT_SLEEP;
     }
-    else if([[event uppercaseString] rangeOfString:[NSLocalizedStringWithDefaultValue(@"location.event.test", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Test", @"Test") uppercaseString]].location != NSNotFound) {
+    else if([[event uppercaseString] rangeOfString:[NSLocalizedStringWithDefaultValue(@"location.event.test", nil, [PPBaseModel bundle], @"Test", @"Test") uppercaseString]].location != NSNotFound) {
         nonLocalizedEventString = EVENT_TEST;
     }
-    else if([[event uppercaseString] rangeOfString:[NSLocalizedStringWithDefaultValue(@"location.event.stay", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Stay", @"Stay") uppercaseString]].location != NSNotFound) {
+    else if([[event uppercaseString] rangeOfString:[NSLocalizedStringWithDefaultValue(@"location.event.stay", nil, [PPBaseModel bundle], @"Stay", @"Stay") uppercaseString]].location != NSNotFound) {
         nonLocalizedEventString = EVENT_STAY;
     }
     

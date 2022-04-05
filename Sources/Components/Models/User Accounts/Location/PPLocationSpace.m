@@ -71,51 +71,51 @@
 + (NSString *)localizedNameForSpaceType:(PPLocationSpaceType)spaceType {
     switch (spaceType) {
         case PPLocationSpaceTypeUndefined:
-            return NSLocalizedStringWithDefaultValue(@"location.space.name.undefined", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Undefined", @"Undefined");
+            return NSLocalizedStringWithDefaultValue(@"location.space.name.undefined", nil, [PPBaseModel bundle], @"Undefined", @"Undefined");
             break;
         case PPLocationSpaceTypeKitchen:
-            return NSLocalizedStringWithDefaultValue(@"location.space.name.kitchen", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Kitchen", @"Kitchen");
+            return NSLocalizedStringWithDefaultValue(@"location.space.name.kitchen", nil, [PPBaseModel bundle], @"Kitchen", @"Kitchen");
             break;
         case PPLocationSpaceTypeBedroom:
-            return NSLocalizedStringWithDefaultValue(@"location.space.name.bedroom", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Bedroom", @"Bedroom");
+            return NSLocalizedStringWithDefaultValue(@"location.space.name.bedroom", nil, [PPBaseModel bundle], @"Bedroom", @"Bedroom");
             break;
         case PPLocationSpaceTypeBathroom:
-            return NSLocalizedStringWithDefaultValue(@"location.space.name.bathroom", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Bathroom", @"Bathroom");
+            return NSLocalizedStringWithDefaultValue(@"location.space.name.bathroom", nil, [PPBaseModel bundle], @"Bathroom", @"Bathroom");
             break;
         case PPLocationSpaceTypeHallway:
-            return NSLocalizedStringWithDefaultValue(@"location.space.name.hallway", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Hallway", @"Hallway");
+            return NSLocalizedStringWithDefaultValue(@"location.space.name.hallway", nil, [PPBaseModel bundle], @"Hallway", @"Hallway");
             break;
         case PPLocationSpaceTypeLivingRoom:
-            return NSLocalizedStringWithDefaultValue(@"location.space.name.livingroom", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Living Room", @"Living Room");
+            return NSLocalizedStringWithDefaultValue(@"location.space.name.livingroom", nil, [PPBaseModel bundle], @"Living Room", @"Living Room");
             break;
         case PPLocationSpaceTypeDiningRoom:
-            return NSLocalizedStringWithDefaultValue(@"location.space.name.diningroom", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Dining Room", @"Dining Room");
+            return NSLocalizedStringWithDefaultValue(@"location.space.name.diningroom", nil, [PPBaseModel bundle], @"Dining Room", @"Dining Room");
             break;
         case PPLocationSpaceTypeFamilyRoom:
-            return NSLocalizedStringWithDefaultValue(@"location.space.name.familyroom", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Family Room", @"Family Room");
+            return NSLocalizedStringWithDefaultValue(@"location.space.name.familyroom", nil, [PPBaseModel bundle], @"Family Room", @"Family Room");
             break;
         case PPLocationSpaceTypeLaundryRoom:
-            return NSLocalizedStringWithDefaultValue(@"location.space.name.laundryroom", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Laundry Room", @"Laundry Room");
+            return NSLocalizedStringWithDefaultValue(@"location.space.name.laundryroom", nil, [PPBaseModel bundle], @"Laundry Room", @"Laundry Room");
             break;
         case PPLocationSpaceTypeOffice:
-            return NSLocalizedStringWithDefaultValue(@"location.space.name.office", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Office", @"Office");
+            return NSLocalizedStringWithDefaultValue(@"location.space.name.office", nil, [PPBaseModel bundle], @"Office", @"Office");
             break;
         case PPLocationSpaceTypeStairs:
-            return NSLocalizedStringWithDefaultValue(@"location.space.name.stairs", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Stairs", @"Stairs");
+            return NSLocalizedStringWithDefaultValue(@"location.space.name.stairs", nil, [PPBaseModel bundle], @"Stairs", @"Stairs");
             break;
         case PPLocationSpaceTypeGarage:
-            return NSLocalizedStringWithDefaultValue(@"location.space.name.garage", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Garage", @"Garage");
+            return NSLocalizedStringWithDefaultValue(@"location.space.name.garage", nil, [PPBaseModel bundle], @"Garage", @"Garage");
             break;
         case PPLocationSpaceTypeBasement:
-            return NSLocalizedStringWithDefaultValue(@"location.space.name.basement", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Basement", @"Basement");
+            return NSLocalizedStringWithDefaultValue(@"location.space.name.basement", nil, [PPBaseModel bundle], @"Basement", @"Basement");
             break;
         case PPLocationSpaceTypeNone:
         case PPLocationSpaceTypeOther:
-            return NSLocalizedStringWithDefaultValue(@"location.space.name.other", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Other", @"Other");
+            return NSLocalizedStringWithDefaultValue(@"location.space.name.other", nil, [PPBaseModel bundle], @"Other", @"Other");
             break;
             
         default:
-            return NSLocalizedStringWithDefaultValue(@"location.space.name.none", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"None", @"None");
+            return NSLocalizedStringWithDefaultValue(@"location.space.name.none", nil, [PPBaseModel bundle], @"None", @"None");
             break;
     }
     return nil;

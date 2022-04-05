@@ -87,13 +87,61 @@ static NSString *moduleName = @"DeviceMeasurements";
  * @ param locationId PPLocationId Access the device on a specific location, only called by administrator accounts
  * @ param callback PPErrorBlock Error callback block
  **/
-- (void)testSendCommand {
+- (void)testSendCommandSet {
     NSString *methodName = @"SendCommand";
     XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
     
     [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/devices/%@/parameters", self.device.deviceId] statusCode:200 headers:nil];
     
-    [PPDeviceMeasurements sendCommand:self.device.deviceId params:self.parameters commandTimeout:PPDeviceCommandTimeoutDefault locationId:self.device.locationId comment:nil shared:PPDeviceSharedNone commandType:0 skipProspect:true callback:^(NSArray *commands, NSError *error) {
+    [PPDeviceMeasurements sendCommand:self.device.deviceId params:self.parameters commandTimeout:PPDeviceCommandTimeoutDefault locationId:self.device.locationId comment:nil shared:PPDeviceSharedNone commandType:PPDeviceMeasurementsCommandTypeSet skipProspect:true callback:^(NSArray *commands, NSError *error) {
+        
+        XCTAssertNil(error);
+        [expectation fulfill];
+        
+    }];
+    
+    [self waitForExpectations:@[expectation] timeout:10.0];
+}
+- (void)testSendCommandGet {
+    NSString *methodName = @"SendCommand";
+    XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
+    
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/devices/%@/parameters", self.device.deviceId] statusCode:200 headers:nil];
+    
+    NSMutableArray *parameters = @[
+        [PPDeviceParameter initWithDictionary:@{@"name": @"mobileSignal"}]
+    ].mutableCopy;
+    [PPDeviceMeasurements sendCommand:self.device.deviceId params:parameters commandTimeout:PPDeviceCommandTimeoutDefault locationId:self.device.locationId comment:nil shared:PPDeviceSharedNone commandType:PPDeviceMeasurementsCommandTypeGet skipProspect:false callback:^(NSArray *commands, NSError *error) {
+        
+        XCTAssertNil(error);
+        [expectation fulfill];
+        
+    }];
+    
+    [self waitForExpectations:@[expectation] timeout:10.0];
+}
+- (void)testSendCommandUpdate {
+    NSString *methodName = @"SendCommand";
+    XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
+    
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/devices/%@/parameters", self.device.deviceId] statusCode:200 headers:nil];
+    
+    [PPDeviceMeasurements sendCommand:self.device.deviceId params:self.parameters commandTimeout:PPDeviceCommandTimeoutDefault locationId:self.device.locationId comment:nil shared:PPDeviceSharedNone commandType:PPDeviceMeasurementsCommandTypeUpdate skipProspect:true callback:^(NSArray *commands, NSError *error) {
+        
+        XCTAssertNil(error);
+        [expectation fulfill];
+        
+    }];
+    
+    [self waitForExpectations:@[expectation] timeout:10.0];
+}
+- (void)testSendCommandDelete {
+    NSString *methodName = @"SendCommand";
+    XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
+    
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/devices/%@/parameters", self.device.deviceId] statusCode:200 headers:nil];
+    
+    [PPDeviceMeasurements sendCommand:self.device.deviceId params:self.parameters commandTimeout:PPDeviceCommandTimeoutDefault locationId:self.device.locationId comment:nil shared:PPDeviceSharedNone commandType:PPDeviceMeasurementsCommandTypeDelete skipProspect:true callback:^(NSArray *commands, NSError *error) {
         
         XCTAssertNil(error);
         [expectation fulfill];

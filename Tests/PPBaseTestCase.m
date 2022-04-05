@@ -8,7 +8,9 @@
 
 #import "PPBaseTestCase.h"
 #import <Peoplepower/PPNSData.h>
+#if !TARGET_OS_WATCH
 #import <OHHTTPStubs/OHHTTPStubs.h>
+#endif
 
 @implementation PPBaseTestCase
 
@@ -20,6 +22,7 @@
 }
 
 - (void)stubRequestForModule:(NSString *)moduleName methodName:(NSString *)methodName ofType:(NSString *)type path:(NSString *)path statusCode:(int)statusCode headers:(NSDictionary *)headers {
+#if !TARGET_OS_WATCH
     [HTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest * _Nonnull request) {
         return [request.URL.path isEqualToString:path] || [request.URL.path isEqualToString:[NSString stringWithFormat:@"/espapi%@", path]];
     } withStubResponse:^HTTPStubsResponse * _Nonnull(NSURLRequest * _Nonnull request) {
@@ -60,5 +63,6 @@
             return nil;
         }
     }];
+#endif
 }
 @end

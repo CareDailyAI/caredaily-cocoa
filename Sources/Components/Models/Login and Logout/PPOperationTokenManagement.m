@@ -121,7 +121,7 @@
     if(lockString != nil && ![lockString isEqualToString:@""]) {
         NSTimeInterval lockTime = lockString.floatValue;
         NSTimeInterval now = [[NSDate date] timeIntervalSince1970] * 1000;
-        *lockError = [PPBaseModel resultCodeToNSError:16 originatingClass:NSStringFromClass([self class]) argument:[NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"error.code.16.accountlocked", nil, [NSBundle bundleWithIdentifier:@"com.peoplepowerco.lib.Peoplepower.iOS"], @"Account is locked until %@", @"Error - Account is locked until {lockTime}"), [NSDateFormatter localizedStringFromDate:[NSDate dateWithTimeIntervalSince1970:(lockTime / 1000)] dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle]]];
+        *lockError = [PPBaseModel resultCodeToNSError:16 originatingClass:NSStringFromClass([self class]) argument:[NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"error.code.16.accountlocked", nil, [PPBaseModel bundle], @"Account is locked until %@", @"Error - Account is locked until {lockTime}"), [NSDateFormatter localizedStringFromDate:[NSDate dateWithTimeIntervalSince1970:(lockTime / 1000)] dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle]]];
         if(lockTime > now) {
             return YES;
         }

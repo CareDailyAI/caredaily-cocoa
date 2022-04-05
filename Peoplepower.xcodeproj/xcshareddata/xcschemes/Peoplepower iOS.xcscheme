@@ -34,7 +34,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "63BEC9B320C5D2AB00408494"
                BuildableName = "Tests.xctest"
-               BlueprintName = "Tests"
+               BlueprintName = "Tests iOS"
                ReferencedContainer = "container:Peoplepower.xcodeproj">
             </BuildableReference>
             <SkippedTests>
