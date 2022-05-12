@@ -2374,6 +2374,8 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeId)  {
     PPDeviceTypeIdBlueLine = 1100,
     
     PPDeviceTypeIdVayyarHome = 2000,
+    PPDeviceTypeIdXandarKardian = 2001,
+    PPDeviceTypeIdWellvii = 2000,
     
     PPDeviceTypeIdMonsterThreeSocketMonitorControl = 2013,
     PPDeviceTypeIdMonsterOneSocketMonitorControl = 2012,
@@ -2394,6 +2396,8 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeId)  {
     PPDeviceTypeIdHoneywellThermostat = 4230,
     PPDeviceTypeIdEcobeeThermostat = 4240,
     PPDeviceTypeIdEmersonThermostat = 4260,
+    
+    PPDeviceTypeIdEversensor = 4311,
     
     PPDeviceTypeIdIndoorCamera = 7000,
     PPDeviceTypeIdFoscamIPCamera = 7001,
