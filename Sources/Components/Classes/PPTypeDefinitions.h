@@ -814,6 +814,11 @@ typedef NS_OPTIONS(NSInteger, PPDeviceParametersOutletStatus) {
     PPDeviceParametersOutletStatusOn = 1
 };
 
+typedef NS_OPTIONS(NSInteger, PPDeviceParametersBreakerStatus) {
+    PPDeviceParametersBreakerStatusOff = 0,
+    PPDeviceParametersBreakerStatusOn = 1
+};
+
 typedef NS_OPTIONS(NSInteger, PPDeviceParametersPowerStatus) {
     PPDeviceParametersPowerStatusOff = 0,
     PPDeviceParametersPowerStatusOn = 1
@@ -2371,6 +2376,9 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeId)  {
     PPDeviceTypeIdTedNet1002 = 1002,
     PPDeviceTypeIdTedStandalone1003 = 1003,
     PPDeviceTypeIdTedGateway1004 = 1004,
+    
+    PPDeviceTypeIdEatonSmartBreaker = 1030,
+    
     PPDeviceTypeIdBlueLine = 1100,
     
     PPDeviceTypeIdVayyarHome = 2000,
@@ -3287,6 +3295,7 @@ typedef NS_OPTIONS(NSInteger, PPVayyarContextId) {
 #define OUTLET_STATUS @"outletStatus"
 #define POWER @"power"
 #define ENERGY @"energy"
+#define BREAKER_STATUS @"breakerStatus"
 
 // Entry Sensor
 #define DOOR_STATUS @"doorStatus"
