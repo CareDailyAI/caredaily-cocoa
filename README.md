@@ -1,13 +1,13 @@
-# People Power Cocoa
+# Care Daily Cocoa
 
 ### Versioning
 
-* [People Power Cocoa](https://github.com/peoplepower/peoplepower-cocoa) v0.2
+* [Care Daily Cocoa](https://github.com/CareDailyAI/caredaily-cocoa) v1.0
 
 ## Table of contents
 
 * [What's included](#whats-included)
-* [Peoplepower Cocoa](#peoplepower-cocoa)
+* [Care Daily Cocoa](#caredaily-cocoa)
 * [Bugs and feature requests](#bugs-and-feature-requests)
 * [Versioning](#versioning)
 * [Creators](#creators)
@@ -19,7 +19,7 @@
 Within the download you'll find the following directories and files. You'll see something like this:
 
 ```
-peoplepower-cocoa/
+caredaily-cocoa/
 │
 ├── Sources/
 │	│
@@ -68,18 +68,18 @@ peoplepower-cocoa/
 └── Demo/
 ```
 
-## Peoplepower Cocoa
+## Care Daily Cocoa
 
-The People Power Cocoa framework includes APIs, models/classes, and utilities for a frontend application.
+The Care Daily Cocoa framework includes APIs, models/classes, and utilities for a frontend application.
 
 Use it to:
 
-* Incorporate People Power Models and APIs.  
+* Incorporate Care Daily Models and APIs.  
 * Define cloud and branding configurations
 
 For examples, please refer to the Demo project provided.
 
-For a complete definition of People Power's models and APIs, please refer to [IOT Apps](https://iotapps.docs.apiary.io/) on Apiary.
+For a complete definition of Care Daily's models and APIs, please refer to [IOT Apps](https://iotapps.docs.apiary.io/) on Apiary.
 
 ### Installation
 
@@ -89,24 +89,24 @@ In brief, Carthage is used to incorporate this frameworks source files and class
 
 ### Usage
 
-There are 2 ways to use this project.  You may choose to use the [Realm](https://realm.io) dependency to conveniently manage and store and people power classes within your application, or define your own processes for managing and storing classes.
+There are 2 ways to use this project.  You may choose to use the [Realm](https://realm.io) dependency to conveniently manage and store and Care Daily classes within your application, or define your own processes for managing and storing classes.
 
 To incorporate and use Realm within your application, use the git branch `rlm`. 
 To use this framework without the Realm dependency, use the git branch `master`. 
 
 ### Cloud and Brand configurations
 
-Default Cloud and Brand configurations are described in `Peoplepower-Config.plist`.  By default, this project points to the People Power sandbox server, with a default app name and brand name of "peoplepower".  The settings in this file may be overwritten by copying this file into your new application workspace and renaming the file to `Peoplepower-Config-Override.plist`.  Any or all of the settings may be overwritten.  
+Default Cloud and Brand configurations are described in `Peoplepower-Config.plist`.  By default, this project points to the Care Daily sandbox server, with a default app name and brand name of "peoplepower".  The settings in this file may be overwritten by copying this file into your new application workspace and renaming the file to `Peoplepower-Config-Override.plist`.  Any or all of the settings may be overwritten.  
 
 ## Bugs and feature requests
 
-For bugs and feature requests, submit an issue on GitHub [here](https://github.com/peoplepower/peoplepower-cocoa/issues)
+For bugs and feature requests, submit an issue on GitHub [here](https://github.com/CareDailyAI/caredaily-cocoa/issues)
 
 ## Versioning
 
-For transparency into our release cycle and in striving to maintain backward compatibility, Peoplepwer-Cocoa is maintained under [the Semantic Versioning guidelines](http://semver.org/) and uses [Apple's Framewok Versions](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/VersionInformation.html).
+For transparency into our release cycle and in striving to maintain backward compatibility, Care Daily Cocoa is maintained under [the Semantic Versioning guidelines](http://semver.org/) and uses [Apple's Framewok Versions](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/VersionInformation.html).
 
-See [the Releases section of the GitHub project](https://github.com/peoplepower/peoplepower-cocoa/releases) for changelogs for each release version.
+See [the Releases section of the GitHub project](https://github.com/CareDailyAI/caredaily-cocoa/releases) for changelogs for each release version.
 
 ## Creators
 
@@ -117,4 +117,4 @@ See [the Releases section of the GitHub project](https://github.com/peoplepower/
 
 ## Copyright and license
 
-Code and documentation Copyright 2021 People Power Co. [License](https://github.com/peoplepower/peoplepower-cocoa/blob/master/LICENSE).
+Code and documentation Copyright 2023 People Power Company. [License](https://github.com/CareDailyAI/caredaily-cocoa/blob/master/LICENSE).

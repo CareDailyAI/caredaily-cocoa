@@ -3,7 +3,7 @@
 //  Peoplepower
 //
 //  Created by Destry Teeter on 3/7/18.
-//  Copyright © 2020 People Power Company. All rights reserved.
+//  Copyright © 2023 People Power Company. All rights reserved.
 //
 // A user account represents a person who can use the services provided by the IoT Software Suite.
 // The IoT Software Suite enables developers to capture a wide range of information on a user, as needed to add value to the application. All the user fields below are optional, except when otherwise specified by the API.

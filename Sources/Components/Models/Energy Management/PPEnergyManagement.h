@@ -3,7 +3,7 @@
 //  Peoplepower
 //
 //  Created by Destry Teeter on 3/12/18.
-//  Copyright © 2020 People Power Company. All rights reserved.
+//  Copyright © 2023 People Power Company. All rights reserved.
 //
 // Electricity customers are billed on how much energy their homes, businesses, and appliances consume. The IoT Software Suite enables post-processing and analytics on energy measurements, to slice and dice the data as needed to create a valuable user experience.
 // The IoT Software Suite contains a Utility Rates Database in the backend to map utility names to their current rates and pricing information. This data can help smooth out the deployment of energy-related programs, and greatly improve the user experience by converting the nebulous units of kilowatt-hours into something more user friendly, like monetary value.

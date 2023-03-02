@@ -2,7 +2,7 @@
 //  PPHTTPOperation.h
 //  Peoplepower
 //
-//  Copyright (c) 2020 People Power. All rights reserved.
+//  Copyright (c) 2023 People Power Company. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

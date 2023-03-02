@@ -3,7 +3,7 @@
 //  Peoplepower
 //
 //  Created by Destry Teeter on 3/9/18.
-//  Copyright © 2020 People Power Company. All rights reserved.
+//  Copyright © 2023 People Power Company. All rights reserved.
 //
 // System Properties are one of the most useful tools to manage and synchronize the behavior of production apps, without releasing a new build of the app. System Properties are key/value pairs that are distributed across every user in the system. The values are plain text. System Properties have been used to specify default "Getting Started" videos to render, the Terms of Service signature ID's required to be signed, the quality of the video to render, and the level of debug information to receive from the user base back to the server.
 // User Properties are key/value pairs that are specific to a user, and can override System Properties. User properties can store arbitrary details about the user, beyond what the User Account and Location can store. For example, a developer may want to store the user's preferences for a particular application behavior.

@@ -3,7 +3,7 @@
 //  Peoplepower
 //
 //  Created by Destry Teeter on 3/9/18.
-//  Copyright © 2020 People Power Company. All rights reserved.
+//  Copyright © 2023 People Power Company. All rights reserved.
 //
 // It is possible for a user to send a message while remaining anonymous to other people within the Community Social Network. See user updates to specify anonymity.
 // The user has to be an administrator or approved in the organization to send and receive messages.

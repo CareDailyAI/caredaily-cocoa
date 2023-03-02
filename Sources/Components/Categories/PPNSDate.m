@@ -3,7 +3,7 @@
 //  Peoplepower
 //
 //  Created by Ryan Grimm on 2/11/13.
-//  Copyright (c) 2020 People Power. All rights reserved.
+//  Copyright (c) 2023 People Power Company. All rights reserved.
 //
 
 #import "PPNSDate.h"

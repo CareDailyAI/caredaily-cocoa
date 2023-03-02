@@ -2,7 +2,7 @@
 //  PPDeviceProxy.m
 //  Peoplepower
 //
-//  Copyright © 2020 People Power Company. All rights reserved.
+//  Copyright (c) 2023 People Power Company. All rights reserved.
 //
 
 #import "PPDeviceProxy.h"

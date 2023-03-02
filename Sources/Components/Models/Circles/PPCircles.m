@@ -3,7 +3,7 @@
 //  Peoplepower
 //
 //  Created by Destry Teeter on 3/13/18.
-//  Copyright © 2020 People Power Company. All rights reserved.
+//  Copyright © 2023 People Power Company. All rights reserved.
 //
 // A Circle is the formation of a group of people. A Circle is formed by a user, who then invites other people to the Circle. By default, the person who formed the Circle is the administrator; however, anyone may add premium services to the Circle and take over administration.
 // Circles also have storage. Unlike a user account's storage which has a finite cap to the total data, the storage for a Circle is limited only by aggregated data in and not by total data. This means the total storage is effectively infinite, but limited on a monthly basis by the amount of data flowing in. Any user within a Circle may upgrade the Circle to a "premium" account to increase the monthly flow rate into the Circle.

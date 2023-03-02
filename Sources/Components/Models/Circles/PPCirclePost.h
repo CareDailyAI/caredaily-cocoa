@@ -3,7 +3,7 @@
 //  Peoplepower
 //
 //  Created by Destry Teeter on 3/13/18.
-//  Copyright © 2020 People Power Company. All rights reserved.
+//  Copyright © 2023 People Power Company. All rights reserved.
 //
 // A circle member can post text content to the circle with linked multiple circle files.
 // All circle members can see all circle posts and reply to them. A user cannot reply to a reply.

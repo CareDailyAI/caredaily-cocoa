@@ -3,7 +3,7 @@
 //  Peoplepower
 //
 //  Created by Destry Teeter on 3/8/18.
-//  Copyright © 2020 People Power Company. All rights reserved.
+//  Copyright © 2023 People Power Company. All rights reserved.
 //
 // Device goals provide possible device usage scenarios. Depending on chosen device goal the IoT Software Suite assign default rules and suggest device installation.
 //

@@ -3,7 +3,7 @@
 //  Peoplepower
 //
 //  Created by Destry Teeter on 3/12/18.
-//  Copyright © 2020 People Power Company. All rights reserved.
+//  Copyright © 2023 People Power Company. All rights reserved.
 //
 // The Presence Application is one example user interface framework that is natively built to expand dynamically with the addition of new devices in the user's account. But some features that a user needs might not be physical devices, and they might not be subscriptions, so we need a way to add those software features to the user's account. The Dynamic UI API allows us to do just that.
 //

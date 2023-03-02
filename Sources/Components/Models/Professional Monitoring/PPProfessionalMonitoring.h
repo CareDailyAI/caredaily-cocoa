@@ -3,7 +3,7 @@
 //  Peoplepower
 //
 //  Created by Destry Teeter on 3/12/18.
-//  Copyright © 2020 People Power Company. All rights reserved.
+//  Copyright © 2023 People Power Company. All rights reserved.
 //
 // The IoT Software Suite is wired for professional monitoring. We connect with a 5-diamond certified central station in North America. This can be replaced with your own professional monitoring call center to enable international services and professional monitoring.
 //

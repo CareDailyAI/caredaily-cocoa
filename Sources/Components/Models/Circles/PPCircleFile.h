@@ -3,7 +3,7 @@
 //  Peoplepower
 //
 //  Created by Destry Teeter on 3/13/18.
-//  Copyright © 2020 People Power Company. All rights reserved.
+//  Copyright © 2023 People Power Company. All rights reserved.
 //
 // Files in Circles are completely separate from Files in your own personal account. The files belong to the Circle to be shared securely with everyone in the circle, not your account.
 // Files may have short descriptions. Also they are distinguished by types.

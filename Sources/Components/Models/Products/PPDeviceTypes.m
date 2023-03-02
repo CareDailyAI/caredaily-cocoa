@@ -3,7 +3,7 @@
 //  Peoplepower
 //
 //  Created by Destry Teeter on 3/13/18.
-//  Copyright © 2020 People Power Company. All rights reserved.
+//  Copyright © 2023 People Power Company. All rights reserved.
 //
 // The IoT Software Suite allows developers to create and manage new products. Each product defines a category to help organize UI's and groups of devices.
 // On the developer platform, only the creator of a product may see its existence. When the product is ready to move to a production the IoT Software Suite instance for commercial deployment, we migrate the product and parameter definitions to the production server.

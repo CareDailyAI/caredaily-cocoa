@@ -3,7 +3,7 @@
 //  Peoplepower
 //
 //  Created by Destry Teeter on 3/8/18.
-//  Copyright © 2020 People Power Company. All rights reserved.
+//  Copyright © 2023 People Power Company. All rights reserved.
 //
 // People Power designed, from the ground up, a natural language rules engine for the IoT Software Suite to intuitively orchestrate devices across multiple manufacturers and vendors. Rules take on the form "If This Then That", and can expand to many AND's or OR's: "If This and this and this and this, then that and that and that and that".
 // Complete sentences are formed to define a valid rule. Each sentence consists of phrases of the following types:

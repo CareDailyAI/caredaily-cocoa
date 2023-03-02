@@ -3,7 +3,7 @@
 //  Peoplepower
 //
 //  Created by Destry Teeter on 3/7/18.
-//  Copyright © 2020 People Power Company. All rights reserved.
+//  Copyright © 2023 People Power Company. All rights reserved.
 //
 // Devices must be added to a user's account to communicate data with the IoT Software Suite.
 // A device may be registered through this Application API using a smartphone phone or web portal. This is usually the easiest way for users to register a device.
