@@ -3,7 +3,7 @@
 //  Peoplepower
 //
 //  Created by Destry Teeter on 3/9/18.
-//  Copyright © 2020 People Power Company. All rights reserved.
+//  Copyright © 2023 People Power Company. All rights reserved.
 //
 // It is extremely important to communicate with your user base, and the IoT Software Suite enables communications more comprehensively than any other IoT platform in existence today. Whether it's sending messages to your users, allowing your users to talk to each other, or gather quantified feedback from the crowd to drive your roadmap, the IoT Software Suite takes user communications very seriously and provides a well rounded set of APIs to manage communications.
 // The IoT Software Suite supports the following types of user communications:

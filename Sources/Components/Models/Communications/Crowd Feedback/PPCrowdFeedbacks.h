@@ -3,7 +3,7 @@
 //  Peoplepower
 //
 //  Created by Destry Teeter on 3/9/18.
-//  Copyright © 2020 People Power Company. All rights reserved.
+//  Copyright © 2023 People Power Company. All rights reserved.
 //
 // Crowd feedback is first delivered to a support email for moderation. If the feedback is unique, then the support staff will make it public for other users to vote on.
 //

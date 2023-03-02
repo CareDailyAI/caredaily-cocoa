@@ -3,7 +3,7 @@
 //  Peoplepower
 //
 //  Created by Destry Teeter on 3/8/18.
-//  Copyright © 2020 People Power Company. All rights reserved.
+//  Copyright © 2023 People Power Company. All rights reserved.
 //
 // The IoT Software Suite interacts with devices and UI's through parameters. The command channel parameters to the device are completely separate from the measurement channel parameters back from the device; that is, if you send a command to a device outletStatus = 0, then the device must respond back with a measurement showing outletStatus = 0 before the UI is able to identify the state changed at the device.
 //

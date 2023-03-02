@@ -3,7 +3,7 @@
 //  Peoplepower
 //
 //  Created by Destry Teeter on 9/25/18.
-//  Copyright © 2020 People Power Company. All rights reserved.
+//  Copyright © 2023 People Power Company. All rights reserved.
 //
 // A way for bots to produce a narrative for a location - i.e. document someone's day, or security breaches, etc.
 //Friends and family who can switch into and view your location should be able to see your narrative. Administrators should also be able to access your narrative in Maestro for debugging / understanding / explanation of "why did that happen in my home?" purposes.

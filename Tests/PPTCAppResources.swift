@@ -3,7 +3,7 @@
 //  Peoplepower-Tests
 //
 //  Created by Destry Teeter on 6/12/20.
-//  Copyright © 2020 People Power Company. All rights reserved.
+//  Copyright © 2023 People Power Company. All rights reserved.
 //
 
 @testable import Peoplepower

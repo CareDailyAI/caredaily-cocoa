@@ -3,7 +3,7 @@
 //  Peoplepower
 //
 //  Created by Destry Teeter on 3/9/18.
-//  Copyright © 2020 People Power Company. All rights reserved.
+//  Copyright © 2023 People Power Company. All rights reserved.
 //
 // The IoT Software Suite securely manages sensitive binary files associated with a user's account. For example, these files may be videos, images, audio, or other types of data.
 // The storage system has a 10,240 byte write size. When uploading large files, it is recommended that the file is uploaded in chunk sizes that are multiples of 10 KB.

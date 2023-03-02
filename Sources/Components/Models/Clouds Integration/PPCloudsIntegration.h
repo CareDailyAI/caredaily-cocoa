@@ -3,7 +3,7 @@
 //  Peoplepower
 //
 //  Created by Destry Teeter on 3/13/18.
-//  Copyright © 2020 People Power Company. All rights reserved.
+//  Copyright © 2023 People Power Company. All rights reserved.
 //
 // OAuth 2.0 Client
 // OAuth 2.0 allows the IoT Software Suite to act as a client or a host for a third-party clouds.

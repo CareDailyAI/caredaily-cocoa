@@ -3,7 +3,7 @@
 //  Peoplepower iOS
 //
 //  Created by Destry Teeter on 4/26/21.
-//  Copyright © 2021 People Power Company. All rights reserved.
+//  Copyright © 2023 People Power Company. All rights reserved.
 //
 
 #import "PPBaseModel.h"

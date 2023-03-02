@@ -8,7 +8,7 @@
 ENV['WORKSPACE'] = "Peoplepower.xcworkspace"
 ENV['PROJECT'] = "Peoplepower.xcodeproj"
 
-ENV['GIT_REPOSITORY'] = "https://github.com/peoplepowerco/peoplepower-cocoa"
+ENV['GIT_REPOSITORY'] = "https://github.com/CareDailyAI/caredaily-cocoa"
 
 ENV['SLACK_CHANNEL_PRIVATE'] = "#ci-ios"
 ENV['PODSPEC_PATH'] = "Peoplepower-Resources.podspec"

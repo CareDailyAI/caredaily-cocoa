@@ -3,7 +3,7 @@
 //  Peoplepower
 //
 //  Created by Destry Teeter on 3/13/18.
-//  Copyright © 2020 People Power Company. All rights reserved.
+//  Copyright © 2023 People Power Company. All rights reserved.
 //
 // A parameter is an individual stream of data between a device and the IoT Software Suite. The IoT Software Suite enables parameters to be optimized for performance and storage, which facilitates massive scalability of the platform.
 // The IoT Software Suite has a single namespace for parameters. Each parameter name must contain no spaces, and include a prefix that is separated from the rest of the name by a period ('.'). We recommend prefixes that contain the initials of the company or organization. For example, People Power defines a custom parameter ppc.motionStatus to turn motion detection on and off on Presence cameras.

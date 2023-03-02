@@ -3,7 +3,7 @@
 //  Peoplepower
 //
 //  Created by Destry Teeter on 3/12/18.
-//  Copyright © 2020 People Power Company. All rights reserved.
+//  Copyright © 2023 People Power Company. All rights reserved.
 //
 // The IoT Software Suite allows to store application specific binary files associated with users, locations or devices. For example, apps can store user images (avatars), location plans, device installation pictures.
 // Files may be named. Also they are distinguished by types.

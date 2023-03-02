@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
 
   s.name         = "Peoplepower-Resources"
-  s.summary      = "People Power Resources."
-  s.description  = "Utility for retrieving Peoplepower Resources."
-  s.homepage     = "http://www.peoplepowerco.com"
+  s.summary      = "Care Daily Resources."
+  s.description  = "Utility for retrieving Care Daily Resources."
+  s.homepage     = "https://caredaily.ai"
   
-  s.license      = "Copyright © 2021 People Power Company. All rights reserved."
+  s.license      = "Copyright © 2023 People Power Company. All rights reserved."
   
   s.author             = { "Destry Teeter" => "destry.teeter@gmail.com" }
   s.social_media_url   = "http://twitter.com/DestryTeeter"
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 #  s.osx.deployment_target = "10.9"
 #  s.tvos.deployment_target = "9.0"
   
-  s.source       = { :git => "https://github.com/peoplepower/peoplepower-cocoa.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/CareDailyAI/caredaily-cocoa.git", :tag => "#{s.version}" }
   
   s.subspec 'iOS' do |ios|
     ios.resources = "Sources/*.{plist,strings}"
