@@ -51,7 +51,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSNumber<RLMInt> *exitDuration;
 
 /// Optional. Associated occupant IDs (default is an empty array).
-@property (strong, nonatomic) NSArray *occupantIds;
+@property (strong, nonatomic) RLMArray<RLMInt> *occupantIds;
 
 - (id)initWithDeviceId:(NSString *)deviceId
            subregionId:(PPVayyarSubregionId)subregionId
@@ -80,7 +80,7 @@ NS_ASSUME_NONNULL_BEGIN
         detectPresence:(BOOL)detectPresence
          enterDuration:(NSNumber *)enterDuration
           exitDuration:(NSNumber *)exitDuration
-           occupantIds:(NSArray *)occupantIds;
+           occupantIds:(RLMArray *)occupantIds;
 
 + (PPVayyarSubregion *)initWithDeviceId:(NSString *)deviceId data:(NSDictionary *)data;
 
