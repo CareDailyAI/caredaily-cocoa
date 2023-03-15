@@ -87,7 +87,9 @@ import Foundation
      *             "x_max_meters": x_max_meters,
      *             "x_min_meters": x_min_meters,
      *             "y_max_meters": y_max_meters,
-     *             "y_min_meters": y_min_meters
+     *             "y_min_meters": y_min_meters,
+     *             "occupant_ids": occupant_ids
+     *
      *         },
      *         ...
      *     ],
@@ -257,6 +259,7 @@ import Foundation
      * - `detectPresence` NSNumber Optional True to detect people, False to not detect people (default is True).
      * - `enterDuration` NSNumber Optional Number of seconds to wait until Vayyar Home declares someone entered this sub-region (default is 3 seconds).
      * - `exitDuration` NSNumber Optional Number of seconds to wait until Vayyar Home declares the sub-region is unoccupied (default is 3 seconds).
+     * - `occupantIds` NSArray Associated occupant IDs (default is an empty array).
      *
      * # Set Subregion Example
      *
@@ -273,7 +276,8 @@ import Foundation
      *     "detect_falls": detectFalls,
      *     "detect_presence": detectPresence,
      *     "enter_duration_s": enterDuration,
-     *     "exit_duration_s": exitDuration
+     *     "exit_duration_s": exitDuration,
+     *     "occupant_ids": occupant_ids
      * }
      * ```
      */
@@ -289,6 +293,7 @@ import Foundation
                                          detectPresence: NSNumber?,
                                          enterDuration: NSNumber?,
                                          exitDuration: NSNumber?,
+                                         occupantIds: NSArray?,
                                          locationId: PPLocationId,
                                          callback: @escaping ((Error?) -> (Void))) {
         let address = "set_vayyar_subregion"
@@ -306,8 +311,25 @@ import Foundation
         feed["detect_presence"] = detectPresence?.boolValue
         feed["enter_duration_s"] = enterDuration?.intValue
         feed["exit_duration_s"] = exitDuration?.intValue
+        feed["occupant_ids"] = occupantIds
         
         PPBotengine.postDataStream(.invdividual, address: address, locationId: locationId, organizationId: .none, feed: feed, appInstanceId: PPBotengineAppInstanceId.none.rawValue, callback: callback)
+    }
+    @available(*, deprecated)
+    @objc public class func setSubregion(_ deviceId: String,
+                                         subregionId: NSNumber?,
+                                         contextId: Int,
+                                         name: String?,
+                                         xMin: Double,
+                                         xMax: Double,
+                                         yMin: Double,
+                                         yMax: Double,
+                                         detectFalls: NSNumber?,
+                                         detectPresence: NSNumber?,
+                                         enterDuration: NSNumber?,
+                                         exitDuration: NSNumber?,
+                                         locationId: PPLocationId,
+                                         callback: @escaping ((Error?) -> (Void))) {
     }
 
     

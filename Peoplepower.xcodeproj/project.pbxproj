@@ -448,6 +448,7 @@
 		631DB29C21077D8900C2F8F1 /* PPCircleDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 631DB29A21077D8900C2F8F1 /* PPCircleDevice.m */; };
 		631F72F223BBC16600F98797 /* PPUserCommunity.h in Headers */ = {isa = PBXBuildFile; fileRef = 631F72F023BBC16600F98797 /* PPUserCommunity.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		631F72F323BBC16600F98797 /* PPUserCommunity.m in Sources */ = {isa = PBXBuildFile; fileRef = 631F72F123BBC16600F98797 /* PPUserCommunity.m */; };
+		6326A21729C28C520073AE76 /* SyntheticVayyarHome-SetSubregion-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 6326A21629C28C520073AE76 /* SyntheticVayyarHome-SetSubregion-ResponseData.json */; };
 		63284D6A25532DB6009B0466 /* PPTypeDefinitions.h in Headers */ = {isa = PBXBuildFile; fileRef = 63284D6925532DB6009B0466 /* PPTypeDefinitions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63284D6B25532DB6009B0466 /* PPTypeDefinitions.h in Headers */ = {isa = PBXBuildFile; fileRef = 63284D6925532DB6009B0466 /* PPTypeDefinitions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		634A523C27D5D322004B903A /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634A523927D5D322004B903A /* UICKeyChainStore.framework */; };
@@ -1322,6 +1323,7 @@
 		631F8483206435F30055C512 /* PPCloudConnectivityCloud.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPCloudConnectivityCloud.m; sourceTree = "<group>"; };
 		631F8485206436000055C512 /* PPCloudConnectivityServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPCloudConnectivityServer.h; sourceTree = "<group>"; };
 		631F8486206436000055C512 /* PPCloudConnectivityServer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPCloudConnectivityServer.m; sourceTree = "<group>"; };
+		6326A21629C28C520073AE76 /* SyntheticVayyarHome-SetSubregion-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "SyntheticVayyarHome-SetSubregion-ResponseData.json"; sourceTree = "<group>"; };
 		63284D6925532DB6009B0466 /* PPTypeDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPTypeDefinitions.h; sourceTree = "<group>"; };
 		634360AB206313D800B1DAE2 /* PPDeviceTypeDeviceModelBrand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPDeviceTypeDeviceModelBrand.h; sourceTree = "<group>"; };
 		634360AC206313D800B1DAE2 /* PPDeviceTypeDeviceModelBrand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPDeviceTypeDeviceModelBrand.m; sourceTree = "<group>"; };
@@ -2803,6 +2805,7 @@
 			children = (
 				63C8436E268E71FA00C6165E /* SyntheticVayyarHome-GetRoomBoundaries-ResponseData.json */,
 				63C84370268E72E300C6165E /* SyntheticVayyarHome-GetSubregions-ResponseData.json */,
+				6326A21629C28C520073AE76 /* SyntheticVayyarHome-SetSubregion-ResponseData.json */,
 				63C84372268E730100C6165E /* SyntheticVayyarHome-GetSubregionBehaviors-ResponseData.json */,
 			);
 			name = "Synthetic APIs";
@@ -4482,6 +4485,7 @@
 				636B4995248AFBDB00124F6A /* Devices-GetDeviceById-ResponseData.json in Resources */,
 				63B527A2267A6C33007EA64B /* AdminReports-GetGroups-ResponseData.json in Resources */,
 				636B4A0A248AFBE400124F6A /* UserAccounts-GetServicesByDevice-ResponseData.json in Resources */,
+				6326A21729C28C520073AE76 /* SyntheticVayyarHome-SetSubregion-ResponseData.json in Resources */,
 				636B498B248AFBDB00124F6A /* DeviceMeasurements-GetMeasurementsWithSearchTerms-ResponseData.json in Resources */,
 				636B4A31248AFBE600124F6A /* UserCommunications-UpdateMessageAttributions-ResponseData.json in Resources */,
 				636B49CC248AFBDF00124F6A /* Products-DeleteMedia-ResponseData.json in Resources */,

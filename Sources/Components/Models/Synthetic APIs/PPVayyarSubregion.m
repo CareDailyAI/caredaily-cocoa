@@ -23,6 +23,36 @@
         detectPresence:(BOOL)detectPresence
          enterDuration:(NSNumber *)enterDuration
           exitDuration:(NSNumber *)exitDuration {
+    return [self initWithDeviceId:deviceId
+                      subregionId:subregionId
+                        contextId:contextId
+                         uniqueId:uniqueId
+                             name:name
+                             xMin:xMax
+                             xMax:xMax
+                             yMin:yMin
+                             yMax:yMax
+                      detectFalls:detectFalls
+                   detectPresence:detectPresence
+                    enterDuration:enterDuration
+                     exitDuration:exitDuration
+                     occupantIds:@[]];
+}
+
+- (id)initWithDeviceId:(NSString *)deviceId
+           subregionId:(PPVayyarSubregionId)subregionId
+             contextId:(PPVayyarContextId)contextId
+              uniqueId:(NSString *)uniqueId
+                  name:(NSString *)name
+                  xMin:(NSNumber *)xMin
+                  xMax:(NSNumber *)xMax
+                  yMin:(NSNumber *)yMin
+                  yMax:(NSNumber *)yMax
+           detectFalls:(BOOL)detectFalls
+        detectPresence:(BOOL)detectPresence
+         enterDuration:(NSNumber *)enterDuration
+          exitDuration:(NSNumber *)exitDuration
+          occupantIds:(NSArray *)occupantIds {
     self = [super init];
     if (self) {
         self.deviceId = deviceId;
@@ -38,6 +68,7 @@
         self.detectPresence = detectPresence;
         self.enterDuration = enterDuration;
         self.exitDuration = exitDuration;
+        self.occupantIds = occupantIds;
     }
     return self;
 }
@@ -68,6 +99,12 @@
     }
     NSNumber *enterDuration = [data valueForKey:@"enter_duration_s"];
     NSNumber *exitDuration = [data valueForKey:@"exit_duration_s"];
+    NSMutableArray *occupantIds = @[].mutableCopy;
+    if ([data objectForKey:@"occupant_ids"]) {
+        for (NSNumber *occupantId in [data objectForKey:@"occupant_ids"]) {
+            [occupantIds addObject:occupantId];
+        }
+    }
     
     PPVayyarSubregion *subregion = [[PPVayyarSubregion alloc] initWithDeviceId:deviceId
                                                                    subregionId:subregionId
@@ -81,7 +118,8 @@
                                                                    detectFalls:detectFalls
                                                                 detectPresence:detectPresence
                                                                  enterDuration:enterDuration
-                                                                  exitDuration:exitDuration];
+                                                                  exitDuration:exitDuration
+                                                                  occupantIds:occupantIds];
     return subregion;
 }
 
