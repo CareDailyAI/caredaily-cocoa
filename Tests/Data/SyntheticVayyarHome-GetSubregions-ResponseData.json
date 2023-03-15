@@ -14,7 +14,8 @@
               "detect_presence": true,
               "enter_duration_s": 1,
               "exit_duration_s": 3,
-              "unique_id": "c1aeff9e-682d-4e13-a972-e53235797ee0"
+              "unique_id": "c1aeff9e-682d-4e13-a972-e53235797ee0",
+              "occupant_ids": []
           }
       ],
       "id_MzA6QUU6QTQ6RTI6RTY6Njg": [
@@ -30,7 +31,8 @@
               "detect_presence": true,
               "enter_duration_s": 3,
               "exit_duration_s": 3,
-              "unique_id": "8236b303-5ed1-4043-9c28-4c0b60dc1dec"
+              "unique_id": "8236b303-5ed1-4043-9c28-4c0b60dc1dec",
+              "occupant_ids": []
           },
           {
               "subregion_id": 1,
@@ -44,7 +46,8 @@
               "detect_presence": true,
               "enter_duration_s": 3,
               "exit_duration_s": 3,
-              "unique_id": "fcea0601-b4a5-47c1-a8cd-3c58fd1beaa8"
+              "unique_id": "fcea0601-b4a5-47c1-a8cd-3c58fd1beaa8",
+              "occupant_ids": []
           },
           {
               "subregion_id": 2,
@@ -58,7 +61,8 @@
               "detect_presence": true,
               "enter_duration_s": 3,
               "exit_duration_s": 3,
-              "unique_id": "c84f9974-612b-4260-bf04-f7b30cbae1c8"
+              "unique_id": "c84f9974-612b-4260-bf04-f7b30cbae1c8",
+              "occupant_ids": []
           }
       ],
       "id_MzA6QUU6QTQ6RTI6RTc6OTA": [
@@ -74,7 +78,8 @@
               "detect_presence": true,
               "enter_duration_s": 3,
               "exit_duration_s": 3,
-              "unique_id": "a7944d3e-f748-4153-8a12-6634fa9bb833"
+              "unique_id": "a7944d3e-f748-4153-8a12-6634fa9bb833",
+              "occupant_ids": []
           },
           {
               "subregion_id": 1,
@@ -88,7 +93,8 @@
               "detect_presence": true,
               "enter_duration_s": 0,
               "exit_duration_s": 2,
-              "unique_id": "a8a1a878-f167-493e-b000-8efa4e929e78"
+              "unique_id": "a8a1a878-f167-493e-b000-8efa4e929e78",
+              "occupant_ids": []
           }
       ]
   }

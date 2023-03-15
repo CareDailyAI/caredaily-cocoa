@@ -46,6 +46,18 @@ class PPTCSyntheticVayyarHome: PPBaseTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
     
+    func testSetSubregion() throws {
+        let methodName = "SetSubregion";
+        let expectation = XCTestExpectation(description: methodName)
+        stubRequest(forModule: moduleName, methodName: methodName, ofType: "json", path: "/cloud/appstore/stream", statusCode: 200, headers: nil)
+        
+        PPVayyarHome.setSubregion("", subregionId: nil, contextId: 0, name: nil, xMin: 0, xMax: 0, yMin: 0, yMax: 0, detectFalls: nil, detectPresence: nil, enterDuration: nil, exitDuration: nil, occupantIds: [0,1], locationId: PPLocationId(rawValue: 1)) { error in
+            XCTAssertNil(error)
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 10.0)
+    }
+    
     func testGetSubregionBehaviors() throws {
         let methodName = "GetSubregionBehaviors";
         let expectation = XCTestExpectation(description: methodName)
