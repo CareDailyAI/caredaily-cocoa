@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,12 +11,6 @@
 		630BDE0324B3ADC60035D8B3 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630BDE0224B3ADC60035D8B3 /* TodayViewController.swift */; };
 		630BDE0624B3ADC60035D8B3 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 630BDE0424B3ADC60035D8B3 /* MainInterface.storyboard */; };
 		630BDE0A24B3ADC60035D8B3 /* Demo iOS Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 630BDDFE24B3ADC60035D8B3 /* Demo iOS Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		630BDE0F24B3ADEC0035D8B3 /* Peoplepower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63E62AC42491A4060038A694 /* Peoplepower.framework */; };
-		630BDE1124B3ADEC0035D8B3 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631A7AF1248B3AB800D86CFF /* AFNetworking.framework */; };
-		630BDE1324B3ADEC0035D8B3 /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631A7AEE248B3AB800D86CFF /* KissXML.framework */; };
-		630BDE1524B3ADEC0035D8B3 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631A7AF0248B3AB800D86CFF /* OHHTTPStubs.framework */; };
-		630BDE1724B3ADEC0035D8B3 /* SocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631A7AEF248B3AB800D86CFF /* SocketRocket.framework */; };
-		630BDE1924B3ADEC0035D8B3 /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631A7AF3248B3AB800D86CFF /* UICKeyChainStore.framework */; };
 		630BDE2824B3B0F20035D8B3 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 630BDE2624B3B0F10035D8B3 /* Interface.storyboard */; };
 		630BDE2A24B3B0F30035D8B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 630BDE2924B3B0F30035D8B3 /* Assets.xcassets */; };
 		630BDE3124B3B0F30035D8B3 /* Demo watchOS Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 630BDE3024B3B0F30035D8B3 /* Demo watchOS Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -33,19 +27,28 @@
 		631A7AC5248B376600D86CFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631A7AC3248B376600D86CFF /* LaunchScreen.storyboard */; };
 		631A7AC8248B376600D86CFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 631A7AC7248B376600D86CFF /* main.m */; };
 		631A7ADD248B376600D86CFF /* Peoplepower_DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631A7ADC248B376600D86CFF /* Peoplepower_DemoUITests.m */; };
-		634A521127D5CE41004B903A /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634A520C27D5CE41004B903A /* UICKeyChainStore.framework */; };
-		634A521327D5CE41004B903A /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634A520D27D5CE41004B903A /* AFNetworking.framework */; };
-		634A521527D5CE41004B903A /* SocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634A520E27D5CE41004B903A /* SocketRocket.framework */; };
-		634A521727D5CE41004B903A /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634A520F27D5CE41004B903A /* KissXML.framework */; };
-		634A521927D5CE41004B903A /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634A521027D5CE41004B903A /* OHHTTPStubs.framework */; };
-		634A521D27D5CE54004B903A /* Peoplepower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634A521C27D5CE54004B903A /* Peoplepower.framework */; };
-		634A521E27D5CE54004B903A /* Peoplepower.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 634A521C27D5CE54004B903A /* Peoplepower.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		634A522F27D5D0CD004B903A /* Peoplepower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634A522E27D5D0CC004B903A /* Peoplepower.framework */; };
 		634A523027D5D0CD004B903A /* Peoplepower.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 634A522E27D5D0CC004B903A /* Peoplepower.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		634A523227D5D0E8004B903A /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634A522227D5CF98004B903A /* AFNetworking.framework */; };
 		634A523427D5D0E8004B903A /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634A522127D5CF98004B903A /* KissXML.framework */; };
 		634A523627D5D0E8004B903A /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634A522027D5CF98004B903A /* UICKeyChainStore.framework */; };
+		63A2B62E29EBBFE80003D5FF /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A2B62C29EBBFE70003D5FF /* RealmSwift.xcframework */; };
+		63A2B62F29EBBFE80003D5FF /* RealmSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63A2B62C29EBBFE70003D5FF /* RealmSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		63A2B63029EBBFE80003D5FF /* Realm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A2B62D29EBBFE70003D5FF /* Realm.xcframework */; };
+		63A2B63129EBBFE80003D5FF /* Realm.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63A2B62D29EBBFE70003D5FF /* Realm.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		63C84379268F787B00C6165E /* ViewController+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C84378268F787B00C6165E /* ViewController+Swift.swift */; };
+		63DDBD2929EA66C20078CCDF /* OHHTTPStubs.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DDBD2329EA66C00078CCDF /* OHHTTPStubs.xcframework */; };
+		63DDBD2A29EA66C20078CCDF /* OHHTTPStubs.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63DDBD2329EA66C00078CCDF /* OHHTTPStubs.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		63DDBD2B29EA66C20078CCDF /* AFNetworking.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DDBD2429EA66C00078CCDF /* AFNetworking.xcframework */; };
+		63DDBD2C29EA66C20078CCDF /* AFNetworking.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63DDBD2429EA66C00078CCDF /* AFNetworking.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		63DDBD2D29EA66C20078CCDF /* Peoplepower.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DDBD2529EA66C00078CCDF /* Peoplepower.xcframework */; };
+		63DDBD2E29EA66C20078CCDF /* Peoplepower.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63DDBD2529EA66C00078CCDF /* Peoplepower.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		63DDBD2F29EA66C30078CCDF /* SocketRocket.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DDBD2629EA66C10078CCDF /* SocketRocket.xcframework */; };
+		63DDBD3029EA66C30078CCDF /* SocketRocket.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63DDBD2629EA66C10078CCDF /* SocketRocket.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		63DDBD3129EA66C30078CCDF /* UICKeyChainStore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DDBD2729EA66C10078CCDF /* UICKeyChainStore.xcframework */; };
+		63DDBD3229EA66C30078CCDF /* UICKeyChainStore.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63DDBD2729EA66C10078CCDF /* UICKeyChainStore.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		63DDBD3329EA66C30078CCDF /* KissXML.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DDBD2829EA66C10078CCDF /* KissXML.xcframework */; };
+		63DDBD3429EA66C30078CCDF /* KissXML.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63DDBD2829EA66C10078CCDF /* KissXML.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		63E62B572492A1A60038A694 /* Peoplepower-Config-Override.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63E62B562492A1A60038A694 /* Peoplepower-Config-Override.plist */; };
 /* End PBXBuildFile section */
 
@@ -96,17 +99,6 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		634A521F27D5CE55004B903A /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				634A521E27D5CE54004B903A /* Peoplepower.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		634A523127D5D0CD004B903A /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -114,6 +106,24 @@
 			dstSubfolderSpec = 10;
 			files = (
 				634A523027D5D0CD004B903A /* Peoplepower.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63DDBD3529EA66C30078CCDF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				63DDBD3029EA66C30078CCDF /* SocketRocket.xcframework in Embed Frameworks */,
+				63A2B63129EBBFE80003D5FF /* Realm.xcframework in Embed Frameworks */,
+				63DDBD2C29EA66C20078CCDF /* AFNetworking.xcframework in Embed Frameworks */,
+				63DDBD2E29EA66C20078CCDF /* Peoplepower.xcframework in Embed Frameworks */,
+				63DDBD3429EA66C30078CCDF /* KissXML.xcframework in Embed Frameworks */,
+				63DDBD2A29EA66C20078CCDF /* OHHTTPStubs.xcframework in Embed Frameworks */,
+				63DDBD3229EA66C30078CCDF /* UICKeyChainStore.xcframework in Embed Frameworks */,
+				63A2B62F29EBBFE80003D5FF /* RealmSwift.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,8 +190,22 @@
 		634A522227D5CF98004B903A /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = ../Carthage/Build/watchOS/AFNetworking.framework; sourceTree = "<group>"; };
 		634A522A27D5CFA4004B903A /* Peoplepower.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Peoplepower.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		634A522E27D5D0CC004B903A /* Peoplepower.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Peoplepower.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63A2B62C29EBBFE70003D5FF /* RealmSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RealmSwift.xcframework; path = Carthage/Build/RealmSwift.xcframework; sourceTree = "<group>"; };
+		63A2B62D29EBBFE70003D5FF /* Realm.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Realm.xcframework; path = Carthage/Build/Realm.xcframework; sourceTree = "<group>"; };
 		63C84377268F787A00C6165E /* Demo iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Demo iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		63C84378268F787B00C6165E /* ViewController+Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Swift.swift"; sourceTree = "<group>"; };
+		63DDBD1029EA65C70078CCDF /* AFNetworking.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AFNetworking.xcframework; path = ../Carthage/Build/AFNetworking.xcframework; sourceTree = "<group>"; };
+		63DDBD1129EA65C70078CCDF /* KissXML.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = KissXML.xcframework; path = ../Carthage/Build/KissXML.xcframework; sourceTree = "<group>"; };
+		63DDBD1229EA65C70078CCDF /* OHHTTPStubs.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OHHTTPStubs.xcframework; path = ../Carthage/Build/OHHTTPStubs.xcframework; sourceTree = "<group>"; };
+		63DDBD1329EA65C70078CCDF /* Peoplepower.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Peoplepower.xcframework; path = ../Carthage/Build/Peoplepower.xcframework; sourceTree = "<group>"; };
+		63DDBD1429EA65C70078CCDF /* SocketRocket.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SocketRocket.xcframework; path = ../Carthage/Build/SocketRocket.xcframework; sourceTree = "<group>"; };
+		63DDBD1529EA65C70078CCDF /* UICKeyChainStore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = UICKeyChainStore.xcframework; path = ../Carthage/Build/UICKeyChainStore.xcframework; sourceTree = "<group>"; };
+		63DDBD2329EA66C00078CCDF /* OHHTTPStubs.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OHHTTPStubs.xcframework; path = Carthage/Build/OHHTTPStubs.xcframework; sourceTree = "<group>"; };
+		63DDBD2429EA66C00078CCDF /* AFNetworking.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AFNetworking.xcframework; path = Carthage/Build/AFNetworking.xcframework; sourceTree = "<group>"; };
+		63DDBD2529EA66C00078CCDF /* Peoplepower.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Peoplepower.xcframework; path = Carthage/Build/Peoplepower.xcframework; sourceTree = "<group>"; };
+		63DDBD2629EA66C10078CCDF /* SocketRocket.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SocketRocket.xcframework; path = Carthage/Build/SocketRocket.xcframework; sourceTree = "<group>"; };
+		63DDBD2729EA66C10078CCDF /* UICKeyChainStore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = UICKeyChainStore.xcframework; path = Carthage/Build/UICKeyChainStore.xcframework; sourceTree = "<group>"; };
+		63DDBD2829EA66C10078CCDF /* KissXML.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = KissXML.xcframework; path = Carthage/Build/KissXML.xcframework; sourceTree = "<group>"; };
 		63E62AC42491A4060038A694 /* Peoplepower.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Peoplepower.framework; path = Carthage/Build/iOS/Peoplepower.framework; sourceTree = "<group>"; };
 		63E62B562492A1A60038A694 /* Peoplepower-Config-Override.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Peoplepower-Config-Override.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -191,13 +215,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				630BDE1324B3ADEC0035D8B3 /* KissXML.framework in Frameworks */,
-				630BDE1724B3ADEC0035D8B3 /* SocketRocket.framework in Frameworks */,
 				630BDE0024B3ADC60035D8B3 /* NotificationCenter.framework in Frameworks */,
-				630BDE1924B3ADEC0035D8B3 /* UICKeyChainStore.framework in Frameworks */,
-				630BDE1524B3ADEC0035D8B3 /* OHHTTPStubs.framework in Frameworks */,
-				630BDE1124B3ADEC0035D8B3 /* AFNetworking.framework in Frameworks */,
-				630BDE0F24B3ADEC0035D8B3 /* Peoplepower.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,12 +234,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				634A521127D5CE41004B903A /* UICKeyChainStore.framework in Frameworks */,
-				634A521727D5CE41004B903A /* KissXML.framework in Frameworks */,
-				634A521327D5CE41004B903A /* AFNetworking.framework in Frameworks */,
-				634A521927D5CE41004B903A /* OHHTTPStubs.framework in Frameworks */,
-				634A521D27D5CE54004B903A /* Peoplepower.framework in Frameworks */,
-				634A521527D5CE41004B903A /* SocketRocket.framework in Frameworks */,
+				63DDBD2F29EA66C30078CCDF /* SocketRocket.xcframework in Frameworks */,
+				63A2B63029EBBFE80003D5FF /* Realm.xcframework in Frameworks */,
+				63DDBD2B29EA66C20078CCDF /* AFNetworking.xcframework in Frameworks */,
+				63DDBD2D29EA66C20078CCDF /* Peoplepower.xcframework in Frameworks */,
+				63DDBD3329EA66C30078CCDF /* KissXML.xcframework in Frameworks */,
+				63DDBD2929EA66C20078CCDF /* OHHTTPStubs.xcframework in Frameworks */,
+				63DDBD3129EA66C30078CCDF /* UICKeyChainStore.xcframework in Frameworks */,
+				63A2B62E29EBBFE80003D5FF /* RealmSwift.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,7 +377,21 @@
 		631A7AED248B3AB800D86CFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				63A2B62D29EBBFE70003D5FF /* Realm.xcframework */,
+				63A2B62C29EBBFE70003D5FF /* RealmSwift.xcframework */,
+				63DDBD2429EA66C00078CCDF /* AFNetworking.xcframework */,
+				63DDBD2829EA66C10078CCDF /* KissXML.xcframework */,
+				63DDBD2329EA66C00078CCDF /* OHHTTPStubs.xcframework */,
+				63DDBD2529EA66C00078CCDF /* Peoplepower.xcframework */,
+				63DDBD2629EA66C10078CCDF /* SocketRocket.xcframework */,
+				63DDBD2729EA66C10078CCDF /* UICKeyChainStore.xcframework */,
 				634A522E27D5D0CC004B903A /* Peoplepower.framework */,
+				63DDBD1029EA65C70078CCDF /* AFNetworking.xcframework */,
+				63DDBD1129EA65C70078CCDF /* KissXML.xcframework */,
+				63DDBD1229EA65C70078CCDF /* OHHTTPStubs.xcframework */,
+				63DDBD1329EA65C70078CCDF /* Peoplepower.xcframework */,
+				63DDBD1429EA65C70078CCDF /* SocketRocket.xcframework */,
+				63DDBD1529EA65C70078CCDF /* UICKeyChainStore.xcframework */,
 				634A522A27D5CFA4004B903A /* Peoplepower.framework */,
 				634A522227D5CF98004B903A /* AFNetworking.framework */,
 				634A522127D5CF98004B903A /* KissXML.framework */,
@@ -447,9 +481,8 @@
 				631A7AAE248B376500D86CFF /* Sources */,
 				631A7AAF248B376500D86CFF /* Frameworks */,
 				631A7AB0248B376500D86CFF /* Resources */,
-				631A7AEC248B39EE00D86CFF /* Carthage */,
 				630BDE0E24B3ADC60035D8B3 /* Embed App Extensions */,
-				634A521F27D5CE55004B903A /* Embed Frameworks */,
+				63DDBD3529EA66C30078CCDF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -577,26 +610,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		631A7AEC248B39EE00D86CFF /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"$(SRCROOT)/input.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = Carthage;
-			outputFileListPaths = (
-				"$(SRCROOT)/output.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
 		634A523827D5D19E004B903A /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -721,10 +734,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Demo iOS Today/Demo iOS Today.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EAWY6XBUH2;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Demo iOS Today/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -746,10 +756,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Demo iOS Today/Demo iOS Today.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EAWY6XBUH2;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Demo iOS Today/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1000,10 +1007,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = EAWY6XBUH2;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Demo iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1028,10 +1032,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = EAWY6XBUH2;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Demo iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
