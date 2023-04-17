@@ -11,4 +11,4 @@ brew install carthage
 
 # Install dependencies you manage with Carthage.
 cd ..
-carthage update --use-xcframeworks --cache-builds
+carthage update --use-xcframeworks --cache-builds --verbose
