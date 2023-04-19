@@ -30,7 +30,7 @@ target 'Demo iOS Today' do
   peoplepower_ios
 end
 
-target 'Demo watchOS Extension' do
+target 'Demo watchOS WatchKit Extension' do
   project 'Demo.xcodeproj'
   platform :watchos, '6.0'
   peoplepower_watchos
