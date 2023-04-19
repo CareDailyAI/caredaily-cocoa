@@ -1317,8 +1317,6 @@
 		63044734263898AE00CDDAAF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6309B75F20E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPDeviceTypeDeviceModelLookupParam.h; sourceTree = "<group>"; };
 		6309B76020E5B95300259691 /* PPDeviceTypeDeviceModelLookupParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPDeviceTypeDeviceModelLookupParam.m; sourceTree = "<group>"; };
-		630BDC4124B389D40035D8B3 /* output.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = output.xcfilelist; sourceTree = "<group>"; };
-		630BDC4224B389D40035D8B3 /* input.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = input.xcfilelist; sourceTree = "<group>"; };
 		630BDC4B24B392400035D8B3 /* Peoplepower.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Peoplepower.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		630BDC5524B393480035D8B3 /* Peoplepower-Info-watchOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Peoplepower-Info-watchOS.plist"; sourceTree = "<group>"; };
 		630BDE8B24B3E3210035D8B3 /* PPSurveys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPSurveys.m; sourceTree = "<group>"; };
@@ -1366,8 +1364,6 @@
 		63512368213890BB003E7EAA /* PPCircleDeviceCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPCircleDeviceCamera.m; sourceTree = "<group>"; };
 		6351236B21389112003E7EAA /* PPCircleDevicePictureFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPCircleDevicePictureFrame.h; sourceTree = "<group>"; };
 		6351236C21389112003E7EAA /* PPCircleDevicePictureFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPCircleDevicePictureFrame.m; sourceTree = "<group>"; };
-		6352965C2552356D00ADBC11 /* input_watchOS.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = input_watchOS.xcfilelist; sourceTree = "<group>"; };
-		6352965D2552356D00ADBC11 /* output_watchOS.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = output_watchOS.xcfilelist; sourceTree = "<group>"; };
 		635296B12552439E00ADBC11 /* PPOrganizationObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPOrganizationObject.h; sourceTree = "<group>"; };
 		635296B22552439E00ADBC11 /* PPOrganizationObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPOrganizationObject.m; sourceTree = "<group>"; };
 		635680E7241863C400EAA1D8 /* PPCommunityFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPCommunityFile.h; sourceTree = "<group>"; };
@@ -2312,10 +2308,6 @@
 			children = (
 				6372E97927D5CAAC00F5207E /* build_framework.sh */,
 				636B4446248AE82A00124F6A /* Cartfile */,
-				630BDC4224B389D40035D8B3 /* input.xcfilelist */,
-				630BDC4124B389D40035D8B3 /* output.xcfilelist */,
-				6352965C2552356D00ADBC11 /* input_watchOS.xcfilelist */,
-				6352965D2552356D00ADBC11 /* output_watchOS.xcfilelist */,
 				63AE676C27D7BFA700F1D073 /* ci_post_clone.sh */,
 				63AE676B27D7BFA700F1D073 /* ci_post_xcodebuild.sh */,
 				63AE676D27D7BFA800F1D073 /* ci_pre_xcodebuild.sh */,
