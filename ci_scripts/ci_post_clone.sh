@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Install CocoaPods using Homebrew.
-# brew install cocoapods
+brew install cocoapods
 
 # Install Carthage using Homebrew.
 brew install carthage
@@ -11,4 +11,4 @@ brew install carthage
 
 # Install dependencies you manage with Carthage.
 cd ..
-carthage update --use-xcframeworks --cache-builds
+./build_framework.sh
