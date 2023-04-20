@@ -47,7 +47,7 @@
 #ifdef DEBUG
     NSLog(@"%s URL=%@", __PRETTY_FUNCTION__, _connectURL);
 #endif
-	self.webSocket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_connectURL]]];
+	self.webSocket = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:_connectURL]];
     _webSocket.delegate = self;
     [_webSocket open];
 }
