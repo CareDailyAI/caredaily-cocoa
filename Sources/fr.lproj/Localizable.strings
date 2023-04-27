@@ -1,0 +1,1260 @@
+/* at */
+"date.utilities.join.at" = "à";
+
+/* {number} days ago */
+"date.utilities.timeago.day.multiple" = "Il y a %ld jours";
+
+/* {number} hours ago */
+"date.utilities.timeago.hour.multiple" = "Il y a %ld heures";
+
+/* an hour ago */
+"date.utilities.timeago.hour.single" = "il y a une heure";
+
+/* {number} minutes ago */
+"date.utilities.timeago.min.multiple" = "Il y a %ld minutes";
+
+/* a minute ago */
+"date.utilities.timeago.min.single" = "il y a une minute";
+
+/* {number} months ago */
+"date.utilities.timeago.month.multiple" = "Il y a %ld mois";
+
+/* a month ago */
+"date.utilities.timeago.month.single" = "il y a un mois";
+
+/* just now */
+"date.utilities.timeago.now" = "à l'instant";
+
+/* {number} seconds ago */
+"date.utilities.timeago.sec.multiple" = "Il y a %ld secondes";
+
+/* {number} weeks ago */
+"date.utilities.timeago.week.multiple" = "Il y a %ld semaines";
+
+/* a week ago */
+"date.utilities.timeago.week.single" = "il y a une semaine";
+
+/* {number} years ago */
+"date.utilities.timeago.year.multiple" = "Il y a %ld ans";
+
+/* last year */
+"date.utilities.timeago.year.single" = "l'année dernière";
+
+/* Approved */
+"device.firmware.update.job.approved" = "Approuvé";
+
+/* Available */
+"device.firmware.update.job.available" = "Disponible";
+
+/* Declined */
+"device.firmware.update.job.declined" = "Refusé";
+
+/* Started */
+"device.firmware.update.job.started" = "Commencé";
+
+/* Device Parameter - Detecting Audio */
+"device.parameter._.Detecting Audio" = "Détection de l'audio";
+
+/* Device Parameter - Not detecting audio */
+"device.parameter._.Not detecting audio" = "Non détection de l'audio";
+
+/* Device Parameter - Access Camera Settings */
+"device.parameter.accesscamerasettings" = "Accéder aux paramètres de la caméra";
+
+/* Device Parameter - Remote control disabled */
+"device.parameter.accesscamerasettings.remotecontroldisabled" = "Télécommande désactivée";
+
+/* Device Parameter - Remote control enabled */
+"device.parameter.accesscamerasettings.remotecontrolenabled" = "Télécommande activée";
+
+/* Device Parameter - Alarm will beep %@ times */
+"device.parameter.alarm.alarmwillbeep.count" = "L'alarme émet un bip %@ fois";
+
+/* Device Parameter - Alarm Duration */
+"device.parameter.alarmduration" = "Durée de l'alarme";
+
+/* Detail Device Parameter - Play for {n} seconds */
+"device.parameter.alarmduration.play.seconds.multiple" = "Jouer pendant %@ secondes";
+
+/* Detail Device Parameter - Play once */
+"device.parameter.alarmduration.playonce" = "Jouer une fois";
+
+/* Detail Device Parameter - Stop */
+"device.parameter.alarmduration.stop" = "Arrêter";
+
+/* Device Parameter - Alarm Squawk */
+"device.parameter.alarmsquawk" = "Alarme de la grippe";
+
+/* Detail Device Parameter - Squawk sarmed */
+"device.parameter.alarmsquawk.squawkarmed" = "Squawk armé";
+
+/* Detail Device Parameter - Squawk disarmed */
+"device.parameter.alarmsquawk.squawkdisarmed" = "Squawk désarmé";
+
+/* Device Parameter - Alarm Status */
+"device.parameter.alarmstatus" = "État de l'alarme";
+
+/* Detail Device Parameter - Active */
+"device.parameter.alarmstatus.active" = "Actif";
+
+/* Detail Device Parameter - Inactive */
+"device.parameter.alarmstatus.inactive" = "Inactif";
+
+/* Device Parameter - Alarm Strobe */
+"device.parameter.alarmstrobe" = "Alarme stroboscopique";
+
+/* Detail Device Parameter - Strobe off */
+"device.parameter.alarmstrobe.strobeoff" = "Strobe off";
+
+/* Detail Device Parameter - Strobe on */
+"device.parameter.alarmstrobe.strobeon" = "Strobe on";
+
+/* Device Parameter - Alarm Warn */
+"device.parameter.alarmwarn" = "Alarme Avertissement";
+
+/* Detail Device Parameter - Beep */
+"device.parameter.alarmwarn.develco.beep" = "Bip";
+
+/* Detail Device Parameter - BeepBeep */
+"device.parameter.alarmwarn.develco.beepbeep" = "BipBip";
+
+/* Detail Device Parameter - BeepBeepWelcome */
+"device.parameter.alarmwarn.develco.beepbeepwelcome" = "BipBipBienvenue";
+
+/* Detail Device Parameter - BeepWelcome */
+"device.parameter.alarmwarn.develco.beepwelcome" = "Bip de bienvenue";
+
+/* Detail Device Parameter - Burglar */
+"device.parameter.alarmwarn.develco.burglar" = "Cambrioleur";
+
+/* Detail Device Parameter - Emergency */
+"device.parameter.alarmwarn.develco.emergency" = "Urgence";
+
+/* Detail Device Parameter - Fire */
+"device.parameter.alarmwarn.develco.fire" = "Incendie";
+
+/* Detail Device Parameter - PanicE */
+"device.parameter.alarmwarn.develco.panic.e" = "PaniqueE";
+
+/* Detail Device Parameter - PanicF */
+"device.parameter.alarmwarn.develco.panic.f" = "PaniqueF";
+
+/* Detail Device Parameter - PanicP */
+"device.parameter.alarmwarn.develco.panic.p" = "PaniqueP";
+
+/* Detail Device Parameter - Silence */
+"device.parameter.alarmwarn.develco.silence" = "Le silence";
+
+/* Detail Device Parameter - Alarm */
+"device.parameter.alarmwarn.linkhigh.alarm" = "Alarme";
+
+/* Detail Device Parameter - Bird */
+"device.parameter.alarmwarn.linkhigh.bird" = "Oiseau";
+
+/* Detail Device Parameter - Bling */
+"device.parameter.alarmwarn.linkhigh.bling" = "Bling";
+
+/* Detail Device Parameter - Dog */
+"device.parameter.alarmwarn.linkhigh.dog" = "Chien";
+
+/* Detail Device Parameter - Doorbell */
+"device.parameter.alarmwarn.linkhigh.doorbell" = "Sonnette";
+
+/* Detail Device Parameter - Droid */
+"device.parameter.alarmwarn.linkhigh.droid" = "Droïde";
+
+/* Detail Device Parameter - GunCock */
+"device.parameter.alarmwarn.linkhigh.guncock" = "GunCock";
+
+/* Detail Device Parameter - GunShot */
+"device.parameter.alarmwarn.linkhigh.gunshot" = "GunShot";
+
+/* Detail Device Parameter - Lock */
+"device.parameter.alarmwarn.linkhigh.lock" = "Verrouiller";
+
+/* Detail Device Parameter - Phaser */
+"device.parameter.alarmwarn.linkhigh.phaser" = "Phaser";
+
+/* Detail Device Parameter - Security Drill */
+"device.parameter.alarmwarn.linkhigh.securitydrill" = "Exercice de sécurité";
+
+/* Detail Device Parameter - Switch */
+"device.parameter.alarmwarn.linkhigh.switch" = "Interrupteur";
+
+/* Detail Device Parameter - Trumpet */
+"device.parameter.alarmwarn.linkhigh.trumpet" = "Trompette";
+
+/* Detail Device Parameter - Whistle */
+"device.parameter.alarmwarn.linkhigh.whistle" = "Sifflet";
+
+/* Detail Device Parameter - Burglar alarm */
+"device.parameter.alarmwarn.smartenit.burglaralarm" = "Alarme anti-intrusion";
+
+/* Detail Device Parameter - Chinese1 */
+"device.parameter.alarmwarn.smartenit.chinese1" = "Chinois1";
+
+/* Detail Device Parameter - Chinese2 */
+"device.parameter.alarmwarn.smartenit.chinese2" = "Chinois2";
+
+/* Detail Device Parameter - Chinese3 */
+"device.parameter.alarmwarn.smartenit.chinese3" = "Chinois3";
+
+/* Detail Device Parameter - Chinese4 */
+"device.parameter.alarmwarn.smartenit.chinese4" = "Chinois4";
+
+/* Detail Device Parameter - Chinese5 */
+"device.parameter.alarmwarn.smartenit.chinese5" = "Chinois5";
+
+/* Detail Device Parameter - Chinese6 */
+"device.parameter.alarmwarn.smartenit.chinese6" = "Chinois6";
+
+/* Detail Device Parameter - Chinese7 */
+"device.parameter.alarmwarn.smartenit.chinese7" = "Chinois7";
+
+/* Detail Device Parameter - Chinese8 */
+"device.parameter.alarmwarn.smartenit.chinese8" = "Chinois8";
+
+/* Detail Device Parameter - Click once */
+"device.parameter.alarmwarn.smartenit.clickonce" = "Cliquer une fois";
+
+/* Detail Device Parameter - Doorbell */
+"device.parameter.alarmwarn.smartenit.doorbell" = "Sonnette";
+
+/* Detail Device Parameter - Emergency alarm */
+"device.parameter.alarmwarn.smartenit.emergencyalarm" = "Alarme d'urgence";
+
+/* Detail Device Parameter - Fire alarm */
+"device.parameter.alarmwarn.smartenit.firealarm" = "Alarme incendie";
+
+/* Detail Device Parameter - Multiple clicks */
+"device.parameter.alarmwarn.smartenit.mulitpleclicks" = "Plusieurs clics";
+
+/* Detail Device Parameter - No sound */
+"device.parameter.alarmwarn.smartenit.nosound" = "Pas de son";
+
+/* Detail Device Parameter - Security Drill */
+"device.parameter.alarmwarn.smartenit.securitydrill" = "Exercice de sécurité";
+
+/* Detail Device Parameter - Stop alarm */
+"device.parameter.alarmwarn.smartenit.stopalarm" = "Arrêt de l'alarme";
+
+/* Device Parameter - Audio Sensitivity */
+"device.parameter.audiosensitivity" = "Sensibilité audio";
+
+/* Device Parameter - Detect huge sounds */
+"device.parameter.audiosensitivity.detecthugesounds" = "Détecter les sons forts";
+
+/* Device Parameter - Detect large sounds */
+"device.parameter.audiosensitivity.detectlargesounds" = "Détecter les sons de grande taille";
+
+/* Device Parameter - Detect normal sounds */
+"device.parameter.audiosensitivity.detectnormalsounds" = "Détecter les sons normaux";
+
+/* Device Parameter - Detect small sounds */
+"device.parameter.audiosensitivity.detectsmallsounds" = "Détecter les petits sons";
+
+/* Device Parameter - Detect tiny sounds */
+"device.parameter.audiosensitivity.detecttinysounds" = "Détecter des sons infimes";
+
+/* Device Parameter - Audio Streaming */
+"device.parameter.audiostreaming" = "Streaming audio";
+
+/* Device Parameter - Audio streaming disabled */
+"device.parameter.audiostreaming.audiostreamingdisabled" = "Streaming audio désactivé";
+
+/* Device Parameter - Audio streaming enabled */
+"device.parameter.audiostreaming.audiostreamingenabled" = "Streaming audio activé";
+
+/* Device Parameter - Auto Focus */
+"device.parameter.autofocus" = "Mise au point automatique";
+
+/* Device Parameter - Focused */
+"device.parameter.autofocus.focused" = "Concentré";
+
+/* Device Parameter - Focusing */
+"device.parameter.autofocus.focusing" = "Concentration";
+
+/* Device Parameter - Blackout disabled */
+"device.parameter.blackoutscreenon.blackoutdisabled" = "Blackout désactivé";
+
+/* Device Parameter - Blackout enabled */
+"device.parameter.blackoutscreenon.blackoutenabled" = "Blackout activé";
+
+/* Device Parameter - Brightness */
+"device.parameter.brightness" = "Luminosité";
+
+/* Device Parameter - Button Status */
+"device.parameter.buttonstatus" = "État des boutons";
+
+/* Detail Device Parameter - Pressed */
+"device.parameter.buttonstatus.pressed" = "Pressé";
+
+/* Detail Device Parameter - Released */
+"device.parameter.buttonstatus.released" = "Libéré";
+
+/* Device Parameter - Charging */
+"device.parameter.charging" = "Chargement";
+
+/* Device Parameter - Charging */
+"device.parameter.charging.charging" = "Chargement";
+
+/* Device Parameter - Not charging */
+"device.parameter.charging.notcharging" = "Pas de charge";
+
+/* Device Parameter - Cooling Setpoint */
+"device.parameter.coolingsetpoint" = "Point de consigne pour le refroidissement";
+
+/* Device Parameter - Door Status */
+"device.parameter.doorstatus" = "État de la porte";
+
+/* Detail Device Parameter - Closed */
+"device.parameter.doorstatus.closed" = "Fermé";
+
+/* Detail Device Parameter - Open */
+"device.parameter.doorstatus.open" = "Ouvrir";
+
+/* Device Parameter - Fan Mode */
+"device.parameter.fanmode" = "Mode ventilateur";
+
+/* Device Parameter - Auto */
+"device.parameter.fanmode.auto" = "Auto";
+
+/* Device Parameter - High */
+"device.parameter.fanmode.high" = "Haut";
+
+/* Device Parameter - Low */
+"device.parameter.fanmode.low" = "Faible";
+
+/* Device Parameter - Medium */
+"device.parameter.fanmode.medium" = "Moyen";
+
+/* Device Parameter - Off */
+"device.parameter.fanmode.off" = "Arrêt";
+
+/* Device Parameter - On */
+"device.parameter.fanmode.on" = "Sur";
+
+/* Device Parameter - Smart */
+"device.parameter.fanmode.smart" = "Intelligent";
+
+/* Device Parameter - Fan Mode Sequence */
+"device.parameter.fanmodesequence" = "Séquence du mode ventilateur";
+
+/* Device Parameter - Fan Mode Values */
+"device.parameter.fanmodevalues" = "Valeurs du mode ventilateur";
+
+/* Device Parameter - Flash off */
+"device.parameter.flashon.flashoff" = "Flash désactivé";
+
+/* Device Parameter - Flash on */
+"device.parameter.flashon.flashon" = "Flash on";
+
+/* Device Parameter - No Flash */
+"device.parameter.flashon.noflash" = "Pas de flash";
+
+/* Device Parameter - HD Status */
+"device.parameter.hdstatus" = "Statut HD";
+
+/* Device Parameter - HD Status disabled */
+"device.parameter.hdstatus.hdstatusdisabled" = "Statut HD désactivé";
+
+/* Device Parameter - HD Status enabled */
+"device.parameter.hdstatus.hdstatusenabled" = "Statut HD activé";
+
+/* Device Parameter - Heating Setpoint */
+"device.parameter.heatingsetpoint" = "Point de consigne chauffage";
+
+/* Device Parameter - iBeacon Proximity */
+"device.parameter.ibeaconproximity" = "iBeacon Proximité";
+
+/* Device Parameter - Far */
+"device.parameter.ibeaconproximity.far" = "Loin";
+
+/* Device Parameter - Immediate */
+"device.parameter.ibeaconproximity.immediate" = "Immédiate";
+
+/* Device Parameter - Near */
+"device.parameter.ibeaconproximity.near" = "Près de";
+
+/* Device Parameter - Unknown */
+"device.parameter.ibeaconproximity.unknown" = "Inconnu";
+
+/* Device Parameter - iBeacon Status */
+"device.parameter.ibeaconstatus" = "État de l'iBeacon";
+
+/* Device Parameter - Off */
+"device.parameter.ibeaconstatus.off" = "Arrêt";
+
+/* Device Parameter - On */
+"device.parameter.ibeaconstatus.on" = "Sur";
+
+/* Device Parameter - Internal Temperature */
+"device.parameter.internaltemperature" = "Température interne";
+
+/* Device Parameter - LintAlert Current LED */
+"device.parameter.lintalertcurrentled" = "LintAlert LED de courant";
+
+/* Detail Device Parameter - LintAlert Blocked */
+"device.parameter.lintalertcurrentled.blocked" = "Bloqué";
+
+/* Detail Device Parameter - LintAlert OK */
+"device.parameter.lintalertcurrentled.ok" = "OK";
+
+/* Device Parameter - LintAlert Status */
+"device.parameter.lintalertstatus" = "État de LintAlert";
+
+/* Device Parameter - LintAlert Dryer Off */
+"device.parameter.lintalertstatus.dryeroff" = "Séchoir éteint";
+
+/* Device Parameter - LintAlert Dryer On */
+"device.parameter.lintalertstatus.dryeron" = "Sèche-linge en marche";
+
+/* Device Parameter - Lock Status */
+"device.parameter.lockstatus" = "État de la serrure";
+
+/* Detail Device Parameter - Locked */
+"device.parameter.lockstatus.locked" = "Verrouillé";
+
+/* Detail Device Parameter - Unlocked */
+"device.parameter.lockstatus.unlocked" = "Débloqué";
+
+/* Device Parameter - Lock Status Alarm */
+"device.parameter.lockstatusalarm" = "Alarme de l'état de la serrure";
+
+/* Detail Device Parameter - Deadbolt Jammed */
+"device.parameter.lockstatusalarm.deadboltjammed" = "Pêne dormant bloqué";
+
+/* Detail Device Parameter - Door Forced Open */
+"device.parameter.lockstatusalarm.doorforcedopen" = "Ouverture forcée de la porte";
+
+/* Detail Device Parameter - Front Escutcheon Removed */
+"device.parameter.lockstatusalarm.frontescutcheonremoved" = "Démontage de l'écusson avant";
+
+/* Detail Device Parameter - Lock Reset to Factory Defaults */
+"device.parameter.lockstatusalarm.lockresettofactorydefaults" = "Verrouillage Réinitialisation aux valeurs d'usine";
+
+/* Detail Device Parameter - OK */
+"device.parameter.lockstatusalarm.ok" = "OK";
+
+/* Detail Device Parameter - RF Module Power Cycled */
+"device.parameter.lockstatusalarm.rfmodulepowercycled" = "Cycle d'alimentation du module RF";
+
+/* Detail Device Parameter - Wrong Code Entry Limit */
+"device.parameter.lockstatusalarm.wrongcodeentrylimit" = "Limite d'entrée de codes erronés";
+
+/* Device Parameter - Maximum Cooling Setpoint */
+"device.parameter.maxcoolingsetpoint" = "Point de consigne de refroidissement maximal";
+
+/* Device Parameter - Maximum Heating Setpoint */
+"device.parameter.maxheatingsetpoint" = "Point de consigne maximum pour le chauffage";
+
+/* Device Parameter - Minimum Cooling Setpoint */
+"device.parameter.mincoolingsetpoint" = "Point de consigne minimum de refroidissement";
+
+/* Device Parameter - Minimum Heating Setpoint */
+"device.parameter.minheatingsetpoint" = "Point de consigne minimum pour le chauffage";
+
+/* Device Parameter - Beep 2 times when motion is detected */
+"device.parameter.motionalarm.beep.multiple" = "Bip %@ lorsqu'un mouvement est détecté";
+
+/* Device Parameter - Beep 1 time when motion is detected */
+"device.parameter.motionalarm.beep.single" = "Bip 1 fois lorsqu'un mouvement est détecté";
+
+/* Device Parameter - Disabled */
+"device.parameter.motionalarm.disabled" = "Désactivé";
+
+/* Device Parameter - Sound alarm when motion is detected */
+"device.parameter.motionalarm.soundalarm" = "Alarme sonore en cas de détection de mouvement";
+
+/* Device Parameter - {number} minutes */
+"device.parameter.motioncountdowntime.minutes" = "%li min";
+
+/* Device Parameter - {number} minutes {number} seconds */
+"device.parameter.motioncountdowntime.minutes_seconds" = "%1$li min %2$li sec";
+
+/* Device Parameter - {number} seconds */
+"device.parameter.motioncountdowntime.seconds" = "%li sec";
+
+/* Device Parameter - Motion Sensitivity */
+"device.parameter.motionsensitivity" = "Sensibilité au mouvement";
+
+/* Device Parameter - Detect huge movements */
+"device.parameter.motionsensitivity.detecthugemovements" = "Détecter les grands mouvements";
+
+/* Device Parameter - Detect large movements */
+"device.parameter.motionsensitivity.detectlargemovements" = "Détecter les mouvements importants";
+
+/* Device Parameter - Detect normal movements */
+"device.parameter.motionsensitivity.detectnormalmovements" = "Détecter les mouvements normaux";
+
+/* Device Parameter - Detect small movements */
+"device.parameter.motionsensitivity.detectsmallmovements" = "Détecter les petits mouvements";
+
+/* Device Parameter - Detect tiny movements */
+"device.parameter.motionsensitivity.detecttinymovements" = "Détecter de minuscules mouvements";
+
+/* Device Parameter - Motion Status */
+"device.parameter.motionstatus" = "Statut de la motion";
+
+/* Device Parameter - Detecting Motion */
+"device.parameter.motionstatus.detectingmotion" = "Détection des mouvements";
+
+/* Detail Device Parameter - Motion */
+"device.parameter.motionstatus.motion" = "Motion";
+
+/* Detail Device Parameter - No Motion */
+"device.parameter.motionstatus.nomotion" = "Pas de motion";
+
+/* Device Parameter - Not Detecting Motion */
+"device.parameter.motionstatus.notdetectingmotion" = "Pas de détection de mouvement";
+
+/* Device Parameter - Netatmo Health Coach Status */
+"device.parameter.netatmohealthcoachstatus" = "Statut du Coach Santé Netatmo";
+
+/* Device Parameter - Netatmo Health Coath stauts - Fair */
+"device.parameter.netatmohealthcoachstatus.fair" = "Juste";
+
+/* Device Parameter - Netatmo Health Coath stauts - Fine */
+"device.parameter.netatmohealthcoachstatus.fine" = "Bien";
+
+/* Device Parameter - Netatmo Health Coath stauts - Healthy */
+"device.parameter.netatmohealthcoachstatus.healthy" = "En bonne santé";
+
+/* Device Parameter - Netatmo Health Coath stauts - Poor */
+"device.parameter.netatmohealthcoachstatus.poor" = "Pauvre";
+
+/* Device Parameter - Netatmo Health Coath stauts - Unhealthy */
+"device.parameter.netatmohealthcoachstatus.unhealthy" = "Mauvais pour la santé";
+
+/* Device Parameter - Outlet Status */
+"device.parameter.outletstatus" = "État de la sortie";
+
+/* Device Parameter - Off */
+"device.parameter.outletstatus.off" = "Arrêt";
+
+/* Device Parameter - On */
+"device.parameter.outletstatus.on" = "Sur";
+
+/* Device Parameter - Camera speaker volume is at {number}{percent %} */
+"device.parameter.outputvolume.cameraspeakervolumelevel" = "Le volume du haut-parleur de l'appareil photo est à %.0f%%.";
+
+/* Camera - Label describing this camera's volume is maxed */
+"device.parameter.outputvolume.cameraspeakervolumemaxed" = "Le volume du haut-parleur de l'appareil photo est au maximum.";
+
+/* Camera - Label describing this camera is muted */
+"device.parameter.outputvolume.cameraspeakervolumemuted" = "Le volume du haut-parleur de l'appareil photo est coupé.";
+
+/* Device Parameter - Power */
+"device.parameter.power" = "Puissance";
+
+/* Device Parameter - Power Status */
+"device.parameter.powerstatus" = "État de l'alimentation";
+
+/* Device Parameter - Off */
+"device.parameter.powerstatus.off" = "Arrêt";
+
+/* Device Parameter - On */
+"device.parameter.powerstatus.on" = "Sur";
+
+/* Device Parameter - Rapid Motion Status */
+"device.parameter.rapidmotionstatus" = "Statut de mouvement rapide";
+
+/* Device Parameter - {number} hours */
+"device.parameter.rapidmotionstatus.hours" = "%li hr";
+
+/* Device Parameter - {number} minutes */
+"device.parameter.rapidmotionstatus.minutes" = "%li min";
+
+/* Device Parameter - {number} minutes {number} seconds */
+"device.parameter.rapidmotionstatus.minutes_seconds" = "%1$li min %2$li sec";
+
+/* Device Parameter - Continue recording even after motion goes away */
+"device.parameter.recordfullduration.continue" = "Poursuite de l'enregistrement même lorsque le mouvement disparaît";
+
+/* Device Parameter - Stop recording after motion goes away */
+"device.parameter.recordfullduration.stop" = "Arrêter l'enregistrement après la disparition du mouvement";
+
+/* Device Parameter - Record Seconds */
+"device.parameter.recordseconds" = "Enregistrer les secondes";
+
+/* Device Parameter - {number} minutes */
+"device.parameter.recordseconds.minutes" = "%li min";
+
+/* Device Parameter - {number} minutes {number} seconds */
+"device.parameter.recordseconds.minutes_seconds" = "%1$li min %2$li sec";
+
+/* Device Parameter - {number} seconds */
+"device.parameter.recordseconds.seconds" = "%li sec";
+
+/* Device Parameter - Record Status */
+"device.parameter.recordstatus" = "Statut de l'enregistrement";
+
+/* Device Parameter - Not recording */
+"device.parameter.recordstatus.notrecording" = "Pas d'enregistrement";
+
+/* Device Parameter - Recording */
+"device.parameter.recordstatus.recording" = "Enregistrement";
+
+/* Device Parameter - Relative Humidity */
+"device.parameter.relativehumidity" = "Humidité relative";
+
+/* Device Parameter - Robot Connected */
+"device.parameter.robotconnected" = "Robot connecté";
+
+/* Device Parameter - Galileo */
+"device.parameter.robotconnected.galileo" = "Galilée";
+
+/* Device Parameter - Galileo BT */
+"device.parameter.robotconnected.galileobt" = "Galileo BT";
+
+/* Device Parameter - KUBI */
+"device.parameter.robotconnected.kubi" = "KUBI";
+
+/* Device Parameter - No robot connected */
+"device.parameter.robotconnected.norobotconnected" = "Pas de robot connecté";
+
+/* Device Parameter - {AppName} 360 */
+"device.parameter.robotconnected.presence360" = "%@ 360";
+
+/* Device Parameter - Romo */
+"device.parameter.robotconnected.romo" = "Romo";
+
+/* Device Parameter - Unknown robot */
+"device.parameter.robotconnected.unknownrobot" = "Robot inconnu";
+
+/* Device Parameter - Flip vertical */
+"device.parameter.robotorientation.flipvertical" = "Retournement vertical";
+
+/* Device Parameter - Configure vantage point {vantage point index} */
+"device.parameter.robotvantageconfigurationstatus.configurevantagepoint" = "Configurer le point d'observation %@";
+
+/* Device Parameter - Hard Reset */
+"device.parameter.robotvantageconfigurationstatus.hardreset" = "Remise à zéro";
+
+/* Device Parameter - Reboot motor control board */
+"device.parameter.robotvantageconfigurationstatus.rebootmotorcontrolboard" = "Redémarrer la carte de contrôle du moteur";
+
+/* Device Parameter - Reset UART queue */
+"device.parameter.robotvantageconfigurationstatus.resetuardqueue" = "Réinitialisation de la file d'attente UART";
+
+/* Device Parameter - Reset UART */
+"device.parameter.robotvantageconfigurationstatus.resetuart" = "Réinitialisation UART";
+
+/* Device Parameter - Warm Reset */
+"device.parameter.robotvantageconfigurationstatus.warmreset" = "Réinitialisation à chaud";
+
+/* Device Parameter - Selected Camera */
+"device.parameter.selectedcamera" = "Appareil photo sélectionné";
+
+/* Device Parameter - Front camera */
+"device.parameter.selectedcamera.frontcamera" = "Caméra frontale";
+
+/* Device Parameter - Rear camera */
+"device.parameter.selectedcamera.rearcamera" = "Caméra arrière";
+
+/* Device Parameter - State */
+"device.parameter.state" = "État";
+
+/* Device Parameter - Off */
+"device.parameter.state.off" = "Arrêt";
+
+/* Device Parameter - On */
+"device.parameter.state.on" = "Sur";
+
+/* Device Parameter - Video calling not supported */
+"device.parameter.supportsvideocall.videocallingnotsupported" = "Les appels vidéo ne sont pas pris en charge";
+
+/* Device Parameter - Video calling supported */
+"device.parameter.supportsvideocall.videocallingsupported" = "Appels vidéo pris en charge";
+
+/* Device Parameter - Swing Mode */
+"device.parameter.swingmode" = "Mode Swing";
+
+/* Device Parameter - Fixed */
+"device.parameter.swingmode.fixed" = "Fixe";
+
+/* Device Parameter - Range */
+"device.parameter.swingmode.range" = "Gamme";
+
+/* Device Parameter - Stopped */
+"device.parameter.swingmode.stopped" = "Arrêtée";
+
+/* Device Parameter - Swing Mode Values */
+"device.parameter.swingmodevalues" = "Valeurs du mode Swing";
+
+/* Device Parameter - System Mode */
+"device.parameter.systemmode" = "Mode système";
+
+/* Device Parameter - Auto */
+"device.parameter.systemmode.auto" = "Auto";
+
+/* Device Parameter - Auxiliary Heat */
+"device.parameter.systemmode.auxiliaryheat" = "Chauffage d'appoint";
+
+/* Device Parameter - Cool */
+"device.parameter.systemmode.cool" = "Cool";
+
+/* Device Parameter - Dry */
+"device.parameter.systemmode.dry" = "Secs";
+
+/* Device Parameter - Emergency Heat */
+"device.parameter.systemmode.emergencyheat" = "Chauffage d'urgence";
+
+/* Device Parameter - Fan Only */
+"device.parameter.systemmode.fanonly" = "Ventilateur uniquement";
+
+/* Device Parameter - Heat */
+"device.parameter.systemmode.heat" = "Chaleur";
+
+/* Device Parameter - Off */
+"device.parameter.systemmode.off" = "Arrêt";
+
+/* Device Parameter - Precooling */
+"device.parameter.systemmode.precooling" = "Prérefroidissement";
+
+/* Device Parameter - System Mode Status */
+"device.parameter.systemmodestatus" = "État du mode système";
+
+/* Device Parameter - Cool */
+"device.parameter.systemmodestatus.cool" = "Cool";
+
+/* Device Parameter - Heat */
+"device.parameter.systemmodestatus.heat" = "Chaleur";
+
+/* Device Parameter - Off */
+"device.parameter.systemmodestatus.off" = "Arrêt";
+
+/* Device Parameter - System Mode Values */
+"device.parameter.systemmodevalues" = "Valeurs du mode système";
+
+/* Device Parameter - Temperature */
+"device.parameter.temperature" = "Température";
+
+/* Device Parameter - Temperature Values */
+"device.parameter.tempvalues" = "Valeurs de température";
+
+/* Device Parameter - Twitter auto-sharing disabled */
+"device.parameter.twitterautoshare.twitterautosharingdisabled" = "Partage automatique de Twitter désactivé";
+
+/* Device Parameter - Twitter auto-sharing enabled */
+"device.parameter.twitterautoshare.twitterautosharingenabled" = "Partage automatique de Twitter activé";
+
+/* Device Parameter - Twitter reminder disabled */
+"device.parameter.twitterreminder.twitterreminderdisabled" = "Rappel Twitter désactivé";
+
+/* Device Parameter - Twitter reminder enabled */
+"device.parameter.twitterreminder.twitterreminderenabled" = "Rappel de Twitter activé";
+
+/* Device Parameter - Twitter disabled */
+"device.parameter.twitterstatus.twitterdisabled" = "Twitter désactivé";
+
+/* Device Parameter - Twitter enabled */
+"device.parameter.twitterstatus.twitterenabled" = "Twitter activé";
+
+/* Device Parameter - Version */
+"device.parameter.version" = "Version";
+
+/* Device Parameter - Vibration Status */
+"device.parameter.vibrationstatus" = "État des vibrations";
+
+/* Detail Device Parameter - Moved */
+"device.parameter.vibrationstatus.moved" = "Déplacé";
+
+/* Detail Device Parameter - Still */
+"device.parameter.vibrationstatus.still" = "Encore";
+
+/* Device Parameter - Video Streaming */
+"device.parameter.videostreaming" = "Diffusion vidéo en continu";
+
+/* Device Parameter - Video streaming disabled */
+"device.parameter.videostreaming.videostreamingdisabled" = "Streaming vidéo désactivé";
+
+/* Device Parameter - Video streaming enabled */
+"device.parameter.videostreaming.videostreamingenabled" = "Diffusion vidéo en continu";
+
+/* Device Parameter - Warning status disabled */
+"device.parameter.warningstatus.warningstatusdisabled" = "Statut d'avertissement désactivé";
+
+/* Device Parameter - Warning status enabled */
+"device.parameter.warningstatus.warningstatusenabled" = "Statut d'avertissement activé";
+
+/* Device Parameter - Water Leak */
+"device.parameter.waterleak" = "Fuite d'eau";
+
+/* Detail Device Parameter - Dry */
+"device.parameter.waterleak.dry" = "Secs";
+
+/* Detail Device Parameter - Wet */
+"device.parameter.waterleak.wet" = "Humide";
+
+/* Error - Account is locked until {lockTime} */
+"error.code.16.accountlocked" = "Le compte est bloqué jusqu'à %@";
+
+/* Language Code: 'en', 'zh', etc... */
+"language.code" = "fr";
+
+/* Away */
+"location.event.away" = "L'éloignement";
+
+/* Home */
+"location.event.home" = "Accueil";
+
+/* Stay */
+"location.event.stay" = "Séjour";
+
+/* Test */
+"location.event.test" = "Test";
+
+/* Vacation */
+"location.event.vacation" = "Vacances";
+
+/* Basement */
+"location.space.name.basement" = "Sous-sol";
+
+/* Bathroom */
+"location.space.name.bathroom" = "Salle de bains";
+
+/* Bedroom */
+"location.space.name.bedroom" = "Chambre à coucher";
+
+/* Dining Room */
+"location.space.name.diningroom" = "Salle à manger";
+
+/* Family Room */
+"location.space.name.familyroom" = "Salle familiale";
+
+/* Garage */
+"location.space.name.garage" = "Garage";
+
+/* Hallway */
+"location.space.name.hallway" = "Couloir";
+
+/* Kitchen */
+"location.space.name.kitchen" = "Cuisine";
+
+/* Laundry Room */
+"location.space.name.laundryroom" = "Buanderie";
+
+/* Living Room */
+"location.space.name.livingroom" = "Salle de séjour";
+
+/* None */
+"location.space.name.none" = "Aucun";
+
+/* Office */
+"location.space.name.office" = "Bureau";
+
+/* Other */
+"location.space.name.other" = "Autres";
+
+/* Stairs */
+"location.space.name.stairs" = "Escaliers";
+
+/* Undefined */
+"location.space.name.undefined" = "Non défini";
+
+/* Error - The (App Name) app had trouble connecting. Is your internet connection ok? */
+"ppc.error.code.1.description" = "L'application %@ a eu du mal à se connecter. Votre connexion Internet est-elle correcte ?";
+
+/* Error - You are no longer signed in */
+"ppc.error.code.2.description" = "Vous n'êtes plus connecté";
+
+/* Error - Wrong location ID or location is not related to the user */
+"ppc.error.code.3.description" = "Mauvais identifiant de lieu ou lieu non lié à l'utilisateur";
+
+/* Error - That device is no longer in your account */
+"ppc.error.code.4.description" = "Cet appareil n'est plus dans votre compte";
+
+/* Error - Device command proxy (gateway) has not been found */
+"ppc.error.code.5.description" = "Le proxy de commande du dispositif (passerelle) n'a pas été trouvé";
+
+/* Error - That type of product isn't supported on this server. */
+"ppc.error.code.6.description" = "Ce type de produit n'est pas pris en charge par ce serveur.";
+
+/* Error - Access denied */
+"ppc.error.code.7.description" = "Accès refusé";
+
+/* Error - Oops, you typed in something wrong there */
+"ppc.error.code.8.description" = "Oups, vous avez tapé quelque chose de faux ici";
+
+/* Error - Please fill in all required fields */
+"ppc.error.code.9.description" = "Veuillez remplir tous les champs obligatoires";
+
+/* Error - No available device resources to complete operation */
+"ppc.error.code.10.description" = "Pas de ressources disponibles pour terminer l'opération";
+
+/* Error - The username or password you entered is incorrect */
+"ppc.error.code.11.description" = "Le nom d'utilisateur ou le mot de passe que vous avez saisi est incorrect";
+
+/* Error - The username or password you entered is incorrect */
+"ppc.error.code.12.description" = "Le nom d'utilisateur ou le mot de passe que vous avez saisi est incorrect";
+
+/* Error - Wrong index value */
+"ppc.error.code.13.description" = "Valeur d'index erronée";
+
+/* Error - Error in parsing of input data */
+"ppc.error.code.14.description" = "Erreur dans l'analyse des données d'entrée";
+
+/* Error - Wrong consumer ID */
+"ppc.error.code.15.description" = "Mauvais numéro d'identification du consommateur";
+
+/* Error - Account locked */
+"ppc.error.code.16.description" = "Compte bloqué";
+
+/* Error - Wrong activation key */
+"ppc.error.code.17.description" = "Clé d'activation erronée";
+
+/* Error - Wrong rule schedule format */
+"ppc.error.code.18.description" = "Mauvais format";
+
+/* Error - This action is temporarily locked */
+"ppc.error.code.19.description" = "Cette action est temporairement bloquée";
+
+/* Error - Duplicate user name */
+"ppc.error.code.20.description" = "Nom d'utilisateur en double";
+
+/* Error - Device is offline or disconnected */
+"ppc.error.code.21.description" = "L'appareil est hors ligne ou déconnecté";
+
+/* Error - That device belongs to someone else */
+"ppc.error.code.22.description" = "Cet appareil appartient à quelqu'un d'autre";
+
+/* Error - Well that's strange, we had a problem saving that rule. Sorry about this! If you have time, please contact support and describe the rule you were trying to create so we can fix it. */
+"ppc.error.code.23.description" = "C'est étrange, nous avons eu un problème pour enregistrer cette règle. Nous en sommes désolés ! Si vous avez le temps, veuillez contacter le support et décrire la règle que vous avez essayé de créer afin que nous puissions la corriger.";
+
+/* Error - Wrong device registration code */
+"ppc.error.code.24.description" = "Code d'enregistrement de l'appareil erroné";
+
+/* Error - Number of pending device types for this user is more than allowed */
+"ppc.error.code.25.description" = "Le nombre de types de dispositifs en attente pour cet utilisateur est supérieur au nombre autorisé";
+
+/* Error - Duplicate entity or property */
+"ppc.error.code.26.description" = "Entité ou propriété dupliquée";
+
+/* Error - Timeout in device communication */
+"ppc.error.code.27.description" = "Délai d'attente dans la communication avec l'appareil";
+
+/* Error - Device is not linked to any location */
+"ppc.error.code.28.description" = "L'appareil n'est lié à aucun lieu";
+
+/* Error - Requested API method not found */
+"ppc.error.code.29.description" = "Demande d'API erronée";
+
+/* Error - Service is temporarily unavailable */
+"ppc.error.code.30.description" = "Le service est temporairement indisponible";
+
+/* Error - Unknown OAuth client */
+"ppc.error.code.31.description" = "Client OAuth inconnu";
+
+/* Error - External application error response */
+"ppc.error.code.32.description" = "Réponse à l'erreur de l'application externe";
+
+/* Error - Wrong operation token */
+"ppc.error.code.33.description" = "Jeton d'opération erroné";
+
+/* Error - Cannot modify external resources */
+"ppc.error.code.34.description" = "Impossible de modifier les ressources externes";
+
+/* Error - Wrong phone number */
+"ppc.error.code.35.description" = "Numéro de téléphone erroné";
+
+/* Error - Operation canceled */
+"ppc.error.code.36.description" = "Opération annulée";
+
+/* Error - 37 */
+"ppc.error.code.37.description" = "Impossible d'autoriser l'utilisateur sur une ressource externe ou un nuage.";
+
+/* Error - Maximum reached */
+"ppc.error.code.38.description" = "Maximum atteint";
+
+/* Error - 39 */
+"ppc.error.code.39.description" = "Dispositif introuvable sur le nuage externe";
+
+/* Error - 40 */
+"ppc.error.code.40.description" = "Demande non autorisée dans l'état actuel de la ressource";
+
+/* Error - 41 */
+"ppc.error.code.41.description" = "La demande n'a pas été complétée. Il ne s'agit pas d'une erreur, il n'y a simplement rien à faire.";
+
+/* Error - 42 */
+"ppc.error.code.42.description" = "Impossible de se connecter à une ressource externe";
+
+/* Error - 44 */
+"ppc.error.code.44.description" = "Trop d'appels à l'API";
+
+/* Error - 45 */
+"ppc.error.code.45.description" = "Le canal de communication n'est pas authentifié";
+
+/* Error - Having trouble connecting. If you're not viewing your camera from somewhere else, please try connecting again. */
+"ppc.error.code.10000.description" = "Vous n'arrivez pas à vous connecter. Si vous ne visualisez pas votre appareil photo depuis un autre endroit, essayez de vous connecter à nouveau.";
+
+/* Error - This camera is currently not available. Make sure it is up and running remotely. */
+"ppc.error.code.10001.description" = "Cette caméra n'est actuellement pas disponible. Assurez-vous qu'elle est opérationnelle à distance.";
+
+/* Error - There was an error creating the camera, please try again later. */
+"ppc.error.code.10002.description" = "Une erreur s'est produite lors de la création de l'appareil photo, veuillez réessayer plus tard.";
+
+/* Error - The {App Name} app had trouble connecting. Is your internet connection ok? */
+"ppc.error.code.10003.description" = "L'application %@ a eu du mal à se connecter. Votre connexion Internet est-elle correcte ?";
+
+/* Error - Lost the connection with the camera. Is your camera's WiFi strong enough? */
+"ppc.error.code.10004.description" = "Perte de connexion avec l'appareil photo. Le WiFi de votre appareil photo est-il suffisamment puissant ?";
+
+/* Error - This camera detected some motion and is currently recording, try again in a few moments. */
+"ppc.error.code.10005.description" = "Cette caméra a détecté un mouvement et est en train d'enregistrer, réessayez dans quelques instants.";
+
+/* Error - We're having trouble connecting to the camera. Are you and your camera on a good connection? Please try it again. */
+"ppc.error.code.10006.description" = "Nous avons des difficultés à nous connecter à l'appareil photo. La connexion entre vous et votre appareil photo est-elle bonne ? Essayez à nouveau.";
+
+/* Error - Your password must be at least 8 characters long. */
+"ppc.error.code.10007.description" = "Votre mot de passe doit comporter au moins 8 caractères.";
+
+/* Error - You are already viewing this camera from somewhere else. */
+"ppc.error.code.10008.description" = "Vous visualisez déjà cet appareil photo depuis un autre endroit.";
+
+/* Error - {name} seems to already be viewing this camera. Press the reconnect button to take over. */
+"ppc.error.code.10008.description.alt" = "Il semble que \"%@\" soit déjà en train de visionner cette caméra. Appuyez sur le bouton de reconnexion pour prendre le relais.";
+
+/* Error - That wasn't the barcode you were looking for. */
+"ppc.error.code.10009.description" = "Ce n'est pas le code-barres que vous cherchiez.";
+
+/* Error - That barcode is corrupted. */
+"ppc.error.code.10010.description" = "Ce code-barres est corrompu.";
+
+/* Error - Having trouble connecting to Bluetooth! */
+"ppc.error.code.10011.description" = "Difficulté à se connecter à Bluetooth !";
+
+/* Error - This device is too old to support Bluetooth LE */
+"ppc.error.code.10012.description" = "Cet appareil est trop ancien pour prendre en charge Bluetooth LE";
+
+/* Error - Please authorize {App Name} to access Bluetooth LE */
+"ppc.error.code.10013.description" = "Veuillez autoriser %@ à accéder à Bluetooth LE";
+
+/* Error - Bluetooth is currently powered off. Please go into your Settings and turn on Bluetooth. */
+"ppc.error.code.10014.description" = "Bluetooth est actuellement désactivé. Veuillez aller dans vos paramètres et activer le Bluetooth.";
+
+/* Error - Waiting for Bluetooth to power up... */
+"ppc.error.code.10015.description" = "En attendant que le Bluetooth se mette en marche...";
+
+/* Error - Couldn't save this video to your album! */
+"ppc.error.code.10016.description" = "Impossible d'enregistrer cette vidéo dans votre album !";
+
+/* Error - Corrupted video file! */
+"ppc.error.code.10017.description" = "Fichier vidéo corrompu !";
+
+/* Error - Can't save the video! Please grant {App Name} access to your Photos and Videos folder in iOS Settings > Privacy > Photos, then try your download again. */
+"ppc.error.code.10018.description" = "Impossible d'enregistrer la vidéo ! Veuillez autoriser %@ à accéder à votre dossier Photos et Vidéos dans Réglages iOS > Confidentialité > Photos, puis réessayez votre téléchargement.";
+
+/* Error - Error uploading */
+"ppc.error.code.10019.description" = "Erreur de téléchargement";
+
+/* Error - Can't play this video! Did you delete it remotely? Do you have a good connection? */
+"ppc.error.code.10020.description" = "Impossible de lire cette vidéo ! L'avez-vous supprimée à distance ? Avez-vous une bonne connexion ?";
+
+/* Error - Please select at least one day this rule should repeat. */
+"ppc.error.code.10021.description" = "Veuillez sélectionner au moins un jour où cette règle doit être répétée.";
+
+/* Error - Please name this device */
+"ppc.error.code.10022.description" = "Veuillez nommer ce dispositif";
+
+/* Error - An email has been sent to you with instructions on how to add this device to your {App Name} account. */
+"ppc.error.code.10023.description" = "Un courriel vous a été envoyé avec des instructions sur la manière d'ajouter cet appareil à votre compte %@.";
+
+/* Error - Thank you, our team will look into this. */
+"ppc.error.code.10024.description" = "Merci, notre équipe va se pencher sur la question.";
+
+/* Error - TED is not activated properly. */
+"ppc.error.code.10025.description" = "Le TED n'est pas activé correctement.";
+
+/* Error - Couldn't contact Blue Line. */
+"ppc.error.code.10026.description" = "Impossible de contacter Blue Line.";
+
+/* Error - Not activated. */
+"ppc.error.code.10027.description" = "Non activé.";
+
+/* Error - We believe there is a firewall blocking access to the {App Name} camera. */
+"ppc.error.code.10028.description" = "Nous pensons qu'un pare-feu bloque l'accès à la caméra %@.";
+
+/* Error - Unable to connect Galileo 30-pin */
+"ppc.error.code.10029.description" = "Impossible de connecter Galileo 30-pin";
+
+/* Error - Unable to connect the LintAlert */
+"ppc.error.code.10030.description" = "Nous n'avons pas pu contacter le LintAlert Pro Plus. Appuyez et relâchez le bouton RESET du cercle, puis maintenez le bouton CONFIG du carré pendant 3 secondes. Reconnectez-vous au réseau Wi-Fi du LintAlert dans vos paramètres Wi-Fi iOS, puis réessayez.";
+
+/* Error - Unable to configure IP Camera - No IP or DDNS address */
+"ppc.error.code.10031.description" = "La configuration de la caméra IP nécessite une adresse IP ou une adresse DDNS.";
+
+/* Error - Unable to verify IP Camera */
+"ppc.error.code.10032.description" = "Impossible de vérifier la caméra IP";
+
+/* Error - Unable to configure default admin user */
+"ppc.error.code.10033.description" = "Impossible de configurer l'utilisateur administrateur par défaut";
+
+/* Error - Unable to enable IP Camera UPnP */
+"ppc.error.code.10034.description" = "Impossible d'activer la caméra IP UPnP";
+
+/* Error - Unable to change camera name */
+"ppc.error.code.10035.description" = "Impossible de modifier le nom de la caméra";
+
+/* Error - Unable to get camera name */
+"ppc.error.code.10036.description" = "Impossible d'obtenir le nom de la caméra";
+
+/* Error - Unable to change DDNS */
+"ppc.error.code.10037.description" = "Impossible de modifier le DDNS";
+
+/* Error - Unable to get DDNS */
+"ppc.error.code.10038.description" = "Impossible d'obtenir le DDNS";
+
+/* Error - Unable to get register IP Camera */
+"ppc.error.code.10039.description" = "Impossible d'enregistrer une caméra IP avec ce type de dispositif.  Veuillez vous assurer que votre caméra est en ligne et que vous avez choisi le bon périphérique à ajouter.";
+
+/* Error - Too many registration attempts. Please try again in a few minutes. */
+"ppc.error.code.10040.description" = "Trop de tentatives d'enregistrement. Veuillez réessayer dans quelques minutes.";
+
+/* Error - Unable to upload file! */
+"ppc.error.code.10041.description" = "Impossible de télécharger un fichier !";
+
+/* Error - Unable to download firmware! */
+"ppc.error.code.10042.description" = "Impossible de télécharger le micrologiciel !";
+
+/* Error - Unable to start up your camera! Please contact support. */
+"ppc.error.code.10043.description" = "Impossible de démarrer votre appareil photo ! Veuillez contacter l'assistance.";
+
+/* Error - This app requires access to your contacts to function properly. Please visit to the \"Privacy\" section in the iPhone Settings app. */
+"ppc.error.code.20000.description" = "Cette application nécessite l'accès à vos contacts pour fonctionner correctement. Veuillez consulter la section \"Vie privée\" dans l'application Réglages de l'iPhone.";
+
+/* Error - Unable to access your address book. */
+"ppc.error.code.20001.description" = "Impossible d'accéder à votre carnet d'adresses.";
+
+/* Error - An error occurred when attempting to request access to your Address Book. */
+"ppc.error.code.20002.description" = "Une erreur s'est produite lors de la demande d'accès à votre carnet d'adresses.";
+
+/* Error - You can still add friends manually using \"Search email or phone\" */
+"ppc.error.code.20003.description" = "Vous pouvez toujours ajouter des amis manuellement en utilisant la fonction \"Rechercher un courriel ou un téléphone\"";
+
+/* Error - Unable to access your address book. Please check your privacy settings. */
+"ppc.error.code.20004.description" = "Impossible d'accéder à votre carnet d'adresses. Veuillez vérifier vos paramètres de confidentialité.";
+
+/* Error - There are no contacts on this device.  Tap 'Search' or 'Scan someone's bar code' to add a friend manually. */
+"ppc.error.code.20005.description" = "Il n'y a pas de contacts sur cet appareil.  Appuyez sur \"Rechercher\" ou \"Scanner le code-barres de quelqu'un\" pour ajouter un ami manuellement.";
+
+/* Error - \"Geofencing\" is not available for this mode. */
+"ppc.error.code.30000.description" = "Le \"Geofencing\" n'est pas disponible pour ce mode.";
+
+/* Error - Your location is already set this mode. */
+"ppc.error.code.30001.description" = "Votre position est déjà définie dans ce mode.";
+
+/* Error - Failed to register for location services. */
+"ppc.error.code.30002.description" = "Échec de l'enregistrement des services de localisation.";
+
+/* Error - Duplicate state change for region. */
+"ppc.error.code.30003.description" = "Changement d'état en double pour la région.";
+
+/* Error - SMS Subscriber - Error updating phone number */
+"ppc.error.code.40000.description" = "Votre nouveau numéro de téléphone ne peut pas recevoir de SMS.";
+
+/* Error - Invalid phone number */
+"ppc.error.code.40001.description" = "Votre numéro de téléphone ne peut pas recevoir de SMS.  Veuillez utiliser un numéro de téléphone qui peut recevoir des SMS.";
+
+/* Error - Photo Data - Privacy - Not Determined */
+"ppc.error.code.50000.description" = "Cette application a besoin d'accéder à vos \"données photo\" pour vous permettre de télécharger des images et des vidéos que vous avez déjà prises sur cet appareil.  Vous pouvez l'autoriser dans le menu iOS > Réglages > Confidentialité.";
+
+/* Error - Photo Data - Privacy - Restricted */
+"ppc.error.code.50001.description" = "Cette application n'est pas en mesure d'accéder à vos \"données photo\" en raison de certaines restrictions.  Veuillez consulter le menu iOS > Réglages > Confidentialité.";
+
+/* Error - Photo Data - Privacy - Denied */
+"ppc.error.code.50002.description" = "L'accès à vos \"données photo\" a été précédemment refusé.  Veuillez consulter le menu iOS > Réglages > Confidentialité.";
+
+/* Error - Photo Data - Privacy - Denied */
+"ppc.error.code.50003.description" = "Vous avez choisi de ne pas autoriser cette application à accéder à vos \"données photo\".  Cette autorisation vous sera à nouveau demandée la prochaine fois que vous accéderez à cette fonction.";
+
+/* Error - Camera - Privacy - Not Determined */
+"ppc.error.code.60000.description" = "Cette application a besoin d'accéder à votre \"appareil photo\" pour vous permettre de capturer de nouvelles vidéos et photos.  Vous pouvez l'autoriser dans le menu iOS > Réglages > Confidentialité.";
+
+/* Error - Camera - Privacy - Restricted */
+"ppc.error.code.60001.description" = "Cette application n'est pas en mesure d'accéder à votre \"Appareil photo\" en raison de certaines restrictions.  Veuillez consulter le menu iOS > Réglages > Confidentialité.";
+
+/* Error - Camera - Privacy - Denied */
+"ppc.error.code.60002.description" = "L'accès à votre \"Appareil photo\" a été précédemment refusé.  Veuillez consulter le menu iOS > Réglages > Confidentialité.";
+
+/* Error - Photo Data - Privacy - Denied */
+"ppc.error.code.60003.description" = "Vous avez choisi de ne pas autoriser cette application à accéder à votre \"appareil photo\".  Cette autorisation vous sera à nouveau demandée la prochaine fois que vous accéderez à cette fonction.";
+
+/* Error - Microphone - Privacy - Not Determined */
+"ppc.error.code.70000.description" = "Cette application a besoin d'accéder à votre \"microphone\" pour vous permettre de capturer de l'audio.  Vous pouvez l'autoriser dans le menu iOS > Réglages > Confidentialité.";
+
+/* Error - Microphone - Privacy - Restricted */
+"ppc.error.code.70001.description" = "Cette application n'est pas en mesure d'accéder à votre \"Microphone\" en raison de certaines restrictions.  Veuillez consulter le menu iOS > Réglages > Confidentialité.";
+
+/* Error - Microphone - Privacy - Denied */
+"ppc.error.code.70002.description" = "L'accès à votre \"Microphone\" a été précédemment refusé.  Veuillez consulter le menu iOS > Réglages > Confidentialité.";
+
+/* Error - Photo Data - Privacy - Denied */
+"ppc.error.code.70003.description" = "Vous avez choisi de ne pas autoriser cette application à accéder à votre \"Microphone\".  Cette autorisation vous sera redemandée la prochaine fois que vous accéderez à cette fonction.";
+
+/* Error - Push Notifications - Privacy - Not Determined */
+"ppc.error.code.80000.description" = "Cette application a besoin d'accéder à vos \"notifications push\" pour vous permettre de recevoir des notifications push.  Vous pouvez l'autoriser dans le menu iOS > Réglages > Confidentialité.";
+
+/* Error - Push Notifications - Privacy - Provisional */
+"ppc.error.code.80001.description" = "Vous testez actuellement les \"notifications push\", avec certaines restrictions.  Veuillez consulter le menu iOS > Réglages > Confidentialité.";
+
+/* Error - Push Notifications - Privacy - Denied */
+"ppc.error.code.80002.description" = "L'accès à vos \"Push Notifications\" a été précédemment refusé.  Veuillez consulter le menu iOS > Réglages > Confidentialité.";
+
+/* Error - Push Notifications - Privacy - Denied */
+"ppc.error.code.80003.description" = "Vous avez choisi de ne pas autoriser cette application à accéder à vos \"notifications push\".  Vous pouvez modifier les paramètres de l'application dans votre page de profil.";
+
+/* Error - Failed to authorize for health kit. */
+"ppc.error.code.90000.description" = "Échec de l'autorisation pour la trousse de santé.";
+
+/* Error - Default */
+"ppc.error.code.general" = "Oups, quelque chose s'est mal passé.  Veuillez contacter l'assistance. (%li)";
+
+/* Character - Ampersand */
+"ppc.error.lock.characters.ampersand" = "&";
+
+/* Character - Comma */
+"ppc.error.lock.characters.comma" = ",";
+
+/* Character - Space */
+"ppc.error.lock.characters.space" = " ";
+
+/* Error - lock timeout hour */
+"ppc.error.lock.hour" = "heure";
+
+/* Error - lock timeout hours */
+"ppc.error.lock.hours" = "heures";
+
+/* Error - lock timeout minute */
+"ppc.error.lock.minute" = "minute";
+
+/* Error - lock timeout minutes */
+"ppc.error.lock.minutes" = "minutes";
+
+/* Error - lock timeout second */
+"ppc.error.lock.second" = "deuxième";
+
+/* Error - lock timeout seconds */
+"ppc.error.lock.seconds" = "secondes";
+
+/* Error - lock timeout general notice */
+"ppc.error.lock.timeout" = "Réessayez plus tard.";
+
+/* Error - Lock timeout with specified time */
+"ppc.error.lock.timeout.specified" = "Réessayez dans %@";
+
+/* Error - lock timeout helper */
+"ppc.error.lock.timout" = "%1$li %2$@";
+
+/* Label - $time1 and $time2 */
+"rule.component.state.schedule" = "$time1 et $time2";
+
+/* Label - between $time1 and $time2 */
+"rule.component.state.schedule.past" = "entre $time1 et $time2";
+
+/* Label - What is the start time, and on which days? */
+"rule.component.state.schedule.start" = "Quelle est l'heure de début et quels sont les jours ?";
+
+/* Label - What time should it end each day? */
+"rule.component.state.schedule.stop" = "À quelle heure doit-il se terminer chaque jour ?";
+

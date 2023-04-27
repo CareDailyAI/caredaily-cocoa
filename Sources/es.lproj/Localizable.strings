@@ -923,7 +923,7 @@
 "ppc.error.code.13.description" = "Valor de índice incorrecto";
 
 /* Error - Error in parsing of input data */
-"ppc.error.code.14.description" = "Error al analizar los datos de entrada";
+"ppc.error.code.14.description" = "Datos erróneos";
 
 /* Error - Wrong consumer ID */
 "ppc.error.code.15.description" = "ID de consumidor incorrecto";
@@ -935,7 +935,7 @@
 "ppc.error.code.17.description" = "Clave de activación incorrecta";
 
 /* Error - Wrong rule schedule format */
-"ppc.error.code.18.description" = "Formato de programación de reglas incorrecto";
+"ppc.error.code.18.description" = "Formato incorrecto";
 
 /* Error - This action is temporarily locked */
 "ppc.error.code.19.description" = "Esta acción está bloqueada temporalmente";
@@ -968,7 +968,7 @@
 "ppc.error.code.28.description" = "El dispositivo no está vinculado a ninguna ubicación";
 
 /* Error - Requested API method not found */
-"ppc.error.code.29.description" = "No se encontró el método de API solicitado";
+"ppc.error.code.29.description" = "Solicitud de API errónea";
 
 /* Error - Service is temporarily unavailable */
 "ppc.error.code.30.description" = "El servicio está temporalmente no disponible";
