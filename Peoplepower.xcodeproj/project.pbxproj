@@ -1371,6 +1371,8 @@
 		635C5B9B259AA12700FD3BC5 /* Peoplepower.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Peoplepower.m; sourceTree = "<group>"; };
 		635E3AC122C26BE600C171B0 /* PPDeviceTypeStoryPageAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPDeviceTypeStoryPageAction.h; sourceTree = "<group>"; };
 		635E3AC222C26BE600C171B0 /* PPDeviceTypeStoryPageAction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPDeviceTypeStoryPageAction.m; sourceTree = "<group>"; };
+		63608D6029FAEF2A0049FE28 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		63608D6129FAEF330049FE28 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6360FAB621B8520200DB2B6B /* PPCloudsIntegrationCloud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPCloudsIntegrationCloud.h; sourceTree = "<group>"; };
 		6360FAB721B8520200DB2B6B /* PPCloudsIntegrationCloud.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPCloudsIntegrationCloud.m; sourceTree = "<group>"; };
 		636B4446248AE82A00124F6A /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
@@ -4297,6 +4299,7 @@
 				Base,
 				es,
 				sv,
+				fr,
 			);
 			mainGroup = 63D392B4204F21EE00041C1A;
 			productRefGroup = 63D392BE204F21EE00041C1A /* Products */;
@@ -5249,6 +5252,7 @@
 				63A712B425ACF8E60009E43D /* en */,
 				63A721B925B770AB0009E43D /* es */,
 				63175EC525D224F400690433 /* sv */,
+				63608D6029FAEF2A0049FE28 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -5259,6 +5263,7 @@
 				63CF579E27C037A900C4D9F2 /* en */,
 				63CF57A027C037AD00C4D9F2 /* es */,
 				63CF57A127C037AD00C4D9F2 /* sv */,
+				63608D6129FAEF330049FE28 /* fr */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
