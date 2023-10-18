@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -447,6 +447,7 @@
 		6326A21729C28C520073AE76 /* SyntheticVayyarHome-SetSubregion-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 6326A21629C28C520073AE76 /* SyntheticVayyarHome-SetSubregion-ResponseData.json */; };
 		63284D6A25532DB6009B0466 /* PPTypeDefinitions.h in Headers */ = {isa = PBXBuildFile; fileRef = 63284D6925532DB6009B0466 /* PPTypeDefinitions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63284D6B25532DB6009B0466 /* PPTypeDefinitions.h in Headers */ = {isa = PBXBuildFile; fileRef = 63284D6925532DB6009B0466 /* PPTypeDefinitions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6340730C2AE061C300465FD5 /* UICKeyChainStore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DDBD0429EA64A10078CCDF /* UICKeyChainStore.xcframework */; };
 		6351235A2138540C003E7EAA /* PPDevicePictureFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 635123542138540C003E7EAA /* PPDevicePictureFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6351235B2138540C003E7EAA /* PPDevicePictureFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 635123552138540C003E7EAA /* PPDevicePictureFrame.m */; };
 		63512369213890BB003E7EAA /* PPCircleDeviceCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 63512367213890BB003E7EAA /* PPCircleDeviceCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1243,7 +1244,6 @@
 		63DC1D10215A98EF0091FB2D /* PPLocationNarrative.h in Headers */ = {isa = PBXBuildFile; fileRef = 63DC1D0E215A98EF0091FB2D /* PPLocationNarrative.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63DC1D11215A98EF0091FB2D /* PPLocationNarrative.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DC1D0F215A98EF0091FB2D /* PPLocationNarrative.m */; };
 		63DDBD0829EA64A10078CCDF /* SocketRocket.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DDBD0029EA64A00078CCDF /* SocketRocket.xcframework */; };
-		63DDBD0C29EA64A10078CCDF /* UICKeyChainStore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DDBD0429EA64A10078CCDF /* UICKeyChainStore.xcframework */; };
 		63DDBD0D29EA64A10078CCDF /* OHHTTPStubs.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DDBD0529EA64A10078CCDF /* OHHTTPStubs.xcframework */; };
 		63DDBD0E29EA64A10078CCDF /* KissXML.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DDBD0629EA64A10078CCDF /* KissXML.xcframework */; };
 		63DDBD0F29EA64A10078CCDF /* AFNetworking.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DDBD0729EA64A10078CCDF /* AFNetworking.xcframework */; };
@@ -2151,7 +2151,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				63DDBD0829EA64A10078CCDF /* SocketRocket.xcframework in Frameworks */,
-				63DDBD0C29EA64A10078CCDF /* UICKeyChainStore.xcframework in Frameworks */,
 				63DDBD0D29EA64A10078CCDF /* OHHTTPStubs.xcframework in Frameworks */,
 				63DDBD0E29EA64A10078CCDF /* KissXML.xcframework in Frameworks */,
 				63DDBD0F29EA64A10078CCDF /* AFNetworking.xcframework in Frameworks */,
@@ -2160,6 +2159,7 @@
 				63BECA9220C5D77400408494 /* SystemConfiguration.framework in Frameworks */,
 				63BECA9020C5D77400408494 /* Contacts.framework in Frameworks */,
 				63BECB9320C5DDE000408494 /* libicucore.tbd in Frameworks */,
+				6340730C2AE061C300465FD5 /* UICKeyChainStore.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4165,7 +4165,6 @@
 				63BEC9B020C5D2AB00408494 /* Sources */,
 				63BEC9B120C5D2AB00408494 /* Frameworks */,
 				63BEC9B220C5D2AB00408494 /* Resources */,
-				6348674F259CF72800276E50 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -4184,7 +4183,6 @@
 				63C2A25E27F69E6700E2DFC1 /* Sources */,
 				63C2A25F27F69E6700E2DFC1 /* Frameworks */,
 				63C2A26027F69E6700E2DFC1 /* Resources */,
-				63C2A28F27FCAB0700E2DFC1 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -4590,49 +4588,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		6348674F259CF72800276E50 /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"$(SRCROOT)/input.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = Carthage;
-			outputFileListPaths = (
-				"$(SRCROOT)/output.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-		63C2A28F27FCAB0700E2DFC1 /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"$(SRCROOT)/input_watchOS.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = Carthage;
-			outputFileListPaths = (
-				"$(SRCROOT)/output_watchOS.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		630BDC4724B392400035D8B3 /* Sources */ = {
