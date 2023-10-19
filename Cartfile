@@ -3,4 +3,4 @@ github "kishikawakatsumi/UICKeyChainStore"
 github "AFNetworking/AFNetworking" ~> 4.0
 github "robbiehanson/KissXML"
 github "AliSoftware/OHHTTPStubs"
-github "realm/realm-cocoa" "v10.29.0"
+github "realm/realm-swift"

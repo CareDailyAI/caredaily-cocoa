@@ -1342,6 +1342,7 @@
 		631F8486206436000055C512 /* PPCloudConnectivityServer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPCloudConnectivityServer.m; sourceTree = "<group>"; };
 		6326A21629C28C520073AE76 /* SyntheticVayyarHome-SetSubregion-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "SyntheticVayyarHome-SetSubregion-ResponseData.json"; sourceTree = "<group>"; };
 		63284D6925532DB6009B0466 /* PPTypeDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPTypeDefinitions.h; sourceTree = "<group>"; };
+		6340731A2AE1BD3B00465FD5 /* libcompression.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcompression.tbd; path = usr/lib/libcompression.tbd; sourceTree = SDKROOT; };
 		634360AB206313D800B1DAE2 /* PPDeviceTypeDeviceModelBrand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPDeviceTypeDeviceModelBrand.h; sourceTree = "<group>"; };
 		634360AC206313D800B1DAE2 /* PPDeviceTypeDeviceModelBrand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPDeviceTypeDeviceModelBrand.m; sourceTree = "<group>"; };
 		634360AE2063288D00B1DAE2 /* PPDeviceTypeStoryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPDeviceTypeStoryModel.h; sourceTree = "<group>"; };
@@ -2269,6 +2270,7 @@
 		63475E3B2069CFCF009BCDED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6340731A2AE1BD3B00465FD5 /* libcompression.tbd */,
 				63DDBD3A29EA6ECE0078CCDF /* UICKeyChainStore.xcframework */,
 				63DDBD0729EA64A10078CCDF /* AFNetworking.xcframework */,
 				63DDBD0629EA64A10078CCDF /* KissXML.xcframework */,
