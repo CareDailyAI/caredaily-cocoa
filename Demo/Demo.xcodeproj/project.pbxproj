@@ -45,7 +45,6 @@
 		638422E929EF0FE1005E739C /* KissXML.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63DDBD1129EA65C70078CCDF /* KissXML.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		638422EA29EF0FE1005E739C /* OHHTTPStubs.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DDBD1229EA65C70078CCDF /* OHHTTPStubs.xcframework */; };
 		638422EB29EF0FE1005E739C /* OHHTTPStubs.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63DDBD1229EA65C70078CCDF /* OHHTTPStubs.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		638422EC29EF0FE1005E739C /* SocketRocket.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DDBD1429EA65C70078CCDF /* SocketRocket.xcframework */; };
 		638422EE29EF0FE1005E739C /* UICKeyChainStore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DDBD1529EA65C70078CCDF /* UICKeyChainStore.xcframework */; };
 		638422EF29EF0FE1005E739C /* UICKeyChainStore.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63DDBD1529EA65C70078CCDF /* UICKeyChainStore.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		638422F029EF1426005E739C /* AFNetworking.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DDBD1029EA65C70078CCDF /* AFNetworking.xcframework */; };
@@ -58,6 +57,8 @@
 		6384231E29EF1748005E739C /* Demo_watchOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6384231D29EF1748005E739C /* Demo_watchOSUITests.swift */; };
 		6384232029EF1748005E739C /* Demo_watchOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6384231F29EF1748005E739C /* Demo_watchOSUITestsLaunchTests.swift */; };
 		6384233029EF18C6005E739C /* Demo watchOS WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 630BDE2424B3B0F10035D8B3 /* Demo watchOS WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6399236B2AE30E2400BD69E8 /* SocketRocket.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DDBD1429EA65C70078CCDF /* SocketRocket.xcframework */; };
+		6399236C2AE30E2400BD69E8 /* SocketRocket.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63DDBD1429EA65C70078CCDF /* SocketRocket.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		63C84379268F787B00C6165E /* ViewController+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C84378268F787B00C6165E /* ViewController+Swift.swift */; };
 		63E62B572492A1A60038A694 /* Peoplepower-Config-Override.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63E62B562492A1A60038A694 /* Peoplepower-Config-Override.plist */; };
 /* End PBXBuildFile section */
@@ -163,6 +164,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				6399236C2AE30E2400BD69E8 /* SocketRocket.xcframework in Embed Frameworks */,
 				638422EF29EF0FE1005E739C /* UICKeyChainStore.xcframework in Embed Frameworks */,
 				638422E929EF0FE1005E739C /* KissXML.xcframework in Embed Frameworks */,
 				638422E729EF0FE1005E739C /* AFNetworking.xcframework in Embed Frameworks */,
@@ -288,12 +290,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				638422EC29EF0FE1005E739C /* SocketRocket.xcframework in Frameworks */,
 				638422EE29EF0FE1005E739C /* UICKeyChainStore.xcframework in Frameworks */,
 				638422E429EF0B18005E739C /* Peoplepower.framework in Frameworks */,
 				6306AD2529F1A8A60012301B /* RealmSwift.xcframework in Frameworks */,
 				638422E829EF0FE1005E739C /* KissXML.xcframework in Frameworks */,
 				6306AD2329F1A8A50012301B /* Realm.xcframework in Frameworks */,
+				6399236B2AE30E2400BD69E8 /* SocketRocket.xcframework in Frameworks */,
 				638422EA29EF0FE1005E739C /* OHHTTPStubs.xcframework in Frameworks */,
 				638422E629EF0FE1005E739C /* AFNetworking.xcframework in Frameworks */,
 			);
