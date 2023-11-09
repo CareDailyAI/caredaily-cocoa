@@ -103,10 +103,13 @@
  * @param startDate NSDate Timestamp at which to register this product. The IoT Software Suite will ignore inbound measurements with a timestamp before the registration time. Default is the current time at the server.
  * @param desc NSString Device nickname / description
  * @param goalId PPDeviceTypeGoalId Device usage goal ID
+ * @param modelId NSString Model Device Model ID
+ * @param userId PPUserId User ID assocated with a personal device
  * @param properties NSArray Additional properties needed to register the device. e.g. [{"name": "username","value": "admin"},{"name": "port","index": "01","value": "1234"}]
  * @param proxyId NSString Send add device command to this proxy
  * @param callback PPDevicesRegisterBlock Device registration block providing device Id, auth token, device type, exist (whether or not the device was already registered), hot, port, ssl, and error details
  **/
++ (void)registerDevice:(NSString * _Nullable )deviceId locationId:(PPLocationId)locationId deviceTypeId:(PPDeviceTypeId)deviceTypeId authToken:(PPDevicesAuthToken)authToken startDate:(NSDate * _Nullable )startDate desc:(NSString * _Nullable )desc goalId:(PPDeviceTypeGoalId)goalId modelId:(NSString * _Nullable)modelId userId:(PPUserId)userId properties:(NSArray * _Nullable )properties proxyId:(NSString * _Nullable )proxyId callback:(PPDevicesRegisterBlock _Nonnull )callback;
 + (void)registerDevice:(NSString * _Nullable )deviceId locationId:(PPLocationId)locationId deviceTypeId:(PPDeviceTypeId)deviceTypeId authToken:(PPDevicesAuthToken)authToken startDate:(NSDate * _Nullable )startDate desc:(NSString * _Nullable )desc goalId:(PPDeviceTypeGoalId)goalId properties:(NSArray * _Nullable )properties proxyId:(NSString * _Nullable )proxyId callback:(PPDevicesRegisterBlock _Nonnull )callback;
 + (void)registerDevice:(NSString * _Nullable )deviceId locationId:(PPLocationId)locationId deviceTypeId:(PPDeviceTypeId)deviceTypeId authToken:(PPDevicesAuthToken)authToken startDate:(NSDate * _Nullable )startDate desc:(NSString * _Nullable )desc goalId:(PPDeviceTypeGoalId)goalId properties:(NSArray * _Nullable )properties callback:(PPDevicesRegisterBlock _Nonnull )callback __attribute__((deprecated));
 

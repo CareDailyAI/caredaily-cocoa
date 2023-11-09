@@ -1184,7 +1184,7 @@ __strong static PPDeviceProxy *_currentProxy = nil;
 }
 
 - (void)localDeviceDidUpdateDeviceName:(NSString *)name {
-    [PPDevices updateDevice:_localDevice.device.deviceId locationId:_location.locationId desc:_localDevice.device.name goalId:PPDeviceTypeGoalIdNone newDevice:PPDeviceNewDeviceNone newLocationId:PPLocationIdNone startDate:nil callback:^(NSError *error) {}];
+    [PPDevices updateDevice:_localDevice.device.deviceId locationId:_location.locationId desc:_localDevice.device.name goalId:PPDeviceTypeGoalIdNone newDevice:PPDeviceNewDeviceNone newLocationId:PPLocationIdNone startDate:nil modelId:nil callback:^(NSError *error) {}];
 }
 
 @end
