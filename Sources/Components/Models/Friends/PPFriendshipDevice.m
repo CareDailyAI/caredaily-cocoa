@@ -24,8 +24,8 @@
     return [NSString stringWithFormat:@"%li-%@", (long)_friendshipId, self.deviceId];
 }
 
-- (id)initWithDeviceId:(NSString *)deviceId name:(NSString *)name typeId:(PPDeviceTypeId)typeId category:(PPDeviceTypeCategory)category events:(RLMArray *)events currentEvent:(NSString *)currentEvent shared:(PPDeviceShared)shared shareDate:(NSDate *)shareDate mute:(PPFriendshipDeviceMute)mute connected:(PPDeviceConnected)connected typeAttributes:(RLMArray *)typeAttributes parameters:(RLMArray *)parameters properties:(RLMArray *)properties icon:(NSString *)icon spaces:(RLMArray *)spaces modelId:(NSString *)modelId {
-    self = [super initWithDeviceId:deviceId proxyId:nil name:name connected:PPDeviceConnectedNone restricted:PPDeviceRestrictedNone shared:shared newDevice:PPDeviceNewDeviceNone goalId:PPDeviceTypeGoalIdNone typeId:typeId category:category typeAttributes:typeAttributes locationId:PPLocationIdNone startDate:nil lastDataReceivedDate:nil lastMeasureDate:nil lastConnectedDate:nil parameters:parameters properties:properties icon:icon spaces:spaces modelId:modelId];
+- (id)initWithDeviceId:(NSString *)deviceId name:(NSString *)name typeId:(PPDeviceTypeId)typeId category:(PPDeviceTypeCategory)category events:(RLMArray *)events currentEvent:(NSString *)currentEvent shared:(PPDeviceShared)shared shareDate:(NSDate *)shareDate mute:(PPFriendshipDeviceMute)mute connected:(PPDeviceConnected)connected typeAttributes:(RLMArray *)typeAttributes parameters:(RLMArray *)parameters properties:(RLMArray *)properties icon:(NSString *)icon spaces:(RLMArray *)spaces modelId:(NSString *)modelId userId:(PPUserId)userId {
+    self = [super initWithDeviceId:deviceId proxyId:nil name:name connected:PPDeviceConnectedNone restricted:PPDeviceRestrictedNone shared:shared newDevice:PPDeviceNewDeviceNone goalId:PPDeviceTypeGoalIdNone typeId:typeId category:category typeAttributes:typeAttributes locationId:PPLocationIdNone startDate:nil lastDataReceivedDate:nil lastMeasureDate:nil lastConnectedDate:nil parameters:parameters properties:properties icon:icon spaces:spaces modelId:modelId userId:userId];
     if(self) {
         self.events = (RLMArray<RLMString> *)events;
         self.currentEvent = currentEvent;
@@ -34,9 +34,13 @@
     }
     return self;
 }
+- (id)initWithDeviceId:(NSString *)deviceId name:(NSString *)name typeId:(PPDeviceTypeId)typeId category:(PPDeviceTypeCategory)category events:(RLMArray *)events currentEvent:(NSString *)currentEvent shared:(PPDeviceShared)shared shareDate:(NSDate *)shareDate mute:(PPFriendshipDeviceMute)mute connected:(PPDeviceConnected)connected typeAttributes:(RLMArray *)typeAttributes parameters:(RLMArray *)parameters properties:(RLMArray *)properties icon:(NSString *)icon spaces:(RLMArray *)spaces modelId:(NSString *)modelId __attribute__((deprecated)) {
+    NSLog(@"%s deprecated, use -initWithDeviceId:name:typeId:category:events:currentEvent:shared:shareDate:mute:connected:typeAttributes:parameters:properties:icon:spaces:modelId:userId: {", __FUNCTION__);
+    return [self initWithDeviceId:deviceId name:name typeId:typeId category:category events:events currentEvent:currentEvent shared:shared shareDate:shareDate mute:mute connected:connected typeAttributes:typeAttributes parameters:parameters properties:properties icon:icon spaces:spaces modelId:modelId userId:PPUserIdNone];
+}
 
 + (PPFriendshipDevice *)initWithDevice:(PPDevice *)device events:(RLMArray *)events currentEvent:(NSString *)currentEvent mute:(PPFriendshipDeviceMute)mute shareDate:(NSDate *)shareDate {
-    PPFriendshipDevice *friendshipDevice = [[PPFriendshipDevice alloc] initWithDeviceId:device.deviceId name:device.name typeId:device.typeId category:device.category events:events currentEvent:currentEvent shared:device.shared shareDate:shareDate mute:mute connected:device.connected typeAttributes:device.typeAttributes parameters:device.parameters properties:device.properties icon:device.icon spaces:device.spaces modelId:device.modelId];
+    PPFriendshipDevice *friendshipDevice = [[PPFriendshipDevice alloc] initWithDeviceId:device.deviceId name:device.name typeId:device.typeId category:device.category events:events currentEvent:currentEvent shared:device.shared shareDate:shareDate mute:mute connected:device.connected typeAttributes:device.typeAttributes parameters:device.parameters properties:device.properties icon:device.icon spaces:device.spaces modelId:device.modelId userId:PPUserIdNone];
     return friendshipDevice;
 }
 
@@ -106,7 +110,12 @@
     
     NSString *modelId = [friendshipDeviceDict objectForKey:@"modelId"];
     
-    PPFriendshipDevice *device = [[PPFriendshipDevice alloc] initWithDeviceId:deviceId name:name typeId:typeId category:category events:(RLMArray *)events currentEvent:currentEvent shared:shared shareDate:shareDate mute:mute connected:connected typeAttributes:(RLMArray *)typeAttributes parameters:(RLMArray *)parameters properties:nil icon:icon spaces:(RLMArray *)spaces modelId:modelId];
+    PPUserId userId = PPUserIdNone;
+    if([friendshipDeviceDict objectForKey:@"userId"]) {
+        userId = (PPUserId)((NSString *)[friendshipDeviceDict objectForKey:@"userId"]).integerValue;
+    }
+    
+    PPFriendshipDevice *device = [[PPFriendshipDevice alloc] initWithDeviceId:deviceId name:name typeId:typeId category:category events:(RLMArray *)events currentEvent:currentEvent shared:shared shareDate:shareDate mute:mute connected:connected typeAttributes:(RLMArray *)typeAttributes parameters:(RLMArray *)parameters properties:nil icon:icon spaces:(RLMArray *)spaces modelId:modelId userId:userId];
     return device;
 }
 

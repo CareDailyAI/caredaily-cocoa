@@ -61,6 +61,8 @@ static NSString *moduleName = @"Devices";
  * @ param startDate NSDate Timestamp at which to register this product. The IoT Software Suite will ignore inbound measurements with a timestamp before the registration time. Default is the current time at the server.
  * @ param desc NSString Device nickname / description
  * @ param goalId PPDeviceTypeGoalId Device usage goal ID
+ * @ param modelId NSString Model Device Model ID
+ * @ param userId PPUserId User ID assocated with a personal device
  * @ param properties NSDictionary Additional properties needed to register the device. e.g. {"properties": [{"name": "username","value": "admin"},{"name": "port","index": "01","value": "1234"}]}
  * @ param callback PPDevicesRegisterBlock Device registration block providing device Id, auth token, device type, exist (whether or not the device was already registered), hot, port, ssl, and error details
  **/
@@ -70,7 +72,7 @@ static NSString *moduleName = @"Devices";
     
     [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/devices" statusCode:200 headers:nil];
     
-    [PPDevices registerDevice:self.device.deviceId locationId:self.location.locationId deviceTypeId:self.device.typeId authToken:PPDevicesAuthTokenNoAuthenticationTokenNeeded startDate:[NSDate date] desc:self.device.name goalId:self.device.goalId properties:self.device.properties proxyId:@"ABC123" callback:^(NSString *deviceId, NSString *authToken, PPDeviceTypeId deviceTypeId, PPDevicesExist exist, NSString *host, PPDevicesPort port, PPDevicesUseSSL useSsl, NSError *error) {
+    [PPDevices registerDevice:self.device.deviceId locationId:self.location.locationId deviceTypeId:self.device.typeId authToken:PPDevicesAuthTokenNoAuthenticationTokenNeeded startDate:[NSDate date] desc:self.device.name goalId:self.device.goalId modelId:nil userId:PPUserIdNone properties:self.device.properties proxyId:@"ABC123" callback:^(NSString *deviceId, NSString *authToken, PPDeviceTypeId deviceTypeId, PPDevicesExist exist, NSString *host, PPDevicesPort port, PPDevicesUseSSL useSsl, NSError *error) {
                          
         XCTAssertNil(error);
         [expectation fulfill];

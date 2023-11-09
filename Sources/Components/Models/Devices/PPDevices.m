@@ -346,11 +346,13 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
  * @param startDate NSDate Timestamp at which to register this product. The IoT Software Suite will ignore inbound measurements with a timestamp before the registration time. Default is the current time at the server.
  * @param desc NSString Device nickname / description
  * @param goalId PPDeviceTypeGoalId Device usage goal ID
+ * @param modelId NSString Model Device Model ID
+ * @param userId PPUserId User ID assocated with a personal device
  * @param properties NSArray Additional properties needed to register the device. e.g. [{"name": "username","value": "admin"},{"name": "port","index": "01","value": "1234"}]
  * @param proxyId NSString Send add device command to this proxy
  * @param callback PPDevicesRegisterBlock Device registration block providing device Id, auth token, device type, exist (whether or not the device was already registered), hot, port, ssl, and error details
  **/
-+ (void)registerDevice:(NSString *)deviceId locationId:(PPLocationId)locationId deviceTypeId:(PPDeviceTypeId)deviceTypeId authToken:(PPDevicesAuthToken)authToken startDate:(NSDate *)startDate desc:(NSString *)desc goalId:(PPDeviceTypeGoalId)goalId properties:(NSArray *)properties proxyId:(NSString *)proxyId callback:(PPDevicesRegisterBlock)callback {
++ (void)registerDevice:(NSString *)deviceId locationId:(PPLocationId)locationId deviceTypeId:(PPDeviceTypeId)deviceTypeId authToken:(PPDevicesAuthToken)authToken startDate:(NSDate *)startDate desc:(NSString *)desc goalId:(PPDeviceTypeGoalId)goalId modelId:(NSString * _Nullable)modelId userId:(PPUserId)userId properties:(NSArray * _Nullable)properties proxyId:(NSString * _Nullable)proxyId callback:(PPDevicesRegisterBlock _Nonnull)callback {
     
     NSURLComponents *components = [NSURLComponents componentsWithURL:[NSURL URLWithString:@"devices"] resolvingAgainstBaseURL:NO];
     
@@ -382,6 +384,13 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
     if(goalId != PPDeviceTypeGoalIdNone) {
         [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"goalId" value:@(goalId).stringValue]];
     }
+    if(modelId) {
+        [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"modelId" value:modelId]];
+    }
+    if(userId != PPUserIdNone) {
+        [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"userId" value:@(userId).stringValue]];
+    }
+    
     components.queryItems = queryItems;
     components.percentEncodedQuery = [[components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"] stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
     
@@ -408,56 +417,60 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
     
     PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
         
-        [[PPCloudEngine sharedAppEngine] operationWithRequest:request success:^(NSData *responseData) {
+    [[PPCloudEngine sharedAppEngine] operationWithRequest:request success:^(NSData *responseData) {
+        
+        dispatch_async(queue, ^{
             
-            dispatch_async(queue, ^{
-                
-                NSError *error = nil;
-                NSDictionary *root = [PPBaseModel processJSONResponse:responseData originatingClass:NSStringFromClass([self class]) error:&error];
-                
-                NSString *deviceId;
-                NSString *authToken;
-                PPDeviceTypeId deviceTypeId = PPDeviceTypeIdNone;
-                PPDevicesExist exist = PPDevicesExistNone;
-                NSString *host;
-                PPDevicesPort port = PPDevicesPortNone;
-                PPDevicesUseSSL useSSL = PPDevicesUseSSLNone;
-                
-                if(!error) {
-                    deviceId = [root objectForKey:@"deviceId"];
-                    authToken = [root objectForKey:@"authToken"];
-                    if([root objectForKey:@"deviceType"]) {
-                        deviceTypeId = (PPDeviceTypeId)((NSString *)[root objectForKey:@"deviceType"]).integerValue;
-                    }
-                    if([root objectForKey:@"exist"]) {
-                        exist = (PPDevicesExist)((NSString *)[root objectForKey:@"exist"]).boolValue;
-                    }
-                    host = [root objectForKey:@"host"];
-                    if([root objectForKey:@"port"]) {
-                        port = (PPDevicesPort)((NSString *)[root objectForKey:@"port"]).integerValue;
-                    }
-                    if([root objectForKey:@"useSSL"]) {
-                        useSSL = (PPDevicesUseSSL)((NSString *)[root objectForKey:@"useSSL"]).boolValue;
-                    }
+            NSError *error = nil;
+            NSDictionary *root = [PPBaseModel processJSONResponse:responseData originatingClass:NSStringFromClass([self class]) error:&error];
+            
+            NSString *deviceId;
+            NSString *authToken;
+            PPDeviceTypeId deviceTypeId = PPDeviceTypeIdNone;
+            PPDevicesExist exist = PPDevicesExistNone;
+            NSString *host;
+            PPDevicesPort port = PPDevicesPortNone;
+            PPDevicesUseSSL useSSL = PPDevicesUseSSLNone;
+            
+            if(!error) {
+                deviceId = [root objectForKey:@"deviceId"];
+                authToken = [root objectForKey:@"authToken"];
+                if([root objectForKey:@"deviceType"]) {
+                    deviceTypeId = (PPDeviceTypeId)((NSString *)[root objectForKey:@"deviceType"]).integerValue;
                 }
-                
-                PPLogAPI(@"< %s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
-                
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    callback(deviceId, authToken, deviceTypeId, exist, host, port, useSSL, error);
-                });
-            });
-        } failure:^(NSError *error) {
+                if([root objectForKey:@"exist"]) {
+                    exist = (PPDevicesExist)((NSString *)[root objectForKey:@"exist"]).boolValue;
+                }
+                host = [root objectForKey:@"host"];
+                if([root objectForKey:@"port"]) {
+                    port = (PPDevicesPort)((NSString *)[root objectForKey:@"port"]).integerValue;
+                }
+                if([root objectForKey:@"useSSL"]) {
+                    useSSL = (PPDevicesUseSSL)((NSString *)[root objectForKey:@"useSSL"]).boolValue;
+                }
+            }
+            
             PPLogAPI(@"< %s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                callback(nil, nil, PPDeviceTypeIdNone, PPDevicesExistNone, nil, PPDevicesPortNone, PPDevicesUseSSLNone, [PPBaseModel resultCodeToNSError:10003 originatingClass:NSStringFromClass([self class]) argument:[NSString stringWithFormat:@"%@",error.userInfo]]);
-            }); 
-        }];
+                callback(deviceId, authToken, deviceTypeId, exist, host, port, useSSL, error);
+            });
+        });
+    } failure:^(NSError *error) {
+        PPLogAPI(@"< %s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            callback(nil, nil, PPDeviceTypeIdNone, PPDevicesExistNone, nil, PPDevicesPortNone, PPDevicesUseSSLNone, [PPBaseModel resultCodeToNSError:10003 originatingClass:NSStringFromClass([self class]) argument:[NSString stringWithFormat:@"%@",error.userInfo]]);
+        });
+    }];
+}
++ (void)registerDevice:(NSString * _Nullable )deviceId locationId:(PPLocationId)locationId deviceTypeId:(PPDeviceTypeId)deviceTypeId authToken:(PPDevicesAuthToken)authToken startDate:(NSDate * _Nullable )startDate desc:(NSString * _Nullable )desc goalId:(PPDeviceTypeGoalId)goalId properties:(NSArray * _Nullable )properties proxyId:(NSString * _Nullable )proxyId callback:(PPDevicesRegisterBlock _Nonnull )callback __attribute__((deprecated)) {
+    NSLog(@"%s deprecated, use +registerDevice:locationId:deviceTypeId:authToken:startDate:desc:goalId:modelId:userId:properties:proxyId:callback:", __FUNCTION__);
+    [PPDevices registerDevice:deviceId locationId:locationId deviceTypeId:deviceTypeId authToken:authToken startDate:startDate desc:desc goalId:goalId modelId:nil userId:PPUserIdNone properties:properties proxyId:nil callback:callback];
 }
 + (void)registerDevice:(NSString *)deviceId locationId:(PPLocationId)locationId deviceTypeId:(PPDeviceTypeId)deviceTypeId authToken:(PPDevicesAuthToken)authToken startDate:(NSDate *)startDate desc:(NSString *)desc goalId:(PPDeviceTypeGoalId)goalId properties:(NSArray *)properties callback:(PPDevicesRegisterBlock)callback __attribute__((deprecated)) {
-    NSLog(@"%s deprecated, use +registerDevice:locationId:deviceTypeId:authToken:startDate:desc:goalId:properties:proxyId:callback:", __FUNCTION__);
-    [PPDevices registerDevice:deviceId locationId:locationId deviceTypeId:deviceTypeId authToken:authToken startDate:startDate desc:desc goalId:goalId properties:properties proxyId:nil callback:callback];
+    NSLog(@"%s deprecated, use +registerDevice:locationId:deviceTypeId:authToken:startDate:desc:goalId:modelId:userId:properties:proxyId:callback:", __FUNCTION__);
+    [PPDevices registerDevice:deviceId locationId:locationId deviceTypeId:deviceTypeId authToken:authToken startDate:startDate desc:desc goalId:goalId modelId:nil userId:PPUserIdNone properties:properties proxyId:nil callback:callback];
 }
 
 /**
