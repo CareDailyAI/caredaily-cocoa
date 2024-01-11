@@ -2383,7 +2383,7 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeId)  {
     
     PPDeviceTypeIdVayyarHome = 2000,
     PPDeviceTypeIdXandarKardian = 2001,
-    PPDeviceTypeIdWellvii = 2000,
+    PPDeviceTypeIdWellvii = 2002,
     
     PPDeviceTypeIdMonsterThreeSocketMonitorControl = 2013,
     PPDeviceTypeIdMonsterOneSocketMonitorControl = 2012,
@@ -2404,6 +2404,8 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeId)  {
     PPDeviceTypeIdHoneywellThermostat = 4230,
     PPDeviceTypeIdEcobeeThermostat = 4240,
     PPDeviceTypeIdEmersonThermostat = 4260,
+    
+    PPDeviceTypeIdWithingsSleep = 4302,
     
     PPDeviceTypeIdEversensor = 4311,
     
@@ -2771,7 +2773,7 @@ typedef NS_OPTIONS(NSInteger, PPCloudsIntegrationCloudMicroServiceVersionStatus)
 typedef NS_OPTIONS(NSInteger, PPCloudsIntegrationClientApplicationId) {
     PPCloudsIntegrationClientApplicationIdNone = -1,
     PPCloudsIntegrationClientApplicationIdUnknown = 0,
-    PPCloudsIntegrationClientApplicationIdSAMI = 1,
+    PPCloudsIntegrationClientApplicationIdOnscreen = 1,
     PPCloudsIntegrationClientApplicationIdTwitter = 2,
     PPCloudsIntegrationClientApplicationIdLondonHydro = 3,
     PPCloudsIntegrationClientApplicationIdPresence = 4,
@@ -2780,7 +2782,9 @@ typedef NS_OPTIONS(NSInteger, PPCloudsIntegrationClientApplicationId) {
     PPCloudsIntegrationClientApplicationIdSensibo = 7,
     PPCloudsIntegrationClientApplicationIdHoneywell = 8,
     PPCloudsIntegrationClientApplicationIdLogitech = 9,
-    PPCloudsIntegrationClientApplicationIdEcobee = 10
+    PPCloudsIntegrationClientApplicationIdEcobee = 10,
+    PPCloudsIntegrationClientApplicationIdWithings = 14,
+    PPCloudsIntegrationClientApplicationIdEmerson = 15
 };
 
 typedef NS_OPTIONS(NSInteger, PPCloudsIntegrationClientActive) {
