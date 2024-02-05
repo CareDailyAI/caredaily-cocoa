@@ -184,7 +184,7 @@ static NSString *moduleName = @"Devices";
     
     [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:[NSString stringWithFormat:@"/cloud/json/locations/%@/devices/%@", @(self.location.locationId), self.device.deviceId] statusCode:200 headers:nil];
     
-    [PPDevices updateDevice:self.device.deviceId locationId:self.location.locationId desc:self.device.name goalId:self.device.goalId newDevice:PPDeviceNewDeviceTrue newLocationId:PPLocationIdNone startDate:nil callback:^(NSError *error) {
+    [PPDevices updateDevice:self.device.deviceId locationId:self.location.locationId desc:self.device.name goalId:self.device.goalId newDevice:PPDeviceNewDeviceTrue newLocationId:PPLocationIdNone startDate:nil modelId:nil userId:PPUserIdNone callback:^(NSError *error) {
         
         XCTAssertNil(error);
         [expectation fulfill];

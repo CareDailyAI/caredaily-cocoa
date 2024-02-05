@@ -705,8 +705,8 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
  * @param callback PPErrorBlock Error callback block
  **/
 + (void)updateDevice:(NSString *)deviceId desc:(NSString *)desc goalId:(PPDeviceTypeGoalId)goalId newDevice:(PPDeviceNewDevice)newDevice locationId:(PPLocationId)locationId startDate:(NSDate *)startDate callback:(PPErrorBlock)callback {
-    NSLog(@"%s deprecated. Use +updateDevice:locationId:desc:goalId:newDevice:newLocationId:startDate:callback:", __FUNCTION__);
-    [PPDevices updateDevice:deviceId locationId:PPLocationIdNone desc:desc goalId:goalId newDevice:newDevice newLocationId:locationId startDate:startDate callback:callback];
+    NSLog(@"%s deprecated. Use +updateDevice:locationId:desc:goalId:newDevice:newLocationId:startDate:modelId:userId:callback:", __FUNCTION__);
+    [PPDevices updateDevice:deviceId locationId:locationId desc:desc goalId:goalId newDevice:newDevice newLocationId:locationId startDate:startDate modelId:nil userId:PPUserIdNone callback:callback];
 }
 
 /**
@@ -742,9 +742,10 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
  * @param newLocationId PPLocationId New location to move this device to
  * @param startDate NSDate Retroactively declare when this device was moved/added to a location
  * @param modelId NSString New Model ID
+ * @param userId PPUserId User ID associated with this device
  * @param callback PPErrorBlock Error callback block
  **/
-+ (void)updateDevice:(NSString * _Nonnull )deviceId locationId:(PPLocationId)locationId desc:(NSString * _Nullable )desc goalId:(PPDeviceTypeGoalId)goalId newDevice:(PPDeviceNewDevice)newDevice newLocationId:(PPLocationId)newLocationId startDate:(NSDate * _Nullable )startDate modelId:(NSString * _Nullable )modelId callback:(PPErrorBlock _Nonnull )callback {
++ (void)updateDevice:(NSString * _Nonnull )deviceId locationId:(PPLocationId)locationId desc:(NSString * _Nullable )desc goalId:(PPDeviceTypeGoalId)goalId newDevice:(PPDeviceNewDevice)newDevice newLocationId:(PPLocationId)newLocationId startDate:(NSDate * _Nullable )startDate modelId:(NSString * _Nullable )modelId userId:(PPUserId)userId callback:(PPErrorBlock _Nonnull )callback {
     NSAssert1(locationId != PPLocationIdNone, @"%s missing locationId", __FUNCTION__);
     NSAssert1(deviceId != nil, @"%s missing deviceId", __FUNCTION__);
     
@@ -752,7 +753,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
     
     NSMutableDictionary *data = @{}.mutableCopy;
         
-    if(desc || goalId != PPDeviceTypeGoalIdNone || newDevice != PPDeviceNewDeviceNone || modelId) {
+    if(desc || goalId != PPDeviceTypeGoalIdNone || newDevice != PPDeviceNewDeviceNone || modelId || userId != PPUserIdNone) {
         NSMutableDictionary *deviceData = @{}.mutableCopy;
         
         if(desc) {
@@ -766,6 +767,9 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
         }
         if(modelId) {
             deviceData[@"modelId"] = modelId;
+        }
+        if(userId != PPUserIdNone) {
+            deviceData[@"userId"] = @(userId);
         }
         
         data[@"device"] = deviceData;
@@ -821,13 +825,18 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
         });
     }];
 }
+
++ (void)updateDevice:(NSString * _Nonnull )deviceId locationId:(PPLocationId)locationId desc:(NSString * _Nullable )desc goalId:(PPDeviceTypeGoalId)goalId newDevice:(PPDeviceNewDevice)newDevice newLocationId:(PPLocationId)newLocationId startDate:(NSDate * _Nullable )startDate modelId:(NSString * _Nullable )modelId callback:(PPErrorBlock _Nonnull )callback __attribute__((deprecated)) {
+    NSLog(@"%s deprecated. Use +updateDevice:locationId:desc:goalId:newDevice:newLocationId:startDate:modelId:userId:callback:", __FUNCTION__);
+    [PPDevices updateDevice:deviceId locationId:locationId desc:desc goalId:goalId newDevice:newDevice newLocationId:locationId startDate:startDate modelId:nil userId:PPUserIdNone callback:callback];
+}
 + (void)updateDevice:(NSString * _Nonnull )deviceId locationId:(PPLocationId)locationId desc:(NSString * _Nullable )desc goalId:(PPDeviceTypeGoalId)goalId newDevice:(PPDeviceNewDevice)newDevice newLocationId:(PPLocationId)newLocationId startDate:(NSDate * _Nullable )startDate callback:(PPErrorBlock _Nonnull )callback __attribute__((deprecated)) {
-    NSLog(@"%s deprecated. Use +updateDevice:locationId:desc:goalId:newDevice:newLocationId:startDate:modelId:callback:", __FUNCTION__);
-    [PPDevices updateDevice:deviceId locationId:locationId desc:desc goalId:goalId newDevice:newDevice newLocationId:locationId startDate:startDate modelId:nil callback:callback];
+    NSLog(@"%s deprecated. Use +updateDevice:locationId:desc:goalId:newDevice:newLocationId:startDate:modelId:userId:callback:", __FUNCTION__);
+    [PPDevices updateDevice:deviceId locationId:locationId desc:desc goalId:goalId newDevice:newDevice newLocationId:locationId startDate:startDate modelId:nil userId:PPUserIdNone callback:callback];
 }
 + (void)updateDevice:(NSString *)deviceId currentLocationId:(PPLocationId)currentLocationId desc:(NSString *)desc goalId:(PPDeviceTypeGoalId)goalId newDevice:(PPDeviceNewDevice)newDevice locationId:(PPLocationId)locationId startDate:(NSDate *)startDate callback:(PPErrorBlock)callback {
-    NSLog(@"%s deprecated. Use +updateDevice:locationId:desc:goalId:newDevice:newLocationId:startDate:modelId:callback:", __FUNCTION__);
-    [PPDevices updateDevice:deviceId locationId:currentLocationId desc:desc goalId:goalId newDevice:newDevice newLocationId:locationId startDate:startDate modelId:nil callback:callback];
+    NSLog(@"%s deprecated. Use +updateDevice:locationId:desc:goalId:newDevice:newLocationId:startDate:modelId:userId:callback:", __FUNCTION__);
+    [PPDevices updateDevice:deviceId locationId:currentLocationId desc:desc goalId:goalId newDevice:newDevice newLocationId:locationId startDate:startDate modelId:nil userId:PPUserIdNone callback:callback];
 }
 
 /**

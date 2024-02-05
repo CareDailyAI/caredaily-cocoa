@@ -207,9 +207,11 @@
  * @param newLocationId PPLocationId New location to move this device to
  * @param startDate NSDate Retroactively declare when this device was moved/added to a location
  * @param modelId NSString New Model ID
+ * @param userId PPUserId User ID associated with this device
  * @param callback PPErrorBlock Error callback block
  **/
-+ (void)updateDevice:(NSString * _Nonnull )deviceId locationId:(PPLocationId)locationId desc:(NSString * _Nullable )desc goalId:(PPDeviceTypeGoalId)goalId newDevice:(PPDeviceNewDevice)newDevice newLocationId:(PPLocationId)newLocationId startDate:(NSDate * _Nullable )startDate modelId:(NSString * _Nullable )modelId callback:(PPErrorBlock _Nonnull )callback;
++ (void)updateDevice:(NSString * _Nonnull )deviceId locationId:(PPLocationId)locationId desc:(NSString * _Nullable )desc goalId:(PPDeviceTypeGoalId)goalId newDevice:(PPDeviceNewDevice)newDevice newLocationId:(PPLocationId)newLocationId startDate:(NSDate * _Nullable )startDate modelId:(NSString * _Nullable )modelId userId:(PPUserId)userId callback:(PPErrorBlock _Nonnull )callback;
++ (void)updateDevice:(NSString * _Nonnull )deviceId locationId:(PPLocationId)locationId desc:(NSString * _Nullable )desc goalId:(PPDeviceTypeGoalId)goalId newDevice:(PPDeviceNewDevice)newDevice newLocationId:(PPLocationId)newLocationId startDate:(NSDate * _Nullable )startDate modelId:(NSString * _Nullable )modelId callback:(PPErrorBlock _Nonnull )callback __attribute__((deprecated));
 + (void)updateDevice:(NSString * _Nonnull )deviceId locationId:(PPLocationId)locationId desc:(NSString * _Nullable )desc goalId:(PPDeviceTypeGoalId)goalId newDevice:(PPDeviceNewDevice)newDevice newLocationId:(PPLocationId)newLocationId startDate:(NSDate * _Nullable )startDate callback:(PPErrorBlock _Nonnull )callback __attribute__((deprecated));
 + (void)updateDevice:(NSString * _Nonnull )deviceId currentLocationId:(PPLocationId)currentLocationId desc:(NSString * _Nullable )desc goalId:(PPDeviceTypeGoalId)goalId newDevice:(PPDeviceNewDevice)newDevice locationId:(PPLocationId)locationId startDate:(NSDate * _Nullable )startDate callback:(PPErrorBlock _Nonnull )callback __attribute__((deprecated));
 
