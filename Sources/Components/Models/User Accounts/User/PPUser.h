@@ -101,13 +101,61 @@
 /* Location Communities */
 @property (nonatomic, strong) NSArray *locationCommunities;
 
+/* User role */
+@property (nonatomic) PPUserAccessibility accessibility;
+
 #pragma mark - Session Management
 
 - (id)initWithCachedUser;
 
 - (id)initWithSessionKey:(NSString *)sessionKey username:(NSString *)username;
 
-- (id)initWithUserId:(PPUserId)userId email:(PPUserEmail *)email username:(NSString *)username altUsername:(NSString *)altUsername firstName:(NSString *)firstName lastName:(NSString *)lastName communityName:(NSString *)communityName language:(NSString *)language phone:(NSString *)phone phoneType:(PPUserPhoneType)phoneType smsStatus:(PPUserSMSStatus)smsStatus anonymous:(PPUserAnonymousType)anonymous userPermissions:(NSArray *)userPermissions tags:(NSArray *)tags locations:(NSArray *)locations badges:(NSArray *)badges organizations:(NSArray *)organizations avatarFileId:(PPUserAvatarFileId)avatarFileId creationDate:(NSDate *)creationDate authClients:(NSArray *)authClients userCommunities:(NSArray *)userCommunities locationCommunities:(NSArray *)locationCommunities;
+- (id)initWithUserId:(PPUserId)userId 
+               email:(PPUserEmail *)email
+            username:(NSString *)username
+         altUsername:(NSString *)altUsername
+           firstName:(NSString *)firstName
+            lastName:(NSString *)lastName
+       communityName:(NSString *)communityName
+            language:(NSString *)language
+               phone:(NSString *)phone
+           phoneType:(PPUserPhoneType)phoneType
+           smsStatus:(PPUserSMSStatus)smsStatus
+           anonymous:(PPUserAnonymousType)anonymous
+     userPermissions:(NSArray *)userPermissions
+                tags:(NSArray *)tags
+           locations:(NSArray *)locations
+              badges:(NSArray *)badges
+       organizations:(NSArray *)organizations
+        avatarFileId:(PPUserAvatarFileId)avatarFileId
+        creationDate:(NSDate *)creationDate
+         authClients:(NSArray *)authClients
+     userCommunities:(NSArray *)userCommunities
+ locationCommunities:(NSArray *)locationCommunities
+       accessibility:(PPUserAccessibility)accessibility;
+
+- (id)initWithUserId:(PPUserId)userId
+               email:(PPUserEmail *)email
+            username:(NSString *)username
+         altUsername:(NSString *)altUsername
+           firstName:(NSString *)firstName
+            lastName:(NSString *)lastName
+       communityName:(NSString *)communityName
+            language:(NSString *)language
+               phone:(NSString *)phone
+           phoneType:(PPUserPhoneType)phoneType
+           smsStatus:(PPUserSMSStatus)smsStatus
+           anonymous:(PPUserAnonymousType)anonymous
+     userPermissions:(NSArray *)userPermissions
+                tags:(NSArray *)tags
+           locations:(NSArray *)locations
+              badges:(NSArray *)badges
+       organizations:(NSArray *)organizations
+        avatarFileId:(PPUserAvatarFileId)avatarFileId
+        creationDate:(NSDate *)creationDate
+         authClients:(NSArray *)authClients
+     userCommunities:(NSArray *)userCommunities
+ locationCommunities:(NSArray *)locationCommunities;
 
 + (PPUser * _Nonnull )initWithDictionary:(NSDictionary * _Nonnull )root;
 

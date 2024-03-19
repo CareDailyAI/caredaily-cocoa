@@ -188,6 +188,15 @@ typedef NS_OPTIONS(NSInteger, PPLocationCategory) {
     PPLocationCategoryReminders = 3,
 };
 
+typedef NS_OPTIONS(NSInteger, PPLocationUserRole) {
+    PPLocationUserRoleNone                      = -1,
+    PPLocationUserRoleNoRole                    = 0,
+    PPLocationUserRoleCareRecipient             = 1,
+    PPLocationUserRolePrimaryFamilyCaregiver    = 2,
+    PPLocationUserRoleSecondaryFamilyCaregiver  = 3,
+    PPLocationUserRoleProfessionalCaregiver     = 4,
+};
+
 typedef NS_OPTIONS(NSInteger, PPLocationFileUploadPolicy) {
     PPLocationFileUploadPolicyNone = -1,
     PPLocationFileUploadPolicyKeepOldFiles = 0,
@@ -335,6 +344,14 @@ typedef NS_OPTIONS(NSInteger, PPUserSMSStatus) {
 
 typedef NS_OPTIONS(NSInteger, PPUserAvatarFileId) {
     PPUserAvatarFileIdNone = -1,
+};
+
+typedef NS_OPTIONS(NSInteger, PPUserAccessibility) {
+    PPUserAccessibilityNone             = -1,
+    PPUserAccessibilityNoAccessibility  = 0,
+    PPUserAccessibilityBlind            = 1 << 0,
+    PPUserAccessibilityDeaf             = 1 << 1,
+    PPUserAccessibilityImmobile         = 1 << 2,
 };
 
 // MARK: User Email
