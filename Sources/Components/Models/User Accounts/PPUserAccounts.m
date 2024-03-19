@@ -463,11 +463,12 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
  * @param phone NSString Phone
  * @param phoneType PPUserPhoneType Phone type
  * @param anonymous PPUserAnonymousType Anonymous
+ * @param accessibility PPUserAccessibility Accessibility
  * @param location PPLocation User location
  * @param operationToken PPOperationToken Operation token
  * @param callback PPUserRegistrationBlock User registration block containing userId, locationId, API key, and API key expire date
  **/
-+ (void)registerWithUsername:(NSString *)username altUsername:(NSString *)altUsername password:(NSString *)password firstName:(NSString *)firstName lastName:(NSString *)lastName email:(NSString *)email appName:(NSString *)appName language:(NSString *)language phone:(NSString *)phone phoneType:(PPUserPhoneType)phoneType anonymous:(PPUserAnonymousType)anonymous location:(PPLocation *)location operationToken:(PPOperationToken *)operationToken callback:(PPUserAccountsRegistrationBlock)callback {
++ (void)registerWithUsername:(NSString *)username altUsername:(NSString *)altUsername password:(NSString *)password firstName:(NSString *)firstName lastName:(NSString *)lastName email:(NSString *)email appName:(NSString *)appName language:(NSString *)language phone:(NSString *)phone phoneType:(PPUserPhoneType)phoneType anonymous:(PPUserAnonymousType)anonymous accessibility:(PPUserAccessibility)accessibility location:(PPLocation * _Nullable)location operationToken:(PPOperationToken * _Nullable)operationToken callback:(PPUserAccountsRegistrationBlock _Nonnull)callback {
     NSAssert1(username != nil || email != nil, @"%s missing username or email", __FUNCTION__);
     NSAssert1(appName != nil, @"%s missing appName", __FUNCTION__);
     
@@ -502,6 +503,9 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     }
     if (anonymous) {
         userData[@"anonymous"] = (anonymous) ? @"true" : @"false";
+    }
+    if (accessibility) {
+        userData[@"accessibility"] = @(accessibility);
     }
     
     NSMutableDictionary *data = @{@"user": userData}.mutableCopy;
@@ -589,9 +593,13 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
         }
     }];
 }
++ (void)registerWithUsername:(NSString *)username altUsername:(NSString *)altUsername password:(NSString *)password firstName:(NSString *)firstName lastName:(NSString *)lastName email:(NSString *)email appName:(NSString *)appName language:(NSString *)language phone:(NSString *)phone phoneType:(PPUserPhoneType)phoneType anonymous:(PPUserAnonymousType)anonymous location:(PPLocation *)location operationToken:(PPOperationToken *)operationToken callback:(PPUserAccountsRegistrationBlock)callback {
+    NSLog(@"%s deprecated. Use +registerWithUsername:altUsername:password:firstName:lastName:email:appName:language:phone:phoneType:anonymous:accessibility:location:operationToken:callback:", __FUNCTION__);
+    [PPUserAccounts registerWithUsername:username altUsername:nil password:password firstName:firstName lastName:lastName email:email appName:appName language:language phone:phone phoneType:phoneType anonymous:anonymous accessibility:PPUserAccessibilityNone location:location operationToken:operationToken callback:callback];
+}
 + (void)registerWithUsername:(NSString *)username password:(NSString *)password firstName:(NSString *)firstName lastName:(NSString *)lastName email:(NSString *)email appName:(NSString *)appName language:(NSString *)language phone:(NSString *)phone phoneType:(PPUserPhoneType)phoneType anonymous:(PPUserAnonymousType)anonymous location:(PPLocation *)location operationToken:(PPOperationToken *)operationToken callback:(PPUserAccountsRegistrationBlock)callback {
-    NSLog(@"%s deprecated. Use +registerWithUsername:altUsername:password:firstName:lastName:email:appName:language:phone:phoneType:anonymous:location:operationToken:callback:", __FUNCTION__);
-    [PPUserAccounts registerWithUsername:username altUsername:nil password:password firstName:firstName lastName:lastName email:email appName:appName language:language phone:phone phoneType:phoneType anonymous:anonymous location:location operationToken:operationToken callback:callback];
+    NSLog(@"%s deprecated. Use +registerWithUsername:altUsername:password:firstName:lastName:email:appName:language:phone:phoneType:anonymous:accessibility:location:operationToken:callback:", __FUNCTION__);
+    [PPUserAccounts registerWithUsername:username altUsername:nil password:password firstName:firstName lastName:lastName email:email appName:appName language:language phone:phone phoneType:phoneType anonymous:anonymous accessibility:PPUserAccessibilityNone location:location operationToken:operationToken callback:callback];
 }
 
 /**
@@ -668,10 +676,11 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
  * @param phone NSString Phone
  * @param phoneType PPUserPhoneType as NSNumber. Phone type.
  * @param anonymous PPUserAnonymousType Anonymous.
+ * @param accessibility PPUserAccessibility Accessibility.
  * @param userId PPUserId User ID. This parameter is used by administrator accounts to update a specific user's account.
  * @param callback PPUserAccountsBlock Callback method provides PPUser object and optional error
  */
-+ (void)updateUsername:(NSString * _Nullable )username altUsername:(NSString * _Nullable )altUsername password:(NSString * _Nullable )password firstName:(NSString * _Nullable )firstName lastName:(NSString * _Nullable )lastName communityName:(NSString * _Nullable )communityName email:(NSString * _Nullable )email emailResetStatus:(PPUserEmailStatus)emailResetStatus language:(NSString * _Nullable )language phone:(NSString * _Nullable )phone phoneType:(PPUserPhoneType)phoneType anonymous:(PPUserAnonymousType)anonymous userId:(PPUserId)userId callback:(PPErrorBlock _Nullable )callback {
++ (void)updateUsername:(NSString * _Nullable )username altUsername:(NSString * _Nullable )altUsername password:(NSString * _Nullable )password firstName:(NSString * _Nullable )firstName lastName:(NSString * _Nullable )lastName communityName:(NSString * _Nullable )communityName email:(NSString * _Nullable )email emailResetStatus:(PPUserEmailStatus)emailResetStatus language:(NSString * _Nullable )language phone:(NSString * _Nullable )phone phoneType:(PPUserPhoneType)phoneType anonymous:(PPUserAnonymousType)anonymous accessibility:(PPUserAccessibility)accessibility userId:(PPUserId)userId callback:(PPErrorBlock _Nullable)callback {
     
     NSURLComponents *components = [NSURLComponents componentsWithURL:[NSURL URLWithString:@"user"] resolvingAgainstBaseURL:NO];
     
@@ -715,6 +724,9 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     }
     if(anonymous != PPUserAnonymousTypeNone) {
         userDict[@"anonymous"] = (anonymous) ? @"true" : @"false";
+    }
+    if(accessibility != PPUserAccessibilityNone) {
+        userDict[@"accessibility"] = @(accessibility);
     }
     
     NSError *dataError;
@@ -760,13 +772,17 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
         });
     }];
 }
++ (void)updateUsername:(NSString * _Nullable )username altUsername:(NSString * _Nullable )altUsername password:(NSString * _Nullable )password firstName:(NSString * _Nullable )firstName lastName:(NSString * _Nullable )lastName communityName:(NSString * _Nullable )communityName email:(NSString * _Nullable )email emailResetStatus:(PPUserEmailStatus)emailResetStatus language:(NSString * _Nullable )language phone:(NSString * _Nullable )phone phoneType:(PPUserPhoneType)phoneType anonymous:(PPUserAnonymousType)anonymous userId:(PPUserId)userId callback:(PPErrorBlock _Nullable )callback {
+    NSLog(@"%s deprecated. Use +updateUsername:password:firstName:lastName:communityName:email:emailResetStatus:language:phone:phoneType:anonymous:accessibility:userId:callback:callback", __FUNCTION__);
+    [PPUserAccounts updateUsername:username altUsername:altUsername password:password firstName:firstName lastName:lastName communityName:nil email:email emailResetStatus:emailResetStatus language:language phone:phone phoneType:phoneType anonymous:anonymous accessibility:PPUserAccessibilityNone userId:userId callback:callback];
+}
 + (void)updateUsername:(NSString *)username altUsername:(NSString *)altUsername password:(NSString *)password firstName:(NSString *)firstName lastName:(NSString *)lastName email:(NSString *)email emailResetStatus:(PPUserEmailStatus)emailResetStatus language:(NSString *)language phone:(NSString *)phone phoneType:(PPUserPhoneType)phoneType anonymous:(PPUserAnonymousType)anonymous userId:(PPUserId)userId callback:(PPErrorBlock)callback {
-    NSLog(@"%s deprecated. Use +updateUsername:password:firstName:lastName:communityName:email:emailResetStatus:language:phone:phoneType:anonymous:userId:callback:callback", __FUNCTION__);
-    [PPUserAccounts updateUsername:username altUsername:altUsername password:password firstName:firstName lastName:lastName communityName:nil email:email emailResetStatus:emailResetStatus language:language phone:phone phoneType:phoneType anonymous:anonymous userId:userId callback:callback];
+    NSLog(@"%s deprecated. Use +updateUsername:password:firstName:lastName:communityName:email:emailResetStatus:language:phone:phoneType:anonymous:accessibility:userId:callback:callback", __FUNCTION__);
+    [PPUserAccounts updateUsername:username altUsername:altUsername password:password firstName:firstName lastName:lastName communityName:nil email:email emailResetStatus:emailResetStatus language:language phone:phone phoneType:phoneType anonymous:anonymous accessibility:PPUserAccessibilityNone userId:userId callback:callback];
 }
 + (void)updateUsername:(NSString *)username password:(NSString *)password firstName:(NSString *)firstName lastName:(NSString *)lastName email:(NSString *)email emailResetStatus:(PPUserEmailStatus)emailResetStatus language:(NSString *)language phone:(NSString *)phone phoneType:(PPUserPhoneType)phoneType anonymous:(PPUserAnonymousType)anonymous userId:(PPUserId)userId callback:(PPErrorBlock)callback {
-    NSLog(@"%s deprecated. Use +updateUsername:password:firstName:lastName:communityName:email:emailResetStatus:language:phone:phoneType:anonymous:userId:callback:callback", __FUNCTION__);
-    [PPUserAccounts updateUsername:username altUsername:nil password:password firstName:firstName lastName:lastName communityName:nil email:email emailResetStatus:emailResetStatus language:language phone:phone phoneType:phoneType anonymous:anonymous userId:userId callback:callback];
+    NSLog(@"%s deprecated. Use +updateUsername:password:firstName:lastName:communityName:email:emailResetStatus:language:phone:phoneType:anonymous:accessibility:userId:callback:callback", __FUNCTION__);
+    [PPUserAccounts updateUsername:username altUsername:nil password:password firstName:firstName lastName:lastName communityName:nil email:email emailResetStatus:emailResetStatus language:language phone:phone phoneType:phoneType anonymous:anonymous accessibility:PPUserAccessibilityNone userId:userId callback:callback];
 }
 
 /**
