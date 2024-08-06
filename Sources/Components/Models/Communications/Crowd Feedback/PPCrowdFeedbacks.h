@@ -47,9 +47,11 @@
  * The API returns the created feedback record ID and if a ticket has been created in a support cloud, then the ticket ID and the brand name.
  *
  * @param feedback required PPCrowdFeedback Feedback to send
+ * @param brand NSString Brand name
  * @param callback PPCrowdFeedbacksTicketBlock Feedback callback block containing ticket response
  **/
-+ (void)postCrowdFeedback:(PPCrowdFeedback * _Nonnull )feedback callback:(PPCrowdFeedbacksTicketBlock _Nonnull )callback;
++ (void)postCrowdFeedback:(PPCrowdFeedback * _Nonnull )feedback brand:(NSString * _Nullable )brand callback:(PPCrowdFeedbacksTicketBlock _Nonnull )callback;
++ (void)postCrowdFeedback:(PPCrowdFeedback * _Nonnull )feedback callback:(PPCrowdFeedbacksTicketBlock _Nonnull )callback __attribute__((deprecated));
 
 #pragma mark - Get Crowd Feedback by Searching
 

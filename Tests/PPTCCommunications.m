@@ -272,7 +272,7 @@ static NSString *moduleName = @"UserCommunications";
     
     [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/feedback" statusCode:200 headers:nil];
 
-    [PPCrowdFeedbacks postCrowdFeedback:self.feedback callback:^(PPCrowdFeedbackTicket *ticket, NSError *error) {
+    [PPCrowdFeedbacks postCrowdFeedback:self.feedback brand:self.brand callback:^(PPCrowdFeedbackTicket *ticket, NSError *error) {
 
         XCTAssertNil(error);
         [expectation fulfill];
