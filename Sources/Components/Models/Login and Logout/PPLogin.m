@@ -190,7 +190,7 @@
     
     NSMutableArray *queryItems = @[].mutableCopy;
     [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"username" value:cleanedUsername]];
-    [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"preDeliveryType" value:@(type).stringValue]];
+    [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"prefDeliveryType" value:@(type).stringValue]];
     if(brand) {
         [queryItems addObject:[[NSURLQueryItem alloc] initWithName:@"brand" value:brand]];
     }
