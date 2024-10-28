@@ -42,8 +42,8 @@ typedef NS_OPTIONS(NSInteger, PPLoginExpiryType) {
 
 typedef NS_OPTIONS(NSInteger, PPLoginNotificationType) {
     PPLoginNotificationTypeNone = -1,
-    PPLoginNotificationTypeSMS = 2,
-    PPLoginNotificationTypeEmail = 3,
+    PPLoginNotificationTypeEmail = 2,
+    PPLoginNotificationTypeSMS = 3,
 };
 
 typedef NS_OPTIONS(NSInteger, PPLoginKeyType) {
