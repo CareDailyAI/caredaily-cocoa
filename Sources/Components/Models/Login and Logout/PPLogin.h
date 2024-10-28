@@ -47,7 +47,7 @@
  * Currently it can be send only by SMS, if the user has a valid mobile phone number.
  *
  * @param username Required NSString The username.
- * @param type Required PPLoginNotificationType Notification type: 2 = SMS
+ * @param type Required PPLoginNotificationType Notification type: 2 = Email; 3 = SMS
  * @param brand NSString A parameter identifying a customer's specific notification template
  * @param appName NSString App name to identify the brand
  * @param callback PPErrorBlock Error callback block
