@@ -2359,6 +2359,8 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeId)  {
     PPDeviceTypeIdNextekPsm = 12,
     PPDeviceTypeIdHDBox808SmartPlug = 15,
     PPDeviceTypeIdIBeacon = 16,
+    PPDeviceTypeIdAndroidProxy = 18,
+    PPDeviceTypeIdGoogleHealthConnect = 19,
     PPDeviceTypeIdOpenTokMobileCamera = 21,
     PPDeviceTypeIdWebCamera = 22,
     PPDeviceTypeIdAndroidMobileCamera = 23,
@@ -2375,6 +2377,7 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeId)  {
     PPDeviceTypeIdDevelcoGatewayDP0X = 36,
     PPDeviceTypeIdDevelcoGatewayDP2X = 37,
     PPDeviceTypeIdDevelcoGatewayDP4X = 38,
+    PPDeviceTypeIdDevelcoGatewayDP47 = 39,
     
     PPDeviceTypeIdDSRSGW = 40,
     
@@ -2401,6 +2404,21 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeId)  {
     PPDeviceTypeIdVayyarHome = 2000,
     PPDeviceTypeIdXandarKardian = 2001,
     PPDeviceTypeIdWellvii = 2002,
+    PPDeviceTypeIdNobi = 2003,
+    PPDeviceTypeIdEtectRxReader = 2004,
+    PPDeviceTypeIdIGuardStove = 2005,
+    PPDeviceTypeIdComarchWristband = 2006,
+    PPDeviceTypeIdAeroSenseAssure = 2020,
+    PPDeviceTypeIdAeroSenseWavve = 2021,
+    
+    PPDeviceTypeIdIntrexWearable = 2031,
+    PPDeviceTypeIdIntrexPullCord = 2032,
+    PPDeviceTypeIdIntrexWindowSensor = 2033,
+    PPDeviceTypeIdIntrexDoorSensor = 2034,
+    PPDeviceTypeIdIntrexPresence = 2035,
+    PPDeviceTypeIdIntrexDoorLock = 2036,
+    PPDeviceTypeIdIntrexDoorPositionSwitch = 2037,
+    
     
     PPDeviceTypeIdMonsterThreeSocketMonitorControl = 2013,
     PPDeviceTypeIdMonsterOneSocketMonitorControl = 2012,
@@ -2410,6 +2428,8 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeId)  {
     PPDeviceTypeIdRobotGalileoBluetooth = 3101,
     PPDeviceTypeIdRobotKubiBluetooth = 3102,
     PPDeviceTypeIdRobotP360 = 3103,
+    
+    PPDeviceTypeIdDAEGateway = 4130,
     
     PPDeviceTypeIdNetatmoHealthCoach = 4200,
     PPDeviceTypeIdNetatmoWeatherStationIndoor = 4201,
@@ -2421,7 +2441,12 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeId)  {
     PPDeviceTypeIdHoneywellThermostat = 4230,
     PPDeviceTypeIdEcobeeThermostat = 4240,
     PPDeviceTypeIdEmersonThermostat = 4260,
+    PPDeviceTypeIdOnscreen = 4270,
     
+    PPDeviceTypeIdFreeusBelleX = 4280,
+    
+    PPDeviceTypeIdWithingsScale = 4300,
+    PPDeviceTypeIdWithingsWatch = 4301,
     PPDeviceTypeIdWithingsSleep = 4302,
     
     PPDeviceTypeIdEversensor = 4311,
@@ -2429,27 +2454,41 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeId)  {
     PPDeviceTypeIdIndoorCamera = 7000,
     PPDeviceTypeIdFoscamIPCamera = 7001,
     PPDeviceTypeIdAMTKIPCamera = 7002,
+    PPDeviceTypeIdIPCamera = 7004,
     PPDeviceTypeIdNabtoCamera = 7007,
+    
+    PPDeviceTypeIdElectricVehicle = 8000,
     
     PPDeviceTypeIdInWallSwitch = 9001,
     PPDeviceTypeIdSmartenitSiren = 9002,
     PPDeviceTypeIdGreenPeakHumidityAndTemperatureSensor = 9003,
+    PPDeviceTypeIdHumidityTemperatureLightSensor = 9004,
+    PPDeviceTypeIdFireDetector = 9006,
+    PPDeviceTypeIdDevelcoSmokeDetector = 9007,
+    PPDeviceTypeIdHeatDetector = 9008,
     
     PPDeviceTypeIdLinkHighSiren = 9009,
     PPDeviceTypeIdDoorLock = 9010,
+    PPDeviceTypeIdGasDetector = 9011,
+    PPDeviceTypeIdSmokeDetector = 9012,
     PPDeviceTypeIdEWIDButton = 9014,
+    PPDeviceTypeIdRangeExtender = 9015,
     PPDeviceTypeIdLargeLoadController = 9017,
-    
     PPDeviceTypeIdInWallDimmer = 9018,
     PPDeviceTypeIdInWallOutlet = 9019,
     PPDeviceTypeIdSmartDimmer = 9020,
     
+    PPDeviceTypeIdPressurePad = 9039,
+    
     PPDeviceTypeIdDevelcoButton = 9101,
     PPDeviceTypeIdDevelcoSiren = 9102,
     PPDeviceTypeIdDevelcoKeypad = 9103,
+    PPDeviceTypeIdDevelcoDigitalIO = 9104,
+    PPDeviceTypeIdDevelcoSmartCable = 9105,
     PPDeviceTypeIdDevelcoMultiButton = 9106,
     PPDeviceTypeIdDevelcoAirQualitySensor = 9107,
     PPDeviceTypeIdDevelcoHeatSensor = 9108,
+    PPDeviceTypeIdDevelcoAudioAssistant = 9109,
     PPDeviceTypeIdDevelcoSmokeAlarm = 9112,
     PPDeviceTypeIdDevelcoDoorWindowSensor = 9114,
     PPDeviceTypeIdDevelcoWatarSensor = 9117,
@@ -3133,7 +3172,7 @@ typedef NS_OPTIONS(NSInteger, PPCloudEngineType) {
 
 // MARK: - Synthetic APIS
 
-// MARK: Vayyar
+// MARK: Radar / Vayyar
 
 typedef NS_OPTIONS(NSInteger, PPVayyarSubregionId) {
     PPVayyarSubregionIdNone = -1
@@ -3141,6 +3180,14 @@ typedef NS_OPTIONS(NSInteger, PPVayyarSubregionId) {
 
 typedef NS_OPTIONS(NSInteger, PPVayyarContextId) {
     PPVayyarContextIdNone = -1
+};
+
+typedef NS_OPTIONS(NSInteger, PPRadarSubregionId) {
+    PPRadarSubregionIdNone = -1
+};
+
+typedef NS_OPTIONS(NSInteger, PPRadarContextId) {
+    PPRadarContextIdNone = -1
 };
 
 // MARK: -
