@@ -2408,6 +2408,7 @@ typedef NS_OPTIONS(NSInteger, PPDeviceTypeId)  {
     PPDeviceTypeIdEtectRxReader = 2004,
     PPDeviceTypeIdIGuardStove = 2005,
     PPDeviceTypeIdComarchWristband = 2006,
+    PPDeviceTypeIdPontosenseSilverShield = 2007,
     PPDeviceTypeIdAeroSenseAssure = 2020,
     PPDeviceTypeIdAeroSenseWavve = 2021,
     
@@ -3715,7 +3716,7 @@ typedef void (^PPUserAccountsUserCodesBlock)(NSArray * _Nullable userCodes, NSEr
 @class PPVideoToken;
 @class PPDeviceProxy;
 
-typedef void (^PPDevicesRegisterBlock)(NSString * _Nullable deviceId, NSString * _Nullable authToken, PPDeviceTypeId deviceTypeId, PPDevicesExist exist, NSString * _Nullable host, PPDevicesPort port, PPDevicesUseSSL useSsl, NSError * _Nullable error);
+typedef void (^PPDevicesRegisterBlock)(NSString * _Nullable deviceId, NSString * _Nullable authToken, PPDeviceTypeId deviceTypeId, PPDevicesExist exist, NSDictionary * _Nullable config, NSString * _Nullable host, PPDevicesPort port, PPDevicesUseSSL useSsl, NSError * _Nullable error);
 typedef void (^PPDevicesBlock)(NSArray * _Nullable devices, NSError * _Nullable error);
 typedef void (^PPDeviceBlock)(PPDevice * _Nullable device, PPLocation * _Nullable location, NSError * _Nullable error);
 typedef void (^PPDeviceActivationBlock)(PPDeviceActivationInfo * _Nullable deviceActivationInfo, NSError * _Nullable error);

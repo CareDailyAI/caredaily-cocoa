@@ -64,7 +64,7 @@ static NSString *moduleName = @"Devices";
  * @ param modelId NSString Model Device Model ID
  * @ param userId PPUserId User ID assocated with a personal device
  * @ param properties NSDictionary Additional properties needed to register the device. e.g. {"properties": [{"name": "username","value": "admin"},{"name": "port","index": "01","value": "1234"}]}
- * @ param callback PPDevicesRegisterBlock Device registration block providing device Id, auth token, device type, exist (whether or not the device was already registered), hot, port, ssl, and error details
+ * @ param callback PPDevicesRegisterBlock Device registration block providing device Id, auth token, device type, exist (whether or not the device was already registered), config (Flexible structure object depending on the device type for device provisioning and initial configuration), host, port, ssl, and error details
  **/
 - (void)testRegisterDevice {
     NSString *methodName = @"RegisterDevice";
@@ -72,7 +72,7 @@ static NSString *moduleName = @"Devices";
     
     [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/devices" statusCode:200 headers:nil];
     
-    [PPDevices registerDevice:self.device.deviceId locationId:self.location.locationId deviceTypeId:self.device.typeId authToken:PPDevicesAuthTokenNoAuthenticationTokenNeeded startDate:[NSDate date] desc:self.device.name goalId:self.device.goalId modelId:nil userId:PPUserIdNone properties:self.device.properties proxyId:@"ABC123" callback:^(NSString *deviceId, NSString *authToken, PPDeviceTypeId deviceTypeId, PPDevicesExist exist, NSString *host, PPDevicesPort port, PPDevicesUseSSL useSsl, NSError *error) {
+    [PPDevices registerDevice:self.device.deviceId locationId:self.location.locationId deviceTypeId:self.device.typeId authToken:PPDevicesAuthTokenNoAuthenticationTokenNeeded startDate:[NSDate date] desc:self.device.name goalId:self.device.goalId modelId:nil userId:PPUserIdNone properties:self.device.properties proxyId:@"ABC123" callback:^(NSString *deviceId, NSString *authToken, PPDeviceTypeId deviceTypeId, PPDevicesExist exist, NSDictionary *config, NSString *host, PPDevicesPort port, PPDevicesUseSSL useSsl, NSError *error) {
                          
         XCTAssertNil(error);
         [expectation fulfill];
