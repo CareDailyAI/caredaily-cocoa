@@ -103,7 +103,7 @@
         [proxyExpectation fulfill];
     }
     else {
-        [PPDevices registerDevice:[NSString stringWithFormat:@"%@:%li", [PPDeviceProxyLocal localUDID], [[PPUserAccounts currentUser] currentLocation].locationId] locationId:[[PPUserAccounts currentUser] currentLocation].locationId deviceTypeId:localDevice.typeId authToken:registerAuthToken startDate:nil desc:localDevice.name goalId:localDevice.goalId properties:localDevice.properties callback:^(NSString *deviceId, NSString *authToken, PPDeviceTypeId deviceTypeId, PPDevicesExist exist, NSString *host, PPDevicesPort port, PPDevicesUseSSL useSsl, NSError *error) {
+        [PPDevices registerDevice:[NSString stringWithFormat:@"%@:%li", [PPDeviceProxyLocal localUDID], [[PPUserAccounts currentUser] currentLocation].locationId] locationId:[[PPUserAccounts currentUser] currentLocation].locationId deviceTypeId:localDevice.typeId authToken:registerAuthToken startDate:nil desc:localDevice.name goalId:localDevice.goalId properties:localDevice.properties callback:^(NSString *deviceId, NSString *authToken, PPDeviceTypeId deviceTypeId, PPDevicesExist exist, NSDictionary *config, NSString *host, PPDevicesPort port, PPDevicesUseSSL useSsl, NSError *error) {
             
             XCTAssertNil(error);
             

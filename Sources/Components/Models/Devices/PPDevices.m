@@ -350,7 +350,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
  * @param userId PPUserId User ID assocated with a personal device
  * @param properties NSArray Additional properties needed to register the device. e.g. [{"name": "username","value": "admin"},{"name": "port","index": "01","value": "1234"}]
  * @param proxyId NSString Send add device command to this proxy
- * @param callback PPDevicesRegisterBlock Device registration block providing device Id, auth token, device type, exist (whether or not the device was already registered), hot, port, ssl, and error details
+ * @param callback PPDevicesRegisterBlock Device registration block providing device Id, auth token, device type, exist (whether or not the device was already registered), config (Flexible structure object depending on the device type for device provisioning and initial configuration), host, port, ssl, and error details
  **/
 + (void)registerDevice:(NSString *)deviceId locationId:(PPLocationId)locationId deviceTypeId:(PPDeviceTypeId)deviceTypeId authToken:(PPDevicesAuthToken)authToken startDate:(NSDate *)startDate desc:(NSString *)desc goalId:(PPDeviceTypeGoalId)goalId modelId:(NSString * _Nullable)modelId userId:(PPUserId)userId properties:(NSArray * _Nullable)properties proxyId:(NSString * _Nullable)proxyId callback:(PPDevicesRegisterBlock _Nonnull)callback {
     
@@ -404,7 +404,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
     NSError *dataError;
     NSData *body = [NSJSONSerialization dataWithJSONObject:@{@"properties": data} options:0 error:&dataError];
     if(dataError) {
-        callback(nil, nil, PPDeviceTypeIdNone, PPDevicesExistNone, nil, PPDevicesPortNone, PPDevicesUseSSLNone, [PPBaseModel resultCodeToNSError:14 originatingClass:NSStringFromClass([self class]) argument:[NSString stringWithFormat:@"%@",dataError.userInfo]]);
+        callback(nil, nil, PPDeviceTypeIdNone, PPDevicesExistNone, nil, nil, PPDevicesPortNone, PPDevicesUseSSLNone, [PPBaseModel resultCodeToNSError:14 originatingClass:NSStringFromClass([self class]) argument:[NSString stringWithFormat:@"%@",dataError.userInfo]]);
         return;
     }
     
@@ -428,6 +428,7 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
             NSString *authToken;
             PPDeviceTypeId deviceTypeId = PPDeviceTypeIdNone;
             PPDevicesExist exist = PPDevicesExistNone;
+            NSDictionary *config = nil;
             NSString *host;
             PPDevicesPort port = PPDevicesPortNone;
             PPDevicesUseSSL useSSL = PPDevicesUseSSLNone;
@@ -441,6 +442,9 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
                 if([root objectForKey:@"exist"]) {
                     exist = (PPDevicesExist)((NSString *)[root objectForKey:@"exist"]).boolValue;
                 }
+                if([root objectForKey:@"config"]) {
+                    config = [root objectForKey:@"config"];
+                }
                 host = [root objectForKey:@"host"];
                 if([root objectForKey:@"port"]) {
                     port = (PPDevicesPort)((NSString *)[root objectForKey:@"port"]).integerValue;
@@ -453,14 +457,14 @@ __strong static NSMutableDictionary*_sharedDevices = nil;
             PPLogAPI(@"< %s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                callback(deviceId, authToken, deviceTypeId, exist, host, port, useSSL, error);
+                callback(deviceId, authToken, deviceTypeId, exist, config, host, port, useSSL, error);
             });
         });
     } failure:^(NSError *error) {
         PPLogAPI(@"< %s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            callback(nil, nil, PPDeviceTypeIdNone, PPDevicesExistNone, nil, PPDevicesPortNone, PPDevicesUseSSLNone, [PPBaseModel resultCodeToNSError:10003 originatingClass:NSStringFromClass([self class]) argument:[NSString stringWithFormat:@"%@",error.userInfo]]);
+            callback(nil, nil, PPDeviceTypeIdNone, PPDevicesExistNone, nil, nil, PPDevicesPortNone, PPDevicesUseSSLNone, [PPBaseModel resultCodeToNSError:10003 originatingClass:NSStringFromClass([self class]) argument:[NSString stringWithFormat:@"%@",error.userInfo]]);
         });
     }];
 }

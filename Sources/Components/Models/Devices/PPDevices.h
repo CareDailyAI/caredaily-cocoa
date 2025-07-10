@@ -107,7 +107,7 @@
  * @param userId PPUserId User ID assocated with a personal device
  * @param properties NSArray Additional properties needed to register the device. e.g. [{"name": "username","value": "admin"},{"name": "port","index": "01","value": "1234"}]
  * @param proxyId NSString Send add device command to this proxy
- * @param callback PPDevicesRegisterBlock Device registration block providing device Id, auth token, device type, exist (whether or not the device was already registered), hot, port, ssl, and error details
+ * @param callback PPDevicesRegisterBlock Device registration block providing device Id, auth token, device type, exist (whether or not the device was already registered), config (Flexible structure object depending on the device type for device provisioning and initial configuration), host, port, ssl, and error details
  **/
 + (void)registerDevice:(NSString * _Nullable )deviceId locationId:(PPLocationId)locationId deviceTypeId:(PPDeviceTypeId)deviceTypeId authToken:(PPDevicesAuthToken)authToken startDate:(NSDate * _Nullable )startDate desc:(NSString * _Nullable )desc goalId:(PPDeviceTypeGoalId)goalId modelId:(NSString * _Nullable)modelId userId:(PPUserId)userId properties:(NSArray * _Nullable )properties proxyId:(NSString * _Nullable )proxyId callback:(PPDevicesRegisterBlock _Nonnull )callback;
 + (void)registerDevice:(NSString * _Nullable )deviceId locationId:(PPLocationId)locationId deviceTypeId:(PPDeviceTypeId)deviceTypeId authToken:(PPDevicesAuthToken)authToken startDate:(NSDate * _Nullable )startDate desc:(NSString * _Nullable )desc goalId:(PPDeviceTypeGoalId)goalId properties:(NSArray * _Nullable )properties proxyId:(NSString * _Nullable )proxyId callback:(PPDevicesRegisterBlock _Nonnull )callback;
