@@ -101,38 +101,26 @@
 /* Location Communities */
 @property (nonatomic, strong) NSArray *locationCommunities;
 
-/* User role */
+/* User Medical Record Number */
+@property (nonatomic, strong) NSString *medicalRecordNumber;
+
+/* User Pronoun ID */
+@property (nonatomic) PPUserPronounId pronounId;
+
+/* User accessibility */
 @property (nonatomic) PPUserAccessibility accessibility;
+
+/* User Birth Date */
+@property (nonatomic, strong) NSString *birthDate;
+
+/* User Gender */
+@property (nonatomic) PPUserGender gender;
 
 #pragma mark - Session Management
 
 - (id)initWithCachedUser;
 
 - (id)initWithSessionKey:(NSString *)sessionKey username:(NSString *)username;
-
-- (id)initWithUserId:(PPUserId)userId 
-               email:(PPUserEmail *)email
-            username:(NSString *)username
-         altUsername:(NSString *)altUsername
-           firstName:(NSString *)firstName
-            lastName:(NSString *)lastName
-       communityName:(NSString *)communityName
-            language:(NSString *)language
-               phone:(NSString *)phone
-           phoneType:(PPUserPhoneType)phoneType
-           smsStatus:(PPUserSMSStatus)smsStatus
-           anonymous:(PPUserAnonymousType)anonymous
-     userPermissions:(NSArray *)userPermissions
-                tags:(NSArray *)tags
-           locations:(NSArray *)locations
-              badges:(NSArray *)badges
-       organizations:(NSArray *)organizations
-        avatarFileId:(PPUserAvatarFileId)avatarFileId
-        creationDate:(NSDate *)creationDate
-         authClients:(NSArray *)authClients
-     userCommunities:(NSArray *)userCommunities
- locationCommunities:(NSArray *)locationCommunities
-       accessibility:(PPUserAccessibility)accessibility;
 
 - (id)initWithUserId:(PPUserId)userId
                email:(PPUserEmail *)email
@@ -155,7 +143,59 @@
         creationDate:(NSDate *)creationDate
          authClients:(NSArray *)authClients
      userCommunities:(NSArray *)userCommunities
- locationCommunities:(NSArray *)locationCommunities;
+ locationCommunities:(NSArray *)locationCommunities
+ medicalRecordNumber:(NSString *)medicalRecordNumber
+           pronounId:(PPUserPronounId)pronounId
+       accessibility:(PPUserAccessibility)accessibility
+           birthDate:(NSString *)birthDate
+              gender:(PPUserGender)gender;
+
+- (id)initWithUserId:(PPUserId)userId
+               email:(PPUserEmail *)email
+            username:(NSString *)username
+         altUsername:(NSString *)altUsername
+           firstName:(NSString *)firstName
+            lastName:(NSString *)lastName
+       communityName:(NSString *)communityName
+            language:(NSString *)language
+               phone:(NSString *)phone
+           phoneType:(PPUserPhoneType)phoneType
+           smsStatus:(PPUserSMSStatus)smsStatus
+           anonymous:(PPUserAnonymousType)anonymous
+     userPermissions:(NSArray *)userPermissions
+                tags:(NSArray *)tags
+           locations:(NSArray *)locations
+              badges:(NSArray *)badges
+       organizations:(NSArray *)organizations
+        avatarFileId:(PPUserAvatarFileId)avatarFileId
+        creationDate:(NSDate *)creationDate
+         authClients:(NSArray *)authClients
+     userCommunities:(NSArray *)userCommunities
+ locationCommunities:(NSArray *)locationCommunities
+       accessibility:(PPUserAccessibility)accessibility __attribute__((deprecated));
+
+- (id)initWithUserId:(PPUserId)userId
+               email:(PPUserEmail *)email
+            username:(NSString *)username
+         altUsername:(NSString *)altUsername
+           firstName:(NSString *)firstName
+            lastName:(NSString *)lastName
+       communityName:(NSString *)communityName
+            language:(NSString *)language
+               phone:(NSString *)phone
+           phoneType:(PPUserPhoneType)phoneType
+           smsStatus:(PPUserSMSStatus)smsStatus
+           anonymous:(PPUserAnonymousType)anonymous
+     userPermissions:(NSArray *)userPermissions
+                tags:(NSArray *)tags
+           locations:(NSArray *)locations
+              badges:(NSArray *)badges
+       organizations:(NSArray *)organizations
+        avatarFileId:(PPUserAvatarFileId)avatarFileId
+        creationDate:(NSDate *)creationDate
+         authClients:(NSArray *)authClients
+     userCommunities:(NSArray *)userCommunities
+ locationCommunities:(NSArray *)locationCommunities __attribute__((deprecated));
 
 + (PPUser * _Nonnull )initWithDictionary:(NSDictionary * _Nonnull )root;
 

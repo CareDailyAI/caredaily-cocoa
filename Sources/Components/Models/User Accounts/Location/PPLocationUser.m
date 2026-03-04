@@ -10,8 +10,55 @@
 
 @implementation PPLocationUser
 
-- (id)initWithUserId:(PPUserId)userId locationId:(PPLocationId)locationId email:(PPUserEmail *)email username:(NSString *)username altUsername:(NSString *)altUsername firstName:(NSString *)firstName lastName:(NSString *)lastName phone:(NSString *)phone phoneType:(PPUserPhoneType)phoneType smsStatus:(PPUserSMSStatus)smsStatus locationAccess:(PPLocationAccess)locationAccess category:(PPLocationCategory)category schedules:(NSArray *)schedules avatarFileId:(PPUserAvatarFileId)avatarFileId temporary:(PPLocationTemporary)temporary accessEndDate:(NSDate *)accessEndDate role:(PPLocationUserRole)role accessibility:(PPUserAccessibility)accessibility {
-    self = [super initWithUserId:userId email:email username:username altUsername:altUsername firstName:firstName lastName:lastName communityName:nil language:nil phone:phone phoneType:phoneType smsStatus:smsStatus anonymous:PPUserAnonymousTypeNone userPermissions:nil tags:nil locations:nil badges:nil organizations:nil avatarFileId:avatarFileId creationDate:nil authClients:nil userCommunities:nil locationCommunities:nil accessibility:accessibility];
+- (id)initWithUserId:(PPUserId)userId
+          locationId:(PPLocationId)locationId
+               email:(PPUserEmail *)email
+            username:(NSString *)username
+         altUsername:(NSString *)altUsername
+           firstName:(NSString *)firstName
+            lastName:(NSString *)lastName
+               phone:(NSString *)phone
+           phoneType:(PPUserPhoneType)phoneType
+           smsStatus:(PPUserSMSStatus)smsStatus
+      locationAccess:(PPLocationAccess)locationAccess
+            category:(PPLocationCategory)category
+           schedules:(NSArray *)schedules
+        avatarFileId:(PPUserAvatarFileId)avatarFileId
+           temporary:(PPLocationTemporary)temporary
+       accessEndDate:(NSDate *)accessEndDate
+                role:(PPLocationUserRole)role
+ medicalRecordNumber:(NSString *)medicalRecordNumber
+           pronounId:(PPUserPronounId)pronounId
+       accessibility:(PPUserAccessibility)accessibility
+           birthDate:(NSString *)birthDate
+              gender:(PPUserGender)gender {
+    self = [super initWithUserId:userId
+                           email:email
+                        username:username
+                     altUsername:altUsername
+                       firstName:firstName
+                        lastName:lastName
+                   communityName:nil
+                        language:nil
+                           phone:phone
+                       phoneType:phoneType
+                       smsStatus:smsStatus
+                       anonymous:PPUserAnonymousTypeNone
+                 userPermissions:nil
+                            tags:nil
+                       locations:nil
+                          badges:nil
+                   organizations:nil
+                    avatarFileId:avatarFileId
+                    creationDate:nil
+                     authClients:nil
+                 userCommunities:nil
+             locationCommunities:nil
+             medicalRecordNumber:medicalRecordNumber
+                       pronounId:pronounId
+                   accessibility:accessibility
+                       birthDate:birthDate
+                          gender:gender];
     if(self) {
         self.locationId = locationId;
         self.locationAccess = locationAccess;
@@ -23,9 +70,13 @@
     }
     return self;
 }
+- (id)initWithUserId:(PPUserId)userId locationId:(PPLocationId)locationId email:(PPUserEmail *)email username:(NSString *)username altUsername:(NSString *)altUsername firstName:(NSString *)firstName lastName:(NSString *)lastName phone:(NSString *)phone phoneType:(PPUserPhoneType)phoneType smsStatus:(PPUserSMSStatus)smsStatus locationAccess:(PPLocationAccess)locationAccess category:(PPLocationCategory)category schedules:(NSArray *)schedules avatarFileId:(PPUserAvatarFileId)avatarFileId temporary:(PPLocationTemporary)temporary accessEndDate:(NSDate *)accessEndDate role:(PPLocationUserRole)role accessibility:(PPUserAccessibility)accessibility  __attribute__((deprecated)) {
+    NSLog(@"%s deprecated, use -initWithUserId:locationId:email:username:altUsername:firstName:lastName:phone:phoneType:smsStatus:locationAccess:category:schedules:avatarFileId:temporary:accessEndDate:role:medicalRecordNumber:pronounId:accessibility:birthDate:gender:", __FUNCTION__);
+    return [self initWithUserId:userId locationId:locationId email:email username:username altUsername:altUsername firstName:firstName lastName:lastName phone:phone phoneType:phoneType smsStatus:smsStatus locationAccess:locationAccess category:category schedules:schedules avatarFileId:avatarFileId temporary:temporary accessEndDate:accessEndDate role:PPLocationUserRoleNone medicalRecordNumber:nil pronounId:PPUserPronounIdNone accessibility:PPUserAccessibilityNone birthDate:nil gender:PPUserGenderNone];
+}
 - (id)initWithUserId:(PPUserId)userId locationId:(PPLocationId)locationId email:(PPUserEmail *)email username:(NSString *)username altUsername:(NSString *)altUsername firstName:(NSString *)firstName lastName:(NSString *)lastName phone:(NSString *)phone phoneType:(PPUserPhoneType)phoneType smsStatus:(PPUserSMSStatus)smsStatus locationAccess:(PPLocationAccess)locationAccess category:(PPLocationCategory)category schedules:(NSArray *)schedules avatarFileId:(PPUserAvatarFileId)avatarFileId temporary:(PPLocationTemporary)temporary accessEndDate:(NSDate *)accessEndDate  __attribute__((deprecated)) {
-    NSLog(@"%s deprecated, use -initWithUserId:locationId:email:username:altUsername:firstName:lastName:phone:phoneType:smsStatus:locationAccess:category:schedules:avatarFileId:temporary:accessEndDate:role:accessibility:", __FUNCTION__);
-    return [self initWithUserId:userId locationId:locationId email:email username:username altUsername:altUsername firstName:firstName lastName:lastName phone:phone phoneType:phoneType smsStatus:smsStatus locationAccess:locationAccess category:category schedules:schedules avatarFileId:avatarFileId temporary:temporary accessEndDate:accessEndDate role:PPLocationUserRoleNone accessibility:PPUserAccessibilityNone];
+    NSLog(@"%s deprecated, use -initWithUserId:locationId:email:username:altUsername:firstName:lastName:phone:phoneType:smsStatus:locationAccess:category:schedules:avatarFileId:temporary:accessEndDate:role:medicalRecordNumber:pronounId:accessibility:birthDate:gender:", __FUNCTION__);
+    return [self initWithUserId:userId locationId:locationId email:email username:username altUsername:altUsername firstName:firstName lastName:lastName phone:phone phoneType:phoneType smsStatus:smsStatus locationAccess:locationAccess category:category schedules:schedules avatarFileId:avatarFileId temporary:temporary accessEndDate:accessEndDate role:PPLocationUserRoleNone medicalRecordNumber:nil pronounId:PPUserPronounIdNone accessibility:PPUserAccessibilityNone birthDate:nil gender:PPUserGenderNone];
 }
 
 + (PPLocationUser *)initWithDictionary:(NSDictionary *)userDict {
@@ -66,7 +117,28 @@
         }
     }
     
-    PPLocationUser *locationUser = [[PPLocationUser alloc] initWithUserId:user.userId locationId:PPLocationIdNone email:user.email username:user.username altUsername:user.altUsername firstName:user.firstName lastName:user.lastName phone:user.phone phoneType:user.phoneType smsStatus:user.smsStatus locationAccess:locationAccess category:userCategory schedules:schedules avatarFileId:user.avatarFileId temporary:temporary accessEndDate:accessEndDate role:role accessibility:user.accessibility];
+    PPLocationUser *locationUser = [[PPLocationUser alloc] initWithUserId:user.userId
+                                                               locationId:PPLocationIdNone
+                                                                    email:user.email
+                                                                 username:user.username
+                                                              altUsername:user.altUsername
+                                                                firstName:user.firstName
+                                                                 lastName:user.lastName
+                                                                    phone:user.phone
+                                                                phoneType:user.phoneType
+                                                                smsStatus:user.smsStatus
+                                                           locationAccess:locationAccess
+                                                                 category:userCategory
+                                                                schedules:schedules
+                                                             avatarFileId:user.avatarFileId
+                                                                temporary:temporary
+                                                            accessEndDate:accessEndDate
+                                                                     role:role
+                                                      medicalRecordNumber:user.medicalRecordNumber
+                                                                pronounId:user.pronounId
+                                                            accessibility:user.accessibility
+                                                                birthDate:user.birthDate
+                                                                   gender:user.gender];
     return locationUser;
 }
 
