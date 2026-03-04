@@ -100,7 +100,26 @@ typedef NS_OPTIONS(NSInteger, PPLocationType) {
     PPLocationTypeLodging = 22,
     PPLocationTypeRestaurant = 23,
     PPLocationTypeRetail = 24,
-    PPLocationTypeOffice = 25
+    PPLocationTypeOffice = 25,
+    PPLocationTypeCommonArea = 30,
+    PPLocationTypeElevator = 31,
+    PPLocationTypeHall = 32,
+    PPLocationTypeStairway = 33,
+    PPLocationTypeEntrance = 34,
+    PPLocationTypeLaundry = 35,
+    PPLocationTypeParkingGarage = 36,
+    PPLocationTypeAmenityArea = 40,
+    PPLocationTypeGym = 41,
+    PPLocationTypePoolSpa = 42,
+    PPLocationTypeUtilityArea = 50,
+    PPLocationTypeStaffRoom = 51,
+    PPLocationTypeEntertainment = 52,
+};
+
+typedef NS_OPTIONS(NSInteger, PPLocationSubType) {
+    PPLocationSubTypeNone = -1,
+    PPLocationSubTypeAll = 0,
+    PPLocationSubTypeDevicesOnly = 1,
 };
 
 typedef NS_OPTIONS(NSInteger, PPLocationUsagePeriod) {
@@ -352,6 +371,21 @@ typedef NS_OPTIONS(NSInteger, PPUserAccessibility) {
     PPUserAccessibilityBlind            = 1 << 0,
     PPUserAccessibilityDeaf             = 1 << 1,
     PPUserAccessibilityImmobile         = 1 << 2,
+    PPUserAccessibilityCommunication    = 1 << 3,
+    PPUserAccessibilityPhysical         = 1 << 4,
+    PPUserAccessibilityCognitive        = 1 << 5,
+};
+
+typedef NS_OPTIONS(NSInteger, PPUserPronounId) {
+    PPUserPronounIdNone = -1
+};
+
+typedef NS_OPTIONS(NSInteger, PPUserGender) {
+    PPUserGenderNone    = -1,
+    PPUserGenderUnknown = 0,
+    PPUserGenderMale    = 1,
+    PPUserGenderFemale  = 2,
+    PPUserGenderOther   = 3,
 };
 
 // MARK: User Email

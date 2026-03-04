@@ -32,6 +32,12 @@
 /* Type of location */
 @property (nonatomic) PPLocationType type;
 
+/* Location sub-type */
+@property (nonatomic) PPLocationSubType subType;
+
+/* Location Parent IDs */
+@property (nonatomic, strong) NSArray *parentIds;
+
 /* Is owner of this location */
 @property (nonatomic) PPLocationOwner owner;
 
@@ -161,6 +167,9 @@
 /* App Name */
 @property (nonatomic, strong) NSString *appName;
 
+/* Location's ID in partner's cloud */
+@property (nonatomic, strong) NSString *externalId;
+
 /* Organization ID */
 @property (nonatomic) PPOrganizationId organizationId;
 
@@ -180,6 +189,52 @@
  ru - Russian
  etc */
 @property (nonatomic, strong) NSString *language;
+
+- (id)initWithLocationId:(PPLocationId)locationId
+                    name:(NSString *)name
+          locationAccess:(PPLocationAccess)locationAccess
+            userCategory:(PPLocationCategory)userCategory
+                   event:(PPLocationSceneEvent *)event
+                    type:(PPLocationType)type
+                 subType:(PPLocationSubType)subType
+               parentIds:(NSArray *)parentIds
+              externalId:(NSString *)externalId
+                   owner:(PPLocationOwner)owner
+        utilityAccountNo:(NSString *)utilityAccountNo
+                timezone:(PPTimezone *)timezone
+             addrStreet1:(NSString *)addrStreet1
+             addrStreet2:(NSString *)addrStreet2
+                addrCity:(NSString *)addrCity
+                   state:(PPState *)state
+                 country:(PPCountry *)country
+                     zip:(NSString *)zip
+                latitude:(NSString *)latitude
+               longitude:(NSString *)longitude
+                    size:(PPLocationSize *)size
+           storiesNumber:(PPLocationStoriesNumber)storiesNumber
+             roomsNumber:(PPLocationRoomsNumber)roomsNumber
+         bathroomsNumber:(PPLocationBathroomsNumber)bathroomsNumber
+         occupantsNumber:(PPLocationOccupantsNumber)occupantsNumber
+         occupantsRanges:(NSArray *)occupantsRanges
+             usagePeriod:(PPLocationUsagePeriod)usagePeriod
+             heatingType:(PPLocationHeatingType)heatingType
+             coolingType:(PPLocationCoolingType)coolingType
+         waterHeaterType:(PPLocationWaterHeaterType)waterHeaterType
+          thermostatType:(PPLocationThermostatType)thermostatType
+        fileUploadPolicy:(PPLocationFileUploadPolicy)fileUploadPolicy
+                   auths:(NSArray *)auths
+                 clients:(NSArray *)clients
+                services:(NSArray *)services
+               temporary:(PPLocationTemporary)temporary
+           accessEndDate:(NSDate *)accessEndDate
+                smsPhone:(NSString *)smsPhone
+            creationDate:(NSDate *)creationDate
+                 appName:(NSString *)appName
+          organizationId:(PPOrganizationId)organizationId
+            organization:(PPOrganization *)organization
+                    test:(PPLocationTest)test
+                codeType:(PPLocationCodeType)codeType
+                language:(NSString *)language;
 
 - (id)initWithLocationId:(PPLocationId)locationId
                     name:(NSString *)name
@@ -222,8 +277,7 @@
             organization:(PPOrganization *)organization
                     test:(PPLocationTest)test
                 codeType:(PPLocationCodeType)codeType
-                language:(NSString *)language
-;
+                language:(NSString *)language  __attribute__((deprecated));
 
 + (PPLocation *)initWithDictionary:(NSDictionary *)locationDict;
 

@@ -34,14 +34,66 @@
 }
 
 - (id)initWithSessionKey:(NSString *)sessionKey username:(NSString *)username altUsername:(NSString *)altUsername {
-    self = [[PPUser alloc] initWithUserId:PPUserIdNone email:[[PPUserEmail alloc] initWithEmail:nil verified:PPUserEmailVerifiedNone status:PPUserEmailStatusNone] username:username altUsername:altUsername firstName:nil lastName:nil communityName:nil language:nil phone:nil phoneType:PPUserPhoneTypeNone smsStatus:PPUserSMSStatusNone anonymous:PPUserAnonymousTypeNone userPermissions:nil tags:nil locations:nil badges:nil organizations:nil avatarFileId:PPUserAvatarFileIdNone creationDate:nil authClients:nil userCommunities:nil locationCommunities:nil];
+    self = [[PPUser alloc] initWithUserId:PPUserIdNone
+                                    email:[[PPUserEmail alloc] initWithEmail:nil verified:PPUserEmailVerifiedNone status:PPUserEmailStatusNone]
+                                 username:username
+                              altUsername:altUsername
+                                firstName:nil
+                                 lastName:nil
+                            communityName:nil
+                                 language:nil
+                                    phone:nil
+                                phoneType:PPUserPhoneTypeNone
+                                smsStatus:PPUserSMSStatusNone
+                                anonymous:PPUserAnonymousTypeNone
+                          userPermissions:nil
+                                     tags:nil
+                                locations:nil
+                                   badges:nil
+                            organizations:nil
+                             avatarFileId:PPUserAvatarFileIdNone
+                             creationDate:nil
+                              authClients:nil
+                          userCommunities:nil
+                      locationCommunities:nil
+                      medicalRecordNumber:nil
+                                pronounId:PPUserPronounIdNone
+                            accessibility:PPUserAccessibilityNone
+                                birthDate:nil
+                                   gender:PPUserGenderNone];
     if(self) {
         self.sessionKey = sessionKey;
     }
     return self;
 }
 
-- (id)initWithUserId:(PPUserId)userId email:(PPUserEmail *)email username:(NSString *)username altUsername:(NSString *)altUsername firstName:(NSString *)firstName lastName:(NSString *)lastName communityName:(NSString *)communityName language:(NSString *)language phone:(NSString *)phone phoneType:(PPUserPhoneType)phoneType smsStatus:(PPUserSMSStatus)smsStatus anonymous:(PPUserAnonymousType)anonymous userPermissions:(RLMArray *)userPermissions tags:(RLMArray *)tags locations:(RLMArray *)locations badges:(RLMArray *)badges organizations:(RLMArray *)organizations avatarFileId:(PPUserAvatarFileId)avatarFileId creationDate:(NSDate *)creationDate authClients:(RLMArray *)authClients userCommunities:(RLMArray *)userCommunities locationCommunities:(RLMArray *)locationCommunities accessibility:(PPUserAccessibility)accessibility {
+- (id)initWithUserId:(PPUserId)userId
+               email:(PPUserEmail *)email
+            username:(NSString *)username
+         altUsername:(NSString *)altUsername
+           firstName:(NSString *)firstName
+            lastName:(NSString *)lastName
+       communityName:(NSString *)communityName
+            language:(NSString *)language
+               phone:(NSString *)phone
+           phoneType:(PPUserPhoneType)phoneType
+           smsStatus:(PPUserSMSStatus)smsStatus
+           anonymous:(PPUserAnonymousType)anonymous
+     userPermissions:(RLMArray *)userPermissions
+                tags:(RLMArray *)tags
+           locations:(RLMArray *)locations
+              badges:(RLMArray *)badges
+       organizations:(RLMArray *)organizations
+        avatarFileId:(PPUserAvatarFileId)avatarFileId
+        creationDate:(NSDate *)creationDate
+         authClients:(RLMArray *)authClients
+     userCommunities:(RLMArray *)userCommunities
+ locationCommunities:(RLMArray *)locationCommunities
+ medicalRecordNumber:(NSString *)medicalRecordNumber
+           pronounId:(PPUserPronounId)pronounId
+       accessibility:(PPUserAccessibility)accessibility
+           birthDate:(NSString *)birthDate
+              gender:(PPUserGender)gender {
     self = [super init];
     if(self) {
         self.userId = userId;
@@ -66,13 +118,21 @@
         self.creationDate = creationDate;
         self.userCommunities = (RLMArray<PPUserCommunity *><PPUserCommunity> *)userCommunities;
         self.locationCommunities = (RLMArray<PPLocationCommunity *><PPLocationCommunity> *)locationCommunities;
+        self.medicalRecordNumber = medicalRecordNumber;
+        self.pronounId = pronounId;
         self.accessibility = accessibility;
+        self.birthDate = birthDate;
+        self.gender = gender;
     }
     return self;
 }
+- (id)initWithUserId:(PPUserId)userId email:(PPUserEmail *)email username:(NSString *)username altUsername:(NSString *)altUsername firstName:(NSString *)firstName lastName:(NSString *)lastName communityName:(NSString *)communityName language:(NSString *)language phone:(NSString *)phone phoneType:(PPUserPhoneType)phoneType smsStatus:(PPUserSMSStatus)smsStatus anonymous:(PPUserAnonymousType)anonymous userPermissions:(RLMArray *)userPermissions tags:(RLMArray *)tags locations:(RLMArray *)locations badges:(RLMArray *)badges organizations:(RLMArray *)organizations avatarFileId:(PPUserAvatarFileId)avatarFileId creationDate:(NSDate *)creationDate authClients:(RLMArray *)authClients userCommunities:(RLMArray *)userCommunities locationCommunities:(RLMArray *)locationCommunities accessibility:(PPUserAccessibility)accessibility __attribute__((deprecated)) {
+    NSLog(@"%s deprecated, use initWithUserId:email:username:altUsername:firstName:lastName:communityName:language:phone:phoneType:smsStatus:anonymous:userPermissions:tags:locations:badges:organizations:avatarFileId:creationDate:authClients:userCommunities:locationCommunities:medicalRecordNumber:pronounId:accessibility:birthDate:gender:", __FUNCTION__);
+    return [self initWithUserId:userId email:email username:username altUsername:altUsername firstName:firstName lastName:lastName communityName:communityName language:language phone:phone phoneType:phoneType smsStatus:smsStatus anonymous:anonymous userPermissions:userPermissions tags:tags locations:locations badges:badges organizations:organizations avatarFileId:avatarFileId creationDate:creationDate authClients:authClients userCommunities:userCommunities locationCommunities:locationCommunities medicalRecordNumber:nil pronounId:PPUserPronounIdNone accessibility:accessibility birthDate:nil gender:PPUserGenderNone];
+}
 - (id)initWithUserId:(PPUserId)userId email:(PPUserEmail *)email username:(NSString *)username altUsername:(NSString *)altUsername firstName:(NSString *)firstName lastName:(NSString *)lastName communityName:(NSString *)communityName language:(NSString *)language phone:(NSString *)phone phoneType:(PPUserPhoneType)phoneType smsStatus:(PPUserSMSStatus)smsStatus anonymous:(PPUserAnonymousType)anonymous userPermissions:(RLMArray *)userPermissions tags:(RLMArray *)tags locations:(RLMArray *)locations badges:(RLMArray *)badges organizations:(RLMArray *)organizations avatarFileId:(PPUserAvatarFileId)avatarFileId creationDate:(NSDate *)creationDate authClients:(RLMArray *)authClients userCommunities:(RLMArray *)userCommunities locationCommunities:(RLMArray *)locationCommunities __attribute__((deprecated)) {
-    NSLog(@"%s deprecated, use initWithUserId:email:username:altUsername:firstName:lastName:communityName:language:phone:phoneType:smsStatus:anonymous:userPermissions:tags:locations:badges:organizations:avatarFileId:creationDate:authClients:userCommunities:locationCommunities:accessibility:{", __FUNCTION__);
-    return [self initWithUserId:userId email:email username:username altUsername:altUsername firstName:firstName lastName:lastName communityName:communityName language:language phone:phone phoneType:phoneType smsStatus:smsStatus anonymous:anonymous userPermissions:userPermissions tags:tags locations:locations badges:badges organizations:organizations avatarFileId:avatarFileId creationDate:creationDate authClients:authClients userCommunities:userCommunities locationCommunities:locationCommunities accessibility:PPUserAccessibilityNone];
+    NSLog(@"%s deprecated, use initWithUserId:email:username:altUsername:firstName:lastName:communityName:language:phone:phoneType:smsStatus:anonymous:userPermissions:tags:locations:badges:organizations:avatarFileId:creationDate:authClients:userCommunities:locationCommunities:medicalRecordNumber:pronounId:accessibility:birthDate:gender:", __FUNCTION__);
+    return [self initWithUserId:userId email:email username:username altUsername:altUsername firstName:firstName lastName:lastName communityName:communityName language:language phone:phone phoneType:phoneType smsStatus:smsStatus anonymous:anonymous userPermissions:userPermissions tags:tags locations:locations badges:badges organizations:organizations avatarFileId:avatarFileId creationDate:creationDate authClients:authClients userCommunities:userCommunities locationCommunities:locationCommunities medicalRecordNumber:nil pronounId:PPUserPronounIdNone accessibility:PPUserAccessibilityNone birthDate:nil gender:PPUserGenderNone];
 }
 
 + (PPUser *)initWithDictionary:(NSDictionary *)root {
@@ -203,12 +263,52 @@
         }
     }
     
+    NSString *medicalRecordNumber = [userDict objectForKey:@"medicalRecordNumber"];
+    
+    PPUserPronounId pronounId = PPUserPronounIdNone;
+    if([root objectForKey:@"pronounId"]) {
+        pronounId = (PPUserPronounId)((NSString *)[userDict objectForKey:@"pronounId"]).integerValue;
+    }
+    
     PPUserAccessibility accessibility = PPUserAccessibilityNone;
     if([userDict objectForKey:@"accessibility"]) {
         accessibility = (PPUserAccessibility)((NSString *)[userDict objectForKey:@"accessibility"]).integerValue;
     }
     
-    PPUser *user = [[PPUser alloc] initWithUserId:userId email:email username:username altUsername:altUsername firstName:firstName lastName:lastName communityName:(NSString *)communityName language:language phone:phone phoneType:phoneType smsStatus:smsStatus anonymous:anonymous userPermissions:(RLMArray *)permissionArray tags:(RLMArray *)tags locations:(RLMArray *)locations badges:(RLMArray *)badges organizations:(RLMArray *)organizations avatarFileId:avatarFileId creationDate:creationDate authClients:(RLMArray *)authClients userCommunities:(RLMArray *)userCommunities locationCommunities:(RLMArray *)locationCommunities accessibility:accessibility];
+    NSString *birthDate = [userDict objectForKey:@"birthDate"];
+    
+    PPUserGender gender = PPUserGenderNone;
+    if([userDict objectForKey:@"gender"]) {
+        gender = (PPUserGender)((NSString *)[userDict objectForKey:@"gender"]).integerValue;
+    }
+    
+    PPUser *user = [[PPUser alloc] initWithUserId:userId
+                                            email:email
+                                         username:username
+                                      altUsername:altUsername
+                                        firstName:firstName 
+                                         lastName:lastName
+                                    communityName:(NSString *)communityName
+                                         language:language
+                                            phone:phone 
+                                        phoneType:phoneType 
+                                        smsStatus:smsStatus
+                                        anonymous:anonymous
+                                  userPermissions:(RLMArray *)permissionArray
+                                             tags:(RLMArray *)tags
+                                        locations:(RLMArray *)locations
+                                           badges:(RLMArray *)badges
+                                    organizations:(RLMArray *)organizations
+                                     avatarFileId:avatarFileId
+                                     creationDate:creationDate
+                                      authClients:(RLMArray *)authClients
+                                  userCommunities:(RLMArray *)userCommunities
+                              locationCommunities:(RLMArray *)locationCommunities
+                              medicalRecordNumber:medicalRecordNumber
+                                        pronounId:pronounId
+                                    accessibility:accessibility
+                                        birthDate:birthDate
+                                           gender:gender];
     return user;
 }
 
@@ -422,8 +522,20 @@
     if(user.locationCommunities) {
         existingUser.locationCommunities = user.locationCommunities;
     }
+    if(user.medicalRecordNumber) {
+        existingUser.medicalRecordNumber = user.medicalRecordNumber;
+    }
+    if(user.pronounId != PPUserPronounIdNone) {
+        existingUser.pronounId = user.pronounId;
+    }
     if(user.accessibility != PPUserAccessibilityNone) {
         existingUser.accessibility = user.accessibility;
+    }
+    if(user.birthDate) {
+        existingUser.birthDate = user.birthDate;
+    }
+    if(user.gender != PPUserGenderNone) {
+        existingUser.gender = user.gender;
     }
 }
 
@@ -477,7 +589,11 @@
     user.avatarFileId = self.avatarFileId;
     user.userCommunities = self.userCommunities;
     user.locationCommunities = self.locationCommunities;
+    user.medicalRecordNumber = [self.medicalRecordNumber copyWithZone:zone];
+    user.pronounId = self.pronounId;
     user.accessibility = self.accessibility;
+    user.birthDate = [self.birthDate copyWithZone:zone];
+    user.gender = self.gender;
     
     return user;
 }
@@ -505,7 +621,11 @@
         self.avatarFileId = (PPUserAvatarFileId)((NSNumber *)[decoder decodeObjectForKey:@"avatarFileId"]).integerValue;
         self.userCommunities = [decoder decodeObjectForKey:@"userCommunities"];
         self.locationCommunities = [decoder decodeObjectForKey:@"locationCommunities"];
+        self.medicalRecordNumber = [decoder decodeObjectForKey:@"medicalRecordNumber"];
+        self.pronounId = (PPUserPronounId)((NSNumber *)[decoder decodeObjectForKey:@"pronounId"]).integerValue;
         self.accessibility = (PPUserAccessibility)((NSNumber *)[decoder decodeObjectForKey:@"accessibility"]).integerValue;
+        self.birthDate = [decoder decodeObjectForKey:@"birthDate"];
+        self.gender = (PPUserGender)((NSNumber *)[decoder decodeObjectForKey:@"gender"]).integerValue;
     }
     return self;
 }
@@ -531,7 +651,11 @@
     [encoder encodeObject:@(self.avatarFileId) forKey:@"avatarFileId"];
     [encoder encodeObject:self.userCommunities forKey:@"userCommunities"];
     [encoder encodeObject:self.locationCommunities forKey:@"locationCommunities"];
+    [encoder encodeObject:self.medicalRecordNumber forKey:@"medicalRecordNumber"];
+    [encoder encodeObject:@(self.pronounId) forKey:@"pronounId"];
     [encoder encodeObject:@(self.accessibility) forKey:@"accessibility"];
+    [encoder encodeObject:self.birthDate forKey:@"birthDate"];
+    [encoder encodeObject:@(self.gender) forKey:@"gender"];
 }
 
 

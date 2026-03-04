@@ -30,6 +30,9 @@
             userCategory:(PPLocationCategory)userCategory
                    event:(PPLocationSceneEvent *)event
                     type:(PPLocationType)type
+                 subType:(PPLocationSubType)subType
+               parentIds:(NSArray *)parentIds
+              externalId:(NSString *)externalId
                    owner:(PPLocationOwner)owner
         utilityAccountNo:(NSString *)utilityAccountNo
                 timezone:(PPTimezone *)timezone
@@ -113,6 +116,10 @@
     }
     return self;
 }
+- (id)initWithLocationId:(PPLocationId)locationId name:(NSString *)name locationAccess:(PPLocationAccess)locationAccess userCategory:(PPLocationCategory)userCategory event:(PPLocationSceneEvent *)event type:(PPLocationType)type owner:(PPLocationOwner)owner utilityAccountNo:(NSString *)utilityAccountNo timezone:(PPTimezone *)timezone addrStreet1:(NSString *)addrStreet1 addrStreet2:(NSString *)addrStreet2 addrCity:(NSString *)addrCity state:(PPState *)state country:(PPCountry *)country zip:(NSString *)zip latitude:(NSString *)latitude longitude:(NSString *)longitude size:(PPLocationSize *)size storiesNumber:(PPLocationStoriesNumber)storiesNumber roomsNumber:(PPLocationRoomsNumber)roomsNumber bathroomsNumber:(PPLocationBathroomsNumber)bathroomsNumber occupantsNumber:(PPLocationOccupantsNumber)occupantsNumber occupantsRanges:(NSArray *)occupantsRanges usagePeriod:(PPLocationUsagePeriod)usagePeriod heatingType:(PPLocationHeatingType)heatingType coolingType:(PPLocationCoolingType)coolingType waterHeaterType:(PPLocationWaterHeaterType)waterHeaterType thermostatType:(PPLocationThermostatType)thermostatType fileUploadPolicy:(PPLocationFileUploadPolicy)fileUploadPolicy auths:(NSArray *)auths clients:(NSArray *)clients services:(NSArray *)services temporary:(PPLocationTemporary)temporary accessEndDate:(NSDate *)accessEndDate smsPhone:(NSString *)smsPhone creationDate:(NSDate *)creationDate appName:(NSString *)appName organizationId:(PPOrganizationId)organizationId organization:(PPOrganization *)organization test:(PPLocationTest)test codeType:(PPLocationCodeType)codeType language:(NSString *)language __attribute__((deprecated)) {
+    NSLog(@"%s deprecated, use initWithLocationId:name:locationAccess:userCategory:event:type:subType:parentIds:externalId:owner:utilityAccountNo:timezone:addrStreet1:addrStreet2:addrCity:state:country:zip:latitude:longitude:size:storiesNumber:roomsNumber:bathroomsNumber:occupantsNumber:occupantsRanges:usagePeriod:heatingType:coolingType:waterHeaterType:thermostatType:fileUploadPolicy:auths:clients:services:temporary:accessEndDate:smsPhone:creationDate:appName:organizationId:organization:test:codeType:language:", __FUNCTION__);
+    return [self initWithLocationId:locationId name:name locationAccess:locationAccess userCategory:userCategory event:event type:type subType:PPLocationSubTypeNone parentIds:nil externalId:nil owner:owner utilityAccountNo:utilityAccountNo timezone:timezone addrStreet1:addrStreet1 addrStreet2:addrStreet2 addrCity:addrCity state:state country:country zip:zip latitude:latitude longitude:longitude size:size storiesNumber:storiesNumber roomsNumber:roomsNumber bathroomsNumber:bathroomsNumber occupantsNumber:occupantsNumber occupantsRanges:occupantsRanges usagePeriod:usagePeriod heatingType:heatingType coolingType:coolingType waterHeaterType:waterHeaterType thermostatType:thermostatType fileUploadPolicy:fileUploadPolicy auths:auths clients:clients services:services temporary:temporary accessEndDate:accessEndDate smsPhone:smsPhone creationDate:creationDate appName:appName organizationId:organizationId organization:organization test:test codeType:codeType language:language ];
+}
 
 + (PPLocation *)initWithDictionary:(NSDictionary *)locationDict {
     PPLocationId locationId = PPLocationIdNone;
@@ -132,6 +139,18 @@
     if([locationDict objectForKey:@"type"]) {
         type = (PPLocationType)((NSString *)[locationDict objectForKey:@"type"]).integerValue;
     }
+    PPLocationSubType subType = PPLocationSubTypeNone;
+    if([locationDict objectForKey:@"subType"]) {
+        subType = (PPLocationSubType)((NSString *)[locationDict objectForKey:@"subType"]).integerValue;
+    }
+    NSMutableArray *parentIds;
+    if([locationDict objectForKey:@"parentIds"]) {
+        parentIds = [[NSMutableArray alloc] initWithCapacity:0];
+        for(NSNumber *parentId in [locationDict objectForKey:@"parentIds"]) {
+            [parentIds addObject:parentId];
+        }
+    }
+    NSString *externalId = [locationDict objectForKey:@"externalId"];
     PPLocationOwner owner = PPLocationOwnerNone;
     if([locationDict objectForKey:@"owner"]) {
         owner = (PPLocationOwner)((NSString *)[locationDict objectForKey:@"owner"]).integerValue;
@@ -288,6 +307,9 @@
                                                      userCategory:userCategory
                                                             event:event
                                                              type:type
+                                                          subType:subType
+                                                        parentIds:parentIds
+                                                       externalId:externalId
                                                             owner:owner
                                                  utilityAccountNo:utilityAccountNo
                                                          timezone:timezone
@@ -323,8 +345,7 @@
                                                      organization:organization
                                                              test:test
                                                          codeType:codeType
-                                                         language:language
-                            ];
+                                                         language:language];
     return location;
 }
 
@@ -736,6 +757,9 @@
     location.locationAccess = self.locationAccess;
     location.userCategory = self.userCategory;
     location.type = self.type;
+    location.subType = self.subType;
+    location.parentIds = [self.parentIds copyWithZone:zone];
+    location.externalId = [self.externalId copyWithZone:zone];
     location.owner = self.owner;
     location.utilityAccountNo = [self.utilityAccountNo copyWithZone:zone];
     location.timezone = [self.timezone copyWithZone:zone];
@@ -800,6 +824,9 @@
         self.locationAccess = (PPLocationAccess)((NSNumber *)[decoder decodeObjectForKey:@"locationAccess"]).integerValue;
         self.userCategory = (PPLocationCategory)((NSNumber *)[decoder decodeObjectForKey:@"userCategory"]).integerValue;
         self.type = (PPLocationType)((NSNumber *)[decoder decodeObjectForKey:@"type"]).integerValue;
+        self.subType = (PPLocationSubType)((NSNumber *)[decoder decodeObjectForKey:@"subType"]).integerValue;
+        self.parentIds = [decoder decodeObjectForKey:@"parentIds"];
+        self.externalId = [decoder decodeObjectForKey:@"externalId"];
         self.owner = (PPLocationOwner)((NSNumber *)[decoder decodeObjectForKey:@"owner"]).integerValue;
         self.utilityAccountNo = [decoder decodeObjectForKey:@"utilityAccountNo"];
         self.timezone = [decoder decodeObjectForKey:@"timezone"];
@@ -847,6 +874,9 @@
     [encoder encodeObject:@(_locationAccess) forKey:@"locationAccess"];
     [encoder encodeObject:@(_userCategory) forKey:@"userCategory"];
     [encoder encodeObject:@(_type) forKey:@"type"];
+    [encoder encodeObject:@(_subType) forKey:@"subType"];
+    [encoder encodeObject:_parentIds forKey:@"parentIds"];
+    [encoder encodeObject:_externalId forKey:@"externalId"];
     [encoder encodeObject:@(_owner) forKey:@"owner"];
     [encoder encodeObject:_utilityAccountNo forKey:@"utilityAccountNo"];
     [encoder encodeObject:_timezone forKey:@"timezone"];
