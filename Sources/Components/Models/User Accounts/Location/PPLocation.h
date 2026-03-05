@@ -36,7 +36,7 @@
 @property (nonatomic) PPLocationSubType subType;
 
 /* Location Parent IDs */
-@property (nonatomic, strong) NSArray *parentIds;
+@property (nonatomic, strong) RLMArray<RLMInt> *parentIds;
 
 /* Is owner of this location */
 @property (nonatomic) PPLocationOwner owner;
@@ -197,7 +197,7 @@
                    event:(PPLocationSceneEvent *)event
                     type:(PPLocationType)type
                  subType:(PPLocationSubType)subType
-               parentIds:(NSArray *)parentIds
+               parentIds:(RLMArray *)parentIds
               externalId:(NSString *)externalId
                    owner:(PPLocationOwner)owner
         utilityAccountNo:(NSString *)utilityAccountNo
@@ -215,16 +215,16 @@
              roomsNumber:(PPLocationRoomsNumber)roomsNumber
          bathroomsNumber:(PPLocationBathroomsNumber)bathroomsNumber
          occupantsNumber:(PPLocationOccupantsNumber)occupantsNumber
-         occupantsRanges:(NSArray *)occupantsRanges
+         occupantsRanges:(RLMArray *)occupantsRanges
              usagePeriod:(PPLocationUsagePeriod)usagePeriod
              heatingType:(PPLocationHeatingType)heatingType
              coolingType:(PPLocationCoolingType)coolingType
          waterHeaterType:(PPLocationWaterHeaterType)waterHeaterType
           thermostatType:(PPLocationThermostatType)thermostatType
         fileUploadPolicy:(PPLocationFileUploadPolicy)fileUploadPolicy
-                   auths:(NSArray *)auths
-                 clients:(NSArray *)clients
-                services:(NSArray *)services
+                   auths:(RLMArray *)auths
+                 clients:(RLMArray *)clients
+                services:(RLMArray *)services
                temporary:(PPLocationTemporary)temporary
            accessEndDate:(NSDate *)accessEndDate
                 smsPhone:(NSString *)smsPhone
