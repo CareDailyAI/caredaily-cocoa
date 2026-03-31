@@ -509,6 +509,15 @@
 + (void)addLocationUsers:(PPLocationId)locationId users:(NSArray * _Nonnull )users callback:(PPErrorBlock _Nonnull )callback;
 
 /**
+ * Update location users
+ *
+ * @param locationId Required PPLocationId Location ID
+ * @param users Required NSDictionary Dictionary of users to update. e.g. {"id": 123, "locationAccess": 10, "category": 1}
+ * @param callback PPErrorBlock Error callback block
+ **/
++ (void)updateLocationUsers:(PPLocationId)locationId users:(NSArray * _Nonnull )users callback:(PPErrorBlock _Nonnull )callback;
+
+/**
  * Delete location user
  *
  * @param locationId Required PPLocationId Location ID
