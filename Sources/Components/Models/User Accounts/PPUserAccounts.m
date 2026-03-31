@@ -2353,7 +2353,58 @@ __strong static NSMutableDictionary*_sharedCountries = nil;
     }];
 }
 
-#warning TODO: Add Update Location Users API
+/**
+ * Update location users
+ *
+ * @param locationId Required PPLocationId Location ID
+ * @param users Required NSDictionary Dictionary of users to update. e.g. {"id": 123, "locationAccess": 10, "category": 1}
+ * @param callback PPErrorBlock Error callback block
+ **/
++ (void)updateLocationUsers:(PPLocationId)locationId users:(NSArray *)users callback:(PPErrorBlock)callback {
+    NSAssert1(locationId != PPLocationIdNone, @"%s missing locationId", __FUNCTION__);
+    NSAssert1(users != nil && [users count] > 0, @"%s missing users", __FUNCTION__);
+    
+    NSURLComponents *components = [NSURLComponents componentsWithString:[NSString stringWithFormat:@"location/%@/users", @(locationId)]];
+    
+    NSError *dataError;
+    NSData *body = [NSJSONSerialization dataWithJSONObject:@{@"users":users} options:0 error:&dataError];
+    if(dataError) {
+        callback([PPBaseModel resultCodeToNSError:14 originatingClass:NSStringFromClass([self class]) argument:[NSString stringWithFormat:@"%@",dataError.userInfo]]);
+        return;
+    }
+    
+    NSError *error;
+    NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"PUT" URLString:[NSURL URLWithString:components.string relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
+    [request setHTTPBody:body];
+    
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.user.updateLocationUsers()", DISPATCH_QUEUE_SERIAL);
+    
+    PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
+        
+    [[PPCloudEngine sharedAppEngine] operationWithRequest:request success:^(NSData *responseData) {
+        
+        dispatch_async(queue, ^{
+            
+            NSError *error = nil;
+            [PPBaseModel processJSONResponse:responseData originatingClass:NSStringFromClass([self class]) error:&error];
+            PPLogAPI(@"< %s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                callback(error);
+            });
+    });
+    } failure:^(NSError *error) {
+        
+        dispatch_async(queue, ^{
+            
+            PPLogAPI(@"< %s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                callback([PPBaseModel resultCodeToNSError:10003 originatingClass:NSStringFromClass([self class]) argument:[NSString stringWithFormat:@"%@",error.userInfo]]);
+            });
+        });
+    }];
+}
 
 /**
  * Delete location user

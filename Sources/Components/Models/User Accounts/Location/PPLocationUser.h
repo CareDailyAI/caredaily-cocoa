@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) PPLocationAccess locationAccess;
 @property (nonatomic) PPLocationCategory category;
 @property (nonatomic) PPLocationUserRole role;
+@property (nonatomic) PPLocationResidency residency;
 @property (nonatomic, strong) NSArray * _Nullable schedules;
 @property (nonatomic) PPLocationTemporary temporary;
 @property (nonatomic, strong) NSDate * _Nullable accessEndDate;
@@ -41,7 +42,29 @@ NS_ASSUME_NONNULL_BEGIN
                      pronounId:(PPUserPronounId)pronounId
                  accessibility:(PPUserAccessibility)accessibility
                      birthDate:(NSString * _Nullable)birthDate
-                        gender:(PPUserGender)gender;
+                        gender:(PPUserGender)gender
+                     residency:(PPLocationResidency)residency;
+
+- (id _Nonnull )initWithUserId:(PPUserId)userId
+                    locationId:(PPLocationId)locationId
+                         email:(PPUserEmail *)email
+                      username:(NSString *)username
+                   altUsername:(NSString *)altUsername
+                     firstName:(NSString *)firstName
+                      lastName:(NSString *)lastName
+                         phone:(NSString *)phone
+                     phoneType:(PPUserPhoneType)phoneType
+                     smsStatus:(PPUserSMSStatus)smsStatus
+                locationAccess:(PPLocationAccess)locationAccess
+                      category:(PPLocationCategory)category
+                     schedules:(NSArray * _Nullable )schedules
+                  avatarFileId:(PPUserAvatarFileId)avatarFileId
+                     temporary:(PPLocationTemporary)temporary
+                 accessEndDate:(NSDate * _Nullable )accessEndDate
+                          role:(PPLocationUserRole)role
+                 accessibility:(PPUserAccessibility)accessibility
+                     birthDate:(NSString * _Nullable)birthDate
+                        gender:(PPUserGender)gender __attribute__((deprecated));
 
 - (id _Nonnull )initWithUserId:(PPUserId)userId
                     locationId:(PPLocationId)locationId

@@ -216,6 +216,15 @@ typedef NS_OPTIONS(NSInteger, PPLocationUserRole) {
     PPLocationUserRoleProfessionalCaregiver     = 4,
 };
 
+typedef NS_ENUM(NSInteger, PPLocationResidency) {
+    PPLocationResidencyNone = -1,
+    PPLocationResidencyUndefined = 0,
+    PPLocationResidencyResident = 1,
+    PPLocationResidencyOnSiteStaff = 2,
+    PPLocationResidencyLivesNearby = 3,
+    PPLocationResidencyLivesRemotely = 4
+};
+
 typedef NS_OPTIONS(NSInteger, PPLocationFileUploadPolicy) {
     PPLocationFileUploadPolicyNone = -1,
     PPLocationFileUploadPolicyKeepOldFiles = 0,
