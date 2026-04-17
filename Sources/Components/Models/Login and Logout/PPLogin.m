@@ -84,10 +84,10 @@
     NSError *error;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"GET" URLString:[NSURL URLWithString:components.string relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
     if(password) {
-        [request setValue:encodedPassword forHTTPHeaderField:HTTP_HEADER_PASSWORD];
+        [request setValue:password forHTTPHeaderField:HTTP_HEADER_PASSWORD];
     }
     else if(passcode) {
-        [request setValue:encodedPasscode forHTTPHeaderField:HTTP_HEADER_PASSCODE];
+        [request setValue:passcode forHTTPHeaderField:HTTP_HEADER_PASSCODE];
     }
     
     dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.login.loginWithUsername()", DISPATCH_QUEUE_SERIAL);
