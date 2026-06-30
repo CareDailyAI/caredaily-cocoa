@@ -2887,6 +2887,10 @@ typedef NS_OPTIONS(NSInteger, PPCloudsIntegrationClientApplicationId) {
     PPCloudsIntegrationClientApplicationIdEmerson = 15
 };
 
+typedef NS_OPTIONS(NSInteger, PPCloudsIntegrationAuthorizationId) {
+    PPCloudsIntegrationAuthorizationIdNone = -1,
+};
+
 typedef NS_OPTIONS(NSInteger, PPCloudsIntegrationClientActive) {
     PPCloudsIntegrationClientActiveNone = -1,
     PPCloudsIntegrationClientActiveFalse = 0,
@@ -3890,6 +3894,8 @@ typedef void (^PPDeviceTypeStoriesBlock)(NSArray * _Nullable stories, NSError * 
 typedef void (^PPCloudsIntegrationCloudsCallback)(NSMutableArray * _Nullable clouds, NSError * _Nullable error);
 typedef void (^PPCloudsIntegrationHostAccessTokenBlock)(PPCloudsIntegrationHostAccessToken * _Nullable accessToken, NSError * _Nullable error);
 typedef void (^PPCloudsIntegrationMicroServiceVersionsCallback)(NSMutableArray * _Nullable versions, NSError * _Nullable error);
+typedef void (^PPCloudsIntegrationCommissioningConfigurationCallback)(NSDictionary * _Nullable config, NSError * _Nullable error);
+typedef void (^PPCloudsIntegrationCommissioningSessionCallback)(NSDictionary * _Nullable session, NSError * _Nullable error);
 
 // MARK: - Community
 

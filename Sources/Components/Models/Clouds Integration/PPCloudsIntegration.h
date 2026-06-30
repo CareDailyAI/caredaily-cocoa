@@ -74,6 +74,43 @@
 + (NSURL * _Nonnull )accessThirdPartyCloud:(PPCloudsIntegrationClientApplicationId)applicationId locationId:(PPLocationId)locationId apiKey:(NSString * _Nonnull )apiKey scope:(NSString * _Nullable )scope brand:(NSString * _Nullable )brand;
 + (NSURL * _Nonnull )OAuthClientAuthorizeURL:(PPCloudsIntegrationClientApplicationId)applicationId apiKey:(NSString * _Nonnull )apiKey scope:(NSString * _Nullable )scope brand:(NSString * _Nullable )brand __attribute__((deprecated));
 
+#pragma mark - Get Commissioning Configuration from Third-Party Cloud
+
+/**
+ * Get commissioning configuration from Third-Party Cloud before starting devices set up.
+ * The returned content depends on the Third-Party cloud response.
+ *
+ * @param applicationId Required PPCloudsIntegrationClientApplicationId Application ID
+ * @param callback PPCloudsIntegrationCommissioningConfigurationCallback Commissioning Configuration Callback
+ */
++ (void)getCommissioningConfigurationForThirdPartyCloud:(PPCloudsIntegrationClientApplicationId)applicationId callback:(PPCloudsIntegrationCommissioningConfigurationCallback _Nonnull )callback;
+
+#pragma mark - Start Commissioning Session for Third-Party Cloud
+
+/**
+ * Start Commissioning Session for Third-Party Cloud to intiate devices set up.
+ * The returned content depends on the Third-Party cloud response.
+ *
+ * @param applicationId Required PPCloudsIntegrationClientApplicationId Application ID
+ * @param locationId Required PPLocationId Location ID where the 3'rd party devices and services will be linked
+ * @param authId PPCloudsIntegrationAuthorizationId Authorization ID
+ * @param sessionParams Required NSDictionary Session parameters key/value string map
+ * @param callback PPCloudsIntegrationCommissioningSessionCallback Commissioning Session Callback
+ */
++ (void)startCommissioningSessionForThirdPartyCloud:(PPCloudsIntegrationClientApplicationId)applicationId locationId:(PPLocationId)locationId authId:(PPCloudsIntegrationAuthorizationId)authId sessionParams:(NSDictionary * _Nonnull )sessionParams callback:(PPCloudsIntegrationCommissioningSessionCallback _Nonnull )callback;
+
+#pragma mark - Discover devices from Third-Party cloud
+
+/**
+ * When a Third-Party Cloud is connected to a location, the system discovers all devices there automatically, if that cloud allows it.
+ * This API repeats devices discovery on a Third-Party Cloud again.
+ *
+ * @param authId PPCloudsIntegrationAuthorizationId Authorization ID
+ * @param locationId Required PPLocationId Location ID where the 3'rd party devices and services will be linked
+ * @param callback PPErrorBlock Error callback
+ */
++ (void)discoverDevicesFromThirdPartyCloud:(PPCloudsIntegrationAuthorizationId)authId locationId:(PPLocationId)locationId callback:(PPErrorBlock _Nonnull)callback;
+
 #pragma mark - Revoke access to a third-party cloud
 
 /**
