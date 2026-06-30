@@ -174,6 +174,165 @@
     return [PPCloudsIntegration accessThirdPartyCloud:applicationId locationId:PPLocationIdNone apiKey:apiKey scope:scope brand:brand];
 }
 
+
+#pragma mark - Get Commissioning Configuration from Third-Party Cloud
+
+/**
+ * Get commissioning configuration from Third-Party Cloud before starting devices set up.
+ * The returned content depends on the Third-Party cloud response.
+ *
+ * @param applicationId Required PPCloudsIntegrationClientApplicationId Application ID
+ * @param callback PPCloudsIntegrationCommissioningConfigurationCallback Commissioning Configuration Callback
+ */
++ (void)getCommissioningConfigurationForThirdPartyCloud:(PPCloudsIntegrationClientApplicationId)applicationId callback:(PPCloudsIntegrationCommissioningConfigurationCallback _Nonnull )callback {
+    NSAssert1(applicationId != PPCloudsIntegrationClientApplicationIdNone, @"%s missing applicationId", __FUNCTION__);
+    NSString *requestString = [NSString stringWithFormat:@"commissioningConfig?applicationId=%@", @(applicationId)];
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.cloudsintegration.getCommissioningConfiguration()", DISPATCH_QUEUE_SERIAL);
+    
+    PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
+    [[PPCloudEngine sharedAppEngine] GET:requestString success:^(NSData *responseData) {
+        
+        dispatch_async(queue, ^{
+            
+            NSError *error;
+            NSDictionary *root = [PPBaseModel processJSONResponse:responseData originatingClass:NSStringFromClass([self class]) error:&error];
+            
+            NSDictionary *config;
+            
+            if(!error) {
+                config = [root objectForKey:@"config"];
+            }
+            
+            PPLogAPI(@"< %s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                callback(config, error);
+            });
+        });
+    } failure:^(NSError *error) {
+        
+        dispatch_async(queue, ^{
+            
+            PPLogAPI(@"< %s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                callback(nil, [PPBaseModel resultCodeToNSError:10003 originatingClass:NSStringFromClass([self class]) argument:[NSString stringWithFormat:@"Error domain:%@, code:%ld, userInfo:%@", error.domain, (long)error.code, error.userInfo]]);
+            });
+        });
+    }];
+}
+
+#pragma mark - Start Commissioning Session for Third-Party Cloud
+
+/**
+ * Start Commissioning Session for Third-Party Cloud to intiate devices set up.
+ * The returned content depends on the Third-Party cloud response.
+ *
+ * @param applicationId Required PPCloudsIntegrationClientApplicationId Application ID
+ * @param locationId Required PPLocationId Location ID where the 3'rd party devices and services will be linked
+ * @param authId PPCloudsIntegrationAuthorizationId Authorization ID
+ * @param sessionParams Required NSDictionary Session parameters key/value string map
+ * @param callback PPCloudsIntegrationCommissioningSessionCallback Commissioning Session Callback
+ */
++ (void)startCommissioningSessionForThirdPartyCloud:(PPCloudsIntegrationClientApplicationId)applicationId locationId:(PPLocationId)locationId authId:(PPCloudsIntegrationAuthorizationId)authId sessionParams:(NSDictionary * _Nonnull )sessionParams callback:(PPCloudsIntegrationCommissioningSessionCallback _Nonnull )callback {
+    NSAssert1(applicationId != PPCloudsIntegrationClientApplicationIdNone, @"%s missing applicationId", __FUNCTION__);
+    NSAssert1(locationId != PPLocationIdNone, @"%s missing locationId", __FUNCTION__);
+    NSAssert1(![sessionParams isEqualToDictionary:@{}] , @"%s missing sessionParams", __FUNCTION__);
+    NSMutableString *requestString = [[NSMutableString alloc] initWithFormat:@"commissioning?applicationId=%@&locationId=%@", @(applicationId), @(locationId)];
+    if (authId != PPCloudsIntegrationAuthorizationIdNone) {
+        [requestString appendFormat:@"authId=%@", @(authId)];
+    }
+    NSError *dataError;
+    NSData *body = [NSJSONSerialization dataWithJSONObject:sessionParams options:0 error:&dataError];
+    if(dataError) {
+        callback(nil, [PPBaseModel resultCodeToNSError:14 originatingClass:NSStringFromClass([self class]) argument:[NSString stringWithFormat:@"%@",dataError.userInfo]]);
+        return;
+    }
+    
+    NSError *error;
+    NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"POST" URLString:[NSURL URLWithString:requestString relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
+    [request setHTTPBody:body];
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.cloudsintegration.startCommissioningSession()", DISPATCH_QUEUE_SERIAL);
+    
+    PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
+    [[PPCloudEngine sharedDefaultEngine] operationWithRequest:request success:^(NSData *responseData) {
+        
+        dispatch_async(queue, ^{
+            
+            NSError *error = nil;
+            NSDictionary *root = [PPBaseModel processJSONResponse:responseData originatingClass:NSStringFromClass([self class]) error:&error];
+            
+            NSDictionary *session;
+            if(!error) {
+                if([root objectForKey:@"session"]) {
+                    session = (NSDictionary *)[root objectForKey:@"session"];
+                }
+            }
+            PPLogAPI(@"< %s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                callback(session, error);
+            });
+        });
+    } failure:^(NSError *error) {
+        
+        dispatch_async(queue, ^{
+        
+            PPLogAPI(@"< %s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                callback(nil, [PPBaseModel resultCodeToNSError:10003 originatingClass:NSStringFromClass([self class]) argument:[NSString stringWithFormat:@"Error domain:%@, code:%ld, userInfo:%@", error.domain, (long)error.code, error.userInfo]]);
+            });
+        });
+    }];
+}
+
+#pragma mark - Discover devices from Third-Party cloud
+
+/**
+ * When a Third-Party Cloud is connected to a location, the system discovers all devices there automatically, if that cloud allows it.
+ * This API repeats devices discovery on a Third-Party Cloud again.
+ *
+ * @param authId PPCloudsIntegrationAuthorizationId Authorization ID
+ * @param locationId Required PPLocationId Location ID where the 3'rd party devices and services will be linked
+ * @param callback PPErrorBlock Error callback
+ */
++ (void)discoverDevicesFromThirdPartyCloud:(PPCloudsIntegrationAuthorizationId)authId locationId:(PPLocationId)locationId callback:(PPErrorBlock _Nonnull)callback {
+    NSAssert1(authId != PPCloudsIntegrationAuthorizationIdNone, @"%s missing authId", __FUNCTION__);
+    NSAssert1(locationId != PPLocationIdNone, @"%s missing locationId", __FUNCTION__);
+    NSMutableString *requestString = [[NSMutableString alloc] initWithFormat:@"authorization/%@/discover?locationId=%@", @(authId), @(locationId)];
+    
+    NSError *error;
+    NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"PUT" URLString:[NSURL URLWithString:requestString relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
+    dispatch_queue_t queue = dispatch_queue_create("com.peoplepowerco.lib.Peoplepower.cloudsintegration.discoverDevices()", DISPATCH_QUEUE_SERIAL);
+    
+    PPLogAPI(@"> %s", dispatch_queue_get_label(queue));
+    [[PPCloudEngine sharedDefaultEngine] operationWithRequest:request success:^(NSData *responseData) {
+        
+        dispatch_async(queue, ^{
+            
+            NSError *error = nil;
+            [PPBaseModel processJSONResponse:responseData originatingClass:NSStringFromClass([self class]) error:&error];
+            PPLogAPI(@"< %s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                callback(error);
+            });
+        });
+    } failure:^(NSError *error) {
+        
+        dispatch_async(queue, ^{
+        
+            PPLogAPI(@"< %s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                callback([PPBaseModel resultCodeToNSError:10003 originatingClass:NSStringFromClass([self class]) argument:[NSString stringWithFormat:@"Error domain:%@, code:%ld, userInfo:%@", error.domain, (long)error.code, error.userInfo]]);
+            });
+        });
+    }];
+}
+
+
 #pragma mark - Revoke access to a third-party cloud
 
 /**
