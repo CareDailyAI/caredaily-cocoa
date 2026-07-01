@@ -16,8 +16,19 @@
 @property (nonatomic) PPCloudsIntegrationClientAutoRefresh autoRefresh;
 @property (nonatomic, strong) NSDate *expiry;
 @property (nonatomic, strong) NSString *username;
+@property (nonatomic) PPCloudsIntegrationAuthorizationId authId;
+@property (nonatomic) PPUserId userId;
+@property (nonatomic, strong) NSString *appUserId;
 
-- (id)initWithAuth:(NSString *)appName appId:(PPCloudsIntegrationClientApplicationId)appId active:(PPCloudsIntegrationClientActive)active autoRefresh:(PPCloudsIntegrationClientAutoRefresh)autoRefresh expiry:(NSDate *)expiry username:(NSString *)username;
+- (id)initWithAuth:(NSString *)appName
+             appId:(PPCloudsIntegrationClientApplicationId)appId
+            active:(PPCloudsIntegrationClientActive)active
+       autoRefresh:(PPCloudsIntegrationClientAutoRefresh)autoRefresh
+            expiry:(NSDate *)expiry
+          username:(NSString *)username
+            authId:(PPCloudsIntegrationAuthorizationId)authId
+            userId:(PPUserId)userId
+         appUserId:(NSString *)appUserId;
 
 + (PPCloudsIntegrationClient *)initWithDictionary:(NSDictionary *)clientDict;
 
