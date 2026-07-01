@@ -230,7 +230,7 @@
     NSAssert1(![sessionParams isEqualToDictionary:@{}] , @"%s missing sessionParams", __FUNCTION__);
     NSMutableString *requestString = [[NSMutableString alloc] initWithFormat:@"commissioning?applicationId=%@&locationId=%@", @(applicationId), @(locationId)];
     if (authId != PPCloudsIntegrationAuthorizationIdNone) {
-        [requestString appendFormat:@"authId=%@", @(authId)];
+        [requestString appendFormat:@"&authId=%@", @(authId)];
     }
     NSError *dataError;
     NSData *body = [NSJSONSerialization dataWithJSONObject:sessionParams options:0 error:&dataError];
