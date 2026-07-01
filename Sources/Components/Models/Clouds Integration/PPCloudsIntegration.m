@@ -300,7 +300,7 @@
 + (void)discoverDevicesFromThirdPartyCloud:(PPCloudsIntegrationAuthorizationId)authId locationId:(PPLocationId)locationId callback:(PPErrorBlock _Nonnull)callback {
     NSAssert1(authId != PPCloudsIntegrationAuthorizationIdNone, @"%s missing authId", __FUNCTION__);
     NSAssert1(locationId != PPLocationIdNone, @"%s missing locationId", __FUNCTION__);
-    NSMutableString *requestString = [[NSMutableString alloc] initWithFormat:@"authorization/%@/discover?locationId=%@", @(authId), @(locationId)];
+    NSMutableString *requestString = [[NSMutableString alloc] initWithFormat:@"authorizations/%@/discover?locationId=%@", @(authId), @(locationId)];
     
     NSError *error;
     NSMutableURLRequest *request = [[[PPCloudEngine sharedAppEngine] getRequestSerializer] requestWithMethod:@"PUT" URLString:[NSURL URLWithString:requestString relativeToURL:[[PPCloudEngine sharedAppEngine] getBaseURL]].absoluteString parameters:nil error:&error];
