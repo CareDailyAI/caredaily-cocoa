@@ -116,6 +116,21 @@ static NSString *moduleName = @"UserAccounts";
     
     [self waitForExpectations:@[expectation] timeout:10.0];
 }
+- (void)testGetUserInformation2 {
+    NSString *methodName = @"GetUserInformation2";
+    XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
+    
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/user" statusCode:200 headers:nil];
+        
+    [PPUserAccounts getUserInformationUserId:PPUserIdNone organizationId:PPOrganizationIdNone callback:^(PPUser *user, NSError *error) {
+                                        
+        XCTAssertNil(error);
+        
+        [expectation fulfill];
+    }];
+    
+    [self waitForExpectations:@[expectation] timeout:10.0];
+}
 /**
  * Update user.
  * Upate the user's information. All fields are optional.
