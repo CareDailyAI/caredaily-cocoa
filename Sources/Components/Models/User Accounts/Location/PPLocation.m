@@ -118,20 +118,53 @@
     }
     NSString *name = [locationDict objectForKey:@"name"];
     NSDictionary *locationUserDict = @{};
+    
+    PPLocationAccess locationAccess = PPLocationAccessNone;
+    PPLocationCategory userCategory = PPLocationCategoryNone;
+    PPLocationTemporary temporary = PPLocationTemporaryNone;
+    NSDate *accessEndDate = [NSDate dateWithTimeIntervalSince1970:0];
+    NSString *smsPhone = Nil;
     if ([locationDict objectForKey:@"locationUser"]) {
         locationUserDict = [locationDict objectForKey:@"locationUser"];
+        if([locationUserDict objectForKey:@"locationAccess"]) {
+            locationAccess = (PPLocationAccess)((NSString *)[locationUserDict objectForKey:@"locationAccess"]).integerValue;
+        }
+        if([locationUserDict objectForKey:@"category"]) {
+            userCategory = (PPLocationCategory)((NSString *)[locationUserDict objectForKey:@"category"]).integerValue;
+        }
+        if([locationUserDict objectForKey:@"temporary"]) {
+            temporary = (PPLocationTemporary)((NSString *)[locationUserDict objectForKey:@"temporary"]).integerValue;
+        }
+        
+        NSString *accessEndDateString = [locationUserDict objectForKey:@"accessEndDate"];
+        if(accessEndDateString != nil) {
+            if(![accessEndDateString isEqualToString:@""]) {
+                accessEndDate = [PPNSDate parseDateTime:accessEndDateString];
+            }
+        }
+        
+        smsPhone = [locationUserDict objectForKey:@"smsPhone"];
     }
     else {
         // Backwards compatibility
-        locationUserDict = locationDict;
-    }
-    PPLocationAccess locationAccess = PPLocationAccessNone;
-    if([locationUserDict objectForKey:@"locationAccess"]) {
-        locationAccess = (PPLocationAccess)((NSString *)[locationUserDict objectForKey:@"locationAccess"]).integerValue;
-    }
-    PPLocationCategory userCategory = PPLocationCategoryNone;
-    if([locationUserDict objectForKey:@"userCategory"]) {
-        userCategory = (PPLocationCategory)((NSString *)[locationUserDict objectForKey:@"userCategory"]).integerValue;
+        if([locationDict objectForKey:@"locationAccess"]) {
+            locationAccess = (PPLocationAccess)((NSString *)[locationDict objectForKey:@"locationAccess"]).integerValue;
+        }
+        if([locationDict objectForKey:@"userCategory"]) {
+            userCategory = (PPLocationCategory)((NSString *)[locationDict objectForKey:@"userCategory"]).integerValue;
+        }
+        if([locationDict objectForKey:@"temporary"]) {
+            temporary = (PPLocationTemporary)((NSString *)[locationDict objectForKey:@"temporary"]).integerValue;
+        }
+        
+        NSString *accessEndDateString = [locationDict objectForKey:@"accessEndDate"];
+        if(accessEndDateString != nil) {
+            if(![accessEndDateString isEqualToString:@""]) {
+                accessEndDate = [PPNSDate parseDateTime:accessEndDateString];
+            }
+        }
+        
+        smsPhone = [locationDict objectForKey:@"smsPhone"];
     }
     PPLocationType type = PPLocationTypeNone;
     if([locationDict objectForKey:@"type"]) {
@@ -254,21 +287,6 @@
             [services addObject:userService];
         }
     }
-    
-    PPLocationTemporary temporary = PPLocationTemporaryNone;
-    if([locationUserDict objectForKey:@"temporary"]) {
-        temporary = (PPLocationTemporary)((NSString *)[locationUserDict objectForKey:@"temporary"]).integerValue;
-    }
-    
-    NSString *accessEndDateString = [locationUserDict objectForKey:@"accessEndDate"];
-    NSDate *accessEndDate = [NSDate dateWithTimeIntervalSince1970:0];
-    if(accessEndDateString != nil) {
-        if(![accessEndDateString isEqualToString:@""]) {
-            accessEndDate = [PPNSDate parseDateTime:accessEndDateString];
-        }
-    }
-    
-    NSString *smsPhone = [locationUserDict objectForKey:@"smsPhone"];
     
     NSString *creationDateString = [locationDict objectForKey:@"creationDate"];
     NSDate *creationDate;

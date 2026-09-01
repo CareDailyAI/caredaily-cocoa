@@ -465,6 +465,7 @@
 		635E3AC422C26BE600C171B0 /* PPDeviceTypeStoryPageAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E3AC222C26BE600C171B0 /* PPDeviceTypeStoryPageAction.m */; };
 		6360FAB821B8520200DB2B6B /* PPCloudsIntegrationCloud.h in Headers */ = {isa = PBXBuildFile; fileRef = 6360FAB621B8520200DB2B6B /* PPCloudsIntegrationCloud.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6360FAB921B8520200DB2B6B /* PPCloudsIntegrationCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = 6360FAB721B8520200DB2B6B /* PPCloudsIntegrationCloud.m */; };
+		63637A73304756E700CB8B4C /* UserAccounts-GetUserInformation2-ResponseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 63637A72304756E700CB8B4C /* UserAccounts-GetUserInformation2-ResponseData.json */; };
 		636B4812248AFA7F00124F6A /* UnitTests.plist in Resources */ = {isa = PBXBuildFile; fileRef = 636B47F1248AFA7B00124F6A /* UnitTests.plist */; };
 		636B493A248AFBCE00124F6A /* PPTCWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B47F7248AFA7C00124F6A /* PPTCWeather.m */; };
 		636B493B248AFBCE00124F6A /* PPTCProducts.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B4803248AFA7E00124F6A /* PPTCProducts.m */; };
@@ -1348,6 +1349,7 @@
 		63608D6129FAEF330049FE28 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6360FAB621B8520200DB2B6B /* PPCloudsIntegrationCloud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPCloudsIntegrationCloud.h; sourceTree = "<group>"; };
 		6360FAB721B8520200DB2B6B /* PPCloudsIntegrationCloud.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPCloudsIntegrationCloud.m; sourceTree = "<group>"; };
+		63637A72304756E700CB8B4C /* UserAccounts-GetUserInformation2-ResponseData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "UserAccounts-GetUserInformation2-ResponseData.json"; sourceTree = "<group>"; };
 		636B4446248AE82A00124F6A /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		636B4628248AF7C200124F6A /* Products-GetSupportedProducts-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Products-GetSupportedProducts-ResponseData.json"; sourceTree = "<group>"; };
 		636B4629248AF7C300124F6A /* Community-DeletePost-ResponseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Community-DeletePost-ResponseData.json"; sourceTree = "<group>"; };
@@ -2999,6 +3001,7 @@
 				636B46DC248AF7E100124F6A /* UserAccounts-GetUserByEmailOrPhone-ResponseData.json */,
 				636B4671248AF7CD00124F6A /* UserAccounts-GetUserCodes-ResponseData.json */,
 				636B46F6248AF7E600124F6A /* UserAccounts-GetUserInformation-ResponseData.json */,
+				63637A72304756E700CB8B4C /* UserAccounts-GetUserInformation2-ResponseData.json */,
 				636B468E248AF7D500124F6A /* UserAccounts-LocationScenesHistory-ResponseData.json */,
 				636B46D0248AF7DF00124F6A /* UserAccounts-MergeUser-ResponseData.json */,
 				636B4667248AF7CB00124F6A /* UserAccounts-NewPassword-ResponseData.json */,
@@ -4301,6 +4304,7 @@
 				636B49A8248AFBDD00124F6A /* FilesManagement-ApplyTag-ResponseData.json in Resources */,
 				636B49A2248AFBDC00124F6A /* DynamicUIs-GetLocationTotals-ResponseData.json in Resources */,
 				636B4A1C248AFBE500124F6A /* UserAccounts-SetTimeState-ResponseData.json in Resources */,
+				63637A73304756E700CB8B4C /* UserAccounts-GetUserInformation2-ResponseData.json in Resources */,
 				63B5273326796330007EA64B /* AdminAdministrators-GetRoles-ResponseData.json in Resources */,
 				636B49FE248AFBE300124F6A /* UserAccounts-DeleteLocation-ResponseData.json in Resources */,
 				636B49E7248AFBE100124F6A /* Rules-DeleteRule-ResponseData.json in Resources */,
