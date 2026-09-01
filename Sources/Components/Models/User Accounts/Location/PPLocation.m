@@ -127,13 +127,21 @@
         locationId = ((NSString *)[locationDict objectForKey:@"id"]).integerValue;
     }
     NSString *name = [locationDict objectForKey:@"name"];
+    NSDictionary *locationUserDict = @{};
+    if ([locationDict objectForKey:@"locationUser"]) {
+        locationUserDict = [locationDict objectForKey:@"locationUser"];
+    }
+    else {
+        // Backwards compatibility
+        locationUserDict = locationDict;
+    }
     PPLocationAccess locationAccess = PPLocationAccessNone;
-    if([locationDict objectForKey:@"locationAccess"]) {
-        locationAccess = (PPLocationAccess)((NSString *)[locationDict objectForKey:@"locationAccess"]).integerValue;
+    if([locationUserDict objectForKey:@"locationAccess"]) {
+        locationAccess = (PPLocationAccess)((NSString *)[locationUserDict objectForKey:@"locationAccess"]).integerValue;
     }
     PPLocationCategory userCategory = PPLocationCategoryNone;
-    if([locationDict objectForKey:@"userCategory"]) {
-        userCategory = (PPLocationCategory)((NSString *)[locationDict objectForKey:@"userCategory"]).integerValue;
+    if([locationUserDict objectForKey:@"userCategory"]) {
+        userCategory = (PPLocationCategory)((NSString *)[locationUserDict objectForKey:@"userCategory"]).integerValue;
     }
     PPLocationType type = PPLocationTypeNone;
     if([locationDict objectForKey:@"type"]) {
@@ -257,11 +265,11 @@
     }
     
     PPLocationTemporary temporary = PPLocationTemporaryNone;
-    if([locationDict objectForKey:@"temporary"]) {
-        temporary = (PPLocationTemporary)((NSString *)[locationDict objectForKey:@"temporary"]).integerValue;
+    if([locationUserDict objectForKey:@"temporary"]) {
+        temporary = (PPLocationTemporary)((NSString *)[locationUserDict objectForKey:@"temporary"]).integerValue;
     }
     
-    NSString *accessEndDateString = [locationDict objectForKey:@"accessEndDate"];
+    NSString *accessEndDateString = [locationUserDict objectForKey:@"accessEndDate"];
     NSDate *accessEndDate = [NSDate dateWithTimeIntervalSince1970:0];
     if(accessEndDateString != nil) {
         if(![accessEndDateString isEqualToString:@""]) {
@@ -269,7 +277,7 @@
         }
     }
     
-    NSString *smsPhone = [locationDict objectForKey:@"smsPhone"];
+    NSString *smsPhone = [locationUserDict objectForKey:@"smsPhone"];
     
     NSString *creationDateString = [locationDict objectForKey:@"creationDate"];
     NSDate *creationDate;
