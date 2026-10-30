@@ -3729,6 +3729,7 @@ typedef void (^PPLoginBlock)(NSString * _Nullable APIKey, NSDate * _Nullable exp
 typedef void (^PPOperationTokenBlock)(PPOperationToken * _Nullable operationToken, NSError * _Nullable error);
 typedef void (^PPOperationTokenValidityBlock)(BOOL isValid);
 typedef void (^PPSignatureKeyBlock)(NSString * _Nullable privateKey, NSError * _Nullable error);
+typedef void (^PPPasscodeDeliveryBlock)(PPLoginNotificationType deliveryType, NSError * _Nullable error);
 
 // MARK: - User Accounts
 

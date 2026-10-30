@@ -180,7 +180,7 @@
  * @param appName NSString App name to identify the brand
  * @param callback PPErrorBlock Error callback block
  **/
-+ (void)sendPasscodeWithUsername:(NSString *)username type:(PPLoginNotificationType)type brand:(NSString *)brand appName:(NSString *)appName callback:(PPErrorBlock)callback {
++ (void)sendPasscodeWithUsername:(NSString *)username type:(PPLoginNotificationType)type brand:(NSString *)brand appName:(NSString *)appName deliveryCallback:(PPPasscodeDeliveryBlock _Nonnull )callback {
     NSAssert1(username != nil, @"%s missing username", __FUNCTION__);
     NSAssert1(type != PPLoginNotificationTypeNone, @"%s missing type", __FUNCTION__);
     
@@ -209,12 +209,19 @@
         dispatch_async(queue, ^{
             
             NSError *error = nil;
-            [PPBaseModel processJSONResponse:responseData originatingClass:NSStringFromClass([self class]) error:&error];
+            NSDictionary *responseDict = [PPBaseModel processJSONResponse:responseData originatingClass:NSStringFromClass([self class]) error:&error];
+            
+            PPLoginNotificationType deliveryType = PPLoginNotificationTypeNone;
+            if(!error) {
+                if([responseDict objectForKey:@"passcodeDeliveryType"]) {
+                    deliveryType = (PPLoginNotificationType)((NSString *)[responseDict objectForKey:@"passcodeDeliveryType"]).integerValue;
+                }
+            }
             
             PPLogAPI(@"< %s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                callback(error);
+                callback(deliveryType, error);
             });
         });
     } failure:^(NSError *error) {
@@ -224,13 +231,22 @@
             PPLogAPI(@"< %s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                callback([PPBaseModel resultCodeToNSError:10003 originatingClass:NSStringFromClass([self class]) argument:[NSString stringWithFormat:@"Error domain:%@, code:%ld, userInfo:%@", error.domain, (long)error.code, error.userInfo]]);
+                callback(PPLoginNotificationTypeNone, [PPBaseModel resultCodeToNSError:10003 originatingClass:NSStringFromClass([self class]) argument:[NSString stringWithFormat:@"Error domain:%@, code:%ld, userInfo:%@", error.domain, (long)error.code, error.userInfo]]);
             });
         });
     }];
 }
++ (void)sendPasscodeWithUsername:(NSString *)username type:(PPLoginNotificationType)type brand:(NSString *)brand appName:(NSString *)appName callback:(PPErrorBlock)callback {
+    NSLog(@"%s deprecated. Use +sendPasscodeWithUsername:type:brand:appName:deliveryCallback:", __FUNCTION__);
+    [PPLogin sendPasscodeWithUsername:username type:type brand:brand appName:appName deliveryCallback:^(PPLoginNotificationType deliveryType, NSError * _Nullable error) {
+        callback(error);
+    }];
+}
 + (void)sendPasscodeWithUsername:(NSString *)username type:(PPLoginNotificationType)type callback:(PPErrorBlock)callback {
-    [PPLogin sendPasscodeWithUsername:username type:type brand:nil appName:nil callback:callback];
+    NSLog(@"%s deprecated. Use +sendPasscodeWithUsername:type:brand:appName:deliveryCallback:", __FUNCTION__);
+    [PPLogin sendPasscodeWithUsername:username type:type brand:nil appName:nil deliveryCallback:^(PPLoginNotificationType deliveryType, NSError * _Nullable error) {
+        callback(error);
+    }];
 }
 
 #pragma mark - Login with an existing API key
