@@ -55,6 +55,19 @@
 + (void)sendPasscodeWithUsername:(NSString * _Nonnull )username type:(PPLoginNotificationType)type brand:(NSString * _Nullable )brand appName:(NSString * _Nullable )appName callback:(PPErrorBlock _Nonnull )callback;
 + (void)sendPasscodeWithUsername:(NSString * _Nonnull )username type:(PPLoginNotificationType)type callback:(PPErrorBlock _Nonnull )callback __attribute__((deprecated));
 
+/**
+ * Send passcode, and report the channel the cloud used.
+ * The cloud may use a different channel than the one requested (for example, email when it is
+ * asked for SMS), so a screen that says where the code went should use deliveryType.
+ *
+ * @param username Required NSString The username.
+ * @param type Required PPLoginNotificationType Preferred delivery: 2 = Email; 3 = SMS
+ * @param brand NSString A parameter identifying a customer's specific notification template
+ * @param appName NSString App name to identify the brand
+ * @param callback Block with the passcodeDeliveryType from the response (PPLoginNotificationTypeNone when the response does not include it) and an error
+ **/
++ (void)sendPasscodeWithUsername:(NSString * _Nonnull )username type:(PPLoginNotificationType)type brand:(NSString * _Nullable )brand appName:(NSString * _Nullable )appName deliveryCallback:(void (^ _Nonnull)(PPLoginNotificationType deliveryType, NSError * _Nullable error))callback;
+
 #pragma mark - Login with an existing API key
 
 /**

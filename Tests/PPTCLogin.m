@@ -102,6 +102,24 @@ static NSString *moduleName = @"Login";
 }
 
 /**
+ * The cloud reports the channel it used, which can differ from the one requested.
+ **/
+- (void)testSendPasscodeReportsDeliveryChannel {
+    NSString *methodName = @"SendPasscode";
+    XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
+    
+    [self stubRequestForModule:moduleName methodName:methodName ofType:@"json" path:@"/cloud/json/passcode" statusCode:200 headers:nil];
+    
+    // Asked for SMS; the stubbed response says the code went by email.
+    [PPLogin sendPasscodeWithUsername:self.user.username type:PPLoginNotificationTypeSMS brand:self.brand appName:self.appName deliveryCallback:^(PPLoginNotificationType deliveryType, NSError *error) {
+        XCTAssertNil(error);
+        XCTAssertEqual(deliveryType, PPLoginNotificationTypeEmail);
+        [expectation fulfill];
+    }];
+    [self waitForExpectations:@[expectation] timeout:10.0];
+}
+
+/**
  * Login by username and password or a temporary passcode.
  * Allows a user to login using their private credentials (username and password). This request returns an API key which is linked to the user, and will be used in all future API calls. It is the responsibility of the application developer to securely store, manage, and communicate users' API keys
  *

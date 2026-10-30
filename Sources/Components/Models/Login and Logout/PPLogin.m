@@ -181,6 +181,12 @@
  * @param callback PPErrorBlock Error callback block
  **/
 + (void)sendPasscodeWithUsername:(NSString *)username type:(PPLoginNotificationType)type brand:(NSString *)brand appName:(NSString *)appName callback:(PPErrorBlock)callback {
+    [PPLogin sendPasscodeWithUsername:username type:type brand:brand appName:appName deliveryCallback:^(PPLoginNotificationType deliveryType, NSError * _Nullable error) {
+        callback(error);
+    }];
+}
+
++ (void)sendPasscodeWithUsername:(NSString *)username type:(PPLoginNotificationType)type brand:(NSString *)brand appName:(NSString *)appName deliveryCallback:(void (^)(PPLoginNotificationType deliveryType, NSError * _Nullable error))callback {
     NSAssert1(username != nil, @"%s missing username", __FUNCTION__);
     NSAssert1(type != PPLoginNotificationTypeNone, @"%s missing type", __FUNCTION__);
     
@@ -209,12 +215,18 @@
         dispatch_async(queue, ^{
             
             NSError *error = nil;
-            [PPBaseModel processJSONResponse:responseData originatingClass:NSStringFromClass([self class]) error:&error];
+            NSDictionary *responseDict = [PPBaseModel processJSONResponse:responseData originatingClass:NSStringFromClass([self class]) error:&error];
+            
+            PPLoginNotificationType deliveryType = PPLoginNotificationTypeNone;
+            id reported = responseDict[@"passcodeDeliveryType"];
+            if ([reported isKindOfClass:[NSNumber class]]) {
+                deliveryType = (PPLoginNotificationType)[reported integerValue];
+            }
             
             PPLogAPI(@"< %s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                callback(error);
+                callback(deliveryType, error);
             });
         });
     } failure:^(NSError *error) {
@@ -224,7 +236,7 @@
             PPLogAPI(@"< %s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                callback([PPBaseModel resultCodeToNSError:10003 originatingClass:NSStringFromClass([self class]) argument:[NSString stringWithFormat:@"Error domain:%@, code:%ld, userInfo:%@", error.domain, (long)error.code, error.userInfo]]);
+                callback(PPLoginNotificationTypeNone, [PPBaseModel resultCodeToNSError:10003 originatingClass:NSStringFromClass([self class]) argument:[NSString stringWithFormat:@"Error domain:%@, code:%ld, userInfo:%@", error.domain, (long)error.code, error.userInfo]]);
             });
         });
     }];
