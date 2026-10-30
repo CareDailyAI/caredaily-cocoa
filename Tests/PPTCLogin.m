@@ -99,6 +99,15 @@ static NSString *moduleName = @"Login";
         
     }];
     [self waitForExpectations:@[expectation] timeout:10.0];
+    
+    expectation = [[XCTestExpectation alloc] initWithDescription:methodName];
+    
+    [PPLogin sendPasscodeWithUsername:self.user.username type:PPLoginNotificationTypeSMS brand:self.brand appName:self.appName deliveryCallback:^(PPLoginNotificationType deliveryType, NSError *error) {
+        XCTAssertNil(error);
+        XCTAssertEqual(deliveryType, PPLoginNotificationTypeEmail);
+        [expectation fulfill];
+    }];
+    [self waitForExpectations:@[expectation] timeout:10.0];
 }
 
 /**

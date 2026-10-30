@@ -50,8 +50,9 @@
  * @param type Required PPLoginNotificationType Notification type: 2 = Email; 3 = SMS
  * @param brand NSString A parameter identifying a customer's specific notification template
  * @param appName NSString App name to identify the brand
- * @param callback PPErrorBlock Error callback block
+ * @param callback PPPasscodeDeliveryBlock Callback method provides delivery type executed
  **/
++ (void)sendPasscodeWithUsername:(NSString * _Nonnull )username type:(PPLoginNotificationType)type brand:(NSString * _Nullable )brand appName:(NSString * _Nullable )appName deliveryCallback:(PPPasscodeDeliveryBlock _Nonnull )callback;
 + (void)sendPasscodeWithUsername:(NSString * _Nonnull )username type:(PPLoginNotificationType)type brand:(NSString * _Nullable )brand appName:(NSString * _Nullable )appName callback:(PPErrorBlock _Nonnull )callback;
 + (void)sendPasscodeWithUsername:(NSString * _Nonnull )username type:(PPLoginNotificationType)type callback:(PPErrorBlock _Nonnull )callback __attribute__((deprecated));
 
