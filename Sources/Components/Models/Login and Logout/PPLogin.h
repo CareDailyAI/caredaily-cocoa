@@ -64,7 +64,7 @@
  * @param type Required PPLoginNotificationType Preferred delivery: 2 = Email; 3 = SMS
  * @param brand NSString A parameter identifying a customer's specific notification template
  * @param appName NSString App name to identify the brand
- * @param callback Block with the passcodeDeliveryType from the response (PPLoginNotificationTypeNone when the response does not include it) and an error
+ * @param callback Block with the passcodeDeliveryType from the response and an error. 2 = email, 3 = SMS, 0 = the cloud could not send the code by either channel, PPLoginNotificationTypeNone (-1) = the response did not include it (the cloud includes it only when there is no error). Asking for email on an account with no email falls back to SMS when the cloud can text that number.
  **/
 + (void)sendPasscodeWithUsername:(NSString * _Nonnull )username type:(PPLoginNotificationType)type brand:(NSString * _Nullable )brand appName:(NSString * _Nullable )appName deliveryCallback:(void (^ _Nonnull)(PPLoginNotificationType deliveryType, NSError * _Nullable error))callback;
 
